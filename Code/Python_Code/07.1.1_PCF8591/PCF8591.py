@@ -12,7 +12,7 @@ address = 0x48	#default address of PCF8591
 bus=smbus.SMBus(1)
 cmd=0x40		#command
 
-def analogRead(chn):#read ADC value，chn:0,1,2,3
+def analogRead(chn):#read ADC value,chn:0,1,2,3
 	value = bus.read_byte_data(address,cmd+chn)
 	return value
 	
