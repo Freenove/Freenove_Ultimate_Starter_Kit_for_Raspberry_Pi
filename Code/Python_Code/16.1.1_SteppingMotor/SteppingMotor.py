@@ -22,7 +22,7 @@ def moveOnePeriod(direction,ms):
     for j in range(0,4,1):      #cycle for power supply order
         for i in range(0,4,1):  #assign to each pin, a total of 4 pins
             if (direction == 1):#power supply order clockwise
-                GPIO.output(motorPins[i],((CCWStep[j] == 1<<i) and GPIO.HIGH orGPIO.LOW))
+                GPIO.output(motorPins[i],((CCWStep[j] == 1<<i) and GPIO.HIGH or GPIO.LOW))
             else :              #power supply order anticlockwise
                 GPIO.output(motorPins[i],((CWStep[j] == 1<<i) and GPIO.HIGH or GPIO.LOW))
         if(ms<3):       #the delay can not be less than 3ms, otherwise it will exceed speed limit of the motor
@@ -39,9 +39,9 @@ def motorStop():
             
 def loop():
     while True:
-        moveSteps(1,3,512)  #rotating   360° clockwise, a total of 2048 steps in a circle, namely, 512 cycles.
+        moveSteps(1,3,512)  #rotating   360 deg clockwise, a total of 2048 steps in a circle, namely, 512 cycles.
         time.sleep(0.5)
-        moveSteps(0,3,512)  #rotating 360° anticlockwise
+        moveSteps(0,3,512)  #rotating 360 deg anticlockwise
         time.sleep(0.5)
 
 def destroy():

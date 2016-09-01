@@ -26,4 +26,5 @@ if __name__ == '__main__':     #Program start from here
     print "Program is starting ... "
     try:
         loop()
-    except KeyboardInterrupt:  #When 'Ctrl+C' is pressed, exit the program.      GPIO.cleanup()  
+    except KeyboardInterrupt:  #When 'Ctrl+C' is pressed, exit the program.      
+		GPIO.cleanup()  

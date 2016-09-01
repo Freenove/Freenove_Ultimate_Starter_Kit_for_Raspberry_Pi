@@ -6,7 +6,7 @@
 ########################################################################
 import RPi.GPIO as GPIO 
 import time
-#class Key：Define some of the properties of Key
+#class Key:Define some of the properties of Key
 class Key(object):
 	NO_KEY = '\0'
 	#Defines the four states of Key

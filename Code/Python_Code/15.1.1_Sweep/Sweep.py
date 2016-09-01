@@ -33,11 +33,11 @@ def servoWrite(angle):      # make the servo rotate to specific angle (0-180 deg
     
 def loop():
     while True:
-        for dc in range(0, 181, 1):   #make servo rotate from 0° to 180°
+        for dc in range(0, 181, 1):   #make servo rotate from 0 to 180 deg
             servoWrite(dc)     # Write to servo
             time.sleep(0.001)
         time.sleep(0.5)
-        for dc in range(180, -1, -1): #make servo rotate from 180°to 0°
+        for dc in range(180, -1, -1): #make servo rotate from 180 to 0 deg
             servoWrite(dc)
             time.sleep(0.001)
         time.sleep(0.5)
