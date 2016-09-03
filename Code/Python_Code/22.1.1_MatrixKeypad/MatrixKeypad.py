@@ -4,6 +4,7 @@
 # Author      : freenove
 # modification: 2016/07/13
 ########################################################################
+import RPi.GPIO as GPIO
 import Keypad       #import module Keypad
 ROWS = 4        # number of rows of the Keypad
 COLS = 4        #number of columns of the Keypad

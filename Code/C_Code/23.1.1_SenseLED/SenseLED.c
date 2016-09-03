@@ -22,11 +22,11 @@ int main(void)
 
 	while(1){
 		
-		if(digitalRead(sensorPin) == HIGH){ //sensor has pressed down
+		if(digitalRead(sensorPin) == HIGH){ //if read sensor for high level
 			digitalWrite(ledPin, HIGH);   //led on
 			printf("led on...\n");
 		}
-		else {				//sensor has released 
+		else {				
 			digitalWrite(ledPin, LOW);   //led off
 			printf("...led off\n");
 		}
