@@ -2,11 +2,11 @@
 
 References
   The references for this product includes the following folders and files:
-    Datasheet     Datasheet of electronic components and modules 
-    Code      	  Code for Raspberry Pi
+    Datasheet        Datasheet of electronic components and modules 
+    Code             Code for Raspberry Pi
     Processing       Sketches for Interacting with Processing projects
-    Readme.txt	  Instructions
-    Tutorial.pdf  Tutorial
+    Readme.txt       Instructions
+    Tutorial.pdf     Tutorial
     Processing.pdf   Tutorial for Interacting with Processing
 
   You can click the green Clone or download button in this page, then click Download ZIP to get all these files in zip format. If you have any difficulties, you can send email to our support for help.
