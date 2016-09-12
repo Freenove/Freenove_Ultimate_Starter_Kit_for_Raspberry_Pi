@@ -1,15 +1,17 @@
-  References for Freenove Ultimate Starter Kit for Raspberry
+  Freenove Ultimate Starter Kit for Raspberry Pi
 
-References
-  The references for this product includes the following folders and files:
-    Datasheet        Datasheet of electronic components and modules 
-    Code             Code for Raspberry Pi
-    Processing       Sketches for Interacting with Processing projects
-    Readme.txt       Instructions
-    Tutorial.pdf     Tutorial
-    Processing.pdf   Tutorial for Interacting with Processing
+How to download
+  Please click the green "Clone or download" button, then click "Download ZIP" button in the pop-up window to download the zip file that contains all these files. Clicking the "Open in Desktop" button will lead you to install Github software instead of downloading these files. 
+  If you have any difficulties, please send email to our support for help.
 
-  You can click the green Clone or download button in this page, then click Download ZIP to get all these files in zip format. If you have any difficulties, you can send email to our support for help.
+Files
+  The files for this product and their introduction are as follows:
+    Datasheet       Datasheet for electronic components and modules
+    Code            Code for Raspberry Pi projects using C and Python
+    Processing      Code for Raspberry Pi projects using Java
+    Readme.txt      Instructions
+    Tutorial.pdf    Tutorial using C and Python 
+    Processing.pdf  Tutorial using Java
 
 Support
   Freenove provides free and quick technical support, including but not limited to:
@@ -24,7 +26,7 @@ Support
   On working day, we usually reply to you within 24 hours.
 
 Copyright
-  Freenove reserves all rights to the book. No copies or plagiarizations are allowed for the purpose of commercial use. 
+  Freenove reserves all rights to the files for this product. No copies or plagiarizations are allowed for the purpose of commercial use. 
   The code and circuit involved in this product are released as Creative Commons Attribution ShareAlike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/legalcode). This means you can use them on your own derived works, in part or completely, as long as you also adopt the same license. 
   Freenove brand and Freenove logo are copyright of Freenove Creative Technology Co., Ltd and cannot be used without formal permission.
 
