@@ -2,7 +2,7 @@
 # Filename    : PCF8574.py
 # Description : PCF8574 as Raspberry GPIO
 # Author      : freenove
-# modification: 2016/06/26
+# modification: 2017/04/18
 ########################################################################
 import smbus
 import time
@@ -15,6 +15,7 @@ class PCF8574_I2C(object):
 		self.bus = smbus.SMBus(1)
 		self.address = address
 		self.currentValue = 0
+		self.writeByte(0)	#I2C test.
 		
 	def readByte(self):#Read PCF8574 all port of the data
 		#value = self.bus.read_byte(self.address)

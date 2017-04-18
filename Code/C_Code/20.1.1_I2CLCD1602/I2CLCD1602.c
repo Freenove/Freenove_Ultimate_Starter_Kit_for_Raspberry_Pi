@@ -2,7 +2,7 @@
 * Filename    : I2CLCD1602.c
 * Description : Use the LCD display data
 * Author      : freenove
-* modification: 2016/06/25
+* modification: 2017/04/18
 **********************************************************************/
 #include <stdlib.h>
 #include <stdio.h>
@@ -11,7 +11,8 @@
 #include <lcd.h>
 #include <time.h>
 
-#define pcf8574_address 0x27        // default I2C address of Pcf8574
+//#define pcf8574_address 0x27        // default I2C address of Pcf8574
+#define pcf8574_address 0x3F        // default I2C address of Pcf8574A
 #define BASE 64         // BASE is not less than 64
 //////// Define the output pins of the PCF8574, which are directly connected to the LCD1602 pin.
 #define RS      BASE+0
