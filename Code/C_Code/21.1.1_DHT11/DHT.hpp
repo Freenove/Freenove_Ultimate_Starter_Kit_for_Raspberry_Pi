@@ -2,7 +2,7 @@
 * Filename    : DHT.hpp
 * Description : DHT Temperature & Humidity Sensor library for Raspberry
 * Author      : freenove
-* modification: 2016/07/10
+* modification: 2018/03/07
 **********************************************************************/
 #ifndef _DHT_H_
 #define _DHT_H_
@@ -27,7 +27,7 @@ class DHT{
         double humidity,temperature;    //use to store temperature and humidity data read
         int readDHT11(int pin);     //read DHT11
     private:
-        int bits[5];    //Buffer to receiver data
+        uint8_t bits[5];    //Buffer to receiver data
         int readSensor(int pin,int wakeupDelay);    //
         
 };

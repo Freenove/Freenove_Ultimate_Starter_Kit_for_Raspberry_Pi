@@ -2,7 +2,7 @@
 * Filename    : DHT11.cpp
 * Description : read the temperature and humidity data of DHT11
 * Author      : freenove
-* modification: 2016/07/10
+* modification: 2018/03/07
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -37,7 +37,7 @@ int main(){
                 break;
         }
         printf("Humidity is %.2f %%, \t Temperature is %.2f *C\n\n",dht.humidity,dht.temperature);
-        delay(1000);
+        delay(2000);
     }   
     return 1;
 }

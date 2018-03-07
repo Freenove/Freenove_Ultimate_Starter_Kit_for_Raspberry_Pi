@@ -2,7 +2,7 @@
 * Filename    : DHT.cpp
 * Description : DHT Temperature & Humidity Sensor library for Raspberry
 * Author      : freenove
-* modification: 2016/07/10
+* modification: 2018/03/07
 **********************************************************************/
 #include "DHT.hpp"
 //Function: Read DHT sensor, store the original data in bits[]
@@ -22,7 +22,7 @@ int DHT::readSensor(int pin,int wakeupDelay){
 	delayMicroseconds(40);
 	pinMode(pin,INPUT);
 	
-	int loopCnt = DHTLIB_TIMEOUT;
+	int32_t loopCnt = DHTLIB_TIMEOUT;
 	t = micros();
 	while(digitalRead(pin)==LOW){
 		if((micros() - t) > loopCnt){
@@ -61,13 +61,14 @@ int DHT::readSensor(int pin,int wakeupDelay){
 	}
 	pinMode(pin,OUTPUT);
 	digitalWrite(pin,HIGH);
+	//printf("bits:\t%d,\t%d,\t%d,\t%d,\t%d\n",bits[0],bits[1],bits[2],bits[3],bits[4]);
 	return DHTLIB_OK;
 }
 //Function：Read DHT sensor, analyze the data of temperature and humidity
 //return：DHTLIB_OK   DHTLIB_ERROR_CHECKSUM  DHTLIB_ERROR_TIMEOUT
 int DHT::readDHT11(int pin){
 	int rv ; 
-	int8_t sum;
+	uint8_t sum;
 	rv = readSensor(pin,DHTLIB_DHT11_WAKEUP);
 	if(rv != DHTLIB_OK){
 		humidity = DHTLIB_INVALID_VALUE;
@@ -75,8 +76,8 @@ int DHT::readDHT11(int pin){
 		return rv;
 	}
 	humidity = bits[0];
-	temperature = bits[2];
-	sum = bits[0] + bits[2];
+	temperature = bits[2] + bits[3] * 0.1;
+	sum = bits[0] + bits[1] + bits[2] + bits[3];
 	if(bits[4] != sum)
 		return DHTLIB_ERROR_CHECKSUM;
 	return DHTLIB_OK;
