@@ -30,8 +30,8 @@ def setup():
 def loop():
     while True:     
         val_Z = GPIO.input(Z_Pin)       #read digital quality of axis Z
-        val_Y = analogRead(1)           #read analog quality of axis X and Y
-        val_X = analogRead(2)
+        val_Y = analogRead(0)           #read analog quality of axis X and Y
+        val_X = analogRead(1)
         print 'value_X: %d ,\tvlue_Y: %d ,\tvalue_Z: %d'%(val_X,val_Y,val_Z)
         time.sleep(0.01)
 

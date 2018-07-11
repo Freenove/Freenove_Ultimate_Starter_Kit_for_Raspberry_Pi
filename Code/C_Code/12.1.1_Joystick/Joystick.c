@@ -30,8 +30,8 @@ int main(void){
     
     while(1){
         val_Z = digitalRead(Z_Pin);  //read digital quality of axis Z
-        val_Y = analogRead(A1);      //read analog quality of axis X and Y
-        val_X = analogRead(A2);
+        val_Y = analogRead(A0);      //read analog quality of axis X and Y
+        val_X = analogRead(A1);
         printf("val_X: %d  ,\tval_Y: %d  ,\tval_Z: %d \n",val_X,val_Y,val_Z);
         delay(100);
     }
