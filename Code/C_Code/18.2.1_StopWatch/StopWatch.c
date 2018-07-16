@@ -2,7 +2,7 @@
 * Filename    : StopWatch.c
 * Description : Control 4_Digit_7_Segment_Display by 74HC595
 * Author      : freenove
-* modification: 2016/07/07
+* modification: 2018/07/16
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -23,24 +23,48 @@ void selectDigit(int digit){
     digitalWrite(digitPin[2],((digit&0x02) == 0x02) ? LOW : HIGH);
     digitalWrite(digitPin[3],((digit&0x01) == 0x01) ? LOW : HIGH);
 }
-void outData(int8_t data){      //function used to output data for 74HC595输出数据函数
+void _shiftOut(int dPin,int cPin,int order,int val){   
+	int i;  
+    for(i = 0; i < 8; i++){
+        digitalWrite(cPin,LOW);
+        if(order == LSBFIRST){
+            digitalWrite(dPin,((0x01&(val>>i)) == 0x01) ? HIGH : LOW);
+            delayMicroseconds(1);
+		}
+        else {//if(order == MSBFIRST){
+            digitalWrite(dPin,((0x80&(val<<i)) == 0x80) ? HIGH : LOW);
+            delayMicroseconds(1);
+		}
+        digitalWrite(cPin,HIGH);
+        delayMicroseconds(1);
+	}
+}
+void outData(int8_t data){      //function used to output data for 74HC595
     digitalWrite(latchPin,LOW);
-    shiftOut(dataPin,clockPin,MSBFIRST,data);
+    _shiftOut(dataPin,clockPin,MSBFIRST,data);
     digitalWrite(latchPin,HIGH);
 }
 void display(int dec){  //display function for 7-segment display
+	int delays = 1;
+	outData(0xff);	
     selectDigit(0x01);      //select the first, and display the single digit
     outData(num[dec%10]);   
-    delay(1);               //display duration
+    delay(delays);               //display duration
+    
+    outData(0xff);    
     selectDigit(0x02);      //select the second, and display the tens digit
     outData(num[dec%100/10]);
-    delay(1);
+    delay(delays);
+    
+    outData(0xff);    
     selectDigit(0x04);      //select the third, and display the hundreds digit
     outData(num[dec%1000/100]);
-    delay(1);
+    delay(delays);
+    
+    outData(0xff);    
     selectDigit(0x08);      //select the fourth, and display the thousands digit
     outData(num[dec%10000/1000]);
-    delay(1);
+    delay(delays);
 }
 void timer(int  sig){       //Timer function
     if(sig == SIGALRM){   //If the signal is SIGALRM, the value of counter plus 1, and update the number displayed by 7-segment display
@@ -62,7 +86,7 @@ int main(void)
     //set the pin connected to 7-segment display common end to output mode
     for(i=0;i<4;i++){       
         pinMode(digitPin[i],OUTPUT);
-        digitalWrite(digitPin[i],LOW);
+        digitalWrite(digitPin[i],HIGH);
     }
     signal(SIGALRM,timer);  //configure the timer
     alarm(1);               //set the time of timer to 1s
