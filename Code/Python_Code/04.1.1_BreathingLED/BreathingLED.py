@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 ########################################################################
 # Filename    : BreathingLED.py
 # Description : A breathing LED
 # Author      : freenove
-# modification: 2018/08/02
+# modification: 2016/06/14
 ########################################################################
 import RPi.GPIO as GPIO
 import time
