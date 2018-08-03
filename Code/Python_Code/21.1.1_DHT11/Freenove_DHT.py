@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
 #############################################################################
 # Filename    : Freenove_DHT.py
 # Description :	DHT Temperature & Humidity Sensor library for Raspberry
 # Author      : freenove
-# modification: 2018/03/07
+# modification: 2018/08/03
 ########################################################################
 import RPi.GPIO as GPIO
 import time
@@ -39,32 +40,32 @@ class DHT(object):
 		t = time.time()
 		while(GPIO.input(pin) == GPIO.LOW):
 			if((time.time() - t) > loopCnt):
-				#print "Echo LOW"
+				#print ("Echo LOW")
 				return self.DHTLIB_ERROR_TIMEOUT
 		t = time.time()
 		while(GPIO.input(pin) == GPIO.HIGH):
 			if((time.time() - t) > loopCnt):
-				#print "Echo HIGH"
+				#print ("Echo HIGH")
 				return self.DHTLIB_ERROR_TIMEOUT
 		for i in range(0,40,1):
 			t = time.time()
 			while(GPIO.input(pin) == GPIO.LOW):
 				if((time.time() - t) > loopCnt):
-					#print "Data Low %d"%(i)
+					#print ("Data Low %d"%(i))
 					return self.DHTLIB_ERROR_TIMEOUT
 			t = time.time()
 			while(GPIO.input(pin) == GPIO.HIGH):
 				if((time.time() - t) > loopCnt):
-					#print "Data HIGH %d"%(i)
+					#print ("Data HIGH %d"%(i))
 					return self.DHTLIB_ERROR_TIMEOUT		
 			if((time.time() - t) > 0.00005):	
 				self.bits[idx] |= mask
-			#print"t : %f"%(time.time()-t)
+			#print("t : %f"%(time.time()-t))
 			mask >>= 1
 			if(mask == 0):
 				mask = 0x80
 				idx += 1	
-		#print self.bits
+		#print (self.bits)
 		GPIO.setup(pin,GPIO.OUT)
 		GPIO.output(pin,GPIO.HIGH)
 		return self.DHTLIB_OK
@@ -92,12 +93,12 @@ def loop():
 		if (chk is 0):
 			okCnt += 1		
 		okRate = 100.0*okCnt/sumCnt;
-		print"sumCnt : %d, \t okRate : %.2f%% "%(sumCnt,okRate)		
-		print"chk : %d, \t Humidity : %.2f, \t Temperature : %.2f "%(chk,dht.humidity,dht.temperature)		
+		print("sumCnt : %d, \t okRate : %.2f%% "%(sumCnt,okRate))
+		print("chk : %d, \t Humidity : %.2f, \t Temperature : %.2f "%(chk,dht.humidity,dht.temperature))
 		time.sleep(3)		
 		
 if __name__ == '__main__':
-	print 'Program is starting ... '
+	print ('Program is starting ... ')
 	try:
 		loop()
 	except KeyboardInterrupt:

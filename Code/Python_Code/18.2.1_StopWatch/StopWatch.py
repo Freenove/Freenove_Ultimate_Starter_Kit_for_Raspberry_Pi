@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #############################################################################
 # Filename    : StopWatch.py
 # Description : Control 4_Digit_7_Segment_Display by 74HC595
 # Author      : freenove
-# modification: 2016/07/08
+# modification: 2018/08/03
 ########################################################################
 import RPi.GPIO as GPIO
 import time
@@ -16,9 +16,9 @@ dataPin   = 18      #DS Pin of 74HC595(Pin14)
 latchPin  = 16      #ST_CP Pin of 74HC595(Pin12)
 clockPin = 12       #SH_CP Pin of 74HC595(Pin11)
 num = (0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90)
-digitPin = (19,15,13,11)    # Define the pin of 7-segment display common end
+digitPin = (11,13,15,19)    # Define the pin of 7-segment display common end
 counter = 0         # Variable counter, the number will be dislayed by 7-segment display
-t = 0               # defien the Timer object
+t = 0               # define the Timer object
 def setup():
     GPIO.setmode(GPIO.BOARD)    # Number GPIOs by its physical location
     GPIO.setup(dataPin, GPIO.OUT)       # Set pin mode to output
@@ -54,15 +54,15 @@ def display(dec):   #display function for 7-segment display
     time.sleep(0.003)   #display duration
     outData(0xff)
     selectDigit(0x02)   # Select the second, and display the tens digit
-    outData(num[dec%100/10])
+    outData(num[dec%100//10])
     time.sleep(0.003)
     outData(0xff)
     selectDigit(0x04)   # Select the third, and display the hundreds digit
-    outData(num[dec%1000/100])
+    outData(num[dec%1000//100])
     time.sleep(0.003)
     outData(0xff)
     selectDigit(0x08)   # Select the fourth, and display the thousands digit
-    outData(num[dec%10000/1000])
+    outData(num[dec%10000//1000])
     time.sleep(0.003)
 def timer():        #timer function
     global counter
@@ -70,7 +70,7 @@ def timer():        #timer function
     t = threading.Timer(1.0,timer)      #reset time of timer to 1s
     t.start()                           #Start timing
     counter+=1                          
-    print "counter : %d"%counter
+    print ("counter : %d"%counter)
     
 def loop():
     global t
@@ -86,7 +86,7 @@ def destroy():   # When "Ctrl+C" is pressed, the function is executed.
     t.cancel()      #cancel the timer
 
 if __name__ == '__main__': # Program starting from here 
-    print 'Program is starting...' 
+    print ('Program is starting...' )
     setup() 
     try:
         loop()  

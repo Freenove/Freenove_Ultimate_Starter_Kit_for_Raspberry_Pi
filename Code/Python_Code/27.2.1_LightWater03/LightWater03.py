@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #############################################################################
 # Filename    : LightWater03.py
 # Description : Control LED by 74HC595 on the DIY circuit board
 # Author      : freenove
-# modification: 2016/08/16
+# modification: 2018/08/03
 ########################################################################
 import RPi.GPIO as GPIO
 import time
@@ -59,7 +59,7 @@ def destroy():   # When 'Ctrl+C' is pressed, the function is executed.
 	GPIO.cleanup()
 
 if __name__ == '__main__': # Program starting from here 
-	print 'Program is starting...' 
+	print ('Program is starting...')
 	setup() 
 	try:
 		loop()  

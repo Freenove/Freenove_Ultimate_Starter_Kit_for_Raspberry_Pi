@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #############################################################################
 # Filename    : PCF8591.py
 # Description : ADC and DAC
 # Author      : freenove
-# modification: 2016/06/18
+# modification: 2018/08/02
 ########################################################################
 import smbus
 import time
@@ -24,14 +24,14 @@ def loop():
 		value = analogRead(0)	#read the ADC value of channel 0
 		analogWrite(value)		#write the DAC value
 		voltage = value / 255.0 * 3.3  #calculate the voltage value
-		print 'ADC Value : %d, Voltage : %.2f'%(value,voltage)
+		print ('ADC Value : %d, Voltage : %.2f'%(value,voltage))
 		time.sleep(0.01)
 
 def destroy():
 	bus.close()
 	
 if __name__ == '__main__':
-	print 'Program is starting ... '
+	print ('Program is starting ... ')
 	try:
 		loop()
 	except KeyboardInterrupt:

@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
 ########################################################################
 # Filename    : MatrixKeypad.py
 # Description : obtain the key code of 4x4 Matrix Keypad
 # Author      : freenove
-# modification: 2016/07/13
+# modification: 2018/08/03
 ########################################################################
 import RPi.GPIO as GPIO
 import Keypad       #import module Keypad
@@ -21,11 +22,11 @@ def loop():
     while(True):
         key = keypad.getKey()       #obtain the state of keys
         if(key != keypad.NULL):     #if there is key pressed, print its key code.
-            print "You Pressed Key : %c "%(key) 
+            print ("You Pressed Key : %c "%(key))
             
 if __name__ == '__main__':     #Program start from here
-    print "Program is starting ... "
+    print ("Program is starting ... ")
     try:
         loop()
-    except KeyboardInterrupt:  #When 'Ctrl+C' is pressed, exit the program.      
-		GPIO.cleanup()  
+    except KeyboardInterrupt:  #When 'Ctrl+C' is pressed, exit the program. 
+        GPIO.cleanup()

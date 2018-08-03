@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #############################################################################
 # Filename    : Softlight.py
 # Description : Potentiometer control LED
 # Author      : freenove
-# modification: 2016/06/18
+# modification: 2018/08/02
 ########################################################################
 import RPi.GPIO as GPIO
 import smbus
@@ -49,7 +49,7 @@ def loop():
         p_Green.ChangeDutyCycle(value_Green*100/255)
         p_Blue.ChangeDutyCycle(value_Blue*100/255)
         #print read ADC value
-        print 'ADC Value value_Red: %d ,\tvlue_Green: %d ,\tvalue_Blue: %d'%(value_Red,value_Green,value_Blue)
+        print ('ADC Value value_Red: %d ,\tvlue_Green: %d ,\tvalue_Blue: %d'%(value_Red,value_Green,value_Blue))
         time.sleep(0.01)
 
 def destroy():
@@ -57,7 +57,7 @@ def destroy():
     GPIO.cleanup()
     
 if __name__ == '__main__':
-    print 'Program is starting ... '
+    print ('Program is starting ... ')
     setup()
     try:
         loop()

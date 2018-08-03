@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ########################################################################
 # Filename    : Sweep.py
 # Description : Servo sweep
 # Author      : freenove
-# modification: 2016/07/06
+# modification: 2018/08/02
 ########################################################################
 import RPi.GPIO as GPIO
 import time
@@ -47,7 +47,7 @@ def destroy():
     GPIO.cleanup()
 
 if __name__ == '__main__':     #Program start from here
-    print 'Program is starting...'
+    print ('Program is starting...')
     setup()
     try:
         loop()

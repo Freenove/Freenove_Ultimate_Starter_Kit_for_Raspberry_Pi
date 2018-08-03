@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ########################################################################
 # Filename    : LightWater.py
 # Description : Display 10 LEDBar Graph
 # Author      : freenove
-# modification: 2016/06/13
+# modification: 2018/08/02
 ########################################################################
 import RPi.GPIO as GPIO
 import time
@@ -11,7 +11,7 @@ import time
 ledPins = [11, 12, 13, 15, 16, 18, 22, 3, 5, 24]
 
 def setup():
-	print 'Program is starting...'
+	print ('Program is starting...')
 	GPIO.setmode(GPIO.BOARD)        # Numbers GPIOs by physical location
 	for pin in ledPins:
 		GPIO.setup(pin, GPIO.OUT)   # Set all ledPins' mode is output

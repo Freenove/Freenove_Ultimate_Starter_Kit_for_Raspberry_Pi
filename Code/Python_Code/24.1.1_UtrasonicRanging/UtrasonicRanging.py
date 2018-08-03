@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ########################################################################
 # Filename    : UltrasonicRanging.py
 # Description : Get distance from UltrasonicRanging.
 # Author      : freenove
-# modification: 2016/07/15
+# modification: 2018/08/03
 ########################################################################
 import RPi.GPIO as GPIO
 import time
@@ -34,7 +34,7 @@ def getSonar():     #get the measurement results of ultrasonic module,with unit:
     return distance
     
 def setup():
-    print 'Program is starting...'
+    print ('Program is starting...')
     GPIO.setmode(GPIO.BOARD)       #numbers GPIOs by physical location
     GPIO.setup(trigPin, GPIO.OUT)   #
     GPIO.setup(echoPin, GPIO.IN)    #
@@ -43,7 +43,7 @@ def loop():
     GPIO.setup(11,GPIO.IN)
     while(True):
         distance = getSonar()
-        print "The distance is : %.2f cm"%(distance)
+        print ("The distance is : %.2f cm"%(distance))
         time.sleep(1)
         
 if __name__ == '__main__':     #program start from here

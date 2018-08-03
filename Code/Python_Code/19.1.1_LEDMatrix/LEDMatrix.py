@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #############################################################################
 # Filename    : LEDMatrix.py
 # Description : Control LEDMatrix by 74HC595
 # Author      : freenove
-# modification: 2016/06/24
+# modification: 2018/08/03
 ########################################################################
 import RPi.GPIO as GPIO
 import time
@@ -56,9 +56,9 @@ def loop():
             x=0x80
             for i in range(0,8):
                 GPIO.output(latchPin,GPIO.LOW)
-                shiftOut(dataPin,clockPin,LSBFIRST,pic[i]) #first shift data of line information to first stage 74HC959
+                shiftOut(dataPin,clockPin,MSBFIRST,pic[i]) #first shift data of line information to first stage 74HC959
 
-                shiftOut(dataPin,clockPin,LSBFIRST,~x) #then shift data of column information to second stage 74HC959
+                shiftOut(dataPin,clockPin,MSBFIRST,~x) #then shift data of column information to second stage 74HC959
                 GPIO.output(latchPin,GPIO.HIGH)# Output data of two stage 74HC595 at the same time
                 time.sleep(0.001)# display the next column
                 x>>=1
@@ -67,15 +67,15 @@ def loop():
                 x=0x80      # Set the column information to start from the first column
                 for i in range(k,k+8):
                     GPIO.output(latchPin,GPIO.LOW)
-                    shiftOut(dataPin,clockPin,LSBFIRST,data[i])
-                    shiftOut(dataPin,clockPin,LSBFIRST,~x)
+                    shiftOut(dataPin,clockPin,MSBFIRST,data[i])
+                    shiftOut(dataPin,clockPin,MSBFIRST,~x)
                     GPIO.output(latchPin,GPIO.HIGH)
                     time.sleep(0.001)
                     x>>=1
 def destroy():   # When 'Ctrl+C' is pressed, the function is executed. 
     GPIO.cleanup()
 if __name__ == '__main__': # Program starting from here 
-    print 'Program is starting...' 
+    print ('Program is starting...' )
     setup() 
     try:
         loop()  
