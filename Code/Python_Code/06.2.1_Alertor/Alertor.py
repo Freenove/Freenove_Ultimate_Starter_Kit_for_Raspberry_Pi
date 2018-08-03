@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ########################################################################
 # Filename    : Alertor.py
 # Description : Alarm by button.
 # Author      : freenove
-# modification: 2016/06/14
+# modification: 2018/08/02
 ########################################################################
 import RPi.GPIO as GPIO
 import time
@@ -14,7 +14,7 @@ buttonPin = 12    # define the buttonPin
 
 def setup():
 	global p
-	print 'Program is starting...'
+	print ('Program is starting...')
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 	GPIO.setup(buzzerPin, GPIO.OUT)   # Set buzzerPin's mode is output
 	GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set buttonPin's mode is input, and pull up to high level(3.3V)
@@ -25,10 +25,10 @@ def loop():
 	while True:
 		if GPIO.input(buttonPin)==GPIO.LOW:
 			alertor()
-			print 'buzzer on ...'
+			print ('buzzer on ...')
 		else :
 			stopAlertor()
-			print 'buzzer off ...'		
+			print ('buzzer off ...')
 def alertor():
 	p.start(50)
 	for x in range(0,361):		#frequency of the alarm along the sine wave change

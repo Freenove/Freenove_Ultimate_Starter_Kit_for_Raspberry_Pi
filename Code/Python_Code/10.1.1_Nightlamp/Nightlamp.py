@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #############################################################################
 # Filename    : Nightlamp.py
 # Description : Photoresistor control LED
 # Author      : freenove
-# modification: 2016/06/18
+# modification: 2018/08/02
 ########################################################################
 import RPi.GPIO as GPIO
 import smbus
@@ -35,7 +35,7 @@ def loop():
 		value = analogRead(0)
 		p.ChangeDutyCycle(value*100/255)
 		voltage = value / 255.0 * 3.3
-		print 'ADC Value : %d, Voltage : %.2f'%(value,voltage)
+		print ('ADC Value : %d, Voltage : %.2f'%(value,voltage))
 		time.sleep(0.01)
 
 def destroy():
@@ -43,7 +43,7 @@ def destroy():
 	GPIO.cleanup()
 	
 if __name__ == '__main__':
-	print 'Program is starting ... '
+	print ('Program is starting ... ')
 	setup()
 	try:
 		loop()

@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ########################################################################
 # Filename    : Relay.py
 # Description : Button control Relay and Motor
 # Author      : freenove
-# modification: 2016/07/04
+# modification: 2018/08/02
 ########################################################################
 import RPi.GPIO as GPIO
 
@@ -12,19 +12,19 @@ buttonPin = 12    # define the buttonPin
 relayState = False
 
 def setup():
-	print 'Program is starting...'
+	print ('Program is starting...')
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 	GPIO.setup(relayPin, GPIO.OUT)   # Set relayPin's mode is output
 	GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set buttonPin's mode is input, and pull up to high
 
 def buttonEvent(channel):
 	global relayState 
-	print 'buttonEvent GPIO%d'%channel
+	print ('buttonEvent GPIO%d'%channel)
 	relayState = not relayState
 	if relayState :
-		print 'Turn on relay ... '
+		print ('Turn on relay ... ')
 	else :
-		print 'Turn off relay ... '
+		print ('Turn off relay ... ')
 	GPIO.output(relayPin,relayState)
 	
 def loop():

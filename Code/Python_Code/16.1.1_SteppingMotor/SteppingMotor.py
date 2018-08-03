@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ########################################################################
 # Filename    : SteppingMotor.py
 # Description : 
 # Author      : freenove
-# modification: 2016/07/07
+# modification: 2018/08/02
 ########################################################################
 import RPi.GPIO as GPIO
 import time 
@@ -13,7 +13,7 @@ CCWStep = (0x01,0x02,0x04,0x08) #define power supply order for coil for rotating
 CWStep = (0x08,0x04,0x02,0x01)  #define power supply order for coil for rotating clockwise
 
 def setup():
-    print 'Program is starting...'
+    print ('Program is starting...')
     GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
     for pin in motorPins:
         GPIO.setup(pin,GPIO.OUT)

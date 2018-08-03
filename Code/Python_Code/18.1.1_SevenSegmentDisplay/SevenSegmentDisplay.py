@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #############################################################################
 # Filename    : SevenSegmentDisplay.py
 # Description : Control SevenSegmentDisplay by 74HC595
 # Author      : freenove
-# modification: 2016/06/24
+# modification: 2018/08/02
 ########################################################################
 import RPi.GPIO as GPIO
 import time
@@ -48,7 +48,7 @@ def destroy():   # When 'Ctrl+C' is pressed, the function is executed.
 	GPIO.cleanup()
 
 if __name__ == '__main__': # Program starting from here 
-	print 'Program is starting...' 
+	print ('Program is starting...' )
 	setup() 
 	try:
 		loop()  

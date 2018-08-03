@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ########################################################################
 # Filename    : Keypad.py
 # Description : The module of matrix keypad 
@@ -186,15 +187,15 @@ rowsPins = [12,16,18,22]
 colsPins = [19,15,13,11]	
 
 def loop():
-	keypad = Keypad.Keypad(keys,rowsPins,colsPins,ROWS,COLS)
+	keypad = Keypad(keys,rowsPins,colsPins,ROWS,COLS)
 	keypad.setDebounceTime(50)
 	while(True):
 		key = keypad.getKey()
 		if(key != keypad.NULL):
-			print "You Pressed Key : %c "%(key) 
+			print ("You Pressed Key : %c "%(key) )
 			
 if __name__ == '__main__':     # Program start from here
-	print "Program is starting ... "
+	print ("Program is starting ... ")
 	try:
 		loop()
 	except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.

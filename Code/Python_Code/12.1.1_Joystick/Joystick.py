@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #############################################################################
 # Filename    : Joystick.py
 # Description : Read Joystick
 # Author      : freenove
-# modification: 2016/06/18
+# modification: 2018/08/02
 ########################################################################
 import RPi.GPIO as GPIO
 import smbus
@@ -32,7 +32,7 @@ def loop():
         val_Z = GPIO.input(Z_Pin)       #read digital quality of axis Z
         val_Y = analogRead(0)           #read analog quality of axis X and Y
         val_X = analogRead(1)
-        print 'value_X: %d ,\tvlue_Y: %d ,\tvalue_Z: %d'%(val_X,val_Y,val_Z)
+        print ('value_X: %d ,\tvlue_Y: %d ,\tvalue_Z: %d'%(val_X,val_Y,val_Z))
         time.sleep(0.01)
 
 def destroy():
@@ -40,7 +40,7 @@ def destroy():
     GPIO.cleanup()
     
 if __name__ == '__main__':
-    print 'Program is starting ... '
+    print ('Program is starting ... ')
     setup()
     try:
         loop()

@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ########################################################################
 # Filename    : ColorfulLED.py
 # Description : A auto flash ColorfulLED
 # Author      : freenove
-# modification: 2016/06/15
+# modification: 2018/08/02
 ########################################################################
 import RPi.GPIO as GPIO
 import time
@@ -13,7 +13,7 @@ pins = {'pin_R':11, 'pin_G':12, 'pin_B':13}  # pins is a dict
 
 def setup():
 	global p_R,p_G,p_B
-	print 'Program is starting ... '
+	print ('Program is starting ... ')
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 	for i in pins:
 		GPIO.setup(pins[i], GPIO.OUT)   # Set pins' mode is output
@@ -36,7 +36,7 @@ def loop():
 		g=random.randint(0,100)
 		b=random.randint(0,100)
 		setColor(r,g,b)#set random as a duty cycle value 
-		print 'r=%d, g=%d, b=%d '%(r ,g, b)
+		print ('r=%d, g=%d, b=%d ' %(r ,g, b))
 		time.sleep(0.3)
 		
 def destroy():

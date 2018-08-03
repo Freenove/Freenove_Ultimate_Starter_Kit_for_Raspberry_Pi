@@ -1,9 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #############################################################################
 # Filename    : Motor.py
 # Description : Control Motor by L293D
 # Author      : freenove
-# modification: 2016/06/21
+# modification: 2018/08/02
 ########################################################################
 import RPi.GPIO as GPIO
 import smbus
@@ -43,22 +43,22 @@ def motor(ADC):
     if (value > 0):
         GPIO.output(motoRPin1,GPIO.HIGH)
         GPIO.output(motoRPin2,GPIO.LOW)
-        print 'Turn Forward...'
+        print ('Turn Forward...')
     elif (value < 0):
         GPIO.output(motoRPin1,GPIO.LOW)
         GPIO.output(motoRPin2,GPIO.HIGH)
-        print 'Turn Backward...'
+        print ('Turn Backward...')
     else :
         GPIO.output(motoRPin1,GPIO.LOW)
         GPIO.output(motoRPin2,GPIO.LOW)
-        print 'Motor Stop...'
+        print ('Motor Stop...')
     p.start(mapNUM(abs(value),0,128,0,100))
-    print 'The PWM duty cycle is %d%%\n'%(abs(value)*100/127)   #print PMW duty cycle.
+    print ('The PWM duty cycle is %d%%\n'%(abs(value)*100/127))   #print PMW duty cycle.
 
 def loop():
     while True:
         value = analogRead(0)
-        print 'ADC Value : %d'%(value)
+        print ('ADC Value : %d'%(value))
         motor(value)
         time.sleep(0.01)
 
@@ -67,7 +67,7 @@ def destroy():
     GPIO.cleanup()
     
 if __name__ == '__main__':
-    print 'Program is starting ... '
+    print ('Program is starting ... ')
     setup()
     try:
         loop()

@@ -2,7 +2,7 @@
 # Filename    : PCF8574.py
 # Description : PCF8574 as Raspberry GPIO
 # Author      : freenove
-# modification: 2017/04/18
+# modification: 2018/08/03
 ########################################################################
 import smbus
 import time
@@ -42,11 +42,11 @@ def loop():
 	while True:
 		#mcp.writeByte(0xff)
 		mcp.digitalWrite(3,1)
-		print 'Is 0xff? %x'%(mcp.readByte())
+		print ('Is 0xff? %x'%(mcp.readByte()))
 		time.sleep(1)
 		mcp.writeByte(0x00)
 		#mcp.digitalWrite(7,1)
-		print 'Is 0x00? %x'%(mcp.readByte())
+		print ('Is 0x00? %x'%(mcp.readByte()))
 		time.sleep(1)
 		
 class PCF8574_GPIO(object):#Standardization function interface
@@ -70,7 +70,7 @@ def destroy():
 	bus.close()
 	
 if __name__ == '__main__':
-	print 'Program is starting ... '
+	print ('Program is starting ... ')
 	try:
 		loop()
 	except KeyboardInterrupt:
