@@ -2,7 +2,7 @@
 * Filename    : LEDMatrix.c
 * Description : Control LEDMatrix by 74HC595
 * Author      : freenove
-* modification: 2016/06/24
+* modification: 2018/08/03
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -33,6 +33,22 @@ unsigned char data[]={  // data of "0-F"
     0x00, 0x00, 0x7F, 0x48, 0x48, 0x40, 0x00, 0x00, // "F"
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // " "
 };
+void _shiftOut(int dPin,int cPin,int order,int val){   
+	int i;  
+    for(i = 0; i < 8; i++){
+        digitalWrite(cPin,LOW);
+        if(order == LSBFIRST){
+            digitalWrite(dPin,((0x01&(val>>i)) == 0x01) ? HIGH : LOW);
+            delayMicroseconds(10);
+		}
+        else {//if(order == MSBFIRST){
+            digitalWrite(dPin,((0x80&(val<<i)) == 0x80) ? HIGH : LOW);
+            delayMicroseconds(10);
+		}
+        digitalWrite(cPin,HIGH);
+        delayMicroseconds(10);
+	}
+}
 int main(void)
 {
     int i,j,k;
@@ -49,8 +65,8 @@ int main(void)
             x=0x80;
             for(i=0;i<8;i++){
                 digitalWrite(latchPin,LOW);
-                shiftOut(dataPin,clockPin,LSBFIRST,pic[i]);// first shift data of line information to the first stage 74HC959
-                shiftOut(dataPin,clockPin,LSBFIRST,~x);//then shift data of column information to the second stage 74HC959
+                _shiftOut(dataPin,clockPin,MSBFIRST,pic[i]);// first shift data of line information to the first stage 74HC959
+                _shiftOut(dataPin,clockPin,MSBFIRST,~x);//then shift data of column information to the second stage 74HC959
 
                 digitalWrite(latchPin,HIGH);//Output data of two stage 74HC595 at the same time
                 x>>=1;// display the next column
@@ -62,8 +78,8 @@ int main(void)
                x=0x80;     // Set the column information to start from the first column
                 for(i=k;i<8+k;i++){
                     digitalWrite(latchPin,LOW);
-                    shiftOut(dataPin,clockPin,LSBFIRST,data[i]);
-                    shiftOut(dataPin,clockPin,LSBFIRST,~x);
+                    _shiftOut(dataPin,clockPin,MSBFIRST,data[i]);
+                    _shiftOut(dataPin,clockPin,MSBFIRST,~x);
                     digitalWrite(latchPin,HIGH);
                     x>>=1;
                     delay(1);

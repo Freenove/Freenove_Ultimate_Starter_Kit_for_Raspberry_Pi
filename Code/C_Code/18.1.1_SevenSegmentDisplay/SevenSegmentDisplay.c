@@ -2,7 +2,7 @@
 * Filename    : SevenSegmentDisplay.c
 * Description : Control SevenSegmentDisplay by 74HC595
 * Author      : freenove
-* modification: 2016/06/24
+* modification: 2018/08/04
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -13,6 +13,23 @@
 #define   clockPin 3    //CH_CP Pin of 74HC595(Pin11)
 //encoding for character 0-F of common anode SevenSegmentDisplay. 
 unsigned char num[]={0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0xf8,0x80,0x90,0x88,0x83,0xc6,0xa1,0x86,0x8e};
+
+void _shiftOut(int dPin,int cPin,int order,int val){   
+	int i;  
+    for(i = 0; i < 8; i++){
+        digitalWrite(cPin,LOW);
+        if(order == LSBFIRST){
+            digitalWrite(dPin,((0x01&(val>>i)) == 0x01) ? HIGH : LOW);
+            delayMicroseconds(10);
+		}
+        else {//if(order == MSBFIRST){
+            digitalWrite(dPin,((0x80&(val<<i)) == 0x80) ? HIGH : LOW);
+            delayMicroseconds(10);
+		}
+        digitalWrite(cPin,HIGH);
+        delayMicroseconds(10);
+	}
+}
 
 int main(void)
 {
@@ -27,13 +44,13 @@ int main(void)
 	while(1){
 		for(i=0;i<sizeof(num);i++){
 			digitalWrite(latchPin,LOW);
-			shiftOut(dataPin,clockPin,MSBFIRST,num[i]);//Output the figures and the highest level is transfered preferentially. 
+			_shiftOut(dataPin,clockPin,MSBFIRST,num[i]);//Output the figures and the highest level is transfered preferentially. 
 			digitalWrite(latchPin,HIGH);
 			delay(500);
 		}
 		for(i=0;i<sizeof(num);i++){
 			digitalWrite(latchPin,LOW);
-			shiftOut(dataPin,clockPin,MSBFIRST,num[i] & 0x7f);//Use the "&0x7f" to display the decimal point.
+			_shiftOut(dataPin,clockPin,MSBFIRST,num[i] & 0x7f);//Use the "&0x7f" to display the decimal point.
 			digitalWrite(latchPin,HIGH);
 			delay(500);
 		}
