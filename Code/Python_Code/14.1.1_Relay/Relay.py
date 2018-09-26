@@ -3,35 +3,45 @@
 # Filename    : Relay.py
 # Description : Button control Relay and Motor
 # Author      : freenove
-# modification: 2018/08/02
+# modification: 2018/09/26
 ########################################################################
 import RPi.GPIO as GPIO
+import time
 
 relayPin = 11    # define the relayPin
 buttonPin = 12    # define the buttonPin
-relayState = False
+debounceTime = 50
 
 def setup():
 	print ('Program is starting...')
 	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
 	GPIO.setup(relayPin, GPIO.OUT)   # Set relayPin's mode is output
-	GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set buttonPin's mode is input, and pull up to high
+	GPIO.setup(buttonPin, GPIO.IN)
 
-def buttonEvent(channel):
-	global relayState 
-	print ('buttonEvent GPIO%d'%channel)
-	relayState = not relayState
-	if relayState :
-		print ('Turn on relay ... ')
-	else :
-		print ('Turn off relay ... ')
-	GPIO.output(relayPin,relayState)
-	
 def loop():
-	#Button detect 
-	GPIO.add_event_detect(buttonPin,GPIO.FALLING,callback = buttonEvent,bouncetime=300)
+	relayState = False
+	lastChangeTime = long(round(time.time()*1000))
+	buttonState = GPIO.HIGH
+	lastButtonState = GPIO.HIGH
+	reading = GPIO.HIGH
 	while True:
-		pass
+		reading = GPIO.input(buttonPin)		
+		if reading != lastButtonState :
+			lastChangeTime = long(round(time.time()*1000))
+		if ((long(round(time.time()*1000)) - lastChangeTime) > debounceTime):
+			if reading != buttonState :
+				buttonState = reading;
+				if buttonState == GPIO.LOW:
+					print("Button is pressed!")
+					relayState = not relayState
+					if relayState:
+						print("Turn on relay ...")
+					else :
+						print("Turn off relay ... ")
+				else :
+					print("Button is released!")
+		GPIO.output(relayPin,relayState)
+		lastButtonState = reading
 	
 def destroy():
 	GPIO.output(relayPin, GPIO.LOW)     # relay off
@@ -41,6 +51,6 @@ if __name__ == '__main__':     # Program start from here
 	setup()
 	try:
 		loop()
-	except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
+	except KeyboardInterrupt:  
 		destroy()
 
