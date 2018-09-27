@@ -3,7 +3,7 @@
 # Filename    : Relay.py
 # Description : Button control Relay and Motor
 # Author      : freenove
-# modification: 2018/09/26
+# modification: 2018/09/27
 ########################################################################
 import RPi.GPIO as GPIO
 import time
@@ -20,15 +20,15 @@ def setup():
 
 def loop():
 	relayState = False
-	lastChangeTime = long(round(time.time()*1000))
+	lastChangeTime = round(time.time()*1000)
 	buttonState = GPIO.HIGH
 	lastButtonState = GPIO.HIGH
 	reading = GPIO.HIGH
 	while True:
 		reading = GPIO.input(buttonPin)		
 		if reading != lastButtonState :
-			lastChangeTime = long(round(time.time()*1000))
-		if ((long(round(time.time()*1000)) - lastChangeTime) > debounceTime):
+			lastChangeTime = round(time.time()*1000)
+		if ((round(time.time()*1000) - lastChangeTime) > debounceTime):
 			if reading != buttonState :
 				buttonState = reading;
 				if buttonState == GPIO.LOW:
