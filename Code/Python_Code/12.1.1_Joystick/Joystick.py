@@ -24,7 +24,6 @@ def analogWrite(value):
     bus.write_byte_data(address,cmd,value)  
 
 def setup():
-    global p_Red,p_Green,p_Blue
     GPIO.setmode(GPIO.BOARD)        
     GPIO.setup(Z_Pin,GPIO.IN,GPIO.PUD_UP)   #set Z_Pin to pull-up mode
 def loop():
