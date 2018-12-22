@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 #############################################################################
-# Filename    : PCF8591.py
+# Filename    : ADC.py
 # Description : ADC and DAC
 # Author      : freenove
-# modification: 2018/08/02
+# modification: 2018/09/15
 ########################################################################
 import smbus
 import time

@@ -1,8 +1,8 @@
 /**********************************************************************
-* Filename    : PCF8591.c
+* Filename    : ADC.c
 * Description : ADC and DAC
 * Author      : freenove
-* modification: 2016/06/14
+* modification: 2018/09/15
 **********************************************************************/
 
 #include <wiringPi.h>
