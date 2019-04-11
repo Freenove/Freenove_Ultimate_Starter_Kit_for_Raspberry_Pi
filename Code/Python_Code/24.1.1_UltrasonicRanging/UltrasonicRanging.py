@@ -40,7 +40,6 @@ def setup():
     GPIO.setup(echoPin, GPIO.IN)    #
 
 def loop():
-    GPIO.setup(11,GPIO.IN)
     while(True):
         distance = getSonar()
         print ("The distance is : %.2f cm"%(distance))

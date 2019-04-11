@@ -23,7 +23,7 @@ def loop():
 			GPIO.output(pin, GPIO.LOW)	
 			time.sleep(0.1)
 			GPIO.output(pin, GPIO.HIGH)
-		for pin in ledPins[10:0:-1]:		#make led on from right to left
+		for pin in ledPins[::-1]:		#make led on from right to left
 			GPIO.output(pin, GPIO.LOW)	
 			time.sleep(0.1)
 			GPIO.output(pin, GPIO.HIGH)

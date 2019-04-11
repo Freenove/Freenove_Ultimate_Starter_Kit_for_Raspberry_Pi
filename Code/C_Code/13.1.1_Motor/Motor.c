@@ -43,7 +43,7 @@ void motor(int ADC){
 		digitalWrite(motorPin2,LOW);
 		printf("Motor Stop...\n");
 	}
-	softPwmWrite(enablePin,map(abs(value),0,128,0,255));
+	softPwmWrite(enablePin,map(abs(value),0,128,0,100));
 	printf("The PWM duty cycle is %d%%\n",abs(value)*100/127);//print the PMW duty cycle
 }
 int main(void){
