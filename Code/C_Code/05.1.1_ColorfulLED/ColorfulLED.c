@@ -2,11 +2,12 @@
 * Filename    : ColorfulLED.c
 * Description : A auto flash ColorfulLED
 * Author      : freenove
-* modification: 2016/06/14
+* modification: 2019/07/05
 **********************************************************************/
 #include <wiringPi.h>
 #include <softPwm.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #define ledPinRed    0
 #define ledPinGreen  1
