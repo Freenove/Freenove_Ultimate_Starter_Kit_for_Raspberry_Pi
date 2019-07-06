@@ -2,11 +2,12 @@
 * Filename    : BreathingLED.c
 * Description : A breathing LED
 * Author      : freenove
-* modification: 2016/06/14
+* modification: 2019/07/05
 **********************************************************************/
 
 #include <wiringPi.h>
 #include <stdio.h>
+#include <softPwm.h>
 
 #define ledPin    1 //Only GPIO18 can output PWM
 
@@ -19,17 +20,17 @@ int main(void)
 		return 1; 
 	}
 	
-	pinMode(ledPin, PWM_OUTPUT);//pwm output mode
+	softPwmCreate(ledPin,  0, 100);//Creat SoftPWM pin
 
 	while(1){
-		for(i=0;i<1024;i++){
-			pwmWrite(ledPin, i);
-			delay(2);
+		for(i=0;i<100;i++){
+			softPwmWrite(ledPin, i);
+			delay(20);
 		}
 		delay(300);
-		for(i=1023;i>=0;i--){
-			pwmWrite(ledPin, i);
-			delay(2);
+		for(i=100;i>=0;i--){
+			softPwmWrite(ledPin, i);
+			delay(20);
 		}
 		delay(300);
 	}
