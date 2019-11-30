@@ -30,7 +30,7 @@ def loop():
 			lastChangeTime = round(time.time()*1000)
 		if ((round(time.time()*1000) - lastChangeTime) > debounceTime):
 			if reading != buttonState :
-				buttonState = reading;
+				buttonState = reading
 				if buttonState == GPIO.LOW:
 					print("Button is pressed!")
 					relayState = not relayState
