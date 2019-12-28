@@ -21,8 +21,8 @@ int main(void)
 	
 	wiringPiSetup(); //Initialize wiringPi.	
 	
-	pinMode(ledPin, OUTPUT);   Set ledPin to output
-	pinMode(buttonPin, INPUT); Set buttonPin to input
+	pinMode(ledPin, OUTPUT);   //Set ledPin to output
+	pinMode(buttonPin, INPUT); //Set buttonPin to input
 
 	pullUpDnControl(buttonPin, PUD_UP);  //pull up to high level
 	while(1){

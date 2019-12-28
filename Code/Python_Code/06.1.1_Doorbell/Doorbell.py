@@ -29,9 +29,9 @@ def destroy():
 
 if __name__ == '__main__':     # Program entrance
     print ('Program is starting...')
-	setup()
-	try:
+    setup()
+    try:
 		loop()
-	except KeyboardInterrupt:  # Press ctrl-c to end the program.
-		destroy()
+    except KeyboardInterrupt:  # Press ctrl-c to end the program.
+	    destroy()
 

@@ -16,7 +16,7 @@ void main(void)
 	wiringPiSetup();	//Initialize wiringPi.
 	
 	pinMode(ledPin, OUTPUT);//Set the pin mode
-	printf("Using pin%d\n",%ledPin);	//Output information on terminal
+	printf("Using pin%d\n",ledPin);	//Output information on terminal
 	while(1){
 		digitalWrite(ledPin, HIGH);  //Make GPIO output HIGH level
 		printf("led turned on >>>\n");		//Output information on terminal

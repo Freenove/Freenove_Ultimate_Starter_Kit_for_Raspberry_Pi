@@ -9,16 +9,16 @@ import RPi.GPIO as GPIO
 import time
 import random
 
-pins = {'pinRed':11, 'pinGreen':12, 'pinBlue':13}  # define the pins for RGBLED
+pins = [11, 12, 13] 		# define the pins for R:11,G:12,B:13 
 
 def setup():
 	global pwmRed,pwmGreen,pwmBlue	
 	GPIO.setmode(GPIO.BOARD)       # use PHYSICAL GPIO Numbering
 	GPIO.setup(pins, GPIO.OUT)     # set RGBLED pins to OUTPUT mode
 	GPIO.output(pins, GPIO.HIGH)   # make RGBLED pins output HIGH level
-	pwmRed = GPIO.PWM(pins['pinRed'], 2000)      # set PWM Frequence to 2kHz
-	pwmGreen = GPIO.PWM(pins['pinGreen'], 2000)  # set PWM Frequence to 2kHz
-	pwmBlue = GPIO.PWM(pins['pinBlue'], 2000)    # set PWM Frequence to 2kHz
+	pwmRed = GPIO.PWM(pins[0], 2000)      # set PWM Frequence to 2kHz
+	pwmGreen = GPIO.PWM(pins[1], 2000)  # set PWM Frequence to 2kHz
+	pwmBlue = GPIO.PWM(pins[2], 2000)    # set PWM Frequence to 2kHz
 	pwmRed.start(0)      # set initial Duty Cycle to 0
 	pwmGreen.start(0)
 	pwmBlue.start(0)

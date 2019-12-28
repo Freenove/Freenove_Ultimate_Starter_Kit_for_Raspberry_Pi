@@ -18,7 +18,7 @@ void main(void)
 	wiringPiSetup(); //Initialize wiringPi.
 	
 	for(i=0;i<ledCounts;i++){       //Set pinMode for all led pins to output
-		pinMode(pins[i], OUTPUT);
+		pinMode(pins[i], OUTPUT);		
 	}
 	while(1){
 		for(i=0;i<ledCounts;i++){   // move led(on) from left to right
