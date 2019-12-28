@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : Nightlamp.c
 * Description : Photoresistor control LED
-* Author      : freenove
-* modification: 2016/06/18
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <pcf8591.h>
@@ -20,15 +20,16 @@
 int main(void){
 	int value;
 	float voltage;
-	if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-		printf("setup wiringPi failed !");
-		return 1; 
-	}
+	
+	printf("Program is starting ... \n");
+	
+	wiringPiSetup();
+	
 	softPwmCreate(ledPin,0,100);
 	pcf8591Setup(pinbase,address);
 	
 	while(1){
-		value = analogRead(A0);  //read A0 pin
+		value = analogRead(A0);  //read analog value of A0 pin
 		softPwmWrite(ledPin,value*100/255);
 		voltage = (float)value / 255.0 * 3.3;  // calculate voltage
 		printf("ADC value : %d  ,\tVoltage : %.2fV\n",value,voltage);

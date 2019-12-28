@@ -1,38 +1,35 @@
 /**********************************************************************
 * Filename    : Doorbell.c
-* Description : Controlling an buzzer by button.
-* Author      : freenove
-* modification: 2016/06/12
+* Description : Make doorbell with buzzer and button.
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
 
-#define buzzerPin    0  	//define the buzzerPin
+#define buzzerPin 0  	//define the buzzerPin
 #define buttonPin 1		//define the buttonPin
 
-int main(void)
+void main(void)
 {
-	if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-		printf("setup wiringPi failed !");
-		return 1; 
-	}
+	printf("Program is starting ... \n");
+	
+	wiringPiSetup();
 	
 	pinMode(buzzerPin, OUTPUT); 
 	pinMode(buttonPin, INPUT);
 
-	pullUpDnControl(buttonPin, PUD_UP);  //pull up to high level
+	pullUpDnControl(buttonPin, PUD_UP);  //pull up to HIGH level
 	while(1){
 		
-		if(digitalRead(buttonPin) == LOW){ //button has pressed down
-			digitalWrite(buzzerPin, HIGH);   //buzzer on
-			printf("buzzer on...\n");
+		if(digitalRead(buttonPin) == LOW){ //button is pressed
+			digitalWrite(buzzerPin, HIGH);   //Turn on buzzer 
+			printf("buzzer turned on >>> \n");
 		}
-		else {				//button has released 
-			digitalWrite(buzzerPin, LOW);   //buzzer off
-			printf("...buzzer off\n");
+		else {				//button is released 
+			digitalWrite(buzzerPin, LOW);   //Turn off buzzer
+			printf("buzzer turned off <<< \n");
 		}
 	}
-
-	return 0;
 }
 

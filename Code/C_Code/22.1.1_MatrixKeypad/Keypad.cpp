@@ -29,6 +29,15 @@
 || #
 ||
 */
+/**********************************************************************
+* Filename    : Keypad.hpp
+* Description : This library provides a simple interface for using matrix keypads.
+*				Used for Raspberry Pi.
+*				Program transplantation by Freenove.
+* Author      : freenove
+* modification: 2019/12/28
+* Reference   : https://github.com/Chris--A/Keypad
+**********************************************************************/
 #include "Keypad.hpp"
 
 // <<constructor>> Allows custom keymap, pin configuration, and keypad sizes.

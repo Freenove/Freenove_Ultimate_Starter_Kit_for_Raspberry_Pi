@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : DHT11.cpp
-* Description : read the temperature and humidity data of DHT11
-* Author      : freenove
-* modification: 2018/03/07
+* Description : Read the temperature and humidity data of DHT11
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -14,10 +14,11 @@
 int main(){
     DHT dht;        //create a DHT class object
     int chk,sumCnt;//chk:read the return value of sensor; sumCnt:times of reading sensor
-    if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-        printf("setup wiringPi failed !");
-        return 1; 
-    }
+    
+    printf("Program is starting ...\n");
+    
+    wiringPiSetup();
+    
     while(1){
         chk = dht.readDHT11(DHT11_Pin); //read DHT11 and get a return value. Then determine whether data read is normal according to the return value.
         sumCnt++;       //counting number of reading times

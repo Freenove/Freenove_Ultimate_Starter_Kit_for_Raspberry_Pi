@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : StopWatch.c
 * Description : Control 4_Digit_7_Segment_Display by 74HC595
-* Author      : freenove
-* modification: 2018/07/16
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -49,7 +49,7 @@ void display(int dec){  //display function for 7-segment display
 	outData(0xff);	
     selectDigit(0x01);      //select the first, and display the single digit
     outData(num[dec%10]);   
-    delay(delays);               //display duration
+    delay(delays);          //display duration
     
     outData(0xff);    
     selectDigit(0x02);      //select the second, and display the tens digit
@@ -76,10 +76,11 @@ void timer(int  sig){       //Timer function
 int main(void)
 {
     int i;
-    if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-        printf("setup wiringPi failed !");
-        return 1; 
-    }
+    
+    printf("Program is starting ...\n");
+    
+    wiringPiSetup();
+    
     pinMode(dataPin,OUTPUT);        //set the pin connected to74HC595 for output mode
     pinMode(latchPin,OUTPUT);
     pinMode(clockPin,OUTPUT);

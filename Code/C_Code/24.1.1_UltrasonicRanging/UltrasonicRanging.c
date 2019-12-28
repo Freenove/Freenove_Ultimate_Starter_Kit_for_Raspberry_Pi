@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : UltrasonicRanging.c
-* Description : Get distance from UltrasonicRanging
-* Author      : freenove
-* modification: 2016/07/14
+* Description : Get distance via UltrasonicRanging sensor
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -14,23 +14,22 @@
 #define timeOut MAX_DISTANCE*60 // calculate timeout according to the maximum measured distance
 //function pulseIn: obtain pulse time of a pin
 int pulseIn(int pin, int level, int timeout);
-float getSonar(){   // get the measurement results of ultrasonic module,with unit: cm
+float getSonar(){   //get the measurement result of ultrasonic module with unit: cm
     long pingTime;
     float distance;
-    digitalWrite(trigPin,HIGH); //trigPin send 10us high level 
+    digitalWrite(trigPin,HIGH); //send 10us high level to trigPin 
     delayMicroseconds(10);
     digitalWrite(trigPin,LOW);
     pingTime = pulseIn(echoPin,HIGH,timeOut);   //read plus time of echoPin
-    distance = (float)pingTime * 340.0 / 2.0 / 10000.0; // the sound speed is 340m/s,and calculate distance
+    distance = (float)pingTime * 340.0 / 2.0 / 10000.0; //calculate distance with sound speed 340m/s
     return distance;
 }
 
 int main(){
     printf("Program is starting ... \n");
-    if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-        printf("setup wiringPi failed !");
-        return 1; 
-    }
+    
+    wiringPiSetup();
+    
     float distance = 0;
     pinMode(trigPin,OUTPUT);
     pinMode(echoPin,INPUT);

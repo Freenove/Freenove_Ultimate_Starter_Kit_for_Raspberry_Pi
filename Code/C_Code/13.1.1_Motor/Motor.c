@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : Motor.c
 * Description : Control Motor by L293D
-* Author      : freenove
-* modification: 2016/06/18
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <pcf8591.h>
@@ -21,7 +21,7 @@
 #define motorPin1	2		//define the pin connected to L293D
 #define motorPin2	0
 #define enablePin	3
-//Map function: map the value from a range of mapping to another range.
+//Map function: map the value from a range to another range.
 long map(long value,long fromLow,long fromHigh,long toLow,long toHigh){
 	return (toHigh-toLow)*(value-fromLow) / (fromHigh-fromLow) + toLow;
 }
@@ -48,10 +48,11 @@ void motor(int ADC){
 }
 int main(void){
 	int value;
-	if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-		printf("setup wiringPi failed !");
-		return 1; 
-	}
+	
+	printf("Program is starting ... \n");
+	
+	wiringPiSetup();
+	
 	pinMode(enablePin,OUTPUT);//set mode for the pin
 	pinMode(motorPin1,OUTPUT);
 	pinMode(motorPin2,OUTPUT);
@@ -59,9 +60,9 @@ int main(void){
 	pcf8591Setup(pinbase,address);//initialize PCF8591
 	
 	while(1){
-		value = analogRead(A0);  //read A0 pin
+		value = analogRead(A0);  //read analog value of A0 pin
 		printf("ADC value : %d \n",value);
-		motor(value);		//start the motor
+		motor(value);		//make the motor rotate with speed(analog value of A0 pin)
 		delay(100);
 	}
 	return 0;

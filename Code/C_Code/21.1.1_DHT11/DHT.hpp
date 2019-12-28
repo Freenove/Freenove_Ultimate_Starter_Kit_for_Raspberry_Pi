@@ -1,8 +1,11 @@
 /**********************************************************************
 * Filename    : DHT.hpp
-* Description : DHT Temperature & Humidity Sensor library for Raspberry
+* Description : DHT Temperature & Humidity Sensor library for Raspberry.
+                Used for Raspberry Pi.
+*				Program transplantation by Freenove.
 * Author      : freenove
-* modification: 2018/03/07
+* modification: 2019/12/28
+* Reference   : https://github.com/RobTillaart/Arduino/tree/master/libraries/DHTlib
 **********************************************************************/
 #ifndef _DHT_H_
 #define _DHT_H_

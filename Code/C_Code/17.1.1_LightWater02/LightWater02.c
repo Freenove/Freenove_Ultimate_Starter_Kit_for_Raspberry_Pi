@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : LightWater02.c
 * Description : Control LED by 74HC595
-* Author      : freenove
-* modification: 2018/08/04
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -33,10 +33,11 @@ int main(void)
 {
 	int i;
 	unsigned char x;
-	if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-		printf("setup wiringPi failed !");
-		return 1; 
-	}
+	
+	printf("Program is starting ...\n");
+	
+	wiringPiSetup();
+	
 	pinMode(dataPin,OUTPUT);
 	pinMode(latchPin,OUTPUT);
 	pinMode(clockPin,OUTPUT);
@@ -45,8 +46,8 @@ int main(void)
 		for(i=0;i<8;i++){
 			digitalWrite(latchPin,LOW);		// Output low level to latchPin
 			_shiftOut(dataPin,clockPin,LSBFIRST,x);// Send serial data to 74HC595
-			digitalWrite(latchPin,HIGH); // Output high level to latchPin, and 74HC595 will update the data to the parallel output port.
-			x<<=1; // make the variable move one bit to left once, then the bright LED move one step to the left once.
+			digitalWrite(latchPin,HIGH);   //Output high level to latchPin, and 74HC595 will update the data to the parallel output port.
+			x<<=1;      //make the variable move one bit to left once, then the bright LED move one step to the left once.
 			delay(100);
 		}
 		x=0x80;

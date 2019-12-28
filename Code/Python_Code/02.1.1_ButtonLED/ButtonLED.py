@@ -1,38 +1,39 @@
 #!/usr/bin/env python3
 ########################################################################
 # Filename    : ButtonLED.py
-# Description : Controlling an led by button.
-# Author      : freenove
-# modification: 2018/08/02
+# Description : Control led with button
+# auther      : www.freenove.com
+# modification: 2019/12/28
 ########################################################################
 import RPi.GPIO as GPIO
 
-ledPin = 11    # define the ledPin
-buttonPin = 12    # define the buttonPin
+ledPin = 11    # define ledPin
+buttonPin = 12    # define buttonPin
 
 def setup():
-	print ('Program is starting...')
-	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
-	GPIO.setup(ledPin, GPIO.OUT)   # Set ledPin's mode is output
-	GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # Set buttonPin's mode is input, and pull up to high level(3.3V)
+	
+	GPIO.setmode(GPIO.BOARD)      # use PHYSICAL GPIO Numbering
+	GPIO.setup(ledPin, GPIO.OUT)   # set ledPin to OUTPUT mode
+	GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)    # set buttonPin to PULL UP INPUT mode
 
 def loop():
 	while True:
-		if GPIO.input(buttonPin)==GPIO.LOW:
-			GPIO.output(ledPin,GPIO.HIGH)
-			print ('led on ...')
-		else :
-			GPIO.output(ledPin,GPIO.LOW)
-			print ('led off ...')		
+		if GPIO.input(buttonPin)==GPIO.LOW: # if button is pressed
+			GPIO.output(ledPin,GPIO.HIGH)   # turn on led
+			print ('led turned on >>>')     # print information on terminal
+		else : # if button is relessed
+			GPIO.output(ledPin,GPIO.LOW) # turn off led	
+			print ('led turned off <<<')	
 
 def destroy():
-	GPIO.output(ledPin, GPIO.LOW)     # led off
-	GPIO.cleanup()                     # Release resource
+	GPIO.output(ledPin, GPIO.LOW)     # turn off led 
+	GPIO.cleanup()                    # Release GPIO resource
 
-if __name__ == '__main__':     # Program start from here
+if __name__ == '__main__':     # Program entrance
+	print ('Program is starting...')
 	setup()
 	try:
 		loop()
-	except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
+	except KeyboardInterrupt:  # Press ctrl-c to end the program.
 		destroy()
 

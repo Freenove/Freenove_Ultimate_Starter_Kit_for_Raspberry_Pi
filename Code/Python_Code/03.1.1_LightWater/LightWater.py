@@ -1,42 +1,39 @@
 #!/usr/bin/env python3
 ########################################################################
 # Filename    : LightWater.py
-# Description : Display 10 LEDBar Graph
-# Author      : freenove
-# modification: 2018/08/02
+# Description : Use LEDBar Graph(10 LED) 
+# auther      : www.freenove.com
+# modification: 2019/12/28
 ########################################################################
 import RPi.GPIO as GPIO
 import time
 
 ledPins = [11, 12, 13, 15, 16, 18, 22, 3, 5, 24]
 
-def setup():
-	print ('Program is starting...')
-	GPIO.setmode(GPIO.BOARD)        # Numbers GPIOs by physical location
-	for pin in ledPins:
-		GPIO.setup(pin, GPIO.OUT)   # Set all ledPins' mode is output
-		GPIO.output(pin, GPIO.HIGH) # Set all ledPins to high(+3.3V) to off led
+def setup():	
+	GPIO.setmode(GPIO.BOARD)        # use PHYSICAL GPIO Numbering
+	GPIO.setup(ledPins, GPIO.OUT)   # set all ledPins to OUTPUT mode
+	GPIO.output(ledPins, GPIO.HIGH) # make all ledPins output HIGH level, turn off all led
 
 def loop():
 	while True:
-		for pin in ledPins:		#make led on from left to right
+		for pin in ledPins:		# make led(on) move from left to right
 			GPIO.output(pin, GPIO.LOW)	
 			time.sleep(0.1)
 			GPIO.output(pin, GPIO.HIGH)
-		for pin in ledPins[::-1]:		#make led on from right to left
+		for pin in ledPins[::-1]:		# make led(on) move from right to left
 			GPIO.output(pin, GPIO.LOW)	
 			time.sleep(0.1)
 			GPIO.output(pin, GPIO.HIGH)
 
 def destroy():
-	for pin in ledPins:
-		GPIO.output(pin, GPIO.HIGH)    # turn off all leds
-	GPIO.cleanup()                     # Release resource
+	GPIO.cleanup()                     # Release all GPIO
 
-if __name__ == '__main__':     # Program start from here
+if __name__ == '__main__':     # Program entrance
+	print ('Program is starting...')
 	setup()
 	try:
 		loop()
-	except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
+	except KeyboardInterrupt:  # Press ctrl-c to end the program.
 		destroy()
 

@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : SteppingMotor.c
-* Description : 
-* Author      : freenove
-* modification: 2016/07/07
+* Description : Drive stepping Motor
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <stdio.h>
 #include <wiringPi.h>
@@ -43,16 +43,16 @@ void motorStop(){   //function used to stop rotating
 int main(void){
     int i;
 
-    if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-        printf("setup wiringPi failed !");
-        return 1; 
-    }
+    printf("Program is starting ...\n");
+
+    wiringPiSetup();
+    
     for(i=0;i<4;i++){
         pinMode(motorPins[i],OUTPUT);
     } 
 
     while(1){
-        moveSteps(1,3,512);     //rotating   360° clockwise, a total of 2048 steps in a circle, namely, 512 cycles.
+        moveSteps(1,3,512);     //rotating 360° clockwise, a total of 2048 steps in a circle, namely, 512 cycles.
         delay(500);
         moveSteps(0,3,512);     //rotating 360° anticlockwise
         delay(500);

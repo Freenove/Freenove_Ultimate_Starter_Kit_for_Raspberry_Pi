@@ -1,39 +1,36 @@
 /**********************************************************************
 * Filename    : BreathingLED.c
-* Description : A breathing LED
-* Author      : freenove
-* modification: 2019/07/05
+* Description : Make breathing LED with PWM
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
-
 #include <wiringPi.h>
 #include <stdio.h>
 #include <softPwm.h>
 
-#define ledPin    1 //Only GPIO18 can output PWM
+#define ledPin    1 
 
-int main(void)
+void main(void)
 {
 	int i;
-
-	if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-		printf("setup wiringPi failed !");
-		return 1; 
-	}
+	
+	printf("Program is starting ... \n");
+	
+	wiringPiSetup();	//Initialize wiringPi.
 	
 	softPwmCreate(ledPin,  0, 100);//Creat SoftPWM pin
-
+	
 	while(1){
-		for(i=0;i<100;i++){
-			softPwmWrite(ledPin, i);
+		for(i=0;i<100;i++){  //make the led brighter
+			softPwmWrite(ledPin, i); 
 			delay(20);
 		}
 		delay(300);
-		for(i=100;i>=0;i--){
+		for(i=100;i>=0;i--){  //make the led darker
 			softPwmWrite(ledPin, i);
 			delay(20);
 		}
 		delay(300);
 	}
-	return 0;
 }
 

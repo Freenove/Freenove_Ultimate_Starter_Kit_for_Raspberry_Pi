@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : Alertor.c
-* Description : Alarm by button.
-* Author      : freenove
-* modification: 2016/06/14
+* Description : Make Alertor with buzzer and button.
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -15,10 +15,10 @@
 void alertor(int pin){
 	int x;
 	double sinVal, toneVal;
-	for(x=0;x<360;x++){ //frequency of the alarm along the sine wave change
-		sinVal = sin(x * (M_PI / 180));		//calculate the sine value
-		toneVal = 2000 + sinVal * 500;		//Add to the resonant frequency with a Weighted
-		softToneWrite(pin,toneVal);			//output PWM
+	for(x=0;x<360;x++){ // frequency of the alertor is consistent with the sine wave 
+		sinVal = sin(x * (M_PI / 180));		//Calculate the sine value
+		toneVal = 2000 + sinVal * 500;		//Add the resonant frequency and weighted sine value 
+		softToneWrite(pin,toneVal);			//output corresponding PWM
 		delay(1);
 	}
 }
@@ -27,22 +27,22 @@ void stopAlertor(int pin){
 }
 int main(void)
 {
-	if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-		printf("setup wiringPi failed !");
-		return 1; 
-	}	
+	printf("Program is starting ... \n");
+	
+	wiringPiSetup();
+	
 	pinMode(buzzerPin, OUTPUT); 
 	pinMode(buttonPin, INPUT);
-	softToneCreate(buzzerPin);
-	pullUpDnControl(buttonPin, PUD_UP);  //pull up to high level
+	softToneCreate(buzzerPin); //set buzzerPin
+	pullUpDnControl(buttonPin, PUD_UP);  //pull up to HIGH level
 	while(1){	
-		if(digitalRead(buttonPin) == LOW){ //button has pressed down
-			alertor(buzzerPin);   //buzzer on
-			printf("alertor on...\n");
+		if(digitalRead(buttonPin) == LOW){ //button is pressed
+			alertor(buzzerPin);   // turn on buzzer
+			printf("alertor turned on >>> \n");
 		}
-		else {				//button has released 
-			stopAlertor(buzzerPin);   //buzzer off
-			printf("...buzzer off\n");
+		else {				//button is released 
+			stopAlertor(buzzerPin);   // turn off buzzer
+			printf("alertor turned off <<< \n");
 		}
 	}
 	return 0;

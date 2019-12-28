@@ -1,53 +1,52 @@
 #!/usr/bin/env python3
 ########################################################################
 # Filename    : ColorfulLED.py
-# Description : A auto flash ColorfulLED
-# Author      : freenove
-# modification: 2018/08/02
+# Description : Random color change ColorfulLED
+# Author      : www.freenove.com
+# modification: 2019/12/27
 ########################################################################
 import RPi.GPIO as GPIO
 import time
 import random
 
-pins = {'pin_R':11, 'pin_G':12, 'pin_B':13}  # pins is a dict
+pins = {'pinRed':11, 'pinGreen':12, 'pinBlue':13}  # define the pins for RGBLED
 
 def setup():
-	global p_R,p_G,p_B
-	print ('Program is starting ... ')
-	GPIO.setmode(GPIO.BOARD)       # Numbers GPIOs by physical location
-	for i in pins:
-		GPIO.setup(pins[i], GPIO.OUT)   # Set pins' mode is output
-		GPIO.output(pins[i], GPIO.HIGH) # Set pins to high(+3.3V) to off led
-	p_R = GPIO.PWM(pins['pin_R'], 2000)  # set Frequece to 2KHz
-	p_G = GPIO.PWM(pins['pin_G'], 2000)
-	p_B = GPIO.PWM(pins['pin_B'], 2000)
-	p_R.start(0)      # Initial duty Cycle = 0
-	p_G.start(0)
-	p_B.start(0)
+	global pwmRed,pwmGreen,pwmBlue	
+	GPIO.setmode(GPIO.BOARD)       # use PHYSICAL GPIO Numbering
+	GPIO.setup(pins, GPIO.OUT)     # set RGBLED pins to OUTPUT mode
+	GPIO.output(pins, GPIO.HIGH)   # make RGBLED pins output HIGH level
+	pwmRed = GPIO.PWM(pins['pinRed'], 2000)      # set PWM Frequence to 2kHz
+	pwmGreen = GPIO.PWM(pins['pinGreen'], 2000)  # set PWM Frequence to 2kHz
+	pwmBlue = GPIO.PWM(pins['pinBlue'], 2000)    # set PWM Frequence to 2kHz
+	pwmRed.start(0)      # set initial Duty Cycle to 0
+	pwmGreen.start(0)
+	pwmBlue.start(0)
 
-def setColor(r_val,g_val,b_val):   
-	p_R.ChangeDutyCycle(r_val)     # Change duty cycle
-	p_G.ChangeDutyCycle(g_val)
-	p_B.ChangeDutyCycle(b_val)
+def setColor(r_val,g_val,b_val):      # change duty cycle for three pins to r_val,g_val,b_val
+	pwmRed.ChangeDutyCycle(r_val)     # change pwmRed duty cycle to r_val
+	pwmGreen.ChangeDutyCycle(g_val)   
+	pwmBlue.ChangeDutyCycle(b_val)
 
 def loop():
 	while True :
-		r=random.randint(0,100)#get a random in (0,100)
+		r=random.randint(0,100)  #get a random in (0,100)
 		g=random.randint(0,100)
 		b=random.randint(0,100)
-		setColor(r,g,b)#set random as a duty cycle value 
+		setColor(r,g,b)          #set random as a duty cycle value 
 		print ('r=%d, g=%d, b=%d ' %(r ,g, b))
 		time.sleep(0.3)
 		
 def destroy():
-	p_R.stop()
-	p_G.stop()
-	p_B.stop()
+	pwmRed.stop()
+	pwmGreen.stop()
+	pwmBlue.stop()
 	GPIO.cleanup()
 	
-if __name__ == '__main__':     # Program start from here
+if __name__ == '__main__':     # Program entrance
+	print ('Program is starting ... ')
 	setup()
 	try:
 		loop()
-	except KeyboardInterrupt:  # When 'Ctrl+C' is pressed, the child program destroy() will be  executed.
+	except KeyboardInterrupt:  # Press ctrl-c to end the program.
 		destroy()

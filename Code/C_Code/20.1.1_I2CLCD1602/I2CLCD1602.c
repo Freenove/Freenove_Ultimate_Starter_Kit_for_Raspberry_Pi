@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : I2CLCD1602.c
 * Description : Use the LCD display data
-* Author      : freenove
-* modification: 2017/04/18
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <stdlib.h>
 #include <stdio.h>
@@ -13,8 +13,8 @@
 
 //#define pcf8574_address 0x27        // default I2C address of Pcf8574
 #define pcf8574_address 0x3F        // default I2C address of Pcf8574A
-#define BASE 64         // BASE is not less than 64
-//////// Define the output pins of the PCF8574, which are directly connected to the LCD1602 pin.
+#define BASE 64         // BASE any number above 64
+//Define the output pins of the PCF8574, which are directly connected to the LCD1602 pin.
 #define RS      BASE+0
 #define RW      BASE+1
 #define EN      BASE+2
@@ -42,32 +42,31 @@ void printDataTime(){//used to print system time
     time_t rawtime;
     struct tm *timeinfo;
     time(&rawtime);// get system time
-    timeinfo = localtime(&rawtime);// convert to local time
+    timeinfo = localtime(&rawtime);//convert to local time
     printf("%s \n",asctime(timeinfo));
     lcdPosition(lcdhd,0,1);// set the LCD cursor position to (0,1) 
-    lcdPrintf(lcdhd,"Time:%d:%d:%d",timeinfo->tm_hour,timeinfo->tm_min,timeinfo->tm_sec);
-//Display system time on LCD
+    lcdPrintf(lcdhd,"Time:%d:%d:%d",timeinfo->tm_hour,timeinfo->tm_min,timeinfo->tm_sec); //Display system time on LCD
 }
 int main(void){
     int i;
 
-    if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-        printf("setup wiringPi failed !");
-        return 1; 
-    }
-    pcf8574Setup(BASE,pcf8574_address);// initialize PCF8574
+    printf("Program is starting ...\n");
+
+    wiringPiSetup();  
+      
+    pcf8574Setup(BASE,pcf8574_address);//initialize PCF8574
     for(i=0;i<8;i++){
-        pinMode(BASE+i,OUTPUT);     // set PCF8574 port to output mode
+        pinMode(BASE+i,OUTPUT);     //set PCF8574 port to output mode
     } 
-    digitalWrite(LED,HIGH);     // turn on LCD backlight
-    digitalWrite(RW,LOW);       // allow writing to LCD
-lcdhd = lcdInit(2,16,4,RS,EN,D4,D5,D6,D7,0,0,0,0);// initialize LCD and return “handle” used to handle LCD
+    digitalWrite(LED,HIGH);     //turn on LCD backlight
+    digitalWrite(RW,LOW);       //allow writing to LCD
+	lcdhd = lcdInit(2,16,4,RS,EN,D4,D5,D6,D7,0,0,0,0);// initialize LCD and return “handle” used to handle LCD
     if(lcdhd == -1){
         printf("lcdInit failed !");
         return 1;
     }
     while(1){
-        printCPUTemperature();// print CPU temperature
+        printCPUTemperature();//print CPU temperature
         printDataTime();        // print system time
         delay(1000);
     }

@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : SevenSegmentDisplay.c
 * Description : Control SevenSegmentDisplay by 74HC595
-* Author      : freenove
-* modification: 2018/08/04
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
@@ -34,10 +34,11 @@ void _shiftOut(int dPin,int cPin,int order,int val){
 int main(void)
 {
 	int i;
-	if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-		printf("setup wiringPi failed !");
-		return 1; 
-	}
+	
+	printf("Program is starting ...\n");
+	
+	wiringPiSetup();
+	
 	pinMode(dataPin,OUTPUT);
 	pinMode(latchPin,OUTPUT);
 	pinMode(clockPin,OUTPUT);

@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : Sweep.c
 * Description : Servo sweep
-* Author      : freenove
-* modification: 2016/07/05
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <softPwm.h>
@@ -18,7 +18,7 @@ long map(long value,long fromLow,long fromHigh,long toLow,long toHigh){
 void servoInit(int pin){        //initialization function for servo PMW pin
     softPwmCreate(pin,  0, 200);
 }
-void servoWrite(int pin, int angle){    //Specif a certain rotation angle (0-180) for the servo
+void servoWrite(int pin, int angle){    //Specific a certain rotation angle (0-180) for the servo
     if(angle > 180)
         angle = 180;
     if(angle < 0)
@@ -36,11 +36,10 @@ void servoWriteMS(int pin, int ms){     //specific the unit for pulse(5-25ms) wi
 int main(void)
 {
     int i;
-    if(wiringPiSetup() == -1){ //when initialize wiring faiservo,print messageto screen
-        printf("setup wiringPi faiservo !");
-        return 1; 
-    }
+    
     printf("Program is starting ...\n");
+    
+    wiringPiSetup();    
     servoInit(servoPin);        //initialize PMW pin of servo
     while(1){
         for(i=SERVO_MIN_MS;i<SERVO_MAX_MS;i++){  //make servo rotate from minimum angle to maximum angle

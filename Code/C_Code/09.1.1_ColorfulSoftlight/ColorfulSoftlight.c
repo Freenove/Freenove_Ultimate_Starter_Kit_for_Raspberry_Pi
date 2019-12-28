@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : ColorfulSoftlight.c
 * Description : Potentiometer control RGBLED
-* Author      : freenove
-* modification: 2016/07/03
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <pcf8591.h>
@@ -16,22 +16,23 @@
 #define A2 pinbase + 2
 #define A3 pinbase + 3
 
-#define ledRedPin 3         //define 3 pins of RGBLED
+#define ledRedPin 3         //define 3 pins for RGBLED
 #define ledGreenPin 2
 #define ledBluePin 0
 int main(void){
     int val_Red,val_Green,val_Blue;
-    if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-        printf("setup wiringPi failed !");
-        return 1; 
-    }
+    
+    printf("Program is starting ... \n");
+    
+    wiringPiSetup();
+    
     softPwmCreate(ledRedPin,0,100);     //creat 3 PMW output pins for RGBLED
     softPwmCreate(ledGreenPin,0,100);
     softPwmCreate(ledBluePin,0,100);
     pcf8591Setup(pinbase,address);      //initialize PCF8591
     
     while(1){
-        val_Red = analogRead(A0);  //read 3 potentiometers
+        val_Red = analogRead(A0);  //read analog value of 3 potentiometers
         val_Green = analogRead(A1);
         val_Blue = analogRead(A2);
         softPwmWrite(ledRedPin,val_Red*100/255);    //map the read value of potentiometers into PWM value and output it

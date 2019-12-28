@@ -1,16 +1,15 @@
 /**********************************************************************
 * Filename    : ADC.c
 * Description : ADC and DAC
-* Author      : freenove
-* modification: 2018/09/15
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
-
 #include <wiringPi.h>
 #include <pcf8591.h>
 #include <stdio.h>
 
 #define address 0x48  		//pcf8591 default address
-#define pinbase 64			//any number above 64
+#define pinbase 64			//any number above 64 (according to the wiringPi library)
 #define A0 pinbase + 0
 #define A1 pinbase + 1
 #define A2 pinbase + 2
@@ -19,13 +18,17 @@
 int main(void){
 	int value;
 	float voltage;
-	wiringPiSetup();
+	
+	printf("Program is starting ... \n");
+	
+	wiringPiSetup(); //Initialize wiringPi.
+	
 	pcf8591Setup(pinbase,address);
 	
 	while(1){
-		value = analogRead(A0);  //read A0 pin
+		value = analogRead(A0);  //read analog value of A0 pin
 		analogWrite(pinbase+0,value);
-		voltage = (float)value / 255.0 * 3.3;  // calculate voltage
+		voltage = (float)value / 255.0 * 3.3;  // Calculate voltage
 		printf("ADC value : %d  ,\tVoltage : %.2fV\n",value,voltage);
 		delay(100);
 	}

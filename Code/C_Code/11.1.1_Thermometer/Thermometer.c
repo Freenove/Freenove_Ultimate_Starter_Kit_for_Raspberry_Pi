@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : Thermometer.c
-* Description : A DIY Thermometer
-* Author      : freenove
-* modification: 2016/06/20
+* Description : DIY Thermometer
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <pcf8591.h>
@@ -20,13 +20,14 @@ int main(void){
 	int adcValue;
 	float tempK,tempC;
 	float voltage,Rt;
-	if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-		printf("setup wiringPi failed !");
-		return 1; 
-	}
+	
+	printf("Program is starting ... \n");
+	
+	wiringPiSetup();
+	
 	pcf8591Setup(pinbase,address);
 	while(1){
-		adcValue = analogRead(A0);  //read A0 pin	
+		adcValue = analogRead(A0);  //read analog value A0 pin	
 		voltage = (float)adcValue / 255.0 * 3.3;	// calculate voltage	
 		Rt = 10 * voltage / (3.3 - voltage);		//calculate resistance value of thermistor
 		tempK = 1/(1/(273.15 + 25) + log(Rt/10)/3950.0); //calculate temperature (Kelvin)

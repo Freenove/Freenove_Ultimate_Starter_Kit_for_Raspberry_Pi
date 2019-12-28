@@ -1,46 +1,36 @@
 /**********************************************************************
 * Filename    : LightWater.c
-* Description : Display 10 LEDBar Graph 
-* Author      : freenove
-* modification: 2016/06/13
+* Description : Use LEDBar Graph(10 LED) 
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
-#define leds 10
-int pins[leds] = {0,1,2,3,4,5,6,8,9,10};
-void led_on(int n)//make led_n on
-{
-	digitalWrite(n, LOW);
-}
 
-void led_off(int n)//make led_n off
-{
-	digitalWrite(n, HIGH);
-}
+#define ledCounts 10
+int pins[ledCounts] = {0,1,2,3,4,5,6,8,9,10};
 
-int main(void)
+void main(void)
 {
 	int i;
 	printf("Program is starting ... \n");
-	if(wiringPiSetup() == -1){ //when initialize wiring failed,print messageto screen
-		printf("setup wiringPi failed !");
-		return 1; 
-	}
-	for(i=0;i<leds;i++){       //make leds pins' mode is output
+	
+	wiringPiSetup(); //Initialize wiringPi.
+	
+	for(i=0;i<ledCounts;i++){       //Set pinMode for all led pins to output
 		pinMode(pins[i], OUTPUT);
 	}
 	while(1){
-		for(i=0;i<leds;i++){   //make led on from left to right
-			led_on(pins[i]);
+		for(i=0;i<ledCounts;i++){   // move led(on) from left to right
+			digitalWrite(pins[i],LOW);
 			delay(100);
-			led_off(pins[i]);
+			digitalWrite(pins[i],HIGH);
 		}
-		for(i=leds-1;i>-1;i--){   //make led on from right to left
-			led_on(pins[i]);
+		for(i=ledCounts-1;i>-1;i--){   // move led(on) from right to left
+			digitalWrite(pins[i],LOW);
 			delay(100);
-			led_off(pins[i]);
+			digitalWrite(pins[i],HIGH);
 		}
 	}
-	return 0;
 }
 

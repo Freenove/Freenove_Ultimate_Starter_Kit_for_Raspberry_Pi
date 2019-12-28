@@ -1,8 +1,8 @@
 /**********************************************************************
 * Filename    : MPU6050RAW.c
-* Description : Read the Raw data of MPU6050
-* Author      : freenove
-* modification: 2016/07/18
+* Description : Read data of MPU6050
+* Author      : www.freenove.com
+* modification: 2019/12/27
 **********************************************************************/
 #include <stdio.h>
 #include <stdint.h>
@@ -10,7 +10,7 @@
 #include "I2Cdev.h"
 #include "MPU6050.h"
 
-MPU6050 accelgyro;      //instantiate a MPU6050 class object
+MPU6050 accelgyro;      //creat MPU6050 class object
 
 int16_t ax, ay, az;     //store acceleration data
 int16_t gx, gy, gz;     //store gyroscope data
@@ -26,7 +26,7 @@ void setup() {
 }
 
 void loop() {
-    // read raw accel/gyro measurements from device
+    // read accel/gyro values of MPU6050
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
     // display accel/gyro x/y/z values
     printf("a/g: %6hd %6hd %6hd   %6hd %6hd %6hd\n",ax,ay,az,gx,gy,gz);
