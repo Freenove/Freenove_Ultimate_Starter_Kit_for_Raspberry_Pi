@@ -42,8 +42,8 @@ def mapNUM(value,fromLow,fromHigh,toLow,toHigh):
 def motor(ADC):
     value = ADC -128
     if (value > 0):  # make motor turn forward
-        GPIO.output(motoRPin1,GPIO.HIGH)  motoRPin1 output HIHG level
-        GPIO.output(motoRPin2,GPIO.LOW)   motoRPin2 output LOW level
+        GPIO.output(motoRPin1,GPIO.HIGH)  # motoRPin1 output HIHG level
+        GPIO.output(motoRPin2,GPIO.LOW)   # motoRPin2 output LOW level
         print ('Turn Forward...')
     elif (value < 0): # make motor turn backward
         GPIO.output(motoRPin1,GPIO.LOW)
