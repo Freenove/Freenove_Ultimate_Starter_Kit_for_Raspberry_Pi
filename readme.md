@@ -8,7 +8,7 @@
 
 	Run following command to download all the files in this repository.
 
-	`git clone https://github.com/Freenove/Freenove_Ultimate_Starter_Kit_for_Raspberry_Pi.git`
+	`git clone --depth 1 https://github.com/Freenove/Freenove_Ultimate_Starter_Kit_for_Raspberry_Pi.git`
 
 * **Manually download in browser**
 
