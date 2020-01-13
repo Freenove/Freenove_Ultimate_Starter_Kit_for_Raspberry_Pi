@@ -23,7 +23,7 @@ led = LED("J8:11")      # BOARD
 
 while True:
     led.on()    # turn on LED
-    print ('led turned on >>>')	 # print message on terminal
+    print ('led turned on >>>')  # print message on terminal
     sleep(1)    # wait 1 second
     led.off()   # turn off LED 
     print ('led turned off <<<')

@@ -14,11 +14,11 @@ led = LED(17) # define LED pin according to BCM Numbering
 button = Button(18) # define Button pin according to BCM Numbering
 
 def onButtonPressed():
-	led.toggle()
-	if led.is_lit :
-		print("Led turned on >>>")
-	else :
-		print("Led turned off <<<")
+    led.toggle()
+    if led.is_lit :
+        print("Led turned on >>>")
+    else :
+        print("Led turned off <<<")
 
 button.when_pressed = onButtonPressed
 

@@ -53,4 +53,4 @@ if __name__ == '__main__':     # Program entrance
         GPIO.cleanup()         # release GPIO resource
 
 
-	
+    

@@ -16,7 +16,7 @@ def setup():
     GPIO.setmode(GPIO.BOARD)       # use PHYSICAL GPIO Numbering
     for pin in motorPins:
         GPIO.setup(pin,GPIO.OUT)
-		
+        
 # as for four phase stepping motor, four steps is a cycle. the function is used to drive the stepping motor clockwise or anticlockwise to take four steps    
 def moveOnePeriod(direction,ms):    
     for j in range(0,4,1):      # cycle for power supply order
@@ -28,12 +28,12 @@ def moveOnePeriod(direction,ms):
         if(ms<3):       # the delay can not be less than 3ms, otherwise it will exceed speed limit of the motor
             ms = 3
         time.sleep(ms*0.001)    
-		
+        
 # continuous rotation function, the parameter steps specifies the rotation cycles, every four steps is a cycle
 def moveSteps(direction, ms, steps):
     for i in range(steps):
         moveOnePeriod(direction, ms)
-		
+        
 # function used to stop motor
 def motorStop():
     for i in range(0,4,1):

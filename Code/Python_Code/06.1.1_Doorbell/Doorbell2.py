@@ -14,12 +14,12 @@ led = LED(17)
 button = Button(18)
 
 def onButtonPressed():
-	led.on()
-	print("Button is pressed, led turned on >>>")
-	
+    led.on()
+    print("Button is pressed, led turned on >>>")
+    
 def onButtonReleased():
-	led.off()
-	print("Button is released, led turned on <<<")
+    led.off()
+    print("Button is released, led turned on <<<")
 
 button.when_pressed = onButtonPressed
 button.when_released = onButtonReleased
