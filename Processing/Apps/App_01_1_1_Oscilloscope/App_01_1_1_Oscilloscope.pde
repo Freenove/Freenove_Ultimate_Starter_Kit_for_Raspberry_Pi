@@ -1,7 +1,7 @@
 /******************************************************************************* //<>//
  * Sketch  App_01_1_1_Oscilloscope
  * Author  Freenove (http://www.freenove.com)
- * Date    2016/08/26
+ * Date    2020/03/10
  ******************************************************************************
  * Brief
  *   This sketch is used to make an oscilloscope 
@@ -15,7 +15,7 @@
  */
 import processing.io.*;
 
-PCF8591 pcf = new PCF8591(0x48);
+ADCDevice adc = new ADCDevice();
 int[] analogs;          // Analog data send from serial device
 int analogsCount;       // Length of analogs[] array
 int voltage = 0;        // Voltage 
@@ -25,6 +25,14 @@ boolean pause = false;  // Storage is suspended display
 void setup()
 {
   size(530, 290);
+  if (adc.detectI2C(0x48)) {
+    adc = new PCF8591(0x48);
+  } else if (adc.detectI2C(0x4b)) {
+    adc = new ADS7830(0x4b);
+  } else {
+    println("Not found ADC Module!");
+    System.exit(-1);
+  }
   background(102);
   textAlign(CENTER, CENTER);
   textSize(64);
@@ -42,7 +50,7 @@ void setup()
 void draw()
 {
 
-  int analog = pcf.analogRead(0);  //serialDevice.requestAnalog();
+  int analog = adc.analogRead(0);  //serialDevice.requestAnalog();
   if (analog != -1)
   {
     // GUI
@@ -91,7 +99,6 @@ void draw()
         line(i, analogs[a], i - hMult * width / analogsCount, analogs[a - 1]);
     }
   }
-
 }
 
 void keyPressed() 
@@ -106,8 +113,7 @@ void keyPressed()
         hMult = 5;
       else if (hMult == 5)
         hMult = 10;
-    } 
-    else if (keyCode == DOWN) 
+    } else if (keyCode == DOWN) 
     {
       if (hMult == 10)
         hMult = 5;
@@ -116,8 +122,7 @@ void keyPressed()
       else if (hMult == 2)
         hMult = 1;
     }
-  } 
-  else 
+  } else 
   {
     if (key == ' ') 
     {
@@ -127,8 +132,7 @@ void keyPressed()
         for (int i = 0; i < analogsCount; i++)
           analogs[i] = -1;
       }
-    } 
-    else if (key == '\n' || key == '\r')
+    } else if (key == '\n' || key == '\r')
     {
       link("http://www.freenove.com");
     }

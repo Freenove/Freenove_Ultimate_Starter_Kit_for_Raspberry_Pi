@@ -1,38 +1,41 @@
 #!/usr/bin/env python3
-#############################################################################
-# Filename    : ADC.py
-# Description : Analog and Digital Conversion, ADC and DAC
-# Author      : www.freenove.com
-# modification: 2019/12/27
 ########################################################################
-import smbus
+# Filename    : ADC.py
+# Description : Use ADC module to read the voltage value of potentiometer.
+# Author      : www.freenove.com
+# modification: 2020/03/06
+########################################################################
 import time
+from ADCDevice import *
 
-address = 0x48  # default address of PCF8591
-bus=smbus.SMBus(1)
-cmd=0x40        # command, 0100 0000
+adc = ADCDevice() # Define an ADCDevice class object
 
-def analogRead(chn): # read ADC value,chn:0,1,2,3
-    value = bus.read_byte_data(address,cmd+chn)
-    return value
-    
-def analogWrite(value): # write DAC value
-    bus.write_byte_data(address,cmd,value)  
-    
+def setup():
+    global adc
+    if(adc.detectI2C(0x48)): # Detect the pcf8591.
+        adc = PCF8591()
+    elif(adc.detectI2C(0x4b)): # Detect the ads7830
+        adc = ADS7830()
+    else:
+        print("No correct I2C address found, \n"
+        "Please use command 'i2cdetect -y 1' to check the I2C address! \n"
+        "Program Exit. \n");
+        exit(-1)
+        
 def loop():
     while True:
-        value = analogRead(0)   # read the ADC value of channel 0
-        analogWrite(value)      # write the DAC value to control led
+        value = adc.analogRead(0)    # read the ADC value of channel 0
         voltage = value / 255.0 * 3.3  # calculate the voltage value
         print ('ADC Value : %d, Voltage : %.2f'%(value,voltage))
-        time.sleep(0.01)
+        time.sleep(0.1)
 
 def destroy():
-    bus.close()
+    adc.close()
     
 if __name__ == '__main__':   # Program entrance
     print ('Program is starting ... ')
     try:
+        setup()
         loop()
     except KeyboardInterrupt: # Press ctrl-c to end the program.
         destroy()

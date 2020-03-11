@@ -6,25 +6,26 @@
 # modification: 2019/12/27
 ########################################################################
 import RPi.GPIO as GPIO
-import smbus
 import time
+from ADCDevice import *
 
-address = 0x48
-bus=smbus.SMBus(1)
-cmd=0x40
 # define the pins connected to L293D 
 motoRPin1 = 13
 motoRPin2 = 11
 enablePin = 15
-
-def analogRead(chn):
-    value = bus.read_byte_data(address,cmd+chn)
-    return value
-    
-def analogWrite(value):
-    bus.write_byte_data(address,cmd,value)  
+adc = ADCDevice() # Define an ADCDevice class object
 
 def setup():
+    global adc
+    if(adc.detectI2C(0x48)): # Detect the pcf8591.
+        adc = PCF8591()
+    elif(adc.detectI2C(0x4b)): # Detect the ads7830
+        adc = ADS7830()
+    else:
+        print("No correct I2C address found, \n"
+        "Please use command 'i2cdetect -y 1' to check the I2C address! \n"
+        "Program Exit. \n");
+        exit(-1)
     global p
     GPIO.setmode(GPIO.BOARD)   
     GPIO.setup(motoRPin1,GPIO.OUT)   # set pins to OUTPUT mode
@@ -58,13 +59,12 @@ def motor(ADC):
 
 def loop():
     while True:
-        value = analogRead(0) # read ADC value of channel 0
+        value = adc.analogRead(0) # read ADC value of channel 0
         print ('ADC Value : %d'%(value))
         motor(value)
         time.sleep(0.01)
 
 def destroy():
-    bus.close()
     GPIO.cleanup()
     
 if __name__ == '__main__':  # Program entrance

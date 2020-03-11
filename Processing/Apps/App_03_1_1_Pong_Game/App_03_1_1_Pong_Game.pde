@@ -2,7 +2,7 @@
  ******************************************************************************
  * Sketch  App_03_1_1_Pong_Game
  * Author  Freenove (http://www.freenove.com)
- * Date    2016/08/26
+ * Date    2020/03/10
  ******************************************************************************
  * Brief
  *   This sketch is used to play pong game
@@ -16,7 +16,7 @@
  */
 import processing.io.*;
 
-PCF8591 pcf = new PCF8591(0x48);
+ADCDevice adc = new ADCDevice();
 
 int winScore = 3;
 float acceleration = 0.5;
@@ -30,6 +30,14 @@ int lScore, rScore;
 
 void setup() {
   size(640, 360);
+    if (adc.detectI2C(0x48)) {
+    adc = new PCF8591(0x48);
+  } else if (adc.detectI2C(0x4b)) {
+    adc = new ADS7830(0x4b);
+  } else {
+    println("Not found ADC Module!");
+    System.exit(-1);
+  }
   background(102);
   textAlign(CENTER, CENTER);
   textSize(64);
@@ -45,9 +53,9 @@ void setup() {
 
 void draw() {
   int[] analogs = new int[2];
-  analogs[0] = pcf.analogRead(0);
-  analogs[1] = pcf.analogRead(1);
-  if (analogs != null)
+  analogs[0] = adc.analogRead(0);
+  analogs[1] = adc.analogRead(1);
+  if (analogs !=null)
   {
     lPaddle.position.y = analogs[0] * height /255;
     rPaddle.position.y = analogs[1] * height /255;

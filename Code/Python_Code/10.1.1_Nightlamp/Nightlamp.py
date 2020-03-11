@@ -3,25 +3,26 @@
 # Filename    : Nightlamp.py
 # Description : Control LED with Photoresistor
 # Author      : www.freenove.com
-# modification: 2019/12/27
+# modification: 2020/03/09
 ########################################################################
 import RPi.GPIO as GPIO
-import smbus
 import time
+from ADCDevice import *
 
-address = 0x48
-bus=smbus.SMBus(1)
-cmd=0x40
 ledPin = 11 # define ledPin
-
-def analogRead(chn):
-    value = bus.read_byte_data(address,cmd+chn)
-    return value
-    
-def analogWrite(value):
-    bus.write_byte_data(address,cmd,value)  
+adc = ADCDevice() # Define an ADCDevice class object
 
 def setup():
+    global adc
+    if(adc.detectI2C(0x48)): # Detect the pcf8591.
+        adc = PCF8591()
+    elif(adc.detectI2C(0x4b)): # Detect the ads7830
+        adc = ADS7830()
+    else:
+        print("No correct I2C address found, \n"
+        "Please use command 'i2cdetect -y 1' to check the I2C address! \n"
+        "Program Exit. \n");
+        exit(-1)
     global p
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(ledPin,GPIO.OUT)   # set ledPin to OUTPUT mode
@@ -32,14 +33,14 @@ def setup():
     
 def loop():
     while True:
-        value = analogRead(0)    # read the ADC value of channel 0
+        value = adc.analogRead(0)    # read the ADC value of channel 0
         p.ChangeDutyCycle(value*100/255)
         voltage = value / 255.0 * 3.3
         print ('ADC Value : %d, Voltage : %.2f'%(value,voltage))
         time.sleep(0.01)
 
 def destroy():
-    bus.close()
+    adc.close()
     GPIO.cleanup()
     
 if __name__ == '__main__':   # Program entrance

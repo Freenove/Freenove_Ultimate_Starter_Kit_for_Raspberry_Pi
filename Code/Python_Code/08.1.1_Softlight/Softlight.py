@@ -1,51 +1,49 @@
 #!/usr/bin/env python3
-#############################################################################
-# Filename    : Softlight.py
-# Description : Control LED with Potentiometer 
+########################################################################
+# Filename    : ADC.py
+# Description : Use ADC module to read the voltage value of potentiometer.
 # Author      : www.freenove.com
-# modification: 2019/12/27
+# modification: 2020/03/06
 ########################################################################
 import RPi.GPIO as GPIO
-import smbus
 import time
+from ADCDevice import *
 
-address = 0x48      # default address of PCF8591
-bus=smbus.SMBus(1)
-cmd=0x40           # command, 0100 0000
 ledPin = 11
-
-def analogRead(chn):
-    value = bus.read_byte_data(address,cmd+chn)
-    return value
-    
-def analogWrite(value):
-    bus.write_byte_data(address,cmd,value)  
+adc = ADCDevice() # Define an ADCDevice class object
 
 def setup():
+    global adc
+    if(adc.detectI2C(0x48)): # Detect the pcf8591.
+        adc = PCF8591()
+    elif(adc.detectI2C(0x4b)): # Detect the ads7830
+        adc = ADS7830()
+    else:
+        print("No correct I2C address found, \n"
+        "Please use command 'i2cdetect -y 1' to check the I2C address! \n"
+        "Program Exit. \n");
+        exit(-1)
     global p
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(ledPin,GPIO.OUT)
-    GPIO.output(ledPin,GPIO.LOW)
-    
     p = GPIO.PWM(ledPin,1000)
     p.start(0)
-    
+        
 def loop():
     while True:
-        value = analogRead(0)       #read ADC value of A0 pin 
-        p.ChangeDutyCycle(value*100/255)        #Convert ADC value to duty cycle of PWM 
-        voltage = value / 255.0 * 3.3           #calculate voltage
+        value = adc.analogRead(0)    # read the ADC value of channel 0
+        p.ChangeDutyCycle(value*100/255)        # Mapping to PWM duty cycle
+        voltage = value / 255.0 * 3.3  # calculate the voltage value
         print ('ADC Value : %d, Voltage : %.2f'%(value,voltage))
-        time.sleep(0.01)
+        time.sleep(0.03)
 
 def destroy():
-    bus.close()
-    GPIO.cleanup()
+    adc.close()
     
-if __name__ == '__main__':  # Program entrance
+if __name__ == '__main__':   # Program entrance
     print ('Program is starting ... ')
-    setup()
     try:
+        setup()
         loop()
     except KeyboardInterrupt: # Press ctrl-c to end the program.
         destroy()

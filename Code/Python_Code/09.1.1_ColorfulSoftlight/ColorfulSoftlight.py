@@ -3,30 +3,29 @@
 # Filename    : Softlight.py
 # Description : Control RGBLED with Potentiometer 
 # Author      : www.freenove.com
-# modification: 2019/12/27
+# modification: 2020/03/09
 ########################################################################
 import RPi.GPIO as GPIO
-import smbus
 import time
-
-address = 0x48
-bus=smbus.SMBus(1)
-cmd=0x40
+from ADCDevice import *
 
 ledRedPin = 15      # define 3 pins for RGBLED
 ledGreenPin = 13
 ledBluePin = 11
-
-def analogRead(chn):    # read ADC value
-    bus.write_byte(address,cmd+chn)
-    value = bus.read_byte(address)
-    value = bus.read_byte(address)
-    return value
-    
-def analogWrite(value):
-    bus.write_byte_data(address,cmd,value)  
+adc = ADCDevice() # Define an ADCDevice class object
 
 def setup():
+    global adc
+    if(adc.detectI2C(0x48)): # Detect the pcf8591.
+        adc = PCF8591()
+    elif(adc.detectI2C(0x4b)): # Detect the ads7830
+        adc = ADS7830()
+    else:
+        print("No correct I2C address found, \n"
+        "Please use command 'i2cdetect -y 1' to check the I2C address! \n"
+        "Program Exit. \n");
+        exit(-1)
+        
     global p_Red,p_Green,p_Blue
     GPIO.setmode(GPIO.BOARD)
     GPIO.setup(ledRedPin,GPIO.OUT)      # set RGBLED pins to OUTPUT mode
@@ -42,9 +41,9 @@ def setup():
     
 def loop():
     while True:     
-        value_Red = analogRead(0)       # read ADC value of 3 potentiometers
-        value_Green = analogRead(1)
-        value_Blue = analogRead(2)
+        value_Red = adc.analogRead(0)       # read ADC value of 3 potentiometers
+        value_Green = adc.analogRead(1)
+        value_Blue = adc.analogRead(2)
         p_Red.ChangeDutyCycle(value_Red*100/255)  # map the read value of potentiometers into PWM value and output it 
         p_Green.ChangeDutyCycle(value_Green*100/255)
         p_Blue.ChangeDutyCycle(value_Blue*100/255)
@@ -53,7 +52,7 @@ def loop():
         time.sleep(0.01)
 
 def destroy():
-    bus.close()
+    adc.close()
     GPIO.cleanup()
     
 if __name__ == '__main__': # Program entrance
