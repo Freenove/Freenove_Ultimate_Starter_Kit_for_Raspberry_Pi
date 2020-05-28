@@ -45,7 +45,7 @@ void printDataTime(){//used to print system time
     timeinfo = localtime(&rawtime);//convert to local time
     printf("%s \n",asctime(timeinfo));
     lcdPosition(lcdhd,0,1);// set the LCD cursor position to (0,1) 
-    lcdPrintf(lcdhd,"Time:%d:%d:%d",timeinfo->tm_hour,timeinfo->tm_min,timeinfo->tm_sec); //Display system time on LCD
+    lcdPrintf(lcdhd,"Time: %02d:%02d:%02d", timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec); //Display system time on LCD
 }
 int main(void){
     int i;
