@@ -38,6 +38,7 @@ def loop():
         time.sleep(0.03)
 
 def destroy():
+    GPIO.cleanup()
     adc.close()
     
 if __name__ == '__main__':   # Program entrance
