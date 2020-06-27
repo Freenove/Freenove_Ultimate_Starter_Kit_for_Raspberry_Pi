@@ -1,6 +1,6 @@
 ## Freenove Ultimate Starter Kit for Raspberry Pi
 
-> A kit for learnning Raspberry Pi with C, Python and Java code.
+> A kit for learning Raspberry Pi with C, Python and Java code.
 
 ### Download
 
