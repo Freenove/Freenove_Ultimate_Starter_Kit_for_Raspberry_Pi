@@ -42,7 +42,7 @@ int main(void)
 		b=random()%100;  //get a random in (0,100)
 		setLedColor(r,g,b);//set random as the duty cycle value 
 		printf("r=%d,  g=%d,  b=%d \n",r,g,b);
-		delay(300);
+		delay(1000);
 	}
 	return 0;
 }

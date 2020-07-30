@@ -35,7 +35,7 @@ def loop():
         b=random.randint(0,100)
         setColor(r,g,b)          #set random as a duty cycle value 
         print ('r=%d, g=%d, b=%d ' %(r ,g, b))
-        time.sleep(0.3)
+        time.sleep(1)
         
 def destroy():
     pwmRed.stop()
