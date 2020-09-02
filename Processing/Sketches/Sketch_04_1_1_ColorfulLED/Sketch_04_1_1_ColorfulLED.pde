@@ -6,9 +6,9 @@
  *****************************************************/
 import processing.io.*;
 
-int bluePin = 17;    //blue Pin
-int greenPin = 27;  //green Pin
-int redPin = 22;    //red Pin
+int bluePin = 27;    //blue Pin
+int greenPin = 18;  //green Pin
+int redPin = 17;    //red Pin
 int borderSize = 40;  //picture border size
 //Create a PWM pin,initialize the duty cycle and period
 SOFTPWM pRed = new SOFTPWM(redPin, 100, 100);    
