@@ -41,6 +41,7 @@ def loop():
 
 def destroy():
     adc.close()
+    p.stop()  # stop PWM
     GPIO.cleanup()
     
 if __name__ == '__main__':   # Program entrance

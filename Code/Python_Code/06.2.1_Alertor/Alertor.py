@@ -41,6 +41,7 @@ def stopAlertor():
             
 def destroy():
     GPIO.output(buzzerPin, GPIO.LOW)     # Turn off buzzer
+    p.stop()  # stop PWM
     GPIO.cleanup()                       # Release GPIO resource
 
 if __name__ == '__main__':     # Program entrance
