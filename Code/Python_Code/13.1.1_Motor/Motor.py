@@ -65,6 +65,7 @@ def loop():
         time.sleep(0.01)
 
 def destroy():
+    p.stop()  # stop PWM
     GPIO.cleanup()
     
 if __name__ == '__main__':  # Program entrance

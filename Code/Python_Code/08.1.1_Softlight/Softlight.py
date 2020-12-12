@@ -38,6 +38,7 @@ def loop():
         time.sleep(0.03)
 
 def destroy():
+    p.stop()  # stop PWM
     GPIO.cleanup()
     adc.close()
     
