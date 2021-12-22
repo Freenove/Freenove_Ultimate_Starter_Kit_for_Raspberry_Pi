@@ -11,7 +11,7 @@ from Adafruit_LCD1602 import Adafruit_CharLCD
 from time import sleep, strftime
 from datetime import datetime
  
-def get_cpu_temp():     # get CPU temperature and store it into file "/sys/class/thermal/thermal_zone0/temp"
+def get_cpu_temp():     # get CPU temperature from file "/sys/class/thermal/thermal_zone0/temp"
     tmp = open('/sys/class/thermal/thermal_zone0/temp')
     cpu = tmp.read()
     tmp.close()
