@@ -2,7 +2,7 @@
 ########################################################################
 # Filename    : Blink.py
 # Description : Basic usage of GPIO. Let led blink.
-# auther      : www.freenove.com
+# Author      : www.freenove.com
 # modification: 2019/12/26
 ########################################################################
 from gpiozero import LED

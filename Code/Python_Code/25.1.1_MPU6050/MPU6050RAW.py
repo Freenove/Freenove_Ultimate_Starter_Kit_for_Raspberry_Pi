@@ -2,7 +2,7 @@
 ########################################################################
 # Filename    : MPU6050RAW.py
 # Description : Read data of MPU6050.
-# auther      : www.freenove.com
+# Author      : www.freenove.com
 # modification: 2019/12/28
 ########################################################################
 import MPU6050 

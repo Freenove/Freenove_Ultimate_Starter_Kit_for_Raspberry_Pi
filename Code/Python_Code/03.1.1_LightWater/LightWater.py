@@ -2,7 +2,7 @@
 ########################################################################
 # Filename    : LightWater.py
 # Description : Use LEDBar Graph(10 LED) 
-# auther      : www.freenove.com
+# Author      : www.freenove.com
 # modification: 2019/12/28
 ########################################################################
 import RPi.GPIO as GPIO

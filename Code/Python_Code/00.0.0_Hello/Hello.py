@@ -2,7 +2,7 @@
 ########################################################################
 # Filename    : Hello.py
 # Description : Print "Hello World!".
-# auther      : www.freenove.com
+# Author      : www.freenove.com
 # modification: 2019/12/27
 ########################################################################
 

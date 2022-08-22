@@ -2,7 +2,7 @@
 #############################################################################
 # Filename    : LEDMatrix.py
 # Description : Control LEDMatrix with 74HC595
-# auther      : www.freenove.com
+# Author      : www.freenove.com
 # modification: 2019/12/28
 ########################################################################
 import RPi.GPIO as GPIO
