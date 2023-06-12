@@ -10,7 +10,8 @@ class ADCDevice {
   public int cmd = 0;
   public I2C i2c;
   public ADCDevice() {
-    i2c = new I2C(I2C.list()[0]);
+    //Note that if you are running on a version 1 Raspberry Pi, you need to change the subscript index to 0.
+    i2c = new I2C(I2C.list()[1]);
   }
 
   public boolean detectI2C(int addr) {

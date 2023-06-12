@@ -7,6 +7,7 @@
 ########################################################################
 from gpiozero import LEDBoard
 from time import sleep
+from signal import pause
 
 print ('Program is starting ... ')
 

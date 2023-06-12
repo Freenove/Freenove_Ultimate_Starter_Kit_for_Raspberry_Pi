@@ -5,10 +5,12 @@
  * modification: 2020/03/11
  *****************************************************/
 import processing.io.*;
-//Create a object of class ADCDevice
+//Create an object of class ADCDevice
 ADCDevice adc = new ADCDevice();
-int cx, cy, cd, cr;    //define the center point,side length & half.
+int cx, cy, cd, cr;    //define the center point, side length & half.
 
+int buttonPin = 18;
+SingleKey skey = new SingleKey(buttonPin);
 void setup() {
   size(640, 360);
   if (adc.detectI2C(0x48)) {
@@ -28,7 +30,13 @@ void draw() {
   int x=0, y=0, z=0;
   x = adc.analogRead(0);  //read the ADC of joystick
   y = adc.analogRead(1);  //
-  z = adc.analogRead(2);
+  //z = adc.analogRead(2);
+  skey.keyScan();    //key scan
+  if (skey.isPressed) {  //key is pressed
+    z=0;
+  } else {
+    z = 255;
+  }
   background(102);
   titleAndSiteInfo();
   fill(0);
