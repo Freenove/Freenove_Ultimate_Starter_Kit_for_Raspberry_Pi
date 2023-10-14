@@ -19,7 +19,7 @@ def onButtonPressed():
     
 def onButtonReleased():
     led.off()
-    print("Button is released, led turned on <<<")
+    print("Button is released, led turned off <<<")
 
 button.when_pressed = onButtonPressed
 button.when_released = onButtonReleased
