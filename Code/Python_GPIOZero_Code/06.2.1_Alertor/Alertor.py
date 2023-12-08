@@ -22,11 +22,8 @@ def loop():
             stopAlertor()
             print ('alertor turned off <<<')
 def alertor():
-    for x in range(0,361):      # Make frequency of the alertor consistent with the sine wave 
-        sinVal = math.sin(x * (math.pi / 180.0))        # calculate the sine value
-        toneVal = 2000 + sinVal * 500   # Add to the resonant frequency with a Weighted
-        b.play(Tone(toneVal))  # Change Frequency of PWM to toneVal
-        time.sleep(0.001)
+    buzzer.play(Tone(220.0)) 
+    time.sleep(0.1)
         
 def stopAlertor():
     buzzer.stop()

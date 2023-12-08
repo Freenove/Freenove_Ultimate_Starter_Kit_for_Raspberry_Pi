@@ -2,7 +2,7 @@
 ########################################################################
 # Filename    : Tablelamp.py
 # Description : a DIY MINI table lamp
-# Author      : www.freenove.com
+# auther      : www.freenove.com
 # modification: 2019/12/28
 ########################################################################
 import RPi.GPIO as GPIO

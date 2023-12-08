@@ -2,7 +2,7 @@
 #############################################################################
 # Filename    : LightWater03.py
 # Description : Control LED with 74HC595 on the DIY circuit board
-# Author      : www.freenove.com
+# auther      : www.freenove.com
 # modification: 2019/12/28
 ########################################################################
 import RPi.GPIO as GPIO
