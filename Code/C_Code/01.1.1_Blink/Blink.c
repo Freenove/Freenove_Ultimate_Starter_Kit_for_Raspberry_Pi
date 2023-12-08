@@ -6,15 +6,29 @@
 **********************************************************************/
 #include <wiringPi.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <signal.h>
 
 #define  ledPin    0	//define the led pin number
+
+// Signal handler function
+// Handle interrupt, set LED to LOW
+void handle_interrupt(int signal) {
+    printf("Interrupt signal caught. Exiting...\n");
+
+    digitalWrite(ledPin, LOW);
+    
+    exit(0);
+}
 
 void main(void)
 {	
 	printf("Program is starting ... \n");
 	
 	wiringPiSetup();	//Initialize wiringPi.
-	
+
+	signal(SIGINT, handle_interrupt);
+
 	pinMode(ledPin, OUTPUT);//Set the pin mode
 	printf("Using pin%d\n",ledPin);	//Output information on terminal
 	while(1){
