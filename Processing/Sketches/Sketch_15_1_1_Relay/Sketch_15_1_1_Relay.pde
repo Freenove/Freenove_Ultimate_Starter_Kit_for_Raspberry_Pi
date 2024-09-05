@@ -2,9 +2,9 @@
  * Filename    : Sketch_15_1_1_Relay
  * Description : Control the Motor by Relay
  * auther      : www.freenove.com
- * modification: 2016/08/30
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int relayPin = 17;
 int buttonPin = 18;

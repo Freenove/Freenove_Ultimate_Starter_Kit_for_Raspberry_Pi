@@ -2,7 +2,7 @@
  ******************************************************************************
  * Sketch  App_04_1_1_Snake_Game
  * Author  Freenove (http://www.freenove.com)
- * Date    2016/08/27
+ * Date    2024/09/05
  ******************************************************************************
  * Brief
  *   This sketch is used to play snake game 
@@ -14,7 +14,7 @@
  *   (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
  ******************************************************************************
  */
-import processing.io.*;
+import freenove.processing.io.*;
 int threshold = 400;
 
 KeyPad keyUp = new KeyPad(23);

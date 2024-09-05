@@ -2,9 +2,9 @@
  * Filename    : Sketch_12_1_1_LEDMatrix
  * Description : Control the LEDMatrix by 74HC595
  * auther      : www.freenove.com
- * modification: 2016/08/22
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int dataPin = 17;    //connect to the 74HC595
 int latchPin = 27;
@@ -62,7 +62,7 @@ class myThread extends Thread {
   }
 }
 void showMatrix() {
-  for (int j=0; j<100; j++) {    //picture show time
+  for (int j=0; j<3000; j++) {    //picture show time
     int x=0x80;
     for (int i=0; i<8; i++) {    //display a frame picture
       GPIO.digitalWrite(latchPin, GPIO.LOW);
@@ -76,7 +76,7 @@ void showMatrix() {
 void showNum() {
   for (int j=0; j<numCode.length-8; j++) { //where to start showing
     index = j/8;
-    for (int k =0; k<10*(1.2-mBar.progress); k++) {    //speed
+    for (int k =0; k<300*(1.2-mBar.progress); k++) {    //speed
       int x=0x80;
       for (int i=0; i<8; i++) {    //display a frame picture
         GPIO.digitalWrite(latchPin, GPIO.LOW);

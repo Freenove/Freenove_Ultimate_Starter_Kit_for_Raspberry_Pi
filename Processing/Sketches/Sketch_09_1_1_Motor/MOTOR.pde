@@ -5,7 +5,7 @@
  * modification: 2016/08/22
  *****************************************************/
 
-import processing.io.*;
+import freenove.processing.io.*;
 
 class MOTOR {
   int mPin1, mPin2, enPin;

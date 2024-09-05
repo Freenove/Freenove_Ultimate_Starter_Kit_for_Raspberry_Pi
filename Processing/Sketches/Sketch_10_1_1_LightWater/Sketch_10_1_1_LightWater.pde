@@ -2,9 +2,9 @@
  * Filename    : Sketch_10_1_1_LightWater
  * Description : Control the LEDBar Graph by 74HC595
  * auther      : www.freenove.com
- * modification: 2016/08/22
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int dataPin = 17;    //connect to the 74HC595
 int latchPin = 27;

@@ -2,9 +2,9 @@
  * Filename    : Sketch_05_1_1_Activebuzzer
  * Description : Use the mouse to control the Active buzzer ON or OFF
  * auther      : www.freenove.com
- * modification: 2016/08/14
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int buzzerPin = 17;
 boolean buzzerState = false;

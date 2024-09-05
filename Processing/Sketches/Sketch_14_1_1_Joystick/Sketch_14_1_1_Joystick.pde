@@ -2,9 +2,10 @@
  * Filename    : Sketch_14_1_1_Joystick
  * Description : Display the position of the joystick
  * auther      : www.freenove.com
- * modification: 2020/03/11
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
+
 //Create an object of class ADCDevice
 ADCDevice adc = new ADCDevice();
 int cx, cy, cd, cr;    //define the center point, side length & half.

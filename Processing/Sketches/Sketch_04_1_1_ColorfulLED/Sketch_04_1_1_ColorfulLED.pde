@@ -2,13 +2,13 @@
  * Filename    : Sketch_04_1_1_ColorfulLED
  * Description : Using slider controlRGBLED
  * auther      : www.freenove.com
- * modification: 2016/08/20
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
-int bluePin = 27;    //blue Pin
-int greenPin = 18;  //green Pin
-int redPin = 17;    //red Pin
+int bluePin = 27;     //blue Pin
+int greenPin = 18;    //green Pin
+int redPin = 17;      //red Pin
 int borderSize = 40;  //picture border size
 //Create a PWM pin,initialize the duty cycle and period
 SOFTPWM pRed = new SOFTPWM(redPin, 100, 100);    

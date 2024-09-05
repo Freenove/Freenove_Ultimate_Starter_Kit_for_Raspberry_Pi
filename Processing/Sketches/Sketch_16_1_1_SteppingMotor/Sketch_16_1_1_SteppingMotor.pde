@@ -2,9 +2,9 @@
  * Filename    : Sketch_16_1_1_SteppingMotor
  * Description : Control the stepping motor
  * auther      : www.freenove.com
- * modification: 2016/09/05
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int[] pins = {18, 23, 24, 25};    //connect to motor phase A,B,C,D pins 
 BUTTON btn;    //BUTTON Object, For controlling the direction of motor 

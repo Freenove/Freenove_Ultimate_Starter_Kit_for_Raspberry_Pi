@@ -2,9 +2,9 @@
  * Filename    : Sketch_11_2_1_FDSSD
  * Description : Control the 4-Digit 7-segment display by 74HC595
  * auther      : www.freenove.com
- * modification: 2016/09/05
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int dataPin = 24;    //connect to the 74HC595
 int latchPin = 23;

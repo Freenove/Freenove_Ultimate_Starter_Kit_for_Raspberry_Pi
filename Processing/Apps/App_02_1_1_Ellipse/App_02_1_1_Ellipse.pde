@@ -1,7 +1,7 @@
 /******************************************************************************* //<>//
  * Sketch  App_02_1_1_Ellipse
  * Author Freenove (http://www.freenove.com)
- * Date    2016/08/26
+ * Date    2024/09/05
  ******************************************************************************
  * Brief
  *   This sketch is used to control a 2D ellipse 
@@ -13,7 +13,7 @@
  *   (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
  ******************************************************************************
  */
-import processing.io.*;
+import freenove.processing.io.*;
 ADCDevice adc = new ADCDevice();
 void setup()
 {

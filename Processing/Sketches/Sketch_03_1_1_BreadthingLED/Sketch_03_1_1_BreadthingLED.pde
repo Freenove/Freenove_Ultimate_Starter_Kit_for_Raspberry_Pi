@@ -2,9 +2,9 @@
  * Filename    : Sketch_03_1_1_BreathingLED
  * Description : Using PWM control LED brightness 
  * auther      : www.freenove.com
- * modification: 2016/08/18
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int ledPin = 17;    //led Pin
 int borderSize = 40;  //

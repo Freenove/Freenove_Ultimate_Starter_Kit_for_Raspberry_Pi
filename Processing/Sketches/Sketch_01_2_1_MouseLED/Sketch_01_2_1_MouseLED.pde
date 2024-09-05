@@ -2,9 +2,9 @@
  * Filename    : Sketch_01_2_1_MouseLED
  * Description : Use the mouse to control the LED ON OFF
  * auther      : www.freenove.com
- * modification: 2016/08/14
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int ledPin = 17;
 boolean ledState = false;

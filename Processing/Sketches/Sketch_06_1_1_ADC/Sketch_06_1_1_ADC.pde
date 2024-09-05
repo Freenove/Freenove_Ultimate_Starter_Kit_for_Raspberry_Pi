@@ -2,9 +2,10 @@
  * Filename    : Sketch_06_1_1_ADC
  * Description : Making a voltmeter with Freenove ADC module.
  * auther      : www.freenove.com
- * modification: 2020/03/09
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
+
 //Create a object of class ADCDevice
 ADCDevice adc = new ADCDevice();
 void setup() {

@@ -91,4 +91,3 @@ class GameState
   final static int PLAYER1WIN = 2;
   final static int PLAYER2WIN = 3;
 }
-

@@ -2,9 +2,10 @@
  * Filename    : Sketch_13_1_1_LCD
  * Description : Use the I2C-LCD1602 display the string
  * auther      : www.freenove.com
- * modification: 2016/08/24
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
+
 //Create a object of class PCF8574
 PCF8574 pcf = new PCF8574(0x27);
 Freenove_LCD1602 lcd;  //Create a lcd object

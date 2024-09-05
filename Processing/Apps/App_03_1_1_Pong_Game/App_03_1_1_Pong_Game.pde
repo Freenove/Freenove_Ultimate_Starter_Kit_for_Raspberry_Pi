@@ -2,7 +2,7 @@
  ******************************************************************************
  * Sketch  App_03_1_1_Pong_Game
  * Author  Freenove (http://www.freenove.com)
- * Date    2020/03/10
+ * Date    2024/09/05
  ******************************************************************************
  * Brief
  *   This sketch is used to play pong game
@@ -14,7 +14,7 @@
  *   (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
  ******************************************************************************
  */
-import processing.io.*;
+import freenove.processing.io.*;
 
 ADCDevice adc = new ADCDevice();
 

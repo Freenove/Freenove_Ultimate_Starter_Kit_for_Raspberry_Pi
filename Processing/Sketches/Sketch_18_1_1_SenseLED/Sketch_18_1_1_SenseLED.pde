@@ -2,9 +2,9 @@
  * Filename    : Sketch_18_1_1_SenseLED
  * Description : Control the led by Infare motion sensor
  * auther      : www.freenove.com
- * modification: 2016/08/22
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 final int sensorPin = 17;  //connect to sensor pin
 final int ledPin = 18;    //connect to led pin

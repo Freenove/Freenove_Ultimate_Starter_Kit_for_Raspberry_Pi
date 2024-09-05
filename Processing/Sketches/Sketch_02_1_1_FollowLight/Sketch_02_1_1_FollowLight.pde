@@ -2,9 +2,9 @@
  * Filename    : Sketch_02_1_1_FollowLight
  * Description : Use the mouse to control the LEDGraph Bar 
  * auther      : www.freenove.com
- * modification: 2016/08/15
+ * modification: 2024/09/04
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 int leds[]={17, 18, 27, 22, 23, 24, 25, 2, 3, 8}; //define ledPins
 

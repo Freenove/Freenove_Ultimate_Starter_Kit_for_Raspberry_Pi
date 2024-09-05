@@ -2,7 +2,7 @@
  ******************************************************************************
  * Sketch  App_05_1_1_Tetris
  * Author  Freenove (http://www.freenove.com)
- * Date    2016/08/27
+ * Date    2024/09/05
  ******************************************************************************
  * Brief
  *   This sketch is used to play Tetris game 
@@ -14,7 +14,7 @@
  *   (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
  ******************************************************************************
  */
-import processing.io.*;
+import freenove.processing.io.*;
 
 static final int w = 10; // 4
 static final int h = 25; // 60

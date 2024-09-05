@@ -2,7 +2,7 @@
  * Filename    : ADCDevice
  * Description : class ADCDevice
  * auther      : www.freenove.com
- * modification: 2020/03/09
+ * modification: 2024/09/03
  *****************************************************/
 
 class ADCDevice {
@@ -10,8 +10,7 @@ class ADCDevice {
   public int cmd = 0;
   public I2C i2c;
   public ADCDevice() {
-    //Note that if you are running on a version 1 Raspberry Pi, you need to change the subscript index to 0.
-    i2c = new I2C(I2C.list()[1]);
+    i2c = new I2C(I2C.list()[0]);
   }
 
   public boolean detectI2C(int addr) {

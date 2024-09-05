@@ -1,10 +1,4 @@
-/*****************************************************
- * Filename    : SOFTPWM
- * Description : class SOFTPWM
- * auther      : www.freenove.com
- * modification: 2016/08/22
- *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 class SOFTPWM {
   public int pin=-1;

@@ -4,7 +4,7 @@
  * auther      : www.freenove.com
  * modification: 2016/08/22
  *****************************************************/
-import processing.io.*;
+import freenove.processing.io.*;
 
 class IC74HC595 {
   final int LSBFIRST = 1;

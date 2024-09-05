@@ -1,7 +1,7 @@
 /******************************************************************************* //<>//
  * Sketch  App_01_1_1_Oscilloscope
  * Author  Freenove (http://www.freenove.com)
- * Date    2020/03/10
+ * Date    2024/09/05
  ******************************************************************************
  * Brief
  *   This sketch is used to make an oscilloscope 
@@ -13,7 +13,7 @@
  *   (http://creativecommons.org/licenses/by-sa/3.0/legalcode)
  ******************************************************************************
  */
-import processing.io.*;
+import freenove.processing.io.*;
 
 ADCDevice adc = new ADCDevice();
 int[] analogs;          // Analog data send from serial device
