@@ -17,7 +17,7 @@ def onButtonPressed():
     
 def onButtonReleased():
     buzzer.off()
-    print("Button is released, buzzer turned on <<<")
+    print("Button is released, buzzer turned off <<<")
 
 def loop():
     button.when_pressed = onButtonPressed
