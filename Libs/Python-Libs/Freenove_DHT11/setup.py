@@ -4,7 +4,7 @@
 #				Program transplantation by Freenove.
 # Author      : Zhentao Lin
 # modification: 2024/7/29
-
+import os
 import subprocess  
 import shutil  
   
@@ -41,6 +41,12 @@ def compile_dht_module():
     return True  
   
 if __name__ == "__main__":  
+    os.system("cd /usr/bin && sudo rm python && sudo ln -s python3 python")
+    os.system("sudo apt-get update")
+    os.system("git clone https://github.com/WiringPi/WiringPi")
+    os.system("cd WiringPi && sudo ./build")
+
+
     if compile_dht_module():  
         print("build completed!")  
     else:  
