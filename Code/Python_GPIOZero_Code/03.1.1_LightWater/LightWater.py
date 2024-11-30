@@ -14,13 +14,13 @@ leds = [LED(pin=pin) for pin in ledPins]
 def loop():
     while True:
         for index in range(0,len(ledPins),1):      # make led(on) move from left to right
-            leds[index].on()  
+            leds[index].off()  
             sleep(0.1)
-            leds[index].off() 
+            leds[index].on() 
         for index in range(len(ledPins)-1,-1,-1):   #move led(on) from right to left
-            leds[index].on()  
+            leds[index].off()  
             sleep(0.1)
-            leds[index].off() 
+            leds[index].on() 
 
 if __name__ == '__main__':     # Program entrance
     print ('Program is starting...')
