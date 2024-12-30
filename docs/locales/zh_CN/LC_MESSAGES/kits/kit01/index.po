@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024, suhayl
+# This file is distributed under the same license as the freenove-docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: freenove-docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-11 16:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/kits/kit01/index.rst:14
+msgid "Contents:"
+msgstr "目录"
+
+#: ../../source/kits/kit01/index.rst:7 2d78a4bc60334371a83aa03ff7c3dc9c
+msgid "FNK0050 dog"
+msgstr "机器狗"
+
+#: ../../source/kits/kit01/index.rst:9 1ad9b755afa14ea986b0a06e32dfa4a8
+msgid ""
+"Add your content using ``reStructuredText`` syntax. See the "
+"`reStructuredText <https://www.sphinx-"
+"doc.org/en/master/usage/restructuredtext/index.html>`_ documentation for "
+"details."
+msgstr "这是什么 `引用 <https://www.freenove.com>`_ "
+

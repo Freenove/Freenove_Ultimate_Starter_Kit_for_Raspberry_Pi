@@ -1,0 +1,16 @@
+
+
+
+.. Text Sizes
+   ==========
+
+.. role:: large
+.. role:: larger
+.. role:: x-large
+.. role:: xx-large
+.. role:: small
+.. role:: smaller
+.. role:: x-small
+.. role:: xx-small
+
+.. role:: medium

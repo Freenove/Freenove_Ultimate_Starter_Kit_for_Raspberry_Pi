@@ -1,0 +1,377 @@
+/* 顶部导航栏 */
+#nav-bar {
+    height: 3.5rem;
+    width: 100%;
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/* 原RTD左侧导航栏下移 */
+.wy-nav-side {
+    /* top: 3.5rem; */
+    z-index: 2;
+}
+
+/* 原页面下移 */
+.wy-grid-for-nav {
+    top: 3.5rem;
+    height: calc(100% - 3.5rem);
+    overflow-y: auto;
+    position: fixed;
+}
+
+/* 原Logo删除 */
+.wy-side-nav-search>.icon.icon-home {
+    display: none;
+}
+
+/* 版本号删除 */
+.version {
+    display: none;
+}
+
+/* 搜索栏调整 */
+.wy-side-nav-search {
+    /* 搜索栏背景去除 */
+    background: none;
+    /* 移除搜索栏下方margin，让下面内容上移 */
+    margin-bottom: 0 !important;
+    margin-top: 3.5rem;
+}
+
+/* 搜索框调整 */
+.wy-side-nav-search input[type=text] {
+    /* 移除搜索框的蓝色边缘 */
+    border-color: unset !important;
+}
+
+.nav-bar-logo {
+    /* width: 15rem; */
+    padding: 0rem;
+    height: 3.5rem;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  #advertisingBox {
+    display: flex;
+    flex-direction: column;
+    height: 3.5rem;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  #advertising {
+    display: flex;
+    height: 2.1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    background-color: #8a8585;
+    font-weight: bold;
+  }
+  
+  #advertising span {
+    color: black;
+    font-family: Roboto, sans-serif !important;
+  }
+  
+  #advertising span:nth-child(2),
+  #advertising span:last-child {
+    color: white;
+  }
+  
+  .nav-bar__itemBox {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 1.4rem;
+  }
+  
+  .nav-bar-items {
+    display: flex;
+    max-width: 1100px;
+  }
+  
+  .nav-bar__item {
+    color: #202020;
+    font-size: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    margin: 0 .6rem;
+    /* height: 3.5rem; */
+    position: relative;
+    display: flex;
+  }
+  
+  .nav-bar__item>a {
+    text-decoration: none;
+    color: inherit;
+    font-family: Roboto, sans-serif !important;
+    font-weight: 400;
+    margin: auto;
+  }
+  
+  .nav-bar__item:hover>a {
+    color: #019cda;
+  }
+  
+  .icon.icon--arrow-bottom {
+    width: .8rem;
+    margin-left: .5rem;
+  }
+  
+  .icon.icon--nav-triangle {
+    display: none;
+    position: absolute;
+    bottom: -1px;
+    height: .6rem;
+    margin-left: 3rem;
+    z-index: 2;
+    transition: .2s ease-in-out;
+  }
+  
+  .icon.icon--nav-triangle-left {
+    position: absolute;
+    height: .8rem;
+    top: 1rem;
+    right: 100%;
+  }
+  
+  .icon.icon--arrow-right {
+    height: .8rem;
+  }
+  
+  .nav-dropdown {
+    display: none;
+    top: 100%;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 18rem;
+    text-align: start;
+    border: 1px solid #e1e3e4;
+    z-index: 1;
+    padding: .6rem 0;
+  }
+  
+  .nav-dropdown__item {
+    color: black;
+    position: relative;
+    padding: .4rem .8rem;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .nav-dropdown .nav-dropdown {
+    top: -.6rem;
+    left: 100%;
+  }
+  
+  .nav-dropdown__item:hover>a {
+    color: #019cda;
+  }
+  
+  .nav-dropdown__item>a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .nav-bar__item:hover>.nav-dropdown,
+  .nav-bar__item:hover>a>.icon.icon--nav-triangle {
+    display: block;
+  }
+  
+  .nav-dropdown__item:hover>.nav-dropdown {
+    display: block;
+  }
+  
+  * {
+    font-family: "Verdana" ! important;
+  }
+  
+  .setMenu {
+    overflow-y: hidden;
+  }
+  
+  .setMenu::-webkit-scrollbar {
+    background: transparent;
+    height: 4px;
+  }
+  
+  .setMenu::-webkit-scrollbar-track-piece {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #ccc;
+  
+  }
+  
+  .setMenu::-webkit-scrollbar-thumb {
+    background: #019cda;
+    height: 4px;
+  
+  }
+  
+  .rasPad .iconImg {
+    width: 178px;
+    border-radius: 0;
+    height: auto;
+    padding: 0;
+    margin: auto auto .809em auto;
+  
+  }
+  
+  .readTheDocIcon {
+    margin: auto auto .809em auto;
+    display: block;
+  }
+  
+  .readTheDocIcon .readIconImg {
+    width: 99px;
+    height: auto;
+    border-radius: 0px;
+    background-image: url("https://ezblock.cc/readDocFile/readTheDoc.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 15px 15px;
+    color: #fff;
+    padding-left: 30px;
+  }
+  
+  footer {
+    opacity: 0;
+  }
+  
+  .addthis-smartlayers #at4-share,
+  .addthis-smartlayers #at4-soc {
+    right: 0 !important;
+    left: auto !important;
+    top: 35% !important;
+    animation-name: false !important;
+  }
+  
+  #at4-scc {
+    display: none !important;
+  }
+  
+  .addthis_inline_share_toolbox {
+    display: none !important;
+  }
+  
+  @media screen and (max-width: 768px) {
+    #advertising {
+      display: none !important;
+    }
+  
+    .nav-bar__itemBox {
+      height: 3.5rem;
+      overflow-x: auto;
+    }
+  
+    .wy-nav-content-wrap {
+      top: 3.5rem !important;
+    }
+  }
+/* .extrabody-content {
+    position: fixed;
+    width: 100%;
+    height: 4em;
+    z-index: 200;
+    top: 0;
+    left: 0;
+}
+
+.wy-nav-side {
+    position: fixed;
+    margin-top: 4em;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 2em;
+    width: 300px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    min-height: 100%;
+    color: #9b9b9b;
+    background: #343131;
+    z-index: 200;
+}
+
+.wy-side-nav-search {
+    position: static;
+    display: block;
+    width: 300px;
+    padding: .809em;
+    margin-bottom: .809em;
+    z-index: 200;
+    background-color: #2980b9;
+    text-align: center;
+    color: #fcfcfc;
+}
+
+.wy-nav-content {
+    padding: 1.618em 3.236em;
+    height: 100%;
+    max-width: 800px;
+    margin-left: 0;
+    margin-top: 4em;
+
+}
+
+
+
+.dropdown-checkbox {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content label {
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.dropdown-content label:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-checkbox .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-checkbox .dropbtn:hover {
+    background-color: #3e8e41
+} */
+
+.product-table td {
+    white-space: normal !important;
+}
+
+.product-image {
+    max-width: 120px;
+    width: 120px;
+}

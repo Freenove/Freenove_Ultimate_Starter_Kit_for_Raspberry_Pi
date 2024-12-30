@@ -1,0 +1,34 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024, suhayl
+# This file is distributed under the same license as the freenove-docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: freenove-docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-11 16:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/kits/kit02/index.rst:11
+msgid "Contents:"
+msgstr "目录"
+
+#: ../../source/kits/kit02/index.rst:7 780b9cb37f5b4d5797cb33dcaea62956
+msgid "FNK0052 spider"
+msgstr "蜘蛛"
+
+#: ../../source/kits/kit02/index.rst:9 dbdefb4224f14afa9893f8c044af62be
+msgid "some words."
+msgstr "一些文字"
+

@@ -1,0 +1,30 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024, suhayl
+# This file is distributed under the same license as the freenove-docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: freenove-docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-11 16:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/kits/index.rst:9 0da72e6315fb443ea8201dcb5663d6b0
+msgid "Contents:"
+msgstr "目录"
+
+#: ../../source/kits/index.rst:7 acb2698d4fd240cbb9bfea3750ea62e4
+msgid "kits"
+msgstr "产品"
+

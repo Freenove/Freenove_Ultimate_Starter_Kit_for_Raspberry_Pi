@@ -1,0 +1,25 @@
+
+:root{
+    --fn_nav_height: 2.0rem
+}
+
+.extrabody-content{
+    /* border: solid #00F 2px; */
+    background-color: #EFEFEF;
+    height: var(--fn_nav_height);
+}
+
+
+.wy-grid-for-nav {
+    top: var(--fn_nav_height);
+    height: calc(100% - var(--fn_nav_height));
+    height: 100%;
+    overflow-y: auto;
+    position: fixed;
+}
+
+
+.wy-nav-side {
+    top: var(--fn_nav_height);
+    z-index: 2;
+}

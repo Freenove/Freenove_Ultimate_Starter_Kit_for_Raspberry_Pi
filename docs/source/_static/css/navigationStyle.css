@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+:root{
+    --fn_nav_height: 2.0rem;
+	--fn_nav_fontsize: 1.5rem;
+}
+
+.nav_fn {
+	/* border: solid #F00 5px; */
+	background-color: rgb(52, 49, 49);
+	position: absolute;
+	width: fit-content;
+	height: auto;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	opacity: 0.8;
+}
+
+.nav_fn ul {
+	background-color: rgb(52, 49, 49);
+	/* border: solid #F00 5px; */
+	width: auto;
+	height: auto;
+	font-size: var(--fn_nav_fontsize);
+	line-height: var(--fn_nav_height);
+	/* display:inline-block; */
+	text-align: center;
+	float: left;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	/* overflow:hidden; */
+	list-style-type: none;
+}
+
+.nav_fn li {
+	background-color: #003333;
+	display: block;
+	float: left;
+	width:9px;
+	height: var(--fn_nav_height);
+	cursor: pointer;
+	margin-left: 0px;
+	list-style-type: none;
+	opacity: 0.8;
+}
+
+.navLogo {
+	background: url(../component-imgs/freenove-logo.png) no-repeat center;
+	background-size: 100%;
+	float: left;
+	width: auto;
+	height: var(--fn_nav_height);
+}
+
+.nav_fn .navDropDown {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.nav_fn .dropBtn {
+	/* border: solid #00F 2px; */
+	display: inline-block;
+	color: white;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+}
+
+.nav_fn a:hover,
+.navDropDown:hover .dropBtn {
+	background-color: #111;
+}
+
+.nav_fn .navDropDown {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+.nav_fn .dropDownContent {
+	/* opacity: 1; */
+	width: 100%;
+	background-color: #F9F9F9;
+	position: absolute;
+	display: none;
+	box-shadow: 0px 8px 15px 5px rgba(0, 0, 0, 0.8);
+}
+
+.nav_fn .dropDownContent a {
+	color: black;
+	text-decoration: none;
+	display: block;
+}
+
+.nav_fn .dropDownContent a:hover {
+	background-color: #F1F1F1;
+}
+
+.nav_fn .navDropDown:hover .dropDownContent {
+	display: block;
+}

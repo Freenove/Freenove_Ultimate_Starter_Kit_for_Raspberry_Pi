@@ -1,0 +1,198 @@
+##############################################################################
+Chapter LCD1602
+##############################################################################
+
+
+In this chapter, we will learn about the LCD1602 Display Screen
+
+Project I2C LCD1602
+****************************************************************
+
+There are LCD1602 display screen and the I2C LCD. We will introduce both of them in this chapter. But what we use in this project is an I2C LCD1602 display screen. The LCD1602 Display Screen can display 2 lines of characters in 16 columns. It is capable of displaying numbers, letters, symbols, ASCII code and so on. As shown below is a monochrome LCD1602 Display Screen along with its circuit pin diagram
+
+.. image:: ../_static/imgs/LCD1602_1.png
+    :align: center
+
+I2C LCD1602 Display Screen integrates a I2C interface, which connects the serial-input & parallel-output module to the LCD1602 Display Screen. This allows us to only use 4 lines to operate the LCD1602.
+
+.. image:: ../_static/imgs/LCD1602_2.png
+    :align: center
+
+The serial-to-parallel IC chip used in this module is PCF8574T (PCF8574AT), and its default I2C address is 0x27(0x3F). You can also view the RPI bus on your I2C device address through command "i2cdetect -y 1" (refer to the "configuration I2C" section below). 
+
+Below is the PCF8574 chip pin diagram and its module pin diagram:
+
+.. image:: ../_static/imgs/PCF8574.png
+    :align: center
+
+PCF8574 module pins and LCD1602 pins correspond to each other and connected to each other:
+
+.. image:: ../_static/imgs/PCF8574_1.png
+    :align: center
+
+Because of this, as stated earlier, we only need 4 pins to control the16 pins of the LCD1602 Display Screen through the I2C interface.
+
+In this project, we will use the I2C LCD1602 to display some static characters and dynamic variables.
+
+Component List
+================================================================
+
++-------------------------------------------------+-------------------------------------------------+
+|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
+|                                                 |   Jumper Wires x4                               |       
+|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
+|                                                 |     |jumper-wire|                               |                                                            
+|3. Breadboard x1                                 |                                                 |                                                                 
++-------------------------------------------------+-------------------------------------------------+
+| I2C LCD1602 Module x1                                                                             |
+|                                                                                                   |
+|  |LCD1602|                                                                                        |
++---------------------------------------------------------------------------------------------------+
+
+.. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+.. |LCD1602| image:: ../_static/imgs/LCD1602.png
+
+Circuit
+================================================================
+
+Note that the power supply for I2C LCD1602 in this circuit is 5V.
+
++------------------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                            |
+|                                                                                                |
+|   |LCD1602_Sc|                                                                                 |
++------------------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:             |
+|                                                                                                |
+|   support@freenove.com                                                                         |
+|                                                                                                |
+|   |LCD1602_Fr|                                                                                 | 
++------------------------------------------------------------------------------------------------+
+
+.. |LCD1602_Sc| image:: ../_static/imgs/LCD1602_Sc.png
+.. |LCD1602_Fr| image:: ../_static/imgs/LCD1602_Fr.png
+
+.. note::
+    It is necessary to configure 12C and install Smbus first (see :doc:`Chapter 7 ADC <ADC>` for details)
+
+Sketch
+================================================================
+
+In this project, we will drive the LCD1602 display with I2C.
+
+Sketch_18_I2CLCD1602
+----------------------------------------------------------------
+
+First, enter where the project is located:
+
+.. code-block:: console
+
+    $ cd ~/Freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602
+        
+.. image:: ../_static/imgs/java_lcd1602.png
+    :align: center
+
+Enter the command to run the code.
+
+.. code-block:: console
+
+    $ jbang I2CLCD1602.java
+
+.. image:: ../_static/imgs/java_lcd1602_run.png
+    :align: center
+
+When the code is running, you can see the first line of the display shows "Hello World", and the second line displays the running time in second.
+
+Press Ctrl+C to exit the program.
+
+.. image:: ../_static/imgs/java_lcd1602_exit.png
+    :align: center
+
+You can run the following command to open the code with Geany to view and edit it.
+
+.. code-block:: console
+
+    $ geany I2CLCD1602.java
+
+Click the icon to run the code.
+
+.. image:: ../_static/imgs/java_lcd1602_code.png
+    :align: center
+
+If the code fails to run, please check :doc:`Geany Configuration`.
+
+The following is program code:
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
+    :linenos: 
+    :language: java
+
+Constructor, assigns the I2C bus to bus, and calls the constructor function to initialize the I2C bus.
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
+    :linenos: 
+    :language: java
+    :lines: 40-53
+
+I2C constructor, initialize the I2C bus.
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
+    :linenos: 
+    :language: java
+    :lines: 55-59
+
+I2C bus acquisition function. Calling the list() function can obtain the names of all I2C buses currently existing on the Raspberry Pi.
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
+    :linenos: 
+    :language: java
+    :lines: 87-101
+    
+Use the pi4j library to repackage the I2C functions. These functions refer to the classic usage of Arduino. This is to be compatible with the subsequent PCF8574 class and Freenove_LCD1602 class, making it easier to drive LCD1602.
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
+    :linenos: 
+    :language: java
+    :lines: 61-85
+
+The following are the two classes we wrote for LCD1602 in reference to Arduino. Here, we do not go into too much detail here. If you are interested in this code, you can use Geany to view the code.
+
+.. code-block:: python
+
+    class PCF8574 {
+      ......
+    }
+
+    class Freenove_LCD1602 {
+      ......
+    }
+
+Initialize PCF8574 and Freenove_LCD1602 classes, and assign the value to LCD.
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
+    :linenos: 
+    :language: java
+    :lines: 376-378
+
+At the first lin of LCD1602, print the character “Hello World”.
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
+    :linenos: 
+    :language: java
+    :lines: 379-380
+
+Print the character “Count” and the counts number at the second line every one second.
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
+    :linenos: 
+    :language: java
+    :lines: 382-389
+
+In Java, an `InterruptedException` is thrown when a thread's waiting, sleeping (e.g., using 'Thread.sleep()'), or other blocking operations are interrupted. When a thread is interrupted, its interrupted status is set to true, and any of these blocking operations will result in an 'InterruptedException' being thrown.
+
+When 'InterruptedException' is capured, 'Thread.currentThread().interrupt()' is called keep the interrupt status, so that the thread can respond to the interruption request appropriately.
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
+    :linenos: 
+    :language: java
+    :lines: 390-392

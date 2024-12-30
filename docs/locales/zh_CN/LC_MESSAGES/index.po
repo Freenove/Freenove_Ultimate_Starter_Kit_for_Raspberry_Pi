@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2024, suhayl
+# This file is distributed under the same license as the freenove-docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: freenove-docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-11 16:15+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/index.rst:14 0380ee782e784c259217dcaf42b2e340
+msgid "Contents:"
+msgstr "目录"
+
+#: ../../source/index.rst:7 efad79044c074ec29f0791952982af0b
+msgid "freenove-docs documentation"
+msgstr "费诺创新文档"
+
+#: ../../source/index.rst:9 eb5fb37e2e2243e3a94d87b8a98eb973
+msgid ""
+"Add your content using ``reStructuredText`` syntax. See the "
+"`reStructuredText <https://www.sphinx-"
+"doc.org/en/master/usage/restructuredtext/index.html>`_ documentation for "
+"details."
+msgstr ""
+"添加文本 ``reStructuredText`` 看这里"
+"`reStructuredText <https://www.sphinx-"
+"doc.org/en/master/usage/restructuredtext/index.html>`_ 有详细 "
+"信息"
+
