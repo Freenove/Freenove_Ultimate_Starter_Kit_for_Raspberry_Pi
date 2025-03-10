@@ -2,13 +2,13 @@
 Chapter Infrared Motion Sensor
 ################################################################
 
-
 In this chapter, we will learn a widely used sensor, Infrared Motion Sensor. 
 
 Project PIR Infrared Motion Detector with LED Indicator
 ****************************************************************
 
 In this project, we will make a Motion Detector, with the human body infrared pyroelectric sensors.
+
 When someone is in close proximity to the Motion Detector, it will automatically light up and when there is no one close by, it will be out.
 
 This Infrared Motion Sensor can detect the infrared spectrum (heat signatures) emitted by living humans and animals.
@@ -45,7 +45,6 @@ Component Knowledge
 
 ==============  ======================  ==========================
 
-.. |HC_SR501| image:: ../_static/imgs/HC_SR501.png
 .. |HC_SR501_bottom| image:: ../_static/imgs/HC_SR501_bottom.png
 .. |HC_SR501_Schematic| image:: ../_static/imgs/HC_SR501_Schematic.png
 
@@ -76,50 +75,15 @@ Circuit
 |   support@freenove.com                                                                          |
 |                                                                                                 |
 |   |HC_SR501_Fr|                                                                                 |
-|                                                                                                 |
-| :xx-large:`How to use this sensor?`                                                             |
-|                                                                                                 |
-|   |HC_SR501_T_B|                                                                                |
-| Description:                                                                                    |
-|                                                                                                 |
-| 1. You can choose non-repeatable trigger modes or repeatable modes.                             |
-|                                                                                                 |
-|   L: non-repeatable trigger mode. The module output high level after sensing a body, then when  |
-|   the delay                                                                                     | 
-|                                                                                                 |   
-|   time is over, the module will output low level. During high level time, the sensor            |
-|   no longer actively                                                                            |
-|                                                                                                 |
-|   senses bodies.                                                                                |
-|                                                                                                 |    
-|   H: repeatable trigger mode. The distinction from the L                                        |
-|   mode is that it can sense a body until that body                                              |
-|                                                                                                 |
-|   leaves. After this, it starts to time and                                                     |
-|   output low level after delaying T time.                                                       |
-|                                                                                                 |
-| 2. R1 is used to adjust HIGH level lasting time when sensor detects human motion, 1.2s\-320s.   |
-|                                                                                                 |
-| 3. R2 is used to adjust the maxmum distance the sensor can detect, 3~5m.                        |
-|                                                                                                 |
-| :red:`Here we connect L and adjust R1 and R2 like below to do this project.`                    |
-|                                                                                                 |
-| :red:`Put you hand close and away from the sensor slowly. Obsever the LED in previous circuit.` |
-|                                                                                                 |
-| :red:`It need some time between two detections.`                                                |
-|                                                                                                 |
-| |HC_SR501_1|                                                                                    |
 +-------------------------------------------------------------------------------------------------+
 
 .. |HC_SR501_Sc| image:: ../_static/imgs/HC_SR501_Sc.png
 .. |HC_SR501_Fr| image:: ../_static/imgs/HC_SR501_Fr.png
-.. |HC_SR501_T_B| image:: ../_static/imgs/HC_SR501_T_B.png
-.. |HC_SR501_1| image:: ../_static/imgs/HC_SR501_1.png
 
 Sketch
 ================================================================
 
-Sketch 18.1.1 SenseLED
+Sketch SenseLED
 ----------------------------------------------------------------
 
 First, observe the result after running the sketch, and then learn about the code in detail.
@@ -139,13 +103,15 @@ After the program is executed, Display Window shows the following interface, whe
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_18_1_1_SenseLED/Sketch_18_1_1_SenseLED.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_18_1_1_SenseLED/Sketch_18_1_1_SenseLED.pde
     :linenos: 
     :language: c
+    :dedent:
 
 In this project, the code is relatively simple. In the function draw(), read level of sensor pin. When it is a high level, LED is turned on. At the same time the filled color will be changed to green. When the level is low, LED turns off and the filled color turns white. Finally, it draws a circle.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_18_1_1_SenseLED/Sketch_18_1_1_SenseLED.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_18_1_1_SenseLED/Sketch_18_1_1_SenseLED.pde
     :linenos: 
     :language: c
     :lines: 17-29
+    :dedent:

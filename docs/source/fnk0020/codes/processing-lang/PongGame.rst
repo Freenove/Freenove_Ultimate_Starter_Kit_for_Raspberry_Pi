@@ -1,5 +1,5 @@
 ################################################################
-Chapter Thermistor
+App Pong Game
 ################################################################
 
 In this chapter, we will play a Pong Game.
@@ -18,7 +18,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                      |
 |                                                               |
 |3. Breadboard x1                                               |
-+===============================+===============================+
++-------------------------------+-------------------------------+
 | Rotary potentiometer x2       |   Resistor 10kΩ x2            |
 |                               |                               |
 | |Rotary-potentiometer|        |  |Resistor-10kΩ|              |
@@ -34,10 +34,14 @@ Component List
 +---------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 40%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
+    :width: 10%
 .. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
+    :width: 30%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
+
 
 Circuit with PCF8591
 ================================================================
@@ -73,7 +77,7 @@ Note that the power supply voltage of ADC module in this circuit is 5V.
 |                                                                                                |
 |   support@freenove.com                                                                         | 
 |                                                                                                |
-|   |oscilloscope_Fr_1|                                                                          |
+|   |Graphics_ADS7830_Fr|                                                                        |
 +------------------------------------------------------------------------------------------------+
 
 .. |Graphics_ADS7830_Sc| image:: ../_static/imgs/Graphics_ADS7830_Sc.png
@@ -82,7 +86,7 @@ Note that the power supply voltage of ADC module in this circuit is 5V.
 Sketch
 ================================================================
 
-Sketch 3.1.1 PongGame
+Sketch PongGame
 ----------------------------------------------------------------
 
 1.	Use Processing to open the file Sketch_03_1_1_PongGame.

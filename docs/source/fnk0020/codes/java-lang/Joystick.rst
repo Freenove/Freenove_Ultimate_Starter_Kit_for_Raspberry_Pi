@@ -18,7 +18,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                      |
 |                                                               |
 |3. Breadboard x1                                               |
-+===============================+===============================+
++-------------------------------+-------------------------------+
 | Joystick  x1                  |   Resistor 10kΩ x3            |
 |                               |                               |
 | |joystick|                    |  |Resistor-10kΩ|              |
@@ -34,10 +34,14 @@ Component List
 +---------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 40%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
+    :width: 15%
 .. |joystick| image:: ../_static/imgs/joystick.png
+    :width: 40%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
+    :width: 20%
 
 Component knowledge
 ================================================================
@@ -48,14 +52,14 @@ Joystick
 A Joystick is a kind of input sensor used with your fingers. You should be familiar with this concept already as they are widely used in gamepads and remote controls. It can receive input on two axes (Y and or X) at the same time (usually used to control direction on a two dimensional plane). And it also has a third direction capability by pressing down (Z axis/direction).
 
 .. image:: ../_static/imgs/joystick-2.png
-        :width: 70%
-        :align: center
+    :width: 70%
+    :align: center
 
 This is accomplished by incorporating two rotary potentiometers inside the Joystick Module at 90 degrees of each other, placed in such a manner as to detect shifts in direction in two directions simultaneously and with a Push Button Switch in the “vertical” axis, which can detect when a User presses on the Joystick.
 
 .. image:: ../_static/imgs/joystick-fritizing.png
-        :width: 70%
-        :align: center
+    :width: 70%
+    :align: center
 
 When the Joystick data is read, there are some differences between the axes: data of X and Y axes is analog, which needs to use the ADC. The data of the Z axis is digital, so you can directly use the GPIO to read this data or you have the option to use the ADC to read this.
 
@@ -82,7 +86,7 @@ Sketch
 
 In this project, we will learn the usage of joystick.
 
-Sketch_10_Joystick
+Sketch_Joystick
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -121,10 +125,10 @@ You can open the code with Geany to view and edit it.
 
 Click the icon to run the code.
 
-.. image:: ../_static/imgs/java_joystick_code.png
+.. image:: ../_static/imgs/java10_00.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
@@ -138,6 +142,7 @@ Configure the Raspberry Pi's I2C to obtain the ADC values of the x-axis and y-ax
     :linenos: 
     :language: java
     :lines: 60-72
+    :dedent:
 
 The joystick sensor is associated with channel 5 and channel 6 of ADS7830, and its data is acquired every 100 milliseconds and the collected values are printed on the terminal.
 
@@ -145,4 +150,4 @@ The joystick sensor is associated with channel 5 and channel 6 of ADS7830, and i
     :linenos: 
     :language: java
     :lines: 80-89
-
+    :dedent:

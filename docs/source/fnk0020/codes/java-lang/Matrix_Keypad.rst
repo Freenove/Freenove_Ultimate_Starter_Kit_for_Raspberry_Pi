@@ -5,7 +5,7 @@ Chapter Matrix Keypad
 
 Earlier we learned about a single Push Button Switch. In this chapter, we will learn about Matrix Keyboards, which integrates a number of Push Button Switches as Keys for the purposes of Input.
 
-Project 22.1 Matrix Keypad
+Project Matrix Keypad
 ****************************************************************
 
 In this project, we will attempt to get every key code on the Matrix Keypad to work.
@@ -79,7 +79,7 @@ Sketch
 
 In this chapter, we will learn to use a martrix keypad.
 
-Sketch_20_MatrixKeypad
+Sketch_MatrixKeypad
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -102,7 +102,7 @@ Enter the command to run the code.
 
 When the code is running, press any key on the keypad and the corresponding value will be printed on the terminal.
 
-.. image:: ../_static/imgs/Keypad.png
+.. image:: ../_static/imgs/java20_00.png
     :align: center
 
 Press Ctrl+C to exit the program.
@@ -121,17 +121,19 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_pad_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_20_MatrixKeypad/MatrixKeypad.java
     :linenos: 
     :language: java
+    :dedent:
 
 Re-encapsulate the GPIO functions using the Pi4J library, with these functions referring to the classic usage of Arduino. This is done to ensure compatibility with the later Key class and Keypad class, making matrix buttons easier to use. If you are interested in this code, please review it, as we will include detailed comments within the code.
 
 .. code-block:: c
+    :linenos:
 
     class GPIO {
       ... ...
@@ -152,17 +154,28 @@ Define the key values corresponding to the matrix keyboard.
     :linenos: 
     :language: java
     :lines: 413-418
+    :dedent:
 
 Define pin numbers for the row and column the matrix keyboard.
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_20_MatrixKeypad/MatrixKeypad.java
     :linenos: 
-    :language: 
+    :language: java
     :lines: 420-423
+    :dedent:
+
+Add a shutdown hook to ensure the Pi4J context is closed properly.
+
+.. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_20_MatrixKeypad/MatrixKeypad.java
+    :linenos: 
+    :language: java
+    :lines: 439-444
+    :dedent:
 
 The key value is read from the matrix keyboard every 10 milliseconds. If the key value is not detected as empty, it is printed on the terminal interface.
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_20_MatrixKeypad/MatrixKeypad.java
     :linenos: 
-    :language: 
+    :language: java
     :lines: 448-457
+    :dedent:

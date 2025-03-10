@@ -1,4 +1,3 @@
-
 ################################################################
 Chapter LED
 ################################################################
@@ -21,15 +20,21 @@ Component List
 |    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
 |                                                           | 
 |     |raspberrypi5|                                        | 
-+---------------------------+-------------------------------+
-| LED x1                    | Breadboard x1                 |
-|                           |                               |
-|  |red-led|                |  |breadborad-830|             |                         
-+---------------------------+----------+--------------------+
++-----------------------------------------------------------+
+| Breadboard x1                                             |
+|                                                           |
+|  |breadborad-830|                                         |                         
++--------------------------------------+--------------------+
 |  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
 |                                      |                    | 
 |   |extension-board|                  |  |res-220R|        |
-+--------------------------------------+--------------------+
++--------------------------------------+-------+------------+
+| Jumper                                       | LED x1     | 
+|                                              |            | 
+| **Specific quantity depends on the circuit.**| |red-led|  | 
+|                                              |            | 
+| |jumper-wire|                                |            | 
++----------------------------------------------+------------+
 
 .. |raspberrypi5| image:: ../_static/imgs/raspberrypi5.png
     :width: 60%
@@ -40,9 +45,9 @@ Component List
 .. |breadborad-830| image:: ../_static/imgs/breadborad-830.jpg
     :width: 80%
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 15%
+    :width: 30%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 10%
+    :width: 20%
 
 In the components list, 3B GPIO, Extension Shield Raspberry and Breadboard are necessary for each project. Later, they will be reference by text only (no images as in above).
 
@@ -76,25 +81,17 @@ Another way to refer to the pins is by simply counting across and down from pin 
 .. image:: ../_static/imgs/PHYSICAL-Numbering.png
     :height: 200
 
-WiringPi GPIO Numbering
----------------------------------------------------------------
+GPIO Numbering
+==========================
 
-Different from the previous two types of GPIO serial numbers, RPi GPIO serial number of the WiringPi are numbered according to the BCM chip use in RPi.
-
-.. image:: ../_static/imgs/WiringPi-GPIO-Numbering.png
-    :height: 500
-
-.. seealso:: 
-    For more details, please refer to `<https://projects.drogon.net/raspberry-pi/wiringpi/pins/>`_ 
-
-You can also use the following command to view their correlation.
+You can use the following command to view their correlation.
 
 .. code-block:: console
+    
+    $ Pinout
 
-    $ gpio readall
-
-.. image:: ../_static/imgs/cmd-readall-console.png
-    :height: 500
+.. image:: ../_static/imgs/python01_00.png
+    :align: center
 
 Circuit
 ================================================================
@@ -128,16 +125,17 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
 .. note:: 
     Youtube video `<https://youtu.be/hGQtnxsr1L4>`_
 
+The connection of Raspberry Pi T extension board is as below. **Don't reverse the ribbon**.
+
 .. raw:: html
 
    <iframe height="500" width="690" src="https://www.youtube.com/embed/hGQtnxsr1L4" frameborder="0" allowfullscreen></iframe>
-
-The connection of Raspberry Pi T extension board is as below. **Don't reverse the ribbon**.
 
 .. image:: ../_static/imgs/blink-real.png
     :width: 100%
 
 .. note:: 
+    
     If you have a fan, you can connect it to 5V GND of breadboard via jumper wires.
 
 **How to distinguish resistors?**
@@ -160,6 +158,7 @@ There are only three kind of resistors in this kit.
         :height: 20
 
 .. note:: 
+    
     Future hardware connection diagrams will only show that part of breadboard and GPIO Extension Shield.
 
 Component knowledge
@@ -174,8 +173,10 @@ All common 2 lead diodes are the same in this respect. Diodes work only if the v
 
 .. image:: ../_static/imgs/led-describe.png
     :width: 100%
+    :align: center
 
 .. note:: 
+    
     Note: LEDs cannot be directly connected to a power supply, which usually ends in a damaged component. A resistor with a specified resistance value must be connected in series to the LED you plan to use.
 
 Resistor
@@ -198,14 +199,17 @@ In the following diagram, the current through R1 is:
 .. math:: I=U/R=5V/10kΩ=0.0005A=0.5mA.
 
 .. image:: ../_static/imgs/res-current.png
+    :align: center
 
 .. warning:: 
+
     WARNING: Never connect the two poles of a power supply with anything of low resistance value (i.e. a metal object or bare wire) this is a Short and results in high current that may damage the power supply and electronic components.
 
 .. note:: 
+    
     Note: Unlike LEDs and Diodes, Resistors have no poles and re non-polar (it does not matter which direction you insert them into a circuit, it will work the same)
 
-Resistor
+Breadboard
 ----------------------------------------------------------------
 
 Here we have a small breadboard as an example of how the rows of holes (sockets) are electrically attached. The left picture shows the ways the pins have shared electrical connection and the right picture shows the actual internal metal, which connect these rows electrically.
@@ -223,14 +227,14 @@ GPIO board is a convenient way to connect the RPi I/O ports to the breadboard di
 
 .. image:: ../_static/imgs/raspberrypi-extension-describe.png
     :width: 90%
+    :align: center
 
-    
 Code
 ================================================================
 
 According to the circuit, when the GPIO17 of RPi output level is high, the LED turns ON. Conversely, when the GPIO17 RPi output level is low, the LED turns OFF. Therefore, we can let GPIO17 cycle output high and output low level to make the LED blink. We will use Python code to achieve the target.
 
-Python Code 1.1.1 Blink
+Python Code Blink
 ----------------------------------------------------------------
 
 Now, we will use Python language to make a LED blink.
@@ -238,6 +242,7 @@ Now, we will use Python language to make a LED blink.
 First, observe the project result, and then learn about the code in detail. 
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
     
 1.	Use cd command to enter 01.1.1_Blink directory of Python code.
@@ -262,27 +267,33 @@ You can press “Ctrl+C” to end the program. The following is the program code
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/01.1.1_Blink/Blink.py
     :linenos: 
     :language: python
+    :dedent:
 
 Import the LED class from the gpiozero library.
 
 .. code-block:: python
+    :linenos:
 
     from gpiozero import LED
 
 Create an LED assembly for controlling the LED.
 
 .. code-block:: python
+    :linenos:
 
     led = LED(17)           # define LED pin according to BCM Numbering
 
 Turn on LED device.
 
 .. code-block:: python
+    :linenos:
     
     led.on()    # turn on LED
 
 Turn off LED devices.
+
 .. code-block:: python
+    :linenos:
     
     led.off()   # turn off LED
 
@@ -292,13 +303,14 @@ The main function turns on the LED for one second and then turns it off for one 
     :linenos: 
     :language: python
     :lines: 22-29
+    :dedent:
 
 Reference
 ----------------------------------------------------------------
 
 About GPIO Zero:
 
-.. c:function:: GPIO Zero;
+.. py:function:: GPIO Zero
 
     A simple interface to GPIO devices with Raspberry Pi, Using the GPIO Zero library makes it easy to get started with controlling GPIO devices with Python. The library is comprehensively documented at 
     
@@ -317,10 +329,12 @@ In Python, libraries and functions used in a script must be imported by name at 
 For example, to use the LED interface from GPIO Zero, it should be explicitly imported:
 
 .. code-block:: python
+    :linenos:
 
     from gpiozero import LED
 
 .. code-block:: python
+    :linenos:
 
     led = LED(17)           # define LED pin according to BCM Numbering
     #led = LED("J8:11")     # BOARD Numbering
@@ -328,12 +342,14 @@ For example, to use the LED interface from GPIO Zero, it should be explicitly im
 Alternatively, the whole GPIO Zero library can be imported:
 
 .. code-block:: python
+    :linenos:
 
     import gpiozero
 
 In this case, all references to items within GPIO Zero must be prefixed: 
 
 .. code-block:: python
+    :linenos:
 
     led = gpiozero.LED(17)           # define LED pin according to BCM Numbering
     #led = gpiozero.LED("J8:11")     # BOARD Numbering
@@ -370,6 +386,7 @@ Finally, you can specify pins as “header:number”, e.g. “J8:11” meaning p
     Note that these alternate schemes are merely translations. If you request the state of a device on thecommand line, the associated pin number will always be reported in the Broadcom (BCM) scheme:
 
 .. code-block:: python
+    :linenos:
 
         led = LED("BOARD11")
         led
@@ -537,6 +554,7 @@ In loop(), there is a while loop, which is an endless loop (a while loop). That 
     :linenos: 
     :language: python
     :lines: 22-29
+    :dedent:
 
 In gpiozero, at the end of your script, cleanup is run automatically, restoring your GPIO pins to the state they were found.To explicitly close a connection to a pin, you can manually call the close() method on a device object:
 
@@ -551,6 +569,7 @@ In gpiozero, at the end of your script, cleanup is run automatically, restoring 
     <gpiozero.LED object closed>
 
 This means that you can reuse the pin for another device, and that despite turning the LED on (and hence, the pin high), after calling close() it is restored to its previous state (LED off, pin low).
+
 In this tutorial, most projects have added an active run cleanup program to restore the GPIO pin to the found default state.
 
 Freenove Car, Robot and other products for Raspberry Pi
@@ -558,11 +577,12 @@ Freenove Car, Robot and other products for Raspberry Pi
 
 We also have car and robot kits for Raspberry Pi. You can visit our website for details.
 
-:xx-large:`https://www.amazon.com/freenove`
+https://www.amazon.com/freenove
 
 **FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/43_1.png
+
 .. image:: ../_static/imgs/43_2.png
 
 .. raw:: html
@@ -572,6 +592,7 @@ We also have car and robot kits for Raspberry Pi. You can visit our website for 
 **FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/50_1.png
+
 .. image:: ../_static/imgs/50_2.png
 
 .. raw:: html
@@ -582,39 +603,7 @@ We also have car and robot kits for Raspberry Pi. You can visit our website for 
 
 .. image:: ../_static/imgs/52_1.png
     :width: 50%
-.. image:: ../_static/imgs/52_2.png
-    :width: 40%
 
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/LvghnJ2DNZ0" frameborder="0" allowfullscreen></iframe>Freenove Car, Robot and other products for Raspberry Pi
-
-We also have car and robot kits for Raspberry Pi. You can visit our website for details.
-
-:xx-large:`https://www.amazon.com/freenove`
-
-**FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/43_1.png
-.. image:: ../_static/imgs/43_2.png
-
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
-  
-**FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/50_1.png
-.. image:: ../_static/imgs/50_2.png
-
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
-
-**FNK0052**--:green:`Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi`
-
-.. image:: ../_static/imgs/52_1.png
-    :width: 50%
 .. image:: ../_static/imgs/52_2.png
     :width: 40%
 

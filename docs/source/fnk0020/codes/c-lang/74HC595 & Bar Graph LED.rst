@@ -98,11 +98,16 @@ Circuit
 .. |74HC595-Sc| image:: ../_static/imgs/74HC595-Sc.png
 .. |74HC595-Fr| image:: ../_static/imgs/74HC595-Fr.png
 
+video: https://www.youtube.com/watch?v=e_SZUGKH2KU
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/e_SZUGKH2KU" frameborder="0" allowfullscreen></iframe>
 
 Code
 ================================================================
 
-C Code 17.1.1 LightWater02
+C Code LightWater02
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
@@ -135,6 +140,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/17.1.1_LightWater02/LightWater02.c
     :linenos: 
     :language: C
+    :dedent:
 
 In the code, we configure three pins to control the 74HC595 chip and define a one-byte variable to control the state of the 8 LEDs (in the Bar Graph LED Module) through the 8 bits of the variable. The LEDs light ON when the corresponding bit is 1. If the variable is assigned to 0x01, that is 00000001 in binary, there will be only one LED ON. 
 
@@ -156,7 +162,7 @@ In the “while” cycle of main function, use two cycles to send x to 74HC595 o
 
 In second cycle, the situation is the same. The difference is that x is shift from 0x80 to the RIGHT in order.
 
-.. c:function:: << operator
+.. py:function:: << operator
 
     .. image:: ../_static/imgs/operator.png
         :align: center

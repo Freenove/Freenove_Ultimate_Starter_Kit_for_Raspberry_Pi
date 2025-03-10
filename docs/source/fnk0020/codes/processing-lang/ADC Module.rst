@@ -18,7 +18,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                      |       
 |                                                               |                                                            
 |3. Breadboard x1                                               |                                                                 
-+===============================+===============================+
++-------------------------------+-------------------------------+
 | Rotary potentiometer x1       |   Resistor 10kΩ x2            |
 |                               |                               |
 | |Rotary-potentiometer|        |  |Resistor-10kΩ|              |                           
@@ -28,7 +28,7 @@ Component List
 |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |                   
 |                                                               |  
 +---------------------------------------------------------------+
-|   Jumper Wire                                                 |
+|   Jumper Wire x16                                             |
 |                                                               | 
 |      |jumper-wire|                                            |
 +---------------------------------------------------------------+
@@ -46,7 +46,7 @@ This product contains only one ADC module, there are two types, PCF8591 and ADS7
 
 +---------------------------------------------------------------+----------------------------------------------------------------+
 |                      ADC module: PCF8591                      |                      ADC module: ADS7830                       |                                 
-+===============================+===============================+===============================+================================+
++-------------------------------+-------------------------------+-------------------------------+-------------------------------+
 |         Model diagram         |         Actual Picture        |         Model diagram         |         Actual Picture         |
 |                               |                               |                               |                                |
 ||ADC-module-1|                 ||PCF8591|                      ||ADC-module-2|                 ||ADS7830|                       |                           
@@ -161,7 +161,7 @@ When you are using ADS, the result should look like this:
 
 Here, 4b (HEX) is the I2C address of ADC Module (ADS7830).
 
-Sketch 6.1.1 ADC
+Sketch ADC
 ----------------------------------------------------------------
 
 First, observe the result after running the sketch, and then learn about the code in detail.
@@ -186,59 +186,60 @@ This project contains a lot of code files, and the core code is contained in the
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_06_1_1_ADC/Sketch_06_1_1_ADC.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_06_1_1_ADC/Sketch_06_1_1_ADC.pde
     :linenos: 
     :language: java
 
 The code of this project mainly uses PCF8591 class member function analogRead() to read ADC.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_06_1_1_ADC/Sketch_06_1_1_ADC.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_06_1_1_ADC/Sketch_06_1_1_ADC.pde
     :linenos: 
     :language: java
     :lines: 23-24
+    :dedent:
 
 About class ADCDevice, PCF8591, ADS7830:
 
-.. c:function:: class ADCDevice 
+.. py:function:: class ADCDevice 
 
     This is a base class, and all ADC module classes are subclasses of it. It provides two basic member functions.
 
-    public int analogRead(int chn)
+    **public int analogRead** (int chn)
     
     This is a unified function name. Different chips have different implement methods. Therefore, specific method is implemented in subclasses.
 
-    public boolean detectI2C(int addr)
+    **public boolean detectI2C** (int addr)
     
     Used to detect I2C device with a given address. If it exists, it returns true, otherwise it returns false.
 
-.. c:function:: class PCF8591 extends ADCDevice
+.. py:function:: class PCF8591 extends ADCDevice
 
     This is a custom class that is used to operate the ADC and DAC of PCF8591.
 
-    public PCF8591(int addr)
+    **public PCF8591** (int addr)
 
     Constructor, used to create a PCF8591 class object, parameters for the I2C PCF8591 device address.
 
-    public int analogRead(int chn)
+    **public int analogRead** (int chn)
 
     Used to read ADC value of one channel of PCF8591, the parameter CHN indicates the channel number: 0,1,2,3.
 
-    public byte[] analogRead()
+    **public byte[] analogRead** ()
 
     To read ADC values of all channels of PCF8591.
 
-    public void analogWrite(int data)
+    **public void analogWrite** (int data)
 
     Write a DAC value to PCF8591.
 
-.. c:function:: class ADS7830 extends ADCDevice
+.. py:function:: class ADS7830 extends ADCDevice
 
     This is a custom class that is used to operate the ADC of ADS7830.
     
-    public ADS7830(int addr)
+    **public ADS7830(int addr)**
 
     Constructor, used to create a ADS7830 class object, parameters for the I2C ADS7830 device address.
     
-    public int analogRead(int chn)
+    **public int analogRead(int chn)**
     
     Used to read ADC value of one channel of ADS7830, the parameter CHN indicates the channel number: 0,1,2,3,4,5,6,7.

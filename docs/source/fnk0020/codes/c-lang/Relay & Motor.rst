@@ -34,7 +34,7 @@ In this project, we will use a Push Button Switch indirectly to control the DC M
 |  |button-small|             |  |red-led|                       |  |Diode|                         |
 +-----------------------------+----------------------------------+----------------------------------+
 
-.. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+.. |jumper-wire| image:: ../_static/imgs/14_00.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
     :width: 10%
 .. |power-module| image:: ../_static/imgs/power-module.png
@@ -118,7 +118,7 @@ Code
 
 The project code is in the same as we used earlier in the Table Lamp project. Pressing the Push Button Switch activates the transistor. Because the Relay and the LED are connected in parallel, they will be powered ON at the same time. Press the Push Button Switch again will turn them both OFF.
 
-C Code 14.1.1 Relay
+C Code Relay
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.

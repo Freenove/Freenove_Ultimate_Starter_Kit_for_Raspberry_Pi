@@ -2,7 +2,6 @@
 Chapter LCD1602
 ##############################################################################
 
-
 In this chapter, we will learn about the LCD1602 Display Screen
 
 Project I2C LCD1602
@@ -80,7 +79,7 @@ Sketch
 
 In this project, we will drive the LCD1602 display with I2C.
 
-Sketch_18_I2CLCD1602
+Sketch_I2CLCD1602
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -119,13 +118,14 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_lcd1602_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
     :linenos: 
     :language: java
+    :dedent:
 
 Constructor, assigns the I2C bus to bus, and calls the constructor function to initialize the I2C bus.
 
@@ -133,6 +133,7 @@ Constructor, assigns the I2C bus to bus, and calls the constructor function to i
     :linenos: 
     :language: java
     :lines: 40-53
+    :dedent:
 
 I2C constructor, initialize the I2C bus.
 
@@ -140,6 +141,7 @@ I2C constructor, initialize the I2C bus.
     :linenos: 
     :language: java
     :lines: 55-59
+    :dedent:
 
 I2C bus acquisition function. Calling the list() function can obtain the names of all I2C buses currently existing on the Raspberry Pi.
 
@@ -147,6 +149,7 @@ I2C bus acquisition function. Calling the list() function can obtain the names o
     :linenos: 
     :language: java
     :lines: 87-101
+    :dedent:
     
 Use the pi4j library to repackage the I2C functions. These functions refer to the classic usage of Arduino. This is to be compatible with the subsequent PCF8574 class and Freenove_LCD1602 class, making it easier to drive LCD1602.
 
@@ -154,10 +157,12 @@ Use the pi4j library to repackage the I2C functions. These functions refer to th
     :linenos: 
     :language: java
     :lines: 61-85
+    :dedent:
 
 The following are the two classes we wrote for LCD1602 in reference to Arduino. Here, we do not go into too much detail here. If you are interested in this code, you can use Geany to view the code.
 
 .. code-block:: python
+    :linenos:
 
     class PCF8574 {
       ......
@@ -173,6 +178,7 @@ Initialize PCF8574 and Freenove_LCD1602 classes, and assign the value to LCD.
     :linenos: 
     :language: java
     :lines: 376-378
+    :dedent:
 
 At the first lin of LCD1602, print the character “Hello World”.
 
@@ -180,6 +186,7 @@ At the first lin of LCD1602, print the character “Hello World”.
     :linenos: 
     :language: java
     :lines: 379-380
+    :dedent:
 
 Print the character “Count” and the counts number at the second line every one second.
 
@@ -187,6 +194,7 @@ Print the character “Count” and the counts number at the second line every o
     :linenos: 
     :language: java
     :lines: 382-389
+    :dedent:
 
 In Java, an `InterruptedException` is thrown when a thread's waiting, sleeping (e.g., using 'Thread.sleep()'), or other blocking operations are interrupted. When a thread is interrupted, its interrupted status is set to true, and any of these blocking operations will result in an 'InterruptedException' being thrown.
 
@@ -196,3 +204,4 @@ When 'InterruptedException' is capured, 'Thread.currentThread().interrupt()' is 
     :linenos: 
     :language: java
     :lines: 390-392
+    :dedent:

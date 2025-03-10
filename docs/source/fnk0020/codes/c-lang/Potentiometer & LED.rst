@@ -19,7 +19,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                                        |       
 |                                                                                 |                                                            
 |3. Breadboard x1                                                                 |                                                                 
-+=================================================+===============================+
++-------------------------------------------------+-------------------------------+
 | Rotary potentiometer x1                         |   Resistor 10kΩ x2            |
 |                                                 |                               |
 | |Rotary-potentiometer|                          |  |Resistor-10kΩ|              |                           
@@ -27,12 +27,11 @@ Component List
 | ADC module x1 (Only one)                        |   LED x1                      |
 |                                                 |                               |
 | |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |red-led|                   |                   
-|                                                 |                               |  
 +-------------------------------------------------+-------------------------------+
-|   Jumper Wire M/M x17                                                           |
-|                                                                                 | 
-|      |jumper-wire|                                                              |
-+---------------------------------------------------------------------------------+
+|   Jumper Wire M/M x17                           | Resistor 220Ω x1              |
+|                                                 |                               | 
+|      |jumper-wire|                              |  |res-220R|                   |
++-------------------------------------------------+-------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
@@ -44,6 +43,8 @@ Component List
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 .. |red-led| image:: ../_static/imgs/red-led.png
     :width: 30%
+.. |res-220R| image:: ../_static/imgs/res-220R.png
+    :width: 20%
 
 Circuit with ADS7830
 ================================================================
@@ -88,14 +89,15 @@ Circuit with PCF8591
 Code
 ================================================================
 
-C Code 8.1.1 Softlight
+C Code Softlight
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to :doc:`Chapter 7 ADC <ADC>` . If you did, please move on.
+If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>` . If you did, please move on.
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 08.1.1_Softlight directory of C code.
@@ -103,11 +105,13 @@ First, observe the project result, and then learn about the code in detail.
 .. code-block:: console
 
     $ cd ~/Freenove_Kit/Code/C_Code/08.1.1_Softlight
+
 2.	Use following command to compile “Softlight.cpp” and generate executable file ``Softlight``.
 
 .. code-block:: console
 
     $ g++ Softlight.cpp -o Softlight -lwiringPi -lADCDevice
+
 3.	Then run the generated file ``Softlight``.
 
 .. code-block:: console
@@ -121,6 +125,7 @@ The following is the code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/08.1.1_Softlight/Softlight.cpp
     :linenos: 
     :language: C
+    :dedent:
 
 In the code, read the ADC value of potentiometer and map it to the duty cycle of PWM to control LED brightness.
 

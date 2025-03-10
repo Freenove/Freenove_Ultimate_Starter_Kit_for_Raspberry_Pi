@@ -140,3 +140,8 @@
 .xx-small{
     font-size: xx-small;
 }
+
+.x-large-bold{
+    font-size: x-large;
+    font-weight: bold;
+}

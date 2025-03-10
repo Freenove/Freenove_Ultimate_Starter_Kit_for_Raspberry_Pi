@@ -207,7 +207,7 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_doorbell_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
@@ -236,7 +236,7 @@ Sketch
 
 In this chapter, we use button to control the passive buzzer to make sound.
 
-Sketch_06_2_Alertor
+Sketch_Alertor
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -280,13 +280,14 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_Alertor_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_06_2_Alertor/Alertor.java
     :linenos: 
     :language: java
+    :dedent:
 
 Create a pi4j context for manipulating the GPIOs, and define the GPIO numbers that control the keys and buzzer.
 
@@ -294,6 +295,7 @@ Create a pi4j context for manipulating the GPIOs, and define the GPIO numbers th
     :linenos: 
     :language: java
     :lines: 84-88
+    :dedent:
 
 Initialize the button input pin, create a monitoring event, and assign the key value to buttonState when the button state changes.
 
@@ -301,6 +303,7 @@ Initialize the button input pin, create a monitoring event, and assign the key v
     :linenos: 
     :language: java
     :lines: 113-116
+    :dedent:
 
 Initialize the PWM pin that controls the passive buzzer.
 
@@ -308,6 +311,7 @@ Initialize the PWM pin that controls the passive buzzer.
     :linenos: 
     :language: java
     :lines: 118-121
+    :dedent:
 
 When buttonState is 1, the passive buzzer sounds, and when buttonState is 0, the buzzer sound is turned off. Print the information in the console.
 
@@ -315,3 +319,4 @@ When buttonState is 1, the passive buzzer sounds, and when buttonState is 0, the
     :linenos: 
     :language: java
     :lines: 125-131
+    :dedent:

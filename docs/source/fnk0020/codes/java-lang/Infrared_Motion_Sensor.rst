@@ -2,7 +2,6 @@
 Chapter Infrared Motion Sensor
 ##############################################################################
 
-
 In this chapter, we will learn a widely used sensor, Infrared Motion Sensor. 
 
 Project PIR Infrared Motion Detector with LED Indicator
@@ -17,36 +16,36 @@ This Infrared Motion Sensor can detect the infrared spectrum (heat signatures) e
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x5                               |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| HC SR501 x1                 | LED x1                           | Resistor 220Ω x1                 |
-|                             |                                  |                                  |
-|  |HC_SR501|                 |  |red-led|                       |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
++--------------------------------------------+-------------------------------------------------+
+|1. Raspberry Pi (with 40 GPIO) x1           |                                                 |     
+|                                            |   Jumper Wires x5                               |       
+|2. GPIO Extension Board & Ribbon Cable x1   |                                                 |       
+|                                            |     |jumper-wire|                               |                                                            
+|3. Breadboard x1                            |                                                 |                                                                 
++-----------------------------+--------------+--------------+----------------------------------+
+| HC SR501 x1                 | LED x1                      | Resistor 220Ω x1                 |
+|                             |                             |                                  |
+|  |HC_SR501|                 |  |red-led|                  |  |res-220R|                      |
++-----------------------------+-----------------------------+----------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 40%
+    :width: 60%
 .. |HC_SR501| image:: ../_static/imgs/HC_SR501.png
-    :width: 70%
+    :width: 50%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 20%
+    :width: 15%
 
 Component Knowledge
 ================================================================
 
 ==============  ======================  ==========================
 
-|HC_SR501|        |HC_SR501_bottom|       |HC_SR501_Schematic|
+|HC_SR5012|        |HC_SR501_bottom|       |HC_SR501_Schematic|
 
 ==============  ======================  ==========================
 
-.. |HC_SR501| image:: ../_static/imgs/HC_SR501.png
+.. |HC_SR5012| image:: ../_static/imgs/HC_SR501.png
 .. |HC_SR501_bottom| image:: ../_static/imgs/HC_SR501_bottom.png
 .. |HC_SR501_Schematic| image:: ../_static/imgs/HC_SR501_Schematic.png
 
@@ -67,10 +66,6 @@ We can regard this sensor as a simple inductive switch when in use.
 Circuit
 ================================================================
 
-.. table:: 
-    :width: 100%
-    :class: product-table
-
 +-------------------------------------------------------------------------------------------------+
 |   Schematic diagram                                                                             |
 |                                                                                                 |
@@ -85,6 +80,7 @@ Circuit
 | :xx-large:`How to use this sensor?`                                                             |
 |                                                                                                 |
 |   |HC_SR501_T_B|                                                                                |
+|                                                                                                 |
 | Description:                                                                                    |
 |                                                                                                 |
 | 1. You can choose non-repeatable trigger modes or repeatable modes.                             |
@@ -167,10 +163,11 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_infrared_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_21_1_InfraredSensor/SenseLED.java
     :linenos: 
     :language: java
+    :dedent:

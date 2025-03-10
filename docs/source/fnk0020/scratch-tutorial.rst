@@ -3,18 +3,40 @@ Scratch language tutorial
 ##############################################################################
 
 .. toctree::
-   :numbered:
+   :titlesonly:
+   :caption: Getting Started
+
+   codes/scratch-lang/Getting_Started.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: Remove the Chips
+
+   codes/scratch-lang/Remove_the_Chips.rst
+
+.. toctree::
    :titlesonly:
    :caption: Preface
 
    codes/preface/scratch_preface.rst
 
 .. toctree::
+   :titlesonly:
+   :caption: Raspberry Pi
+
+   codes/scratch-lang/Raspberry_Pi.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: Installing_an_Operating_System
+
+   codes/scratch-lang/Installing_an_Operating_System.rst
+
+.. toctree::
    :titlesonly: 
-   :caption: Preparation
+   :caption: Projects
    
    codes/preface/scratch_preparation.rst
-
 
 .. toctree::
    :numbered:

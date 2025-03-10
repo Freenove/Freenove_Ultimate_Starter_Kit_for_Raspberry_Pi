@@ -13,7 +13,7 @@
 .wy-grid-for-nav {
     top: var(--fn_nav_height);
     height: calc(100% - var(--fn_nav_height));
-    height: 100%;
+    /* height: 90%; */
     overflow-y: auto;
     position: fixed;
 }

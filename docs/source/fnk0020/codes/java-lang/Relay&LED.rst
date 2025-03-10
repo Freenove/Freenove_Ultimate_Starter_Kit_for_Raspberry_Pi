@@ -160,7 +160,7 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_relay_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 

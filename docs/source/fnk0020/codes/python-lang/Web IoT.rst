@@ -47,8 +47,8 @@ Circuit
 |   |TTP223_Fr|                                                                                  |
 +------------------------------------------------------------------------------------------------+
 
-.. |TTP223_Sc| image:: ../_static/imgs/TTP223_Sc.png
-.. |TTP223_Fr| image:: ../_static/imgs/TTP223_Fr.png
+.. |TTP223_Sc| image:: ../_static/imgs/python37_00.png
+.. |TTP223_Fr| image:: ../_static/imgs/python37_01.png
 
 Solution from E-Tinkers
 ================================================================
@@ -163,7 +163,9 @@ Click on GPIO Header to enter the GPIO control interface.
     :align: center
 
 Control methods:
+
 - Click/Tap the OUT/IN button to change GPIO direction.
+
 - Click/Tap pins to change the GPIO output state.
 
 Completed

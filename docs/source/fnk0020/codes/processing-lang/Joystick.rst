@@ -18,7 +18,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                      |       
 |                                                               |                                                            
 |3. Breadboard x1                                               |                                                                 
-+===============================+===============================+
++-------------------------------+-------------------------------+
 | Joystick  x1                  |   Resistor 10kΩ x3            |
 |                               |                               |
 | |joystick|                    |  |Resistor-10kΩ|              |                           
@@ -34,8 +34,11 @@ Component List
 +---------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 50%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
+    :width: 20%
 .. |joystick| image:: ../_static/imgs/joystick.png
+    :width: 40%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 
@@ -100,7 +103,7 @@ Circuit with PCF8591
 Sketch
 ================================================================
 
-Sketch 14.1.1 Joystick
+Sketch Joystick
 ----------------------------------------------------------------
 
 First observe the result after running the sketch, and then learn about the code in detail.
@@ -128,14 +131,14 @@ This project contains several code files, as shown below:
 .. image:: ../_static/imgs/pr_joystick_code.png
     :align: center
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_14_1_1_Joystick/Sketch_14_1_1_Joystick.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_14_1_1_Joystick/Sketch_14_1_1_Joystick.pde
     :linenos: 
     :language: c
 
 In function draw(), the ADC value of three axes Joystick is read. And the ADC value of X and Y directions are mapped into the position of the circle, and the ADC value of Z axis is mapped into the filled color of the circle.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_14_1_1_Joystick/Sketch_14_1_1_Joystick.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_14_1_1_Joystick/Sketch_14_1_1_Joystick.pde
     :linenos: 
     :language: c
     :lines: 30-52
-
+    :dedent:

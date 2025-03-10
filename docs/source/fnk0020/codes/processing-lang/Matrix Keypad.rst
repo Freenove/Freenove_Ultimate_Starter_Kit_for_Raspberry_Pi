@@ -5,7 +5,7 @@ Chapter Matrix Keypad
 
 Earlier we learned about a single Push Button Switch. In this chapter, we will learn about Matrix Keyboards, which integrates a number of Push Button Switches as Keys for the purposes of Input.
 
-Project 22.1 Matrix Keypad
+Project Matrix Keypad
 ****************************************************************
 
 In this project, we will attempt to get every key code on the Matrix Keypad to work.
@@ -32,7 +32,7 @@ Component List
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 50%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 15%
+    :width: 5%
 .. |Keypad| image:: ../_static/imgs/Keypad.png
 
 Component knowledge
@@ -74,7 +74,7 @@ Circuit
 Sketch
 ================================================================
 
-Sketch 17.1.1 Calculator
+Sketch Calculator
 ----------------------------------------------------------------
 
 First observe the result after running the sketch, and then learn about the code in detail.
@@ -87,7 +87,7 @@ First observe the result after running the sketch, and then learn about the code
 
 2.	Click on "RUN" to run the code.
 
-After the program is executed, Display Window shows the following interface, where the character "A, B, C, D, *, #" on the real Keypad is replaced by the character "+, -, *, /, C, =” on the virtual Keypad.
+After the program is executed, Display Window shows the following interface, where the character "A, B, C, D, \*, #" on the real Keypad is replaced by the character "+, -, \*, /, C, =” on the virtual Keypad.
 
 .. image:: ../_static/imgs/calculator.png
     :align: center
@@ -104,23 +104,26 @@ This project contains several code files, as shown below:
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_17_1_1_Calculator/Sketch_17_1_1_Calculator.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_17_1_1_Calculator/Sketch_17_1_1_Calculator.pde
     :linenos: 
     :language: c
+    :dedent:
 
 In the code, first define key code of the Keypad, and the GPIO connected to the Keypad. Then create a Keypad class object based on the information, and finally create a Calculator class object according to the Keypad class object.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_17_1_1_Calculator/Sketch_17_1_1_Calculator.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_17_1_1_Calculator/Sketch_17_1_1_Calculator.pde
     :linenos: 
     :language: c
     :lines: 9-17
+    :dedent:
 
 In draw(), use cc.process() to obtain the key code of Keypad and for processing. And then draw the display area and virtual Keypad.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_17_1_1_Calculator/Sketch_17_1_1_Calculator.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_17_1_1_Calculator/Sketch_17_1_1_Calculator.pde
     :linenos: 
     :language: c
     :lines: 21-27
+    :dedent:
 
 Reference
 ----------------------------------------------------------------
@@ -133,11 +136,11 @@ Reference
 
     The function at the top of the window to draw a calculator display area, and in the area of the right alignment display content.
 
-.. c:function:: class Key
+.. py:function:: class Key
 
     This is a custom class that defines the associated attribute owned by a key. There are only some member variables and a constructor in this class.
 
-.. c:function:: class Keypad
+.. py:function:: class Keypad
 
     This is a custom class that defines the methods to use keypad.
     
@@ -173,7 +176,7 @@ Reference
     
     Judge whether there is a change of key state, then return True or False.
 
-.. c:function:: class Calculator
+.. py:function:: class Calculator
 
     This is a custom class that defines the rules and calculating methods of the calculator.
     

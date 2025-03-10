@@ -2,7 +2,6 @@
 Chapter Analog & PWM
 ##############################################################################
 
-
 In previous chapters, we learned that a Push Button Switch has two states: Pressed (ON) and Released (OFF), and an LED has a Light ON and OFF state. Is there a middle or intermediated state? We will next learn how to create an intermediate output state to achieve a partially bright (dim) LED.
 
 First, let us learn how to control the brightness of an LED.
@@ -17,7 +16,7 @@ Component List
 
 +-------------------------------------------------+-------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x1                               |       
+|                                                 |   Jumper Wires                                  |       
 |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
 |                                                 |     |jumper-wire|                               |                                                            
 |3. Breadboard x1                                 |                                                 |                                                                 
@@ -44,7 +43,7 @@ An Analog Signal is a continuous signal in both time and value. On the contrary,
         :width: 100%
 
 Note that the Analog signals are curved waves and the Digital signals are “Square Waves”. 
-In practical applications, we often use binary as the digital signal, that is a series of 0’s and 1’s. Since a binary signal only has two values (0 or 1) it has great stability and reliability. Lastly, both analog and digital signals can be converted into the other.
+In practical applications, we often use binary as the digital signal, that is a series of 0's and 1’s. Since a binary signal only has two values (0 or 1) it has great stability and reliability. Lastly, both analog and digital signals can be converted into the other.
 
 PWM
 ----------------------------------------------------------------
@@ -92,13 +91,14 @@ Code
 
 This project uses the PWM output from the GPIO18 pin to make the pulse width gradually increase from 0% to 100% and then gradually decrease from 100% to 0% to make the LED glow brighter then dimmer. 
 
-BreathingLED
+C Code BreathingLED
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
-        :red:`If you have any concerns, please contact us via:` support@freenove.com
+    
+    :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 04.1.1_BreathingLED directory of C code.
 
@@ -129,6 +129,7 @@ The following is the program code:
 First, create a software PWM pin.
 
 .. code-block:: c
+    :linenos:
 
     softPwmCreate(ledPin,  0, 100);//Creat SoftPWM pin
 
@@ -143,11 +144,12 @@ You can also adjust the rate of the state change of LED by changing the paramete
 
 .. c:function:: int softPwmCreate (int pin, int initialValue, int pwmRange) ;
 
-This creates a software controlled PWM pin.
+    This creates a software controlled PWM pin.
 
-.. c:function:: int softPwmCreate (int pin, int initialValue, int pwmRange) ;
+.. c:function:: void softPwmWrite (int pin, int value) ;
 
-This updates the PWM value on the given pin.
+    This updates the PWM value on the given pin.
 
 .. hint:: 
+    
     For more details, please refer https://github.com/WiringPi/WiringPi

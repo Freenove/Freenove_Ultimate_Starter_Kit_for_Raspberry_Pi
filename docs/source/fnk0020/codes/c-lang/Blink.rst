@@ -20,15 +20,21 @@ Component List
 |    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
 |                                                           | 
 |     |raspberrypi5|                                        | 
-+---------------------------+-------------------------------+
-| LED x1                    | Breadboard x1                 |
-|                           |                               |
-|  |red-led|                |  |breadborad-830|             |                         
-+---------------------------+----------+--------------------+
++-----------------------------------------------------------+
+| Breadboard x1                                             |
+|                                                           |
+|  |breadborad-830|                                         |                         
++--------------------------------------+--------------------+
 |  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
 |                                      |                    | 
 |   |extension-board|                  |  |res-220R|        |
-+--------------------------------------+--------------------+
++--------------------------------------+-------+------------+
+| Jumper                                       | LED x1     | 
+|                                              |            | 
+| **Specific quantity depends on the circuit.**| |red-led|  | 
+|                                              |            | 
+| |jumper-wire|                                |            | 
++----------------------------------------------+------------+
 
 .. |raspberrypi5| image:: ../_static/imgs/raspberrypi5.png
     :width: 60%
@@ -39,14 +45,15 @@ Component List
 .. |breadborad-830| image:: ../_static/imgs/breadborad-830.jpg
     :width: 80%
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 15%
+    :width: 30%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 10%
+    :width: 20%
 
 In the components list, 3B GPIO, Extension Shield Raspberry and Breadboard are necessary for each project. Later, they will be reference by text only (no images as in above).
 
 GPIO
 ================================================================
+
 GPIO: General Purpose Input/Output. Here we will introduce the specific function of the pins on the Raspberry Pi and how you can utilize them in all sorts of ways in your projects. Most RPi Module pins can be used as either an input or output, depending on your program and its functions.
 
 When programming GPIO pins there are 3 different ways to reference them: **GPIO Numbering**, **Physical Numbering** and **WiringPi GPIO Numbering**.
@@ -64,10 +71,12 @@ Each pin's functional assignment is defined in the image below:
         :height: 500
 
 .. seealso:: 
+    
     For more details about pin definition of GPIO, please refer to `<http://pinout.xyz/>`_
 
 PHYSICAL Numbering
 ---------------------------------------------------------------
+
 Another way to refer to the pins is by simply counting across and down from pin 1 at the top left (nearest to the SD card). This is 'Physical Numbering', as shown below:
 
 .. image:: ../_static/imgs/PHYSICAL-Numbering.png
@@ -75,6 +84,7 @@ Another way to refer to the pins is by simply counting across and down from pin 
 
 WiringPi GPIO Numbering
 ---------------------------------------------------------------
+
 Different from the previous two types of GPIO serial numbers, RPi GPIO serial number of the WiringPi are numbered according to the BCM chip use in RPi.
 
 .. image:: ../_static/imgs/WiringPi-GPIO-Numbering.png
@@ -94,20 +104,23 @@ You can also use the following command to view their correlation.
 
 Circuit
 ================================================================
+
 First, disconnect your RPi from the GPIO Extension Shield. Then build the circuit according to the circuit and hardware diagrams. After the circuit is built and verified correct, connect the RPi to GPIO Extension Shield. 
 
 .. caution:: 
+
     CAUTION: Avoid any possible short circuits (especially connecting 5V or GND, 3.3V and GND)! 
 
 .. warning:: 
+
     WARNING: A short circuit can cause high current in your circuit, create excessive component heat and cause permanent damage to your RPi!
 
-1. **Schematic diagram**
+**Schematic diagram**
 
 .. image:: ../_static/imgs/blink-sch.png
     :height: 400
 
-2. **Hardware connection** 
+**Hardware connection** 
 
 .. image:: ../_static/imgs/blink-hdc.png
     :height: 400
@@ -173,6 +186,7 @@ All common 2 lead diodes are the same in this respect. Diodes work only if the v
 
 Resistor
 ----------------------------------------------------------------
+
 Resistors use Ohms (Ω) as the unit of measurement of their resistance (R). 1MΩ=1000kΩ, 1kΩ=1000Ω.
 A resistor is a passive electrical component that limits or regulates the flow of current in an electronic circuit.
 On the left, we see a physical representation of a resistor, and the right is the symbol used to represent the presence of a resistor in a circuit diagram or schematic.
@@ -196,31 +210,32 @@ In the following diagram, the current through R1 is:
 .. note:: 
     Note: Unlike LEDs and Diodes, Resistors have no poles and re non-polar (it does not matter which direction you insert them into a circuit, it will work the same)
 
-Resistor
+Breadboard
 ----------------------------------------------------------------
+
 Here we have a small breadboard as an example of how the rows of holes (sockets) are electrically attached. The left picture shows the ways the pins have shared electrical connection and the right picture shows the actual internal metal, which connect these rows electrically.
 
 .. image:: ../_static/imgs/breadborad-top-wire.png
     :width: 48%
     
-
 .. image:: ../_static/imgs/breadborad-bottom-wire.png
     :width: 48%
 
 GPIO Extension Board
 ----------------------------------------------------------------
+
 GPIO board is a convenient way to connect the RPi I/O ports to the breadboard directly. The GPIO pin sequence on Extension Board is identical to the GPIO pin sequence of RPi. 
 
 .. image:: ../_static/imgs/raspberrypi-extension-describe.png
     :width: 90%
     :align: center
 
-    
 Code
 ================================================================
+
 According to the circuit, when the GPIO17 of RPi output level is high, the LED turns ON. Conversely, when the GPIO17 RPi output level is low, the LED turns OFF. Therefore, we can let GPIO17 cycle output high and output low level to make the LED blink. We will use both C code to achieve the target.
 
-C language codes 
+C Code Blink
 ----------------------------------------------------------------
 First, enter this command into the Terminal one line at a time. Then observe the results it brings on your project, and learn about the code in detail. 
 
@@ -260,12 +275,20 @@ It is recommended that to execute the code via command line.
 
 Now your LED should start blinking! CONGRATUALTIONS! You have successfully completed your first RPi circuit! 
 
-You can press ``Ctrl+C`` to end the program. The following is the program code:
+.. image:: ../_static/imgs/01_00.png
+    :align: center
 
+You can also use the file browser. On the left of folder tree, right-click the folder you want to enter, and click "Open in Terminal".
+
+.. image:: ../_static/imgs/01_01.png
+    :align: center
+
+You can press ``Ctrl+C`` to end the program. The following is the program code:
 
 .. literalinclude:: ../../../freenove_kit/Code/C_Code/01.1.1_Blink/Blink.c
     :linenos: 
     :language: C
+    :dedent:
 
 In the code above, the configuration function for GPIO is shown below as:
 
@@ -299,7 +322,7 @@ In the main function ``main()``, initialize ``wiringPi`` first.
 
 .. code-block:: c
 
-    wiringPiSetup();
+    wiringPiSetup(); //Initialize wiringPi.
 
 After the wiringPi is initialized successfully, you can set the ledPin to output mode and then enter the while loop, 
 which is an endless loop (a while loop). 
@@ -313,17 +336,92 @@ then LED turns OFF, which is followed by a delay. Repeat the loop, then LED will
     :linenos: 
     :language: C
     :lines: 16-27
+    :dedent:
+
+Other Code Editors (Optional)
+=======================================
+
+If you want to use other editor to edit and execute the code, you can learn them in this section.
+
+nano
+---------------------------------
+
+Use the nano editor to open the file "Hello.c", then press " Ctrl+X " to exit.
+
+.. code-block:: console
     
+    $ nano Hello.c
+
+As is shown below:
+
+.. image:: ../_static/imgs/01_02.png
+    :align: center
+
+Use the following command to compile the code to generate the executable file “Hello”.
+
+.. code-block:: console
+    
+    $ gcc Hello.c  -o Hello 
+
+Use the following command to run the executable file “Hello”.
+
+.. code-block:: console
+    
+    $ sudo ./Hello 
+
+After the execution, "Hello, World!" is printed out in terminal.
+
+geany
+------------------------
+
+Next, learn to use the Geany editor. Use the following command to open the Geany in the sample file "Hello.c" file directory path.
+
+.. code-block:: console
+    
+    $ geany Hello.c
+
+Or find and open Geany directly in the desktop main menu, and then click FileOpen to open the "Hello.c", Or drag "Hello.c" to Geany directly.
+
+.. image:: ../_static/imgs/01_03.png
+    :align: center
+
+If you want to create a new code, click FileNewFileSave as (name.c or name.py). Then write the code.
+
+Generate an executable file by clicking menu bar Build->Build.
+
+.. image:: ../_static/imgs/01_04.png
+    :align: center
+
+Then execute the generated file by clicking menu bar Build->Execute.
+
+.. image:: ../_static/imgs/01_05.png
+    :align: center
+
+After the execution, a new terminal window will output the characters “Hello, World!”, as shown below:
+
+.. image:: ../_static/imgs/01_06.png
+    :align: center
+
+You can click Build->Set Build Commands to set compiler commands. In later projects, we will use various compiler command options. :red:`If you choose to use Geany, you will need change the compiler command here`. As is shown below:
+
+.. image:: ../_static/imgs/01_07.png
+    :align: center
+
+Here we have identified three code editors: vi, nano and Geany. There are also many other good code editors available to you, and you can choose whichever you prefer to use. 
+
+In later projects, we will only use terminal to execute the project code. This way will not modify the code by mistake.
+
 Freenove Car, Robot and other products for Raspberry Pi
 ================================================================
 
 We also have car and robot kits for Raspberry Pi. You can visit our website for details.
 
-:xx-large:`https://www.amazon.com/freenove`
+https://www.amazon.com/freenove
 
 **FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/43_1.png
+
 .. image:: ../_static/imgs/43_2.png
 
 .. raw:: html
@@ -333,6 +431,7 @@ We also have car and robot kits for Raspberry Pi. You can visit our website for 
 **FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/50_1.png
+
 .. image:: ../_static/imgs/50_2.png
 
 .. raw:: html
@@ -343,46 +442,10 @@ We also have car and robot kits for Raspberry Pi. You can visit our website for 
 
 .. image:: ../_static/imgs/52_1.png
     :width: 50%
-.. image:: ../_static/imgs/52_2.png
-    :width: 40%
 
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/LvghnJ2DNZ0" frameborder="0" allowfullscreen></iframe>Freenove Car, Robot and other products for Raspberry Pi
-
-We also have car and robot kits for Raspberry Pi. You can visit our website for details.
-
-:xx-large:`https://www.amazon.com/freenove`
-
-**FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/43_1.png
-.. image:: ../_static/imgs/43_2.png
-
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
-  
-**FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/50_1.png
-.. image:: ../_static/imgs/50_2.png
-
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
-
-**FNK0052**--:green:`Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi`
-
-.. image:: ../_static/imgs/52_1.png
-    :width: 50%
-    
 .. image:: ../_static/imgs/52_2.png
     :width: 40%
 
 .. raw:: html
 
    <iframe height="500" width="690" src="https://www.youtube.com/embed/LvghnJ2DNZ0" frameborder="0" allowfullscreen></iframe>
-
-.. toctree:: 
-    :includehidden:

@@ -4,7 +4,7 @@ Chapter Motor & Driver
 
 In this chapter, we will learn about DC Motors and DC Motor Drivers and how to control the speed and direction of a DC Motor.
 
-Project 13.1 Control a DC Motor with a Potentiometer
+Project Control a DC Motor with a Potentiometer
 ****************************************************************
 
 In this project, a potentiometer will be used to control a DC Motor. When the Potentiometer is at the midpoint position, the DC Motor will STOP, and when the Potentiometer is turned in either direction of this midpoint, the DC Motor speed increases until it reached the endpoint where the DC Motor achieves its maximum speed. When the Potentiometer is turned “Left” of the midpoint the DC Motor will ROTATE in one direction and when turned “Right” the DC Motor will ROTATE in the opposite direction. 
@@ -28,11 +28,11 @@ Breadboard Power Module
 | ADC module x1                                   | L293D IC Chip                                   |
 |                                                 |                                                 |
 |  |ADC-module-2|                                 | |L2983_chip|                                    |
-+-----------------------------+-------------------+--------------+----------------------------------+
-| DC Motor x1                 | Rotary Potentiometer x1          | Resistor 10kΩ x2                 |
-|                             |                                  |                                  |
-|  |DC_Motor_Module|          |  |Rotary-potentiometer|          |  |Resistor-10kΩ|                 |
-+-----------------------------+----------------------------------+----------------------------------+
++-------------------------------------------------+-------------------------------------------------+
+| DC Motor x1                                     | Rotary Potentiometer x1                         |
+|                                                 |                                                 |
+|  |DC_Motor_Module|                              |  |Rotary-potentiometer|                         |
++-------------------------------------------------+-------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
@@ -45,11 +45,11 @@ Breadboard Power Module
     :width: 30%
 .. |Battery_cable| image:: ../_static/imgs/Battery_cable.png
 .. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
-    :width: 70%
-.. |L2983_chip| image:: ../_static/imgs/L2983_chip.png
     :width: 40%
+.. |L2983_chip| image:: ../_static/imgs/L2983_chip.png
+    :width: 20%
 .. |DC_Motor_Module| image:: ../_static/imgs/DC_Motor_Module.png
-    :width: 50%
+    :width: 30%
 
 Component knowledge
 ================================================================
@@ -156,7 +156,7 @@ Sketch
 
 In this chapter, we will learn how to use the potentiometer to control the rotation speed and direction of the DC motor.
 
-Sketch_11_Motor
+Sketch_Motor
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -195,10 +195,10 @@ You can run the following command to open the code with Geany to view and edit i
 
 Click the icon to run the code.
 
-.. image:: ../_static/imgs/java_Motor_code.png
+.. image:: ../_static/imgs/java11_00.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
@@ -212,6 +212,7 @@ The range of ADC value is 0-255, with 128 as the middle value. If the ADC value 
     :linenos: 
     :language: java
     :lines: 150-171
+    :dedent:
 
 The ADC value at the potentiometer is obtained every 100 milliseconds, and the ADC value is sent as a parameter to the motor function to control the direction and speed of the motor, and the ADC value is printed out in the terminal.
 
@@ -219,4 +220,4 @@ The ADC value at the potentiometer is obtained every 100 milliseconds, and the A
     :linenos: 
     :language: java
     :lines: 182-187
-
+    :dedent:

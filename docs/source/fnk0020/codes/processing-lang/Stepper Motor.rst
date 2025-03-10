@@ -12,7 +12,7 @@ Component List
 
 +--------------------------------------------------+-------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                 |                                                 |     
-|                                                  | Jumper Wires x12                                |       
+|                                                  | Jumper Wires x6                                 |       
 |2. GPIO Extension Board & Ribbon Cable x1         |                                                 |       
 |                                                  |  |jumper-wire|                                  |                                                            
 |3. Breadboard x1                                  |                                                 |                                                                 
@@ -95,7 +95,7 @@ Sketch
 
 In this project, a separate thread is opened to control the stepper motor. The uncertainty of the system time slice allocation may lead to the running of the stepper motor not smooth, which is a normal phenomenon.
 
-Sketch 16.1.1 SteppingMotor
+Sketch SteppingMotor
 ----------------------------------------------------------------
 
 First observe the result after running the sketch, and then learn about the code in detail.
@@ -126,49 +126,54 @@ This project contains several code files, as shown below:
 The following is program code:
 
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_16_1_1_SteppingMotor/Sketch_16_1_1_SteppingMotor.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_16_1_1_SteppingMotor/Sketch_16_1_1_SteppingMotor.pde
     :linenos: 
     :language: c
+    :dedent:
 
 First define 4 GPIOs connected to the motor, the BUTTON class object and SteppingMotor class object.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_16_1_1_SteppingMotor/Sketch_16_1_1_SteppingMotor.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_16_1_1_SteppingMotor/Sketch_16_1_1_SteppingMotor.pde
     :linenos: 
     :language: c
     :lines: 9-11
+    :dedent:
 
 In the function setup(), initialize the Button, start thread of stepping motor, and set the rotating speed of the virtual motor.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_16_1_1_SteppingMotor/Sketch_16_1_1_SteppingMotor.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_16_1_1_SteppingMotor/Sketch_16_1_1_SteppingMotor.pde
     :linenos: 
     :language: c
     :lines: 15-22
+    :dedent:
 
 In the function draw(), first draw the button, and calculate the position of the virtual motor and show the current rotating direction.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_16_1_1_SteppingMotor/Sketch_16_1_1_SteppingMotor.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_16_1_1_SteppingMotor/Sketch_16_1_1_SteppingMotor.pde
     :linenos: 
     :language: c
     :lines: 25-45
+    :dedent:
 
 And then determine whether the stepper motor is in stopping state according to the value of “m.steps”. If it is true, change the rotating direction of motor, and drive the motor to rotate a circle.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_16_1_1_SteppingMotor/Sketch_16_1_1_SteppingMotor.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_16_1_1_SteppingMotor/Sketch_16_1_1_SteppingMotor.pde
     :linenos: 
     :language: c
-    :lines: 
     :lines: 46-52
+    :dedent:
 
 Finally draws the virtual fan.
 
 .. code-block:: c    
+    :linenos:
 
     drawFan(rotaPosition);
 
 Reference
 ----------------------------------------------------------------
 
-.. c:function:: class SteppinMotor
+.. py:function:: class SteppinMotor
 
     This is a custom class that defines some methods to drive the four-phase stepper motor.
    

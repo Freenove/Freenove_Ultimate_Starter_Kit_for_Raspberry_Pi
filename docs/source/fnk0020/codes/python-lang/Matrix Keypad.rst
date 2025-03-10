@@ -5,7 +5,7 @@ Chapter Matrix Keypad
 
 Earlier we learned about a single Push Button Switch. In this chapter, we will learn about Matrix Keyboards, which integrates a number of Push Button Switches as Keys for the purposes of Input.
 
-Project 22.1 Matrix Keypad
+Project Matrix Keypad
 ****************************************************************
 
 In this project, we will attempt to get every key code on the Matrix Keypad to work.
@@ -72,12 +72,19 @@ Circuit
 .. |Keypad_Sc| image:: ../_static/imgs/Keypad_Sc.png
 .. |Keypad_Fr| image:: ../_static/imgs/Keypad_Fr.png
 
+.. note:: 
+        **Youtube video:** https://youtu.be/RPluhXAYhKQ
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/RPluhXAYhKQ" frameborder="0" allowfullscreen></iframe>
+
 Code
 ================================================================
 
 This code is used to obtain all key codes of the 4x4 Matrix Keypad, when one of the keys is pressed, the key code will be displayed in the terminal window.
 
-Python Code 22.1.1 MatrixKeypad
+Python Code MatrixKeypad
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
@@ -135,6 +142,7 @@ In the "while" loop, use the function key= keypad.getKey () to read the keyboard
     :linenos: 
     :language: python
     :lines: 20-23
+    :dedent:
 
 The Keypad Library used for the RPi is “transplanted” from the Arduino Keypad Library. The source files is written by language C++ and translated into Python can be obtained by visiting http://playground.arduino.cc/Code/Keypad. As for the “transplanted” function library, the function and method of all classes, functions, variables, etc. are the same as the original library. Partial contents of the Keypad Library are described below:
 
@@ -177,4 +185,3 @@ For More information about Keypad, please visit: http://playground.arduino.cc/Co
 For more information about the methods used by the InputDevice class in the GPIO Zero library,please refer to: https://gpiozero.readthedocs.io/en/stable/api_input.html#inputdevice
 
 For more information about the methods used by the OutputDevice class in the GPIO Zero library,please refer to: https://gpiozero.readthedocs.io/en/stable/api_output.html#outputdevice
-

@@ -2,7 +2,6 @@
 Chapter Ultrasonic Ranging
 ##############################################################################
 
-
 In this chapter, we learn a module which use ultrasonic to measure distance.
 
 Project Ultrasonic Ranging
@@ -15,7 +14,7 @@ Component List
 
 +-------------------------------------------------+-------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x23                                |       
+|                                                 | Jumper Wires x4                                 |       
 |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
 |                                                 |  |jumper-wire|                                  |                                                            
 |3. Breadboard x1                                 |                                                 |                                                                 
@@ -109,11 +108,16 @@ Note that the voltage of ultrasonic module is 5V in this circuit.
 .. |Ultrasonic_Sc| image:: ../_static/imgs/Ultrasonic_Sc.png
 .. |Ultrasonic_Fr| image:: ../_static/imgs/Ultrasonic_Fr.png
 
+video: https://www.youtube.com/watch?v=6nffzlN-lUE
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/6nffzlN-lUE" frameborder="0" allowfullscreen></iframe>
 
 Code
 ================================================================
 
-C Code 23.1.1 SenseLED
+C Code SenseLED
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
@@ -179,9 +183,8 @@ Lastly, in the while loop of main function, get the measurement distance and dis
     :language: C
     :lines: 36-40
 
-About function pulseIn():
+About function **pulseIn()** :
 
 .. c:function:: int pulseIn(int pin, int level, int timeout);
 
     Return the length of the pulse (in microseconds) or 0 if no pulse is completed before the timeout (unsigned long).
-

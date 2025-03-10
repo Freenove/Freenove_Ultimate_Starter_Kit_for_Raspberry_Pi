@@ -30,7 +30,7 @@ Component List
 | |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |red-led|                   |                   
 |                                                 |                               |  
 +-------------------------------------------------+-------------------------------+
-|   Jumper Wire M/M x17                                                           |
+|   Jumper Wire M/M x15                                                           |
 |                                                                                 | 
 |      |jumper-wire|                                                              |
 +---------------------------------------------------------------------------------+
@@ -62,11 +62,8 @@ A Photoresistor is simply a light sensitive resistor. It is an active component 
 
 The circuit below is used to detect the change of a Photoresistor's resistance value:
 
-.. image:: ../_static/imgs/up.png
-        :width: 20%
-
-.. image:: ../_static/imgs/down.png
-        :width: 20%
+.. image:: ../_static/imgs/10_00.png
+     :align: center
 
 In the above circuit, when a Photoresistor's resistance vale changes due to a change in light intensity, the voltage between the Photoresistor and Resistor R1 will also change. Therefore, the intensity of the light can be obtained by measuring this voltage.
 
@@ -120,29 +117,30 @@ Code
 
 The code used in this project is identical with what was used in the last chapter.
 
-C Code 10.1.1 Nightlamp
+C Code Nightlamp
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to :doc:`Chapter 7 ADC <ADC>`. If you did, please continue.
+If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
-1.	Use ``cd`` command to enter 10.1.1_Nightlamp directory of C code.
+1. Use ``cd`` command to enter 10.1.1_Nightlamp directory of C code.
 
 .. code-block:: console
 
     $ cd ~/Freenove_Kit/Code/C_Code/10.1.1_Nightlamp
 
-2.	Use following command to compile ``Nightlamp.cpp`` and generate executable file ``Nightlamp``.
+2. Use following command to compile ``Nightlamp.cpp`` and generate executable file ``Nightlamp``.
 
 .. code-block:: console
 
     $ g++ Nightlamp.cpp -o Nightlamp -lwiringPi -lADCDevice
 
-3.	Then run the generated file ``Nightlamp``.
+3. Then run the generated file ``Nightlamp``.
 
 .. code-block:: console
 
@@ -155,4 +153,3 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/10.1.1_Nightlamp/Nightlamp.cpp
     :linenos: 
     :language: C
-

@@ -12,18 +12,13 @@ A Thermistor is a type of Resistor whose resistance value is dependent on temper
 Component List
 ================================================================
 
-.. table:: 
-    :width: 50%
-    :widths: 20 50
-    :align: center
-
 +---------------------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                              |     
 |                                                               |       
 |2. GPIO Extension Board & Ribbon Cable x1                      |       
 |                                                               |                                                            
 |3. Breadboard x1                                               |                                                                 
-+===============================+===============================+
++-------------------------------+-------------------------------+
 | Thermistor x1                 |   Resistor 10kΩ x2            |
 |                               |                               |
 | |Thermistor|                  |  |Resistor-10kΩ|              |                           
@@ -53,11 +48,8 @@ Thermistor
 
 Thermistor is a temperature sensitive resistor. When it senses a change in temperature, the resistance of the Thermistor will change. We can take advantage of this characteristic by using a Thermistor to detect temperature intensity. A Thermistor and its electronic symbol are shown below.
 
-.. image:: ../_static/imgs/Thermistor.png
-        :width: 10%
-
-.. image:: ../_static/imgs/Thermistor-2.png
-        :width: 15%
+.. image:: ../_static/imgs/11_00.png
+    :align: center
 
 The relationship between resistance value and temperature of a thermistor is:
 
@@ -77,7 +69,8 @@ For the parameters of the Thermistor, we use: B=3950, R=10k, T1=25.
 The circuit connection method of the Thermistor is similar to photoresistor, as the following:
 
 .. image:: ../_static/imgs/Thermistor-3.png
-        :width: 20%
+    :width: 20%
+    :align: center
 
 We can use the value measured by the ADC converter to obtain the resistance value of Thermistor, and then we can use the formula to obtain the temperature value.
 
@@ -114,7 +107,7 @@ Sketch
 
 In this project, we will collect the ADC value of the thermistor and calculate its temperature.
 
-Sketch_09_Thermometer
+Sketch_Thermometer
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -142,7 +135,7 @@ After running the code, the Raspberry Pi will obtain the ADC value of the thermi
 
 Press Ctrl+C to exit the program.
 
-.. image:: ../_static/imgs/java_thermometer_exit.png
+.. image:: ../_static/imgs/java08_01.png
     :align: center
 
 You can open the code with Geany to view and edit it.
@@ -156,7 +149,7 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_thermometer_code.png
     :align: center
 
-If the code fails to run, please check Geany Configuration.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
@@ -170,4 +163,4 @@ Get the ADC value of the thermistor every 100 milliseconds, convert the ADC valu
     :linenos: 
     :language: java
     :lines: 65-78
-
+    :dedent:

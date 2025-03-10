@@ -76,7 +76,7 @@ Sketch
 
 In this project, we will use the expansion chip to drive a 4-digit 7-segment display.
 
-Sketch_16_1_SevenSegmentDisplay
+Sketch_SevenSegmentDisplay
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -115,17 +115,19 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_4digit_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_16_1_SevenSegmentDisplay/SevenSegmentDisplay.java
     :linenos: 
     :language: java
+    :dedent:
 
 Define an array to control the display content of the digital tube.
 
 .. code-block:: c
+    :linenos:
 
     int[] nums = {0xffc0, 0xfff9, 0xffa4, 0xffb0, 0xff99, 0xff92, 0xff82, 0xfff8, 0xff80, 0xff90, 0xff88, 0xff83, 0xffc6, 0xffa1, 0xff86, 0xff8e};  
 
@@ -143,10 +145,12 @@ This sequence ensures that the digital tube will display '0000' with the correct
     :linenos: 
     :language: java
     :lines: 81-84
+    :dedent:
 
 Update the register to have the two chips output signals to control the display content of the digital tube.
 
 .. code-block:: python
+    :linenos:
 
     segment.updateLatch();  
 
@@ -156,6 +160,7 @@ The digital tube displays from 0 to F in sequence, with a time interval of 500 m
     :linenos: 
     :language: java
     :lines: 79-88
+    :dedent:
 
 Project 4-Digit 7-Segment Display
 ****************************************************************
@@ -175,14 +180,6 @@ Component List
 |  |74HC595|                  |  |4_7_Segment_Display|           |  |res-220R|                      |
 +-----------------------------+----------------------------------+----------------------------------+
 
-.. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-.. |74HC595| image:: ../_static/imgs/74HC595.png
-    :width: 40%
-.. |4_7_Segment_Display| image:: ../_static/imgs/4_7_Segment_Display.png
-    :width: 100%
-.. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 20%
-
 Circuit
 ================================================================
 
@@ -190,14 +187,14 @@ The same as that of 16.1
 
 .. hint::
     
-    :red: `If you have any concerns, please send an email to: support@freenove.com`
+    :red:`If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================
 
 In this project, we will use the expansion chip to drive the 4-digit digital tube to display different contents. 
 
-Sketch_16_2_StopWatch
+Sketch_StopWatch
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -233,20 +230,22 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_stopwatch_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_16_2_StopWatch/StopWatch.java
     :linenos: 
     :language: java
+    :dedent:
 
-Define an array called 'values' to store the content displayed on the digital tube. Define an array called ‘bits’ to store the control bits for the common anode of the digital tube.
+Define an array called 'values' to store the content displayed on the digital tube. Define an array called 'bits' to store the control bits for the common anode of the digital tube.
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_16_2_StopWatch/StopWatch.java
     :linenos: 
     :language: java
     :lines: 70-71
+    :dedent:
 
 Extract the values for the thousands, hundreds, tens, and ones places from the 'dec' variable.
 
@@ -254,6 +253,7 @@ Extract the values for the thousands, hundreds, tens, and ones places from the '
     :linenos: 
     :language: java
     :lines: 74-77
+    :dedent:
 
 To display the number 1234 on a digital tube, we must first break down the number into its individual digits: 1, 2, 3, and 4. 
 
@@ -265,6 +265,7 @@ After displaying each digit sequentially, we repeat the entire sequence `times` 
     :linenos: 
     :language: java
     :lines: 80-100
+    :dedent:
 
 Call the 'display' function to cycle through the display on the digital tube, showing numbers from 0000 to 9999. 
 
@@ -274,3 +275,4 @@ The time interval between two consecutive calls to 'display' is 100(times) * 4(b
     :linenos: 
     :language: java
     :lines: 111-115
+    :dedent:

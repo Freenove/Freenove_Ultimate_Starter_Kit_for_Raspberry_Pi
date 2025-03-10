@@ -87,7 +87,7 @@ Sketch
 
 In this project, we will drive the LED matrix to display different contents.
 
-Sketch_17_LEDMatrix
+Sketch_LEDMatrix
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -123,13 +123,17 @@ You can run the following command to open the code with Geany to view and edit i
 
 Click the icon to run the code.
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+.. image:: ../_static/imgs/java17_00.png
+    :align: center
+
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_17_LEDMatrix/LEDMatrix.java
     :linenos: 
     :language: java
+    :dedent:
 
 Define the contents displayed on the LED matrix.
 
@@ -137,6 +141,7 @@ Define the contents displayed on the LED matrix.
     :linenos: 
     :language: java
     :lines: 105-125
+    :dedent:
 
 Use 2 nested for functions to make the LED dot matrix display a smiley face and loop it 500 times.
 
@@ -144,6 +149,7 @@ Use 2 nested for functions to make the LED dot matrix display a smiley face and 
     :linenos: 
     :language: java
     :lines: 133-142
+    :dedent:
 
 Display the array from character 0 and loop 10 times to ensure that it is visible to human eyes then move the array elements one by one to make the characters scroll.
 
@@ -151,3 +157,4 @@ Display the array from character 0 and loop 10 times to ensure that it is visibl
     :linenos: 
     :language: java
     :lines: 143-154
+    :dedent:

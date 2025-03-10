@@ -58,10 +58,12 @@ Many frequently used commands and instructions can be found in the following ref
 There are many commands, which will come later. 
 
 .. seealso:: 
+    
     For more details about commands. You can refer to: http://www.linux-commands-examples.com
 
 Shortcut Key
 ================================================================
+
 Now, we will introduce several commonly used shortcuts that are very useful in Terminal.
 
 1. **Up and Down Arrow Keys:** Pressing “↑” (the Up key) will go backwards through the command history and pressing “↓” (the Down Key) will go forwards through the command history.

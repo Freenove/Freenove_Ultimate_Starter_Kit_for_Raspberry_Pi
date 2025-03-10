@@ -36,7 +36,7 @@ Component List
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%   
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 15%
+    :width: 10%
 .. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
     :width: 35%
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
@@ -65,7 +65,11 @@ The resultant analog signal will be divided accordingly.
 DAC
 ----------------------------------------------------------------
 
-The reversing this process requires a DAC, Digital-to-Analog Converter. The digital I/O port can output high level and low level (0 or 1), but cannot output an intermediate voltage value. This is where a DAC is useful. The DAC module PCF8591 has a DAC output pin with 8-bit accuracy, which can divide VDD (here is 3.3V) into 28=256 parts. For example, when the digital quantity is 1, the output voltage value is 3.3/256 *1 V, and when the digital quantity is 128, the output voltage value is 3.3/256 *128=1.65V, the higher the accuracy of DAC, the higher the accuracy of output voltage value will be.
+The reversing this process requires a DAC, Digital-to-Analog Converter. 
+
+The digital I/O port can output high level and low level (0 or 1), but cannot output an intermediate voltage value. 
+
+This is where a DAC is useful. The DAC module PCF8591 has a DAC output pin with 8-bit accuracy, which can divide VDD (here is 3.3V) into 28 = 256 parts. For example, when the digital quantity is 1, the output voltage value is 3.3/256 \*1 V, and when the digital quantity is 128, the output voltage value is 3.3/256 \*128=1.65V, the higher the accuracy of DAC, the higher the accuracy of output voltage value will be.
 
 Component knowledge
 ================================================================
@@ -183,11 +187,13 @@ Type command in the Terminal:
 
 Then open the following dialog box:
 
-.. image:: ../_static/imgs/Enable-I2C.png
-        :width: 100%
-        :align: center
+.. image:: ../_static/imgs/java07_00.png
+    :align: center
 
-Choose “3 Interfacing Options” then “I4 I2C” then “Yes” and then “Finish” in this order and restart your RPi. The I2C module will then be started.
+Choose “Interfacing Options” then “I4 I2C” then “Yes” and then “Finish” in this order and restart your RPi. The I2C module will then be started.
+
+.. image:: ../_static/imgs/java07_01.png
+    :align: center
 
 Type a command to check whether the I2C module is started:
 
@@ -198,15 +204,27 @@ Type a command to check whether the I2C module is started:
 If the I2C module has been started, the following content will be shown. “bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
 
 .. image:: ../_static/imgs/Enable-I2C-2.png
-        :width: 100%
-        :align: center
+    :align: center
+
+I2C device address detection:
+
+.. code-block:: console
+
+    $ i2cdetect -y 1
+
+When you are using the ADS7830 Module, the result should look like this:
+
+.. image:: ../_static/imgs/java07_02.png
+    :align: center
+
+Here, 48 (HEX) is the I2C address of ADC Module (ADS7830).
 
 Sketch
 ================================================================
 
 In this chapter, we will learn the combined usage of ADC and potentiometer.
 
-Sketch_07_1_ADC
+Sketch_ADC
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -253,7 +271,7 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_ADC_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
@@ -267,6 +285,7 @@ Dependency declaration, these libraries will be automatically downloaded by jban
     :linenos: 
     :language: java
     :lines: 3-8
+    :dedent:
 
 Import I2C library. In this project, we use I2C to read the channel value of ADS7830.
 
@@ -274,6 +293,7 @@ Import I2C library. In this project, we use I2C to read the channel value of ADS
     :linenos: 
     :language: java
     :lines: 10-15
+    :dedent:
 
 Constructor of ADCDevice class, which is used to initialize I2C bus to facilitate later reading and writing ADS7830 chip.
 
@@ -281,6 +301,7 @@ Constructor of ADCDevice class, which is used to initialize I2C bus to facilitat
     :linenos: 
     :language: java
     :lines: 21-25
+    :dedent:
 
 Write a byte to the target chip, and then read the data. If the data can be read, it means the target chip exists and communication is successful. If an I2C exception is detected, it means the target chip does not exist.
 
@@ -288,6 +309,7 @@ Write a byte to the target chip, and then read the data. If the data can be read
     :linenos: 
     :language: java
     :lines: 27-36
+    :dedent:
 
 Write the read command to the ADS7830 and read the corresponding ADC value. It is returned by the return value.
 
@@ -295,6 +317,7 @@ Write the read command to the ADS7830 and read the corresponding ADC value. It i
     :linenos: 
     :language: java
     :lines: 38-49
+    :dedent:
 
 Create a pi4j context to get the Raspberry PI i2c interface.
 
@@ -302,6 +325,7 @@ Create a pi4j context to get the Raspberry PI i2c interface.
     :linenos: 
     :language: java
     :lines: 60-61
+    :dedent:
 
 The I2C address of the ADS7830 is 0x48.
 
@@ -311,6 +335,7 @@ Create an ADCDevice class, associate it with the Raspberry PI I2C interface, and
     :linenos: 
     :language: java
     :lines: 63-64
+    :dedent:
 
 Check whether the chip can communicate normally. If the communication is successful, read channel 0 of the ADS7830 chip and print it out in the terminal.
 
@@ -318,6 +343,7 @@ Check whether the chip can communicate normally. If the communication is success
     :linenos: 
     :language: java
     :lines: 65-77
+    :dedent:
 
 If communication with the chip fails, a prompt message is printed on the terminal.
 
@@ -325,6 +351,7 @@ If communication with the chip fails, a prompt message is printed on the termina
     :linenos: 
     :language: java
     :lines: 78-80
+    :dedent:
 
 When the code finishes running, close the Pi4J context.
 
@@ -332,6 +359,7 @@ When the code finishes running, close the Pi4J context.
     :linenos: 
     :language: java
     :lines: 82-84
+    :dedent:
 
 Project Soft Light
 ****************************************************************
@@ -345,7 +373,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                                        |       
 |                                                                                 |                                                            
 |3. Breadboard x1                                                                 |                                                                 
-+=========================+=======================+===============================+
++-------------------------+-----------------------+-------------------------------+
 | Rotary potentiometer x1 | Resistor 220Ω x1      |   Resistor 10kΩ x2            |
 |                         |                       |                               |
 | |Rotary-potentiometer|  |  |res-220R|           |  |Resistor-10kΩ|              |                           
@@ -360,15 +388,8 @@ Component List
 |      |jumper-wire|                                                              |
 +---------------------------------------------------------------------------------+
 
-.. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 70%
-.. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 20%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
     :width: 20%
-.. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
-    :width: 25%
-.. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 .. |red-led| image:: ../_static/imgs/red-led.png
     :width: 30%
 
@@ -395,7 +416,7 @@ Sketch
 
 In this project, we learn how to control the brightness of LED with the potentiometer.
 
-Sketch_07_2_Softlight
+Sketch_Softlight
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -439,7 +460,7 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_softLight_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
@@ -453,6 +474,7 @@ The ADC value of the potentiometer is obtained every 100 milliseconds and printe
     :linenos: 
     :language: java
     :lines: 158-168
+    :dedent:
 
 Project Colorful Light 
 ****************************************************************
@@ -468,7 +490,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                                        |       
 |                                                                                 |                                                            
 |3. Breadboard x1                                                                 |                                                                 
-+=========================+=======================+===============================+
++-------------------------+-----------------------+-------------------------------+
 | Rotary potentiometer x1 | Resistor 220Ω x1      |   Resistor 10kΩ x2            |
 |                         |                       |                               |
 | |Rotary-potentiometer|  |  |res-220R|           |  |Resistor-10kΩ|              |                           
@@ -482,18 +504,6 @@ Component List
 |                                                                                 | 
 |      |jumper-wire|                                                              |
 +---------------------------------------------------------------------------------+
-
-.. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 70%
-.. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 20%
-.. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 20%
-.. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
-    :width: 25%
-.. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
-.. |red-led| image:: ../_static/imgs/RGB-LED-real.png
-    :width: 30%
 
 Circuit
 ================================================================
@@ -514,6 +524,7 @@ Circuit
 |   |ADS7830-fritizing-4|                                                                        |
 +------------------------------------------------------------------------------------------------+
 
+.. |ADS7830-Schematic-3| image:: ../_static/imgs/ADS7830-Schematic-3.png
 .. |ADS7830-fritizing-3| image:: ../_static/imgs/ADS7830-fritizing-3.png
 .. |ADS7830-fritizing-4| image:: ../_static/imgs/ADS7830-fritizing-4.png
 
@@ -522,7 +533,7 @@ Sketch
 
 In this project, we learn to use the potentiometer to control the color and brightness of the RGB LED.
 
-Sketch_07_3_ColorfulSoftlight
+Sketch_ColorfulSoftlight
 ================================================================
 
 First, enter where the project is located:
@@ -566,13 +577,14 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_color_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_07_3_ColorfulSoftlight/ColorfulSoftlight.java
     :linenos: 
     :language: java
+    :dedent:
 
 Initialize the pins that control the RGB LED.
 
@@ -580,6 +592,7 @@ Initialize the pins that control the RGB LED.
     :linenos: 
     :language: java
     :lines: 152-158
+    :dedent:
 
 Get the ADC values corresponding to the 3 rotentiometers every 100 milliseconds; convert the values into duty cycle values corresponding to PWM, and print prompt information on the terminal.
 
@@ -587,3 +600,4 @@ Get the ADC values corresponding to the 3 rotentiometers every 100 milliseconds;
     :linenos: 
     :language: java
     :lines: 163-174
+    :dedent:

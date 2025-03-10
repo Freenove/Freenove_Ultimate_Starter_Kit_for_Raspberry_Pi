@@ -88,7 +88,7 @@ Circuit
 .. image:: ../_static/imgs/button-led-released.png
     :width: 100%
     
-4. This is how it works. When button switch is released:
+2. This is how it works. When button switch is released:
 
 .. image:: ../_static/imgs/button-led-pressed.png
     :width: 100%

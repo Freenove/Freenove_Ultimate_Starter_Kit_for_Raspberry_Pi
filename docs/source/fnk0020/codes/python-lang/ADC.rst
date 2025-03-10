@@ -21,7 +21,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                      |       
 |                                                               |                                                            
 |3. Breadboard x1                                               |                                                                 
-+===============================+===============================+
++-------------------------------+-------------------------------+
 | Rotary potentiometer x1       |   Resistor 10kΩ x2            |
 |                               |                               |
 | |Rotary-potentiometer|        |  |Resistor-10kΩ|              |                           
@@ -29,9 +29,8 @@ Component List
 | ADC module x1                                                 |
 |                                                               |
 |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |                   
-|                                                               |  
 +---------------------------------------------------------------+
-|   Jumper Wire                                                 |
+|   Jumper Wire x16                                             |
 |                                                               | 
 |      |jumper-wire|                                            |
 +---------------------------------------------------------------+
@@ -45,7 +44,7 @@ Component List
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 
-This product contains only one ADC module, there are two types, PCF8591 and ADS7830. For the projects described in this tutorial, they function the same. Please build corresponding circuits according to the ADC module found in your Kit.
+This product contains :red:`only one ADC module`, there are two types, PCF8591 and ADS7830. For the projects described in this tutorial, they function the same. Please build corresponding circuits according to the ADC module found in your Kit.
 
 +---------------------------------------------------------------+----------------------------------------------------------------+
 |                      ADC module: PCF8591                      |                      ADC module: ADS7830                       |                                 
@@ -65,6 +64,7 @@ ADC
 ----------------------------------------------------------------
 
 **An ADC is an electronic integrated circuit used to convert analog signals such as voltages to digital or binary form consisting of 1s and 0s.** The range of our ADC module is 8 bits, that means the resolution is 2^8=256, so that its range (at 3.3V) will be divided equally to 256 parts. 
+
 Any analog value can be mapped to one digital value using the resolution of the converter. So the more bits the ADC has, the denser the partition of analog will be and the greater the precision of the resulting conversion.
 
 .. image:: ../_static/imgs/ADC.png
@@ -75,7 +75,7 @@ Subsection 1: the analog in range of 0V-3.3/256 V corresponds to digital 0;
 
 Subsection 2: the analog in range of 3.3 /256 V-2*3.3 /256V corresponds to digital 1;
 
-......
+\...\...
 
 The resultant analog signal will be divided accordingly.
 
@@ -92,11 +92,8 @@ Potentiometer
 
 Potentiometer is a resistive element with three Terminal parts. Unlike the resistors that we have used thus far in our project which have a fixed resistance value, the resistance value of a potentiometer can be adjusted. A potentiometer is often made up by a resistive substance (a wire or carbon element) and movable contact brush. When the brush moves along the resistor element, there will be a change in the resistance of the potentiometer’s output side (3) (or change in the voltage of the circuit that is a part). The illustration below represents a linear sliding potentiometer and its electronic symbol on the right.
 
-.. image:: ../_static/imgs/1-32.png
-        :width: 50%
-
-.. image:: ../_static/imgs/1-32-2.png
-        :width: 20%
+.. image:: ../_static/imgs/07_00.png
+    :align: center
 
 Between potentiometer pin 1 and pin 2 is the resistive element (a resistance wire or carbon) and pin 3 is connected to the brush that makes contact with the resistive element. In our illustration, when the brush moves from pin 1 to pin 2, the resistance value between pin 1 and pin 3 will increase linearly (until it reaches the highest value of the resistive element) and at the same time the resistance between pin 2 and pin 3 will decrease linearly and conversely down to zero. At the midpoint of the slider the measured resistance values between pin 1 and 3 and between pin 2 and 3 will be the same.
 
@@ -311,8 +308,6 @@ When you are using the PCF8591 Module, the result should look like this:
 
 Here, 48 (HEX) is the I2C address of ADC Module (PCF8591).
 
-
-
 When you are using ADS, the result should look like this:
 
 .. image:: ../_static/imgs/Enable-I2C-4.png
@@ -320,7 +315,6 @@ When you are using ADS, the result should look like this:
         :align: center
 
 Here, 4b (HEX) is the I2C address of ADC Module (ADS7830).
-
 
 Install Smbus Module
 ----------------------------------------------------------------
@@ -336,7 +330,7 @@ Install Smbus Module
 Code
 ================================================================
 
-Python Code 7.1.1 ADC
+Python Code ADC
 ----------------------------------------------------------------
 
 For Python code, ADCDevice requires a custom module which needs to be installed.
@@ -360,6 +354,7 @@ For Python code, ADCDevice requires a custom module which needs to be installed.
     $ cd ADCDevice-1.0.3
 
 4.	Install library for python3 and python2.
+
 .. code-block:: console
 
     $ sudo python3 setup.py install 
@@ -434,6 +429,7 @@ About smbus Module:
 
     The System Management Bus Module defines an object type that allows SMBus transactions on hosts running the Linux kernel. The host kernel must support I2C, I2C device interface support, and a bus adapter driver. All of these can be either built-in to the kernel, or loaded from modules.
     In Python, you can use help(smbus) to view the relevant functions and their descriptions.
+    
     **bus=smbus.SMBus(1)**:Create an SMBus class object.
     **bus.read_byte_data(address,cmd+chn)**: Read a byte of data from an address and return it.
     **bus.write_byte_data(address,cmd,value)**: Write a byte of data to an address.
@@ -442,7 +438,7 @@ About smbus Module:
 
     This is a base class. 
 
-    int detectI2C(int addr);
+    **int detectI2C(int addr);**
 
     This is a member function, which is used to detect whether the device with the given I2C address exists. If it exists, it returns true. Otherwise, it returns false.
 
@@ -450,7 +446,7 @@ About smbus Module:
 
     These two classes are derived from the ADCDevice and the main function is analogRead(chn).
 
-    int analogRead(int chn);
+    **int analogRead(int chn);**
 
     This returns the value read on the supplied analog input pin.
 

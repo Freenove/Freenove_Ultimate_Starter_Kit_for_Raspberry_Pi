@@ -2,10 +2,9 @@
 Chapter Motor & Driver
 ##############################################################################
 
-
 In this chapter, we will learn about DC Motors and DC Motor Drivers and how to control the speed and direction of a DC Motor.
 
-Project 13.1 Control a DC Motor with a Potentiometer
+Project Control a DC Motor with a Potentiometer
 ****************************************************************
 
 In this project, a potentiometer will be used to control a DC Motor. When the Potentiometer is at the midpoint position, the DC Motor will STOP, and when the Potentiometer is turned in either direction of this midpoint, the DC Motor speed increases until it reached the endpoint where the DC Motor achieves its maximum speed. When the Potentiometer is turned “Left” of the midpoint the DC Motor will ROTATE in one direction and when turned “Right” the DC Motor will ROTATE in the opposite direction. 
@@ -113,6 +112,7 @@ Port description of L293D module is as follows:
 | +Vmotor  | 8            |                                                                  |
 |          |              | supply for the Out pin x, the supply voltage is +V~36V           |                                      
 +----------+--------------+------------------------------------------------------------------+ 
+
 .. seealso::
     
     For more details, please see the datasheet for this IC Chip.
@@ -172,8 +172,6 @@ Use caution when connecting this circuit because the DC Motor is a high-power co
 |   support@freenove.com                                                                         |
 |                                                                                                |
 |   |Motor-PCF8591-Fr|                                                                           |
-|                                                                                                |
-|    **Video:** https://youtu.be/d5lRMTDK-wg                                                     |
 +------------------------------------------------------------------------------------------------+
 
 .. |Motor-PCF8591-Sc| image:: ../_static/imgs/Motor-PCF8591-Sc.png
@@ -184,14 +182,15 @@ Code
 
 In code for this project, first read the ADC value and then control the rotation direction and speed of the DC Motor according to the value of the ADC.
 
-C Code 13.1.1 Motor
+C Code Motor
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to Chapter 7. If you did, please continue.
+If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 13.1.1_Motor directory of the C code.
@@ -222,6 +221,7 @@ The following is the code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/13.1.1_Motor/Motor.cpp
     :linenos: 
     :language: C
+    :dedent:
 
 Now that we have familiarity with reading ADC values, let's learn the subfunction void motor (int ADC): first, compare the ADC value with 128 (value corresponding to midpoint). When the current ADC value is higher, motoRPin1 outputs high level and motoRPin2 outputs low level to control the DC Motor to run in the “Forward” Rotational Direction. When the current ADC value is lower, motoRPin1 outputs low level and motoRPin2 outputs high level to control the DC Motor to run in the “Reverse” Rotational Direction. When the ADC value is equal to 128, motoRPin1 and motoRPin2 output low level, the motor STOPS. Then determine the PWM duty cycle according to the difference (delta) between ADC value and 128. Because the absolute delta value stays within 0-128, we need to use the map() subfunction mapping the delta value to a range of 0-255. Finally, we see a display of the duty cycle in Terminal.
 
@@ -229,3 +229,4 @@ Now that we have familiarity with reading ADC values, let's learn the subfunctio
     :linenos: 
     :language: C
     :lines: 25-44
+    :dedent:

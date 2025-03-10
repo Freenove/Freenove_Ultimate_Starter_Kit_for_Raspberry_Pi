@@ -62,6 +62,7 @@ Component List
     :width: 30%
 
 .. note:: 
+    
     Please Note: In the code “button” represents switch action.
 
 Component knowledge
@@ -103,12 +104,12 @@ Circuit
 .. hint:: 
     If you need any support, please feel free to contact us via: support@freenove.com
 
-3. This is how it works. When button switch is released:
+This is how it works. When button switch is released:
 
 .. image:: ../_static/imgs/button-led-released.png
     :width: 100%
     
-4. This is how it works. When button switch is released:
+This is how it works. When button switch is released:
 
 .. image:: ../_static/imgs/button-led-pressed.png
     :width: 100%
@@ -118,12 +119,13 @@ Code
 
 This project is designed for learning how to use Push Button Switch to control an LED. We first need to read the state of switch, and then determine whether to turn the LED ON in accordance to the state of the switch.
 
-Python Code 2.1.1 ButtonLED
+Python Code ButtonLED
 ----------------------------------------------------------------
 
 First, observe the project result, then learn about the code in detail. Remember in code “button” = switch function
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use cd command to enter 02.1.1_ButtonLED directory of Python code.
@@ -145,6 +147,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/02.1.1_ButtonLED/ButtonLED.py
     :linenos: 
     :language: python
+    :dedent:
 
 Import the Button class that controls Button from the gpiozero library.
 
@@ -165,6 +168,7 @@ The loop continuously determines whether the key is pressed. When the button is 
     :linenos: 
     :language: python
     :lines: 13-20
+    :dedent:
 
 For more information about GPIOZero, please refer to the link below:
 
@@ -174,7 +178,7 @@ For more information about the methods used by the Button class in the GPIO Zero
 
 https://gpiozero.readthedocs.io/en/stable/api_input.html#button
 
-Project 2.2 MINI Table Lamp
+Project MINI Table Lamp
 ****************************************************************
 
 We will also use a Push Button Switch, LED and RPi to make a MINI Table Lamp but this will function differently: Press the button, the LED will turn ON, and pressing the button again, the LED turns OFF. The ON switch action is no longer momentary (like a door bell) but remains ON without needing to continually press on the Button Switch.
@@ -194,18 +198,18 @@ Therefore, if we can directly detect the state of the Push Button Switch, there 
 
 This project needs the same components and circuits as we used in the previous section.
 
-
 Code
 ================================================================
 
 In this project, we still detect the state of Push Button Switch to control an LED. Here we need to define a variable to define the state of LED. When the button switch is pressed once, the state of LED will be changed once. This will allow the circuit to act as a virtual table lamp.
 
-Python Code 2.2.1 Tablelamp
+Python Code Tablelamp
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use cd command to enter 02.2.1_Tablelamp directory of Python code
@@ -223,6 +227,7 @@ First, observe the project result, and then learn about the code in detail.
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/02.2.1_Tablelamp/Tablelamp.py
     :linenos: 
     :language: python
+    :dedent:
 
 In GPIO Zero, you assign the when_pressed and when_released properties to set up callbacks on those actions. 
 
@@ -232,6 +237,7 @@ Once it detects that the button is pressed, it executes the specified function o
     :linenos: 
     :language: python
     :lines: 14-24
+    :dedent:
 
 To explicitly close a connection to a pin, you can manually call the close() method on a device object:
 
@@ -239,5 +245,6 @@ To explicitly close a connection to a pin, you can manually call the close() met
     :linenos: 
     :language: python
     :lines: 25-34
+    :dedent:
 
 For more information about the methods used by the Button class in the GPIO Zero library,please refer to: https://gpiozero.readthedocs.io/en/stable/api_input.html#button

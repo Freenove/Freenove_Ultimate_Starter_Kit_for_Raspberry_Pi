@@ -19,7 +19,7 @@ Component List
 |                                                 |  |jumper-wire|                                  |                                                            
 |3. Breadboard x1                                 |                                                 |                                                                 
 +-------------------------------------------------+-------------------------------------------------+
-| MPU6050                                                                                           |     
+| MPU6050 x1                                                                                        |     
 |                                                                                                   |       
 |  |MPU6050|                                                                                        |       
 +---------------------------------------------------------------------------------------------------+
@@ -40,7 +40,6 @@ MPU6050 Sensor Module is a complete 6-axis Motion Tracking Device. It combines a
     :align: center
 
 The port description of the MPU6050 Module is as follows:
-
 
 .. list-table::
    :align: center
@@ -91,6 +90,11 @@ For more detail, please refer to the MPU6050 datasheet.
 
 MPU6050 is widely used to assist with balancing vehicles, robots and aircraft, mobile phones and other products which require stability to control stability and attitude or which need to sense same.
 
+Circuit
+========================
+
+Note that the power supply voltage for MPU6050 module is 5V in this circuit.
+
 +------------------------------------------------------------------------------------------------+
 |   Schematic diagram                                                                            |
 |                                                                                                |
@@ -106,15 +110,22 @@ MPU6050 is widely used to assist with balancing vehicles, robots and aircraft, m
 .. |MPU6050_Sc| image:: ../_static/imgs/MPU6050_Sc.png
 .. |MPU6050_Fr| image:: ../_static/imgs/MPU6050_Fr.png
 
+video: https://www.youtube.com/watch?v=BBuDYBVjJLA
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/BBuDYBVjJLA" frameborder="0" allowfullscreen></iframe>
+
 Code
 ================================================================
 
-C Code 25.1.1 MPU6050RAW
+C Code MPU6050RAW
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 25.1.1_MPU6050RAW directory of C code.
@@ -177,6 +188,22 @@ About class MPU6050:
 
 .. c:function:: Class MPU6050
 
-    This is a class library used to operate the MPU6050, which can directly read and set the MPU6050. Here are its functions: MPU6050()/MPU6050(uint8_t address);Constructor. The parameter is I2C address, and the default I2C address is 0x68.void initialize();Initialization function, used to wake up MPU6050. Range of accelerometer is ±2g and range of gyroscope is ±250 degrees/sec.void getMotion6(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz);Get the original data of accelerometer and gyroscope.int16_t getTemperature();Get the original temperature data of MPU6050.
+    This is a class library used to operate the MPU6050, which can directly read and set the MPU6050. Here are its functions: 
+    
+    **MPU6050()/MPU6050(uint8_t address);**
+    
+    Constructor. The parameter is I2C address, and the default I2C address is 0x68.
+    
+    **void initialize();**
+    
+    Initialization function, used to wake up MPU6050. Range of accelerometer is ±2g and range of gyroscope is ±250 degrees/sec.
+    
+    **void getMotion6(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz);**
+    
+    Get the original data of accelerometer and gyroscope.
+    
+    **int16_t getTemperature();**
+    
+    Get the original temperature data of MPU6050.
 
 For details about more relevant member functions, pleases refer to MPU6050.h or visit: https://github.com/jrowberg/i2cdevlib

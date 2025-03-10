@@ -41,7 +41,6 @@ MPU6050 Sensor Module is a complete 6-axis Motion Tracking Device. It combines a
 
 The port description of the MPU6050 Module is as follows:
 
-
 .. list-table::
    :align: center
    :header-rows: 1
@@ -105,18 +104,26 @@ MPU6050 is widely used to assist with balancing vehicles, robots and aircraft, m
 
 .. |MPU6050_Sc| image:: ../_static/imgs/MPU6050_Sc.png
 .. |MPU6050_Fr| image:: ../_static/imgs/MPU6050_Fr.png
+  
+.. note:: 
+        **Youtube video:** https://youtu.be/BBuDYBVjJLA
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/BBuDYBVjJLA" frameborder="0" allowfullscreen></iframe>
 
 Code
 ================================================================
 
 In this project, we will read the acceleration data and gyroscope data of MPU6050, and print them out.
 
-Python Code 25.1.1 MPU6050RAW
+Python Code MPU6050RAW
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use ``cd`` command to enter 25.1.1_MPU6050RAW directory of Python code.
@@ -141,6 +148,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/25.1.1_MPU6050/MPU6050RAW.py
     :linenos: 
     :language: python
+    :dedent:
 
 A module "MPU6050.py" is used in the code. The module includes a class used to operate MPU6050. When used, first initiate an object.
 
@@ -161,6 +169,7 @@ In the loop function, read the original data of MPU6050, display them and then c
     :linenos: 
     :language: python
     :lines: 17-24
+    :dedent:
 
 About class MPU6050:
 

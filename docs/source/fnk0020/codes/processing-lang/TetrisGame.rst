@@ -4,8 +4,8 @@ App Tetris Game
 
 In this chapter, we will play a game, Tetris game.
 
-App 5.1 Tetris Game
-----------------------------------------------------------------
+App Tetris Game
+************************************************
 
 Now, let's create and experience our own game.
 
@@ -14,20 +14,21 @@ Component List
 
 +-------------------------------------------------+-------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x36                                |       
+|                                                 | Jumper Wires x12                                |       
 |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
 |                                                 |  |jumper-wire|                                  |                                                            
 |3. Breadboard x1                                 |                                                 |                                                                 
 +-------------------------------------------------+-------------------------------------------------+
-| Push button x12                                 | Resistor 10kΩ x1                                |
+| Push button x4                                  | Resistor 10kΩ x4                                |
 |                                                 |                                                 |
 |  |button-small|                                 |  |Resistor-10kΩ|                                |
 +-------------------------------------------------+-------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
+    :width: 10%
 .. |button-small| image:: ../_static/imgs/button-small.jpg
-    :width: 50%
+    :width: 30%
 
 Circuit
 ================================================================
@@ -50,9 +51,8 @@ Circuit
 Sketch
 ================================================================
 
-Sketch 5.1.1 TetrisGame
-
-Sketch 5.1.1 TetrisGame
+Sketch TetrisGame
+-------------------------------
 
 1.	Use Processing to open the file Sketch_05_1_1_TetrisGame.
 

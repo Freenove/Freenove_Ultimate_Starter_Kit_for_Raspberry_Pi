@@ -6,11 +6,11 @@ From previous chapters, we have learned about electronic circuits and components
 
 To finish this chapter, you need to prepare the necessary soldering equipment, including an electric soldering iron (or soldering pencil) and solder. We have already prepared the Perfboard for you. 
 
-.. catuion::
+.. note:: 
 
     :red:`Please use extreme caution and attention to safety when you operate soldering tools used in these projects.`
 
-Project 35.1 Soldering a Buzzer
+Project Soldering a Buzzer
 ****************************************************************
 
 You should be familiar with the Buzzer from our previous project. We will solder a permanent circuit that when a Push Button Switch is pressed a Buzzer sounds
@@ -93,7 +93,7 @@ Connect the circuit board to a power supply (3~5V). You can use Raspberry Pi boa
 
 Press the Push Button Switch after connecting the power and then the buzzer will sound.
 
-Project 35.2 Soldering a Flowing Water Light
+Project Soldering a Flowing Water Light
 ****************************************************************
 
 You should be familiar with the Flowing Water Light from our previous project. We will solder a permanent circuit using improved code to make a more interesting Flowing Water Light.
@@ -107,9 +107,6 @@ Component List
    |Fe_pin_Header|      |res-220R|              |red-led|               |74HC595|
 ====================== ====================== ====================== ======================
 
-
-.. |Fe_pin_Header| image:: ../_static/imgs/Fe_pin_Header.png
-    :width: 60%
 .. |red-led| image:: ../_static/imgs/red-led.png
     :width: 60%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
@@ -164,7 +161,7 @@ Code
 
 This now will be the third time we have made the Flowing Water Light. In this project, we will solder a completely new circuit for Flowing Water Light. Additionally, the program is also different from the previous ones we have used. When this light flows, it will have a long “tail”.
 
-C Code 35.2.1 LightWater03
+C Code LightWater03
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.

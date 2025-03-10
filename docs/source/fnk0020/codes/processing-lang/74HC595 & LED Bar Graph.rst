@@ -100,7 +100,7 @@ Circuit
 Sketch
 ================================================================
 
-Sketch 10.1.1 LightWater
+Sketch LightWater
 ----------------------------------------------------------------
 
 First, observe the result after running the sketch, and then learn about the code in detail.
@@ -125,41 +125,53 @@ This project contains a lot of code files, and the core code is contained in the
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
     :linenos: 
     :language: java
 
 First define the GPIO pin connected to 74HC595, the ProgressBar class object, IC74HC595 class object, and some other variables.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
     :linenos: 
     :language: java
     :lines: 9-17
+    :dedent:
 
 In the function setup(), instantiate ProgressBar class object and IC74HC595 class object.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
     :linenos: 
     :language: java
     :lines: 20-22
+    :dedent:
+
+In the function draw(), set the background, text, and other information and draw the progress bar.
+
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
+    :linenos: 
+    :language: java
+    :lines: 26-29
+    :dedent:
 
 Then according to the speed of followlight, calculate the data “leds” for 74HC595, and write it to 74HC595, then LEDBar Graph is turned on.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
     :linenos: 
     :language: java
     :lines: 31-37
+    :dedent:
 
 Finally, according to the variable leds, draw the virtual LEDBar Graph on Display Window.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
     :linenos: 
     :language: java
     :lines: 39-48
+    :dedent:
 
 About class IC74HC595:
 
-.. c:function:: class IC74HC595
+.. py:function:: class IC74HC595
 
     This is a custom class that is used to operate integrated circuit 74HC595.
 

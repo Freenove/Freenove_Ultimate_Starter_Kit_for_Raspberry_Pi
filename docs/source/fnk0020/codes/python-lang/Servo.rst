@@ -92,12 +92,13 @@ Code
 
 In this project, we will make a Servo rotate from 0 degrees to 180 degrees and then reverse the direction to make it rotate from 180 degrees to 0 degrees and repeat these actions in an endless loop.
 
-Python Code 15.1.1 Sweep
+Python Code Sweep
 ----------------------------------------------------------------
 
 First observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use cd command to enter 15.1.1_Sweep directory of Python code.
@@ -134,10 +135,28 @@ A 50 Hz pulse for a 20ms cycle is required to control the Servo. By default, the
 
 The 0-180 degree rotation of the servo corresponds to a PWM pulse width of 0.5-2.5ms at a period of 20ms and a duty cycle of 2.5%-12.5%. After setting the AngularServo class and passing in the corresponding angle parameters, the servo will turn to the corresponding position. However, in actual operation, as there is a deviation in the width of the servo pulse, we need to define minimum and maximum pulse width and error offset (this is essential in robotics).
 
+.. code-block:: python
+
+    myCorrection=0.0 #define pulse offset of servo
+    maxPW=(2.5+myCorrection)/1000     #define pulse duty cycle for minimum angle of servo
+    minPW=(0.5-myCorrection)/1000     #define pulse duty cycle for maximum angle of s
+    servo =  AngularServo(myGPIO,initial_angle=0,min_angle=0, max_angle=180,min_pulse_width=minPW,max_pulse_width=maxPW)
+    ...
+    OFFSE_DUTY = 0.5        #define pulse offset of servo
+    SERVO_MIN_DUTY = 2.5+OFFSE_DUTY     #define pulse duty cycle for minimum angle of servo
+    SERVO_MAX_DUTY = 12.5+OFFSE_DUTY    #define pulse duty cycle for maximum angle of s ervo
+    ...
+            for angle in range(0, 181, 1):   # make servo rotate from 0 to 180 deg
+                servo.angle = angle
+                time.sleep(SERVO_DELAY_SEC)
+            time.sleep(0.5)
+
+Finally, in the "while" cycle of main function, we need to use two separate cycles to make servo rotate from 0 degrees to 180 degrees and then from 180 degrees to 0 degrees. 
+
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/15.1.1_Sweep/Sweep.py
     :linenos: 
     :language: python
-    :lines: 13-27
+    :lines: 18-27
 
 For more information about the methods used by the AngularServo class in the GPIO Zero library,please refer to:https://gpiozero.readthedocs.io/en/stable/api_output.html#angularservo
 
@@ -182,7 +201,7 @@ Run the command to install “pigpio” library.
 
 The following is the program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/15.1.1_Sweep2/Sweep2.py
+.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/15.1.1_Sweep/Sweep2.py
     :linenos: 
     :language: python
 

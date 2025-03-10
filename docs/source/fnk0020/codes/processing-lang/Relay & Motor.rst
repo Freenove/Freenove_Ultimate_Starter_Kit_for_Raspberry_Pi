@@ -11,7 +11,7 @@ In this project, we will use a Push Button Switch indirectly to control the DC M
 
 +-------------------------------------------------+-------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x11                              |       
+|                                                 |   Jumper Wires x8                               |       
 |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
 |                                                 |     |jumper-wire|                               |                                                            
 |3. Breadboard x1                                 |                                                 |                                                                 
@@ -107,7 +107,7 @@ Use caution with the power supply voltage needed for the components in this circ
 Sketch
 ================================================================
 
-Sketch 15.1.1 Relay
+Sketch Relay
 ----------------------------------------------------------------
 
 First observe the result after running the sketch, and then learn about the code in detail.
@@ -137,42 +137,45 @@ This project contains several code files, as shown below:
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_15_1_1_Relay/Sketch_15_1_1_Relay.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_15_1_1_Relay/Sketch_15_1_1_Relay.pde
     :linenos: 
     :language: c
     
 First define pins corresponding to the key and relay.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_15_1_1_Relay/Sketch_15_1_1_Relay.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_15_1_1_Relay/Sketch_15_1_1_Relay.pde
     :linenos: 
     :language: c
     :lines: 9-13
+    :dedent:
 
 In the function setup(),Display Window and virtual button are initialized.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_15_1_1_Relay/Sketch_15_1_1_Relay.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_15_1_1_Relay/Sketch_15_1_1_Relay.pde
     :linenos: 
     :language: c
     :lines: 16-22
+    :dedent:
 
 In the function draw(), scan entity buttons. If the button is pressed, then execute the subfunction relayAction(), in which the state of Relay and virtual buttons will be changed. And then draw the virtual buttons and fan blades.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_15_1_1_Relay/Sketch_15_1_1_Relay.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_15_1_1_Relay/Sketch_15_1_1_Relay.pde
     :linenos: 
     :language: c
     :lines: 24-42
+    :dedent:
 
 Reference
 ----------------------------------------------------------------
 
-.. c:function:: class SingleKey
+.. py:function:: class SingleKey
 
-This is a custom class that is used to control the state of an independent single key.
+    This is a custom class that is used to control the state of an independent single key.
 
-**public SingleKey(int Pin)**
+    **public SingleKey(int Pin)**
 
-Constructor, used to create a SingleKey class object. The parameter represents the GPIO pin number connected to the key.
+    Constructor, used to create a SingleKey class object. The parameter represents the GPIO pin number connected to the key.
 
-**void keyScan()**
+    **void keyScan()**
 
-Used to detect key state. If the key is pressed, the member variable isPressed will be turned to true, and corresponding GPIO pin number will be assigned to the global variable keyValue. Otherwise, isPressed is false, keyValue is -1.
+    Used to detect key state. If the key is pressed, the member variable isPressed will be turned to true, and corresponding GPIO pin number will be assigned to the global variable keyValue. Otherwise, isPressed is false, keyValue is -1.

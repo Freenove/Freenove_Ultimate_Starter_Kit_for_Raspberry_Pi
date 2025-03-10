@@ -93,8 +93,8 @@ Use caution when connecting this circuit because the DC Motor is a high-power co
 |   |scratch_motor_Fr|                                                                           |
 +------------------------------------------------------------------------------------------------+
 
-.. |Motor-PCF8591-Sc| image:: ../_static/imgs/scratch_motor_Sc.png
-.. |Motor-PCF8591-Fr| image:: ../_static/imgs/scratch_motor_Fr.png
+.. |scratch_motor_Sc| image:: ../_static/imgs/scratch_motor_Sc.png
+.. |scratch_motor_Fr| image:: ../_static/imgs/scratch_motor_Fr.png
 
 Code
 ================================================================

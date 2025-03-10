@@ -91,18 +91,25 @@ Circuit with PCF8591
 .. |PCF8591-Schematic-3| image:: ../_static/imgs/PCF8591-Schematic-3.png
 .. |PCF8591-fritizing-3| image:: ../_static/imgs/PCF8591-fritizing-3.png
 
+.. note:: 
+        **Youtube video:** https://youtu.be/CmLLNsBMN2U
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/CmLLNsBMN2U" frameborder="0" allowfullscreen></iframe>
 
 Code
 ================================================================
 
-C Code 9.1.1 Colorful Softlight
+C Code Colorful Softlight
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to :doc:`Chapter 7 ADC <ADC>`. If you did, please continue.
+If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 09.1.1_ColorfulSoftlight directory of C code.
@@ -116,6 +123,7 @@ First, observe the project result, and then learn about the code in detail.
 .. code-block:: console
 
     $ g++ ColorfulSoftlight.cpp -o ColorfulSoftlight -lwiringPi -lADCDevice
+
 3.	Then run the generated file ``ColorfulSoftlight``.
 
 .. code-block:: console
@@ -125,8 +133,8 @@ First, observe the project result, and then learn about the code in detail.
 After the program is executed, rotate one of the potentiometers, then the color of RGB LED will change. The Terminal window will display the ADC value of each potentiometer. 
 
 .. image:: ../_static/imgs/ADC-value.png
-        :width: 100%
-        :align: center
+    :width: 100%
+    :align: center
 
 The following is the program code:
 
@@ -135,4 +143,3 @@ The following is the program code:
     :language: C
 
 In the code you can read the ADC values of the 3 potentiometers and map it into a PWM duty cycle to control the 3 LED elements to vary the color of their respective RGB LED.
-

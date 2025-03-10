@@ -112,7 +112,7 @@ Sketch
 
 In this chapter, we will learn to obtain MPU6050 data and print them.
 
-Sketch_23_MPU6050
+Sketch_MPU6050
 ----------------------------------------------------------------
 
 First, enter where the project is located:
@@ -151,13 +151,14 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_mpu6050_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_23_MPU6050/MPU6050RAW.java
     :linenos: 
     :language: java
+    :dedent:
 
 Define the commonly used registers of MPU6050.
 
@@ -165,6 +166,7 @@ Define the commonly used registers of MPU6050.
     :linenos: 
     :language: java
     :lines: 28-36
+    :dedent:
 
 Initialize the I2C interface of the Raspberry Pi.
 
@@ -172,6 +174,7 @@ Initialize the I2C interface of the Raspberry Pi.
     :linenos: 
     :language: java
     :lines: 63-69
+    :dedent:
 
 Configure MPU6050 so that it can work properly.
 
@@ -179,6 +182,7 @@ Configure MPU6050 so that it can work properly.
     :linenos: 
     :language: java
     :lines: 89-95
+    :dedent:
 
 Get the I2C address of MPU6050. This is only used for testing.
 
@@ -186,6 +190,7 @@ Get the I2C address of MPU6050. This is only used for testing.
     :linenos: 
     :language: java
     :lines: 98-102
+    :dedent:
 
 Get raw acceleration data.
 
@@ -193,6 +198,7 @@ Get raw acceleration data.
     :linenos: 
     :language: java
     :lines: 105-113
+    :dedent:
 
 Get raw gyroscope data.
 
@@ -200,6 +206,7 @@ Get raw gyroscope data.
     :linenos: 
     :language: java
     :lines: 116-124
+    :dedent:
 
 Define the I2C address of MPU6050.
 
@@ -213,6 +220,7 @@ Get the I2C address from the MPU6050 register and determine whether it is consis
     :linenos: 
     :language: java
     :lines: 145-152
+    :dedent:
 
 Get the raw data of the accelerometer and gyroscope of MPU6050, convert them and print them out.
 
@@ -220,10 +228,12 @@ Get the raw data of the accelerometer and gyroscope of MPU6050, convert them and
     :linenos: 
     :language: java
     :lines: 154-163
+    :dedent:
 
 Thread exception capture ensures that the code runs normally.
 
 .. code-block:: c
+    :linenos:
 
     catch (InterruptedException e) {  
         e.printStackTrace();  
@@ -233,6 +243,7 @@ Thread exception capture ensures that the code runs normally.
 When terminating the execution of the code, shut down the MPU6050 device and disable the I2C functionality on the Raspberry Pi.
 
 .. code-block:: c
+    :linenos:
 
     finally {  
         if (mpu != null) {  

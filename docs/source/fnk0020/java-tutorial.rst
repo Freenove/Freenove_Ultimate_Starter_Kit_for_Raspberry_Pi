@@ -3,15 +3,38 @@ java tutorial
 ##############################################################################
 
 .. toctree::
-   :numbered:
+   :titlesonly:
+   :caption: Getting Started
+
+   codes/java-lang/Getting_Started.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: Remove the Chips
+
+   codes/java-lang/Remove_the_Chips.rst
+
+.. toctree::
    :titlesonly:
    :caption: Preface
 
    codes/preface/java_preface.rst
 
 .. toctree::
+   :titlesonly:
+   :caption: Raspberry Pi
+
+   codes/java-lang/Raspberry_Pi.rst
+
+.. toctree::
    :titlesonly: 
-   :caption: Preparation
+   :caption: Installing an Operating System
+   
+   codes/java-lang/Installing_an_Operating_System.rst
+
+.. toctree::
+   :titlesonly: 
+   :caption: Projects
    
    codes/preface/java_preparation.rst
 

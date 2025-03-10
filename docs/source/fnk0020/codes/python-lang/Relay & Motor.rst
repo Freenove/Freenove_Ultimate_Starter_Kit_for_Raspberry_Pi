@@ -2,7 +2,6 @@
 Chapter Relay & Motor
 ################################################################
 
-
 In this chapter, we will learn a kind of special switch module, Relay Module.
 
 Project Relay & Motor
@@ -113,19 +112,18 @@ Use caution with the power supply voltage needed for the components in this circ
 
    <iframe height="500" width="690" src="https://www.youtube.com/embed/CUpPpWq8YI8" frameborder="0" allowfullscreen></iframe>
 
-
-
 Code
 ================================================================
 
 The project code is in the same as we used earlier in the Table Lamp project. Pressing the Push Button Switch activates the transistor. Because the Relay and the LED are connected in parallel, they will be powered ON at the same time. Press the Push Button Switch again will turn them both OFF.
 
-Python Code 14.1.1 Relay
+Python Code Relay
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use ``cd`` command to enter 14.1.1_Relay directory of Python code.
@@ -147,5 +145,6 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/14.1.1_Relay/Relay.py
     :linenos: 
     :language: python
+    :dedent:
 
 The project code is in the same as we used earlier in the Table Lamp project.

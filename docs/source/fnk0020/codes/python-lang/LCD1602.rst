@@ -2,7 +2,6 @@
 Chapter LCD1602
 ################################################################
 
-
 In this chapter, we will learn about the LCD1602 Display Screen
 
 Project I2C LCD1602
@@ -72,25 +71,33 @@ Note that the power supply for I2C LCD1602 in this circuit is 5V.
 .. |LCD1602_Sc| image:: ../_static/imgs/LCD1602_Sc.png
 .. |LCD1602_Fr| image:: ../_static/imgs/LCD1602_Fr.png
 
+.. note:: 
+        **Youtube video:** https://youtu.be/L1bgX2f4Yio
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/L1bgX2f4Yio" frameborder="0" allowfullscreen></iframe>
+
 .. note::
-    It is necessary to configure 12C and install Smbus first (see :doc:`Chapter 7 ADC <ADC>` for details)
+    
+    It is necessary to configure 12C and install Smbus first (see :ref:`Chapter 7 <ADC>` for details)
 
 Code
 ================================================================
 
 This code will have your RPi's CPU temperature and System Time Displayed on the LCD1602.
 
-Python Code 20.1.1 I2CLCD1602
+Python Code I2CLCD1602
 ----------------------------------------------------------------
 
-If you did not configure I2C and install Smbus, please refer to :doc:`Chapter 7 ADC <ADC>`. If you did, continue.
+If you did not configure I2C and install Smbus, please refer to :ref:`Chapter 7 <ADC>`. If you did, continue.
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
-1.	Use ``cd`` command to enter 20.1.1_ I2CLCD1602 directory of Python code.
+1.	Use ``cd`` command to enter 20.1.1_I2CLCD1602 directory of Python code.
 
 .. code-block:: console
 
@@ -112,16 +119,12 @@ The LCD1602 that does not need to adjust the backlight is shown in the figure be
     :align: center
     :width: 55%
 
-If the LCD1602 you received is the following one, and you cannot see anything on the display or the display is not clear, try rotating the white knob on back of LCD1602 slowly, which adjusts the contrast, until the screen can display clearly.
-
-.. image:: ../_static/imgs/LCD1602_clear.png
-    :align: center
-
 The following is the program code:
 
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/20.1.1_I2CLCD1602/I2CLCD1602.py
     :linenos: 
     :language: python
+    :dedent:
 
 In a while loop, set the cursor position, and display the CPU temperature and time.
 
@@ -129,6 +132,7 @@ In a while loop, set the cursor position, and display the CPU temperature and ti
     :linenos: 
     :language: python
     :lines: 26-30
+    :dedent:
 
 CPU temperature is stored in file “/sys/class/thermal/thermal_zone0/temp”. Open the file and read content of the file, and then convert it to Celsius degrees and return. Subfunction used to get CPU temperature is shown below:
 
@@ -136,31 +140,33 @@ CPU temperature is stored in file “/sys/class/thermal/thermal_zone0/temp”. O
     :linenos: 
     :language: python
     :lines: 14-18
+    :dedent:
 
 Subfunction used to get time:
 
-.. code-block:: python
-
-    def get_time_now():     # get the time
-        return datetime.now().strftime('    %H:%M:%S')
+.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/20.1.1_I2CLCD1602/I2CLCD1602.py
+    :linenos: 
+    :language: python
+    :lines: 20-21
+    :dedent:
 
 **Details about LCD1602.py:**
 
-.. c:function:: Module LCD1602
+.. py:function:: Module LCD1602
 
     This module provides the basic operation method of LCD1602, including class CharLCD1602. 
     
     Some member functions are described as follows:
     
-    def init_lcd(self,addr=None, bl=1) : LDC1602 initializes the setting.  When the addr is None, the I2C address of the device will be automatically scanned.  You can also specify the I2C address, bl=1 to enable the backlight setting.
+    **def init_lcd(self,addr=None, bl=1)** : LDC1602 initializes the setting.  When the addr is None, the I2C address of the device will be automatically scanned.  You can also specify the I2C address, bl=1 to enable the backlight setting.
     
-    def clear(self): clear the screen
+    **def clear(self)** : clear the screen
     
-    def send_command(self,comm): set the cursor position
+    **def send_command(self,comm)** : set the cursor position
     
-    def i2c_scan(self): scan the device I2C address
+    **def i2c_scan(self)** : scan the device I2C address
     
-    def write(self,x, y, str): display contents
+    **def write(self,x, y, str)** : display contents
 
 .. note::
 

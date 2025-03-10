@@ -2,7 +2,6 @@
 Chapter Hygrothermograph DHT11
 ##############################################################################
 
-
 In this chapter, we will learn about a commonly used sensor called a Hygrothermograph DHT11.
 
 Project Hygrothermograph
@@ -15,7 +14,7 @@ Component List
 
 +-------------------------------------------------+-------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x36                                |       
+|                                                 | Jumper Wires x4                                 |       
 |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
 |                                                 |  |jumper-wire|                                  |                                                            
 |3. Breadboard x1                                 |                                                 |                                                                 
@@ -90,7 +89,7 @@ Add the following line to the end of the file.
 
 Press Ctrl+O, Ctrl+X, enter to save and exit the file. And then reboot your Raspberry Pi.
 
-Sketch_19_DHT11
+Sketch_DHT11
 ----------------------------------------------------------------
 
 .. code-block:: console
@@ -132,13 +131,14 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_DHT11_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_19_DHT11/DHT11.java
     :linenos: 
     :language: java
+    :dedent:
 
 Defines the file storage path for temperature and humidity data.
 
@@ -146,6 +146,7 @@ Defines the file storage path for temperature and humidity data.
     :linenos: 
     :language: java
     :lines: 6-7
+    :dedent:
     
 Below are the functions for getting temperature and humidity. The raw data read by the Raspberry Pi from the file needs to be converted to 0.001 times the original value.
 
@@ -153,6 +154,7 @@ Below are the functions for getting temperature and humidity. The raw data read 
     :linenos: 
     :language: java
     :lines: 8-19
+    :dedent:
 
 The method to read the contents of a file, loop through each line in the file, and append it to 'content'.
 
@@ -160,6 +162,7 @@ The method to read the contents of a file, loop through each line in the file, a
     :linenos: 
     :language: java
     :lines: 21-30
+    :dedent:
 
 Create an instance of the DHT11 class, read the temperature and humidity data every 2 seconds, and print it out if the data is normal; if the data is not normal, do not print it. and retrieve the next temperature and humidity data instead.
 
@@ -167,6 +170,7 @@ Create an instance of the DHT11 class, read the temperature and humidity data ev
     :linenos: 
     :language: java
     :lines: 33-51
+    :dedent:
 
 Please note that after you finish studying this chapter, you should comment out the line related to DHT11 in the ‘config.txt’ file to avoid errors when Raspberry Pi uses GPIO17 in subsequent chapters.
 
@@ -186,4 +190,3 @@ Add the “#” in front of the line.
     :align: center
 
 Save the file and reboot your Raspberry Pi.
-

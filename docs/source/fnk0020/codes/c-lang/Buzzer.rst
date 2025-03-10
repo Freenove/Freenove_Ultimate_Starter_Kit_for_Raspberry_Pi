@@ -2,7 +2,6 @@
 Chapter Buzzer
 ##############################################################################
 
-
 In this chapter, we will learn about buzzers and the sounds they make. And in our next project, we will use an active buzzer to make a doorbell and a passive buzzer to make an alarm.
 
 Project Doorbell
@@ -115,7 +114,8 @@ Transistors, full name: semiconductor transistor, is a semiconductor device that
     NPN transistor
 
 .. note:: 
-    In our kit, the PNP transistor is marked with 8550, and the NPN transistor is marked with 8050.
+    
+    :red:`In our kit, the PNP transistor is marked with 8550, and the NPN transistor is marked with 8050.`
 
 Thanks to the transistor's characteristics, they are often used as switches in digital circuits. As micro-controllers output current capacity is very weak, we will use a transistor to amplify its current in order to drive components requiring higher current.
 When we use a NPN transistor to drive a buzzer, we often use the following method. If GPIO outputs high level, current will flow through R1 (Resistor 1), the transistor conducts current and the buzzer will make sounds. If GPIO outputs low level, no current will flow through R1, the transistor will not conduct currentand buzzer will remain silent (no sounds).
@@ -163,7 +163,7 @@ Code
 
 In this project, a buzzer will be controlled by a push button switch. When the button switch is pressed, the buzzer sounds and when the button is released, the buzzer stops. It is analogous to our earlier project that controlled an LED ON and OFF.
 
-Doorbell
+C Code Doorbell
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
@@ -197,8 +197,7 @@ The following is the program code:
     :linenos: 
     :language: C
 
-.. note:: 
-    The code is exactly the same as when we used a push button switch to control an LED. You can also try using the PNP transistor to achieve the same results.
+The code is exactly the same as when we used a push button switch to control an LED. You can also try using the PNP transistor to achieve the same results.
 
 Project Alertor
 ****************************************************************
@@ -216,7 +215,7 @@ As stated before, it is analogous to our earlier project that controlled an LED 
 
 To control a passive buzzer requires PWM of certain sound frequency.
 
-Alertor
+C Code Alertor
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
@@ -260,7 +259,9 @@ In the while loop of the main function, when the push button switch is pressed t
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/06.2.1_Alertor/Alertor.c
     :linenos: 
     :language: C
-    :lines: 9-18
+    :lines: 15-24
+
+If you want to stop the buzzer, just set PWM frequency of the buzzer pin to 0.
 
 .. code-block:: c
 
@@ -272,11 +273,12 @@ The related functions of softTone are described as follows:
 
 .. c:function:: int softToneCreate (int pin) ;
 
-This creates a software controlled tone pin.
+    This creates a software controlled tone pin.
 
 .. c:function:: void softToneWrite (int pin, int freq) ;
 
-This updates the tone frequency value on the given pin.
+    This updates the tone frequency value on the given pin.
 
 .. hint:: 
+    
     For more details about softTone, please refer to : https://github.com/WiringPi/WiringPi

@@ -2,7 +2,6 @@
 Chapter LED Bar Graph
 ################################################################
 
-
 We have learned how to control one LED to blink. Next, we will learn how to control a number of LEDs
 
 Project Flowing Water Light
@@ -77,7 +76,7 @@ Code
 
 This project is designed to make a flowing water lamp, which are these actions: First turn LED #1 ON, then turn it OFF. Then turn LED #2 ON, and then turn it OFF... and repeat the same to all 10 LEDs until the last LED is turns OFF. This process is repeated to achieve the “movements” of flowing water.
 
-Python Code 3.1.1 LightWater
+Python Code LightWater
 ----------------------------------------------------------------
 
 First observe the project result, and then view the code.
@@ -104,6 +103,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/03.1.1_LightWater/LightWater.py
     :linenos: 
     :language: python
+    :dedent:
 
 Import the LED class that controls LED Bar Graph from the gpiozero library.
 
@@ -124,11 +124,18 @@ The LED is turned on or off by specifying the index of the LED, if no parameter 
     :linenos: 
     :language: python
     :lines: 16-23
+    :dedent:
+
+In the program, first define 10 pins connected to the LED and set them to output mode. In the loop() function, two for loops are used to make the lights flow from right to left and from left to right.
+
+.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/03.1.1_LightWater/LightWater.py
+    :linenos: 
+    :language: python
+    :lines: 14-23
+    :dedent:
 
 For more information about the methods used by the LEDBoard class in the GPIO Zero library,please refer to: https://gpiozero.readthedocs.io/en/stable/api_boards.html#ledboard
 
 For more information about the methods used by the LEDBarGraph class in the GPIO Zero library,please refer to: https://gpiozero.readthedocs.io/en/stable/api_boards.html#ledbargraph
 
 In this experiment you can use the LEDBoard and LEDBarGraph classes to control the LEDBarGraph 
-
-

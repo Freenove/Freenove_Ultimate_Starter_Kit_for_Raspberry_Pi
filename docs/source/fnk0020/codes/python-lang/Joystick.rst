@@ -19,7 +19,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                      |
 |                                                               |
 |3. Breadboard x1                                               |
-+===============================+===============================+
++-------------------------------+-------------------------------+
 | Joystick  x1                  |   Resistor 10kΩ x3            |
 |                               |                               |
 | |joystick|                    |  |Resistor-10kΩ|              |
@@ -86,7 +86,6 @@ Circuit with ADS7830
 
    <iframe height="500" width="690" src="https://www.youtube.com/embed/qjP3HpbPJTM" frameborder="0" allowfullscreen></iframe>
 
-
 Circuit with PCF8591
 ================================================================
 
@@ -110,10 +109,10 @@ Code
 
 In this project's code, we will read the ADC values of X and Y axes of the Joystick, and read digital quality of the Z axis, then display these out in Terminal.
 
-Python Code 12.1.1 Joystick
+Python Code Joystick
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to :doc:`Chapter 7 ADC <ADC>`. If you did, please continue.
+If you did not configure I2C, please refer to :doc:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 

@@ -18,7 +18,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                                        |       
 |                                                                                 |                                                            
 |3. Breadboard x1                                                                 |                                                                 
-+=================================================+===============================+
++-------------------------------------------------+-------------------------------+
 | Rotary potentiometer x1                         |   Resistor 10kΩ x2            |
 |                                                 |                               |
 | |Rotary-potentiometer|                          |  |Resistor-10kΩ|              |                           
@@ -26,7 +26,6 @@ Component List
 | ADC module x1                                   |   LED x1                      |
 |                                                 |                               |
 | |ADC-module-2|                                  |   |red-led|                   |                   
-|                                                 |                               |  
 +-------------------------------------------------+-------------------------------+
 |   Jumper Wire M/M x17                                                           |
 |                                                                                 | 
@@ -34,15 +33,15 @@ Component List
 +---------------------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 70%
+    :width: 40%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 20%
+    :width: 10%
 .. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
     :width: 25%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 30%
+    :width: 20%
 
 Circuit with ADS7830
 ================================================================
@@ -111,6 +110,13 @@ You can open the code with Geany with the following command to view and edit it.
 
 Click the icon to run the code.
 
+.. image:: ../_static/imgs/java08_00.png
+    :align: center
+
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
+
+The following is program code:
+
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_08_Nightlamp/Nightlamp.java
     :linenos: 
     :language: java
@@ -121,3 +127,4 @@ The ADC value at the photosensor is obtained every 100 milliseconds, converted i
     :linenos: 
     :language: java
     :lines: 158-168
+    :dedent:

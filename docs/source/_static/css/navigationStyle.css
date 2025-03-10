@@ -7,18 +7,20 @@
 
 .nav_fn {
 	/* border: solid #F00 5px; */
-	background-color: rgb(52, 49, 49);
+	/* background-color: rgb(52, 49, 49); */
+	/* background-color: solid #000; */
+	background-color:#343131;
 	position: absolute;
 	width: fit-content;
 	height: auto;
 	left: 0;
 	top: 0;
 	z-index: 1;
-	opacity: 0.8;
+	opacity: 1;
 }
 
 .nav_fn ul {
-	background-color: rgb(52, 49, 49);
+	/* background-color: rgb(52, 49, 49); */
 	/* border: solid #F00 5px; */
 	width: auto;
 	height: auto;
@@ -35,7 +37,7 @@
 }
 
 .nav_fn li {
-	background-color: #003333;
+	/* background-color: #003333; */
 	display: block;
 	float: left;
 	width:9px;
@@ -43,7 +45,7 @@
 	cursor: pointer;
 	margin-left: 0px;
 	list-style-type: none;
-	opacity: 0.8;
+	opacity: 1;
 }
 
 .navLogo {

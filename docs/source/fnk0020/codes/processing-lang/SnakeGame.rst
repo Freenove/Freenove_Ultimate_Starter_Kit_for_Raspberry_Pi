@@ -1,5 +1,5 @@
 ################################################################
-Chapter Thermistor
+App Snake Game
 ################################################################
 
 In this chapter, we will play a classic game, snake.
@@ -14,20 +14,21 @@ Component List
 
 +-------------------------------------------------+-------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x36                                |       
+|                                                 | Jumper Wires x12                                |       
 |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
 |                                                 |  |jumper-wire|                                  |                                                            
 |3. Breadboard x1                                 |                                                 |                                                                 
 +-------------------------------------------------+-------------------------------------------------+
-| Push button x4                                  | Resistor 10kΩ x1                                |
+| Push button x4                                  | Resistor 10kΩ x4                                |
 |                                                 |                                                 |
 |  |button-small|                                 |  |Resistor-10kΩ|                                |
 +-------------------------------------------------+-------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-.. |button-small| image:: ../_static/imgs/button-small.jpgg
-    :width: 50%
+    :width: 10%
+.. |button-small| image:: ../_static/imgs/button-small.jpg
+    :width: 30%
 
 Circuit
 ================================================================
@@ -50,7 +51,7 @@ Circuit
 Sketch
 ================================================================
 
-Sketch 4.1.1 SnakeGame
+Sketch SnakeGame
 ----------------------------------------------------------------
 
 1.	Use Processing to open the file Sketch_04_1_1_SnakeGame.

@@ -6,17 +6,8 @@ In this chapter, we will learn how to control a RGB LED.
 
 An RGB LED has 3 LEDs integrated into one LED component. It can respectively emit Red, Green and Blue light. In order to do this, it requires 4 pins (this is also how you identify it). The long pin (1) is the common which is the Anode (+) or positive lead, the other 3 are the Cathodes (-) or negative leads. A rendering of a RGB LED and its electronic symbol are shown below. We can make RGB LED emit various colors of light and brightness by controlling the 3 Cathodes (2, 3 & 4) of the RGB LED
 
-.. list-table::
-   :widths: 50 50
-   :align: center
-
-   * - |RGB-LED-real|
-     - |RGB-LED-sc|
-
-.. |RGB-LED-real| image:: ../_static/imgs/RGB-LED-real.png
-    :width: 40%
-.. |RGB-LED-sc| image:: ../_static/imgs/RGB-LED-sc.png
-    :width: 70%
+.. image:: ../_static/imgs/05_00.png
+    :align: center
 
 Red, Green, and Blue light are called 3 Primary Colors when discussing light (Note: for pigments such as paints, the 3 Primary Colors are Red, Blue and Yellow). When you combine these three Primary Colors of light with varied brightness, they can produce almost any color of visible light. Computer screens, single pixels of cell phone screens, neon lamps, etc. can all produce millions of colors due to phenomenon.
 
@@ -32,7 +23,7 @@ If we use a three 8 bit PWM to control the RGB LED, in theory, we can create 28*
 
 Next, we will use RGB LED to make a multicolored LED. 
 
-Project Multicolored LED
+Project RainbowLED
 ****************************************************************
 
 Component List
@@ -52,6 +43,8 @@ Component List
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |res-220R-hori| image:: ../_static/imgs/res-220R-hori.png
+.. |RGB-LED-real| image:: ../_static/imgs/RGB-LED-real.png
+    :width: 30%
 
 Circuit
 ================================================================
@@ -129,13 +122,14 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_RainbowLED_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_05_RainbowLED/RainbowLED.java
     :linenos: 
     :language: java
+    :dedent:
 
 Import Pi4j library, context management, digital output interface, HashMap class and Map interface, and random function library.
 
@@ -143,6 +137,7 @@ Import Pi4j library, context management, digital output interface, HashMap class
     :linenos: 
     :language: java
     :lines: 9-15
+    :dedent:
 
 Initialize the pins corresponding to the RGB lights and print a stack trace if an exception occurs.
 
@@ -150,6 +145,7 @@ Initialize the pins corresponding to the RGB lights and print a stack trace if a
     :linenos: 
     :language: java
     :lines: 102-110
+    :dedent:
 
 Configure the RGB colored lights and adjust the brightness of the LED by adjusting the duty cycle of PWM.
 
@@ -157,6 +153,7 @@ Configure the RGB colored lights and adjust the brightness of the LED by adjusti
     :linenos: 
     :language: java
     :lines: 112-121
+    :dedent:
 
 Create a console instance, define an array of GPIO pins for LED connections, and create a random number generator instance.
 
@@ -164,6 +161,7 @@ Create a console instance, define an array of GPIO pins for LED connections, and
     :linenos: 
     :language: java
     :lines: 124-126
+    :dedent:
 
 Initialize the array of GPIO pins connected to the LEDs, generate 3 new random numbers every 500 milliseconds as brightness values for the RGB lights, and print prompt messages on the console.
 
@@ -171,6 +169,7 @@ Initialize the array of GPIO pins connected to the LEDs, generate 3 new random n
     :linenos: 
     :language: java
     :lines: 128-138
+    :dedent:
 
 At the end of the program, stop all PWM controllers and close the Pi4J context.
 
@@ -178,4 +177,4 @@ At the end of the program, stop all PWM controllers and close the Pi4J context.
     :linenos: 
     :language: java
     :lines: 139-144
-   
+    :dedent:

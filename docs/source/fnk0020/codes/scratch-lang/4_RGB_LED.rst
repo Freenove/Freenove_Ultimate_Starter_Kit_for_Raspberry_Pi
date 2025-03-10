@@ -6,17 +6,8 @@ In this chapter, we will learn how to control a RGB LED.
 
 An RGB LED has 3 LEDs integrated into one LED component. It can respectively emit Red, Green and Blue light. In order to do this, it requires 4 pins (this is also how you identify it). The long pin (1) is the common which is the Anode (+) or positive lead, the other 3 are the Cathodes (-) or negative leads. A rendering of a RGB LED and its electronic symbol are shown below. We can make RGB LED emit various colors of light and brightness by controlling the 3 Cathodes (2, 3 & 4) of the RGB LED
 
-.. list-table::
-   :widths: 50 50
-   :align: center
-
-   * - |RGB-LED-real|
-     - |RGB-LED-sc|
-
-.. |RGB-LED-real| image:: ../_static/imgs/RGB-LED-real.png
-    :width: 40%
-.. |RGB-LED-sc| image:: ../_static/imgs/RGB-LED-sc.png
-    :width: 70%
+.. image:: ../_static/imgs/05_00.png
+    :align: center
 
 Red, Green, and Blue light are called 3 Primary Colors when discussing light (Note: for pigments such as paints, the 3 Primary Colors are Red, Blue and Yellow). When you combine these three Primary Colors of light with varied brightness, they can produce almost any color of visible light. Computer screens, single pixels of cell phone screens, neon lamps, etc. can all produce millions of colors due to phenomenon.
 
@@ -53,7 +44,8 @@ Component List
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
 .. |res-220R-hori| image:: ../_static/imgs/res-220R-hori.png
-
+.. |RGB-LED-real| image:: ../_static/imgs/RGB-LED-real.png
+    :width: 30%
 
 Circuit
 ================================================================

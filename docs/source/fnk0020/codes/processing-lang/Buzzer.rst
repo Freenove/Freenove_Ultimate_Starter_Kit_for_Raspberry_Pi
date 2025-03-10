@@ -22,16 +22,16 @@ We will make a doorbell with this functionality: when the Push Button Switch is 
 | NPN transistorx1          | Resistor 10kΩ x2              |
 |                           |                               |
 | |NPN-transistor|          | |Resistor-10kΩ|               |
-+-----------------------------------------------------------+
++---------------------------+-------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 30%
+    :width: 60%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
     :width: 20%
 .. |Active-buzzer| image:: ../_static/imgs/Active-buzzer.png
-    :width: 30%
+    :width: 60%
 .. |NPN-transistor| image:: ../_static/imgs/NPN-transistor.png
-    :width: 30%
+    :width: 20%
 
 Circuit
 ================================================================
@@ -57,7 +57,7 @@ Circuit
 Sketch
 ================================================================
 
-Sketch 5.1.1 ActiveBuzzer
+Sketch ActiveBuzzer
 ----------------------------------------------------------------
 
 First, observe the result after running the sketch, and then learn about the code in detail.
@@ -77,7 +77,7 @@ After the program is executed, use the mouse to click on any position of the Dis
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_05_1_1_ActiveBuzzer/Sketch_05_1_1_ActiveBuzzer.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_05_1_1_ActiveBuzzer/Sketch_05_1_1_ActiveBuzzer.pde
     :linenos: 
     :language: java
 

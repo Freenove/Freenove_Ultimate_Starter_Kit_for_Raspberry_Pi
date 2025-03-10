@@ -1,5 +1,5 @@
 ################################################################
-Chapter Thermistor
+App Control Graphics
 ################################################################
 
 In this chapter, we will use a potentiometer to make the graphics change in Processing.
@@ -18,7 +18,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                      |
 |                                                               |
 |3. Breadboard x1                                               |
-+===============================+===============================+
++-------------------------------+-------------------------------+
 | Rotary potentiometer x2       |   Resistor 10kΩ x2            |
 |                               |                               |
 | |Rotary-potentiometer|        |  |Resistor-10kΩ|              |
@@ -34,8 +34,11 @@ Component List
 +---------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 40%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
+    :width: 10%
 .. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
+    :width: 30%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 
@@ -67,13 +70,13 @@ Note that the power supply voltage of ADC module in this circuit is 5V.
 +------------------------------------------------------------------------------------------------+
 |   Schematic diagram                                                                            |
 |                                                                                                |
-|   |Graphics_ADS7830_Sc|                                                                          |
+|   |Graphics_ADS7830_Sc|                                                                        |
 +------------------------------------------------------------------------------------------------+
 |   Hardware connection. If you need any support,please feel free to contact us via:             |
 |                                                                                                |
 |   support@freenove.com                                                                         | 
 |                                                                                                |
-|   |oscilloscope_Fr_1|                                                                          |
+|   |Graphics_ADS7830_Fr|                                                                        |
 +------------------------------------------------------------------------------------------------+
 
 .. |Graphics_ADS7830_Sc| image:: ../_static/imgs/Graphics_ADS7830_Sc.png
@@ -82,7 +85,7 @@ Note that the power supply voltage of ADC module in this circuit is 5V.
 Sketch
 ================================================================
 
-Sketch 2.1.1 Ellipse
+Sketch Ellipse
 ----------------------------------------------------------------
 
 1.	Use Processing to open the file Sketch_02_1_1_Ellipse.

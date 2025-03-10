@@ -4,7 +4,7 @@ App Oscilloscope
 
 We have used the ADC module to read the voltage of potentiometer to achieve the function of a voltmeter before. In this chapter, we will make a more complex virtual instrument, oscilloscope. Oscilloscope is a widely used electronic measuring instrument. It can get the electrical signals that cannot be observed directly into visible images to facilitate the analysis and study of various electrical signals changing process.
 
-App 1.1 Oscilloscope
+App Oscilloscope
 ****************************************************************
 
 Now, let's make an oscilloscope.
@@ -18,15 +18,14 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                      |
 |                                                               |
 |3. Breadboard x1                                               |
-+===============================+===============================+
-| Rotary potentiometer x1       |   Resistor 10kΩ x3            |
++-------------------------------+-------------------------------+
+| Rotary potentiometer x1       |   Resistor 10kΩ x2            |
 |                               |                               |
 | |Rotary-potentiometer|        |  |Resistor-10kΩ|              |
 +-------------------------------+-------------------------------+
 | ADC module x1                                                 |
 |                                                               |
 |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |
-|                                                               |
 +---------------------------------------------------------------+
 |   Jumper M/M                                                  |
 |                                                               |
@@ -82,7 +81,7 @@ Note that the power supply voltage of ADC module in this circuit is 5V.
 Sketch
 ================================================================
 
-Sketch 1.1.1 Oscilloscope
+Sketch Oscilloscope
 ----------------------------------------------------------------
 
 1.	Use Processing to open the file Sketch_01_1_1_Oscilloscope.

@@ -14,7 +14,7 @@ Component List
 
 +--------------------------------------------------+---------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                 |                                                   |
-|                                                  | Jumper Wires x6                                   |
+|                                                  | Jumper Wires                                      |
 |2. GPIO Extension Board & Ribbon Cable x1         |                                                   |
 |                                                  |  |jumper-wire|                                    |
 |3. Breadboard x1                                  |                                                   |
@@ -57,7 +57,8 @@ Hardware connection. If you need any support, please feel free to contact us via
         :width: 100%   
 
 .. note:: 
-        :red:`If LEDbar doesn't work, rotate LEDbar 180° to try. The label is random.`
+    
+    :red:`If LEDbar doesn't work, rotate LEDbar 180° to try. The label is random.`
 
 In this circuit, the cathodes of the LEDs are connected to the GPIO, which is different from the previous circuit. The LEDs turn ON when the GPIO output is low level in the program. 
 
@@ -110,13 +111,14 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_flow_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_02_FlowingLight/FlowingLight.java
     :linenos: 
     :language: java
+    :dedent:
 
 Import the classes of Pi4J library for GPIO control and simple console output.
 
@@ -124,6 +126,7 @@ Import the classes of Pi4J library for GPIO control and simple console output.
     :linenos: 
     :language: java
     :lines: 9-11
+    :dedent:
 
 Define an array that includes the GPIO numbers connecting to LEDs.
 
@@ -131,6 +134,7 @@ Define an array that includes the GPIO numbers connecting to LEDs.
     :linenos: 
     :language: java
     :lines: 14-15
+    :dedent:
 
 Create a DigitalOutput array based on the GPIO array that controls the LEDs, and create a DigitalOutput instance for each pin.
 
@@ -138,6 +142,7 @@ Create a DigitalOutput array based on the GPIO array that controls the LEDs, and
     :linenos: 
     :language: java
     :lines: 21-24
+    :dedent:
 
 Iterate through all LEDs and turn them off (set to low level).
 
@@ -145,6 +150,7 @@ Iterate through all LEDs and turn them off (set to low level).
     :linenos: 
     :language: java
     :lines: 30-32
+    :dedent:
 
 Use 'currentLed' to record the position of the LED that is lit, recalculate the position of the lit LED every 100 milliseconds, and print a prompt message to the console. At the same time, turn off all LEDs except the LED at the position recorded by 'currentLed'.
 
@@ -152,3 +158,4 @@ Use 'currentLed' to record the position of the LED that is lit, recalculate the 
     :linenos: 
     :language: java
     :lines: 27-36
+    :dedent:

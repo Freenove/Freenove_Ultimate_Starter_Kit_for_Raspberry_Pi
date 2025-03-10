@@ -19,7 +19,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                                        |       
 |                                                                                 |                                                            
 |3. Breadboard x1                                                                 |                                                                 
-+=================================================+===============================+
++-------------------------------------------------+-------------------------------+
 | Rotary potentiometer x1                         |   Resistor 10kΩ x2            |
 |                                                 |                               |
 | |Rotary-potentiometer|                          |  |Resistor-10kΩ|              |                           
@@ -88,10 +88,10 @@ Circuit with PCF8591
 Code
 ================================================================
 
-Python Code 8.1.1 Softlight
+Python Code Softlight
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to :doc:`Chapter 7 ADC <ADC>`. If you did, please continue.
+If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 

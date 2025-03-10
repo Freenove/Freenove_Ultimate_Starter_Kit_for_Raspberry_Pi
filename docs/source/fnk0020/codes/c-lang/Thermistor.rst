@@ -51,13 +51,8 @@ Thermistor
 
 Thermistor is a temperature sensitive resistor. When it senses a change in temperature, the resistance of the Thermistor will change. We can take advantage of this characteristic by using a Thermistor to detect temperature intensity. A Thermistor and its electronic symbol are shown below.
 
-.. image:: ../_static/imgs/Thermistor.png
-        :width: 10%
-        :align: center
-
-.. image:: ../_static/imgs/Thermistor-2.png
-        :width: 15%
-        :align: center
+.. image:: ../_static/imgs/11_00.png
+    :align: center
 
 The relationship between resistance value and temperature of a thermistor is:
 
@@ -66,11 +61,11 @@ The relationship between resistance value and temperature of a thermistor is:
     :xx-large:`Rt=R*EXP [B*(1/T2-1/T1)]`
 
 - Where:
-    - Rt is the thermistor resistance under T2 temperature;
-    - R is in the nominal resistance of thermistor under T1 temperature;
-    - EXP[n] is nth power of e;
-    - B is for thermal index;
-    - T1, T2 is Kelvin temperature (absolute temperature). Kelvin temperature=273.15 + Celsius temperature.
+    - **Rt** is the thermistor resistance under T2 temperature;
+    - **R** is in the nominal resistance of thermistor under T1 temperature;
+    - **EXP[n]** is nth power of e;
+    - **B** is for thermal index;
+    - **T1, T2** is Kelvin temperature (absolute temperature). Kelvin temperature=273.15 + Celsius temperature.
 
 For the parameters of the Thermistor, we use: B=3950, R=10k, T1=25.
 
@@ -144,10 +139,10 @@ Code
 
 In this project code, the ADC value still needs to be read, but the difference here is that a specific formula is used to calculate the temperature value.
 
-C Code 11.1.1 Thermometer
+C Code Thermometer
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to :doc:`Chapter 7 ADC <ADC>`. If you did, please continue.
+If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 

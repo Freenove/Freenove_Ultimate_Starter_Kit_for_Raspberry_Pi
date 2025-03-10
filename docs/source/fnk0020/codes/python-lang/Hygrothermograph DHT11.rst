@@ -1,7 +1,6 @@
 ################################################################
-Chapter 74HC595 & LED Matrix
+Chapter Hygrothermograph DHT11
 ################################################################
-
 
 In this chapter, we will learn about a commonly used sensor called a Hygrothermograph DHT11.
 
@@ -15,7 +14,7 @@ Component List
 
 +-------------------------------------------------+-------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x36                                |       
+|                                                 | Jumper Wires x4                                 |       
 |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
 |                                                 |  |jumper-wire|                                  |                                                            
 |3. Breadboard x1                                 |                                                 |                                                                 
@@ -63,14 +62,19 @@ Circuit
 .. |DHT11_Sc| image:: ../_static/imgs/DHT11_Sc.png
 .. |DHT11_Fr| image:: ../_static/imgs/DHT11_Fr.png
 
+.. note:: 
+        **Youtube video:** https://youtu.be/vTeuLWiXUTA
 
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/vTeuLWiXUTA" frameborder="0" allowfullscreen></iframe>
 
 Code
 ================================================================
 
 The code is used to read the temperature and humidity data of DHT11, and display them.
 
-Python Code 21.1.1 DHT11
+Python Code DHT11
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
@@ -92,7 +96,7 @@ First, observe the project result, and then learn about the code in detail.
 
 A successful installation, without error prompts, is shown below:
 
-.. image:: ../_static/imgs/DHT11_code.png
+.. image:: ../_static/imgs/python21_00.png
     :align: center
 
 Next, we will execute the code for this project. 
@@ -111,7 +115,7 @@ Next, we will execute the code for this project.
 
 After the program is executed, the Terminal window will display the current total number of read times, the read state, as well as temperature and humidity values as is shown below:
 
-.. image:: ../_static/imgs/DHT11_Value.png
+.. image:: ../_static/imgs/python21_01.png
     :align: center
 
 Since gpiozero does not support DHT11 sensors, RPi.GPIO is used here for control.
@@ -121,6 +125,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/21.1.1_DHT11/DHT11.py
     :linenos: 
     :language: python
+    :dedent:
 
 In this project code, we use a module "Freenove_DHT.py", which provides the method of reading the DHT Sensor. It is located in the same directory with program files "DHT11.py". By using this library, we can easily read the DHT Sensor. First, we create a DHT class object in the code.
 
@@ -134,6 +139,7 @@ Then in the "while" loop, use chk = dht.readDHT11() to read the DHT11, and deter
     :linenos: 
     :language: python
     :lines: 17-28
+    :dedent:
 
 Finally display the results:
 
@@ -143,7 +149,7 @@ Finally display the results:
 
 Module "Freenove_DHT.py" contains a DHT class. The class function of the def readDHT11 (pin) is used to read the DHT11 Sensor and store the temperature and humidity data read to member variables humidity and temperature. 
 
-.. c:function:: Freenove_DHT Module
+.. py:function:: Freenove_DHT Module
 
     This is a Python module for reading the temperature and humidity data of the DHT Sensor. Partial functions and variables are described as follows:
     

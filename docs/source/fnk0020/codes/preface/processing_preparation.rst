@@ -23,23 +23,7 @@ You can check the the current system bitness with the following command:
 
     $ getconf LONG_BIT
 
-Method 1: 
-
-If you have a 32-bit system, enter the following command to install the package.
-
-.. code-block:: console
-
-    $ wget https://github.com/processing/processing4/releases/download/processing-1292-4.2/processing-4.2-linux-arm32.tgz
-
-If you have a 64-bit one, enter the following command to install the package.
-
-.. code-block:: console
-
-    $ wget https://github.com/processing/processing4/releases/download/processing-1292-4.2/processing-4.2-linux-arm64.tgz
-
-Method 2:
-
-You can also download the installation package directly form the Processing official website: https://processing.org/ 
+You can download the installation package directly form the Processing official website: https://processing.org/ 
 
 .. image:: ../_static/imgs/processing.png
     :align: center
@@ -77,7 +61,7 @@ Take the first method as an example: enter the following command to install proc
 
 After finishing installation, there will be shortcut in Menu and desktop. 
 
-.. image:: ../_static/imgs/processing_4_2.png
+.. image:: ../_static/imgs/processing00_00.png
     :align: center
 
 It is worth noting that the Raspberry Pi 4 series is used in this tutorial, which makes the running of Processing smoother. When using other models, there may be a phenomenon of freezing. When the freezing occurs, you cannot complete the experiment. At this time, try to lower the version of Processing, such as the specific version of processing 3.5.3, you can visit the following link: https://github.com/processing/processing/releases

@@ -36,13 +36,13 @@ Component List
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 20%
+    :width: 15%
 .. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
     :width: 25%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 30%
+    :width: 25%
 
 Circuit with ADS7830
 ================================================================
@@ -83,7 +83,7 @@ Sketch
 
 If you did not configure I2C, please refer to Chapter 6. If you did, please move on.
 
-Sketch 7.1.1 SoftLight
+Sketch SoftLight
 ----------------------------------------------------------------
 
 First, observe the result after running the sketch, and then learn about the code in detail.
@@ -108,15 +108,17 @@ This project contains a lot of code files, and the core code is contained in the
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_07_1_1_SoftLight/Sketch_07_1_1_SoftLight.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_07_1_1_SoftLight/Sketch_07_1_1_SoftLight.pde
     :linenos: 
     :language: java
 
 In this project code, get the ADC value of the potentiometer, then map it into the PWM duty cycle of LED to control its brightness. In Display Window, the color filled in LED pattern changes to simulate the brightness change of LED.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_07_1_1_SoftLight/Sketch_07_1_1_SoftLight.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_07_1_1_SoftLight/Sketch_07_1_1_SoftLight.pde
     :linenos: 
     :language: java
+    :lines: 25-28
+    :dedent:
 
 Project NightLamp
 ****************************************************************
@@ -127,34 +129,25 @@ Component List
 ================================================================
 
 +-------------------------------------------------+-------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |    220Ω x3                    |     
+|1. Raspberry Pi (with 40 GPIO) x1                |    220Ω x1                    |     
 |                                                 |                               |       
 |2. GPIO Extension Board & Ribbon Cable x1        |   |res-220R|                  |       
 |                                                 |                               |                                                            
 |3. Breadboard x1                                 |                               |                                                                 
 +-------------------------------------------------+-------------------------------+
-| Rotary potentiometer x3                         |   Resistor 10kΩ x2            |
+| Jumper Wire M/M                                 |   Resistor 10kΩ x3            |
 |                                                 |                               |
-| |Phtotresistor|                                 |  |Resistor-10kΩ|              |                           
+| |jumper-wire|                                   |  |Resistor-10kΩ|              |                           
 +-------------------------------------------------+-------------------------------+
-| ADC module x1 (Only one)                        |   RGB LED x1                  |
+| ADC module x1 (Only one)                        |       LED x1                  |
 |                                                 |                               |
 | |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |red-led|                   |                   
 |                                                 |                               |  
 +-------------------------------------------------+-------------------------------+
-|   Jumper Wire M/M x17                                                           |
-|                                                                                 | 
-|      |jumper-wire|                                                              |
-+---------------------------------------------------------------------------------+
 
-.. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-.. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
 .. |res-220R| image:: ../_static/imgs/res-220R.png
+    :width: 20%
 .. |Phtotresistor| image:: ../_static/imgs/Phtotresistor.png
-.. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
-.. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
-.. |red-led| image:: ../_static/imgs/red-led.png
-
 
 Circuit with ADS7830
 ================================================================
@@ -196,8 +189,11 @@ The circuit used is similar to the Soft light project. The only difference is th
 .. |PCF8591-Schematic-4| image:: ../_static/imgs/PCF8591-Schematic-4.png
 .. |PCF8591-fritizing-4| image:: ../_static/imgs/PCF8591-fritizing-4.png
 
+The formula for calculating temperature according to the circuit is shown below:
+
+.. math:: T2 = 1/(1/T1 + ln(Rt/R)/B)
+
 Sketch
 ================================================================
 
 The project code is the same as the previous section "SoftLight" except for the title.
-

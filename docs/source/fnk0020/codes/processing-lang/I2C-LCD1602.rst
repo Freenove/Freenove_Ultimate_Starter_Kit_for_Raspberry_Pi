@@ -51,6 +51,7 @@ Component List
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |LCD1602| image:: ../_static/imgs/LCD1602.png
+    :width: 50%
 
 Circuit
 ================================================================
@@ -73,12 +74,12 @@ Note that the power supply for I2C LCD1602 in this circuit is 5V.
 .. |LCD1602_Fr| image:: ../_static/imgs/LCD1602_Fr.png
 
 .. note::
-    It is necessary to configure 12C and install Smbus first (see :doc:`Chapter 7 ADC <ADC>` for details)
+    It is necessary to configure 12C and install Smbus first (see :ref:`Chapter 7 <ADC>` for details)
 
 Sketch
 ================================================================
 
-Sketch 13.1.1 LCD
+Sketch LCD
 ----------------------------------------------------------------
 
 First observe the results of the code and the phenomenon, and then learn the code in detail.
@@ -103,20 +104,20 @@ This project contains a lot of code files, and the core code is contained in the
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_13_1_1_LCD/Sketch_13_1_1_LCD.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_13_1_1_LCD/Sketch_13_1_1_LCD.pde
     :linenos: 
     :language: c
 
 First create a PCF8574 class object “pcf”, and take “pcf” as a parameter to create an LCD1602 class object. And then define the variable “time” to store date and time. Display window needs not refresh frequently. Therefore, the frame rate can be set to 1Hz or 2Hz.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_13_1_1_LCD/Sketch_13_1_1_LCD.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_13_1_1_LCD/Sketch_13_1_1_LCD.pde
     :linenos: 
     :language: c
     :lines: 10-18
 
 In the function draw(), get the current time and date, and display them on the LCD1602 and Display Window.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_13_1_1_LCD/Sketch_13_1_1_LCD.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_13_1_1_LCD/Sketch_13_1_1_LCD.pde
     :linenos: 
     :language: c
     :lines: 19-31
@@ -124,7 +125,7 @@ In the function draw(), get the current time and date, and display them on the L
 Reference
 ----------------------------------------------------------------
 
-.. c:function:: class PCF8574
+.. py:function:: class PCF8574
 
     This is a custom class that is used to control the integrated circuit PCF8574.
     
@@ -148,7 +149,7 @@ Reference
 
     Write data to all ports.
 
-.. c:function:: class Freenove_LCD
+.. py:function:: class Freenove_LCD
 
     This is a custom class that is currently only used to control the I2C-LCD1602 connected to PCF8574.
     

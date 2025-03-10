@@ -13,37 +13,42 @@ In this project, we will use RPi to control blinking a common LED.
 Component List
 ================================================================
 
-1.  | Raspberry Pi 
-    | (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B) 
-    | (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero) 
++-----------------------------------------------------------+
+|    Raspberry Pi                                           |     
+|                                                           |       
+|    (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
+|                                                           |                                                            
+|    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
+|                                                           | 
+|     |raspberrypi5|                                        | 
++-----------------------------------------------------------+
+| Breadboard x1                                             |
+|                                                           |
+|  |breadborad-830|                                         |                         
++--------------------------------------+--------------------+
+|  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
+|                                      |                    | 
+|   |extension-board|                  |  |res-220R|        |
++--------------------------------------+-------+------------+
+| Jumper                                       | LED x1     | 
+|                                              |            | 
+| **Specific quantity depends on the circuit.**| |red-led|  | 
+|                                              |            | 
+| |jumper-wire|                                |            | 
++----------------------------------------------+------------+
 
-    .. image:: ../_static/imgs/raspberrypi5.png
-        :height: 100
-
-2.  GPIO Extension Board & Ribbon Cable
-
-    .. image:: ../_static/imgs/raspberrypi-extension-board.jpg
-        :height: 100
-
-3.  Breadboard x1
-
-    .. image:: ../_static/imgs/breadborad-830.jpg
-        :height: 100
-
-4.  LED x1
-
-    .. image:: ../_static/imgs/red-led.png
-        :height: 100
-
-5.  Resistor 220Ω x1
-
-    .. image:: ../_static/imgs/res-220R.png
-        :height: 100
-
-6.  Jumper (some)
-
-    .. image:: ../_static/imgs/jumper-wire.png
-        :height: 20
+.. |raspberrypi5| image:: ../_static/imgs/raspberrypi5.png
+    :width: 60%
+.. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 60%
+.. |extension-board| image:: ../_static/imgs/raspberrypi-extension-board.jpg
+    :width: 70%
+.. |breadborad-830| image:: ../_static/imgs/breadborad-830.jpg
+    :width: 80%
+.. |red-led| image:: ../_static/imgs/red-led.png
+    :width: 30%
+.. |res-220R| image:: ../_static/imgs/res-220R.png
+    :width: 20%
 
 In the components list, 3B GPIO, Extension Shield Raspberry and Breadboard are necessary for each project. Later, they will be reference by text only (no images as in above).
 
@@ -57,14 +62,16 @@ BCM GPIO Numbering
 ---------------------------------------------------------------
 The Raspberry Pi CPU uses Broadcom (BCM) processing chips BCM2835, BCM2836 or BCM2837. GPIO pin numbers are assigned by the processing chip manufacturer and are how the computer recognizes each pin. The pin numbers themselves do not make sense or have meaning as they are only a form of identification. Since their numeric values and physical locations have no specific order, there is no way to remember them so you will need to have a printed reference or a reference board that fits over the pins.
 
-Each pin’s functional assignment is defined in the image below:
-    .. image:: ../_static/imgs/raspberrypi5-cc90.png
-        :height: 500
+Each pin's functional assignment is defined in the image below:
+    
+.. image:: ../_static/imgs/raspberrypi5-cc90.png
+    :height: 500
 
-    .. image:: ../_static/imgs/raspberrypi-pinout-bcm.png
-        :height: 500
+.. image:: ../_static/imgs/raspberrypi-pinout-bcm.png
+    :height: 500
 
 .. seealso:: 
+    
     For more details about pin definition of GPIO, please refer to `<http://pinout.xyz/>`_
 
 PHYSICAL Numbering
@@ -84,6 +91,7 @@ Different from the previous two types of GPIO serial numbers, RPi GPIO serial nu
     :height: 500
 
 .. seealso:: 
+
     For more details, please refer to `<https://projects.drogon.net/raspberry-pi/wiringpi/pins/>`_ 
 
 You can also use the following command to view their correlation.
@@ -117,10 +125,13 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
     :height: 400
 
 .. tip:: 
-     :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
+    
+    :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
 
 .. attention:: 
+    
     Do NOT rotate Raspberry Pi to change the way of this connection.
+    
     Please plug T extension fully into breadboard.
 
 The connection of Raspberry Pi T extension board is as below. **Don't reverse the ribbon**.
@@ -151,6 +162,7 @@ There are only three kind of resistors in this kit.
         :height: 20
 
 .. note:: 
+    
     Future hardware connection diagrams will only show that part of breadboard and GPIO Extension Shield.
 
 Component knowledge
@@ -187,11 +199,14 @@ In the following diagram, the current through R1 is:
 .. math:: I=U/R=5V/10kΩ=0.0005A=0.5mA.
 
 .. image:: ../_static/imgs/res-current.png
+    :align: center
 
 .. warning:: 
+    
     WARNING: Never connect the two poles of a power supply with anything of low resistance value (i.e. a metal object or bare wire) this is a Short and results in high current that may damage the power supply and electronic components.
 
 .. note:: 
+    
     Note: Unlike LEDs and Diodes, Resistors have no poles and re non-polar (it does not matter which direction you insert them into a circuit, it will work the same)
 
 Resistor
@@ -280,12 +295,14 @@ The following is program code:
 At the beginning of the code, we use shebang command to inform Raspberry Pi that we are going to use JBangto run Java script.
 
 .. code-block:: c
+    :linenos:
 
     ///usr/bin/env jbang "$0" "$@" ; exit $?   
 
 Likewise, we specify the dependencies required for the script to run. This includes the different components of the SLF4J logging library and the Pi4J library and their version numbers.
 
 .. code-block:: c
+    :linenos:
 
     //DEPS org.slf4j:slf4j-api:2.0.12  
     //DEPS org.slf4j:slf4j-simple:2.0.12  
@@ -299,6 +316,7 @@ Import Pi4J library and the Console class to facilitate creating and managing co
     :linenos: 
     :language: java
     :lines: 9-10
+    :dedent:
 
 Assign the GPIO pin to the LED, and configure it as output mode.
 
@@ -306,6 +324,7 @@ Assign the GPIO pin to the LED, and configure it as output mode.
     :linenos: 
     :language: java
     :lines: 13-18
+    :dedent:
 
 Use the try…finally structure to ensure the smooth running of the code.
 
@@ -313,6 +332,7 @@ Use the try…finally structure to ensure the smooth running of the code.
     :linenos: 
     :language: java
     :lines: 20-31
+    :dedent:
 
 Make the LED turn on and off once every 1 second, repeat this process, and print prompt messages.
 
@@ -320,17 +340,19 @@ Make the LED turn on and off once every 1 second, repeat this process, and print
     :linenos: 
     :language: java
     :lines: 21-28
+    :dedent:
 
 Freenove Car, Robot and other products for Raspberry Pi
 ================================================================
 
 We also have car and robot kits for Raspberry Pi. You can visit our website for details.
 
-:xx-large:`https://www.amazon.com/freenove`
+https://www.amazon.com/freenove
 
 **FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/43_1.png
+
 .. image:: ../_static/imgs/43_2.png
 
 .. raw:: html
@@ -340,6 +362,7 @@ We also have car and robot kits for Raspberry Pi. You can visit our website for 
 **FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/50_1.png
+
 .. image:: ../_static/imgs/50_2.png
 
 .. raw:: html
@@ -350,39 +373,7 @@ We also have car and robot kits for Raspberry Pi. You can visit our website for 
 
 .. image:: ../_static/imgs/52_1.png
     :width: 50%
-.. image:: ../_static/imgs/52_2.png
-    :width: 40%
 
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/LvghnJ2DNZ0" frameborder="0" allowfullscreen></iframe>Freenove Car, Robot and other products for Raspberry Pi
-
-We also have car and robot kits for Raspberry Pi. You can visit our website for details.
-
-:xx-large:`https://www.amazon.com/freenove`
-
-**FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/43_1.png
-.. image:: ../_static/imgs/43_2.png
-
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
-  
-**FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/50_1.png
-.. image:: ../_static/imgs/50_2.png
-
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
-
-**FNK0052**--:green:`Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi`
-
-.. image:: ../_static/imgs/52_1.png
-    :width: 50%
 .. image:: ../_static/imgs/52_2.png
     :width: 40%
 

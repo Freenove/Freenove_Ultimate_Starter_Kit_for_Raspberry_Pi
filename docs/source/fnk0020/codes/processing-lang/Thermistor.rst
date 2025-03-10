@@ -20,7 +20,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                      |       
 |                                                               |                                                            
 |3. Breadboard x1                                               |                                                                 
-+===============================+===============================+
++-------------------------------+-------------------------------+
 | Thermistor x1                 |   Resistor 10kΩ x3            |
 |                               |                               |
 | |Thermistor|                  |  |Resistor-10kΩ|              |                           
@@ -37,7 +37,9 @@ Component List
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
+    :width: 10%
 .. |Thermistor| image:: ../_static/imgs/Thermistor.png
+    :width: 20%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 
@@ -49,19 +51,12 @@ Thermistor
 
 Thermistor is a temperature sensitive resistor. When it senses a change in temperature, the resistance of the Thermistor will change. We can take advantage of this characteristic by using a Thermistor to detect temperature intensity. A Thermistor and its electronic symbol are shown below.
 
-.. image:: ../_static/imgs/Thermistor.png
-        :width: 10%
-        :align: center
-
-.. image:: ../_static/imgs/Thermistor-2.png
-        :width: 15%
-        :align: center
+.. image:: ../_static/imgs/11_00.png
+    :align: center
 
 The relationship between resistance value and temperature of a thermistor is:
 
-.. container:: centered
-
-    :xx-large:`Rt=R*EXP [B*(1/T2-1/T1)]`
+.. math:: `Rt=R*EXP [B*(1/T2-1/T1)]`
 
 - Where:
     - Rt is the thermistor resistance under T2 temperature;
@@ -134,11 +129,14 @@ The circuit of this project is similar to the one in the last chapter. The only 
 .. |PCF8591-Schematic-5| image:: ../_static/imgs/PCF8591-Schematic-5.png
 .. |PCF8591-fritizing-5| image:: ../_static/imgs/PCF8591-fritizing-5.png
 
+The formula for calculating temperature according to the circuit is shown below:
+
+.. math:: T2 = 1/(1/T1 + ln(Rt/R)/B)
 
 Sketch
 ================================================================
 
-Sketch 8.1.1 Thermometer
+Sketch Thermometer
 ----------------------------------------------------------------
 
 First, observe the result after running the sketch, and then learn about the code in detail.
@@ -157,11 +155,18 @@ After the program is executed, the Display Window will show the current temperat
 
 This project contains a lot of code files, and the core code is contained in the file Sketch_08_1_1_Thermometer. The other files only contain some custom classes.
 
-.. image:: ../_static/imgs/pr_Thermistor_code.rst.png
+.. image:: ../_static/imgs/pr_Thermistor_code.png
     :align: center
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_08_1_1_Thermometer/Sketch_08_1_1_Thermometer.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_08_1_1_Thermometer/Sketch_08_1_1_Thermometer.pde
     :linenos: 
     :language: java
+
+In this project code, first read ADC, and then calculate the current temperature according to the Ohm's law and temperature formula mentioned before, finally display them on Display Window.
+
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_08_1_1_Thermometer/Sketch_08_1_1_Thermometer.pde
+    :linenos: 
+    :language: java
+    :lines: 23-28

@@ -2,7 +2,6 @@
 Chapter Infrared Motion Sensor
 ################################################################
 
-
 In this chapter, we will learn a widely used sensor, Infrared Motion Sensor. 
 
 Project PIR Infrared Motion Detector with LED Indicator
@@ -121,17 +120,25 @@ Circuit
 .. |HC_SR501_T_B| image:: ../_static/imgs/HC_SR501_T_B.png
 .. |HC_SR501_1| image:: ../_static/imgs/HC_SR501_1.png
 
+.. note:: 
+        **Youtube video:** https://youtu.be/0GerHlINURk
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/0GerHlINURk" frameborder="0" allowfullscreen></iframe>
+
 Code
 ================================================================
 
 In this project, we will use the Infrared Motion Sensor to trigger an LED, essentially making the Infrared Motion sensor act as a Motion Switch. Therefore, the code is very similar to the earlier project "Push Button Switch and LED”. The difference is that, when Infrared Motion Sensor detects change, it will output high level; when button is pressed, it will output low level. When the sensor output high level, the LED turns ON, or it will turn OFF.
 
-Python Code 23.1.1 SenseLED
+Python Code SenseLED
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use cd command to enter 22.1.1_MatrixKeypad directory of Python code.
@@ -156,6 +163,6 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/23.1.1_SenseLED/SenseLED.py
     :linenos: 
     :language: python
+    :dedent:
 
 For more information about the methods used by the MotionSensor class in the GPIO Zero library,please refer to: https://gpiozero.readthedocs.io/en/stable/api_input.html#motionsensor-d-sun-pir
-

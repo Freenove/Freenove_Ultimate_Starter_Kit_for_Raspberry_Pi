@@ -115,13 +115,19 @@ Circuit
 .. |HC_SR501_Fr| image:: ../_static/imgs/HC_SR501_Fr.png
 .. |HC_SR501_T_B| image:: ../_static/imgs/HC_SR501_T_B.png
 .. |HC_SR501_1| image:: ../_static/imgs/HC_SR501_1.png
-    
+
+video: https://www.youtube.com/watch?v=0GerHlINURk
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/0GerHlINURk" frameborder="0" allowfullscreen></iframe>
+
 Code
 ================================================================
 
 In this project, we will use the Infrared Motion Sensor to trigger an LED, essentially making the Infrared Motion sensor act as a Motion Switch. Therefore, the code is very similar to the earlier project "Push Button Switch and LED”. The difference is that, when Infrared Motion Sensor detects change, it will output high level; when button is pressed, it will output low level. When the sensor output high level, the LED turns ON, or it will turn OFF.
 
-C Code 23.1.1 SenseLED
+C Code SenseLED
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.

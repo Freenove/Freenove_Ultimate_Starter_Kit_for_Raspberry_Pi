@@ -2,7 +2,6 @@
 Chapter Soldering a Circuit Board
 ################################################################
 
-
 From previous chapters, we have learned about electronic circuits and components and have built a variety of circuits using a Breadboard device, which is not designed to be used permanently. We now will take a further step to make permanent projects using a Perfboard (a type of Prototype Circuit Board). Note: Perfboard is a stiff, thin sheet of insulated material with holes bored on a grid. The grid is usually a squared off shape with a spacing of 0.1 inches. Square copper pads cover these holes to make soldering electronic components easier. 
 
 To finish this chapter, you need to prepare the necessary soldering equipment, including an electric soldering iron (or soldering pencil) and solder. We have already prepared the Perfboard for you. 
@@ -11,7 +10,7 @@ To finish this chapter, you need to prepare the necessary soldering equipment, i
 
     :red:`Please use extreme caution and attention to safety when you operate soldering tools used in these projects.`
 
-Project 35.1 Soldering a Buzzer
+Project Soldering a Buzzer
 ****************************************************************
 
 You should be familiar with the Buzzer from our previous project. We will solder a permanent circuit that when a Push Button Switch is pressed a Buzzer sounds
@@ -94,7 +93,7 @@ Connect the circuit board to a power supply (3~5V). You can use Raspberry Pi boa
 
 Press the Push Button Switch after connecting the power and then the buzzer will sound.
 
-Project 35.2 Soldering a Flowing Water Light
+Project Soldering a Flowing Water Light
 ****************************************************************
 
 You should be familiar with the Flowing Water Light from our previous project. We will solder a permanent circuit using improved code to make a more interesting Flowing Water Light.
@@ -165,7 +164,7 @@ Code
 
 This now will be the third time we have made the Flowing Water Light. In this project, we will solder a completely new circuit for Flowing Water Light. Additionally, the program is also different from the previous ones we have used. When this light flows, it will have a long “tail”.
 
-Python Code 38.2.1 LightWater03 
+Python Code LightWater03 
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.

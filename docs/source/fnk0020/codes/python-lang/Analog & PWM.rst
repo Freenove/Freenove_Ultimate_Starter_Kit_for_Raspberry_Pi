@@ -95,7 +95,7 @@ Code
 
 This project uses the PWM output from the GPIO18 pin to make the pulse width gradually increase from 0% to 100% and then gradually decrease from 100% to 0% to make the LED glow brighter then dimmer. 
 
-Python Code 4.1.1 BreathingLED
+Python Code BreathingLED
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
@@ -149,6 +149,7 @@ led.value represents:The duty cycle of the PWM device. 0.0 is off, 1.0 is fully 
     :linenos: 
     :language: python
     :lines: 12-21
+    :dedent:
 
 For more information about the methods used by the PWMLED class in the GPIO Zero library,please refer to: https://gpiozero.readthedocs.io/en/stable/api_output.html#pwmled
 

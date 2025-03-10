@@ -86,17 +86,25 @@ Circuit with PCF8591
 .. |PCF8591-Schematic-3| image:: ../_static/imgs/PCF8591-Schematic-3.png
 .. |PCF8591-fritizing-3| image:: ../_static/imgs/PCF8591-fritizing-3.png
 
+.. note:: 
+        **Youtube video:** https://youtu.be/CmLLNsBMN2U
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/CmLLNsBMN2U" frameborder="0" allowfullscreen></iframe>
+
 Code
 ================================================================
 
-Python Code 9.1.1 ColorfulSoftlight
+Python Code ColorfulSoftlight
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to :doc:`Chapter 7 ADC <ADC>`. If you did, please continue.
+If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 09.1.1_ColorfulSoftlight directory of Python code.
@@ -115,9 +123,9 @@ After the program is executed, rotate one of the potentiometers, then the color 
 
 The following is the program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/C_Code/09.1.1_ColorfulSoftlight/ColorfulSoftlight.c
+.. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/09.1.1_ColorfulSoftlight/ColorfulSoftlight.py
     :linenos: 
-    :language: C
+    :language: python
 
 In the code you can read the ADC values of the 3 potentiometers and map it into a PWM duty cycle to control the 3 LED elements to vary the color of their respective RGB LED.
 

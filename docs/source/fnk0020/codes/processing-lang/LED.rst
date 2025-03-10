@@ -12,37 +12,42 @@ In this project, we will use RPi to control blinking a common LED.
 Component List
 ================================================================
 
-1.  | Raspberry Pi 
-    | (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B) 
-    | (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero) 
++-----------------------------------------------------------+
+|    Raspberry Pi                                           |     
+|                                                           |       
+|    (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
+|                                                           |                                                            
+|    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
+|                                                           | 
+|     |raspberrypi5|                                        | 
++-----------------------------------------------------------+
+| Breadboard x1                                             |
+|                                                           |
+|  |breadborad-830|                                         |                         
++--------------------------------------+--------------------+
+|  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
+|                                      |                    | 
+|   |extension-board|                  |  |res-220R|        |
++--------------------------------------+-------+------------+
+| Jumper                                       | LED x1     | 
+|                                              |            | 
+| **Specific quantity depends on the circuit.**| |red-led|  | 
+|                                              |            | 
+| |jumper-wire|                                |            | 
++----------------------------------------------+------------+
 
-    .. image:: ../_static/imgs/raspberrypi5.png
-        :height: 100
-
-2.  GPIO Extension Board & Ribbon Cable
-
-    .. image:: ../_static/imgs/raspberrypi-extension-board.jpg
-        :height: 100
-
-3.  Breadboard x1
-
-    .. image:: ../_static/imgs/breadborad-830.jpg
-        :height: 100
-
-4.  LED x1
-
-    .. image:: ../_static/imgs/red-led.png
-        :height: 100
-
-5.  Resistor 220Ω x1
-
-    .. image:: ../_static/imgs/res-220R.png
-        :height: 100
-
-6.  Jumper (some)
-
-    .. image:: ../_static/imgs/jumper-wire.png
-        :height: 20
+.. |raspberrypi5| image:: ../_static/imgs/raspberrypi5.png
+    :width: 60%
+.. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 60%
+.. |extension-board| image:: ../_static/imgs/raspberrypi-extension-board.jpg
+    :width: 70%
+.. |breadborad-830| image:: ../_static/imgs/breadborad-830.jpg
+    :width: 80%
+.. |red-led| image:: ../_static/imgs/red-led.png
+    :width: 30%
+.. |res-220R| image:: ../_static/imgs/res-220R.png
+    :width: 20%
 
 In the components list, 3B GPIO, Extension Shield Raspberry and Breadboard are necessary for each project. Later, they will be reference by text only (no images as in above).
 
@@ -56,7 +61,7 @@ BCM GPIO Numbering
 ---------------------------------------------------------------
 The Raspberry Pi CPU uses Broadcom (BCM) processing chips BCM2835, BCM2836 or BCM2837. GPIO pin numbers are assigned by the processing chip manufacturer and are how the computer recognizes each pin. The pin numbers themselves do not make sense or have meaning as they are only a form of identification. Since their numeric values and physical locations have no specific order, there is no way to remember them so you will need to have a printed reference or a reference board that fits over the pins.
 
-Each pin’s functional assignment is defined in the image below:
+Each pin's functional assignment is defined in the image below:
     .. image:: ../_static/imgs/raspberrypi5-cc90.png
         :height: 500
 
@@ -208,7 +213,7 @@ GPIO board is a convenient way to connect the RPi I/O ports to the breadboard di
 Sketch
 ================================================================
 
-Sketch 1.1.1 Blink
+Sketch Blink
 ----------------------------------------------------------------
 
 Because the resource folder name is too long, for convenience, the folder will be named as "Freenove_Kit".
@@ -251,51 +256,54 @@ After the program is executed, LED will start Blinking and the background of Dis
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_01_1_1_Blink/Sketch_01_1_1_Blink.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_01_1_1_Blink/Sketch_01_1_1_Blink.pde
     :linenos: 
     :language: java
+    :dedent:
 
 Processing code usually have two functions: setup() and draw(), where the function setup() is only executed once while the function draw() will be executed repeatedly. In the function setup(), size(100, 100) specifies the size of the Display Window to 100x100pixl. FrameRate(1) specifies the refresh rate of Display Window to once per second, which means the draw() function will be executed once per second. GPIO.pinMode (ledPin, GPIO.OUTPUT) is used to set ledPin to output mode.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_01_1_1_Blink/Sketch_01_1_1_Blink.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_01_1_1_Blink/Sketch_01_1_1_Blink.pde
     :linenos: 
     :language: java
     :lines: 12-16
+    :dedent:
 
 In draw() function, each execution will invert the variable "ledState". When “ledState” is true, LED is turned ON, and the background color of display window is set to red. And when the “ledState” is false, the LED is turned OFF and the background color of display window is set to gray. Since the function draw() is executed once per second, the background color of Display Window and the state of LED will also change once per second. This process will repeat in an endless loop to achieve the effect of blinking.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_01_1_1_Blink/Sketch_01_1_1_Blink.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_01_1_1_Blink/Sketch_01_1_1_Blink.pde
     :linenos: 
     :language: java
     :lines: 18-27
+    :dedent:
 
 The following is brief descriptions of some functions:
 
-.. c:function:: setup()
+.. py:function:: setup()
 
     The setup() function is run once when the program starts.
 
-.. c:function:: draw()
+.. py:function:: draw()
 
     It is called directly after the setup() function. The draw() function continuously executes the lines of code within its block until the program stops or noLoop() is called. draw() is called automatically and should never be called explicitly.
 
-.. c:function:: size()
+.. py:function:: size()
 
     Defines width and height of the display window in pixels.
 
-.. c:function:: framerate()
+.. py:function:: framerate()
 
     Specifies the number of frames to be displayed every second.
 
-.. c:function:: background()
+.. py:function:: background()
 
     Set the color of the background of the display window.
 
-.. c:function:: GPIO.pinMode()
+.. py:function:: GPIO.pinMode()
 
     Configures a pin to act either as input or output.
 
-.. c:function:: GPIO.digitalWrite()
+.. py:function:: GPIO.digitalWrite()
 
     Sets an output pin to be either high or low.
 
@@ -321,7 +329,7 @@ The components and circuits of this project are the same as the previous section
 Sketch
 ================================================================
 
-Sketch 1.2.1 MouseLED
+Sketch MouseLED
 ----------------------------------------------------------------
 
 First, observe the result after running the sketch, and then learn the code in detail.
@@ -341,27 +349,29 @@ After the program is executed, the LED is in OFF-state, and background color of 
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_01_2_1_MouseLED/Sketch_01_2_1_MouseLED.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_01_2_1_MouseLED/Sketch_01_2_1_MouseLED.pde
     :linenos: 
     :language: java
 
 The function mouseClicked() in this code is used to capture the mouse click events. Once the mouse is clicked, the function will be executed. We can change the state of the variable “ledState” in this function to realize controlling LED by clicking on the mouse.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_01_2_1_MouseLED/Sketch_01_2_1_MouseLED.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_01_2_1_MouseLED/Sketch_01_2_1_MouseLED.pde
     :linenos: 
     :language: java
     :lines: 27-29
+    :dedent:
 
 Freenove Car, Robot and other products for Raspberry Pi
 ================================================================
 
 We also have car and robot kits for Raspberry Pi. You can visit our website for details.
 
-:xx-large:`https://www.amazon.com/freenove`
+https://www.amazon.com/freenove
 
 **FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/43_1.png
+
 .. image:: ../_static/imgs/43_2.png
 
 .. raw:: html
@@ -371,6 +381,7 @@ We also have car and robot kits for Raspberry Pi. You can visit our website for 
 **FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/50_1.png
+
 .. image:: ../_static/imgs/50_2.png
 
 .. raw:: html
@@ -381,40 +392,7 @@ We also have car and robot kits for Raspberry Pi. You can visit our website for 
 
 .. image:: ../_static/imgs/52_1.png
     :width: 50%
-.. image:: ../_static/imgs/52_2.png
-    :width: 40%
 
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/LvghnJ2DNZ0" frameborder="0" allowfullscreen></iframe>Freenove Car, Robot and other products for Raspberry Pi
-================================================================
-
-We also have car and robot kits for Raspberry Pi. You can visit our website for details.
-
-:xx-large:`https://www.amazon.com/freenove`
-
-**FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/43_1.png
-.. image:: ../_static/imgs/43_2.png
-
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
-  
-**FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/50_1.png
-.. image:: ../_static/imgs/50_2.png
-
-.. raw:: html
-
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
-
-**FNK0052**--:green:`Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi`
-
-.. image:: ../_static/imgs/52_1.png
-    :width: 50%
 .. image:: ../_static/imgs/52_2.png
     :width: 40%
 

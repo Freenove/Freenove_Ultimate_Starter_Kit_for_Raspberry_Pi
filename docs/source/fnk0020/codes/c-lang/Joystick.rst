@@ -2,7 +2,6 @@
 Chapter Joystick
 ##############################################################################
 
-
 In an earlier chapter, we learned how to use Rotary Potentiometer. We will now learn about joysticks, which are electronic modules that work on the same principle as the Rotary Potentiometer.
 
 Project Joystick
@@ -19,7 +18,7 @@ Component List
 |2. GPIO Extension Board & Ribbon Cable x1                      |
 |                                                               |
 |3. Breadboard x1                                               |
-+===============================+===============================+
++-------------------------------+-------------------------------+
 | Joystick  x1                  |   Resistor 10kΩ x3            |
 |                               |                               |
 | |joystick|                    |  |Resistor-10kΩ|              |
@@ -110,14 +109,15 @@ Code
 
 In this project's code, we will read the ADC values of X and Y axes of the Joystick, and read digital quality of the Z axis, then display these out in Terminal.
 
-C Code 12.1.1 Joystick
+C Code Joystick
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to Chapter 7. If you did, please continue.
+If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 12.1.1_Joystick directory of C code.
@@ -125,8 +125,8 @@ First, observe the project result, and then learn about the code in detail.
 .. code-block:: console
 
     $ cd ~/Freenove_Kit/Code/C_Code/12.1.1_Joystick
-2.	Use following command to compile ``Joystick.cpp`` and generate executable file ``Joystick``.
 
+2.	Use following command to compile ``Joystick.cpp`` and generate executable file ``Joystick``.
 
 .. code-block:: console
 
@@ -148,6 +148,7 @@ The flowing is the code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/12.1.1_Joystick/Joystick.cpp
     :linenos: 
     :language: C
+    :dedent:
 
 In the code, configure Z_Pin to pull-up input mode. In the while loop of the main function, use analogRead () to read the value of axes X and Y and use digitalRead () to read the value of axis Z, then display them.
 
@@ -155,3 +156,4 @@ In the code, configure Z_Pin to pull-up input mode. In the while loop of the mai
     :linenos: 
     :language: C
     :lines: 37-43
+    :dedent:

@@ -2,7 +2,6 @@
 Chapter Buzzer
 ################################################################
 
-
 In this chapter, we will learn about buzzers and the sounds they make. And in our next project, we will use an active buzzer to make a doorbell and a passive buzzer to make an alarm.
 
 Project Doorbell
@@ -116,7 +115,8 @@ Transistors, full name: semiconductor transistor, is a semiconductor device that
     NPN transistor
 
 .. note:: 
-    In our kit, the PNP transistor is marked with 8550, and the NPN transistor is marked with 8050.
+
+    :red:`In our kit, the PNP transistor is marked with 8550, and the NPN transistor is marked with 8050.`
 
 Thanks to the transistor's characteristics, they are often used as switches in digital circuits. As micro-controllers output current capacity is very weak, we will use a transistor to amplify its current in order to drive components requiring higher current.
 
@@ -159,19 +159,21 @@ Circuit
    <iframe height="500" width="690" src="https://www.youtube.com/embed/R_dmi3YwY-U" frameborder="0" allowfullscreen></iframe>
 
 .. note:: 
+
     in this circuit, the power supply for the buzzer is 5V, and pull-up resistor of the push button switch is connected to the 3.3V power feed. Actually, the buzzer can work when connected to the 3.3V power feed but this will produce a weak sound from the buzzer (not very loud).
+
 Code
 ================================================================
 
 In this project, a buzzer will be controlled by a push button switch. When the button switch is pressed, the buzzer sounds and when the button is released, the buzzer stops. It is analogous to our earlier project that controlled an LED ON and OFF.
 
-
-Python Code 6.1.1 Doorbell
+Python Code Doorbell
 ----------------------------------------------------------------
 
 First, observe the project result, then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use cd command to enter 06.1.1_Doorbell directory of Python code.
@@ -215,12 +217,12 @@ Once it detects that the button is pressed, it executes the specified function o
 .. code-block:: python
     
     def loop():
-    button.when_pressed = onButtonPressed
-    button.when_released = onButtonReleased
+        button.when_pressed = onButtonPressed
+        button.when_released = onButtonReleased
 
 For more information about the methods used by the Buzzer class in the GPIO Zero library,please refer to: https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer
 
-Project 6.2 Alertor
+Project Alertor
 ****************************************************************
 
 Next, we will use a passive buzzer to make an alarm. 
@@ -234,12 +236,13 @@ In this project, our buzzer alarm is controlled by the push button switch. Press
 
 As stated before, it is analogous to our earlier project that controlled an LED ON and OFF. To control a passive buzzer requires PWM of certain sound frequency.
 
-Python Code 6.2.1 Alertor
+Python Code Alertor
 ----------------------------------------------------------------
 
 First observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use cd command to enter 06.2.1_Alertor directory of Python code.
@@ -261,7 +264,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/06.2.1_Alertor/Alertor.py
     :linenos: 
     :language: python
-
+    :dedent:
 
 Define GPIO17 as the buzzer control pin, and GPIO18 as the button control pin to control the passive buzzer. It requires a certain frequency of PWM to control a passive buzzer, so the TonalBuzzer class is needed.
 
@@ -276,13 +279,14 @@ In the while loop loop of the main function, when the push button switch is pres
     :linenos: 
     :language: python
     :lines: 24-26
+    :dedent:
 
 When the push button switch is released, the buzzer (in this case our Alarm) will stop.
 
 .. code-block:: python
 
     def stopAlertor():
-    buzzer.stop()
+        buzzer.stop()
 
 For more information about the methods used by the TonalBuzzer class in the GPIO Zero library,please refer to: https://gpiozero.readthedocs.io/en/stable/api_output.html#tonalbuzzer
 

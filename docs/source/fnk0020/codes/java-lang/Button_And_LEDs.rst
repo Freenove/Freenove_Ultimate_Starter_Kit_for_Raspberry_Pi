@@ -152,7 +152,7 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_ButtonLED_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
@@ -166,6 +166,7 @@ Import the classes of Pi4J library for GPIO control and simple console output.
     :linenos: 
     :language: java
     :lines: 9-11
+    :dedent:
 
 Define the GPIO numbers for the button and LED.
 
@@ -173,6 +174,7 @@ Define the GPIO numbers for the button and LED.
     :linenos: 
     :language: java
     :lines: 15-16
+    :dedent:
 
 Create a Console instance for printing logs or messages.
 
@@ -186,6 +188,7 @@ Create a button input pin object, connected to the pin specified by PIN_BUTTON.
     :linenos: 
     :language: java
     :lines: 19-23
+    :dedent:
 
 Add a listener event to the button, which is triggered when the button's state changes.
 
@@ -197,6 +200,7 @@ When the button is released, its state is high, and we control the LED to turn o
     :linenos: 
     :language: java
     :lines: 25-34
+    :dedent:
 
 Nothing needs to be done in the main loop. Just set it in an infinite loop and ensure that the Pi4J context is closed when the program ends. 
 
@@ -204,3 +208,4 @@ Nothing needs to be done in the main loop. Just set it in an infinite loop and e
     :linenos: 
     :language: java
     :lines: 36-43
+    :dedent:

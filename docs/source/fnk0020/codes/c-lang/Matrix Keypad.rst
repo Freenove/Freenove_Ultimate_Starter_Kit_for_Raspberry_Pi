@@ -2,10 +2,9 @@
 Chapter Matrix Keypad
 ##############################################################################
 
-
 Earlier we learned about a single Push Button Switch. In this chapter, we will learn about Matrix Keyboards, which integrates a number of Push Button Switches as Keys for the purposes of Input.
 
-Project 22.1 Matrix Keypad
+Project Matrix Keypad
 ****************************************************************
 
 In this project, we will attempt to get every key code on the Matrix Keypad to work.
@@ -72,12 +71,18 @@ Circuit
 .. |Keypad_Sc| image:: ../_static/imgs/Keypad_Sc.png
 .. |Keypad_Fr| image:: ../_static/imgs/Keypad_Fr.png
 
+video: https://www.youtube.com/watch?v=RPluhXAYhKQ
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/RPluhXAYhKQ" frameborder="0" allowfullscreen></iframe>
+
 Code
 ================================================================
 
 This code is used to obtain all key codes of the 4x4 Matrix Keypad, when one of the keys is pressed, the key code will be displayed in the terminal window.
 
-C Code 22.1.1 MatrixKeypad
+C Code MatrixKeypad
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
@@ -113,6 +118,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/22.1.1_MatrixKeypad/MatrixKeypad.cpp
     :linenos: 
     :language: C
+    :dedent:
 
 In this project code, we use two custom library file **"Keypad.hpp"** and **"Key.hpp"**. They are located in the same directory with program files **"MatrixKeypad.cpp"**, **"Keypad.cpp"** and **"Key.cpp"**. The Library Keypad is “transplanted” from the Arduino Library Keypad. This library file provides a method to read the Matrix Keyboard’s input. By using this library, we can easily read the pressed keys of the Matrix Keyboard.
 
@@ -122,16 +128,19 @@ First, we define the information of the Matrix Keyboard used in this project: th
     :linenos: 
     :language: C
     :lines: 7-18
+    :dedent:
 
 Then, based on the above information, initiates a Keypad class object to operate the Matrix Keyboard.
 
 .. code-block:: c
+    :linenos:
 
     Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
 Set the debounce time to 50ms, and this value can be set based on the actual characteristics of the keyboard's flexibly, with a default time of 10ms.
 
 .. code-block:: c
+    :linenos:
 
     keypad.setDebounceTime(50);
 
@@ -141,6 +150,7 @@ In the "while" loop, use the function key= keypad.getKey () to read the keyboard
     :linenos: 
     :language: C
     :lines: 29-34
+    :dedent:
 
 The Keypad Library used for the RPi is transplanted from the Arduino Keypad Library. And the source files can be obtained by visiting http://playground.arduino.cc/Code/Keypad. As for transplanted function library, the function and method of all classes, functions, variables, etc. are the same as the original library. Partial contents of the Keypad library are described below:
 

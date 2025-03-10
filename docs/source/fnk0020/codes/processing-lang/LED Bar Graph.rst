@@ -64,7 +64,7 @@ In this circuit, the cathodes of the LEDs are connected to the GPIO, which is di
 Sketch
 ================================================================
 
-Sketch 2.1.1 FollowLight
+Sketch FollowLight
 ----------------------------------------------------------------
 
 First, observe the result after running the sketch, and then learn about the code in detail.
@@ -84,7 +84,7 @@ After the program is executed, slide the mouse in the Display Window, then the s
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_02_1_1_FollowLight/Sketch_02_1_1_FollowLight.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_02_1_1_FollowLight/Sketch_02_1_1_FollowLight.pde
     :linenos: 
     :language: java
 
@@ -92,7 +92,7 @@ In the function draw(), we draw 10 rectangles to represent 10 LEDs of LED Bar Gr
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_02_1_1_FollowLight/Sketch_02_1_1_FollowLight.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_02_1_1_FollowLight/Sketch_02_1_1_FollowLight.pde
     :linenos: 
     :language: java
     :lines: 24-35

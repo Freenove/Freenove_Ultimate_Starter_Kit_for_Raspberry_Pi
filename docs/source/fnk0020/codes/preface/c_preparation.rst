@@ -1,14 +1,13 @@
+.. _Preparation:
+
 ##############################################################################
 0. Chapter Preparation
 ##############################################################################
-
 
 Why “Chapter 0”? Because in program code the first number is 0. We choose to follow this rule. In this chapter, we will do some necessary foundational preparation work: Start your Raspberry Pi and install some necessary libraries. 
 
 Linux Command
 ****************************************************************
-
- `Download the code  <https://github.com/Freenove/Freenove_Ultimate_Starter_Kit_for_Raspberry_Pi/archive/refs/heads/master.zip>`_ 
 
 Raspberry Pi OS is based on the Linux Operation System. Now we will introduce you to some frequently used Linux commands and rules.
 
@@ -64,6 +63,7 @@ There are many commands, which will come later.
 
 Shortcut Key
 ================================================================
+
 Now, we will introduce several commonly used shortcuts that are very useful in Terminal.
 
 1. **Up and Down Arrow Keys:** Pressing “↑” (the Up key) will go backwards through the command history and pressing “↓” (the Down Key) will go forwards through the command history.
@@ -78,6 +78,7 @@ As shown below, under the '~' directory, you enter the Documents directory with 
 
 Install WiringPi
 ****************************************************************
+
 WiringPi is a GPIO access library written in C language for the used in the Raspberry Pi. 
 
 WiringPi Installation Steps
@@ -117,7 +118,7 @@ Obtain the Project Code
 
 After the above installation is completed, you can visit our official website (http://www.freenove.com) or 
 our GitHub resources at (https://github.com/freenove) to download the latest available project code. 
-We provide both C language and Python language code for each project to allow ease of use for those who are skilled in either language. 
+We provide both :red:`C` language and :red:`Python` language code for each project to allow ease of use for those who are skilled in either language. 
 
 This is the method for obtaining the code:
 
@@ -136,7 +137,7 @@ In the pi directory of the RPi terminal, enter the following command.
 
 After the download is completed, a new folder "Freenove_Complete_Starter_Kit_for_Raspberry_Pi" is generated, which contains all of the tutorials and required code.
 
-This folder name seems a little too long. We can simply rename it by using the following command. 
+:red:`This folder name seems a little too long. We can simply rename it by using the following command.` 
 
 .. code-block:: console
     

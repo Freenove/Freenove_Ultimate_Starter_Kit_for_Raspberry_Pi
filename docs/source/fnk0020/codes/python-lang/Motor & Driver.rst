@@ -2,10 +2,9 @@
 Chapter Motor & Driver
 ################################################################
 
-
 In this chapter, we will learn about DC Motors and DC Motor Drivers and how to control the speed and direction of a DC Motor.
 
-Project 13.1 Control a DC Motor with a Potentiometer
+Project Control a DC Motor with a Potentiometer
 ****************************************************************
 
 In this project, a potentiometer will be used to control a DC Motor. When the Potentiometer is at the midpoint position, the DC Motor will STOP, and when the Potentiometer is turned in either direction of this midpoint, the DC Motor speed increases until it reached the endpoint where the DC Motor achieves its maximum speed. When the Potentiometer is turned “Left” of the midpoint the DC Motor will ROTATE in one direction and when turned “Right” the DC Motor will ROTATE in the opposite direction. 
@@ -14,6 +13,7 @@ Component List
 ================================================================
 
 Breadboard Power Module 
+-------------------------------------
 
 +-------------------------------------------------+-------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
@@ -51,6 +51,7 @@ Breadboard Power Module
     :width: 30%
 .. |DC_Motor_Module| image:: ../_static/imgs/DC_Motor_Module.png
     :width: 50%
+
 Component knowledge
 ================================================================
 
@@ -171,8 +172,6 @@ Use caution when connecting this circuit because the DC Motor is a high-power co
 |   support@freenove.com                                                                         |
 |                                                                                                |
 |   |Motor-PCF8591-Fr|                                                                           |
-|                                                                                                |
-|    **Video:** https://youtu.be/d5lRMTDK-wg                                                     |
 +------------------------------------------------------------------------------------------------+
 
 .. |Motor-PCF8591-Sc| image:: ../_static/imgs/Motor-PCF8591-Sc.png
@@ -183,14 +182,15 @@ Code
 
 In code for this project, first read the ADC value and then control the rotation direction and speed of the DC Motor according to the value of the ADC.
 
-Python Code 13.1.1 Motor
+Python Code Motor
 ----------------------------------------------------------------
 
-If you did not configure I2C and install Smbus, please refer to :doc:`Chapter 7 ADC <ADC>`. If you did, please Continue.
+If you did not configure I2C and install Smbus, please refer to :ref:`Chapter 7 <ADC>`. If you did, please Continue.
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use cd command to enter 13.1.1_Motor directory of Python code.
@@ -224,3 +224,4 @@ Finally, we see a display of the duty cycle in Terminal.
     :linenos: 
     :language: python
     :lines: 34-50
+    :dedent:

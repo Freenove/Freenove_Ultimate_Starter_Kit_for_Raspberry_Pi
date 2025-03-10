@@ -75,19 +75,26 @@ Note that the power supply for I2C LCD1602 in this circuit is 5V.
     
     It is necessary to configure 12C and install Smbus first (see :doc:`Chapter 7 ADC <ADC>` for details)
 
+video: https://www.youtube.com/watch?v=L1bgX2f4Yio
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/L1bgX2f4Yio" frameborder="0" allowfullscreen></iframe>
+
 Code
 ================================================================
 
 This code will have your RPi's CPU temperature and System Time Displayed on the LCD1602.
 
-C Code 20.1.1 I2CLCD1602
+C Code I2CLCD1602
 ----------------------------------------------------------------
 
-If you did not configure I2C and install Smbus, please refer to :doc:`Chapter 7 ADC <ADC>`. If you did, please continue.
+If you did not configure I2C and install Smbus, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter ``20.1.1_ I2CLCD1602`` directory of C code.
@@ -109,17 +116,12 @@ First, observe the project result, and then learn about the code in detail.
     $ sudo ./I2CLCD1602
 
 After the program is executed, the LCD1602 Screen will display your RPi's CPU Temperature and System Time. 
+
 So far, at this writing, we have two types of LCD1602 on sale. One needs to adjust the backlight, and the other does not.
 
 The LCD1602 that does not need to adjust the backlight is shown in the figure below.
 
 .. image:: ../_static/imgs/LCD1602_back.png
-    :align: center
-    :width: 50%
-
-If the LCD1602 you received is the following one, and you cannot see anything on the display or the display is not clear, try rotating the white knob on back of LCD1602 slowly, which adjusts the contrast, until the screen can display clearly.
-
-.. image:: ../_static/imgs/LCD1602_clear.png
     :align: center
     :width: 50%
 
@@ -130,6 +132,7 @@ The following is the program code:
     :language: C
 
 From the code, we can see that the PCF8591 and the PCF8574 have many similarities in using the I2C interface to expand the GPIO RPI. 
+
 First, define the I2C address of the PCF8574 and the Extension of the GPIO pin, which is connected to the GPIO pin of the LCD1602. LCD1602 has two different i2c addresses. Set 0x27 as default.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/20.1.1_I2CLCD1602/I2CLCD1602.c

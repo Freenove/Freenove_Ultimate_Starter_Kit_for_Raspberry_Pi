@@ -8,8 +8,6 @@ Why “Chapter 0”? Because in program code the first number is 0. We choose to
 Linux Command
 ****************************************************************
 
- `Download the code  <https://github.com/Freenove/Freenove_Ultimate_Starter_Kit_for_Raspberry_Pi/archive/refs/heads/master.zip>`_ 
-
 Raspberry Pi OS is based on the Linux Operation System. Now we will introduce you to some frequently used Linux commands and rules.
 
 First, open the Terminal. All commands are executed in Terminal. 
@@ -167,6 +165,8 @@ If geany is not installed on your OS, please run the following command to instal
 
 .. image:: ../_static/imgs/geany_install.png
     :align: center
+
+.. _Geany_Configuration:
 
 Geany Configuration
 ****************************************************************

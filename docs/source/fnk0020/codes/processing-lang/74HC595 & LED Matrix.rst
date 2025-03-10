@@ -14,7 +14,7 @@ Component List
 
 +-------------------------------------------------+-------------------------------------------------+
 |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x36                              |       
+|                                                 |   Jumper Wires x41                              |       
 |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
 |                                                 |     |jumper-wire|                               |                                                            
 |3. Breadboard x1                                 |                                                 |                                                                 
@@ -84,7 +84,7 @@ In circuit of this project, the power pin of the 74HC595 IC Chip is connected to
 Sketch
 ================================================================
 
-Sketch 12.1.1 LEDMatrix
+Sketch LEDMatrix
 ----------------------------------------------------------------
 
 First observe the result after running the sketch, and then learn about the code in detail.
@@ -109,51 +109,64 @@ This project contains a lot of code files, and the core code is contained in the
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
     :linenos: 
     :language: c
 
 In the code, first define the data of the smiling face and characters "0-F".
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
     :linenos: 
     :language: c
     :lines: 17-39
+    :dedent:
 
 Then create a new thread t. LEDMatrix scan display code will be executed in run() of this thread.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
-    :linenos: 
-    :language: c
-    :lines: 40-63
+.. code-block:: c
+
+    myThread t = new myThread();    //create a new thread for ledmatrix
+    ......
+    class myThread extends Thread {
+        public void run() {
+            while (true) {
+                showMatrix();    //show smile picture 
+                showNum();      //show the character "0-F"
+            }
+        }
+    }
 
 The function setup(), defines size of Display Window, ProgressBar class objects and IC75HC595 class object, and starts the thread t.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
     :linenos: 
     :language: c
     :lines: 41-47
+    :dedent:
 
 In draw(), draw the relevant information and the current number to display.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
     :linenos: 
     :language: c
-    :lines: 49-63
+    :lines: 49-55
+    :dedent:
 
 Subfunction showMatrix () makes LEDMatrix display a smiling face pattern, which lasts for a period of time.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
     :linenos: 
     :language: c
     :lines: 64-75
+    :dedent:
 
 Subfunction showNum() makes LEDMatrix scroll displaying character "0-F", in which the variable k is used to adjust the scrolling speed.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_12_1_1_LEDMatrix/Sketch_12_1_1_LEDMatrix.pde
     :linenos: 
     :language: c
     :lines: 76-90
+    :dedent:
 
 If you have more interests in LED matrix, you can download an interesting app to explore.
 

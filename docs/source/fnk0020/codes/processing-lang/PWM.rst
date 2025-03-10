@@ -14,45 +14,44 @@ We describe this project as a Breathing Light. This means that an LED that is OF
 Component List
 ================================================================
 
-1. Raspberry Pi (with 40 GPIO) x1
-GPIO Extension Board & Ribbon Cable x1
-Breadboard x1
++------------------------------------------+-----------------------------+
+|1. Raspberry Pi (with 40 GPIO) x1         |                             |
+|                                          | Jumper M/M x2               |
+|2. GPIO Extension Board & Ribbon Cable x1 |                             |
+|                                          |  |processing03_00|          |
+|3. Breadboard x1                          |                             |
++------------------------------------------+-----------------------------+
+|  LED x1                                  | Resistor 220Ω x1            |
+|                                          |                             |
+|   |processing03_01|                      |  |processing03_02|          |
++------------------------------------------+-----------------------------+
 
-2. Jumper Wire x 1
-
-.. image:: ../_static/imgs/jumper-wire.png
-        :width: 25%
-
-3. LED x1
-
-.. image:: ../_static/imgs/red-led.png
-        :width: 5%
-
-4. Resistor 220Ω x 1
-
-.. image:: ../_static/imgs/res-220R-hori.png
-        :width: 15%
+.. |processing03_00| image:: ../_static/imgs/processing03_00.png
+.. |processing03_01| image:: ../_static/imgs/processing03_01.png
+.. |processing03_02| image:: ../_static/imgs/processing03_02.png
 
 Circuit
 ================================================================
     
-==================  ================================================
-Schematic diagram   Hardware connection. If you need any support,
- 
-                    please feel free to contact us via: 
-                    
-                    support@freenove.com
++------------------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                            |
+|                                                                                                |
+|   |pr_PWM_Sc|                                                                                  |
++------------------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:             |
+|                                                                                                |
+|   support@freenove.com                                                                         | 
+|                                                                                                |
+|   |pr_PWM_Fr|                                                                                  |
++------------------------------------------------------------------------------------------------+
 
-|pr_PWM_Sc|         |pr_PWM_Fr|
-==================  ================================================
-
-.. |pr_PWM_Sc| image:: ../_static/imgs/pr_PWM_Sc.png
-.. |pr_PWM_Fr| image:: ../_static/imgs/pr_PWM_Fr.png
+.. |pr_PWM_Sc| image:: ../_static/imgs/processing03_03.png
+.. |pr_PWM_Fr| image:: ../_static/imgs/processing03_04.png
 
 Sketch
 ================================================================
 
-Sketch 3.1.1 BreathingLED
+Sketch BreathingLED
 ----------------------------------------------------------------
 
 First, observe the result after running the sketch, and then learn about the code in detail.
@@ -72,34 +71,34 @@ After the program is executed, the LED in the circuit will be brightened gradual
 
 The following is program code:
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_03_1_1_BreadthingLED/Sketch_03_1_1_BreadthingLED.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_03_1_1_BreadthingLED/Sketch_03_1_1_BreadthingLED.pde
     :linenos: 
     :language: java
 
 First, use SOFTPWM class to create a PWM pin, which is used to control the brightness of LED. Then define a variable “t” and a variable “tStep” to control the PWM duty cycle and the rate at which “t” increases.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_03_1_1_BreadthingLED/Sketch_03_1_1_BreadthingLED.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_03_1_1_BreadthingLED/Sketch_03_1_1_BreadthingLED.pde
     :linenos: 
     :language: java
     :lines: 11-13
 
 In the function draw, if there is a click detected, the coordinate in X direction of the mouse will be mapped into the duty cycle “t”; Otherwise, duty cycle “t” will be increased gradually and PWM with the duty cycle will be output.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_03_1_1_BreadthingLED/Sketch_03_1_1_BreadthingLED.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_03_1_1_BreadthingLED/Sketch_03_1_1_BreadthingLED.pde
     :linenos: 
     :language: java
-    :lines: 19-27
+    :lines: 19-28
 
 The next code is designed to draw a circle filled with colors in different depth according to the “t” value, which is used to simulate LEDs with different brightness.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_03_1_1_BreadthingLED/Sketch_03_1_1_BreadthingLED.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_03_1_1_BreadthingLED/Sketch_03_1_1_BreadthingLED.pde
     :linenos: 
     :language: java
     :lines: 32-33
 
 The last code is designed to draw the progress bar and the percentage of the progress.
 
-.. literalinclude:: ../../../freenove_Kit/Code/Processing_Code/Sketches/Sketch_03_1_1_BreadthingLED/Sketch_03_1_1_BreadthingLED.pde
+.. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_03_1_1_BreadthingLED/Sketch_03_1_1_BreadthingLED.pde
     :linenos: 
     :language: java
     :lines: 39-48
@@ -112,7 +111,7 @@ In processing software, you will see a tag page "SOFTPWM" in addition to the abo
 Reference
 ----------------------------------------------------------------
 
-.. c:function:: class SOFTPWM
+.. py:function:: class SOFTPWM
 
     public SOFTPWM(int iPin, int dc, int pwmRange):
     

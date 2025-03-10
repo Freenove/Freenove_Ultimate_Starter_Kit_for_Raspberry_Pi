@@ -7,17 +7,8 @@ In this chapter, we will learn how to control a RGB LED.
 
 An RGB LED has 3 LEDs integrated into one LED component. It can respectively emit Red, Green and Blue light. In order to do this, it requires 4 pins (this is also how you identify it). The long pin (1) is the common which is the Anode (+) or positive lead, the other 3 are the Cathodes (-) or negative leads. A rendering of a RGB LED and its electronic symbol are shown below. We can make RGB LED emit various colors of light and brightness by controlling the 3 Cathodes (2, 3 & 4) of the RGB LED
 
-.. list-table::
-   :widths: 50 50
-   :align: center
-
-   * - |RGB-LED-real|
-     - |RGB-LED-sc|
-
-.. |RGB-LED-real| image:: ../_static/imgs/RGB-LED-real.png
-    :width: 40%
-.. |RGB-LED-sc| image:: ../_static/imgs/RGB-LED-sc.png
-    :width: 70%
+.. image:: ../_static/imgs/05_00.png
+    :align: center
 
 Red, Green, and Blue light are called 3 Primary Colors when discussing light (Note: for pigments such as paints, the 3 Primary Colors are Red, Blue and Yellow). When you combine these three Primary Colors of light with varied brightness, they can produce almost any color of visible light. Computer screens, single pixels of cell phone screens, neon lamps, etc. can all produce millions of colors due to phenomenon.
 
@@ -51,6 +42,8 @@ Component List
 |   |jumper-wire|                                      |    |res-220R-hori|                                   |        
 +------------------------------------------------------+------------------------------------------------------+
 
+.. |RGB-LED-real| image:: ../_static/imgs/RGB-LED-real.png
+    :width: 30%
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |res-220R-hori| image:: ../_static/imgs/res-220R-hori.png
 
@@ -91,7 +84,7 @@ Code
 
 We need to use the software to make the ordinary GPIO output PWM, since this project requires 3 PWM and in RPi only one GPIO has the hardware capability to output PWM,
 
-C Code 5.1.1 Colorful LED
+C Code Colorful LED
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
@@ -104,6 +97,7 @@ First, observe the project result, and then learn about the code in detail.
 .. code-block:: console
     
     $ cd ~/Freenove_Kit/Code/C_Code/05.1.1_ColorfulLED
+
 2.	Use following command to compile ``ColorfulLED.c`` and generate executable file ``ColorfulLED``.
 
 .. note:: 
@@ -118,6 +112,7 @@ First, observe the project result, and then learn about the code in detail.
 .. code-block:: console
     
     $ sudo ./ColorfulLED
+
 After the program is executed, you will see that the RGB LED shows lights of different colors randomly.
 
 The following is the program code:
@@ -131,27 +126,28 @@ First, in subfunction of ledInit(), create the software PWM control pins used to
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/05.1.1_ColorfulLED/ColorfulLED.c
     :linenos: 
     :language: C
-    :lines: 10-15
+    :lines: 16-21
 
 Then create subfunction, and set the PWM of three pins.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/05.1.1_ColorfulLED/ColorfulLED.c
     :linenos: 
     :language: C
-    :lines: 17-22
+    :lines: 23-28
 
 Finally, in the “while” loop of main function, get three random numbers and specify them as the PWM duty cycle, which will be assigned to the corresponding pins. So RGB LED can switch the color randomly all the time.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/05.1.1_ColorfulLED/ColorfulLED.c
     :linenos: 
     :language: C
-    :lines: 33-42
+    :lines: 39-46
 
 The related function of PWM Software can be described as follows:
 
 .. c:function:: long random();
 
-This function will return a random number.
+    This function will return a random number.
 
 .. hint:: 
+    
     For more details about Software PWM, please refer to: https://github.com/WiringPi/WiringPi

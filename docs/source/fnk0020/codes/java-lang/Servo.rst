@@ -44,11 +44,6 @@ We will use a 50Hz PWM signal with a duty cycle in a certain range to drive the 
 
 Note: the lasting time of high level corresponding to the servo angle is absolute instead of accumulating. For example, the high level time lasting for 0.5ms correspond to the 0 degree of the servo. If the high level time lasts for another 1ms, the servo rotates to 45 degrees.
 
-.. table:: 
-    :width: 100%
-    :widths: 50 50
-    :align: center
-
 ================  ================
  High level time  Servo angle
 ================  ================
@@ -127,13 +122,14 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_Servo_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration <Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_13_1_Sweep/Sweep.java
     :linenos: 
     :language: java
+    :dedent:
 
 Servo constructor, initializes the servo control pins, and adds a JVM shutdown hook to ensure that the PWM controller and Pi4J context are properly closed when the program exits.
 
@@ -141,6 +137,7 @@ Servo constructor, initializes the servo control pins, and adds a JVM shutdown h
     :linenos: 
     :language: java
     :lines: 85-102
+    :dedent:
     
 Set the PWM duty cycle according to the angle to control the servo to rotate to the specified position.
 
@@ -148,6 +145,7 @@ Set the PWM duty cycle according to the angle to control the servo to rotate to 
     :linenos: 
     :language: java
     :lines: 112-118
+    :dedent:
 
 Initialize the servo controller and store it in servoMap.
 
@@ -176,5 +174,4 @@ The main code controls the servo to rotate between 0-180 degrees and prints prom
     :linenos: 
     :language: java
     :lines: 145-156
-
-
+    :dedent:

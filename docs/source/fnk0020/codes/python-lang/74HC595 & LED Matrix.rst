@@ -46,6 +46,7 @@ An LED Matrix is a rectangular display module that consists of a uniform grid of
     :width: 50%
 
 In order to facilitate the operation and reduce the number of ports required to drive this component, the Positive Poles of the LEDs in each row and Negative Poles of the LEDs in each column are respectively connected together inside the LED Matrix module, which is called a Common Anode. There is another arrangement type. Negative Poles of the LEDs in each row and the Positive Poles of the LEDs in each column are respectively connected together, which is called a Common Cathode.
+
 The LED Matrix that we use in this project is a Common Anode LED Matrix.
 
 .. image:: ../_static/imgs/LED_Matrix_2.png
@@ -80,12 +81,19 @@ In circuit of this project, the power pin of the 74HC595 IC Chip is connected to
 .. |LED_MAtrix_Sc| image:: ../_static/imgs/LED_MAtrix_Sc.png
 .. |LED_MAtrix_Fr| image:: ../_static/imgs/LED_MAtrix_Fr.png
 
+.. note:: 
+        **Youtube video:** https://youtu.be/KuEheQr_M7w
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/KuEheQr_M7w" frameborder="0" allowfullscreen></iframe>
+
 Code
 ================================================================
 
 Two 74HC595 IC Chips are used in this project, one for controlling the LED Matrix's columns and the other for controlling the rows. According to the circuit connection, row data should be sent first, then column data. The following code will make the LED Matrix display a smiling face, and then display characters "0 to F" scrolling in a loop on the LED Matrix.
 
-Python Code 19.1.1 LEDMatrix
+Python Code LEDMatrix
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
@@ -112,6 +120,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/19.1.1_LEDMatrix/LEDMatrix.py
     :linenos: 
     :language: python
+    :dedent:
 
 The first “for” loop in the “while” loop is used to display a static smile. Displaying column information from left to right, one column at a time with a total of 8 columns. This repeats 500 times to ensure sufficient display time.
 
@@ -119,6 +128,7 @@ The first “for” loop in the “while” loop is used to display a static smi
     :linenos: 
     :language: python
     :lines: 50-59
+    :dedent:
 
 The second “for” loop is used to display scrolling characters "0 to F", for a total of 18 X 8 = 144 columns. Displaying the 0-8 column, then the 1-9 column, then the 2-10 column...... and so on…138-144 column in consecutively to achieve the scrolling effect. The display of each frame is repeated a certain number of times and the more repetitions, the longer the single frame display will be and the slower the scrolling movement.
 
@@ -126,3 +136,4 @@ The second “for” loop is used to display scrolling characters "0 to F", for 
     :linenos: 
     :language: python
     :lines: 60-69
+    :dedent:

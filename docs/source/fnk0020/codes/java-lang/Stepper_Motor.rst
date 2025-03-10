@@ -59,9 +59,9 @@ A common driving sequence is shown here:
 .. image:: ../_static/imgs/stepper_Motor_3.png
     :align: center
 
-In the sequence above, the Stepper Motor rotates by a certain angle at once, which is called a “step”. By controlling the number of rotational steps, you can then control the Stepper Motor’s rotation angle. By defining the time between two steps, you can control the Stepper Motor’s rotation speed. When rotating clockwise, the order of coil powered on is: A  B  C  D  A …… . And the rotor will rotate in accordance with this order, step by step, called four-steps, four-part. If the coils is powered ON in the reverse order, D  C  B  A  D … , the rotor will rotate in counter-clockwise direction.
+In the sequence above, the Stepper Motor rotates by a certain angle at once, which is called a “step”. By controlling the number of rotational steps, you can then control the Stepper Motor's rotation angle. By defining the time between two steps, you can control the Stepper Motor's rotation speed. When rotating clockwise, the order of coil powered on is: A -> B -> C -> D -> A ->... . And the rotor will rotate in accordance with this order, step by step, called four-steps, four-part. If the coils is powered ON in the reverse order, D -> C -> B -> A -> D ->… , the rotor will rotate in counter-clockwise direction.
 
-There are other methods to control Stepper Motors, such as: connect A phase, then connect A B phase, the stator will be located in the center of A B, which is called a half-step. This method can improve the stability of the Stepper Motor and reduces noise. Tise sequence of powering the coils looks like this: A  AB  B  BC  C  CD  D  DA  A ……, the rotor will rotate in accordance to this sequence ar, a half-step at a time, called four-steps, eight-part. Conversely, if the coils are powered ON in the reverse order the Stepper Motor will rotate in the opposite direction.
+There are other methods to control Stepper Motors, such as: connect A phase, then connect A B phase, the stator will be located in the center of A B, which is called a half-step. This method can improve the stability of the Stepper Motor and reduces noise. Tise sequence of powering the coils looks like this: A -> AB -> B -> BC -> C -> CD -> D -> DA -> A ->... , the rotor will rotate in accordance to this sequence ar, a half-step at a time, called four-steps, eight-part. Conversely, if the coils are powered ON in the reverse order the Stepper Motor will rotate in the opposite direction.
 
 The stator in the Stepper Motor we have supplied has 32 magnetic poles. Therefore, to complete one full revolution requires 32 full steps. The rotor (or output shaft) of the Stepper Motor is connected to a speed reduction set of gears and the reduction ratio is 1:64. Therefore, the final output shaft (exiting the Stepper Motor’s housing) requires 32 X 64 = 2048 steps to make one full revolution.
 
@@ -142,13 +142,14 @@ Click the icon to run the code.
 .. image:: ../_static/imgs/java_step_code.png
     :align: center
 
-If the code fails to run, please check :doc:`Geany Configuration`.
+If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_14_SteppingMotor/SteppingMotor.java
     :linenos: 
     :language: java
+    :dedent:
 
 Define the GPIO pins for motor control and the GPIO outputs used to control the motors.
 
@@ -156,6 +157,7 @@ Define the GPIO pins for motor control and the GPIO outputs used to control the 
     :linenos: 
     :language: java
     :lines: 17-18
+    :dedent:
 
 Define the motor's rotation direction and the array of step sequences for clockwise and counter-clockwise directions.
 
@@ -163,6 +165,7 @@ Define the motor's rotation direction and the array of step sequences for clockw
     :linenos: 
     :language: java
     :lines: 20-22
+    :dedent:
 
 Constructor, initialize GPIO pins.
 
@@ -170,6 +173,7 @@ Constructor, initialize GPIO pins.
     :linenos: 
     :language: java
     :lines: 24-29
+    :dedent:
 
 Control the stepper motor to execute a one-step sequence cycle.
 
@@ -177,6 +181,7 @@ Control the stepper motor to execute a one-step sequence cycle.
     :linenos: 
     :language: java
     :lines: 31-44
+    :dedent:
 
 The stepper motor driving function controls the direction of motor rotation, the execution time of each stepping action, and the number of stepping sequences to execute.
 
@@ -184,6 +189,7 @@ The stepper motor driving function controls the direction of motor rotation, the
     :linenos: 
     :language: java
     :lines: 46-50
+    :dedent:
 
 Stepper motor stop function that stops the motor.
 
@@ -191,6 +197,7 @@ Stepper motor stop function that stops the motor.
     :linenos: 
     :language: java
     :lines: 52-56
+    :dedent:
 
 Implement the AutoCloseable interface to ensure that resources are released when they are no longer needed.
 
@@ -198,16 +205,19 @@ Implement the AutoCloseable interface to ensure that resources are released when
     :linenos: 
     :language: java
     :lines: 58-66
+    :dedent:
 
 Initialize stepper motor controller.
 
 .. code-block:: python
+    :linenos:
 
     motorControl = new StepMotor();  
 
 Add JVM shutdown hook to ensure motors are stopped on program exit.
 
 .. code-block:: python
+    :linenos:
 
     Runtime.getRuntime().addShutdownHook(new Thread(motorControl::motorStop)); 
 
@@ -217,10 +227,12 @@ First, control the stepper motor to rotate forward one circle, then pause for 50
     :linenos: 
     :language: java
     :lines: 82-87
+    :dedent:
 
 If a thread termination exception or other exception occurs, it will be printed out on the terminal interface.
 
 .. code-block:: python
+    :linenos:
 
     catch (InterruptedException e) { 
         Thread.currentThread().interrupt(); 
@@ -232,6 +244,7 @@ If a thread termination exception or other exception occurs, it will be printed 
 Make sure the resources are released when the program ends.
 
 .. code-block:: python
+    :linenos:
 
     finally {  
         if (motorControl != null) {  

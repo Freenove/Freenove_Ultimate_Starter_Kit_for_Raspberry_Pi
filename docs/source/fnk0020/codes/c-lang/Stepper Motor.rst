@@ -2,7 +2,6 @@
 Chapter Stepper Motor
 ##############################################################################
 
-
 Thus far, we have learned about DC Motors and Servos. A DC motor can rotate constantly in on direction but we cannot control the rotation to a specific angle. On the contrary, a Servo can rotate to a specific angle but cannot rotate constantly in one direction. In this chapter, we will learn about a Stepper Motor which is also a type of motor. A Stepper Motor can rotate constantly and also to a specific angle. Using a Stepper Motor can easily achieve higher accuracies in mechanical motion.
 
 Project Stepper Motor
@@ -53,18 +52,18 @@ The electronic schematic diagram of a Four-Phase Stepper Motor is shown below:
 .. image:: ../_static/imgs/stepper_Motor_2.png
     :align: center
 
-The outside case or housing of the Stepper Motor is the Stator and inside the Stator is the Rotor. There is a specific number of individual coils, usually an integer multiple of the number of phases the motor has, when the Stator is powered ON, an electromagnetic field will be formed to attract a corresponding convex diagonal groove or indentation in the Rotor’s surface. The Rotor is usually made of iron or a permanent magnet. Therefore, the Stepper Motor can be driven by powering the coils on the Stator in an ordered sequence (producing a series of “steps” or stepped movements).
+The outside case or housing of the Stepper Motor is the Stator and inside the Stator is the Rotor. There is a specific number of individual coils, usually an integer multiple of the number of phases the motor has, when the Stator is powered ON, an electromagnetic field will be formed to attract a corresponding convex diagonal groove or indentation in the Rotor's surface. The Rotor is usually made of iron or a permanent magnet. Therefore, the Stepper Motor can be driven by powering the coils on the Stator in an ordered sequence (producing a series of “steps” or stepped movements).
 
 A common driving sequence is shown here:
 
 .. image:: ../_static/imgs/stepper_Motor_3.png
     :align: center
 
-In the sequence above, the Stepper Motor rotates by a certain angle at once, which is called a “step”. By controlling the number of rotational steps, you can then control the Stepper Motor’s rotation angle. By defining the time between two steps, you can control the Stepper Motor’s rotation speed. When rotating clockwise, the order of coil powered on is: A  B  C  D  A …… . And the rotor will rotate in accordance with this order, step by step, called four-steps, four-part. If the coils is powered ON in the reverse order, D  C  B  A  D … , the rotor will rotate in counter-clockwise direction.
+In the sequence above, the Stepper Motor rotates by a certain angle at once, which is called a “step”. By controlling the number of rotational steps, you can then control the Stepper Motor's rotation angle. By defining the time between two steps, you can control the Stepper Motor's rotation speed. When rotating clockwise, the order of coil powered on is: A -> B -> C -> D -> A ->... . And the rotor will rotate in accordance with this order, step by step, called four-steps, four-part. If the coils is powered ON in the reverse order, D -> C -> B -> A -> D ->… , the rotor will rotate in counter-clockwise direction.
 
-There are other methods to control Stepper Motors, such as: connect A phase, then connect A B phase, the stator will be located in the center of A B, which is called a half-step. This method can improve the stability of the Stepper Motor and reduces noise. Tise sequence of powering the coils looks like this: A  AB  B  BC  C  CD  D  DA  A ……, the rotor will rotate in accordance to this sequence ar, a half-step at a time, called four-steps, eight-part. Conversely, if the coils are powered ON in the reverse order the Stepper Motor will rotate in the opposite direction.
+There are other methods to control Stepper Motors, such as: connect A phase, then connect A B phase, the stator will be located in the center of A B, which is called a half-step. This method can improve the stability of the Stepper Motor and reduces noise. Tise sequence of powering the coils looks like this: A -> AB -> B -> BC -> C -> CD -> D -> DA -> A ->..., the rotor will rotate in accordance to this sequence ar, a half-step at a time, called four-steps, eight-part. Conversely, if the coils are powered ON in the reverse order the Stepper Motor will rotate in the opposite direction.
 
-The stator in the Stepper Motor we have supplied has 32 magnetic poles. Therefore, to complete one full revolution requires 32 full steps. The rotor (or output shaft) of the Stepper Motor is connected to a speed reduction set of gears and the reduction ratio is 1:64. Therefore, the final output shaft (exiting the Stepper Motor’s housing) requires 32 X 64 = 2048 steps to make one full revolution.
+The stator in the Stepper Motor we have supplied has 32 magnetic poles. Therefore, to complete one full revolution requires 32 full steps. The rotor (or output shaft) of the Stepper Motor is connected to a speed reduction set of gears and the reduction ratio is 1:64. Therefore, the final output shaft (exiting the Stepper Motor's housing) requires 32 X 64 = 2048 steps to make one full revolution.
 
 ULN2003 Stepper Motor driver
 ----------------------------------------------------------------
@@ -77,7 +76,7 @@ A ULN2003 Stepper Motor Driver is used to convert weak signals into more powerfu
 Circuit
 ================================================================
 
-When building the circuit, note that rated voltage of the Stepper Motor is 5V, and we need to use the breadboard power supply independently, (Caution do not use the RPi power supply). Additionally, the breadboard power supply needs to share Ground with Rpi.
+When building the circuit, note that rated voltage of the Stepper Motor is 5V, and we need to use the breadboard power supply independently, ( :red:`Caution do not use the RPi power supply` ). Additionally, the breadboard power supply needs to share Ground with Rpi.
 
 +------------------------------------------------------------------------------------------------+
 |   Schematic diagram                                                                            |
@@ -100,17 +99,18 @@ When building the circuit, note that rated voltage of the Stepper Motor is 5V, a
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/leptbJh32ZI" frameborder="0" allowfullscreen></iframe>
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/g6R6ldqjQyw" frameborder="0" allowfullscreen></iframe>
 
 Code
 ================================================================
 
-C Code 16.1.1 SteppingMotor
+C Code SteppingMotor
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 16.1.1_SteppingMotor directory of C code.
@@ -138,6 +138,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/16.1.1_SteppingMotor/SteppingMotor.c
     :linenos: 
     :language: C
+    :dedent:
 
 In the code we define the four pins of the Stepper Motor and the order to supply power to the coils for a four-step rotation mode.
 
@@ -145,6 +146,7 @@ In the code we define the four pins of the Stepper Motor and the order to supply
     :linenos: 
     :language: C
     :lines: 10-12
+    :dedent:
 
 Subfunction moveOnePeriod ((int dir,int ms) will drive the Stepper Motor rotating four-step clockwise or anticlockwise, four-step as a cycle. Where parameter "dir" indicates the rotation direction, if "dir" is 1, the servo will rotate clockwise, otherwise it rotates to anticlockwise. Parameter "ms" indicates the time between each two steps. The "ms" of Stepper Motor used in this project is 3ms (the shortest time period), a value of less than 3ms will exceed the limits of the Stepper Motor with a result that it does not rotate.
 
@@ -152,6 +154,7 @@ Subfunction moveOnePeriod ((int dir,int ms) will drive the Stepper Motor rotatin
     :linenos: 
     :language: C
     :lines: 14-29
+    :dedent:
 
 Subfunction moveSteps (int dir, int ms, int steps) is used to specific cycle number of Stepper Motor.
 
@@ -159,6 +162,7 @@ Subfunction moveSteps (int dir, int ms, int steps) is used to specific cycle num
     :linenos: 
     :language: C
     :lines: 31-36
+    :dedent:
 
 Subfunction motorStop () is used to stop the Stepper Motor.
 
@@ -166,6 +170,7 @@ Subfunction motorStop () is used to stop the Stepper Motor.
     :linenos: 
     :language: C
     :lines: 37-42
+    :dedent:
 
 Finally, in the while loop of main function, rotate one revolution clockwise, and then one revolution anticlockwise. According to the previous material covered, the Stepper Motor one revolution requires 2048 steps, that is, 2048/4=512 cycle.
 
@@ -173,3 +178,4 @@ Finally, in the while loop of main function, rotate one revolution clockwise, an
     :linenos: 
     :language: C
     :lines: 54-59
+    :dedent:
