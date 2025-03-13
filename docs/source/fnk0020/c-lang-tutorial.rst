@@ -70,4 +70,9 @@ C language tutorial
    codes/c-lang/Attitude Sensor MPU6050.rst
    codes/c-lang/Soldering a Circuit Board.rst
    codes/c-lang/Other Components.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: What's Next?
+   
    codes/c-lang/WhatsNext.rst

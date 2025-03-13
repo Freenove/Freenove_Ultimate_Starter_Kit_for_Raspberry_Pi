@@ -43,6 +43,8 @@ Component List
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |res-220R-hori| image:: ../_static/imgs/res-220R-hori.png
+.. |RGB-LED-real| image:: ../_static/imgs/RGB-LED-real.png
+    :width: 30%
 
 Circuit
 ================================================================

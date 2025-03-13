@@ -28,7 +28,7 @@ Scratch language tutorial
 
 .. toctree::
    :titlesonly:
-   :caption: Installing_an_Operating_System
+   :caption: Installing an Operating System
 
    codes/scratch-lang/Installing_an_Operating_System.rst
 
@@ -41,7 +41,6 @@ Scratch language tutorial
 .. toctree::
    :numbered:
    :titlesonly:
-   :caption: Projects
    
    codes/scratch-lang/1_LED.rst
    codes/scratch-lang/2_ButtonAndLEDs.rst
@@ -51,4 +50,9 @@ Scratch language tutorial
    codes/scratch-lang/6_Buzzer.rst
    codes/scratch-lang/7_Motor.rst
    codes/scratch-lang/8_Four_button_swithches_games.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: What's Next?
+
    codes/scratch-lang/WhatsNext.rst

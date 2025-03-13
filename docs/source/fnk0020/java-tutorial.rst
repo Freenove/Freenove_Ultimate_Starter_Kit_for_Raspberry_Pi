@@ -66,4 +66,9 @@ Java language tutorial
    codes/java-lang/Infrared_Motion_Sensor.rst
    codes/java-lang/Ultrasonic_Ranging.rst
    codes/java-lang/Attitude_Sensor_MPU6050.rst
+
+.. toctree::
+   :titlesonly:
+   :caption: What's Next?
+   
    codes/java-lang/WhatsNext.rst
