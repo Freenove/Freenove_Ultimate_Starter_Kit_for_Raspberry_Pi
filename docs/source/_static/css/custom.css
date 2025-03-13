@@ -23,3 +23,19 @@
     top: var(--fn_nav_height);
     z-index: 2;
 }
+
+.float-left {
+    margin-left: 50px;  /* 左侧间距 */
+    margin-right: 20px; /* 右侧间距 */
+}
+
+.float-right {
+    margin-left: 20px;  /* 左侧间距 */
+    margin-right: 50px; /* 右侧间距 */
+}
+
+.custom-center {
+    margin-left: 240px;  /* 左侧间距 */
+    margin-right: 20px; /* 右侧间距 */
+    margin: 20px 20px 0px 240px;  /* 上右下左间距 */
+}

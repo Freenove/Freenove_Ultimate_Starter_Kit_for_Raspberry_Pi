@@ -99,9 +99,11 @@ Circuit
 First, disconnect your RPi from the GPIO Extension Shield. Then build the circuit according to the circuit and hardware diagrams. After the circuit is built and verified correct, connect the RPi to GPIO Extension Shield. 
 
 .. caution:: 
+
     CAUTION: Avoid any possible short circuits (especially connecting 5V or GND, 3.3V and GND)! 
 
 .. warning:: 
+
     WARNING: A short circuit can cause high current in your circuit, create excessive component heat and cause permanent damage to your RPi!
 
 1. **Schematic diagram**
@@ -118,18 +120,20 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
      :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
 
 .. attention:: 
+
     Do NOT rotate Raspberry Pi to change the way of this connection.
     
     Please plug T extension fully into breadboard.
 
 .. note:: 
-    Youtube video `<https://youtu.be/hGQtnxsr1L4>`_
+    
+    Youtube video: https://www.youtube.com/watch?v=51Y_HjnUZLs
 
 The connection of Raspberry Pi T extension board is as below. **Don't reverse the ribbon**.
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/hGQtnxsr1L4" frameborder="0" allowfullscreen></iframe>
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/51Y_HjnUZLs" frameborder="0" allowfullscreen></iframe>
 
 .. image:: ../_static/imgs/blink-real.png
     :width: 100%

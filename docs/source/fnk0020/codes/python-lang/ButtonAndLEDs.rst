@@ -95,11 +95,11 @@ Circuit
     | There are two kinds of push button switch in this kit. 
     | :red:`The smaller push button switches are contained in a plastic bag.` 
 .. note:: 
-    Youtube video: https://youtu.be/_5ge1d6f1nM
+    Youtube video: https://www.youtube.com/watch?v=eOUoSkcqdfU
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/_5ge1d6f1nM" frameborder="0" allowfullscreen></iframe>
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/eOUoSkcqdfU" frameborder="0" allowfullscreen></iframe>
 
 .. hint:: 
     If you need any support, please feel free to contact us via: support@freenove.com

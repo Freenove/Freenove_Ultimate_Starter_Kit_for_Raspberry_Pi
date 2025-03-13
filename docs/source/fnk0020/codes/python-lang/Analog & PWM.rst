@@ -70,7 +70,7 @@ In order to keep the results running consistently, we will use PWM.
 Circuit
 ================================================================
 
-==================  ================================================
+==================  =================================================================
 Schematic diagram   Hardware connection. If you need any support,
  
                     please feel free to contact us via: 
@@ -79,12 +79,12 @@ Schematic diagram   Hardware connection. If you need any support,
 
 |PWM-Schematic|     |PWM-fritizing|
 
-                    Youtube video: https://youtu.be/rYxykuVgYtA
-==================  ================================================
+                    Youtube video: https://www.youtube.com/watch?v=yhpTyg2R8nI
+==================  =================================================================
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/rYxykuVgYtA" frameborder="0" allowfullscreen></iframe>
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/yhpTyg2R8nI" frameborder="0" allowfullscreen></iframe>
 
 .. |PWM-fritizing| image:: ../_static/imgs/PWM-fritizing.png
 .. |PWM-Schematic| image:: ../_static/imgs/PWM-Schematic.png

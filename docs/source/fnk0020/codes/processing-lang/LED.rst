@@ -99,12 +99,15 @@ You can also use the following command to view their correlation.
 
 Circuit
 ================================================================
+
 First, disconnect your RPi from the GPIO Extension Shield. Then build the circuit according to the circuit and hardware diagrams. After the circuit is built and verified correct, connect the RPi to GPIO Extension Shield. 
 
 .. caution:: 
+
     CAUTION: Avoid any possible short circuits (especially connecting 5V or GND, 3.3V and GND)! 
 
 .. warning:: 
+
     WARNING: A short circuit can cause high current in your circuit, create excessive component heat and cause permanent damage to your RPi!
 
 1. **Schematic diagram**
@@ -117,11 +120,20 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
 .. image:: ../_static/imgs/blink-hdc.png
     :height: 400
 
+Video: https://www.youtube.com/watch?v=N2diyg_Anc0
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/N2diyg_Anc0" frameborder="0" allowfullscreen></iframe>
+
 .. tip:: 
+     
      :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
 
 .. attention:: 
+
     Do NOT rotate Raspberry Pi to change the way of this connection.
+    
     Please plug T extension fully into breadboard.
 
 Because the numbering of the GPIO Extension Shield is the same as that of the RPi GPIO, future hardware connection diagrams will only show that part of breadboard and GPIO Extension Shield.
@@ -172,14 +184,18 @@ All common 2 lead diodes are the same in this respect. Diodes work only if the v
 
 Resistor
 ----------------------------------------------------------------
+
 Resistors use Ohms (Ω) as the unit of measurement of their resistance (R). 1MΩ=1000kΩ, 1kΩ=1000Ω.
+
 A resistor is a passive electrical component that limits or regulates the flow of current in an electronic circuit.
+
 On the left, we see a physical representation of a resistor, and the right is the symbol used to represent the presence of a resistor in a circuit diagram or schematic.
 
 .. image:: ../_static/imgs/res-describe.png
 
 The bands of color on a resistor is a shorthand code used to identify its resistance value. For more details of resistor color codes, please refer to the card in the kit package.
-With a fixed voltage, there will be less current output with greater resistance added to the circuit. The relationship between Current, Voltage and Resistance can be expressed by this formula: I=V/R known as Ohm’s Law where I = Current, V = Voltage and R = Resistance. Knowing the values of any two of these allows you to solve the value of the third.
+
+With a fixed voltage, there will be less current output with greater resistance added to the circuit. The relationship between Current, Voltage and Resistance can be expressed by this formula: I=V/R known as Ohm's Law where I = Current, V = Voltage and R = Resistance. Knowing the values of any two of these allows you to solve the value of the third.
 
 In the following diagram, the current through R1 is: 
 

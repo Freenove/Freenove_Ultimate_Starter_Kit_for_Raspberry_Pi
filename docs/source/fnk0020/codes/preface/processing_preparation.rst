@@ -10,6 +10,12 @@ Programs written with Processing are also called sketches, and Java is the defau
 
 This tutorial will introduce how to install and use processing software on Raspberry Pi through some electronic circuit projects. Chapters and sequence in this tutorial are basically the same as those in the C and python language tutorial. Our elaborate electronic circuits and interactive project with Processing are attached at the end, including virtual instruments, games (2D and 3D versions), etc.
 
+Video: https://www.youtube.com/watch?v=atfssDk2urw
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/atfssDk2urw" frameborder="0" allowfullscreen></iframe>
+
 Installing Processing Software
 ================================================================
 

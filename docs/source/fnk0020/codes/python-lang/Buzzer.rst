@@ -148,7 +148,7 @@ Circuit
 |                                                                                                |
 |   |Buzzer-Fritizing|                                                                           |
 |                                                                                                |
-|    **Video:** https://youtu.be/R_dmi3YwY-U                                                     |
+|    **Video:** https://www.youtube.com/watch?v=NGsWqtrq2yk                                      |
 +------------------------------------------------------------------------------------------------+
 
 .. |Buzzer-Schematic| image:: ../_static/imgs/Buzzer-Schematic.png
@@ -156,7 +156,7 @@ Circuit
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/R_dmi3YwY-U" frameborder="0" allowfullscreen></iframe>
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/NGsWqtrq2yk" frameborder="0" allowfullscreen></iframe>
 
 .. note:: 
 

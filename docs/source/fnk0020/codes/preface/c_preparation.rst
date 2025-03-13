@@ -6,6 +6,12 @@
 
 Why “Chapter 0”? Because in program code the first number is 0. We choose to follow this rule. In this chapter, we will do some necessary foundational preparation work: Start your Raspberry Pi and install some necessary libraries. 
 
+video: https://www.youtube.com/watch?v=dO657Odse5U
+
+.. raw:: html
+
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/dO657Odse5U" frameborder="0" allowfullscreen></iframe>
+
 Linux Command
 ****************************************************************
 

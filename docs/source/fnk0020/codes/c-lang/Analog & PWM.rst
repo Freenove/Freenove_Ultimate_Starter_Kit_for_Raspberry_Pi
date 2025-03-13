@@ -66,7 +66,7 @@ In order to keep the results running consistently, we will use PWM.
 Circuit
 ================================================================
 
-==================  ================================================
+==================  ==================================================================
 Schematic diagram   Hardware connection. If you need any support,
  
                     please feel free to contact us via: 
@@ -75,12 +75,12 @@ Schematic diagram   Hardware connection. If you need any support,
 
 |PWM-Schematic|     |PWM-fritizing|
 
-                    Youtube video: https://youtu.be/rYxykuVgYtA
-==================  ================================================
+                    Youtube video: https://www.youtube.com/watch?v=Yox30YfYg8M
+==================  ==================================================================
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/rYxykuVgYtA" frameborder="0" allowfullscreen></iframe>
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/Yox30YfYg8M" frameborder="0" allowfullscreen></iframe>
 
 .. |PWM-fritizing| image:: ../_static/imgs/PWM-fritizing.png
 .. |PWM-Schematic| image:: ../_static/imgs/PWM-Schematic.png
@@ -138,7 +138,7 @@ There are two “for” loops in the next endless “while” loop. The first lo
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/04.1.1_BreathingLED/BreathingLED.c
     :linenos: 
     :language: C
-    :lines: 15-26
+    :lines: 23-34
 
 You can also adjust the rate of the state change of LED by changing the parameter of the delay() function in the “for” loop.
 

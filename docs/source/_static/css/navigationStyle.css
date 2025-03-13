@@ -21,7 +21,9 @@
 
 .nav_fn ul {
 	/* background-color: rgb(52, 49, 49); */
+	/* background: #343131; */
 	/* border: solid #F00 5px; */
+	/* background-color: #000000; */
 	width: auto;
 	height: auto;
 	font-size: var(--fn_nav_fontsize);
@@ -45,7 +47,7 @@
 	cursor: pointer;
 	margin-left: 0px;
 	list-style-type: none;
-	opacity: 1;
+	opacity: 1.0;
 }
 
 .navLogo {

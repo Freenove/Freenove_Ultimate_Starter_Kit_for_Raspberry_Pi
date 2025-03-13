@@ -97,13 +97,15 @@ Circuit
     | There are two kinds of push button switch in this kit. 
     | :red:`The smaller push button switches are contained in a plastic bag.` 
 .. note:: 
-    Youtube video: https://youtu.be/_5ge1d6f1nM
+
+    Youtube video: https://www.youtube.com/watch?v=btp5GbaV0xI
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/_5ge1d6f1nM" frameborder="0" allowfullscreen></iframe>
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/btp5GbaV0xI" frameborder="0" allowfullscreen></iframe>
 
 .. hint:: 
+
     If you need any support, please feel free to contact us via: support@freenove.com
 
 This is how it works. When button switch is released:
@@ -133,7 +135,7 @@ First, observe the project result, then learn about the code in detail.
 
 .. code-block:: console
 
-    $ cd ~/Freenove_Kit/Code/C_Code/ButtonLED
+    $ cd ~/Freenove_Kit/Code/C_Code/02.1.1ButtonLED
 
 2. Use the following command to compile the code ``ButtonLED.c`` and generate executable file ``ButtonLED``.
 

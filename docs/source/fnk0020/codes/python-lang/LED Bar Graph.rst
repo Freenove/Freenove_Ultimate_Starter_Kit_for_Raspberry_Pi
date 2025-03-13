@@ -62,14 +62,13 @@ Hardware connection. If you need any support, please feel free to contact us via
         :red:`If LEDbar doesn't work, rotate LEDbar 180° to try. The label is random.`
 
 .. note:: 
-        **Youtube video:** https://youtu.be/3rh-b05VoiU
+        **Youtube video:** https://www.youtube.com/watch?v=11KikymlcA0
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/3rh-b05VoiU" frameborder="0" allowfullscreen></iframe>
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/11KikymlcA0" frameborder="0" allowfullscreen></iframe>
 
 In this circuit, the cathodes of the LEDs are connected to the GPIO, which is different from the previous circuit. The LEDs turn ON when the GPIO output is low level in the program. 
-
 
 Code
 ================================================================

@@ -133,11 +133,12 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
     Please plug T extension fully into breadboard.
 
 .. note:: 
-    Youtube video `<https://youtu.be/hGQtnxsr1L4>`_
+
+    Youtube video: https://www.youtube.com/watch?v=zS75zSSBmic
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/hGQtnxsr1L4" frameborder="0" allowfullscreen></iframe>
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/zS75zSSBmic" frameborder="0" allowfullscreen></iframe>
 
 The connection of Raspberry Pi T extension board is as below. **Don't reverse the ribbon**.
 
@@ -148,6 +149,7 @@ The connection of Raspberry Pi T extension board is as below. **Don't reverse th
     If you have a fan, you can connect it to 5V GND of breadboard via jumper wires.
 
 **How to distinguish resistors?**
+
 There are only three kind of resistors in this kit.
 
 1. The one with *1 red ring* is 10KΩ \

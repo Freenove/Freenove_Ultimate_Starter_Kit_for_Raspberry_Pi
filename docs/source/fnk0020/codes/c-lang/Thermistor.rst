@@ -2,7 +2,6 @@
 Chapter Thermistor
 ##############################################################################
 
-
 In this chapter, we will learn about Thermistors which are another kind of Resistor.
 
 Project Thermometer
@@ -72,8 +71,8 @@ For the parameters of the Thermistor, we use: B=3950, R=10k, T1=25.
 The circuit connection method of the Thermistor is similar to photoresistor, as the following:
 
 .. image:: ../_static/imgs/Thermistor-3.png
-        :width: 20%
-        :align: center
+    :width: 20%
+    :align: center
 
 We can use the value measured by the ADC converter to obtain the resistance value of Thermistor, and then we can use the formula to obtain the temperature value.
 
@@ -91,7 +90,7 @@ The circuit of this project is similar to the one in last chapter. The only diff
 +------------------------------------------------------------------------------------------------+
 |   Schematic diagram                                                                            |
 |                                                                                                |
-|   |PCF8591-Schematic-5|                                                                        |
+|   |ADS7830-Schematic-5|                                                                        |
 +------------------------------------------------------------------------------------------------+
 |   Hardware connection. If you need any support,please feel free to contact us via:             |
 |                                                                                                |

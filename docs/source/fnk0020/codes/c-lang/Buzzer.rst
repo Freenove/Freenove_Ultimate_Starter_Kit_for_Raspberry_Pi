@@ -145,7 +145,7 @@ Circuit
 |                                                                                                |
 |   |Buzzer-Fritizing|                                                                           |
 |                                                                                                |
-|    **Video:** https://youtu.be/R_dmi3YwY-U                                                     |
+|    **Video:** https://www.youtube.com/watch?v=7c7XNwPdyLM                                      |
 +------------------------------------------------------------------------------------------------+
 
 .. |Buzzer-Schematic| image:: ../_static/imgs/Buzzer-Schematic.png
@@ -153,9 +153,10 @@ Circuit
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/R_dmi3YwY-U" frameborder="0" allowfullscreen></iframe>
+   <iframe height="500" width="690" src="https://www.youtube.com/embed/7c7XNwPdyLM" frameborder="0" allowfullscreen></iframe>
 
 .. note:: 
+
     in this circuit, the power supply for the buzzer is 5V, and pull-up resistor of the push button switch is connected to the 3.3V power feed. Actually, the buzzer can work when connected to the 3.3V power feed but this will produce a weak sound from the buzzer (not very loud).
 
 Code
@@ -228,6 +229,7 @@ First, observe the project result, and then learn about the code in detail.
 .. code-block:: console    
 
     $ cd ~/Freenove_Kit/Code/C_Code/06.2.1_Alertor
+    
 2.	Use following command to compile ``Alertor.c`` and generate executable file ``Alertor``. ``-lm`` and ``-lpthread`` compiler options need to added here.
 
 .. code-block:: console    
