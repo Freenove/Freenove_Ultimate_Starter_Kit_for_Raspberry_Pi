@@ -42,7 +42,7 @@ Component List
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 25%
+    :width: 35%
 
 Circuit with ADS7830
 ================================================================
@@ -139,15 +139,19 @@ Component List
 |                                                 |                               |
 | |jumper-wire|                                   |  |Resistor-10kΩ|              |                           
 +-------------------------------------------------+-------------------------------+
-| ADC module x1 (Only one)                        |       LED x1                  |
+| ADC module x1 (Only one)                                                        |
+|                                                                                 |
+| |ADC-module-1|   :xx-large:`or`  |ADC-module-2|                                 |                   
++-------------------------------------------------+-------------------------------+
+| Phtotresistor x1                                |  LED x1                       |
 |                                                 |                               |
-| |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |red-led|                   |                   
-|                                                 |                               |  
+|   |Phtotresistor|                               |   |red-led|                   |                    
 +-------------------------------------------------+-------------------------------+
 
 .. |res-220R| image:: ../_static/imgs/res-220R.png
     :width: 20%
 .. |Phtotresistor| image:: ../_static/imgs/Phtotresistor.png
+    :width: 10%
 
 Circuit with ADS7830
 ================================================================

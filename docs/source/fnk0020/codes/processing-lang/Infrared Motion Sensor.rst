@@ -30,7 +30,7 @@ Component List
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 40%
+    :width: 70%
 .. |HC_SR501| image:: ../_static/imgs/HC_SR501.png
     :width: 70%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
