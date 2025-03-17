@@ -142,5 +142,5 @@ intersphinx_disabled_reftypes = ["*"]
 
 def setup(app):
     pass
-    app.add_css_file("css/custom.css")
+    # app.add_css_file("css/custom.css")
 
