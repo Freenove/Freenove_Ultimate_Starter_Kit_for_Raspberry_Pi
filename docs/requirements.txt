@@ -58,3 +58,5 @@ urllib3==1.26.9
     # via requests
 
 myst_parser==4.0.0
+
+sphinxcontrib-googleanalytics==0.4
