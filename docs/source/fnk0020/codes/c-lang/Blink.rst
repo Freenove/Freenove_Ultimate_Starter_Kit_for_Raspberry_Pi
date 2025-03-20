@@ -287,7 +287,7 @@ You can also use the file browser. On the left of folder tree, right-click the f
 
 You can press ``Ctrl+C`` to end the program. The following is the program code:
 
-.. literalinclude:: ../../../freenove_kit/Code/C_Code/01.1.1_Blink/Blink.c
+.. literalinclude:: ../../../freenove_Kit/Code/C_Code/01.1.1_Blink/Blink.c
     :linenos: 
     :language: C
     :dedent:
@@ -334,7 +334,7 @@ use ``digitalWrite (ledPin, HIGH)`` to make ledPin output high level, then LED t
 After a period of time delay, use ``digitalWrite(ledPin, LOW)`` to make ledPin output low level, 
 then LED turns OFF, which is followed by a delay. Repeat the loop, then LED will start blinking.
 
-.. literalinclude:: ../../../freenove_kit/Code/C_Code/01.1.1_Blink/Blink.c
+.. literalinclude:: ../../../freenove_Kit/Code/C_Code/01.1.1_Blink/Blink.c
     :linenos: 
     :language: C
     :lines: 16-27
