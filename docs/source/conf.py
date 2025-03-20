@@ -101,7 +101,7 @@ gettext_uuid = True  # optional.
 
 rst_prolog = """
 .. include:: <s5defs.txt>
-.. include:: ../_static/style/custom-style.txt
+.. include:: ../../../_static/style/custom-style.txt
 """
 
 variables_to_export = [
