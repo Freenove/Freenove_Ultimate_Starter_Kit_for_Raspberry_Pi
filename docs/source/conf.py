@@ -15,25 +15,8 @@ sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
 os.system("rm -r freenove_Kit")
 os.system("git clone --depth 1 https://github.com/Freenove/Freenove_Ultimate_Starter_Kit_for_Raspberry_Pi freenove_Kit")
 
-# # 删除文件夹
-# os.system("rm -r _static")
-# os.system("rm -r _templates")
-# os.system("rm freenove-logo.png")
-
-# # 克隆所需资料到freenove_css文件夹中
-# os.system("git clone --branch nav https://github.com/Freenove/freenove-docs freenove_css")
-
-# # 复制网页样式到对应位置
-# os.system("cp -r freenove_css/_static .")
-# os.system("cp -r freenove_css/_templates .")
-
-# # 复制网页样式到对应位置
-# os.system("cp freenove_css/freenove-logo.png .")
-
-# # 删除文件夹
-# os.system("rm -r freenove_css")
-
 project = "fnk0020-docs"
+# <!!!BEGIN!!!>
 copyright = '2016-2025, Freenove'
 author = 'Freenove'
 release = 'v1.0.0'
@@ -149,3 +132,4 @@ def setup(app):
     # app.add_css_file('https://cdn.jsdelivr.net/gh/Freenove/freenove-docs/docs/source/_static/css/custom.css')
 
 suppress_warnings = ['autosectionlabel.*']
+# <!!!END!!!>
