@@ -64,7 +64,7 @@ Hardware connection. If you need any support, please feel free to contact us via
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/RqR6KdMQ8qI" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/RqR6KdMQ8qI" frameborder="0" allowfullscreen></iframe>
 
 In this circuit, the cathodes of the LEDs are connected to the GPIO, which is different from the previous circuit. The LEDs turn ON when the GPIO output is low level in the program. 
 

@@ -105,7 +105,7 @@ The circuit of this project is similar to the one in last chapter. The only diff
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/-CvWcobXSFI" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/-CvWcobXSFI" frameborder="0" allowfullscreen></iframe>
 
 Circuit with PCF8591
 ================================================================

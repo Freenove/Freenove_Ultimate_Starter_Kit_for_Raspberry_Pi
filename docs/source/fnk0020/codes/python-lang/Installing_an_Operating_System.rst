@@ -149,13 +149,13 @@ Raspberry Pi OS
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/7vA5utwzY0E" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/7vA5utwzY0E" frameborder="0" allowfullscreen></iframe>
 
 **With Screen - Use Raspberry Pi - under Windows PC:** https://youtu.be/HEywFsFrj3I
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/HEywFsFrj3I" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/HEywFsFrj3I" frameborder="0" allowfullscreen></iframe>
 
 Automatically Method
 ================================================================

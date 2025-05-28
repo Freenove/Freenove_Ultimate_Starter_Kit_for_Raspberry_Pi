@@ -70,7 +70,7 @@ Circuit
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/tbnX2AsX2y4" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/tbnX2AsX2y4" frameborder="0" allowfullscreen></iframe>
 
 .. note:: 
     In this kit, the RGB led is Common anode. The voltage difference between LED will make it work. There is no visible GND. The GPIO ports can also receive current while in output mode.If circuit above doesn’t work, the RGB LED may be common cathode. Please try following wiring.There is no need to modify code for random color.

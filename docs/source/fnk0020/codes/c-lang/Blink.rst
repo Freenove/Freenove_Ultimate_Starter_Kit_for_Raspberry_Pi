@@ -12,38 +12,42 @@ In this project, we will use RPi to control blinking a common LED.
 Component List
 ================================================================
 
-+-----------------------------------------------------------+
-|    Raspberry Pi                                           |     
-|                                                           |       
-|    (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
-|                                                           |                                                            
-|    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
-|                                                           | 
-|     |raspberrypi5|                                        | 
-+-----------------------------------------------------------+
-| Breadboard x1                                             |
-|                                                           |
-|  |breadborad-830|                                         |                         
-+--------------------------------------+--------------------+
-|  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
-|                                      |                    | 
-|   |extension-board|                  |  |res-220R|        |
-+--------------------------------------+-------+------------+
-| Jumper                                       | LED x1     | 
-|                                              |            | 
-| **Specific quantity depends on the circuit.**| |red-led|  | 
-|                                              |            | 
-| |jumper-wire|                                |            | 
-+----------------------------------------------+------------+
+.. table::
+    :align: center
+    :width: 70%
+
+    +-----------------------------------------------------------+
+    |    Raspberry Pi                                           |     
+    |                                                           |       
+    |    (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
+    |                                                           |                                                            
+    |    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
+    |                                                           | 
+    |     |raspberrypi5|                                        | 
+    +-----------------------------------------------------------+
+    | Breadboard x1                                             |
+    |                                                           |
+    |  |breadborad-830|                                         |                         
+    +--------------------------------------+--------------------+
+    |  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
+    |                                      |                    | 
+    |   |extension-board|                  |  |res-220R|        |
+    +--------------------------------------+-------+------------+
+    | Jumper                                       | LED x1     | 
+    |                                              |            | 
+    | **Specific quantity depends on the circuit.**| |red-led|  | 
+    |                                              |            | 
+    | |jumper-wire|                                |            | 
+    +----------------------------------------------+------------+
 
 .. |raspberrypi5| image:: ../_static/imgs/raspberrypi5.png
-    :width: 60%
+    :width: 40%
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 60%
+    :width: 40%
 .. |extension-board| image:: ../_static/imgs/raspberrypi-extension-board.jpg
-    :width: 70%
+    :width: 50%
 .. |breadborad-830| image:: ../_static/imgs/breadborad-830.jpg
-    :width: 80%
+    :width: 60%
 .. |red-led| image:: ../_static/imgs/red-led.png
     :width: 30%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
@@ -65,10 +69,10 @@ The Raspberry Pi CPU uses Broadcom (BCM) processing chips BCM2835, BCM2836 or BC
 Each pin's functional assignment is defined in the image below:
 
     .. image:: ../_static/imgs/raspberrypi5-cc90.png
-        :height: 500
+        :width: 30%
 
     .. image:: ../_static/imgs/raspberrypi-pinout-bcm.png
-        :height: 500
+        :width: 30%
 
 .. seealso:: 
     
@@ -81,6 +85,7 @@ Another way to refer to the pins is by simply counting across and down from pin 
 
 .. image:: ../_static/imgs/PHYSICAL-Numbering.png
     :height: 200
+    :align: center
 
 WiringPi GPIO Numbering
 ---------------------------------------------------------------
@@ -89,6 +94,7 @@ Different from the previous two types of GPIO serial numbers, RPi GPIO serial nu
 
 .. image:: ../_static/imgs/WiringPi-GPIO-Numbering.png
     :height: 500
+    :align: center
 
 .. seealso:: 
     For more details, please refer to `<https://projects.drogon.net/raspberry-pi/wiringpi/pins/>`_ 
@@ -101,6 +107,7 @@ You can also use the following command to view their correlation.
 
 .. image:: ../_static/imgs/cmd-readall-console.png
     :height: 500
+    :align: center
 
 Circuit
 ================================================================
@@ -119,11 +126,13 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
 
 .. image:: ../_static/imgs/blink-sch.png
     :height: 400
+    :align: center
 
 **Hardware connection** 
 
 .. image:: ../_static/imgs/blink-hdc.png
     :height: 400
+    :align: center
 
 .. tip:: 
      :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
@@ -138,12 +147,13 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/zS75zSSBmic" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/zS75zSSBmic" frameborder="0" allowfullscreen></iframe>
 
 The connection of Raspberry Pi T extension board is as below. **Don't reverse the ribbon**.
 
 .. image:: ../_static/imgs/blink-real.png
-    :width: 100%
+    :width: 70%
+    :align: center
 
 .. note:: 
     If you have a fan, you can connect it to 5V GND of breadboard via jumper wires.
@@ -168,6 +178,7 @@ There are only three kind of resistors in this kit.
         :height: 20
 
 .. note:: 
+
     Future hardware connection diagrams will only show that part of breadboard and GPIO Extension Shield.
 
 Component knowledge
@@ -180,7 +191,7 @@ An LED is a type of diode. All diodes only work if current is flowing in the cor
 All common 2 lead diodes are the same in this respect. Diodes work only if the voltage of its positive electrode is higher than its negative electrode and there is a narrow range of operating voltage for most all common diodes of 1.9 and 3.4V. If you use much more than 3.3V the LED will be damaged and burnt out.
 
 .. image:: ../_static/imgs/led-describe.png
-    :width: 100%
+    :width: 70%
     :align: center
 
 .. note:: 
@@ -218,10 +229,12 @@ Breadboard
 Here we have a small breadboard as an example of how the rows of holes (sockets) are electrically attached. The left picture shows the ways the pins have shared electrical connection and the right picture shows the actual internal metal, which connect these rows electrically.
 
 .. image:: ../_static/imgs/breadborad-top-wire.png
-    :width: 48%
+    :width: 40%
+    :align: center
     
 .. image:: ../_static/imgs/breadborad-bottom-wire.png
-    :width: 48%
+    :width: 40%
+    :align: center
 
 GPIO Extension Board
 ----------------------------------------------------------------
@@ -229,7 +242,7 @@ GPIO Extension Board
 GPIO board is a convenient way to connect the RPi I/O ports to the breadboard directly. The GPIO pin sequence on Extension Board is identical to the GPIO pin sequence of RPi. 
 
 .. image:: ../_static/imgs/raspberrypi-extension-describe.png
-    :width: 90%
+    :width: 60%
     :align: center
 
 Code
@@ -317,7 +330,7 @@ GPIO connected to ledPin in the circuit is GPIO17 and GPIO17 is defined as 0 in 
 GPIO Numbering Relationship
 
 .. image:: ../_static/imgs/raspberrypi-gpio-sheet.png
-    :width: 90%
+    :width: 70%
     :align: center
 
 In the main function ``main()``, initialize ``wiringPi`` first.
@@ -423,22 +436,26 @@ https://www.amazon.com/freenove
 **FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/43_1.png
+    :width: 40%
 
 .. image:: ../_static/imgs/43_2.png
+    :width: 40%
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
   
 **FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/50_1.png
+    :width: 40%
 
 .. image:: ../_static/imgs/50_2.png
+    :width: 40%
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
 
 **FNK0052**--:green:`Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi`
 
@@ -450,4 +467,4 @@ https://www.amazon.com/freenove
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/LvghnJ2DNZ0" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/LvghnJ2DNZ0" frameborder="0" allowfullscreen></iframe>

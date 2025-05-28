@@ -86,7 +86,7 @@ In circuit of this project, the power pin of the 74HC595 IC Chip is connected to
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/KuEheQr_M7w" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/KuEheQr_M7w" frameborder="0" allowfullscreen></iframe>
 
 Code
 ================================================================

@@ -84,7 +84,7 @@ Schematic diagram   Hardware connection. If you need any support,
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/yhpTyg2R8nI" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/yhpTyg2R8nI" frameborder="0" allowfullscreen></iframe>
 
 .. |PWM-fritizing| image:: ../_static/imgs/PWM-fritizing.png
 .. |PWM-Schematic| image:: ../_static/imgs/PWM-Schematic.png

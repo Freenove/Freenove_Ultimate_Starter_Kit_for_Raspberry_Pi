@@ -9,7 +9,8 @@ The A type and B type versions of the first generation products have been discon
 Below are the raspberry pi pictures and model pictures supported by this product. They have 40 pins.
 
 .. table:: 
-    :width: 100%
+    :width: 70%
+    :align: center
     :widths: 50 50
 
     ================================================================================    ================================================================================
@@ -71,24 +72,29 @@ Below are the raspberry pi pictures and model pictures supported by this product
 Hardware interface diagram of RPi 5 is shown below: 
 
 .. image:: ../_static/imgs/raspberrypi5-interface.jpg
-    :width: 100%
+    :width: 70%
+    :align: center
 
 Hardware interface diagram of RPi 4B is shown below:
 
 .. image:: ../_static/imgs/raspberrypi4-interface.jpg
-    :width: 100%
+    :width: 70%
+    :align: center
 
 Hardware interface diagram of RPi 3B+/3B/2B/1B+:
 
 .. image:: ../_static/imgs/raspberrypi321-interface.jpg
-    :width: 100%
+    :width: 70%
+    :align: center
 
 Hardware interface diagram of RPi 3A+/A+:
 
 .. image:: ../_static/imgs/raspberrypi3a-interface.jpg
-    :width: 100%
+    :width: 70%
+    :align: center
 
 Hardware interface diagram of RPi Zero/Zero W/Zero W:
 
 .. image:: ../_static/imgs/raspberrypi0-interface.jpg
-    :width: 100%
+    :width: 70%
+    :align: center

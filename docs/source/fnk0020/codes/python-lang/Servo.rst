@@ -82,7 +82,7 @@ Use caution when supplying power to the Servo it should be 5V. Make sure you do 
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/leptbJh32ZI" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/leptbJh32ZI" frameborder="0" allowfullscreen></iframe>
 
 .. |Servo-Sc| image:: ../_static/imgs/Servo-Sc.png
 .. |Servo-Fr| image:: ../_static/imgs/Servo-Fr.png

@@ -111,7 +111,7 @@ Use caution with the power supply voltage needed for the components in this circ
 
 .. raw:: html
 
-   <iframe height="500" width="690" src="https://www.youtube.com/embed/CUpPpWq8YI8" frameborder="0" allowfullscreen></iframe>
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/CUpPpWq8YI8" frameborder="0" allowfullscreen></iframe>
 
 Code
 ================================================================

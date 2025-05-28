@@ -69,6 +69,6 @@ Freenove brand and logo are copyright of Freenove Creative Technology Co., Ltd. 
 
 .. image:: ../_static/imgs/freenove-logo.png
     :align: center
-    :width: 50%
+    :width: 30%
 
 Raspberry Pi® is a trademark of Raspberry Pi Foundation (https://www.raspberrypi.org/).
