@@ -49,7 +49,9 @@ Component List
 +---------------------------------------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |LCD1602| image:: ../_static/imgs/LCD1602.png
+    :width: 70%
 
 Circuit
 ================================================================
@@ -134,7 +136,7 @@ In a while loop, set the cursor position, and display the CPU temperature and ti
     :lines: 26-30
     :dedent:
 
-CPU temperature is stored in file “/sys/class/thermal/thermal_zone0/temp”. Open the file and read content of the file, and then convert it to Celsius degrees and return. Subfunction used to get CPU temperature is shown below:
+CPU temperature is stored in file "/sys/class/thermal/thermal_zone0/temp". Open the file and read content of the file, and then convert it to Celsius degrees and return. Subfunction used to get CPU temperature is shown below:
 
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/20.1.1_I2CLCD1602/I2CLCD1602.py
     :linenos: 

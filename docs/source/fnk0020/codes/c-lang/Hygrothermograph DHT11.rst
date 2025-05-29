@@ -12,21 +12,26 @@ Hygrothermograph is an important tool in our lives to give us data on the temper
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x4                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |jumper-wire|                                  |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| DHT11 x1                                        | Resistor 10kΩ x1                                |
-|                                                 |                                                 |
-|  |DHT11|                                        |  |Resistor-10kΩ|                                |
-+-------------------------------------------------+-------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +------------------------------------------+-------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1         |                   |     
+    |                                          | Jumper Wires x4   |       
+    |2. GPIO Extension Board & Ribbon Cable x1 |                   |       
+    |                                          |  |jumper-wire|    |                                                            
+    |3. Breadboard x1                          |                   |                                                                 
+    +------------------------------------------+-------------------+
+    | DHT11 x1                                 | Resistor 10kΩ x1  |
+    |                                          |                   |
+    |  |DHT11|                                 |  |Resistor-10kΩ|  |
+    +------------------------------------------+-------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 80%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 10%
+    :height: 200
 .. |DHT11| image:: ../_static/imgs/DHT11.png
     :width: 50%
 
@@ -47,17 +52,17 @@ The NC pin (Not Connected Pin) are a type of pin found on various integrated cir
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |DHT11_Sc|                                                                                   |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |DHT11_Fr|                                                                                   | 
-+------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+|   Schematic diagram                                                               |
+|                                                                                   |
+|   |DHT11_Sc|                                                                      |
++-----------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:|
+|                                                                                   |
+|   support@freenove.com                                                            |
+|                                                                                   |
+|   |DHT11_Fr|                                                                      | 
++-----------------------------------------------------------------------------------+
 
 .. |DHT11_Sc| image:: ../_static/imgs/DHT11_Sc.png
 .. |DHT11_Fr| image:: ../_static/imgs/DHT11_Fr.png
@@ -113,6 +118,7 @@ The following is the program code:
 In this project code, we use a custom library file "DHT.hpp". It is located in the same directory with the program files "DHT11.cpp" and "DHT.cpp", and methods for reading DHT sensor are provided in the library file. By using this library, we can easily read the DHT Sensor. First, we create a DHT class object in the code.
 
 .. code-block:: c
+    :linenos: 
     
     DHT dht;
 
@@ -122,10 +128,12 @@ Then in the "while" loop, use chk = dht. **readDHT11** (DHT11_Pin) to read the D
     :linenos: 
     :language: C
     :lines: 20-33
+    :dedent:
 
 Finally display the results:
 
 .. code-block:: c
+    :linenos:
     
     printf("Humidity is %.2f %%, \t Temperature is %.2f *C\n\n",dht.humidity,dht.temperature);
 

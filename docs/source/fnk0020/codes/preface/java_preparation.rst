@@ -2,7 +2,7 @@
 0. Chapter Preparation
 ##############################################################################
 
-Why “Chapter 0”? Because in program code the first number is 0. We choose to follow this rule. In this chapter, we will do some necessary foundational preparation work: Start your Raspberry Pi and install some necessary libraries. 
+Why "Chapter 0"? Because in program code the first number is 0. We choose to follow this rule. In this chapter, we will do some necessary foundational preparation work: Start your Raspberry Pi and install some necessary libraries. 
 
 Linux Command
 ****************************************************************
@@ -19,7 +19,7 @@ When you click the Terminal icon, following interface appears.
 
 **Note: The Linux is case sensitive.**
 
-First, type ``ls`` into the Terminal and press the “Enter” key. The result is shown below:
+First, type ``ls`` into the Terminal and press the "Enter" key. The result is shown below:
 
 .. image:: ../_static/p00-imgs/chapter00-03.png
 
@@ -64,11 +64,11 @@ Shortcut Key
 ================================================================
 Now, we will introduce several commonly used shortcuts that are very useful in Terminal.
 
-1. **Up and Down Arrow Keys:** Pressing “↑” (the Up key) will go backwards through the command history and pressing “↓” (the Down Key) will go forwards through the command history.
+1. **Up and Down Arrow Keys:** Pressing "↑" (the Up key) will go backwards through the command history and pressing "↓" (the Down Key) will go forwards through the command history.
 
 2. **Tab Key:** The Tab key can automatically complete the command/path you want to type. When there is only one eligible option, the command/path will be completely typed as soon as you press the Tab key even you only type one character of the command/path. 
 
-As shown below, under the '~' directory, you enter the Documents directory with the “cd” command. After typing “cd D”, pressing the Tab key (there is no response), pressing the Tab key again then all the files/folders that begin with “D” will be listed. Continue to type the letters "oc" and then pressing the Tab key, the “Documents” is typed automatically.
+As shown below, under the '~' directory, you enter the Documents directory with the "cd" command. After typing "cd D", pressing the Tab key (there is no response), pressing the Tab key again then all the files/folders that begin with "D" will be listed. Continue to type the letters "oc" and then pressing the Tab key, the "Documents" is typed automatically.
 
 .. image:: ../_static/p00-imgs/chapter00-06.png
 
@@ -81,7 +81,7 @@ Pi4J is a Java I/O library specially designed for Raspberry Pi platform.
 
 The Pi4J project aims to provide Java programs with access, control and communication to the core I/O functions of the Raspberry Pi, enabling Java programmers to easily access and control the full I/O capabilities of the Raspberry Pi platform. It abstracts the low-level native integration and interrupt monitoring to enable Java programmers to focus on implementing their application business logic.
 
-It is recommended to use JBang to run pi4j code. JBang allows you to execute Java code with dependencies as a single file without the need for a full Maven or Gradle project. You also don’t need to compile your code. So it’s a very easy way to get started with Java and Pi4J.
+It is recommended to use JBang to run pi4j code. JBang allows you to execute Java code with dependencies as a single file without the need for a full Maven or Gradle project. You also don't need to compile your code. So it's a very easy way to get started with Java and Pi4J.
 
 https://www.pi4j.com/examples/jbang/
 

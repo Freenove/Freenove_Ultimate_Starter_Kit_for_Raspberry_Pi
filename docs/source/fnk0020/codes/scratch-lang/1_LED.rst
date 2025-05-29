@@ -2,7 +2,7 @@
 Chapter LED
 ################################################################
 
-This chapter is the Start Point in the journey to build and explore RPi electronic projects. We will start with simple “Blink” project.
+This chapter is the Start Point in the journey to build and explore RPi electronic projects. We will start with simple "Blink" project.
 
 Project 01.0_Blink, 01.1_Keyboard_LED and 01.2 Sprite_LED 
 ****************************************************************
@@ -12,42 +12,47 @@ In this project, we will use RPi to control blinking a common LED.
 Component List
 ================================================================
 
-+-----------------------------------------------------------+
-|    Raspberry Pi                                           |     
-|                                                           |       
-|    (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
-|                                                           |                                                            
-|    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
-|                                                           | 
-|     |raspberrypi5|                                        | 
-+-----------------------------------------------------------+
-| Breadboard x1                                             |
-|                                                           |
-|  |breadborad-830|                                         |                         
-+--------------------------------------+--------------------+
-|  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
-|                                      |                    | 
-|   |extension-board|                  |  |res-220R|        |
-+--------------------------------------+-------+------------+
-| Jumper                                       | LED x1     | 
-|                                              |            | 
-| **Specific quantity depends on the circuit.**| |red-led|  | 
-|                                              |            | 
-| |jumper-wire|                                |            | 
-+----------------------------------------------+------------+
+.. table::
+    :align: center
+    :width: 80%
+
+    +-----------------------------------------------------------+
+    |    Raspberry Pi                                           |     
+    |                                                           |       
+    |    (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
+    |                                                           |                                                            
+    |    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
+    |                                                           | 
+    |     |raspberrypi5|                                        | 
+    +-----------------------------------------------------------+
+    | Breadboard x1                                             |
+    |                                                           |
+    |  |breadborad-830|                                         |                         
+    +--------------------------------------+--------------------+
+    |  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
+    |                                      |                    | 
+    |   |extension-board|                  |  |res-220R|        |
+    +--------------------------------------+-------+------------+
+    | Jumper                                       | LED x1     | 
+    |                                              |            | 
+    | **Specific quantity depends on the circuit.**| |red-led|  | 
+    |                                              |            | 
+    | |jumper-wire|                                |            | 
+    +----------------------------------------------+------------+
 
 .. |raspberrypi5| image:: ../_static/imgs/raspberrypi5.png
-    :width: 60%
+    :width: 40%
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 60%
 .. |extension-board| image:: ../_static/imgs/raspberrypi-extension-board.jpg
-    :width: 70%
+    :width: 50%
 .. |breadborad-830| image:: ../_static/imgs/breadborad-830.jpg
-    :width: 80%
+    :width: 60%
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 30%
+    :width: 40%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 20%
+    :width: 30%
+
 In the components list, 3B GPIO, Extension Shield Raspberry and Breadboard are necessary for each project. Later, they will be reference by text only (no images as in above).
 
 GPIO
@@ -147,7 +152,7 @@ Component knowledge
 LED
 ----------------------------------------------------------------
 
-An LED is a type of diode. All diodes only work if current is flowing in the correct direction and have two Poles. An LED will only work (light up) if the longer pin (+) of LED is connected to the positive output from a power source and the shorter pin is connected to the negative (-) output, which is also referred to as Ground (GND). This type of component is known as “Polar” (think One-Way Street).
+An LED is a type of diode. All diodes only work if current is flowing in the correct direction and have two Poles. An LED will only work (light up) if the longer pin (+) of LED is connected to the positive output from a power source and the shorter pin is connected to the negative (-) output, which is also referred to as Ground (GND). This type of component is known as "Polar" (think One-Way Street).
 
 All common 2 lead diodes are the same in this respect. Diodes work only if the voltage of its positive electrode is higher than its negative electrode and there is a narrow range of operating voltage for most all common diodes of 1.9 and 3.4V. If you use much more than 3.3V the LED will be damaged and burnt out.
 
@@ -168,7 +173,7 @@ On the left, we see a physical representation of a resistor, and the right is th
     :align: center
 
 The bands of color on a resistor is a shorthand code used to identify its resistance value. For more details of resistor color codes, please refer to the card in the kit package.
-With a fixed voltage, there will be less current output with greater resistance added to the circuit. The relationship between Current, Voltage and Resistance can be expressed by this formula: I=V/R known as Ohm’s Law where I = Current, V = Voltage and R = Resistance. Knowing the values of any two of these allows you to solve the value of the third.
+With a fixed voltage, there will be less current output with greater resistance added to the circuit. The relationship between Current, Voltage and Resistance can be expressed by this formula: I=V/R known as Ohm's Law where I = Current, V = Voltage and R = Resistance. Knowing the values of any two of these allows you to solve the value of the third.
 
 In the following diagram, the current through R1 is: 
 

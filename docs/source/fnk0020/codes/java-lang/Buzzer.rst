@@ -32,7 +32,7 @@ We will make a doorbell with this functionality: when the Push Button Switch is 
 +-----------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 30%
+    :width: 70%
 .. |Resistor-1kΩ| image:: ../_static/imgs/Resistor-1kΩ.png
     :width: 23%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
@@ -57,7 +57,7 @@ A buzzer is an audio component. They are widely used in electronic devices such 
     Active buzzer
 
 .. image:: ../_static/imgs/Active-buzzer-knowledge.png
-    :width: 50%
+    :width: 30%
     :align: center
 
 .. container:: centered
@@ -65,8 +65,9 @@ A buzzer is an audio component. They are widely used in electronic devices such 
     Passive buzzer
 
 .. image:: ../_static/imgs/Passive-buzzer-knowledge.png
-    :width: 50%
+    :width: 30%
     :align: center
+
 
 Active buzzers are easier to use. Generally, they only make a specific sound frequency. Passive buzzers require an external circuit to make sounds, but passive buzzers can be controlled to make sounds of various frequencies. The resonant frequency of the passive buzzer in this Kit is 2kHz, which means the passive buzzer is the loudest when its resonant frequency is 2kHz.
 
@@ -97,10 +98,10 @@ Transistors
 
 A transistor is required in this project due to the buzzer's current being so great that GPIO of RPi's output capability cannot meet the power requirement necessary for operation. A NPN transistor is needed here to amplify the current. 
 
-Transistors, full name: semiconductor transistor, is a semiconductor device that controls current think of a transistor as an electronic “amplifying or switching device”. Transistors can be used to amplify weak signals, or to work as a switch. Transistors have three electrodes (PINs): base (b), collector (c) and emitter (e). When there is current passing between "be" then "ce" will have a several-fold current increase (transistor magnification), in this configuration the transistor acts as an amplifier. When current produced by "be" exceeds a certain value, "ce" will limit the current output. at this point the transistor is working in its saturation region and acts like a switch. Transistors are available as two types as shown below: PNP and NPN,
+Transistors, full name: semiconductor transistor, is a semiconductor device that controls current think of a transistor as an electronic "amplifying or switching device". Transistors can be used to amplify weak signals, or to work as a switch. Transistors have three electrodes (PINs): base (b), collector (c) and emitter (e). When there is current passing between "be" then "ce" will have a several-fold current increase (transistor magnification), in this configuration the transistor acts as an amplifier. When current produced by "be" exceeds a certain value, "ce" will limit the current output. at this point the transistor is working in its saturation region and acts like a switch. Transistors are available as two types as shown below: PNP and NPN,
 
 .. image:: ../_static/imgs/PNP-transistor.png
-    :width: 50%
+    :width: 30%
     :align: center
 
 .. container:: centered
@@ -108,13 +109,12 @@ Transistors, full name: semiconductor transistor, is a semiconductor device that
     PNP transistor
 
 .. image:: ../_static/imgs/NPN-transistor-2.png
-    :width: 50%
+    :width: 30%
     :align: center
 
 .. container:: centered
     
     NPN transistor
-
 .. note:: 
     In our kit, the PNP transistor is marked with 8550, and the NPN transistor is marked with 8050.
 

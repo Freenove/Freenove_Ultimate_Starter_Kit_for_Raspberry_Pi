@@ -26,6 +26,7 @@ Component List
 +-------------------------------------------------+-------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |4_7_Segment_Display| image:: ../_static/imgs/4_7_Segment_Display.png
     :width: 70%
 .. |PNP| image:: ../_static/imgs/PNP.png
@@ -34,7 +35,7 @@ Component List
 .. |74HC595| image:: ../_static/imgs/74HC595.png
     :width: 40%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 20%
+    :width: 15%
 
 Component knowledge
 ================================================================
@@ -60,15 +61,15 @@ Similarly, the second, third and fourth 7-Segment Displays will show visible con
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |4_7_Segment_Sc|                                                                             |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection                                                                          |
-|                                                                                                |
-|   |4_7_Segment_Fr|                                                                             | 
-+------------------------------------------------------------------------------------------------+
++-----------------------------------------+
+|   Schematic diagram                     |
+|                                         |
+|   |4_7_Segment_Sc|                      |
++-----------------------------------------+
+|   Hardware connection                   |
+|                                         |
+|   |4_7_Segment_Fr|                      | 
++-----------------------------------------+
 
 .. |4_7_Segment_Sc| image:: ../_static/imgs/4_7_Segment_Sc.png
 .. |4_7_Segment_Fr| image:: ../_static/imgs/4_7_Segment_Fr.png
@@ -110,12 +111,14 @@ The following is program code:
 This project code is similar to the previous section "SSD". The difference is that this project needs to control four SSD. The four coanodes of four SSD is controlled by four GPIO through 4 transistors. First, the four GPIO should be defined.
 
 .. code-block:: c
+    :linenos:
     
     int[] digitPin = {17, 27, 22, 10};
 
 In a separate thread, make the FDSSD display numbers in scan mode. Subfunction display() is used to make FDSSD display a four-digit number.
 
 .. code-block:: c
+    :linenos:
     
     thread("displaySSD");
     ......

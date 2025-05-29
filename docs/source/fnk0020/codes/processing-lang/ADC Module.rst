@@ -12,26 +12,30 @@ This project uses an ADC module to read potentiometer voltage value and display 
 Component List
 ================================================================
 
-+---------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                              |     
-|                                                               |       
-|2. GPIO Extension Board & Ribbon Cable x1                      |       
-|                                                               |                                                            
-|3. Breadboard x1                                               |                                                                 
-+-------------------------------+-------------------------------+
-| Rotary potentiometer x1       |   Resistor 10kΩ x2            |
-|                               |                               |
-| |Rotary-potentiometer|        |  |Resistor-10kΩ|              |                           
-+-------------------------------+-------------------------------+
-| ADC module x1                                                 |
-|                                                               |
-|   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |                   
-|                                                               |  
-+---------------------------------------------------------------+
-|   Jumper Wire x16                                             |
-|                                                               | 
-|      |jumper-wire|                                            |
-+---------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +---------------------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                              |     
+    |                                                               |       
+    |2. GPIO Extension Board & Ribbon Cable x1                      |       
+    |                                                               |                                                            
+    |3. Breadboard x1                                               |                                                                 
+    +-------------------------------+-------------------------------+
+    | Rotary potentiometer x1       |   Resistor 10kΩ x2            |
+    |                               |                               |
+    | |Rotary-potentiometer|        |  |Resistor-10kΩ|              |                           
+    +-------------------------------+-------------------------------+
+    | ADC module x1                                                 |
+    |                                                               |
+    |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |                   
+    |                                                               |  
+    +---------------------------------------------------------------+
+    |   Jumper Wire x16                                             |
+    |                                                               | 
+    |      |jumper-wire|                                            |
+    +---------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%   
@@ -46,7 +50,7 @@ This product contains only one ADC module, there are two types, PCF8591 and ADS7
 
 +---------------------------------------------------------------+----------------------------------------------------------------+
 |                      ADC module: PCF8591                      |                      ADC module: ADS7830                       |                                 
-+-------------------------------+-------------------------------+-------------------------------+-------------------------------+
++-------------------------------+-------------------------------+-------------------------------+--------------------------------+
 |         Model diagram         |         Actual Picture        |         Model diagram         |         Actual Picture         |
 |                               |                               |                               |                                |
 ||ADC-module-1|                 ||PCF8591|                      ||ADC-module-2|                 ||ADS7830|                       |                           
@@ -114,7 +118,7 @@ Then open the following dialog box:
         :width: 100%
         :align: center
 
-Choose “3 Interfacing Options” then “I4 I2C” then “Yes” and then “Finish” in this order and restart your RPi. The I2C module will then be started.
+Choose "3 Interfacing Options" then "I4 I2C" then "Yes" and then "Finish" in this order and restart your RPi. The I2C module will then be started.
 
 Type a command to check whether the I2C module is started:
 
@@ -122,7 +126,7 @@ Type a command to check whether the I2C module is started:
 
     $ lsmod | grep i2c
 
-If the I2C module has been started, the following content will be shown. “bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
+If the I2C module has been started, the following content will be shown. "bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
 
 .. image:: ../_static/imgs/Enable-I2C-2.png
         :width: 100%

@@ -12,17 +12,21 @@ In this project, we will use two 74HC595 IC chips to control a monochrome (one c
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x36                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 74HC595 x2                  | 8x8 LEDMatrix x1                 | Resistor 220Ω x8                 |
-|                             |                                  |                                  |
-|  |74HC595|                  |  |LED_Matrix|                    |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +-------------------------------------------------+-------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
+    |                                                 |   Jumper Wires x36                              |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
+    |                                                 |     |jumper-wire|                               |                                                            
+    |3. Breadboard x1                                 |                                                 |                                                                 
+    +-----------------------------+-------------------+--------------+----------------------------------+
+    | 74HC595 x2                  | 8x8 LEDMatrix x1                 | Resistor 220Ω x8                 |
+    |                             |                                  |                                  |
+    |  |74HC595|                  |  |LED_Matrix|                    |  |res-220R|                      |
+    +-----------------------------+----------------------------------+----------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |74HC595| image:: ../_static/imgs/74HC595.png
@@ -65,17 +69,17 @@ Circuit
 
 In circuit of this project, the power pin of the 74HC595 IC Chip is connected to 3.3V. It can also be connected to 5V to make LED Matrix brighter.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |LED_MAtrix_Sc|                                                                              |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |LED_MAtrix_Fr|                                                                              | 
-+------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+|   Schematic diagram                                                               |
+|                                                                                   |
+|   |LED_MAtrix_Sc|                                                                 |
++-----------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:|
+|                                                                                   |
+|   support@freenove.com                                                            |
+|                                                                                   |
+|   |LED_MAtrix_Fr|                                                                 | 
++-----------------------------------------------------------------------------------+
 
 .. |LED_MAtrix_Sc| image:: ../_static/imgs/LED_MAtrix_Sc.png
 .. |LED_MAtrix_Fr| image:: ../_static/imgs/LED_MAtrix_Fr.png
@@ -126,7 +130,7 @@ The following is the program code:
     :linenos: 
     :language: C
 
-The first “for” loop in the “while” loop is used to display a static smile. Displaying column information from left to right, one column at a time with a total of 8 columns. This repeats 500 times to ensure sufficient display time.
+The first "for" loop in the "while" loop is used to display a static smile. Displaying column information from left to right, one column at a time with a total of 8 columns. This repeats 500 times to ensure sufficient display time.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/19.1.1_LEDMatrix/LEDMatrix.c
     :linenos: 
@@ -134,7 +138,7 @@ The first “for” loop in the “while” loop is used to display a static smi
     :lines: 65-76
     :dedent:
 
-The second “for” loop is used to display scrolling characters "0 to F", for a total of 18 X 8 = 144 columns. Displaying the 0-8 column, then the 1-9 column, then the 2-10 column...... and so on…138-144 column in consecutively to achieve the scrolling effect. The display of each frame is repeated a certain number of times and the more repetitions, the longer the single frame display will be and the slower the scrolling movement.
+The second "for" loop is used to display scrolling characters "0 to F", for a total of 18 X 8 = 144 columns. Displaying the 0-8 column, then the 1-9 column, then the 2-10 column...... and so on…138-144 column in consecutively to achieve the scrolling effect. The display of each frame is repeated a certain number of times and the more repetitions, the longer the single frame display will be and the slower the scrolling movement.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/19.1.1_LEDMatrix/LEDMatrix.c
     :linenos: 

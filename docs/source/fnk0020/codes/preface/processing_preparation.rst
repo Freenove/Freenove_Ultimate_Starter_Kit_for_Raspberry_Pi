@@ -16,6 +16,8 @@ Video: https://www.youtube.com/watch?v=atfssDk2urw
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/atfssDk2urw" frameborder="0" allowfullscreen></iframe>
 
+|
+
 Installing Processing Software
 ================================================================
 
@@ -34,7 +36,7 @@ You can download the installation package directly form the Processing official 
 .. image:: ../_static/imgs/processing.png
     :align: center
 
-Click“Download”. Choose to download the software installation package corresponding to the current Raspberry Pi system bitness.
+Click"Download". Choose to download the software installation package corresponding to the current Raspberry Pi system bitness.
 
 .. image:: ../_static/imgs/processing_Raspberry.png
     :align: center

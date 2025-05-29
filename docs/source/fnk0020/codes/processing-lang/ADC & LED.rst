@@ -12,29 +12,33 @@ In this project, we will make a softlight, which uses a potentiometer to control
 Component List
 ================================================================
 
-+---------------------------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                                                |     
-|                                                                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1                                        |       
-|                                                                                 |                                                            
-|3. Breadboard x1                                                                 |                                                                 
-+=================================================+===============================+
-| Rotary potentiometer x1                         |   Resistor 10kΩ x2            |
-|                                                 |                               |
-| |Rotary-potentiometer|                          |  |Resistor-10kΩ|              |                           
-+-------------------------------------------------+-------------------------------+
-| ADC module x1 (Only one)                        |   LED x1                      |
-|                                                 |                               |
-| |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |red-led|                   |                   
-|                                                 |                               |  
-+-------------------------------------------------+-------------------------------+
-|   Jumper Wire M/M x17                                                           |
-|                                                                                 | 
-|      |jumper-wire|                                                              |
-+---------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +------------------------------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                                       |     
+    |                                                                        |       
+    |2. GPIO Extension Board & Ribbon Cable x1                               |       
+    |                                                                        |                                                            
+    |3. Breadboard x1                                                        |                                                                 
+    +=================================================+======================+
+    | Rotary potentiometer x1                         |   Resistor 10kΩ x2   |
+    |                                                 |                      |
+    | |Rotary-potentiometer|                          |  |Resistor-10kΩ|     |                           
+    +-------------------------------------------------+----------------------+
+    | ADC module x1 (Only one)                        |   LED x1             |
+    |                                                 |                      |
+    | |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |red-led|          |                   
+    |                                                 |                      |  
+    +-------------------------------------------------+----------------------+
+    |   Jumper Wire M/M x17                                                  |
+    |                                                                        | 
+    |      |jumper-wire|                                                     |
+    +------------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 70%
+    :width: 60%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
     :width: 15%
 .. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
@@ -47,17 +51,17 @@ Component List
 Circuit with ADS7830
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-2|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-2|                                                                        |
-+------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                |
+|                                                                                    |
+|   |ADS7830-Schematic-2|                                                            |
++------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via: |
+|                                                                                    |
+|   support@freenove.com                                                             |
+|                                                                                    |
+|   |ADS7830-fritizing-2|                                                            |
++------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-2| image:: ../_static/imgs/ADS7830-Schematic-2.png
 .. |ADS7830-fritizing-2| image:: ../_static/imgs/ADS7830-fritizing-2.png
@@ -65,15 +69,15 @@ Circuit with ADS7830
 Circuit with PCF8591
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic-2|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection.                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing-2|                                                                        |
-+------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                |
+|                                                                                    |
+|   |PCF8591-Schematic-2|                                                            |
++------------------------------------------------------------------------------------+
+|   Hardware connection.                                                             |
+|                                                                                    |
+|   |PCF8591-fritizing-2|                                                            |
++------------------------------------------------------------------------------------+
 
 .. |PCF8591-Schematic-2| image:: ../_static/imgs/PCF8591-Schematic-2.png
 .. |PCF8591-fritizing-2| image:: ../_static/imgs/PCF8591-fritizing-2.png
@@ -128,49 +132,53 @@ A Photoresistor is very sensitive to the amount of light present. We can take ad
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |    220Ω x1                    |     
-|                                                 |                               |       
-|2. GPIO Extension Board & Ribbon Cable x1        |   |res-220R|                  |       
-|                                                 |                               |                                                            
-|3. Breadboard x1                                 |                               |                                                                 
-+-------------------------------------------------+-------------------------------+
-| Jumper Wire M/M                                 |   Resistor 10kΩ x3            |
-|                                                 |                               |
-| |jumper-wire|                                   |  |Resistor-10kΩ|              |                           
-+-------------------------------------------------+-------------------------------+
-| ADC module x1 (Only one)                                                        |
-|                                                                                 |
-| |ADC-module-1|   :xx-large:`or`  |ADC-module-2|                                 |                   
-+-------------------------------------------------+-------------------------------+
-| Phtotresistor x1                                |  LED x1                       |
-|                                                 |                               |
-|   |Phtotresistor|                               |   |red-led|                   |                    
-+-------------------------------------------------+-------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +-------------------------------------------------+-------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |  220Ω x1          |     
+    |                                                 |                   |       
+    |2. GPIO Extension Board & Ribbon Cable x1        | |res-220R|        |       
+    |                                                 |                   |                                                            
+    |3. Breadboard x1                                 |                   |                                                                 
+    +-------------------------------------------------+-------------------+
+    | Jumper Wire M/M                                 | Resistor 10kΩ x3  |
+    |                                                 |                   |
+    | |jumper-wire|                                   ||Resistor-10kΩ|    |                           
+    +-------------------------------------------------+-------------------+
+    | ADC module x1 (Only one)                                            |
+    |                                                                     |
+    | |ADC-module-1|   :xx-large:`or`  |ADC-module-2|                     |                   
+    +-------------------------------------------------+-------------------+
+    | Phtotresistor x1                                |LED x1             |
+    |                                                 |                   |
+    |   |Phtotresistor|                               | |red-led|         |                    
+    +-------------------------------------------------+-------------------+
 
 .. |res-220R| image:: ../_static/imgs/res-220R.png
     :width: 20%
 .. |Phtotresistor| image:: ../_static/imgs/Phtotresistor.png
-    :width: 10%
+    :width: 8%
 
 Circuit with ADS7830
 ================================================================
 
 The circuit used is similar to the Soft light project. The only difference is that the input signal of the AIN0 pin of ADC changes from a Potentiometer to a combination of a Photoresistor and a Resistor.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-4|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-5|                                                                        |
-|                                                                                                |
-|    **Video:** https://youtu.be/r6p3zhXsyko                                                     |
-+------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                |
+|                                                                                    |
+|   |ADS7830-Schematic-4|                                                            |
++------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via: |
+|                                                                                    |
+|   support@freenove.com                                                             |
+|                                                                                    |
+|   |ADS7830-fritizing-5|                                                            |
+|                                                                                    |
+|    **Video:** https://youtu.be/r6p3zhXsyko                                         |
++------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-4| image:: ../_static/imgs/ADS7830-Schematic-4.png
 .. |ADS7830-fritizing-5| image:: ../_static/imgs/ADS7830-fritizing-5.png
@@ -180,15 +188,15 @@ Circuit with PCF8591
 
 The circuit used is similar to the Soft light project. The only difference is that the input signal of the AIN0 pin of ADC changes from a Potentiometer to a combination of a Photoresistor and a Resistor.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic-4|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection.                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing-4|                                                                        |
-+------------------------------------------------------------------------------------------------+
++-----------------------------------+
+|   Schematic diagram               |
+|                                   |
+|   |PCF8591-Schematic-4|           |
++-----------------------------------+
+|   Hardware connection.            |
+|                                   |
+|   |PCF8591-fritizing-4|           |
++-----------------------------------+
 
 .. |PCF8591-Schematic-4| image:: ../_static/imgs/PCF8591-Schematic-4.png
 .. |PCF8591-fritizing-4| image:: ../_static/imgs/PCF8591-fritizing-4.png

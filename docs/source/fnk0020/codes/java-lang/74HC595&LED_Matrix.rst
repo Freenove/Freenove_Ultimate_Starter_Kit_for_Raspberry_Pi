@@ -13,25 +13,26 @@ In this project, we will use two 74HC595 IC chips to control a monochrome (one c
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x36                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 74HC595 x2                  | 8x8 LEDMatrix x1                 | Resistor 220Ω x8                 |
-|                             |                                  |                                  |
-|  |74HC595|                  |  |LED_Matrix|                    |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
++-------------------------------------------------+----------------------------------+
+|1. Raspberry Pi (with 40 GPIO) x1                |                                  |     
+|                                                 |   Jumper Wires x36               |       
+|2. GPIO Extension Board & Ribbon Cable x1        |                                  |       
+|                                                 |     |jumper-wire|                |                                                            
+|3. Breadboard x1                                 |                                  |                                                                 
++-----------------------------+-------------------+--------------+-------------------+
+| 74HC595 x2                  | 8x8 LEDMatrix x1                 | Resistor 220Ω x8  |
+|                             |                                  |                   |
+|  |74HC595|                  |  |LED_Matrix|                    |  |res-220R|       |
++-----------------------------+----------------------------------+-------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |74HC595| image:: ../_static/imgs/74HC595.png
     :width: 40%
 .. |7_Segment_Display| image:: ../_static/imgs/7_Segment_Display.png
     :width: 100%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 20%
+    :width: 15%
 .. |LED_Matrix| image:: ../_static/imgs/LED_Matrix.png
 
 Component knowledge

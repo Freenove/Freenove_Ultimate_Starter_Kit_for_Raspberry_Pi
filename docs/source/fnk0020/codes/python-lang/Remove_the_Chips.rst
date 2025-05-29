@@ -66,12 +66,13 @@ All the files, materials and instructional guides provided are released under
 A copy of this license can be found in the folder containing the Tutorial and software files associated with this product.
 
 .. image:: ../_static/imgs/by-nc-sa.png
+      :align: center
 
 This means you can use these resource in your own derived works, in part or completely, but **NOT for the intent or purpose of commercial use**.
 
 Freenove brand and logo are copyright of Freenove Creative Technology Co., Ltd. and cannot be used without written permission.
 
 .. image:: ../_static/imgs/freenove-logo.png
-        :width: 100px
+      :align: center
 
 Raspberry Pi® is a trademark of Raspberry Pi Foundation (https://www.raspberrypi.org/).

@@ -5,7 +5,7 @@
 ##############################################################################
 
 
-Why “Chapter 0”? Because in program code the first number is 0. We choose to follow this rule. In this chapter, we will do some necessary foundational preparation work: Start your Raspberry Pi and install some necessary libraries. 
+Why "Chapter 0"? Because in program code the first number is 0. We choose to follow this rule. In this chapter, we will do some necessary foundational preparation work: Start your Raspberry Pi and install some necessary libraries. 
 
 Linux Command
 ****************************************************************
@@ -22,7 +22,7 @@ When you click the Terminal icon, following interface appears.
 
 **Note: The Linux is case sensitive.**
 
-First, type ``ls`` into the Terminal and press the “Enter” key. The result is shown below:
+First, type ``ls`` into the Terminal and press the "Enter" key. The result is shown below:
 
 .. image:: ../_static/p00-imgs/chapter00-03.png
 
@@ -66,11 +66,11 @@ Shortcut Key
 ================================================================
 Now, we will introduce several commonly used shortcuts that are very useful in Terminal.
 
-1. **Up and Down Arrow Keys:** Pressing “↑” (the Up key) will go backwards through the command history and pressing “↓” (the Down Key) will go forwards through the command history.
+1. **Up and Down Arrow Keys:** Pressing "↑" (the Up key) will go backwards through the command history and pressing "↓" (the Down Key) will go forwards through the command history.
 
 2. **Tab Key:** The Tab key can automatically complete the command/path you want to type. When there is only one eligible option, the command/path will be completely typed as soon as you press the Tab key even you only type one character of the command/path. 
 
-As shown below, under the '~' directory, you enter the Documents directory with the “cd” command. After typing “cd D”, pressing the Tab key (there is no response), pressing the Tab key again then all the files/folders that begin with “D” will be listed. Continue to type the letters "oc" and then pressing the Tab key, the “Documents” is typed automatically.
+As shown below, under the '~' directory, you enter the Documents directory with the "cd" command. After typing "cd D", pressing the Tab key (there is no response), pressing the Tab key again then all the files/folders that begin with "D" will be listed. Continue to type the letters "oc" and then pressing the Tab key, the "Documents" is typed automatically.
 
 .. image:: ../_static/p00-imgs/chapter00-06.png
 
@@ -159,7 +159,7 @@ Python2 & Python3
 
 Python code, used in our kits, can now run on Python2 and Python3. Python3 is recommend. If you want to use Python2, please make sure your Python version is 2.7 or above. Python2 and Python3 are not fully compatible. However, Python2.6 and Python2.7 are transitional versions to python3, therefore you can also use Python2.6 and 2.7 to execute some Python3 code.
 
-You can type “python2” or “python3” respectively into Terminal to check if python has been installed. Press Ctrl-Z to exit.
+You can type "python2" or "python3" respectively into Terminal to check if python has been installed. Press Ctrl-Z to exit.
 
 .. image:: ../_static/imgs/00_04.png
     :align: center
@@ -221,7 +221,7 @@ When you need to type commands, pressing "↑" will go backwards through the his
 
 2. **Tab key.** The Tab key can automatically complete the command/path you want to type. When there are multiple commands/paths conforming to the already typed letter, pressing Tab key once won't have any result. And pressing Tab key again will list all the eligible options. This command/path will be completely typed as soon as you press the Tab key when there is only one eligible option.
 
-As shown below, under the '~' directory, enter the Documents directory with the “cd” command. After typing “cd D”, press Tab key, then there is no response. Press Tab key again, then all the files/folders that begin with “D” is listed. Continue to type the character "oc", then press the Tab key, and then “Documents” is completely typed automatically.
+As shown below, under the '~' directory, enter the Documents directory with the "cd" command. After typing "cd D", press Tab key, then there is no response. Press Tab key again, then all the files/folders that begin with "D" is listed. Continue to type the character "oc", then press the Tab key, and then "Documents" is completely typed automatically.
 
 .. image:: ../_static/imgs/00_07.png
     :align: center

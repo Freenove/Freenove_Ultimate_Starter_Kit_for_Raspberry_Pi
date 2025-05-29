@@ -13,19 +13,20 @@ In this project, we will read Acceleration and Gyroscope Data of the MPU6050 Sen
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x4                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |jumper-wire|                                  |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| MPU6050                                                                                           |     
-|                                                                                                   |       
-|  |MPU6050|                                                                                        |       
-+---------------------------------------------------------------------------------------------------+
++-------------------------------------------------+----------------------+
+|1. Raspberry Pi (with 40 GPIO) x1                |                      |     
+|                                                 | Jumper Wires x4      |       
+|2. GPIO Extension Board & Ribbon Cable x1        |                      |       
+|                                                 |  |jumper-wire|       |                                                            
+|3. Breadboard x1                                 |                      |                                                                 
++-------------------------------------------------+----------------------+
+| MPU6050                                                                |     
+|                                                                        |       
+|  |MPU6050|                                                             |       
++------------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |MPU6050| image:: ../_static/imgs/MPU6050.png
 
 Component knowledge

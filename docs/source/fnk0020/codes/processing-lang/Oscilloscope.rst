@@ -12,29 +12,36 @@ Now, let's make an oscilloscope.
 Component List
 ================================================================
 
-+---------------------------------------------------------------+
-|1. Raspberry Pi x1                                             |
-|                                                               |
-|2. GPIO Extension Board & Ribbon Cable x1                      |
-|                                                               |
-|3. Breadboard x1                                               |
-+-------------------------------+-------------------------------+
-| Rotary potentiometer x1       |   Resistor 10kΩ x2            |
-|                               |                               |
-| |Rotary-potentiometer|        |  |Resistor-10kΩ|              |
-+-------------------------------+-------------------------------+
-| ADC module x1                                                 |
-|                                                               |
-|   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |
-+---------------------------------------------------------------+
-|   Jumper M/M                                                  |
-|                                                               |
-|      |jumper-wire|                                            |
-+---------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +------------------------------------------------------+
+    |1. Raspberry Pi x1                                    |
+    |                                                      |
+    |2. GPIO Extension Board & Ribbon Cable x1             |
+    |                                                      |
+    |3. Breadboard x1                                      |
+    +-------------------------------+----------------------+
+    | Rotary potentiometer x1       |   Resistor 10kΩ x2   |
+    |                               |                      |
+    | |Rotary-potentiometer|        |  |Resistor-10kΩ|     |
+    +-------------------------------+----------------------+
+    | ADC module x1                                        |
+    |                                                      |
+    |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|    |
+    +------------------------------------------------------+
+    |   Jumper M/M                                         |
+    |                                                      |
+    |      |jumper-wire|                                   |
+    +------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 80%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
+    :width: 10%
 .. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
+    :width: 40%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 
@@ -43,17 +50,17 @@ Circuit with PCF8591
 
 Note that the power supply voltage of ADC module in this circuit is 5V.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |oscilloscope_Sc|                                                                            |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |oscilloscope_Fr|                                                                            |
-+------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                  |
+|                                                                                      |
+|   |oscilloscope_Sc|                                                                  |
++--------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:   |
+|                                                                                      |
+|   support@freenove.com                                                               | 
+|                                                                                      |
+|   |oscilloscope_Fr|                                                                  |
++--------------------------------------------------------------------------------------+
 
 .. |oscilloscope_Sc| image:: ../_static/imgs/oscilloscope_Sc.png
 .. |oscilloscope_Fr| image:: ../_static/imgs/oscilloscope_Fr.png
@@ -63,17 +70,17 @@ Circuit with ADS7830
 
 Note that the power supply voltage of ADC module in this circuit is 5V.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |oscilloscope_Sc_1|                                                                          |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |oscilloscope_Fr_1|                                                                          |
-+------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                  |
+|                                                                                      |
+|   |oscilloscope_Sc_1|                                                                |
++--------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:   |
+|                                                                                      |
+|   support@freenove.com                                                               | 
+|                                                                                      |
+|   |oscilloscope_Fr_1|                                                                |
++--------------------------------------------------------------------------------------+
 
 .. |oscilloscope_Sc_1| image:: ../_static/imgs/oscilloscope_Sc_1.png
 .. |oscilloscope_Fr_1| image:: ../_static/imgs/oscilloscope_Fr_1.png

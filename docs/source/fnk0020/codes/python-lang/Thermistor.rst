@@ -13,26 +13,30 @@ A Thermistor is a type of Resistor whose resistance value is dependent on temper
 Component List
 ================================================================
 
-+---------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                              |     
-|                                                               |       
-|2. GPIO Extension Board & Ribbon Cable x1                      |       
-|                                                               |                                                            
-|3. Breadboard x1                                               |                                                                 
-+-------------------------------+-------------------------------+
-| Thermistor x1                 |   Resistor 10kΩ x3            |
-|                               |                               |
-| |Thermistor|                  |  |Resistor-10kΩ|              |                           
-+-------------------------------+-------------------------------+
-| ADC module x1                                                 |
-|                                                               |
-|   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |                   
-|                                                               |  
-+---------------------------------------------------------------+
-|   Jumper Wire M/M x14                                         |
-|                                                               | 
-|      |jumper-wire|                                            |
-+---------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+
+    +----------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                   |     
+    |                                                    |       
+    |2. GPIO Extension Board & Ribbon Cable x1           |       
+    |                                                    |                                                            
+    |3. Breadboard x1                                    |                                                                 
+    +-------------------------------+--------------------+
+    | Thermistor x1                 |   Resistor 10kΩ x3 |
+    |                               |                    |
+    | |Thermistor|                  |  |Resistor-10kΩ|   |                           
+    +-------------------------------+--------------------+
+    | ADC module x1                                      |
+    |                                                    |
+    |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|  |                   
+    |                                                    |  
+    +----------------------------------------------------+
+    |   Jumper Wire M/M x14                              |
+    |                                                    | 
+    |      |jumper-wire|                                 |
+    +----------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 80%
@@ -56,9 +60,10 @@ Thermistor is a temperature sensitive resistor. When it senses a change in tempe
 
 The relationship between resistance value and temperature of a thermistor is:
 
-.. container:: centered
+.. math::
 
-    :xx-large:`Rt=R*EXP [B*(1/T2-1/T1)]`
+   \boldsymbol{ R_t = R \cdot \exp \left[ B \left( \frac{1}{T_2} - \frac{1}{T_1} \right) \right] }
+
 
 - Where:
     - Rt is the thermistor resistance under T2 temperature;
@@ -79,9 +84,10 @@ We can use the value measured by the ADC converter to obtain the resistance valu
 
 Therefore, the temperature formula can be derived as:
 
-.. container:: centered
+.. math::
+    
+   \boldsymbol{ T_2 = \dfrac{1}{\left( \dfrac{1}{T_1} + \dfrac{\ln(R_t / R)}{B} \right)} }
 
-    :xx-large:`T2 = 1/(1/T1 + ln(Rt/R)/B)`
 
 Circuit with ADS7830
 ================================================================
@@ -155,13 +161,13 @@ First, observe the project result, and then learn about the code in detail.
 
     $ cd ~/Freenove_Kit/Code/Python_GPIOZero_Code/11.1.1_Thermometer
 
-2.	Use python command to execute Python code “Thermometer.py”.
+2.	Use python command to execute Python code "Thermometer.py".
 
 .. code-block:: console
 
     $ python Thermometer.py
 
-After the program is executed, the Terminal window will display the current ADC value, voltage value and temperature value. Try to “pinch” the thermistor (without touching the leads) with your index finger and thumb for a brief time, you should see that the temperature value increases.
+After the program is executed, the Terminal window will display the current ADC value, voltage value and temperature value. Try to "pinch" the thermistor (without touching the leads) with your index finger and thumb for a brief time, you should see that the temperature value increases.
 
 .. image:: ../_static/imgs/Thermistor_value.png
     :align: center

@@ -46,15 +46,18 @@ Component list
 Circuit
 ================================================================
 
-============================================== ==============================================
-    Schematic diagram                           Hardware connection. If you need any support,
-    
-                                                please feel free to contact us via:
-    
-                                                support@freenove.com
+.. table:: 
+    :align: center
 
-    |solder_Sc|                                  |solder_Fr|
-============================================== ==============================================
+    ============================================== ==============================================
+        Schematic diagram                           Hardware connection. If you need any support,
+        
+                                                    please feel free to contact us via:
+        
+                                                    support@freenove.com
+    
+        |solder_Sc|                                  |solder_Fr|
+    ============================================== ==============================================
 
 .. |solder_Sc| image:: ../_static/imgs/solder_Sc.png
 .. |solder_Fr| image:: ../_static/imgs/solder_Fr.png
@@ -101,11 +104,14 @@ You should be familiar with the Flowing Water Light from our previous project. W
 Component List
 ================================================================
 
-====================== ====================== ====================== ======================
- Female Pin Header x5   Resistor 220Ω x8       LED x8                 74HC595 x1
+.. table:: 
+    :align: center
 
-   |Fe_pin_Header|      |res-220R|              |red-led|               |74HC595|
-====================== ====================== ====================== ======================
+    ====================== ====================== ====================== ======================
+     Female Pin Header x5   Resistor 220Ω x8       LED x8                 74HC595 x1
+    
+       |Fe_pin_Header|      |res-220R|              |red-led|               |74HC595|
+    ====================== ====================== ====================== ======================
 
 .. |red-led| image:: ../_static/imgs/red-led.png
     :width: 60%
@@ -159,7 +165,7 @@ Connect the board to Raspberry Pi with jumper wire in the following way.
 Code
 ================================================================
 
-This now will be the third time we have made the Flowing Water Light. In this project, we will solder a completely new circuit for Flowing Water Light. Additionally, the program is also different from the previous ones we have used. When this light flows, it will have a long “tail”.
+This now will be the third time we have made the Flowing Water Light. In this project, we will solder a completely new circuit for Flowing Water Light. Additionally, the program is also different from the previous ones we have used. When this light flows, it will have a long "tail".
 
 C Code LightWater03
 ----------------------------------------------------------------
@@ -187,7 +193,7 @@ First, observe the project result, and then learn about the code in detail.
     
     $ sudo ./LightWater03
 
-After the program is executed, the LEDs will light up in the form of flowing water with a long “tail”.
+After the program is executed, the LEDs will light up in the form of flowing water with a long "tail".
 
 The following is the program code:
 
@@ -198,6 +204,7 @@ The following is the program code:
 We can see that this program is different from the previous one that we had used. We define an array to modulate different PWM pulse widths for LEDs, in doing so different LEDs can emit varied brightness. Starting from the array index 0, take an array of 8 adjacent numbers as the LED duty cycle and output it one at a time. Increasing the starting index number in turn, then it will create a flowing effect.
 
 .. code-block:: c
+    :linenos: 
 
     const int pluseWidth[]={0,0,0,0,0,0,0,0,64,32,16,8,4,2,1,0,0,0,0,0,0,0,0};
 
@@ -207,10 +214,12 @@ By recording the moving time point to control the speed of the movement of index
     :linenos: 
     :language: C
     :lines: 38-42
+    :dedent:
 
-Finally, in a “for” loop with i=64, modulate the output pulse width of the PWM square wave. The process, from the beginning of implementing the for loop to the end, is a PWM cycle. In the loop, there is another for loop with j=8 and in this loop, it compares the number “i” to the value of the array to determine output high or low level. Then, the data will be sent to the 74HC595 IC Chip.
+Finally, in a "for" loop with i=64, modulate the output pulse width of the PWM square wave. The process, from the beginning of implementing the for loop to the end, is a PWM cycle. In the loop, there is another for loop with j=8 and in this loop, it compares the number "i" to the value of the array to determine output high or low level. Then, the data will be sent to the 74HC595 IC Chip.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/35.2.1_LightWater03/LightWater03.c
     :linenos: 
     :language: C
     :lines: 43-51
+    :dedent:

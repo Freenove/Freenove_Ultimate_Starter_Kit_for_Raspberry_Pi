@@ -36,20 +36,26 @@ In this project, we will use the I2C LCD1602 to display some static characters a
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x4                               |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| I2C LCD1602 Module x1                                                                             |
-|                                                                                                   |
-|  |LCD1602|                                                                                        |
-+---------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +------------------------------------------+----------------+
+    |1. Raspberry Pi (with 40 GPIO) x1         |                |     
+    |                                          |Jumper Wires x4 |       
+    |2. GPIO Extension Board & Ribbon Cable x1 |                |       
+    |                                          |  |jumper-wire| |                                                            
+    |3. Breadboard x1                          |                |                                                                 
+    +------------------------------------------+----------------+
+    | I2C LCD1602 Module x1                                     |
+    |                                                           |
+    |  |LCD1602|                                                |
+    +-----------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 80%
 .. |LCD1602| image:: ../_static/imgs/LCD1602.png
+    :width: 70%
 
 Circuit
 ================================================================
@@ -103,13 +109,13 @@ First, observe the project result, and then learn about the code in detail.
 
     $ cd ~/Freenove_Kit/Code/C_Code/20.1.1_I2CLCD1602
 
-2.	Use following command to compile “I2CLCD1602.c” and generate executable file ``I2CLCD1602``.
+2.	Use following command to compile "I2CLCD1602.c" and generate executable file ``I2CLCD1602``.
 
 .. code-block:: console
 
     $ gcc I2CLCD1602.c -o I2CLCD1602 -lwiringPi -lwiringPiDev
 
-3.	Then run the generated file “I2CLCD1602”.
+3.	Then run the generated file "I2CLCD1602".
 
 .. code-block:: console
 
@@ -150,18 +156,19 @@ Then, in main function, initialize the PCF8574, set all the pins to output mode,
 Then use lcdInit() to initialize LCD1602 and set the RW pin of LCD1602 to 0 (can be written) according to requirements of this function. The return value of the function called "Handle" is used to handle LCD1602".
 
 .. code-block:: c
+    :linenos: 
 
-    lcdhd = lcdInit(2,16,4,RS,EN,D4,D5,D6,D7,0,0,0,0);// initialize LCD and return “handle” used to handle LCD
+    lcdhd = lcdInit(2,16,4,RS,EN,D4,D5,D6,D7,0,0,0,0);// initialize LCD and return "handle" used to handle LCD
 
 Details about lcdInit():
 
 .. c:function:: int lcdInit (int rows, int cols, int bits, int rs, int strb, int d0, int d1, int d2, int d3, int d4, int d5, int d6, int d7) ;
 
-    This is the main initialization function and must be executd first before you use any other LCD functions. Rows and cols are the rows and columns of the Display (e.g. 2, 16 or 4, 20). Bits is the number of how wide the number of bits is on the interface (4 or 8). The rs and strb represent the pin numbers of the Display’s RS pin and Strobe (E) pin. The parameters d0 through d7 are the pin numbers of the 8 data pins connected from the RPi to the display. Only the first 4 are used if you are running the display in 4-bit mode.
+    This is the main initialization function and must be executd first before you use any other LCD functions. Rows and cols are the rows and columns of the Display (e.g. 2, 16 or 4, 20). Bits is the number of how wide the number of bits is on the interface (4 or 8). The rs and strb represent the pin numbers of the Display's RS pin and Strobe (E) pin. The parameters d0 through d7 are the pin numbers of the 8 data pins connected from the RPi to the display. Only the first 4 are used if you are running the display in 4-bit mode.
     The return value is the 'handle' to be used for all subsequent calls to the lcd library when dealing with that LCD, or -1 to indicate a fault (usually incorrect parameter)
     For more details about LCD Library, please refer to: https://projects.drogon.net/raspberry-pi/wiringpi/lcd-library/ 
 
-In the next “while”, two subfunctions are called to display the RPi's CPU Temperature and the SystemTime. First look at subfunction printCPUTemperature(). The CPU temperature data is stored in the :red:`"/sys/class/thermal/thermal_zone0/temp"` file. We need to read the contents of this file, which converts it to temperature value stored in variable CPU_temp and uses lcdPrintf() to display it on LCD.
+In the next "while", two subfunctions are called to display the RPi's CPU Temperature and the SystemTime. First look at subfunction printCPUTemperature(). The CPU temperature data is stored in the :red:`"/sys/class/thermal/thermal_zone0/temp"` file. We need to read the contents of this file, which converts it to temperature value stored in variable CPU_temp and uses lcdPrintf() to display it on LCD.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/20.1.1_I2CLCD1602/I2CLCD1602.c
     :linenos: 
@@ -170,11 +177,11 @@ In the next “while”, two subfunctions are called to display the RPi's CPU Te
 
 Details about lcdPosition() and lcdPrintf():
 
-.. c:function:: lcdPosition (int handle, int x, int y);
+.. py:function:: lcdPosition (int handle, int x, int y);
 
     Set the position of the cursor for subsequent text entry.
 
-.. c:function:: lcdPutchar (int handle, uint8_t data) & lcdPuts (int handle, char *string) & lcdPrintf (int handle, char *message, …)
+.. py:function:: lcdPutchar (int handle, uint8_t data) & lcdPuts (int handle, char *string) & lcdPrintf (int handle, char *message, …)
 
     These output a single ASCII character, a string or a formatted string using the usual print formatting commands to display individual characters (it is how you are able to see characters on your computer monitor).
 

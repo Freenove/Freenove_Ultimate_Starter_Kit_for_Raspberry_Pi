@@ -15,25 +15,29 @@ In this project, we will use the ADC function of an ADC Module to read the volta
 Component List
 ================================================================
 
-+---------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                              |     
-|                                                               |       
-|2. GPIO Extension Board & Ribbon Cable x1                      |       
-|                                                               |                                                            
-|3. Breadboard x1                                               |                                                                 
-+-------------------------------+-------------------------------+
-| Rotary potentiometer x1       |   Resistor 10kΩ x2            |
-|                               |                               |
-| |Rotary-potentiometer|        |  |Resistor-10kΩ|              |                           
-+-------------------------------+-------------------------------+
-| ADC module x1                                                 |
-|                                                               |
-|   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |                   
-+---------------------------------------------------------------+
-|   Jumper Wire x16                                             |
-|                                                               | 
-|      |jumper-wire|                                            |
-+---------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+
+    +---------------------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                              |     
+    |                                                               |       
+    |2. GPIO Extension Board & Ribbon Cable x1                      |       
+    |                                                               |                                                            
+    |3. Breadboard x1                                               |                                                                 
+    +-------------------------------+-------------------------------+
+    | Rotary potentiometer x1       |   Resistor 10kΩ x2            |
+    |                               |                               |
+    | |Rotary-potentiometer|        |  |Resistor-10kΩ|              |                           
+    +-------------------------------+-------------------------------+
+    | ADC module x1                                                 |
+    |                                                               |
+    |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |                   
+    +---------------------------------------------------------------+
+    |   Jumper Wire x16                                             |
+    |                                                               | 
+    |      |jumper-wire|                                            |
+    +---------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%   
@@ -82,7 +86,7 @@ The resultant analog signal will be divided accordingly.
 DAC
 ----------------------------------------------------------------
 
-The reversing this process requires a DAC, Digital-to-Analog Converter. The digital I/O port can output high level and low level (0 or 1), but cannot output an intermediate voltage value. This is where a DAC is useful. The DAC module PCF8591 has a DAC output pin with 8-bit accuracy, which can divide VDD (here is 3.3V) into 28=256 parts. For example, when the digital quantity is 1, the output voltage value is 3.3/256 *1 V, and when the digital quantity is 128, the output voltage value is 3.3/256 *128=1.65V, the higher the accuracy of DAC, the higher the accuracy of output voltage value will be.
+The reversing this process requires a DAC, Digital-to-Analog Converter. The digital I/O port can output high level and low level (0 or 1), but cannot output an intermediate voltage value. This is where a DAC is useful. The DAC module PCF8591 has a DAC output pin with 8-bit accuracy, which can divide VDD (here is 3.3V) into 28=256 parts. For example, when the digital quantity is 1, the output voltage value is 3.3/256 \*1 V, and when the digital quantity is 128, the output voltage value is 3.3/256 \*128=1.65V, the higher the accuracy of DAC, the higher the accuracy of output voltage value will be.
 
 Component knowledge
 ================================================================
@@ -90,14 +94,14 @@ Component knowledge
 Potentiometer
 ----------------------------------------------------------------
 
-Potentiometer is a resistive element with three Terminal parts. Unlike the resistors that we have used thus far in our project which have a fixed resistance value, the resistance value of a potentiometer can be adjusted. A potentiometer is often made up by a resistive substance (a wire or carbon element) and movable contact brush. When the brush moves along the resistor element, there will be a change in the resistance of the potentiometer’s output side (3) (or change in the voltage of the circuit that is a part). The illustration below represents a linear sliding potentiometer and its electronic symbol on the right.
+Potentiometer is a resistive element with three Terminal parts. Unlike the resistors that we have used thus far in our project which have a fixed resistance value, the resistance value of a potentiometer can be adjusted. A potentiometer is often made up by a resistive substance (a wire or carbon element) and movable contact brush. When the brush moves along the resistor element, there will be a change in the resistance of the potentiometer's output side (3) (or change in the voltage of the circuit that is a part). The illustration below represents a linear sliding potentiometer and its electronic symbol on the right.
 
 .. image:: ../_static/imgs/07_00.png
     :align: center
 
 Between potentiometer pin 1 and pin 2 is the resistive element (a resistance wire or carbon) and pin 3 is connected to the brush that makes contact with the resistive element. In our illustration, when the brush moves from pin 1 to pin 2, the resistance value between pin 1 and pin 3 will increase linearly (until it reaches the highest value of the resistive element) and at the same time the resistance between pin 2 and pin 3 will decrease linearly and conversely down to zero. At the midpoint of the slider the measured resistance values between pin 1 and 3 and between pin 2 and 3 will be the same.
 
-In a circuit, both sides of resistive element are often connected to the positive and negative electrodes of power. When you slide the brush “pin 3”, you can get variable voltage within the range of the power supply.
+In a circuit, both sides of resistive element are often connected to the positive and negative electrodes of power. When you slide the brush "pin 3", you can get variable voltage within the range of the power supply.
 
 .. image:: ../_static/imgs/1-32-fritizing.png
         :width: 30%
@@ -271,7 +275,7 @@ Then open the following dialog box:
         :width: 100%
         :align: center
 
-Choose “3 Interfacing Options” then “I4 I2C” then “Yes” and then “Finish” in this order and restart your RPi. The I2C module will then be started.
+Choose "3 Interfacing Options" then "I4 I2C" then "Yes" and then "Finish" in this order and restart your RPi. The I2C module will then be started.
 
 Type a command to check whether the I2C module is started:
 
@@ -279,7 +283,7 @@ Type a command to check whether the I2C module is started:
 
     $ lsmod | grep i2c
 
-If the I2C module has been started, the following content will be shown. “bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
+If the I2C module has been started, the following content will be shown. "bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
 
 .. image:: ../_static/imgs/Enable-I2C-2.png
         :width: 100%
@@ -425,7 +429,7 @@ Reference
 
 About smbus Module:
 
-.. c:function:: smbus Module
+.. py:function:: smbus Module
 
     The System Management Bus Module defines an object type that allows SMBus transactions on hosts running the Linux kernel. The host kernel must support I2C, I2C device interface support, and a bus adapter driver. All of these can be either built-in to the kernel, or loaded from modules.
     In Python, you can use help(smbus) to view the relevant functions and their descriptions.
@@ -434,7 +438,7 @@ About smbus Module:
     **bus.read_byte_data(address,cmd+chn)**: Read a byte of data from an address and return it.
     **bus.write_byte_data(address,cmd,value)**: Write a byte of data to an address.
 
-.. c:function:: class ADCDevice(object)
+.. py:function:: class ADCDevice(object)
 
     This is a base class. 
 
@@ -442,7 +446,7 @@ About smbus Module:
 
     This is a member function, which is used to detect whether the device with the given I2C address exists. If it exists, it returns true. Otherwise, it returns false.
 
-.. c:function:: class PCF8591(ADCDevice) & class ADS7830(ADCDevice)
+.. py:function:: class PCF8591(ADCDevice) & class ADS7830(ADCDevice)
 
     These two classes are derived from the ADCDevice and the main function is analogRead(chn).
 

@@ -2,7 +2,7 @@
 0. Chapter Preparation
 ##############################################################################
 
-Why “Chapter 0”? Because in program code the first number is 0. We choose to follow this rule. In this chapter, we will do some necessary foundational preparation work: Start your Raspberry Pi and install some necessary libraries. 
+Why "Chapter 0"? Because in program code the first number is 0. We choose to follow this rule. In this chapter, we will do some necessary foundational preparation work: Start your Raspberry Pi and install some necessary libraries. 
 
 Linux Command
 ****************************************************************
@@ -21,7 +21,7 @@ When you click the Terminal icon, following interface appears.
 
 **Note: The Linux is case sensitive.**
 
-First, type ``ls`` into the Terminal and press the “Enter” key. The result is shown below:
+First, type ``ls`` into the Terminal and press the "Enter" key. The result is shown below:
 
 .. image:: ../_static/p00-imgs/chapter00-03.png
 
@@ -38,22 +38,26 @@ Content between ``$`` and ``pi@raspberrypi:`` is the current working path. ``~``
 Later in this Tutorial, we will often change the working path. Typing commands under the wrong directory may cause errors and break the execution of further commands. 
 
 Many frequently used commands and instructions can be found in the following reference table.
-    
-+---------------+--------------------------------------------------------------------------------------------------+
-| Command       | instruction                                                                                      |
-+===============+==================================================================================================+
-| ls            | Lists information about the FILEs (the current directory by default) and entries alphabetically. |
-+---------------+--------------------------------------------------------------------------------------------------+
-| cd            | Changes directory                                                                                |
-+---------------+--------------------------------------------------------------------------------------------------+
-| sudo + cmd    | Executes cmd under root authority                                                                |
-+---------------+--------------------------------------------------------------------------------------------------+
-| ./            | Under current directory                                                                          |
-+---------------+--------------------------------------------------------------------------------------------------+
-| gcc           | GNU Compiler Collection                                                                          |
-+---------------+--------------------------------------------------------------------------------------------------+
-| git clone URL | Use git tool to clone the contents of specified repository, and URL in the repository address.   |
-+---------------+--------------------------------------------------------------------------------------------------+
+
+.. table:: 
+    :align: center
+    :class: freenove-ow
+
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | Command       | instruction                                                                                      |
+    +===============+==================================================================================================+
+    | ls            | Lists information about the FILEs (the current directory by default) and entries alphabetically. |
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | cd            | Changes directory                                                                                |
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | sudo + cmd    | Executes cmd under root authority                                                                |
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | ./            | Under current directory                                                                          |
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | gcc           | GNU Compiler Collection                                                                          |
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | git clone URL | Use git tool to clone the contents of specified repository, and URL in the repository address.   |
+    +---------------+--------------------------------------------------------------------------------------------------+
 
 There are many commands, which will come later. 
 
@@ -66,11 +70,11 @@ Shortcut Key
 
 Now, we will introduce several commonly used shortcuts that are very useful in Terminal.
 
-1. **Up and Down Arrow Keys:** Pressing “↑” (the Up key) will go backwards through the command history and pressing “↓” (the Down Key) will go forwards through the command history.
+1. **Up and Down Arrow Keys:** Pressing "↑" (the Up key) will go backwards through the command history and pressing "↓" (the Down Key) will go forwards through the command history.
 
 2. **Tab Key:** The Tab key can automatically complete the command/path you want to type. When there is only one eligible option, the command/path will be completely typed as soon as you press the Tab key even you only type one character of the command/path. 
 
-As shown below, under the '~' directory, you enter the Documents directory with the “cd” command. After typing “cd D”, pressing the Tab key (there is no response), pressing the Tab key again then all the files/folders that begin with “D” will be listed. Continue to type the letters "oc" and then pressing the Tab key, the “Documents” is typed automatically.
+As shown below, under the '~' directory, you enter the Documents directory with the "cd" command. After typing "cd D", pressing the Tab key (there is no response), pressing the Tab key again then all the files/folders that begin with "D" will be listed. Continue to type the letters "oc" and then pressing the Tab key, the "Documents" is typed automatically.
 
 .. image:: ../_static/p00-imgs/chapter00-06.png
 

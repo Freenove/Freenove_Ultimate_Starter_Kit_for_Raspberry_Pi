@@ -55,7 +55,7 @@ A Joystick is a kind of input sensor used with your fingers. You should be famil
     :width: 70%
     :align: center
 
-This is accomplished by incorporating two rotary potentiometers inside the Joystick Module at 90 degrees of each other, placed in such a manner as to detect shifts in direction in two directions simultaneously and with a Push Button Switch in the “vertical” axis, which can detect when a User presses on the Joystick.
+This is accomplished by incorporating two rotary potentiometers inside the Joystick Module at 90 degrees of each other, placed in such a manner as to detect shifts in direction in two directions simultaneously and with a Push Button Switch in the "vertical" axis, which can detect when a User presses on the Joystick.
 
 .. image:: ../_static/imgs/joystick-fritizing.png
     :width: 70%

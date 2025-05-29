@@ -29,19 +29,20 @@ Project Multicolored LED
 Component List
 ================================================================
     
-+------------------------------------------------------+------------------------------------------------------+
-|    Raspberry Pi (with 40 GPIO) x1                    |        RGB LED x1                                    |
-|                                                      |                                                      |   
-|    GPIO Extension Board & Ribbon Cable x1            |       |RGB-LED-real|                                 |
-|                                                      |                                                      |
-|    Breadboard x1                                     |                                                      |
-+------------------------------------------------------+------------------------------------------------------+
-|   Jumper Wire                                        |  Resistor 220Ω x3                                    |
-|                                                      |                                                      |
-|   |jumper-wire|                                      |    |res-220R-hori|                                   |        
-+------------------------------------------------------+------------------------------------------------------+
++------------------------------------------------------+------------------------+
+|    Raspberry Pi (with 40 GPIO) x1                    |        RGB LED x1      |
+|                                                      |                        |   
+|    GPIO Extension Board & Ribbon Cable x1            |       |RGB-LED-real|   |
+|                                                      |                        |
+|    Breadboard x1                                     |                        |
++------------------------------------------------------+------------------------+
+|   Jumper Wire                                        |  Resistor 220Ω x3      |
+|                                                      |                        |
+|   |jumper-wire|                                      |    |res-220R-hori|     |        
++------------------------------------------------------+------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
 .. |res-220R-hori| image:: ../_static/imgs/res-220R-hori.png
 .. |RGB-LED-real| image:: ../_static/imgs/RGB-LED-real.png
@@ -68,7 +69,7 @@ Circuit
 
 .. note:: 
 
-    In this kit, the RGB led is Common anode. The voltage difference between LED will make it work. There is no visible GND. The GPIO ports can also receive current while in output mode.If circuit above doesn’t work, the RGB LED may be common cathode. Please try following wiring.There is no need to modify code for random color.
+    In this kit, the RGB led is Common anode. The voltage difference between LED will make it work. There is no visible GND. The GPIO ports can also receive current while in output mode.If circuit above doesn't work, the RGB LED may be common cathode. Please try following wiring.There is no need to modify code for random color.
 
 .. image:: ../_static/imgs/RGB-LED-fritizing2.png
     :width: 100%
@@ -102,9 +103,9 @@ Load the code to scratch3.
 
     Freenove_Kit/Code/Scratch3/04.1_Keyboard_RGBLED.sb3
 
-Click the green flag. Then click “r”, “g” and “b” randomly and observe the color change.
+Click the green flag. Then click "r", "g" and "b" randomly and observe the color change.
 
-**“r”, “g” and “b” on key board will be used and detect.**
+**"r", "g" and "b" on key board will be used and detect.**
 
 .. image:: ../_static/imgs/scratch_KEY_RGB.png
     :align: center

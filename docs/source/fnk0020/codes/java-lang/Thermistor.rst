@@ -12,26 +12,26 @@ A Thermistor is a type of Resistor whose resistance value is dependent on temper
 Component List
 ================================================================
 
-+---------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                              |     
-|                                                               |       
-|2. GPIO Extension Board & Ribbon Cable x1                      |       
-|                                                               |                                                            
-|3. Breadboard x1                                               |                                                                 
-+-------------------------------+-------------------------------+
-| Thermistor x1                 |   Resistor 10kΩ x2            |
-|                               |                               |
-| |Thermistor|                  |  |Resistor-10kΩ|              |                           
-+-------------------------------+-------------------------------+
-| ADC module x1                                                 |
-|                                                               |
-|  |ADC-module-2|                                               |                   
-|                                                               |  
-+---------------------------------------------------------------+
-|   Jumper Wire M/M x14                                         |
-|                                                               | 
-|      |jumper-wire|                                            |
-+---------------------------------------------------------------+
++-----------------------------------------------------+
+|1. Raspberry Pi (with 40 GPIO) x1                    |     
+|                                                     |       
+|2. GPIO Extension Board & Ribbon Cable x1            |       
+|                                                     |                                                            
+|3. Breadboard x1                                     |                                                                 
++-------------------------------+---------------------+
+| Thermistor x1                 |   Resistor 10kΩ x2  |
+|                               |                     |
+| |Thermistor|                  |  |Resistor-10kΩ|    |                           
++-------------------------------+---------------------+
+| ADC module x1                                       |
+|                                                     |
+|  |ADC-module-2|                                     |                   
+|                                                     |  
++-----------------------------------------------------+
+|   Jumper Wire M/M x14                               |
+|                                                     | 
+|      |jumper-wire|                                  |
++-----------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png

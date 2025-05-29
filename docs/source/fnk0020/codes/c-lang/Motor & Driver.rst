@@ -7,36 +7,40 @@ In this chapter, we will learn about DC Motors and DC Motor Drivers and how to c
 Project Control a DC Motor with a Potentiometer
 ****************************************************************
 
-In this project, a potentiometer will be used to control a DC Motor. When the Potentiometer is at the midpoint position, the DC Motor will STOP, and when the Potentiometer is turned in either direction of this midpoint, the DC Motor speed increases until it reached the endpoint where the DC Motor achieves its maximum speed. When the Potentiometer is turned “Left” of the midpoint the DC Motor will ROTATE in one direction and when turned “Right” the DC Motor will ROTATE in the opposite direction. 
+In this project, a potentiometer will be used to control a DC Motor. When the Potentiometer is at the midpoint position, the DC Motor will STOP, and when the Potentiometer is turned in either direction of this midpoint, the DC Motor speed increases until it reached the endpoint where the DC Motor achieves its maximum speed. When the Potentiometer is turned "Left" of the midpoint the DC Motor will ROTATE in one direction and when turned "Right" the DC Motor will ROTATE in the opposite direction. 
 
 Component List
 ================================================================
 
 Breadboard Power Module 
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x23                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| Breadboard Power Module x1                      | 9V Battery (you provide) & 9V Battery Cable     |
-|                                                 |                                                 |
-|  |power-module|                                 |  |Battery_cable|                                |                           
-+-------------------------------------------------+-------------------------------------------------+
-| ADC module x1                                   | L293D IC Chip                                   |
-|                                                 |                                                 |
-|  |ADC-module-1|   :xx-large:`or`  |ADC-module-2|| |L2983_chip|                                    |
-+-----------------------------+-------------------+--------------+----------------------------------+
-| DC Motor x1                 | Rotary Potentiometer x1          | Resistor 10kΩ x2                 |
-|                             |                                  |                                  |
-|  |DC_Motor_Module|          |  |Rotary-potentiometer|          |  |Resistor-10kΩ|                 |
-+-----------------------------+----------------------------------+----------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +-------------------------------------------------+--------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                            |     
+    |                                                 |Jumper Wires x23                            |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                            |       
+    |                                                 ||jumper-wire|                               |                                                            
+    |3. Breadboard x1                                 |                                            |                                                                 
+    +-------------------------------------------------+--------------------------------------------+
+    | Breadboard Power Module x1                      | 9V Battery (you provide) & 9V Battery Cable|
+    |                                                 |                                            |
+    |  |power-module|                                 ||Battery_cable|                             |                           
+    +-------------------------------------------------+--------------------------------------------+
+    | ADC module x1                                   | L293D IC Chip                              |
+    |                                                 |                                            |
+    |  |ADC-module-1|   :xx-large:`or`  |ADC-module-2|||L2983_chip|                                |
+    +-----------------------------+-------------------+--------------+-----------------------------+
+    | DC Motor x1                 | Rotary Potentiometer x1          | Resistor 10kΩ x2            |
+    |                             |                                  |                             |
+    |  |DC_Motor_Module|          |  |Rotary-potentiometer|          |  |Resistor-10kΩ|            |
+    +-----------------------------+----------------------------------+-----------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 25%
+    :width: 20%
 .. |power-module| image:: ../_static/imgs/power-module.png
     :width: 60%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
@@ -45,7 +49,7 @@ Breadboard Power Module
     :width: 30%
 .. |Battery_cable| image:: ../_static/imgs/Battery_cable.png
 .. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
-    :width: 70%
+    :width: 50%
 .. |L2983_chip| image:: ../_static/imgs/L2983_chip.png
     :width: 30%
 .. |DC_Motor_Module| image:: ../_static/imgs/DC_Motor_Module.png
@@ -65,7 +69,7 @@ Breadboard Power Module is an independent circuit board, which can provide indep
 Here is an acceptable connection between Breadboard Power Module and Breadboard using a 9V battery and the provided power harness:
 
 .. image:: ../_static/imgs/power-mode-2.png
-    :width: 70%
+    :width: 60%
     :align: center
 
 DC Motor
@@ -91,27 +95,32 @@ L293D is an IC Chip (Integrated Circuit Chip) with a 4-channel motor drive. You 
 
 Port description of L293D module is as follows:
 
-+----------+--------------+------------------------------------------------------------------+
-| Pin name | Pin number   |                    Description                                   |   
-+==========+==============+==================================================================+
-| In x     | 2, 7, 10, 15 | Channel x digital signal input pin                               |                   
-+----------+--------------+------------------------------------------------------------------+                                                  
-|          |              | Channel x output pin, input high or low level                    |
-| Out x    | 3, 6, 11, 14 |                                                                  |
-|          |              | according to In x pin, getsconnected to +Vmotor or 0V            |                                      
-+----------+--------------+------------------------------------------------------------------+
-| Enable1  | 1            | Channel 1 and Channel 2 enable pin, high level enable            |                                     
-+----------+--------------+------------------------------------------------------------------+                                                   
-| Enable2  | 9            | Channel 3 and Channel 4 enable pin, high level enable            |                                     
-+----------+--------------+------------------------------------------------------------------+
-| 0V       | 4, 5, 12, 13 | Power Cathode (GND)                                              | 
-+----------+--------------+------------------------------------------------------------------+
-| +V       | 16           | Positive Electrode (VCC) of power supply, supply voltage 4.5~36V |
-+----------+--------------+------------------------------------------------------------------+                                                  
-|          |              | Positive Electrode of load power supply, provide power           |
-| +Vmotor  | 8            |                                                                  |
-|          |              | supply for the Out pin x, the supply voltage is +V~36V           |                                      
-+----------+--------------+------------------------------------------------------------------+ 
+.. table::
+    :class: freenove-ow
+    :align: center
+    :width: 80%
+
+    +----------+--------------+------------------------------------------------------------------+
+    | Pin name | Pin number   |                    Description                                   |   
+    +==========+==============+==================================================================+
+    | In x     | 2, 7, 10, 15 | Channel x digital signal input pin                               |                   
+    +----------+--------------+------------------------------------------------------------------+                                                  
+    |          |              | Channel x output pin, input high or low level                    |
+    | Out x    | 3, 6, 11, 14 |                                                                  |
+    |          |              | according to In x pin, getsconnected to +Vmotor or 0V            |                                      
+    +----------+--------------+------------------------------------------------------------------+
+    | Enable1  | 1            | Channel 1 and Channel 2 enable pin, high level enable            |                                     
+    +----------+--------------+------------------------------------------------------------------+                                                   
+    | Enable2  | 9            | Channel 3 and Channel 4 enable pin, high level enable            |                                     
+    +----------+--------------+------------------------------------------------------------------+
+    | 0V       | 4, 5, 12, 13 | Power Cathode (GND)                                              | 
+    +----------+--------------+------------------------------------------------------------------+
+    | +V       | 16           | Positive Electrode (VCC) of power supply, supply voltage 4.5~36V |
+    +----------+--------------+------------------------------------------------------------------+                                                  
+    |          |              | Positive Electrode of load power supply, provide power           |
+    | +Vmotor  | 8            |                                                                  |
+    |          |              | supply for the Out pin x, the supply voltage is +V~36V           |                                      
+    +----------+--------------+------------------------------------------------------------------+ 
 
 .. seealso::
     
@@ -211,7 +220,7 @@ First, observe the project result, and then learn about the code in detail.
 
     $ sudo ./Motor
 
-After the program is executed, you can use the Potentiometer to control the DC Motor. When the Potentiometer is at the midpoint position, the DC Motor will STOP, and when the Potentiometer is turned in either direction of this midpoint, the DC Motor speed increases until it reaches the endpoint where the DC Motor achieves its maximum speed. When the Potentiometer is turned “Left” of the midpoint the DC Motor will ROTATE in one direction and when turned “Right” the DC Motor will ROTATE in the opposite direction. You will also see the ADC value of the potentiometer displayed in the Terminal with the motor direction and the PWM duty cycle used to control the DC Motor's speed.
+After the program is executed, you can use the Potentiometer to control the DC Motor. When the Potentiometer is at the midpoint position, the DC Motor will STOP, and when the Potentiometer is turned in either direction of this midpoint, the DC Motor speed increases until it reaches the endpoint where the DC Motor achieves its maximum speed. When the Potentiometer is turned "Left" of the midpoint the DC Motor will ROTATE in one direction and when turned "Right" the DC Motor will ROTATE in the opposite direction. You will also see the ADC value of the potentiometer displayed in the Terminal with the motor direction and the PWM duty cycle used to control the DC Motor's speed.
 
 .. image:: ../_static/imgs/Motor-value.png
     :align: center
@@ -223,7 +232,7 @@ The following is the code:
     :language: C
     :dedent:
 
-Now that we have familiarity with reading ADC values, let's learn the subfunction void motor (int ADC): first, compare the ADC value with 128 (value corresponding to midpoint). When the current ADC value is higher, motoRPin1 outputs high level and motoRPin2 outputs low level to control the DC Motor to run in the “Forward” Rotational Direction. When the current ADC value is lower, motoRPin1 outputs low level and motoRPin2 outputs high level to control the DC Motor to run in the “Reverse” Rotational Direction. When the ADC value is equal to 128, motoRPin1 and motoRPin2 output low level, the motor STOPS. Then determine the PWM duty cycle according to the difference (delta) between ADC value and 128. Because the absolute delta value stays within 0-128, we need to use the map() subfunction mapping the delta value to a range of 0-255. Finally, we see a display of the duty cycle in Terminal.
+Now that we have familiarity with reading ADC values, let's learn the subfunction void motor (int ADC): first, compare the ADC value with 128 (value corresponding to midpoint). When the current ADC value is higher, motoRPin1 outputs high level and motoRPin2 outputs low level to control the DC Motor to run in the "Forward" Rotational Direction. When the current ADC value is lower, motoRPin1 outputs low level and motoRPin2 outputs high level to control the DC Motor to run in the "Reverse" Rotational Direction. When the ADC value is equal to 128, motoRPin1 and motoRPin2 output low level, the motor STOPS. Then determine the PWM duty cycle according to the difference (delta) between ADC value and 128. Because the absolute delta value stays within 0-128, we need to use the map() subfunction mapping the delta value to a range of 0-255. Finally, we see a display of the duty cycle in Terminal.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/13.1.1_Motor/Motor.cpp
     :linenos: 

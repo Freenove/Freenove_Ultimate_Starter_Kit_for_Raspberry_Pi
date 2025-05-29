@@ -14,23 +14,28 @@ We describe this project as a Breathing Light. This means that an LED that is OF
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires                                  |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-|  LED x1                                         |   Resistor 220Ω x 1                             |
-|                                                 |                                                 |
-|   |LED|                                         |    |res-220R-hori|                              |
-+-------------------------------------------------+-------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :widths: 1 1
+
+    +------------------------------------------+------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1         |                  |     
+    |                                          |Jumper Wires      |       
+    |2. GPIO Extension Board & Ribbon Cable x1 |                  |       
+    |                                          |  |jumper-wire|   |                                                            
+    |3. Breadboard x1                          |                  |                                                                 
+    +------------------------------------------+------------------+
+    |LED x1                                    |Resistor 220Ω x 1 |
+    |                                          |                  |
+    | |LED|                                    | |res-220R-hori|  |
+    +------------------------------------------+------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |res-220R-hori| image:: ../_static/imgs/res-220R-hori.png
     :width: 60%
 .. |LED| image:: ../_static/imgs/red-led.png
-    :width: 20%
+    :width: 15%
 
 Component Knowledge
 ================================================================
@@ -42,14 +47,14 @@ An Analog Signal is a continuous signal in both time and value. On the contrary,
 .. image:: ../_static/imgs/analog-digital.png
         :width: 100%
 
-Note that the Analog signals are curved waves and the Digital signals are “Square Waves”. 
-In practical applications, we often use binary as the digital signal, that is a series of 0's and 1’s. Since a binary signal only has two values (0 or 1) it has great stability and reliability. Lastly, both analog and digital signals can be converted into the other.
+Note that the Analog signals are curved waves and the Digital signals are "Square Waves". 
+In practical applications, we often use binary as the digital signal, that is a series of 0's and 1's. Since a binary signal only has two values (0 or 1) it has great stability and reliability. Lastly, both analog and digital signals can be converted into the other.
 
 PWM
 ----------------------------------------------------------------
 
 PWM, Pulse-Width Modulation, is a very effective method for using digital signals to control analog circuits. Digital processors cannot directly output analog signals. PWM technology makes it very convenient to achieve this conversion (translation of digital to analog signals).
-PWM technology uses digital pins to send certain frequencies of square waves, that is, the output of high levels and low levels, which alternately last for a while. The total time for each set of high levels and low levels is generally fixed, which is called the period (Note: the reciprocal of the period is frequency). The time of high level outputs are generally called “pulse width”, and the duty cycle is the percentage of the ratio of pulse duration, or pulse width (PW) to the total period (T) of the waveform. The longer the output of high levels last, the longer the duty cycle and the higher the corresponding voltage in the analog signal will be. The following figures show how the analog signal voltages vary between 0V-5V (high level is 5V) corresponding to the pulse width 0%-100%:
+PWM technology uses digital pins to send certain frequencies of square waves, that is, the output of high levels and low levels, which alternately last for a while. The total time for each set of high levels and low levels is generally fixed, which is called the period (Note: the reciprocal of the period is frequency). The time of high level outputs are generally called "pulse width", and the duty cycle is the percentage of the ratio of pulse duration, or pulse width (PW) to the total period (T) of the waveform. The longer the output of high levels last, the longer the duty cycle and the higher the corresponding voltage in the analog signal will be. The following figures show how the analog signal voltages vary between 0V-5V (high level is 5V) corresponding to the pulse width 0%-100%:
 
 .. image:: ../_static/imgs/duty-cycle.png
         :width: 100%
@@ -133,14 +138,14 @@ First, create a software PWM pin.
 
     softPwmCreate(ledPin,  0, 100);//Creat SoftPWM pin
 
-There are two “for” loops in the next endless “while” loop. The first loop outputs a power signal to the ledPin PWM from 0% to 100% and the second loop outputs a power signal to the ledPin PWM from 100% to 0%. 
+There are two "for" loops in the next endless "while" loop. The first loop outputs a power signal to the ledPin PWM from 0% to 100% and the second loop outputs a power signal to the ledPin PWM from 100% to 0%. 
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/04.1.1_BreathingLED/BreathingLED.c
     :linenos: 
     :language: C
     :lines: 23-34
 
-You can also adjust the rate of the state change of LED by changing the parameter of the delay() function in the “for” loop.
+You can also adjust the rate of the state change of LED by changing the parameter of the delay() function in the "for" loop.
 
 .. c:function:: int softPwmCreate (int pin, int initialValue, int pwmRange) ;
 

@@ -12,21 +12,22 @@ Hygrothermograph is an important tool in our lives to give us data on the temper
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x4                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |jumper-wire|                                  |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| DHT11 x1                                        | Resistor 10kΩ x1                                |
-|                                                 |                                                 |
-|  |DHT11|                                        |  |Resistor-10kΩ|                                |
-+-------------------------------------------------+-------------------------------------------------+
++-------------------------------------------------+------------------------+
+|1. Raspberry Pi (with 40 GPIO) x1                |                        |     
+|                                                 | Jumper Wires x4        |       
+|2. GPIO Extension Board & Ribbon Cable x1        |                        |       
+|                                                 |  |jumper-wire|         |                                                            
+|3. Breadboard x1                                 |                        |                                                                 
++-------------------------------------------------+------------------------+
+| DHT11 x1                                        | Resistor 10kΩ x1       |
+|                                                 |                        |
+|  |DHT11|                                        |  |Resistor-10kΩ|       |
++-------------------------------------------------+------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 15%
+    :width: 5%
 .. |DHT11| image:: ../_static/imgs/DHT11.png
     :width: 50%
 
@@ -172,7 +173,7 @@ Create an instance of the DHT11 class, read the temperature and humidity data ev
     :lines: 33-51
     :dedent:
 
-Please note that after you finish studying this chapter, you should comment out the line related to DHT11 in the ‘config.txt’ file to avoid errors when Raspberry Pi uses GPIO17 in subsequent chapters.
+Please note that after you finish studying this chapter, you should comment out the line related to DHT11 in the ‘config.txt' file to avoid errors when Raspberry Pi uses GPIO17 in subsequent chapters.
 
 Run the command to open the config.txt file.
 
@@ -180,7 +181,7 @@ Run the command to open the config.txt file.
 
     $ sudo nano /boot/firmware/config.txt
     
-Add the “#” in front of the line.
+Add the "#" in front of the line.
 
 .. code-block:: console
 

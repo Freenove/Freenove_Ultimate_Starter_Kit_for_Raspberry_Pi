@@ -13,27 +13,31 @@ In this project, we will make a soft light. We will use an ADC Module to read AD
 Component List
 ================================================================
 
-+---------------------------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                                                |     
-|                                                                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1                                        |       
-|                                                                                 |                                                            
-|3. Breadboard x1                                                                 |                                                                 
-+-------------------------------------------------+-------------------------------+
-| Rotary potentiometer x1                         |   Resistor 10kΩ x2            |
-|                                                 |                               |
-| |Rotary-potentiometer|                          |  |Resistor-10kΩ|              |                           
-+-------------------------------------------------+-------------------------------+
-| ADC module x1 (Only one)                        |   LED x1                      |
-|                                                 |                               |
-| |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |red-led|                   |                   
-|                                                 |                               |  
-+-------------------------------------------------+-------------------------------+
-|   Jumper Wire M/M x17                                                           |
-|                                                                                 | 
-|      |jumper-wire|                                                              |
-+---------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 85%
 
+    +---------------------------------------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                                                |     
+    |                                                                                 |       
+    |2. GPIO Extension Board & Ribbon Cable x1                                        |       
+    |                                                                                 |                                                            
+    |3. Breadboard x1                                                                 |                                                                 
+    +-------------------------------------------------+-------------------------------+
+    | Rotary potentiometer x1                         |   Resistor 10kΩ x2            |
+    |                                                 |                               |
+    | |Rotary-potentiometer|                          |  |Resistor-10kΩ|              |                           
+    +-------------------------------------------------+-------------------------------+
+    | ADC module x1 (Only one)                        |   LED x1                      |
+    |                                                 |                               |
+    | |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |red-led|                   |                   
+    |                                                 |                               |  
+    +-------------------------------------------------+-------------------------------+
+    |   Jumper Wire M/M x17                                                           |
+    |                                                                                 | 
+    |      |jumper-wire|                                                              |
+    +---------------------------------------------------------------------------------+
+    
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
@@ -48,19 +52,19 @@ Component List
 Circuit with ADS7830
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-2|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-2|                                                                        |
-|                                                                                                |
-|    **Video:** https://youtu.be/YMEfe9IWU6I                                                     |
-+------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                 |
+|                                                                                     |
+|   |ADS7830-Schematic-2|                                                             |
++-------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:  |
+|                                                                                     |
+|   support@freenove.com                                                              |
+|                                                                                     |
+|   |ADS7830-fritizing-2|                                                             |
+|                                                                                     |
+|    **Video:** https://youtu.be/YMEfe9IWU6I                                          |
++-------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-2| image:: ../_static/imgs/ADS7830-Schematic-2.png
 .. |ADS7830-fritizing-2| image:: ../_static/imgs/ADS7830-fritizing-2.png
@@ -72,15 +76,15 @@ Circuit with ADS7830
 Circuit with PCF8591
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic-2|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection.                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing-2|                                                                        |
-+------------------------------------------------------------------------------------------------+
++---------------------------+
+|   Schematic diagram       |
+|                           |
+|   |PCF8591-Schematic-2|   |
++---------------------------+
+|   Hardware connection.    |
+|                           |
+|   |PCF8591-fritizing-2|   |
++---------------------------+
 
 .. |PCF8591-Schematic-2| image:: ../_static/imgs/PCF8591-Schematic-2.png
 .. |PCF8591-fritizing-2| image:: ../_static/imgs/PCF8591-fritizing-2.png
@@ -96,6 +100,7 @@ If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use cd command to enter 08.1.1_Softlight directory of Python code
@@ -104,7 +109,7 @@ First, observe the project result, and then learn about the code in detail.
 
     $ cd ~/Freenove_Kit/Code/Python_GPIOZero_Code/08.1.1_Softlight
 
-2.	Use the python command to execute the Python code “Softlight.py”.
+2.	Use the python command to execute the Python code "Softlight.py".
 
 .. code-block:: console
 
@@ -121,6 +126,7 @@ The following is the code:
 In the code, read ADC value of potentiometers and map it to the duty cycle of the PWM to control LED brightness.
 
 .. code-block:: python
+    :linenos: 
 
     value = adc.analogRead(0)      # read the ADC value of channel 0
     led.value = value / 255.0      # Mapping to PWM duty cycle

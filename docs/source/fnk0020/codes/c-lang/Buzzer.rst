@@ -9,27 +9,31 @@ Project Doorbell
 
 We will make a doorbell with this functionality: when the Push Button Switch is pressed the buzzer sounds and when the button is released, the buzzer stops. This is a momentary switch function.
 
-+-----------------------------------------------------------+
-|    Raspberry Pi (with 40 GPIO) x1                         |     
-|                                                           |       
-|    GPIO Extension Board & Ribbon Cable x1                 |       
-|                                                           |                                                            
-|    Breadboard x1                                          |                                                                 
-+---------------------------+-------------------------------+
-| NPN transistorx1 (S8050)  |   Active buzzer x1            |
-|                           |                               |
-|   |NPN-transistor|        |  |Active-buzzer|              |                   
-|                           |                               |          
-+----------------------+----+------------+------------------+
-|Push Button Switch x1 | Resistor 1kΩ x1 | Resistor 10kΩ x2 |
-|                      |                 |                  |
-| |button-small|       | |Resistor-1kΩ|  | |Resistor-10kΩ|  |
-|                      |                 |                  |
-+----------------------+-----------------+------------------+
-|   Jumper Wire                                             |
-|                                                           | 
-|      |jumper-wire|                                        |
-+-----------------------------------------------------------+
+.. table:: 
+    :align:  center
+    :width:  80%
+
+    +-----------------------------------------------------------+
+    |    Raspberry Pi (with 40 GPIO) x1                         |     
+    |                                                           |       
+    |    GPIO Extension Board & Ribbon Cable x1                 |       
+    |                                                           |                                                            
+    |    Breadboard x1                                          |                                                                 
+    +---------------------------+-------------------------------+
+    | NPN transistorx1 (S8050)  |   Active buzzer x1            |
+    |                           |                               |
+    |   |NPN-transistor|        |  |Active-buzzer|              |                   
+    |                           |                               |          
+    +----------------------+----+------------+------------------+
+    |Push Button Switch x1 | Resistor 1kΩ x1 | Resistor 10kΩ x2 |
+    |                      |                 |                  |
+    | |button-small|       | |Resistor-1kΩ|  | |Resistor-10kΩ|  |
+    |                      |                 |                  |
+    +----------------------+-----------------+------------------+
+    |   Jumper Wire                                             |
+    |                                                           | 
+    |      |jumper-wire|                                        |
+    +-----------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 60%
@@ -57,7 +61,7 @@ A buzzer is an audio component. They are widely used in electronic devices such 
     Active buzzer
 
 .. image:: ../_static/imgs/Active-buzzer-knowledge.png
-    :width: 50%
+    :width: 30%
     :align: center
 
 .. container:: centered
@@ -65,7 +69,7 @@ A buzzer is an audio component. They are widely used in electronic devices such 
     Passive buzzer
 
 .. image:: ../_static/imgs/Passive-buzzer-knowledge.png
-    :width: 50%
+    :width: 30%
     :align: center
 
 Active buzzers are easier to use. Generally, they only make a specific sound frequency. Passive buzzers require an external circuit to make sounds, but passive buzzers can be controlled to make sounds of various frequencies. The resonant frequency of the passive buzzer in this Kit is 2kHz, which means the passive buzzer is the loudest when its resonant frequency is 2kHz.
@@ -95,10 +99,10 @@ Transistors
 ----------------------------------------------------------------
 
 A transistor is required in this project due to the buzzer's current being so great that GPIO of RPi's output capability cannot meet the power requirement necessary for operation. A NPN transistor is needed here to amplify the current. 
-Transistors, full name: semiconductor transistor, is a semiconductor device that controls current think of a transistor as an electronic “amplifying or switching device”. Transistors can be used to amplify weak signals, or to work as a switch. Transistors have three electrodes (PINs): base (b), collector (c) and emitter (e). When there is current passing between "be" then "ce" will have a several-fold current increase (transistor magnification), in this configuration the transistor acts as an amplifier. When current produced by "be" exceeds a certain value, "ce" will limit the current output. at this point the transistor is working in its saturation region and acts like a switch. Transistors are available as two types as shown below: PNP and NPN,
+Transistors, full name: semiconductor transistor, is a semiconductor device that controls current think of a transistor as an electronic "amplifying or switching device". Transistors can be used to amplify weak signals, or to work as a switch. Transistors have three electrodes (PINs): base (b), collector (c) and emitter (e). When there is current passing between "be" then "ce" will have a several-fold current increase (transistor magnification), in this configuration the transistor acts as an amplifier. When current produced by "be" exceeds a certain value, "ce" will limit the current output. at this point the transistor is working in its saturation region and acts like a switch. Transistors are available as two types as shown below: PNP and NPN,
 
 .. image:: ../_static/imgs/PNP-transistor.png
-    :width: 50%
+    :width: 30%
     :align: center
 
 .. container:: centered
@@ -106,7 +110,7 @@ Transistors, full name: semiconductor transistor, is a semiconductor device that
     PNP transistor
 
 .. image:: ../_static/imgs/NPN-transistor-2.png
-    :width: 50%
+    :width: 30%
     :align: center
 
 .. container:: centered
@@ -178,7 +182,7 @@ First, observe the project result, and then learn about the code in detail.
     
     $ cd ~/Freenove_Kit/Code/C_Code/06.1.1_Doorbell
 
-2.	Use following command to compile “Doorbell.c” and generate executable file ``Doorbell.c``.
+2.	Use following command to compile "Doorbell.c" and generate executable file ``Doorbell.c``.
 
 .. code-block:: console    
     
@@ -222,6 +226,7 @@ C Code Alertor
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 06.2.1_Alertor directory of C code.
@@ -249,10 +254,12 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/06.2.1_Alertor/Alertor.c
     :linenos: 
     :language: C
+    :dedent:
 
 The code is the same to the active buzzer but the method is different. A passive buzzer requires PWM of a certain frequency, so you need to create a software PWM pin though softToneCreate (buzzeRPin). Here softTone is designed to generate square waves with variable frequency and a duty cycle fixed to 50%, which is a better choice for controlling the buzzer.
 
 .. code-block:: c
+    :linenos:
 
     softToneCreate(buzzeRPin);
 
@@ -262,10 +269,12 @@ In the while loop of the main function, when the push button switch is pressed t
     :linenos: 
     :language: C
     :lines: 15-24
+    :dedent:
 
 If you want to stop the buzzer, just set PWM frequency of the buzzer pin to 0.
 
 .. code-block:: c
+    :linenos:
 
     void stopAlertor(int pin){
         softToneWrite(pin,0);

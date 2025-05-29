@@ -14,28 +14,33 @@ A Thermistor is a type of Resistor whose resistance value is dependent on temper
 Component List
 ================================================================
 
-+---------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                              |     
-|                                                               |       
-|2. GPIO Extension Board & Ribbon Cable x1                      |       
-|                                                               |                                                            
-|3. Breadboard x1                                               |                                                                 
-+-------------------------------+-------------------------------+
-| Thermistor x1                 |   Resistor 10kΩ x3            |
-|                               |                               |
-| |Thermistor|                  |  |Resistor-10kΩ|              |                           
-+-------------------------------+-------------------------------+
-| ADC module x1                                                 |
-|                                                               |
-|   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |                   
-|                                                               |  
-+---------------------------------------------------------------+
-|   Jumper Wire M/M x14                                         |
-|                                                               | 
-|      |jumper-wire|                                            |
-+---------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +-------------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                      |     
+    |                                                       |       
+    |2. GPIO Extension Board & Ribbon Cable x1              |       
+    |                                                       |                                                            
+    |3. Breadboard x1                                       |                                                                 
+    +-------------------------------+-----------------------+
+    | Thermistor x1                 |   Resistor 10kΩ x3    |
+    |                               |                       |
+    | |Thermistor|                  |  |Resistor-10kΩ|      |                           
+    +-------------------------------+-----------------------+
+    | ADC module x1                                         |
+    |                                                       |
+    |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|     |                   
+    |                                                       |  
+    +-------------------------------------------------------+
+    |   Jumper Wire M/M x14                                 |
+    |                                                       | 
+    |      |jumper-wire|                                    |
+    +-------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
     :width: 10%
 .. |Thermistor| image:: ../_static/imgs/Thermistor.png
@@ -56,7 +61,9 @@ Thermistor is a temperature sensitive resistor. When it senses a change in tempe
 
 The relationship between resistance value and temperature of a thermistor is:
 
-.. math:: `Rt=R*EXP [B*(1/T2-1/T1)]`
+.. math::
+
+   \boldsymbol{ R_t = R \cdot \exp \left[ B \left( \frac{1}{T_2} - \frac{1}{T_1} \right) \right] }
 
 - Where:
     - Rt is the thermistor resistance under T2 temperature;
@@ -73,11 +80,12 @@ The circuit connection method of the Thermistor is similar to photoresistor, as 
         :align: center
 
 We can use the value measured by the ADC converter to obtain the resistance value of Thermistor, and then we can use the formula to obtain the temperature value.
+
 Therefore, the temperature formula can be derived as:
 
-.. container:: centered
-
-    :xx-large:`T2 = 1/(1/T1 + ln(Rt/R)/B)`
+.. math::
+    
+   \boldsymbol{ T_2 = \dfrac{1}{\left( \dfrac{1}{T_1} + \dfrac{\ln(R_t / R)}{B} \right)} }
 
 Circuit with ADS7830
 ================================================================
@@ -96,16 +104,10 @@ The circuit of this project is similar to the one in last chapter. The only diff
 |   |ADS7830-fritizing-6|                                                                        |
 |                                                                                                |
 |    **Thermistor has longer pins than the one shown in circuit.**                               |
-|                                                                                                |
-|    **Video:** https://youtu.be/-CvWcobXSFI                                                     |
 +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-5| image:: ../_static/imgs/ADS7830-Schematic-5.png
 .. |ADS7830-fritizing-6| image:: ../_static/imgs/ADS7830-fritizing-6.png
-
-.. raw:: html
-
-   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/-CvWcobXSFI" frameborder="0" allowfullscreen></iframe>
 
 Circuit with PCF8591
 ================================================================
@@ -131,7 +133,9 @@ The circuit of this project is similar to the one in the last chapter. The only 
 
 The formula for calculating temperature according to the circuit is shown below:
 
-.. math:: T2 = 1/(1/T1 + ln(Rt/R)/B)
+.. math::
+    
+   \boldsymbol{ T_2 = \dfrac{1}{\left( \dfrac{1}{T_1} + \dfrac{\ln(R_t / R)}{B} \right)} }
 
 Sketch
 ================================================================
@@ -170,3 +174,4 @@ In this project code, first read ADC, and then calculate the current temperature
     :linenos: 
     :language: java
     :lines: 23-28
+    :dedent:

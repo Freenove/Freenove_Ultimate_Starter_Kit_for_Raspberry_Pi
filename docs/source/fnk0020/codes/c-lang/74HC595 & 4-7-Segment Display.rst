@@ -9,21 +9,25 @@ Now, let's try to control more-than-one digit displays by using a Four 7-Segment
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x30                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 74HC595 x1                  | Resistor 1KΩ x4                  | Resistor 220Ω x8                 |
-|                             |                                  |                                  |
-|  |74HC595|                  |  |Resistor-1kΩ|                  |  |res-220R|                      |
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 4-Digit 7-Segment Display x1                    | PNP transistor x4                               |       
-|                                                 |                                                 |                                                            
-|  |4_7_Segment_Display|                          |  |PNP|                                          | 
-+-------------------------------------------------+-------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +-------------------------------------------------+---------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                 |     
+    |                                                 |   Jumper Wires x30              |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                 |       
+    |                                                 |     |jumper-wire|               |                                                            
+    |3. Breadboard x1                                 |                                 |                                                                 
+    +-----------------------------+-------------------+--------------+------------------+
+    | 74HC595 x1                  | Resistor 1KΩ x4                  | Resistor 220Ω x8 |
+    |                             |                                  |                  |
+    |  |74HC595|                  |  |Resistor-1kΩ|                  |  |res-220R|      |
+    +-----------------------------+-------------------+--------------+------------------+
+    | 4-Digit 7-Segment Display x1                    | PNP transistor x4               |       
+    |                                                 |                                 |                                                            
+    |  |4_7_Segment_Display|                          |  |PNP|                          | 
+    +-------------------------------------------------+---------------------------------+
 
 .. |74HC595| image:: ../_static/imgs/74HC595.png
     :width: 40%
@@ -34,7 +38,7 @@ Component List
 .. |Resistor-1kΩ| image:: ../_static/imgs/Resistor-1kΩ.png
     :width: 25%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 20%
+    :width: 15%
 
 Component knowledge
 ================================================================
@@ -144,7 +148,7 @@ Subfunction display (int dec) is used to make a 4-Digit 7-Segment Display a 4-bi
     :lines: 47-68
     :dedent:
 
-Subfunction timer (int sig) is the timer function, which will set an alarm to signal. This function will be executed once at set time intervals. Accompanied by the execution, “1” will be added as the variable counter and then reset the time of timer to 1s.
+Subfunction timer (int sig) is the timer function, which will set an alarm to signal. This function will be executed once at set time intervals. Accompanied by the execution, "1" will be added as the variable counter and then reset the time of timer to 1s.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/18.2.1_StopWatch/StopWatch.c
     :linenos: 
@@ -160,7 +164,7 @@ Finally, in the main function, configure the GPIO, and set the timer function.
     :lines: 84-93
     :dedent:
 
-In the while loop, make the digital display variable counter value “1”. The value will change in function timer (), so the content displayed by the 7-Segment Display will change accordingly.
+In the while loop, make the digital display variable counter value "1". The value will change in function timer (), so the content displayed by the 7-Segment Display will change accordingly.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/18.2.1_StopWatch/StopWatch.c
     :linenos: 

@@ -26,10 +26,11 @@ Component List
 +-----------------------------+----------------------------------+----------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |74HC595| image:: ../_static/imgs/74HC595.png
-    :width: 20%
+    :width: 50%
 .. |LED-BAR| image:: ../_static/imgs/LED-BAR.png
-    :width: 100%
+    :width: 60%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
     :width: 15%
 
@@ -43,37 +44,41 @@ A 74HC595 chip is used to convert serial data into parallel data. A 74HC595 chip
 
 The ports of the 74HC595 chip are described as follows:
 
-+----------+--------------+---------------------------------------------------------------------------+
-| Pin name | Pin number   |                    Description                                            |   
-+==========+==============+===========================================================================+
-| Q0-Q7    | 15, 1-7      | Parallel Data Output                                                      |                   
-+----------+--------------+---------------------------------------------------------------------------+                                                  
-| VCC      | 16           | The Positive Electrode of the Power Supply, the Voltage is 2~6V           |
-+----------+--------------+---------------------------------------------------------------------------+  
-| GND      | 8            | The Negative Electrode of Power Supply                                    |
-+----------+--------------+---------------------------------------------------------------------------+  
-| DS       | 14           | Serial Data Input                                                         |                                      
-+----------+--------------+---------------------------------------------------------------------------+
-|          |              | Enable Output,                                                            |
-|          |              |                                                                           |
-| OE       | 13           | When this pin is in high level, Q0-Q7 is in high resistance state         |  
-|          |              |                                                                           |  
-|          |              | When this pin is in low level, Q0-Q7 is in output mode                    |                                       
-+----------+--------------+---------------------------------------------------------------------------+                                                   
-|          |              | Parallel Update Output: when its electrical level is rising,              | 
-| ST_CP    | 12           |                                                                           |  
-|          |              | it will update the parallel data output.                                  |                                      
-+----------+--------------+---------------------------------------------------------------------------+
-|          |              | Serial Shift Clock: when its electrical level is rising,                  |
-| SH_CP    | 11           |                                                                           |
-|          |              | it will update the parallel data output.                                  | 
-+----------+--------------+---------------------------------------------------------------------------+
-|          |              | Remove Shift Register: When this pin is in low level,                     | 
-| MR       | 10           |                                                                           |
-|          |              | the content in shift register will be cleared.                            | 
-+----------+--------------+---------------------------------------------------------------------------+                                                  
-|  Q7      | 9            | Serial Data Output: it can be connected to more 74HC595 chips in series.  |                                   
-+----------+--------------+---------------------------------------------------------------------------+ 
+.. table::
+    :align: center
+    :class: freenove-ow
+
+    +----------+--------------+---------------------------------------------------------------------------+
+    | Pin name | Pin number   |                    Description                                            |   
+    +==========+==============+===========================================================================+
+    | Q0-Q7    | 15, 1-7      | Parallel Data Output                                                      |                   
+    +----------+--------------+---------------------------------------------------------------------------+                                                  
+    | VCC      | 16           | The Positive Electrode of the Power Supply, the Voltage is 2~6V           |
+    +----------+--------------+---------------------------------------------------------------------------+  
+    | GND      | 8            | The Negative Electrode of Power Supply                                    |
+    +----------+--------------+---------------------------------------------------------------------------+  
+    | DS       | 14           | Serial Data Input                                                         |                                      
+    +----------+--------------+---------------------------------------------------------------------------+
+    |          |              | Enable Output,                                                            |
+    |          |              |                                                                           |
+    | OE       | 13           | When this pin is in high level, Q0-Q7 is in high resistance state         |  
+    |          |              |                                                                           |  
+    |          |              | When this pin is in low level, Q0-Q7 is in output mode                    |                                       
+    +----------+--------------+---------------------------------------------------------------------------+                                                   
+    |          |              | Parallel Update Output: when its electrical level is rising,              | 
+    | ST_CP    | 12           |                                                                           |  
+    |          |              | it will update the parallel data output.                                  |                                      
+    +----------+--------------+---------------------------------------------------------------------------+
+    |          |              | Serial Shift Clock: when its electrical level is rising,                  |
+    | SH_CP    | 11           |                                                                           |
+    |          |              | it will update the parallel data output.                                  | 
+    +----------+--------------+---------------------------------------------------------------------------+
+    |          |              | Remove Shift Register: When this pin is in low level,                     | 
+    | MR       | 10           |                                                                           |
+    |          |              | the content in shift register will be cleared.                            | 
+    +----------+--------------+---------------------------------------------------------------------------+                                                  
+    |  Q7      | 9            | Serial Data Output: it can be connected to more 74HC595 chips in series.  |                                   
+    +----------+--------------+---------------------------------------------------------------------------+ 
 
 .. seealso::
 
@@ -231,9 +236,9 @@ The Raspberry Pi controls the LED bar to flow from left to right and then from r
 
 Shutdown HC595 instance resources.
 
-.. code-block:: c
+.. code-block:: java
     :linenos:
 
     finally {  
         ledbar.shutdown();  
-    }  
+    }

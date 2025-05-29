@@ -48,7 +48,7 @@ Component List
 .. |button-small| image:: ../_static/imgs/button-small.jpg
     :width: 30%
 
-Please Note: In the code “button” represents switch action.
+Please Note: In the code "button" represents switch action.
 
 Component knowledge
 ================================================================

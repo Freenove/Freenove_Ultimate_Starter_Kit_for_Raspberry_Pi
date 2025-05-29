@@ -11,19 +11,20 @@ Project 05.1_Squash0 and 5.2_Jump
 Components
 ================================================================
 
-+------------------------------------------------------+------------------------------------------------------+
-|    Raspberry Pi (with 40 GPIO) x1                    |   RGB LED x1                                         |
-|                                                      |                                                      |   
-|    GPIO Extension Board & Ribbon Cable x1            |       |button-small|                                 |
-|                                                      |                                                      |
-|    Breadboard x1                                     |                                                      |
-+------------------------------------------------------+------------------------------------------------------+
-|   Jumper Wire                                        |  Resistor 10kΩ x4                                    |
-|                                                      |                                                      |
-|   |jumper-wire|                                      |    |res-10k|                                         |        
-+------------------------------------------------------+------------------------------------------------------+
++------------------------------------------------------+---------------------------+
+|    Raspberry Pi (with 40 GPIO) x1                    |   RGB LED x1              |
+|                                                      |                           |   
+|    GPIO Extension Board & Ribbon Cable x1            |       |button-small|      |
+|                                                      |                           |
+|    Breadboard x1                                     |                           |
++------------------------------------------------------+---------------------------+
+|   Jumper Wire                                        |  Resistor 10kΩ x4         |
+|                                                      |                           |
+|   |jumper-wire|                                      |    |res-10k|              |        
++------------------------------------------------------+---------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |res-10k| image:: ../_static/imgs/res-10K-hori.png
 .. |button-small| image:: ../_static/imgs/button-small.jpg
     :width: 30%
@@ -81,7 +82,7 @@ There are two sprites moveing. So we need write two section of code. One is for 
 .. image:: ../_static/imgs/scratch_t_button_code1.png
     :align: center
 
-Pick random “range”. It can ne any one of 145~180, like: 145 150 180 146.
+Pick random "range". It can ne any one of 145~180, like: 145 150 180 146.
 
 Jump
 ----------------------------------------------------------------

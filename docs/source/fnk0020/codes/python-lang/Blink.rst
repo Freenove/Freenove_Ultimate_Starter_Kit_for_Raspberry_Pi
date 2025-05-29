@@ -2,7 +2,7 @@
 Chapter LED
 ################################################################
 
-This chapter is the Start Point in the journey to build and explore RPi electronic projects. We will start with simple “Blink” project.
+This chapter is the Start Point in the journey to build and explore RPi electronic projects. We will start with simple "Blink" project.
 
 Project Blink
 ****************************************************************
@@ -12,42 +12,47 @@ In this project, we will use RPi to control blinking a common LED.
 Component List
 ================================================================
 
-+-----------------------------------------------------------+
-|    Raspberry Pi                                           |     
-|                                                           |       
-|    (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
-|                                                           |                                                            
-|    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
-|                                                           | 
-|     |raspberrypi5|                                        | 
-+-----------------------------------------------------------+
-| Breadboard x1                                             |
-|                                                           |
-|  |breadborad-830|                                         |                         
-+--------------------------------------+--------------------+
-|  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
-|                                      |                    | 
-|   |extension-board|                  |  |res-220R|        |
-+--------------------------------------+-------+------------+
-| Jumper                                       | LED x1     | 
-|                                              |            | 
-| **Specific quantity depends on the circuit.**| |red-led|  | 
-|                                              |            | 
-| |jumper-wire|                                |            | 
-+----------------------------------------------+------------+
+.. table::
+    :align: center
+    :width: 80%
+
+    +-----------------------------------------------------------+
+    |    Raspberry Pi                                           |     
+    |                                                           |       
+    |    (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
+    |                                                           |                                                            
+    |    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
+    |                                                           | 
+    |     |raspberrypi5|                                        | 
+    +-----------------------------------------------------------+
+    | Breadboard x1                                             |
+    |                                                           |
+    |  |breadborad-830|                                         |                         
+    +--------------------------------------+--------------------+
+    |  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
+    |                                      |                    | 
+    |   |extension-board|                  |  |res-220R|        |
+    +--------------------------------------+-------+------------+
+    | Jumper                                       | LED x1     | 
+    |                                              |            | 
+    | **Specific quantity depends on the circuit.**| |red-led|  | 
+    |                                              |            | 
+    | |jumper-wire|                                |            | 
+    +----------------------------------------------+------------+
 
 .. |raspberrypi5| image:: ../_static/imgs/raspberrypi5.png
-    :width: 60%
+    :width: 40%
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 60%
 .. |extension-board| image:: ../_static/imgs/raspberrypi-extension-board.jpg
-    :width: 70%
+    :width: 50%
 .. |breadborad-830| image:: ../_static/imgs/breadborad-830.jpg
-    :width: 80%
+    :width: 60%
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 30%
+    :width: 40%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 20%
+    :width: 30%
+
 
 In the components list, 3B GPIO, Extension Shield Raspberry and Breadboard are necessary for each project. Later, they will be reference by text only (no images as in above).
 
@@ -64,11 +69,12 @@ BCM GPIO Numbering
 The Raspberry Pi CPU uses Broadcom (BCM) processing chips BCM2835, BCM2836 or BCM2837. GPIO pin numbers are assigned by the processing chip manufacturer and are how the computer recognizes each pin. The pin numbers themselves do not make sense or have meaning as they are only a form of identification. Since their numeric values and physical locations have no specific order, there is no way to remember them so you will need to have a printed reference or a reference board that fits over the pins.
 
 Each pin's functional assignment is defined in the image below:
+
     .. image:: ../_static/imgs/raspberrypi5-cc90.png
-        :height: 500
+        :width: 30%
 
     .. image:: ../_static/imgs/raspberrypi-pinout-bcm.png
-        :height: 500
+        :width: 30%
 
 .. seealso:: 
     For more details about pin definition of GPIO, please refer to `<http://pinout.xyz/>`_
@@ -80,6 +86,7 @@ Another way to refer to the pins is by simply counting across and down from pin 
 
 .. image:: ../_static/imgs/PHYSICAL-Numbering.png
     :height: 200
+    :align: center
 
 GPIO Numbering
 ==========================
@@ -136,7 +143,8 @@ The connection of Raspberry Pi T extension board is as below. **Don't reverse th
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/51Y_HjnUZLs" frameborder="0" allowfullscreen></iframe>
 
 .. image:: ../_static/imgs/blink-real.png
-    :width: 100%
+    :width: 70%
+    :align: center
 
 .. note:: 
     
@@ -171,7 +179,7 @@ Component knowledge
 LED
 ----------------------------------------------------------------
 
-An LED is a type of diode. All diodes only work if current is flowing in the correct direction and have two Poles. An LED will only work (light up) if the longer pin (+) of LED is connected to the positive output from a power source and the shorter pin is connected to the negative (-) output, which is also referred to as Ground (GND). This type of component is known as “Polar” (think One-Way Street).
+An LED is a type of diode. All diodes only work if current is flowing in the correct direction and have two Poles. An LED will only work (light up) if the longer pin (+) of LED is connected to the positive output from a power source and the shorter pin is connected to the negative (-) output, which is also referred to as Ground (GND). This type of component is known as "Polar" (think One-Way Street).
 
 All common 2 lead diodes are the same in this respect. Diodes work only if the voltage of its positive electrode is higher than its negative electrode and there is a narrow range of operating voltage for most all common diodes of 1.9 and 3.4V. If you use much more than 3.3V the LED will be damaged and burnt out.
 
@@ -196,7 +204,7 @@ On the left, we see a physical representation of a resistor, and the right is th
 
 The bands of color on a resistor is a shorthand code used to identify its resistance value. For more details of resistor color codes, please refer to the card in the kit package.
 
-With a fixed voltage, there will be less current output with greater resistance added to the circuit. The relationship between Current, Voltage and Resistance can be expressed by this formula: I=V/R known as Ohm’s Law where I = Current, V = Voltage and R = Resistance. Knowing the values of any two of these allows you to solve the value of the third.
+With a fixed voltage, there will be less current output with greater resistance added to the circuit. The relationship between Current, Voltage and Resistance can be expressed by this formula: I=V/R known as Ohm's Law where I = Current, V = Voltage and R = Resistance. Knowing the values of any two of these allows you to solve the value of the third.
 
 In the following diagram, the current through R1 is: 
 
@@ -266,7 +274,7 @@ The LED starts blinking.
 .. image:: ../_static/imgs/py_blink.png
     :align: center
 
-You can press “Ctrl+C” to end the program. The following is the program code:
+You can press "Ctrl+C" to end the program. The following is the program code:
 
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/01.1.1_Blink/Blink.py
     :linenos: 
@@ -326,7 +334,7 @@ For more information about the methods used by the LED class in the GPIO Zero li
 
 For more information about the methods used by the DigitalOutputDevice class in the GPIO Zero library,please refer to: https://gpiozero.readthedocs.io/en/stable/api_output.html#digitaloutputdevice 
 
-“import time” time is a module of python. https://docs.python.org/2/library/time.html?highlight=time%20time#module-time
+"import time" time is a module of python. https://docs.python.org/2/library/time.html?highlight=time%20time#module-time
 
 In Python, libraries and functions used in a script must be imported by name at the top of the file, with the exception of the functions built into Python by default.
 
@@ -364,19 +372,20 @@ This library uses Broadcom (BCM) pin numbering for the GPIO pins, as opposed to 
 numbering. Unlike in the RPi.GPIO library, this is not configurable. However, translation from other
 schemes can be used by providing prefixes to pin numbers (see below).
 
-Any pin marked “GPIO” in the diagram below can be used as a pin number. For example, if an LED
-was attached to “GPIO17” you would specify the pin number as 17 rather than 11:
+Any pin marked "GPIO" in the diagram below can be used as a pin number. For example, if an LED
+was attached to "GPIO17" you would specify the pin number as 17 rather than 11:
 
 .. image:: ../_static/imgs/pin_number.png
     :align: center
 
-If you wish to use physical (BOARD) numbering you can specify the pin number as “BOARD11”. If you
-are familiar with the wiringPi pin numbers (another physical layout) you could use “WPI0” instead.
+If you wish to use physical (BOARD) numbering you can specify the pin number as "BOARD11". If you
+are familiar with the wiringPi pin numbers (another physical layout) you could use "WPI0" instead.
 
-Finally, you can specify pins as “header:number”, e.g. “J8:11” meaning physical pin 11 on header J8
+Finally, you can specify pins as "header:number", e.g. "J8:11" meaning physical pin 11 on header J8
 (the GPIO header on modern Pis). Hence, the following lines are all equivalent:
 
 .. code-block:: python
+    :linenos:
 
     led = LED(17)
     led = LED("GPIO17")
@@ -563,6 +572,7 @@ In loop(), there is a while loop, which is an endless loop (a while loop). That 
 In gpiozero, at the end of your script, cleanup is run automatically, restoring your GPIO pins to the state they were found.To explicitly close a connection to a pin, you can manually call the close() method on a device object:
 
 .. code-block:: python
+    :linenos:
 
         led = LED(17)
         led.on()
@@ -586,8 +596,10 @@ https://www.amazon.com/freenove
 **FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/43_1.png
+    :width: 40%
 
 .. image:: ../_static/imgs/43_2.png
+    :width: 40%
 
 .. raw:: html
 
@@ -596,8 +608,10 @@ https://www.amazon.com/freenove
 **FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
 
 .. image:: ../_static/imgs/50_1.png
+    :width: 40%
 
 .. image:: ../_static/imgs/50_2.png
+    :width: 40%
 
 .. raw:: html
 

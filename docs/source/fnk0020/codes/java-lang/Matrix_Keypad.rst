@@ -13,21 +13,21 @@ In this project, we will attempt to get every key code on the Matrix Keypad to w
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |                                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |                                                 |                                                            
-|3. Breadboard x1                                 |   4x4 Matrix Keypad x1                          |                                                                 
-+-------------------------------------------------+                                                 |
-| Jumper wire                                     |     |Keypad|                                    |
-|                                                 |                                                 |
-|  |jumper-wire|                                  |                                                 |
-+-------------------------------------------------+                                                 |
-| Resistor 10kΩ x4                                |                                                 |
-|                                                 |                                                 |
-|  |Resistor-10kΩ|                                |                                                 |
-+-------------------------------------------------+-------------------------------------------------+
++--------------------------------------------+--------------------------+
+|1. Raspberry Pi (with 40 GPIO) x1           |                          |     
+|                                            |                          |       
+|2. GPIO Extension Board & Ribbon Cable x1   |                          |       
+|                                            |                          |                                                            
+|3. Breadboard x1                            |   4x4 Matrix Keypad x1   |                                                                 
++--------------------------------------------+                          |
+| Jumper wire                                |     |Keypad|             |
+|                                            |                          |
+|  |jumper-wire|                             |                          |
++--------------------------------------------+                          |
+| Resistor 10kΩ x4                           |                          |
+|                                            |                          |
+|  |Resistor-10kΩ|                           |                          |
++--------------------------------------------+--------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 50%
@@ -132,7 +132,7 @@ The following is program code:
 
 Re-encapsulate the GPIO functions using the Pi4J library, with these functions referring to the classic usage of Arduino. This is done to ensure compatibility with the later Key class and Keypad class, making matrix buttons easier to use. If you are interested in this code, please review it, as we will include detailed comments within the code.
 
-.. code-block:: c
+.. code-block:: java
     :linenos:
 
     class GPIO {

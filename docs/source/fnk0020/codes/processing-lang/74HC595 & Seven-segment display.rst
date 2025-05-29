@@ -12,25 +12,26 @@ We will use 74HC595 to control Seven-segment display (SSD) and make it display d
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x18                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 74HC595 x1                  | Bar Graph LED x1                 | Resistor 220Ω x8                 |
-|                             |                                  |                                  |
-|  |74HC595|                  |  |7_Segment_Display|             |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
++-------------------------------------------------+----------------------------------+
+|1. Raspberry Pi (with 40 GPIO) x1                |                                  |     
+|                                                 |   Jumper Wires x18               |       
+|2. GPIO Extension Board & Ribbon Cable x1        |                                  |       
+|                                                 |     |jumper-wire|                |                                                            
+|3. Breadboard x1                                 |                                  |                                                                 
++-----------------------------+-------------------+--------------+-------------------+
+| 74HC595 x1                  | Bar Graph LED x1                 | Resistor 220Ω x8  |
+|                             |                                  |                   |
+|  |74HC595|                  |  |7_Segment_Display|             |  |res-220R|       |
++-----------------------------+----------------------------------+-------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 80%
 .. |74HC595| image:: ../_static/imgs/74HC595.png
-    :width: 40%
+    :width: 50%
 .. |7_Segment_Display| image:: ../_static/imgs/7_Segment_Display.png
-    :width: 100%
+    :width: 60%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 20%
+    :width: 5%
 
 Component knowledge
 ================================================================
@@ -43,12 +44,12 @@ A 7-Segment Display is a digital electronic display device. There is a figure "8
 .. image:: ../_static/imgs/7_Segment_Display_1.png
     :align: center
 
-As we can see in the above circuit diagram, we can control the state of each LED separately. Also, by combining LEDs with different states of ON and OFF, we can display different characters (Numbers and Letters). For example, to display a “0”: we need to turn ON LED segments A, B, C, D, E and F, and turn OFF LED segments G and DP.
+As we can see in the above circuit diagram, we can control the state of each LED separately. Also, by combining LEDs with different states of ON and OFF, we can display different characters (Numbers and Letters). For example, to display a "0": we need to turn ON LED segments A, B, C, D, E and F, and turn OFF LED segments G and DP.
 
 .. image:: ../_static/imgs/7_Segment_Display_2.png
     :align: center
 
-In this project, we will use a 7-Segment Display with a Common Anode. Therefore, when there is an input low level to an LED segment the LED will turn ON. Defining segment “A” as the lowest level and segment “DP” as the highest level, from high to low would look like this: “DP”, “G”, “F”, “E”, “D”, “C”, “B”, “A”. Character "0" corresponds to the code: 1100 0000b=0xc0.
+In this project, we will use a 7-Segment Display with a Common Anode. Therefore, when there is an input low level to an LED segment the LED will turn ON. Defining segment "A" as the lowest level and segment "DP" as the highest level, from high to low would look like this: "DP", "G", "F", "E", "D", "C", "B", "A". Character "0" corresponds to the code: 1100 0000b=0xc0.
 
 Circuit
 ================================================================
@@ -76,13 +77,13 @@ Sketch SSD
 
 First observe the result after running the sketch, and then learn about the code in detail.
 
-1.	Use Processing to open the file Sketch_11_1_1_SSD.
+1. Use Processing to open the file Sketch_11_1_1_SSD.
 
 .. code-block:: console    
     
     $ processing ~/Freenove_Kit/Processing/Sketches/Sketch_11_1_1_SSD/Sketch_11_1_1_SSD.pde
 
-2.	Click on "RUN" to run the code.
+2. Click on "RUN" to run the code.
 
 After the program is executed, both Display Window and SSD in the circuit show the same number. And they have the same rate to display number "0-9" constantly. Dragging the progress bar can adjust the speed it increases.
 
@@ -103,6 +104,7 @@ The following is program code:
 The project code is similar to the previous chapter. The difference is that in this project the data output by 74HC595 is the fixed coding information of SSD. First, the character "0-9" is defined as code of common anode SSD.
 
 .. code-block:: c
+    :linenos:
 
     final int[] numCode = {0xc0, 0xf9, 0xa4, 0xb0, 0x99, 0x92, 0x82, 0xf8, 0x80, 0x90};
 
@@ -116,7 +118,8 @@ In the function draw(), the data is output at a certain speed. At the same time 
 
 By creating the font "mFont", we change the font of the characters on Display Window. The font ".vlw" file is created by clicking the "Create Font" on the menu bar, which is saved in the data folder of current Sketch.
 
-.. code-block:: c
+.. code-block:: java
+    :linenos:
 
     PFont mFont;
     ......

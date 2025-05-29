@@ -12,17 +12,21 @@ First, we need to learn how to make a Servo rotate.
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Servo x1                                        |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |Servo|                                        |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-|  Jumper Wires x3                                                                                  |
-|                                                                                                   |
-|  |jumper-wire|                                                                                    |                           
-+---------------------------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+
+    +-------------------------------------------------+---------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |               |     
+    |                                                 | Servo x1      |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |               |       
+    |                                                 |  |Servo|      |                                                            
+    |3. Breadboard x1                                 |               |                                                                 
+    +-------------------------------------------------+---------------+
+    |  Jumper Wires x3                                                |
+    |                                                                 |
+    |  |jumper-wire|                                                  |                           
+    +-----------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
@@ -35,7 +39,7 @@ Component knowledge
 Servo
 ----------------------------------------------------------------
 
-Servo is a compact package which consists of a DC Motor, a set of reduction gears to provide torque, a sensor and control circuit board. Most Servos only have a 180-degree range of motion via their “horn”. Servos can output higher torque than a simple DC Motor alone and they are widely used to control motion in model cars, model airplanes, robots, etc. Servos have three wire leads which usually terminate to a male or female 3-pin plug. Two leads are for electric power: Positive (2-VCC, Red wire), Negative (3-GND, Brown wire), and the signal line (1-Signal, Orange wire) as represented in the Servo provided in your Kit.
+Servo is a compact package which consists of a DC Motor, a set of reduction gears to provide torque, a sensor and control circuit board. Most Servos only have a 180-degree range of motion via their "horn". Servos can output higher torque than a simple DC Motor alone and they are widely used to control motion in model cars, model airplanes, robots, etc. Servos have three wire leads which usually terminate to a male or female 3-pin plug. Two leads are for electric power: Positive (2-VCC, Red wire), Negative (3-GND, Brown wire), and the signal line (1-Signal, Orange wire) as represented in the Servo provided in your Kit.
 
 .. image:: ../_static/imgs/Servo-1.png
     :align: center
@@ -44,15 +48,19 @@ We will use a 50Hz PWM signal with a duty cycle in a certain range to drive the 
 
 Note: the lasting time of high level corresponding to the servo angle is absolute instead of accumulating. For example, the high level time lasting for 0.5ms correspond to the 0 degree of the servo. If the high level time lasts for another 1ms, the servo rotates to 45 degrees.
 
-================  ================
- High level time  Servo angle
-================  ================
-0.5ms             0 degree
-1ms               45 degree
-1.5ms             90 degree
-2ms               135 degree
-2.5ms             180 degree
-================  ================
+.. table:: 
+    :align: center
+    :class: freenove-ow
+
+    ================  ================
+     High level time  Servo angle
+    ================  ================
+    0.5ms             0 degree
+    1ms               45 degree
+    1.5ms             90 degree
+    2ms               135 degree
+    2.5ms             180 degree
+    ================  ================
 
 When you change the Servo signal value, the Servo will rotate to the designated angle.
 
@@ -149,13 +157,15 @@ Set the PWM duty cycle according to the angle to control the servo to rotate to 
 
 Initialize the servo controller and store it in servoMap.
 
-.. code-block:: python
+.. code-block:: java
+    :linenos: 
 
     servoMap.put(SERVO_PIN, new Servo(SERVO_PIN));
 
 Get the servo controller from servoMap.
 
-.. code-block:: python
+.. code-block:: java
+    :linenos: 
 
     Servo servo = servoMap.get(SERVO_PIN);
 
@@ -163,7 +173,8 @@ The signal period of the servo is 20ms. According to the formula f=1/T, the freq
 
 To control the servo to rotate to 0 degrees, a 1.5ms high level is required. 1.5ms/20ms=0.075, so the duty cycle of the servo is 0.075. Similarly, if you want the servo to rotate to 180 degrees, a 2.5ms high level is required, 2.5ms/20ms=0.375. You only need to modify the duty cycle value to control the rotation of the servo.
 
-.. code-block:: python
+.. code-block:: java
+    :linenos:
 
     servo.setFrequency(50);
     servo.setDutyCycle(0.075);

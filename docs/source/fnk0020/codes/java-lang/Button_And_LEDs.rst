@@ -17,51 +17,54 @@ In the project, we will control the LED state through a Push Button Switch. When
 Component List
 ================================================================
 
-+-----------------------------------------------------------+
-|    Raspberry Pi                                           |     
-|                                                           |       
-|    (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
-|                                                           |                                                            
-|    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
-|                                                           | 
-|     |raspberrypi5|                                        | 
-+---------------------------+-------------------------------+
-| LED x1                    | Breadboard x1                 |
-|                           |                               |
-|  |red-led|                |  |breadborad-830|             |                         
-+---------------------------+----------+--------------------+
-|  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
-|                                      |                    | 
-|   |extension-board|                  |  |res-220R|        |
-+---------------------------+----------+--------------------+
-| Push Button Switch x1     | Resistor 10KΩ x2              |
-|                           |                               |
-|  |button-small|           |  |res-10k|                    |                         
-+---------------------------+-------------------------------+
-| Jumper (some)                                             |
-|                                                           |
-|  |jumper-wire|                                            |
-+-----------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +-------------------------------------------------------+
+    |Raspberry Pi                                           |     
+    |                                                       |       
+    |(Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
+    |                                                       |                                                            
+    |(Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
+    |                                                       | 
+    |     |raspberrypi5|                                    | 
+    +-----------------------------------+-------------------+
+    |LED x1                             |Breadboard x1      |
+    |                                   |                   |
+    |  |red-led|                        |  |breadborad-830| |                         
+    +-----------------------------------+-------------------+
+    |GPIO Extension Board & Ribbon Cable                    |
+    |                                                       | 
+    |   |extension-board|                                   |
+    +---------------------+----------------+----------------+
+    |Push Button          |Resistor 10KΩ x2|Resistor 220Ω x1|
+    |                     |                |                |
+    |Switch x1            |                |                |
+    |                     |                |                |
+    |  |button-small|     |  |res-10k|     ||res-220R|      |                         
+    +---------------------+----------------+----------------+
+    |Jumper (some)                                          |
+    |                                                       |
+    |  |jumper-wire|                                        |
+    +-------------------------------------------------------+
 
 .. |raspberrypi5| image:: ../_static/imgs/raspberrypi5.png
-    :width: 60%
+    :width: 40%
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 60%
 .. |extension-board| image:: ../_static/imgs/raspberrypi-extension-board.jpg
-    :width: 70%
+    :width: 40%
 .. |breadborad-830| image:: ../_static/imgs/breadborad-830.jpg
     :width: 80%
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 15%
+    :width: 40%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 10%
+    :height: 180px
 .. |res-10k| image:: ../_static/imgs/res-10K-hori.png
-    :width: 50%
 .. |button-small| image:: ../_static/imgs/button-small.jpg
-    :width: 30%
-    
 .. note:: 
-    Please Note: In the code “button” represents switch action.
+    Please Note: In the code "button" represents switch action.
 
 Component knowledge
 ================================================================

@@ -12,21 +12,26 @@ In this project, we use a number of LEDs to make a flowing water light.
 Component List
 ================================================================
 
-+--------------------------------------------------+---------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                 |                                                   |
-|                                                  | Jumper Wires x1                                   |
-|2. GPIO Extension Board & Ribbon Cable x1         |                                                   |
-|                                                  |  |jumper-wire|                                    |
-|3. Breadboard x1                                  |                                                   |
-+--------------------------------------------------+---------------------------------------------------+
-|  Bar Graph LED x1                                | Resistor 220Ω x10                                 |
-|                                                  |                                                   |
-|   |LED-BAR|                                      |  |res-220R-hori|                                  |
-+--------------------------------------------------+---------------------------------------------------+
+.. table:: 
+     :align: center
+     :width: 80%
+     :widths: 1 1
+
+     +--------------------------------------------------+---------------------------------------------------+
+     |1. Raspberry Pi (with 40 GPIO) x1                 |                                                   |
+     |                                                  | Jumper Wires x1                                   |
+     |2. GPIO Extension Board & Ribbon Cable x1         |                                                   |
+     |                                                  |  |jumper-wire|                                    |
+     |3. Breadboard x1                                  |                                                   |
+     +--------------------------------------------------+---------------------------------------------------+
+     |  Bar Graph LED x1                                | Resistor 220Ω x10                                 |
+     |                                                  |                                                   |
+     |   |LED-BAR|                                      |  |res-220R-hori|                                  |
+     +--------------------------------------------------+---------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |LED-BAR| image:: ../_static/imgs/LED-BAR.png
-    :width: 60%
+    :width: 70%
 .. |res-220R-hori| image:: ../_static/imgs/res-220R-hori.png
     :width: 60%
 
@@ -50,16 +55,17 @@ Schematic diagram
 .. image:: ../_static/imgs/LED-Graph-Sch.png                                                                
         :width: 100% 
                    
-
 Hardware connection. If you need any support, please feel free to contact us via: support@freenove.com
 
 .. image:: ../_static/imgs/LED-Graph-Fritzing.png                                                                
         :width: 100%   
 
-.. note:: 
+.. note::
+
         :red:`If LEDbar doesn't work, rotate LEDbar 180° to try. The label is random.`
 
 .. note:: 
+        
         **Youtube video:** https://www.youtube.com/watch?v=RqR6KdMQ8qI
 
 .. raw:: html
@@ -71,7 +77,7 @@ In this circuit, the cathodes of the LEDs are connected to the GPIO, which is di
 
 Code
 ================================================================
-This project is designed to make a flowing water lamp, which are these actions: First turn LED #1 ON, then turn it OFF. Then turn LED #2 ON, and then turn it OFF... and repeat the same to all 10 LEDs until the last LED is turns OFF. This process is repeated to achieve the “movements” of flowing water.
+This project is designed to make a flowing water lamp, which are these actions: First turn LED #1 ON, then turn it OFF. Then turn LED #2 ON, and then turn it OFF... and repeat the same to all 10 LEDs until the last LED is turns OFF. This process is repeated to achieve the "movements" of flowing water.
 
 C Code LightWater
 ----------------------------------------------------------------
@@ -94,7 +100,7 @@ First, observe the project result, and then learn about the code in detail.
 
        $ gcc LightWater.c -o LightWater -lwiringPi
 
-3. Then run the generated file “LightWater”.
+3. Then run the generated file "LightWater".
 
 .. code-block:: console
 
@@ -109,7 +115,7 @@ The following is the program code:
     :language: C
     :dedent:
 
-In the program, configure the GPIO0-GPIO9 to output mode. Then, in the endless “while” loop of main function, use two “for” loop to realize flowing water light from left to right and from right to left.
+In the program, configure the GPIO0-GPIO9 to output mode. Then, in the endless "while" loop of main function, use two "for" loop to realize flowing water light from left to right and from right to left.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/03.1.1_LightWater/LightWater.c
     :linenos: 

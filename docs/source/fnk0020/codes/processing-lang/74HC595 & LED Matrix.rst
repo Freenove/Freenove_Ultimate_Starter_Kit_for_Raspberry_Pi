@@ -12,21 +12,26 @@ In this project, we will use two 74HC595 IC chips to control a monochrome (one c
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x41                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 74HC595 x2                  | 8x8 LEDMatrix x1                 | Resistor 220Ω x8                 |
-|                             |                                  |                                  |
-|  |74HC595|                  |  |LED_Matrix|                    |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+
+    +-------------------------------------------------+----------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                  |     
+    |                                                 | Jumper Wires x41                 |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                  |       
+    |                                                 |   |jumper-wire|                  |                                                            
+    |3. Breadboard x1                                 |                                  |                                                                 
+    +-----------------------------+-------------------+------------+---------------------+
+    | 74HC595 x2                  | 8x8 LEDMatrix x1               | Resistor 220Ω x8    |
+    |                             |                                |                     |
+    |  |74HC595|                  |  |LED_Matrix|                  |  |res-220R|         |
+    +-----------------------------+--------------------------------+---------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 80%
 .. |74HC595| image:: ../_static/imgs/74HC595.png
-    :width: 40%
+    :width: 50%
 .. |7_Segment_Display| image:: ../_static/imgs/7_Segment_Display.png
     :width: 100%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
@@ -66,17 +71,17 @@ Circuit
 
 In circuit of this project, the power pin of the 74HC595 IC Chip is connected to 3.3V. It can also be connected to 5V to make LED Matrix brighter.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |LED_MAtrix_Sc|                                                                              |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |LED_MAtrix_Fr|                                                                              | 
-+------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                    |
+|                                                                                        |
+|   |LED_MAtrix_Sc|                                                                      |
++----------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:     |
+|                                                                                        |
+|   support@freenove.com                                                                 |
+|                                                                                        |
+|   |LED_MAtrix_Fr|                                                                      | 
++----------------------------------------------------------------------------------------+
 
 .. |LED_MAtrix_Sc| image:: ../_static/imgs/LED_MAtrix_Sc.png
 .. |LED_MAtrix_Fr| image:: ../_static/imgs/LED_MAtrix_Fr.png
@@ -124,6 +129,7 @@ In the code, first define the data of the smiling face and characters "0-F".
 Then create a new thread t. LEDMatrix scan display code will be executed in run() of this thread.
 
 .. code-block:: c
+    :linenos:
 
     myThread t = new myThread();    //create a new thread for ledmatrix
     ......

@@ -14,26 +14,30 @@ A Photoresistor is very sensitive to the amount of light present. We can take ad
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |   Resistor 220Ω x1            |     
-|                                                 |                               |       
-|2. GPIO Extension Board & Ribbon Cable x1        |   |res-220R|                  |       
-|                                                 |                               |                                                            
-|3. Breadboard x1                                 |                               |                                                                 
-+-------------------------------------------------+-------------------------------+
-| Photoresistor x1                                |   Resistor 10kΩ x3            |
-|                                                 |                               |
-| |Phtotresistor|                                 |  |Resistor-10kΩ|              |                           
-+-------------------------------------------------+-------------------------------+
-| ADC module x1 (Only one)                        |   LED x1                      |
-|                                                 |                               |
-| |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |red-led|                   |                   
-|                                                 |                               |  
-+-------------------------------------------------+-------------------------------+
-|   Jumper Wire M/M x15                                                           |
-|                                                                                 | 
-|      |jumper-wire|                                                              |
-+---------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +------------------------------------------------+--------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1               |   Resistor 220Ω x1 |     
+    |                                                |                    |       
+    |2. GPIO Extension Board & Ribbon Cable x1       |   |res-220R|       |       
+    |                                                |                    |                                                            
+    |3. Breadboard x1                                |                    |                                                                 
+    +------------------------------------------------+--------------------+
+    | Photoresistor x1                               |   Resistor 10kΩ x3 |
+    |                                                |                    |
+    | |Phtotresistor|                                |  |Resistor-10kΩ|   |                           
+    +------------------------------------------------+--------------------+
+    | ADC module x1 (Only one)                       |   LED x1           |
+    |                                                |                    |
+    | |ADC-module-1|   :xx-large:`or`  |ADC-module-2||   |red-led|        |                   
+    |                                                |                    |  
+    +------------------------------------------------+--------------------+
+    |   Jumper Wire M/M x15                                               |
+    |                                                                     | 
+    |      |jumper-wire|                                                  |
+    +---------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
         :width: 80%
@@ -46,7 +50,7 @@ Component List
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 .. |red-led| image:: ../_static/imgs/red-led.png
-        :width: 40%
+        :width: 30%
 
 Component knowledge
 ================================================================
@@ -57,7 +61,7 @@ Photoresistor
 A Photoresistor is simply a light sensitive resistor. It is an active component that decreases resistance with respect to receiving luminosity (light) on the component's light sensitive surface. A Photoresistor's resistance value will change in proportion to the ambient light detected. With this characteristic, we can use a Photoresistor to detect light intensity. The Photoresistor and its electronic symbol are as follows.
 
 .. image:: ../_static/imgs/Phtotresistor-2.png
-        :width: 50%
+        :width: 30%
         :align: center
 
 The circuit below is used to detect the change of a Photoresistor's resistance value:

@@ -12,17 +12,17 @@ In this project, we will read Acceleration and Gyroscope Data of the MPU6050 Sen
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x4                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |jumper-wire|                                  |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| MPU6050                                                                                           |     
-|                                                                                                   |       
-|  |MPU6050|                                                                                        |       
-+---------------------------------------------------------------------------------------------------+
++-------------------------------------------+------------------+
+|1. Raspberry Pi (with 40 GPIO) x1          |                  |     
+|                                           | Jumper Wires x4  |       
+|2. GPIO Extension Board & Ribbon Cable x1  |                  |       
+|                                           |  |jumper-wire|   |                                                            
+|3. Breadboard x1                           |                  |                                                                 
++-------------------------------------------+------------------+
+| MPU6050                                                      |     
+|                                                              |       
+|  |MPU6050|                                                   |       
++--------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |MPU6050| image:: ../_static/imgs/MPU6050.png
@@ -90,17 +90,17 @@ For more detail, please refer to the MPU6050 datasheet.
 
 MPU6050 is widely used to assist with balancing vehicles, robots and aircraft, mobile phones and other products which require stability to control stability and attitude or which need to sense same.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |MPU6050_Sc|                                                                                 |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |MPU6050_Fr|                                                                                 |
-+------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                 |
+|                                                                                     |
+|   |MPU6050_Sc|                                                                      |
++-------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:  |
+|                                                                                     |
+|   support@freenove.com                                                              | 
+|                                                                                     |
+|   |MPU6050_Fr|                                                                      |
++-------------------------------------------------------------------------------------+
 
 .. |MPU6050_Sc| image:: ../_static/imgs/MPU6050_Sc.png
 .. |MPU6050_Fr| image:: ../_static/imgs/MPU6050_Fr.png
@@ -153,12 +153,14 @@ The following is the program code:
 A module "MPU6050.py" is used in the code. The module includes a class used to operate MPU6050. When used, first initiate an object.
 
 .. code-block:: python
+    :linenos:
 
     mpu = MPU6050.MPU6050()
 
 In the setup function, the MPU6050 is initialized.
 
 .. code-block:: python
+    :linenos:
 
     def setup():
         mpu.dmp_initialize()
@@ -173,7 +175,7 @@ In the loop function, read the original data of MPU6050, display them and then c
 
 About class MPU6050:
 
-.. c:function:: Class MPU6050
+.. py:function:: Class MPU6050
 
     This is a class library used to operate MPU6050, which can directly read and set MPU6050. Here are some member functions:
     

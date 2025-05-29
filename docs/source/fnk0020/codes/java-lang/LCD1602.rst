@@ -36,20 +36,22 @@ In this project, we will use the I2C LCD1602 to display some static characters a
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x4                               |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| I2C LCD1602 Module x1                                                                             |
-|                                                                                                   |
-|  |LCD1602|                                                                                        |
-+---------------------------------------------------------------------------------------------------+
++--------------------------------------------+----------------------+
+|1. Raspberry Pi (with 40 GPIO) x1           |                      |     
+|                                            |   Jumper Wires x4    |       
+|2. GPIO Extension Board & Ribbon Cable x1   |                      |       
+|                                            |     |jumper-wire|    |                                                            
+|3. Breadboard x1                            |                      |                                                                 
++--------------------------------------------+----------------------+
+| I2C LCD1602 Module x1                                             |
+|                                                                   |
+|  |LCD1602|                                                        |
++-------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 60%
 .. |LCD1602| image:: ../_static/imgs/LCD1602.png
+    :width: 60%
 
 Circuit
 ================================================================
@@ -161,7 +163,7 @@ Use the pi4j library to repackage the I2C functions. These functions refer to th
 
 The following are the two classes we wrote for LCD1602 in reference to Arduino. Here, we do not go into too much detail here. If you are interested in this code, you can use Geany to view the code.
 
-.. code-block:: python
+.. code-block:: java
     :linenos:
 
     class PCF8574 {
@@ -180,7 +182,7 @@ Initialize PCF8574 and Freenove_LCD1602 classes, and assign the value to LCD.
     :lines: 376-378
     :dedent:
 
-At the first lin of LCD1602, print the character “Hello World”.
+At the first lin of LCD1602, print the character "Hello World".
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
     :linenos: 
@@ -188,7 +190,7 @@ At the first lin of LCD1602, print the character “Hello World”.
     :lines: 379-380
     :dedent:
 
-Print the character “Count” and the counts number at the second line every one second.
+Print the character "Count" and the counts number at the second line every one second.
 
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_18_I2CLCD1602/I2CLCD1602.java
     :linenos: 

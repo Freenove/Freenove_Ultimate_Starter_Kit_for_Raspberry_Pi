@@ -12,23 +12,28 @@ In this project, we use a number of LEDs to make a flowing water light.
 Component List
 ================================================================
 
-+--------------------------------------------------+---------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                 |                                                   |
-|                                                  | Jumper Wires                                      |
-|2. GPIO Extension Board & Ribbon Cable x1         |                                                   |
-|                                                  |  |jumper-wire|                                    |
-|3. Breadboard x1                                  |                                                   |
-+--------------------------------------------------+---------------------------------------------------+
-|  Bar Graph LED x1                                | Resistor 220Ω x10                                 |
-|                                                  |                                                   |
-|   |LED-BAR|                                      |  |res-220R-hori|                                  |
-+--------------------------------------------------+---------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+
+    +--------------------------------------------------+----------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                 |                      |
+    |                                                  | Jumper Wires         |
+    |2. GPIO Extension Board & Ribbon Cable x1         |                      |
+    |                                                  |  |jumper-wire|       |
+    |3. Breadboard x1                                  |                      |
+    +--------------------------------------------------+----------------------+
+    |  Bar Graph LED x1                                | Resistor 220Ω x10    |
+    |                                                  |                      |
+    |   |LED-BAR|                                      |  |res-220R-hori|     |
+    +--------------------------------------------------+----------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |LED-BAR| image:: ../_static/imgs/LED-BAR.png
     :width: 60%
 .. |res-220R-hori| image:: ../_static/imgs/res-220R-hori.png
-    :width: 60%
+    :width: 35%
 
 Component knowledge
 ================================================================

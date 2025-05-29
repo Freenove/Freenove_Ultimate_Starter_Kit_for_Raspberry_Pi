@@ -18,51 +18,54 @@ In the project, we will control the LED state through a Push Button Switch. When
 Component List
 ================================================================
 
-+-----------------------------------------------------------+
-|    Raspberry Pi                                           |     
-|                                                           |       
-|    (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
-|                                                           |                                                            
-|    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
-|                                                           | 
-|     |raspberrypi5|                                        | 
-+---------------------------+-------------------------------+
-| LED x1                    | Breadboard x1                 |
-|                           |                               |
-|  |red-led|                |  |breadborad-830|             |                         
-+---------------------------+----------+--------------------+
-|  GPIO Extension Board & Ribbon Cable | Resistor 220Ω x1   |
-|                                      |                    | 
-|   |extension-board|                  |  |res-220R|        |
-+---------------------------+----------+--------------------+
-| Push Button Switch x1     | Resistor 10KΩ x2              |
-|                           |                               |
-|  |button-small|           |  |res-10k|                    |                         
-+---------------------------+-------------------------------+
-| Jumper (some)                                             |
-|                                                           |
-|  |jumper-wire|                                            |
-+-----------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +-------------------------------------------------------+
+    |Raspberry Pi                                           |     
+    |                                                       |       
+    |(Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
+    |                                                       |                                                            
+    |(Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
+    |                                                       | 
+    |     |raspberrypi5|                                    | 
+    +-----------------------------------+-------------------+
+    |LED x1                             |Breadboard x1      |
+    |                                   |                   |
+    |  |red-led|                        |  |breadborad-830| |                         
+    +-----------------------------------+-------------------+
+    |GPIO Extension Board & Ribbon Cable                    |
+    |                                                       | 
+    |   |extension-board|                                   |
+    +---------------------+----------------+----------------+
+    |Push Button          |Resistor 10KΩ x2|Resistor 220Ω x1|
+    |                     |                |                |
+    |Switch x1            |                |                |
+    |                     |                |                |
+    |  |button-small|     |  |res-10k|     ||res-220R|      |                         
+    +---------------------+----------------+----------------+
+    |Jumper (some)                                          |
+    |                                                       |
+    |  |jumper-wire|                                        |
+    +-------------------------------------------------------+
 
 .. |raspberrypi5| image:: ../_static/imgs/raspberrypi5.png
-    :width: 60%
+    :width: 40%
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 60%
 .. |extension-board| image:: ../_static/imgs/raspberrypi-extension-board.jpg
-    :width: 70%
+    :width: 40%
 .. |breadborad-830| image:: ../_static/imgs/breadborad-830.jpg
     :width: 80%
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 15%
+    :width: 40%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 10%
+    :height: 180px
 .. |res-10k| image:: ../_static/imgs/res-10K-hori.png
-    :width: 50%
 .. |button-small| image:: ../_static/imgs/button-small.jpg
-    :width: 20%
-    
 .. note:: 
-    Please Note: In the code “button” represents switch action.
+    Please Note: In the code "button" represents switch action.
 
 Component knowledge
 ================================================================
@@ -149,7 +152,7 @@ First, observe the project result, then learn about the code in detail.
 
     $ sudo ./ButtonLED
 
-Later, the terminal window continues to print out the characters “led off…”. Press the button, then LED is turned on and then terminal window prints out the "led on…". 
+Later, the terminal window continues to print out the characters "led off…". Press the button, then LED is turned on and then terminal window prints out the "led on…". 
 Release the button, then LED is turned off and then terminal window prints out the "led off…". You can press ``Ctrl+C`` to terminate the program.
 
 The following is the program code:
@@ -166,7 +169,7 @@ In the circuit connection, LED and Button are connected with GPIO17 and GPIO18 r
     #define ledPin    0     //define the ledPin
     #define buttonPin 1     //define the buttonPin
 
-In the while loop of main function, use digitalRead(buttonPin) to determine the state of Button. When the button is pressed, the function returns low level, the result of “if” is true, and then turn on LED. Or, turn off LED
+In the while loop of main function, use digitalRead(buttonPin) to determine the state of Button. When the button is pressed, the function returns low level, the result of "if" is true, and then turn on LED. Or, turn off LED
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/02.1.1_ButtonLED/ButtonLED.c
     :linenos: 
@@ -179,7 +182,7 @@ Reference
 
 .. c:function:: int digitalRead (int pin);
 
-    This function returns the value read at the given pin. It will be “HIGH” or “LOW”(1 or 0) depending on the logic level at the pin.
+    This function returns the value read at the given pin. It will be "HIGH" or "LOW"(1 or 0) depending on the logic level at the pin.
 
 Project MINI Table Lamp
 **********************************
@@ -191,7 +194,7 @@ First, let us learn something about the push button switch.
 Debounce a Push Button Switch
 =================================
 
-When a Momentary Push Button Switch is pressed, it will not change from one state to another state immediately. Due to tiny mechanical vibrations, there will be a short period of continuous buffeting before it stabilizes in a new state too fast for Humans to detect but not for computer microcontrollers. The same is true when the push button switch is released. This unwanted phenomenon is known as “bounce”.
+When a Momentary Push Button Switch is pressed, it will not change from one state to another state immediately. Due to tiny mechanical vibrations, there will be a short period of continuous buffeting before it stabilizes in a new state too fast for Humans to detect but not for computer microcontrollers. The same is true when the push button switch is released. This unwanted phenomenon is known as "bounce".
 
 .. image:: ../_static/imgs/02_00.png
     :align: center
@@ -218,13 +221,13 @@ If you have any concerns, please contact us via: support@freenove.com
 
     $ cd ~/Freenove_Kit/Code/C_Code/02.2.1_Tablelamp
 
-2.	Use the following command to compile “Tablelamp.c” and generate executable file “Tablelamp”.
+2.	Use the following command to compile "Tablelamp.c" and generate executable file "Tablelamp".
 
 .. code-block:: console
 
     $ gcc Tablelamp.c -o Tablelamp -lwiringPi
 
-3.	Tablelamp: Then run the generated file “Tablelamp”.
+3.	Tablelamp: Then run the generated file "Tablelamp".
 
 .. code-block:: console
 
@@ -247,7 +250,7 @@ This code focuses on eliminating the buffeting (bounce) of the button switch. We
 
 .. py:function:: millis()
 
-    This returns a number representing the number of milliseconds since your program called one of the wiringPiSetup functions. It returns to an unsigned 32-bit number value after 49 days because it “wraps” around and restarts to value 0.
+    This returns a number representing the number of milliseconds since your program called one of the wiringPiSetup functions. It returns to an unsigned 32-bit number value after 49 days because it "wraps" around and restarts to value 0.
 
 Then according to the recorded time point, evaluate the duration of the button switch state change. If the duration exceeds captureTime (buffeting time) we have set, it indicates that the state of the button switch has changed. During that time, the while () is still detecting the state of the button switch, so if there is a change, the time point of change will be updated. Then the duration will be evaluated again until the duration is determined to be a stable state because it exceeds the time value we set. 
 

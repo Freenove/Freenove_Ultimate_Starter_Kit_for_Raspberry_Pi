@@ -12,24 +12,28 @@ In this project, we will attempt to get every key code on the Matrix Keypad to w
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |                                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |                                                 |                                                            
-|3. Breadboard x1                                 |   4x4 Matrix Keypad x1                          |                                                                 
-+-------------------------------------------------+                                                 |
-| Jumper wire                                     |     |Keypad|                                    |
-|                                                 |                                                 |
-|  |jumper-wire|                                  |                                                 |
-+-------------------------------------------------+                                                 |
-| Resistor 10kΩ x4                                |                                                 |
-|                                                 |                                                 |
-|  |Resistor-10kΩ|                                |                                                 |
-+-------------------------------------------------+-------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+
+    +-------------------------------------------+-------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1          |                         |     
+    |                                           |                         |       
+    |2. GPIO Extension Board & Ribbon Cable x1  |                         |       
+    |                                           |                         |                                                            
+    |3. Breadboard x1                           |   4x4 Matrix Keypad x1  |                                                                 
+    +-------------------------------------------+                         |
+    | Jumper wire                               |     |Keypad|            |
+    |                                           |                         |
+    |  |jumper-wire|                            |                         |
+    +-------------------------------------------+                         |
+    | Resistor 10kΩ x4                          |                         |
+    |                                           |                         |
+    |  |Resistor-10kΩ|                          |                         |
+    +-------------------------------------------+-------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 50%
+    :width: 60%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
     :width: 5%
 .. |Keypad| image:: ../_static/imgs/Keypad.png
@@ -120,7 +124,7 @@ The following is the program code:
     :language: C
     :dedent:
 
-In this project code, we use two custom library file **"Keypad.hpp"** and **"Key.hpp"**. They are located in the same directory with program files **"MatrixKeypad.cpp"**, **"Keypad.cpp"** and **"Key.cpp"**. The Library Keypad is “transplanted” from the Arduino Library Keypad. This library file provides a method to read the Matrix Keyboard’s input. By using this library, we can easily read the pressed keys of the Matrix Keyboard.
+In this project code, we use two custom library file **"Keypad.hpp"** and **"Key.hpp"**. They are located in the same directory with program files **"MatrixKeypad.cpp"**, **"Keypad.cpp"** and **"Key.cpp"**. The Library Keypad is "transplanted" from the Arduino Library Keypad. This library file provides a method to read the Matrix Keyboard's input. By using this library, we can easily read the pressed keys of the Matrix Keyboard.
 
 First, we define the information of the Matrix Keyboard used in this project: the number of rows and columns, code designation of each key and GPIO pin connected to each column and row. It is necessary to include the header file **"Keypad.hpp"**.
 
@@ -157,48 +161,56 @@ The Keypad Library used for the RPi is transplanted from the Arduino Keypad Libr
 .. c:function:: class Keypad
     
     .. code-block:: c
+        :linenos:
         
         Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols);
     
     Constructor, the parameters are: key code of keyboard, row pin, column pin, the number of rows, the number of columns.
 
     .. code-block:: c
+        :linenos:
 
         char getKey();
     
     Get the key code of the pressed key. If no key is pressed, the return value is NULL.
 
     .. code-block:: c
+        :linenos:
 
         void setDebounceTime(uint);
     
     Set the debounce time. And the default time is 10ms.
 
     .. code-block:: c
+        :linenos:
 
         void setHoldTime(uint);
     
     Set the time when the key holds stable state after pressed.
 
     .. code-block:: c
+        :linenos:
 
         bool isPressed(char keyChar);
     
     Judge whether the key with code "keyChar" is pressed.
 
     .. code-block:: c
+        :linenos:
 
         bool isPressed(char keyChar);
 
     Wait for a key to be pressed, and return key code of the pressed key.
 
     .. code-block:: c
+        :linenos:
         
         KeyState getState();
     
     Get state of the keys.
 
     .. code-block:: c
+        :linenos:
         
         bool keyStateChanged();
 

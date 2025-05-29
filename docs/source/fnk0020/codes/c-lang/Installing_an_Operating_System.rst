@@ -84,7 +84,7 @@ Optional Components
 Under normal circumstances, there are two ways to login to Raspberry Pi: 
 
 1) Using a stand-alone monitor. 
-2) Using a remote desktop or laptop computer monitor “sharing” the PC monitor with your RPi.
+2) Using a remote desktop or laptop computer monitor "sharing" the PC monitor with your RPi.
 
 Required Accessories for Monitor
 ================================================================
@@ -204,7 +204,7 @@ Choose system that you just downloaded in Use custom.
 
 .. image:: ../_static/imgs/install04.png
 
-Choose the SD card. Then click “Next”. 
+Choose the SD card. Then click "Next". 
 
 .. image:: ../_static/imgs/install05.png
 
@@ -281,7 +281,7 @@ The password is **raspberry** by default, case sensitive. You may need to type *
 
 You can also use the IP address to log in Pi. 
 
-Enter **router** client to **inquiry IP address** named **“raspberry pi”**. For example, I have inquired to **my RPi IP address, and it is “192.168.1.95".**
+Enter **router** client to **inquiry IP address** named **"raspberry pi"**. For example, I have inquired to **my RPi IP address, and it is "192.168.1.95".**
 
 Open the terminal and type following command.
 
@@ -308,7 +308,7 @@ Press `Win+R`. Enter `cmd`. Then use this command to check IP:
 .. image:: ../_static/imgs/install-system-19.png
 
 | Then 192.168.1.147 is my Raspberry Pi IP.
-| Or enter **router** client to **inquiry IP address** named **“raspberrypi”**. For example, I have inquired to **my RPi IP address, and it is “192.168.1.95".**
+| Or enter **router** client to **inquiry IP address** named **"raspberrypi"**. For example, I have inquired to **my RPi IP address, and it is "192.168.1.95".**
 
 .. code-block:: console
     

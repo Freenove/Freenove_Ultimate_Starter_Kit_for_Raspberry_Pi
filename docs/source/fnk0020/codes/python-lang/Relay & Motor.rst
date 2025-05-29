@@ -9,29 +9,29 @@ Project Relay & Motor
 
 In this project, we will use a Push Button Switch indirectly to control the DC Motor via a Relay.
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x11                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| Breadboard Power Module x1                      | 9V Battery (you provide) & 9V Battery Cable     |
-|                                                 |                                                 |
-|  |power-module|                                 |  |Battery_cable|                                |                           
-+-----------------------------+-------------------+--------------+----------------------------------+
-| Resistor 10kΩ x2            | Resistor 1kΩ x1                  | Resistor 220Ω x1                 |
-|                             |                                  |                                  |
-|  |Resistor-10kΩ|            |  |Resistor-1kΩ|                  |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
-| NPN-transistor x1           | Relay x1                         | Motor x1                         |
-|                             |                                  |                                  |
-|  |NPN-transistor|           |  |Relay|                         |  |DC_Motor_Module|               |
-+-----------------------------+----------------------------------+----------------------------------+
-| Push button x1              | LED x1                           | Diode x1                         |
-|                             |                                  |                                  |
-|  |button-small|             |  |red-led|                       |  |Diode|                         |
-+-----------------------------+----------------------------------+----------------------------------+
++----------------------------------------------+-------------------------------------------+
+|1. Raspberry Pi (with 40 GPIO) x1             |                                           |     
+|                                              |  Jumper Wires x11                         |       
+|2. GPIO Extension Board & Ribbon Cable x1     |                                           |       
+|                                              |    |jumper-wire|                          |                                                            
+|3. Breadboard x1                              |                                           |                                                                 
++----------------------------------------------+-------------------------------------------+
+| Breadboard Power Module x1                   |9V Battery (you provide) & 9V Battery Cable|
+|                                              |                                           |
+|  |power-module|                              | |Battery_cable|                           |                           
++-----------------------------+----------------+-------------+-----------------------------+
+| Resistor 10kΩ x2            | Resistor 1kΩ x1              | Resistor 220Ω x1            |
+|                             |                              |                             |
+|  |Resistor-10kΩ|            |  |Resistor-1kΩ|              |  |res-220R|                 |
++-----------------------------+------------------------------+-----------------------------+
+| NPN-transistor x1           | Relay x1                     | Motor x1                    |
+|                             |                              |                             |
+|  |NPN-transistor|           |  |Relay|                     |  |DC_Motor_Module|          |
++-----------------------------+------------------------------+-----------------------------+
+| Push button x1              | LED x1                       | Diode x1                    |
+|                             |                              |                             |
+|  |button-small|             |  |red-led|                   |  |Diode|                    |
++-----------------------------+------------------------------+-----------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
@@ -39,22 +39,22 @@ In this project, we will use a Push Button Switch indirectly to control the DC M
 .. |power-module| image:: ../_static/imgs/power-module.png
     :width: 60%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 18%
+    :width: 15%
 .. |Resistor-1kΩ| image:: ../_static/imgs/Resistor-1kΩ.png
-    :width: 25%
+    :width: 15%
 .. |Battery_cable| image:: ../_static/imgs/Battery_cable.png
 .. |NPN-transistor| image:: ../_static/imgs/NPN-transistor.png
     :width: 30%
 .. |button-small| image:: ../_static/imgs/button-small.jpg
-    :width: 30%
+    :width: 20%
 .. |DC_Motor_Module| image:: ../_static/imgs/DC_Motor_Module.png
     :width: 50%
 .. |Diode| image:: ../_static/imgs/Diode.png
-    :width: 15%
+    :width: 10%
 .. |Relay| image:: ../_static/imgs/Relay.png
     :width: 70%
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 50%
+    :width: 30%
 
 Component knowledge
 ================================================================
@@ -74,7 +74,7 @@ Pin 5 and pin 6 are internally connected to each other. When the coil pin3 and p
 Inductor
 ----------------------------------------------------------------
 
-The symbol of Inductance is “L” and the unit of inductance is the “Henry” (H). Here is an example of how this can be encountered: 1H=1000mH, 1mH=1000μH.
+The symbol of Inductance is "L" and the unit of inductance is the "Henry" (H). Here is an example of how this can be encountered: 1H=1000mH, 1mH=1000μH.
 
 An Inductor is a passive device that stores energy in its Magnetic Field and returns energy to the circuit whenever required. An Inductor is formed by a Cylindrical Core with many Turns of conducting wire (usually copper wire). Inductors will hinder the changing current passing through it. When the current passing through the Inductor increases, it will attempt to hinder the increasing movement of current; and when the current passing through the inductor decreases, it will attempt to hinder the decreasing movement of current. So the current passing through an Inductor is not transient.
 

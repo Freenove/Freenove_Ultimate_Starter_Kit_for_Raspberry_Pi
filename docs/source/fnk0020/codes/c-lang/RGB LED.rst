@@ -2,7 +2,6 @@
 Chapter RGB LED
 ##############################################################################
 
-
 In this chapter, we will learn how to control a RGB LED.
 
 An RGB LED has 3 LEDs integrated into one LED component. It can respectively emit Red, Green and Blue light. In order to do this, it requires 4 pins (this is also how you identify it). The long pin (1) is the common which is the Anode (+) or positive lead, the other 3 are the Cathodes (-) or negative leads. A rendering of a RGB LED and its electronic symbol are shown below. We can make RGB LED emit various colors of light and brightness by controlling the 3 Cathodes (2, 3 & 4) of the RGB LED
@@ -29,23 +28,29 @@ Project Multicolored LED
 
 Component List
 ================================================================
-    
-+------------------------------------------------------+------------------------------------------------------+
-|    Raspberry Pi (with 40 GPIO) x1                    |        RGB LED x1                                    |
-|                                                      |                                                      |   
-|    GPIO Extension Board & Ribbon Cable x1            |       |RGB-LED-real|                                 |
-|                                                      |                                                      |
-|    Breadboard x1                                     |                                                      |
-+------------------------------------------------------+------------------------------------------------------+
-|                    Jumper Wire                       |                   Resistor 220Ω x3                   |
-|                                                      |                                                      |
-|   |jumper-wire|                                      |    |res-220R-hori|                                   |        
-+------------------------------------------------------+------------------------------------------------------+
+
+.. table:: 
+    :align: center
+    :widths: 1 1
+    :width: 80%
+
+    +----------------------------------------+------------------+
+    |Raspberry Pi (with 40 GPIO) x1          |RGB LED x1        |
+    |                                        |                  |   
+    |GPIO Extension Board & Ribbon Cable x1  ||RGB-LED-real|    |
+    |                                        |                  |
+    |Breadboard x1                           |                  |
+    +----------------------------------------+------------------+
+    | Jumper Wire                            |Resistor 220Ω x3  |
+    |                                        |                  |
+    ||jumper-wire|                           ||res-220R-hori|   |        
+    +----------------------------------------+------------------+
 
 .. |RGB-LED-real| image:: ../_static/imgs/RGB-LED-real.png
-    :width: 30%
+    :width: 20%
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |res-220R-hori| image:: ../_static/imgs/res-220R-hori.png
+    :width: 60%
 
 Circuit
 ================================================================
@@ -73,7 +78,7 @@ Circuit
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/tbnX2AsX2y4" frameborder="0" allowfullscreen></iframe>
 
 .. note:: 
-    In this kit, the RGB led is Common anode. The voltage difference between LED will make it work. There is no visible GND. The GPIO ports can also receive current while in output mode.If circuit above doesn’t work, the RGB LED may be common cathode. Please try following wiring.There is no need to modify code for random color.
+    In this kit, the RGB led is Common anode. The voltage difference between LED will make it work. There is no visible GND. The GPIO ports can also receive current while in output mode.If circuit above doesn't work, the RGB LED may be common cathode. Please try following wiring.There is no need to modify code for random color.
 
 .. image:: ../_static/imgs/RGB-LED-fritizing2.png
     :width: 100%
@@ -135,7 +140,7 @@ Then create subfunction, and set the PWM of three pins.
     :language: C
     :lines: 23-28
 
-Finally, in the “while” loop of main function, get three random numbers and specify them as the PWM duty cycle, which will be assigned to the corresponding pins. So RGB LED can switch the color randomly all the time.
+Finally, in the "while" loop of main function, get three random numbers and specify them as the PWM duty cycle, which will be assigned to the corresponding pins. So RGB LED can switch the color randomly all the time.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/05.1.1_ColorfulLED/ColorfulLED.c
     :linenos: 

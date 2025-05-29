@@ -9,30 +9,34 @@ Project Motor
 
 In this project, we use L293D to drive the DC motor. We can click on the button in the Processing Display Window to control motor direction, and drag the progress bar to control the motor speed.
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x22                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| Breadboard Power Module x1                      | 9V Battery (you provide) & 9V Battery Cable     |
-|                                                 |                                                 |
-|  |power-module|                                 |  |Battery_cable|                                |                           
-+-------------------------------------------------+-------------------------------------------------+
-| L293D IC Chip                                   | DC Motor x1                                     |
-|                                                 |                                                 |
-| |L2983_chip|                                    |  |DC_Motor_Module|                              |
-+-------------------------------------------------+-------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+
+    +-------------------------------------------+----------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1          |                                              |     
+    |                                           |   Jumper Wires x22                           |       
+    |2. GPIO Extension Board & Ribbon Cable x1  |                                              |       
+    |                                           |     |jumper-wire|                            |                                                            
+    |3. Breadboard x1                           |                                              |                                                                 
+    +-------------------------------------------+----------------------------------------------+
+    | Breadboard Power Module x1                | 9V Battery (you provide) & 9V Battery Cable  |
+    |                                           |                                              |
+    |  |power-module|                           |  |Battery_cable|                             |                           
+    +-------------------------------------------+----------------------------------------------+
+    | L293D IC Chip                             | DC Motor x1                                  |
+    |                                           |                                              |
+    | |L2983_chip|                              |  |DC_Motor_Module|                           |
+    +-------------------------------------------+----------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |power-module| image:: ../_static/imgs/power-module.png
     :width: 60%
 .. |Battery_cable| image:: ../_static/imgs/Battery_cable.png
 .. |L2983_chip| image:: ../_static/imgs/L2983_chip.png
-    :width: 40%
+    :width: 30%
 .. |DC_Motor_Module| image:: ../_static/imgs/DC_Motor_Module.png
-    :width: 50%
+    :width: 30%
 
 Circuit
 ================================================================
@@ -41,15 +45,15 @@ Use caution: when connecting this circuit, because the DC Motor is a high-power 
 
 The logic circuit can be powered by the RPi's power or an external power supply, which should share a common ground with RPi.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |pr_MD_Sc|                                                                                   |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection.                                                                         |
-|                                                                                                |
-|   |pr_MD_Fr|                                                                                   |
-+------------------------------------------------------------------------------------------------+
++------------------------+
+| Schematic diagram      |
+|                        |
+| |pr_MD_Sc|             |
++------------------------+
+| Hardware connection.   |
+|                        |
+| |pr_MD_Fr|             |
++------------------------+
 
 .. |pr_MD_Sc| image:: ../_static/imgs/processing09_00.png
 .. |pr_MD_Fr| image:: ../_static/imgs/processing09_01.png
@@ -118,7 +122,7 @@ In the mousePressed(), determine whether the Button is clicked on. If the mouse 
     :lines: 66-76
     :dedent:
 
-Subfunction drawFan(float angle) is used to draw a three-blade fan, based on an initial angle. And the angle between each two blades is 120°. Changing the value of “angle” can make the fan rotate to different angles.
+Subfunction drawFan(float angle) is used to draw a three-blade fan, based on an initial angle. And the angle between each two blades is 120°. Changing the value of "angle" can make the fan rotate to different angles.
 
 .. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_09_1_1_Motor/Sketch_09_1_1_Motor.pde
     :linenos: 

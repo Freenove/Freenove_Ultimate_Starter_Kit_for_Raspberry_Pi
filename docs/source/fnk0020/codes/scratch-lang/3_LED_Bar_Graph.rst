@@ -10,23 +10,28 @@ Project LED_Bar_Graph
 Component List
 ================================================================
 
-+--------------------------------------------------+---------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                 |                                                   |
-|                                                  | Jumper Wires x1                                   |
-|2. GPIO Extension Board & Ribbon Cable x1         |                                                   |
-|                                                  |  |jumper-wire|                                    |
-|3. Breadboard x1                                  |                                                   |
-+--------------------------------------------------+---------------------------------------------------+
-|  Bar Graph LED x1                                | Resistor 220Ω x10                                 |
-|                                                  |                                                   |
-|   |LED-BAR|                                      |  |res-220R-hori|                                  |
-+--------------------------------------------------+---------------------------------------------------+
+.. table:: 
+     :align: center
+     :width: 80%
+     :widths: 1 1
+
+     +--------------------------------------------------+---------------------------------------------------+
+     |1. Raspberry Pi (with 40 GPIO) x1                 |                                                   |
+     |                                                  | Jumper Wires x1                                   |
+     |2. GPIO Extension Board & Ribbon Cable x1         |                                                   |
+     |                                                  |  |jumper-wire|                                    |
+     |3. Breadboard x1                                  |                                                   |
+     +--------------------------------------------------+---------------------------------------------------+
+     |  Bar Graph LED x1                                | Resistor 220Ω x10                                 |
+     |                                                  |                                                   |
+     |   |LED-BAR|                                      |  |res-220R-hori|                                  |
+     +--------------------------------------------------+---------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |LED-BAR| image:: ../_static/imgs/LED-BAR.png
-    :width: 60%
+    :width: 70%
 .. |res-220R-hori| image:: ../_static/imgs/res-220R-hori.png
-    :width: 60%
+    :width: 70%
 
 Component knowledge
 ================================================================
@@ -64,7 +69,7 @@ In this circuit, the cathodes of the LEDs are connected to the GPIO, which is di
 Code
 ================================================================
 
-This project is designed to make a flowing water lamp, which are these actions: First turn LED #1 ON, then turn it OFF. Then turn LED #2 ON, and then turn it OFF... and repeat the same to all 10 LEDs until the last LED is turns OFF. This process is repeated to achieve the “movements” of flowing water.
+This project is designed to make a flowing water lamp, which are these actions: First turn LED #1 ON, then turn it OFF. Then turn LED #2 ON, and then turn it OFF... and repeat the same to all 10 LEDs until the last LED is turns OFF. This process is repeated to achieve the "movements" of flowing water.
 
 LED_Bar_Graph
 ----------------------------------------------------------------

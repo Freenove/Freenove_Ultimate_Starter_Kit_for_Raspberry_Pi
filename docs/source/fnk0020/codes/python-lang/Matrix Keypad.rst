@@ -13,21 +13,25 @@ In this project, we will attempt to get every key code on the Matrix Keypad to w
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |                                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |                                                 |                                                            
-|3. Breadboard x1                                 |   4x4 Matrix Keypad x1                          |                                                                 
-+-------------------------------------------------+                                                 |
-| Jumper wire                                     |     |Keypad|                                    |
-|                                                 |                                                 |
-|  |jumper-wire|                                  |                                                 |
-+-------------------------------------------------+                                                 |
-| Resistor 10kΩ x4                                |                                                 |
-|                                                 |                                                 |
-|  |Resistor-10kΩ|                                |                                                 |
-+-------------------------------------------------+-------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +------------------------------------------+-------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1         |                         |     
+    |                                          |                         |       
+    |2. GPIO Extension Board & Ribbon Cable x1 |                         |       
+    |                                          |                         |                                                            
+    |3. Breadboard x1                          |   4x4 Matrix Keypad x1  |                                                                 
+    +------------------------------------------+                         |
+    | Jumper wire                              |     |Keypad|            |
+    |                                          |                         |
+    |  |jumper-wire|                           |                         |
+    +------------------------------------------+                         |
+    | Resistor 10kΩ x4                         |                         |
+    |                                          |                         |
+    |  |Resistor-10kΩ|                         |                         |
+    +------------------------------------------+-------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 50%
@@ -90,6 +94,7 @@ Python Code MatrixKeypad
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use cd command to enter 22.1.1_MatrixKeypad directory of Python code.
@@ -127,12 +132,14 @@ First, import module Keypad. Then define the information of the matrix keyboard 
 Then, based on the above information, initiates a Keypad class object to operate the Matrix Keyboard.
 
 .. code-block:: python
+    :linenos:
 
     keypad = Keypad.Keypad(keys,rowsPins,colsPins,ROWS,COLS)
 
 Set the debounce time to 50ms, and this value can be set based on the actual characteristics of the keyboard's flexibly, with a default time of 10ms.
 
 .. code-block:: python
+    :linenos:
 
     keypad.setDebounceTime(50)
 
@@ -144,9 +151,9 @@ In the "while" loop, use the function key= keypad.getKey () to read the keyboard
     :lines: 20-23
     :dedent:
 
-The Keypad Library used for the RPi is “transplanted” from the Arduino Keypad Library. The source files is written by language C++ and translated into Python can be obtained by visiting http://playground.arduino.cc/Code/Keypad. As for the “transplanted” function library, the function and method of all classes, functions, variables, etc. are the same as the original library. Partial contents of the Keypad Library are described below:
+The Keypad Library used for the RPi is "transplanted" from the Arduino Keypad Library. The source files is written by language C++ and translated into Python can be obtained by visiting http://playground.arduino.cc/Code/Keypad. As for the "transplanted" function library, the function and method of all classes, functions, variables, etc. are the same as the original library. Partial contents of the Keypad Library are described below:
 
-.. c:function:: class Keypad
+.. py:function:: class Keypad
 
     **def __init__** (self,usrKeyMap,row_Pins,col_Pins,num_Rows,num_Cols):
 

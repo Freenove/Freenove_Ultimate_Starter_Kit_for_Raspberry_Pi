@@ -12,23 +12,28 @@ Now let us learn how to use the 74HC595 IC Chip to make a flowing water light us
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x17                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 74HC595 x1                  | Bar Graph LED x1                 | Resistor 220Ω x8                 |
-|                             |                                  |                                  |
-|  |74HC595|                  |  |LED-BAR|                       |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+
+    +-------------------------------------------------+--------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                |     
+    |                                                 |Jumper Wires x17                |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                |       
+    |                                                 |  |jumper-wire|                 |                                                            
+    |3. Breadboard x1                                 |                                |                                                                 
+    +-----------------------------+-------------------+-----------+--------------------+
+    | 74HC595 x1                  | Bar Graph LED x1              | Resistor 220Ω x8   |
+    |                             |                               |                    |
+    |  |74HC595|                  |  |LED-BAR|                    |  |res-220R|        |
+    +-----------------------------+-------------------------------+--------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 80%
 .. |74HC595| image:: ../_static/imgs/74HC595.png
-    :width: 20%
+    :width: 40%
 .. |LED-BAR| image:: ../_static/imgs/LED-BAR.png
-    :width: 100%
+    :width: 360%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
     :width: 15%
 
@@ -42,38 +47,42 @@ A 74HC595 chip is used to convert serial data into parallel data. A 74HC595 chip
 
 The ports of the 74HC595 chip are described as follows:
 
-+----------+--------------+---------------------------------------------------------------------------+
-| Pin name | Pin number   |                    Description                                            |   
-+==========+==============+===========================================================================+
-| Q0-Q7    | 15, 1-7      | Parallel Data Output                                                      |                   
-+----------+--------------+---------------------------------------------------------------------------+                                                  
-| VCC      | 16           | The Positive Electrode of the Power Supply, the Voltage is 2~6V           |
-+----------+--------------+---------------------------------------------------------------------------+  
-| GND      | 8            | The Negative Electrode of Power Supply                                    |
-+----------+--------------+---------------------------------------------------------------------------+  
-| DS       | 14           | Serial Data Input                                                         |                                      
-+----------+--------------+---------------------------------------------------------------------------+
-|          |              | Enable Output,                                                            |
-|          |              |                                                                           |
-| OE       | 13           | When this pin is in high level, Q0-Q7 is in high resistance state         |  
-|          |              |                                                                           |  
-|          |              | When this pin is in low level, Q0-Q7 is in output mode                    |                                       
-+----------+--------------+---------------------------------------------------------------------------+                                                   
-|          |              | Parallel Update Output: when its electrical level is rising,              | 
-| ST_CP    | 12           |                                                                           |  
-|          |              | it will update the parallel data output.                                  |                                      
-+----------+--------------+---------------------------------------------------------------------------+
-|          |              | Serial Shift Clock: when its electrical level is rising,                  |
-| SH_CP    | 11           |                                                                           |
-|          |              | it will update the parallel data output.                                  | 
-+----------+--------------+---------------------------------------------------------------------------+
-|          |              | Remove Shift Register: When this pin is in low level,                     | 
-| MR       | 10           |                                                                           |
-|          |              | the content in shift register will be cleared.                            | 
-+----------+--------------+---------------------------------------------------------------------------+                                                  
-|  Q7      | 9            | Serial Data Output: it can be connected to more 74HC595 chips in series.  |                                   
-+----------+--------------+---------------------------------------------------------------------------+ 
+.. table:: 
+    :align: center
+    :class: freenove-ow
 
+    +----------+--------------+-------------------------------------------------------------------------+
+    | Pin name | Pin number   |                    Description                                          |   
+    +==========+==============+=========================================================================+
+    | Q0-Q7    | 15, 1-7      | Parallel Data Output                                                    |                   
+    +----------+--------------+-------------------------------------------------------------------------+                                                  
+    | VCC      | 16           | The Positive Electrode of the Power Supply, the Voltage is 2~6V         |
+    +----------+--------------+-------------------------------------------------------------------------+  
+    | GND      | 8            | The Negative Electrode of Power Supply                                  |
+    +----------+--------------+-------------------------------------------------------------------------+  
+    | DS       | 14           | Serial Data Input                                                       |                                      
+    +----------+--------------+-------------------------------------------------------------------------+
+    |          |              | Enable Output,                                                          |
+    |          |              |                                                                         |
+    | OE       | 13           | When this pin is in high level, Q0-Q7 is in high resistance state       |  
+    |          |              |                                                                         |  
+    |          |              | When this pin is in low level, Q0-Q7 is in output mode                  |                                       
+    +----------+--------------+-------------------------------------------------------------------------+                                                   
+    |          |              | Parallel Update Output: when its electrical level is rising,            | 
+    | ST_CP    | 12           |                                                                         |  
+    |          |              | it will update the parallel data output.                                |                                      
+    +----------+--------------+-------------------------------------------------------------------------+
+    |          |              | Serial Shift Clock: when its electrical level is rising,                |
+    | SH_CP    | 11           |                                                                         |
+    |          |              | it will update the parallel data output.                                | 
+    +----------+--------------+-------------------------------------------------------------------------+
+    |          |              | Remove Shift Register: When this pin is in low level,                   | 
+    | MR       | 10           |                                                                         |
+    |          |              | the content in shift register will be cleared.                          | 
+    +----------+--------------+-------------------------------------------------------------------------+                                                  
+    |  Q7      | 9            | Serial Data Output: it can be connected to more 74HC595 chips in series.|                                   
+    +----------+--------------+-------------------------------------------------------------------------+ 
+    
 .. seealso::
 
     For more details, please refer to the datasheet on the 74HC595 chip.
@@ -81,21 +90,20 @@ The ports of the 74HC595 chip are described as follows:
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |74HC595-Sc|                                                                                 |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |74HC595-Fr|                                                                                 | 
-+------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                 |
+|                                                                                     |
+|   |74HC595-Sc|                                                                      |
++-------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:  |
+|                                                                                     |
+|   support@freenove.com                                                              |
+|                                                                                     |
+|   |74HC595-Fr|                                                                      | 
++-------------------------------------------------------------------------------------+
 
 .. |74HC595-Sc| image:: ../_static/imgs/74HC595-Sc.png
 .. |74HC595-Fr| image:: ../_static/imgs/74HC595-Fr.png
-
 
 Sketch
 ================================================================
@@ -153,7 +161,7 @@ In the function draw(), set the background, text, and other information and draw
     :lines: 26-29
     :dedent:
 
-Then according to the speed of followlight, calculate the data “leds” for 74HC595, and write it to 74HC595, then LEDBar Graph is turned on.
+Then according to the speed of followlight, calculate the data "leds" for 74HC595, and write it to 74HC595, then LEDBar Graph is turned on.
 
 .. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_10_1_1_LightWater/Sketch_10_1_1_LightWater.pde
     :linenos: 
@@ -177,8 +185,8 @@ About class IC74HC595:
 
     **public IC74HC595(int dPin, int lPin, int cPin)** 
 
-    Constructor. The parameters are for the GPIO pins connected to 74HC595.
+        Constructor. The parameters are for the GPIO pins connected to 74HC595.
     
     **public void write(int order,int value)**
 
-    Used to write data to 74HC595, and the 74HC595 output port will output these data immediately.
+        Used to write data to 74HC595, and the 74HC595 output port will output these data immediately.

@@ -12,21 +12,26 @@ Now, let's create and experience our own game.
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x12                                |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |jumper-wire|                                  |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| Push button x4                                  | Resistor 10kΩ x4                                |
-|                                                 |                                                 |
-|  |button-small|                                 |  |Resistor-10kΩ|                                |
-+-------------------------------------------------+-------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +-------------------------------------------------+-------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                         |     
+    |                                                 | Jumper Wires x12        |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                         |       
+    |                                                 |  |jumper-wire|          |                                                            
+    |3. Breadboard x1                                 |                         |                                                                 
+    +-------------------------------------------------+-------------------------+
+    | Push button x4                                  | Resistor 10kΩ x4        |
+    |                                                 |                         |
+    |  |button-small|                                 |  |Resistor-10kΩ|        |
+    +-------------------------------------------------+-------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 10%
+    :width: 5%
 .. |button-small| image:: ../_static/imgs/button-small.jpg
     :width: 30%
 

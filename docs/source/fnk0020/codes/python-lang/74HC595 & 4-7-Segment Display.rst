@@ -31,6 +31,10 @@ Component List
 .. |PNP| image:: ../_static/imgs/PNP.png
 .. |Resistor-1kΩ| image:: ../_static/imgs/Resistor-1kΩ.png
     :width: 25%
+.. |74HC595| image:: ../_static/imgs/74HC595.png
+    :width: 40%
+.. |res-220R| image:: ../_static/imgs/res-220R.png
+    :width: 15%
 
 Component knowledge
 ================================================================
@@ -122,6 +126,7 @@ Subfunction **selectDigit** (digit) function is used to open one of the 7-segmen
 Subfunction **outData** (data) is used to make the 74HC595 output an 8-bit data immediately.
 
 .. code-block:: python
+    :linenos:
 
     def outData(data):      # function used to output data for 74HC595
         latchPin.off()
@@ -149,6 +154,7 @@ Subfunction **setup()** , configure all input output modes for the GPIO pin used
 Finally, in loop function, make the digital tube display variable counter value in the while loop. The value will change in function **timer** (), so the content displayed by 7-segment display will change accordingly.
 
 .. code-block:: python
+    :linenos:
 
     def loop():
         global t
@@ -161,6 +167,7 @@ Finally, in loop function, make the digital tube display variable counter value 
 After the program is executed, press "Ctrl+C", then subfunction destroy() will be executed, and GPIO resources and timers will be released in this subfunction.
 
 .. code-block:: python
+    :linenos:
 
     def destroy():  
         global t

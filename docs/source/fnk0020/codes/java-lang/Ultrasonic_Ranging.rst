@@ -12,27 +12,28 @@ In this project, we use ultrasonic ranging module to measure distance, and print
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x4                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |jumper-wire|                                  |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| Ultrasonic Module x1                            | Resistor 1kΩ x3                                 |     
-|                                                 |                                                 |       
-|  |Ultrasonic_Module|                            |  |res-1K-hori|                                  |       
-+-------------------------------------------------+-------------------------------------------------+
++-------------------------------------------+----------------------+
+|1. Raspberry Pi (with 40 GPIO) x1          |                      |     
+|                                           | Jumper Wires x4      |       
+|2. GPIO Extension Board & Ribbon Cable x1  |                      |       
+|                                           |  |jumper-wire|       |                                                            
+|3. Breadboard x1                           |                      |                                                                 
++-------------------------------------------+----------------------+
+| Ultrasonic Module x1                      | Resistor 1kΩ x3      |     
+|                                           |                      |       
+|  |Ultrasonic_Module|                      |  |res-1K-hori|       |       
++-------------------------------------------+----------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 70%
 .. |Ultrasonic_Module| image:: ../_static/imgs/Ultrasonic_Module.png
 .. |res-1K-hori| image:: ../_static/imgs/res-1K-hori.png
-    :width: 60%
+    :width: 35%
 
 Component Knowledge
 ================================================================
 
-The Ultrasonic Ranging Module uses the principle that ultrasonic waves will be reflected when they encounter any obstacles. This is possible by counting the time interval between when the ultrasonic wave is transmitted to when the ultrasonic wave reflects back after encountering an obstacle. Time interval counting will end after an ultrasonic wave is received, and the time difference (delta) is the total time of the ultrasonic wave’s journey from being transmitted to being received. Because the speed of sound in air is a constant, and is about v=340m/s, we can calculate the distance between the Ultrasonic Ranging Module and the obstacle: s=vt/2.
+The Ultrasonic Ranging Module uses the principle that ultrasonic waves will be reflected when they encounter any obstacles. This is possible by counting the time interval between when the ultrasonic wave is transmitted to when the ultrasonic wave reflects back after encountering an obstacle. Time interval counting will end after an ultrasonic wave is received, and the time difference (delta) is the total time of the ultrasonic wave's journey from being transmitted to being received. Because the speed of sound in air is a constant, and is about v=340m/s, we can calculate the distance between the Ultrasonic Ranging Module and the obstacle: s=vt/2.
 
 .. image:: ../_static/imgs/Ultrasonic_knowledge.png
     :align: center
@@ -90,17 +91,17 @@ Circuit
 
 Note that the voltage of ultrasonic module is 5V in this circuit.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Ultrasonic_Sc|                                                                              |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |Ultrasonic_Fr|                                                                              |
-+------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                  |
+|                                                                                      |
+|   |Ultrasonic_Sc|                                                                    |
++--------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:   |
+|                                                                                      |
+|   support@freenove.com                                                               | 
+|                                                                                      |
+|   |Ultrasonic_Fr|                                                                    |
++--------------------------------------------------------------------------------------+
 
 .. |Ultrasonic_Sc| image:: ../_static/imgs/Ultrasonic_Sc.png
 .. |Ultrasonic_Fr| image:: ../_static/imgs/Ultrasonic_Fr.png
@@ -163,7 +164,7 @@ The following is program code:
 
 Re-encapsulate the GPIO functions using the Pi4J library, with these functions emulating the classic usage patterns of Arduino. This is done to ensure compatibility with the upcoming Ultrasonic class, allowing the Raspberry Pi to easily obtain distance data from ultrasonic modules. If you are interested in this code, please review it, as we will include detailed comments within the code.
 
-.. code-block:: c
+.. code-block:: java
 
     class GPIO {  
       ... ...
@@ -196,7 +197,7 @@ At the end of the code, release the resources.
 .. code-block:: c
     :linenos:
 
-     finally {  
+    finally {  
         if (GPIO.pi4j != null) {  
             GPIO.pi4j.shutdown();  
         }  

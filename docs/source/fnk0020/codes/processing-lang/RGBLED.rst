@@ -11,21 +11,27 @@ This project will make a Multicolored LED, namely, use Processing to control the
 
 Component List
 ================================================================
-    
-+--------------------------------------------+--------------------+
-|    Raspberry Pi (with 40 GPIO) x1          | RGB LED x1         |
-|                                            |                    |   
-|    GPIO Extension Board & Ribbon Cable x1  |  |RGB-LED-real|    |
-|                                            |                    |
-|    Breadboard x1                           |                    |
-+--------------------------------------------+--------------------+
-|  Jumper Wire                               | Resistor 220Ω x3   |
-|                                            |                    |
-|   |jumper-wire|                            |  |res-220R-hori|   |        
-+--------------------------------------------+--------------------+
+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +---------------------------------------+--------------------+
+    |Raspberry Pi (with 40 GPIO) x1         | RGB LED x1         |
+    |                                       |                    |   
+    |GPIO Extension Board & Ribbon Cable x1 |  |RGB-LED-real|    |
+    |                                       |                    |
+    |Breadboard x1                          |                    |
+    +---------------------------------------+--------------------+
+    |Jumper Wire                            | Resistor 220Ω x3   |
+    |                                       |                    |
+    | |jumper-wire|                         |  |res-220R-hori|   |        
+    +---------------------------------------+--------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 80%
 .. |res-220R-hori| image:: ../_static/imgs/res-220R-hori.png
+    :width: 80%
 .. |RGB-LED-real| image:: ../_static/imgs/RGB-LED-real.png
     :width: 40%
 

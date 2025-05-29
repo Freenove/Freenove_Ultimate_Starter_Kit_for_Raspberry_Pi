@@ -13,27 +13,32 @@ In this project, we use ultrasonic ranging module to measure distance, and print
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x4                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |jumper-wire|                                  |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| Ultrasonic Module x1                            | Resistor 1kΩ x3                                 |     
-|                                                 |                                                 |       
-|  |Ultrasonic_Module|                            |  |res-1K-hori|                                  |       
-+-------------------------------------------------+-------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
 
+    +------------------------------------------+------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1         |                  |     
+    |                                          | Jumper Wires x4  |       
+    |2. GPIO Extension Board & Ribbon Cable x1 |                  |       
+    |                                          |  |jumper-wire|   |                                                            
+    |3. Breadboard x1                          |                  |                                                                 
+    +------------------------------------------+------------------+
+    | Ultrasonic Module x1                     | Resistor 1kΩ x3  |     
+    |                                          |                  |       
+    |  |Ultrasonic_Module|                     |  |res-1K-hori|   |       
+    +------------------------------------------+------------------+
+    
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 80%
 .. |Ultrasonic_Module| image:: ../_static/imgs/Ultrasonic_Module.png
 .. |res-1K-hori| image:: ../_static/imgs/res-1K-hori.png
-      :width: 65%
+    :width: 50%
 
 Component Knowledge
 ================================================================
 
-The Ultrasonic Ranging Module uses the principle that ultrasonic waves will be reflected when they encounter any obstacles. This is possible by counting the time interval between when the ultrasonic wave is transmitted to when the ultrasonic wave reflects back after encountering an obstacle. Time interval counting will end after an ultrasonic wave is received, and the time difference (delta) is the total time of the ultrasonic wave’s journey from being transmitted to being received. Because the speed of sound in air is a constant, and is about v=340m/s, we can calculate the distance between the Ultrasonic Ranging Module and the obstacle: s=vt/2.
+The Ultrasonic Ranging Module uses the principle that ultrasonic waves will be reflected when they encounter any obstacles. This is possible by counting the time interval between when the ultrasonic wave is transmitted to when the ultrasonic wave reflects back after encountering an obstacle. Time interval counting will end after an ultrasonic wave is received, and the time difference (delta) is the total time of the ultrasonic wave's journey from being transmitted to being received. Because the speed of sound in air is a constant, and is about v=340m/s, we can calculate the distance between the Ultrasonic Ranging Module and the obstacle: s=vt/2.
 
 .. image:: ../_static/imgs/Ultrasonic_knowledge.png
     :align: center
@@ -51,7 +56,6 @@ The Ultrasonic Ranging Module integrates a both an ultrasonic transmitter and a 
    * - |Ultrasonic_Module|
      - |HC_SR04|
 
-.. |Ultrasonic_Module| image:: ../_static/imgs/Ultrasonic_Module.png
 .. |HC_SR04| image:: ../_static/imgs/HC_SR04.png
 
 Pin description:
@@ -94,17 +98,17 @@ Circuit
 
 Note that the voltage of ultrasonic module is 5V in this circuit.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Ultrasonic_Sc|                                                                              |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |Ultrasonic_Fr|                                                                              |
-+------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                 |
+|                                                                                     |
+|   |Ultrasonic_Sc|                                                                   |
++-------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:  |
+|                                                                                     |
+|   support@freenove.com                                                              | 
+|                                                                                     |
+|   |Ultrasonic_Fr|                                                                   |
++-------------------------------------------------------------------------------------+
 
 .. |Ultrasonic_Sc| image:: ../_static/imgs/Ultrasonic_Sc.png
 .. |Ultrasonic_Fr| image:: ../_static/imgs/Ultrasonic_Fr.png
@@ -140,7 +144,7 @@ First, observe the project result, and then learn about the code in detail.
 
     $ python UltrasonicRanging.py
 
-After the program is executed, aim the Ultrasonic Ranging Module's detectors (“eyes”) perpendicular to the surface of an object (try using your hand). The distance between the ultrasonic module and the object will be displayed in the terminal. As is shown below:
+After the program is executed, aim the Ultrasonic Ranging Module's detectors ("eyes") perpendicular to the surface of an object (try using your hand). The distance between the ultrasonic module and the object will be displayed in the terminal. As is shown below:
 
 .. image:: ../_static/imgs/distance.png
     :align: center
@@ -173,7 +177,7 @@ In the above experiments, you can see that the measurement data is unstable.
 
 .. note::
 
-    For improved accuracy, use the pigpio pin driver rather than the default RPi.GPIO driver (pigpio uses DMA sampling for much more precise edge timing). This is particularly relevant if you’re using Pi 1 or Pi Zero. 
+    For improved accuracy, use the pigpio pin driver rather than the default RPi.GPIO driver (pigpio uses DMA sampling for much more precise edge timing). This is particularly relevant if you're using Pi 1 or Pi Zero. 
 
 You can refer to UltrasonicRanging2.py for detailed code. 
 
@@ -191,7 +195,7 @@ You can refer to UltrasonicRanging2.py for detailed code.
 
 After the program is executed, the distance between the ultrasonic module and the measured object will be displayed on the terminal. At this point, the data is more accurate and stable.
 
-This code is based on pigpio libarary. In the latest Raspberry Pi OS, “pigpio” library has been installed. You only need to run the command to enable it.
+This code is based on pigpio libarary. In the latest Raspberry Pi OS, "pigpio" library has been installed. You only need to run the command to enable it.
 
 .. code-block:: console
 
@@ -200,9 +204,9 @@ This code is based on pigpio libarary. In the latest Raspberry Pi OS, “pigpio�
 .. image:: ../_static/imgs/sudo_pigpiod.png
     :align: center
 
-If the “pigpio” library has not yet been installed, please follow the steps to install it.
+If the "pigpio" library has not yet been installed, please follow the steps to install it.
 
-Run the command to install “pigpio” library.
+Run the command to install "pigpio" library.
 
 .. code-block:: console
 

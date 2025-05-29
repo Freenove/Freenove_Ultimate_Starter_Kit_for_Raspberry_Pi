@@ -12,17 +12,21 @@ In this project, we will use the mouse to control the LED Bar Graph
 Component List
 ================================================================
 
-+--------------------------------------------------+---------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                 |                                                   |
-|                                                  | Jumper Wires x6                                   |
-|2. GPIO Extension Board & Ribbon Cable x1         |                                                   |
-|                                                  |  |jumper-wire|                                    |
-|3. Breadboard x1                                  |                                                   |
-+--------------------------------------------------+---------------------------------------------------+
-|  Bar Graph LED x1                                | Resistor 220Ω x10                                 |
-|                                                  |                                                   |
-|   |LED-BAR|                                      |  |res-220R-hori|                                  |
-+--------------------------------------------------+---------------------------------------------------+
+.. table:: 
+     :width: 80%
+     :align: center
+
+     +------------------------------------------+-------------------+
+     |1. Raspberry Pi (with 40 GPIO) x1         |                   |
+     |                                          | Jumper Wires x6   |
+     |2. GPIO Extension Board & Ribbon Cable x1 |                   |
+     |                                          |  |jumper-wire|    |
+     |3. Breadboard x1                          |                   |
+     +------------------------------------------+-------------------+
+     |  Bar Graph LED x1                        | Resistor 220Ω x10 |
+     |                                          |                   |
+     |   |LED-BAR|                              |  |res-220R-hori|  |
+     +------------------------------------------+-------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |LED-BAR| image:: ../_static/imgs/LED-BAR.png
@@ -32,6 +36,7 @@ Component List
 
 Component knowledge
 ================================================================
+
 Let us learn about the basic features of these components to use and understand them better.
 
 Bar Graph LED
@@ -57,6 +62,7 @@ In this circuit, the cathodes of LEDs are connected to the GPIO, which is differ
         :width: 100%   
 
 .. note:: 
+        
         :red:`If LEDbar doesn't work, rotate LEDbar 180° to try. The label is random.`
 
 In this circuit, the cathodes of the LEDs are connected to the GPIO, which is different from the previous circuit. The LEDs turn ON when the GPIO output is low level in the program. 
@@ -69,18 +75,18 @@ Sketch FollowLight
 
 First, observe the result after running the sketch, and then learn about the code in detail.
 
-1.	Use Processing to open the file Sketch_02_1_1_FollowLight.
+1. Use Processing to open the file Sketch_02_1_1_FollowLight.
 
 .. code-block:: console    
     
     $ processing ~/Freenove_Kit/Processing/Sketches/Sketch_02_1_1_FollowLight/Sketch_02_1_1_FollowLight.pde
 
-2.	Click on "RUN" to run the code.
+2. Click on "RUN" to run the code.
 
 After the program is executed, slide the mouse in the Display Window, then the state of LED Bar Graph will be changed, as shown below.
 
 .. image:: ../_static/imgs/follow_light.png                                                                
-        :align: center   
+    :align: center   
 
 The following is program code:
 
@@ -96,3 +102,4 @@ The following is program code:
     :linenos: 
     :language: java
     :lines: 24-35
+    :dedent:

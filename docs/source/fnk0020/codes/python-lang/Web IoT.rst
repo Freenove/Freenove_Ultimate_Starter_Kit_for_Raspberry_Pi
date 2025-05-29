@@ -4,7 +4,7 @@ Chapter Web IoT
 
 In this chapter, we will learn how to use GPIO to control the RPi remotely via a network and how to build a WebIO service on the RPi.
 
-This concept is known as “IoT” or Internet of Things. The development of IoT will greatly change our habits and make our lives more convenient and efficient
+This concept is known as "IoT" or Internet of Things. The development of IoT will greatly change our habits and make our lives more convenient and efficient
 
 Project Remote LED
 ****************************************************************
@@ -14,38 +14,43 @@ In this project, we need to build a WebIOPi service, and then use the RPi GPIO t
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper M/M x2                                   |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |jumper-wire|                                  |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-|  LED x1                                         | Resistor 220Ω x1                                |   
-|                                                 |                                                 |     
-|  |red-led|                                      | |res-220R|                                      |     
-+-------------------------------------------------+-------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+
+    +------------------------------------------+------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1         |                  |     
+    |                                          | Jumper M/M x2    |       
+    |2. GPIO Extension Board & Ribbon Cable x1 |                  |       
+    |                                          |  |jumper-wire|   |                                                            
+    |3. Breadboard x1                          |                  |                                                                 
+    +------------------------------------------+------------------+
+    |  LED x1                                  | Resistor 220Ω x1 |   
+    |                                          |                  |     
+    |  |red-led|                               | |res-220R|       |     
+    +------------------------------------------+------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 80%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 10%
+    :width: 5%
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 15%
+    :width: 20%
 
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |TTP223_Sc|                                                                                  |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |TTP223_Fr|                                                                                  |
-+------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+|Schematic diagram                                                               |
+|                                                                                |
+||TTP223_Sc|                                                                     |
++--------------------------------------------------------------------------------+
+|Hardware connection. If you need any support,please feel free to contact us via:|
+|                                                                                |
+|support@freenove.com                                                            | 
+|                                                                                |
+||TTP223_Fr|                                                                     |
++--------------------------------------------------------------------------------+
 
 .. |TTP223_Sc| image:: ../_static/imgs/python37_00.png
 .. |TTP223_Fr| image:: ../_static/imgs/python37_01.png
@@ -173,4 +178,4 @@ Completed
 
 According to the circuit we build, set GPIO17 to OUT, then click Header11 to control the LED.
 
-You can end the webioPi in the terminal by “Ctr+C”.
+You can end the webioPi in the terminal by "Ctr+C".

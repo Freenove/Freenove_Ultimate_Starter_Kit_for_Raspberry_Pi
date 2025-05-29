@@ -12,31 +12,35 @@ In this project, we will use the ADC function of an ADC Module to read the volta
 Component List
 ================================================================
 
-+---------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                              |     
-|                                                               |       
-|2. GPIO Extension Board & Ribbon Cable x1                      |       
-|                                                               |                                                            
-|3. Breadboard x1                                               |                                                                 
-+===============================+===============================+
-| Rotary potentiometer x1       |   Resistor 10kΩ x2            |
-|                               |                               |
-| |Rotary-potentiometer|        |  |Resistor-10kΩ|              |                           
-+-------------------------------+-------------------------------+
-| ADC module x1                                                 |
-|                                                               |
-|   |ADC-module-2|                                              |                   
-|                                                               |  
-+---------------------------------------------------------------+
-|   Jumper Wire                                                 |
-|                                                               | 
-|      |jumper-wire|                                            |
-+---------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +-----------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                    |     
+    |                                                     |       
+    |2. GPIO Extension Board & Ribbon Cable x1            |       
+    |                                                     |                                                            
+    |3. Breadboard x1                                     |                                                                 
+    +===============================+=====================+
+    | Rotary potentiometer x1       |   Resistor 10kΩ x2  |
+    |                               |                     |
+    | |Rotary-potentiometer|        |  |Resistor-10kΩ|    |                           
+    +-------------------------------+---------------------+
+    | ADC module x1                                       |
+    |                                                     |
+    |   |ADC-module-2|                                    |                   
+    |                                                     |  
+    +-----------------------------------------------------+
+    |   Jumper Wire                                       |
+    |                                                     | 
+    |      |jumper-wire|                                  |
+    +-----------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 70%   
+    :width: 60%   
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 10%
+    :width: 15%
 .. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
     :width: 35%
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
@@ -58,7 +62,7 @@ Subsection 1: the analog in range of 0V-3.3/256 V corresponds to digital 0;
 
 Subsection 2: the analog in range of 3.3 /256 V-2*3.3 /256V corresponds to digital 1;
 
-…
+...
 
 The resultant analog signal will be divided accordingly.
 
@@ -77,7 +81,7 @@ Component knowledge
 Potentiometer
 ----------------------------------------------------------------
 
-Potentiometer is a resistive element with three Terminal parts. Unlike the resistors that we have used thus far in our project which have a fixed resistance value, the resistance value of a potentiometer can be adjusted. A potentiometer is often made up by a resistive substance (a wire or carbon element) and movable contact brush. When the brush moves along the resistor element, there will be a change in the resistance of the potentiometer’s output side (3) (or change in the voltage of the circuit that is a part). The illustration below represents a linear sliding potentiometer and its electronic symbol on the right.
+Potentiometer is a resistive element with three Terminal parts. Unlike the resistors that we have used thus far in our project which have a fixed resistance value, the resistance value of a potentiometer can be adjusted. A potentiometer is often made up by a resistive substance (a wire or carbon element) and movable contact brush. When the brush moves along the resistor element, there will be a change in the resistance of the potentiometer's output side (3) (or change in the voltage of the circuit that is a part). The illustration below represents a linear sliding potentiometer and its electronic symbol on the right.
 
 .. image:: ../_static/imgs/1-32.png
         :width: 50%
@@ -87,7 +91,7 @@ Potentiometer is a resistive element with three Terminal parts. Unlike the resis
 
 Between potentiometer pin 1 and pin 2 is the resistive element (a resistance wire or carbon) and pin 3 is connected to the brush that makes contact with the resistive element. In our illustration, when the brush moves from pin 1 to pin 2, the resistance value between pin 1 and pin 3 will increase linearly (until it reaches the highest value of the resistive element) and at the same time the resistance between pin 2 and pin 3 will decrease linearly and conversely down to zero. At the midpoint of the slider the measured resistance values between pin 1 and 3 and between pin 2 and 3 will be the same.
 
-In a circuit, both sides of resistive element are often connected to the positive and negative electrodes of power. When you slide the brush “pin 3”, you can get variable voltage within the range of the power supply.
+In a circuit, both sides of resistive element are often connected to the positive and negative electrodes of power. When you slide the brush "pin 3", you can get variable voltage within the range of the power supply.
 
 .. image:: ../_static/imgs/1-32-fritizing.png
         :width: 30%
@@ -190,7 +194,7 @@ Then open the following dialog box:
 .. image:: ../_static/imgs/java07_00.png
     :align: center
 
-Choose “Interfacing Options” then “I4 I2C” then “Yes” and then “Finish” in this order and restart your RPi. The I2C module will then be started.
+Choose "Interfacing Options" then "I4 I2C" then "Yes" and then "Finish" in this order and restart your RPi. The I2C module will then be started.
 
 .. image:: ../_static/imgs/java07_01.png
     :align: center
@@ -201,7 +205,7 @@ Type a command to check whether the I2C module is started:
 
     $ lsmod | grep i2c
 
-If the I2C module has been started, the following content will be shown. “bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
+If the I2C module has been started, the following content will be shown. "bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
 
 .. image:: ../_static/imgs/Enable-I2C-2.png
     :align: center
@@ -250,7 +254,7 @@ When the code is running, rotate the potentiometer marked below.
 .. image:: ../_static/imgs/ADS7830-fritizing.png
     :align: center
 
-You can see that the ADC values change with the rotation of the potentiometer. The value 0 means that the potentiometer’s voltage read by ADC is 0V, 255 indicates that the voltage is 5V.
+You can see that the ADC values change with the rotation of the potentiometer. The value 0 means that the potentiometer's voltage read by ADC is 0V, 255 indicates that the voltage is 5V.
 
 .. image:: ../_static/imgs/java_ADC_mes.png
     :align: center
@@ -367,26 +371,25 @@ Project Soft Light
 Component List
 ================================================================
 
-+---------------------------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                                                |     
-|                                                                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1                                        |       
-|                                                                                 |                                                            
-|3. Breadboard x1                                                                 |                                                                 
-+-------------------------+-----------------------+-------------------------------+
-| Rotary potentiometer x1 | Resistor 220Ω x1      |   Resistor 10kΩ x2            |
-|                         |                       |                               |
-| |Rotary-potentiometer|  |  |res-220R|           |  |Resistor-10kΩ|              |                           
-+-------------------------+-----------------------+-------------------------------+
-| ADC module x1 (Only one)                        |   LED x1                      |
-|                                                 |                               |
-| |ADC-module-2|                                  |   |red-led|                   |                   
-|                                                 |                               |  
-+-------------------------------------------------+-------------------------------+
-|   Jumper Wire M/M x17                                                           |
-|                                                                                 | 
-|      |jumper-wire|                                                              |
-+---------------------------------------------------------------------------------+
++-----------------------------------------------------------------------+
+|1. Raspberry Pi (with 40 GPIO) x1                                      |     
+|                                                                       |       
+|2. GPIO Extension Board & Ribbon Cable x1                              |       
+|                                                                       |                                                            
+|3. Breadboard x1                                                       |                                                                 
++-------------------------+-----------------------+---------------------+
+| Rotary potentiometer x1 | Resistor 220Ω x1      |   Resistor 10kΩ x2  |
+|                         |                       |                     |
+| |Rotary-potentiometer|  |  |res-220R|           |  |Resistor-10kΩ|    |                           
++-------------------------+-----------------------+---------------------+
+| ADC module x1 (Only one)                        |   LED x1            |
+|                                                 |                     |
+| |ADC-module-2|                                  |   |red-led|         |                   
++-------------------------------------------------+---------------------+
+|   Jumper Wire M/M x17                                                 |
+|                                                                       | 
+|      |jumper-wire|                                                    |
++-----------------------------------------------------------------------+
 
 .. |res-220R| image:: ../_static/imgs/res-220R.png
     :width: 20%
@@ -479,7 +482,7 @@ The ADC value of the potentiometer is obtained every 100 milliseconds and printe
 Project Colorful Light 
 ****************************************************************
 
-In this project, 3 potentiometers are used to control the RGB LED and in principle, it is the same as with the ‘Soft Light’ project. Namely, read the voltage value of the potentiometer and then convert it to PWM used to control LED brightness. Difference is that the previous soft light project needed only one LED while this one required (3) RGB LEDs.
+In this project, 3 potentiometers are used to control the RGB LED and in principle, it is the same as with the ‘Soft Light' project. Namely, read the voltage value of the potentiometer and then convert it to PWM used to control LED brightness. Difference is that the previous soft light project needed only one LED while this one required (3) RGB LEDs.
 
 Component List
 ================================================================

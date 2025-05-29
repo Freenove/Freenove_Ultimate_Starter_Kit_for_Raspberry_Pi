@@ -35,7 +35,7 @@ Component knowledge
 Servo
 ----------------------------------------------------------------
 
-Servo is a compact package which consists of a DC Motor, a set of reduction gears to provide torque, a sensor and control circuit board. Most Servos only have a 180-degree range of motion via their “horn”. Servos can output higher torque than a simple DC Motor alone and they are widely used to control motion in model cars, model airplanes, robots, etc. Servos have three wire leads which usually terminate to a male or female 3-pin plug. Two leads are for electric power: Positive (2-VCC, Red wire), Negative (3-GND, Brown wire), and the signal line (1-Signal, Orange wire) as represented in the Servo provided in your Kit.
+Servo is a compact package which consists of a DC Motor, a set of reduction gears to provide torque, a sensor and control circuit board. Most Servos only have a 180-degree range of motion via their "horn". Servos can output higher torque than a simple DC Motor alone and they are widely used to control motion in model cars, model airplanes, robots, etc. Servos have three wire leads which usually terminate to a male or female 3-pin plug. Two leads are for electric power: Positive (2-VCC, Red wire), Negative (3-GND, Brown wire), and the signal line (1-Signal, Orange wire) as represented in the Servo provided in your Kit.
 
 .. image:: ../_static/imgs/Servo-1.png
     :align: center
@@ -47,19 +47,20 @@ We will use a 50Hz PWM signal with a duty cycle in a certain range to drive the 
     the lasting time of high level corresponding to the servo angle is absolute instead of accumulating. For example, the high level time lasting for 0.5ms correspond to the 0 degree of the servo. If the high level time lasts for another 1ms, the servo rotates to 45 degrees.
 
 .. table:: 
-    :width: 100%
+    :class: freenove-ow
+    :width: 40%
     :widths: 50 50
     :align: center
 
-================  ================
- High level time  Servo angle
-================  ================
-0.5ms             0 degree
-1ms               45 degree
-1.5ms             90 degree
-2ms               135 degree
-2.5ms             180 degree
-================  ================
+    ================  ================
+     High level time  Servo angle
+    ================  ================
+    0.5ms             0 degree
+    1ms               45 degree
+    1.5ms             90 degree
+    2ms               135 degree
+    2.5ms             180 degree
+    ================  ================
 
 When you change the Servo signal value, the Servo will rotate to the designated angle.
 
@@ -102,7 +103,8 @@ C Code Sweep
 
 First, observe the project result, and then learn about the code in detail.
 
-.. hint:: 
+.. hint::
+
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 15.1.1_Sweep directory of C code.
@@ -140,9 +142,10 @@ A 50 Hz pulse for a 20ms cycle is required to control the Servo. In function sof
     :lines: 18-20
     :dedent:
 
-Since 0-180 degrees of the Servo's motion corresponds to the PWM pulse width of 0.5-2.5ms, with a PwmRange of 200 ms. We then need the function softPwmWrite (int pin, int value) and the scope 5-25 of the parameter values to correspond to 0-180 degrees’ motion of the Servo. What’s more, the number written in subfunction servoWriteMS () should be within the range of 5-25. However, in practice, due to the inherent error manufactured into each Servo, the pulse width will have a deviation. So we need to define a minimum and maximum pulse width and an error offset (this is essential in robotics).
+Since 0-180 degrees of the Servo's motion corresponds to the PWM pulse width of 0.5-2.5ms, with a PwmRange of 200 ms. We then need the function softPwmWrite (int pin, int value) and the scope 5-25 of the parameter values to correspond to 0-180 degrees' motion of the Servo. What's more, the number written in subfunction servoWriteMS () should be within the range of 5-25. However, in practice, due to the inherent error manufactured into each Servo, the pulse width will have a deviation. So we need to define a minimum and maximum pulse width and an error offset (this is essential in robotics).
 
 .. code-block:: c
+    :linenos: 
 
     #define OFFSET_MS 3     //Define the unit of servo pulse offset: 0.1ms
     #define SERVO_MIN_MS 5+OFFSET_MS        //define the pulse duration for minimum angle of servo

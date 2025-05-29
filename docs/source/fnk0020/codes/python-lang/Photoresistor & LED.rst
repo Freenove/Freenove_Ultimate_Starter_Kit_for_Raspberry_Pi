@@ -14,26 +14,30 @@ A Photoresistor is very sensitive to the amount of light present. We can take ad
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |   Resistor 220Ω x1            |     
-|                                                 |                               |       
-|2. GPIO Extension Board & Ribbon Cable x1        |   |res-220R|                  |       
-|                                                 |                               |                                                            
-|3. Breadboard x1                                 |                               |                                                                 
-+-------------------------------------------------+-------------------------------+
-| Photoresistor x1                                |   Resistor 10kΩ x3            |
-|                                                 |                               |
-| |Phtotresistor|                                 |  |Resistor-10kΩ|              |                           
-+-------------------------------------------------+-------------------------------+
-| ADC module x1 (Only one)                        |   LED x1                      |
-|                                                 |                               |
-| |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |red-led|                   |                   
-|                                                 |                               |  
-+-------------------------------------------------+-------------------------------+
-|   Jumper Wire M/M x15                                                           |
-|                                                                                 | 
-|      |jumper-wire|                                                              |
-+---------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+
+    +------------------------------------------------+--------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1               |   Resistor 220Ω x1 |     
+    |                                                |                    |       
+    |2. GPIO Extension Board & Ribbon Cable x1       |   |res-220R|       |       
+    |                                                |                    |                                                            
+    |3. Breadboard x1                                |                    |                                                                 
+    +------------------------------------------------+--------------------+
+    | Photoresistor x1                               |   Resistor 10kΩ x3 |
+    |                                                |                    |
+    | |Phtotresistor|                                |  |Resistor-10kΩ|   |                           
+    +------------------------------------------------+--------------------+
+    | ADC module x1 (Only one)                       |   LED x1           |
+    |                                                |                    |
+    | |ADC-module-1|   :xx-large:`or`  |ADC-module-2||   |red-led|        |                   
+    |                                                |                    |  
+    +------------------------------------------------+--------------------+
+    |   Jumper Wire M/M x15                                               |
+    |                                                                     | 
+    |      |jumper-wire|                                                  |
+    +---------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
         :width: 80%
@@ -46,8 +50,8 @@ Component List
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 .. |red-led| image:: ../_static/imgs/red-led.png
-        :width: 40%
-
+        :width: 30%
+        
 Component knowledge
 ================================================================
 
@@ -75,19 +79,19 @@ Circuit with ADS7830
 
 The circuit used is similar to the Soft light project. The only difference is that the input signal of the AIN0 pin of ADC changes from a Potentiometer to a combination of a Photoresistor and a Resistor.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-4|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-5|                                                                        |
-|                                                                                                |
-|    **Video:** https://youtu.be/r6p3zhXsyko                                                     |
-+------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                 |
+|                                                                                     |
+|   |ADS7830-Schematic-4|                                                             |
++-------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:  |
+|                                                                                     |
+|   support@freenove.com                                                              |
+|                                                                                     |
+|   |ADS7830-fritizing-5|                                                             |
+|                                                                                     |
+|    **Video:** https://youtu.be/r6p3zhXsyko                                          |
++-------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-4| image:: ../_static/imgs/ADS7830-Schematic-4.png
 .. |ADS7830-fritizing-5| image:: ../_static/imgs/ADS7830-fritizing-5.png
@@ -130,13 +134,13 @@ First, observe the project result, and then learn about the code in detail.
     
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
-1.	Use cd command to enter 10.1_Nightlamp directory of Python code.
+1. Use cd command to enter 10.1_Nightlamp directory of Python code.
 
 .. code-block:: console
 
     $ cd ~/Freenove_Kit/Code/Python_GPIOZero_Code/10.1.1_Nightlamp
 
-2.	Use the python command to execute the Python code “Nightlamp.py”.
+2. Use the python command to execute the Python code "Nightlamp.py".
 
 .. code-block:: console
 

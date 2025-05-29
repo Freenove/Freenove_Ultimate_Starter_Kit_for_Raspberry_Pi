@@ -16,25 +16,30 @@ This Infrared Motion Sensor can detect the infrared spectrum (heat signatures) e
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x5                               |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| HC SR501 x1                 | LED x1                           | Resistor 220Ω x1                 |
-|                             |                                  |                                  |
-|  |HC_SR501|                 |  |red-led|                       |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+
+    +--------------------------------------------+---------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1           |                                 |     
+    |                                            | Jumper Wires x5                 |       
+    |2. GPIO Extension Board & Ribbon Cable x1   |                                 |       
+    |                                            |   |jumper-wire|                 |                                                            
+    |3. Breadboard x1                            |                                 |                                                                 
+    +-----------------------------+--------------+------------+--------------------+
+    | HC SR501 x1                 | LED x1                    | Resistor 220Ω x1   |
+    |                             |                           |                    |
+    |  |HC_SR501|                 |  |red-led|                |  |res-220R|        |
+    +-----------------------------+---------------------------+--------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+    :width: 80%
 .. |red-led| image:: ../_static/imgs/red-led.png
-    :width: 70%
+    :width: 30%
 .. |HC_SR501| image:: ../_static/imgs/HC_SR501.png
     :width: 70%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 20%
+    :width: 10%
 
 Component Knowledge
 ================================================================
@@ -52,30 +57,30 @@ Description:
 
 1.	Working voltage: 5v-20v(DC) Static current: 65uA.
 
-2.	Automatic Trigger. When a living body enters into the active area of sensor, the module will output high level (3.3V). When the body leaves the sensor’s active detection area, it will output high level lasting for time period T, then output low level(0V). Delay time T can be adjusted by the potentiometer R1.
+2.	Automatic Trigger. When a living body enters into the active area of sensor, the module will output high level (3.3V). When the body leaves the sensor's active detection area, it will output high level lasting for time period T, then output low level(0V). Delay time T can be adjusted by the potentiometer R1.
 
 3.	Induction block time: the induction will stay in block condition and does not induce external signal at lesser time intervals (less than delay time) after outputting high level or low level 
 
 4.	Initialization time: the module needs about 1 minute to initialize after being powered ON. During this period, it will alternately output high or low level. 
 
-5.	One characteristic of this sensor is when a body moves close to or moves away from the sensor's dome edge, the sensor will work at high sensitively. When a body moves close to or moves away from the sensor’s dome in a vertical direction (perpendicular to the dome), the sensor cannot detect well (please take note of this deficiency). Actually this makes sense when you consider that this sensor is usually placed on a celling as part of a security product. Note: The Sensing Range (distance before a body is detected) is adjusted by the potentiometer.
+5.	One characteristic of this sensor is when a body moves close to or moves away from the sensor's dome edge, the sensor will work at high sensitively. When a body moves close to or moves away from the sensor's dome in a vertical direction (perpendicular to the dome), the sensor cannot detect well (please take note of this deficiency). Actually this makes sense when you consider that this sensor is usually placed on a celling as part of a security product. Note: The Sensing Range (distance before a body is detected) is adjusted by the potentiometer.
 
 We can regard this sensor as a simple inductive switch when in use.
 
 Circuit
 ================================================================
 
-+-------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                             |
-|                                                                                                 |
-|   |HC_SR501_Sc|                                                                                 |
-+-------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:              |
-|                                                                                                 |
-|   support@freenove.com                                                                          |
-|                                                                                                 |
-|   |HC_SR501_Fr|                                                                                 |
-+-------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                |
+|                                                                                    |
+|   |HC_SR501_Sc|                                                                    |
++------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via: |
+|                                                                                    |
+|   support@freenove.com                                                             |
+|                                                                                    |
+|   |HC_SR501_Fr|                                                                    |
++------------------------------------------------------------------------------------+
 
 .. |HC_SR501_Sc| image:: ../_static/imgs/HC_SR501_Sc.png
 .. |HC_SR501_Fr| image:: ../_static/imgs/HC_SR501_Fr.png

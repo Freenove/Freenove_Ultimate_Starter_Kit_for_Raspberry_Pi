@@ -24,15 +24,19 @@ You can install it on your bicycle, your bedroom door or any other place where y
 Component list
 ================================================================
 
-+------------------------+------------+-------------------+---------------------+
-|  Female Pin Header x2  | LED x1     |  Active buzzer x1 |  Push button x1     |
-|                        |            |                   |                     |
-|  |Fe_pin_Header|       ||green_led| |  |Active-buzzer|  |  |button-small|     |
-+------------------------+------------+-----+-------------+---------------------+
-| AA Battery Holder x1 and AA Batteries x2  | Resistor 220Ω x1                  |
-|                                           |                                   |
-| |battery|                                 |  |res-220R-hori|                  |
-+-------------------------------------------+-----------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+
+    +------------------------+------------+-------------------+----------------+
+    |  Female Pin Header x2  | LED x1     |  Active buzzer x1 |  Push button x1|
+    |                        |            |                   |                |
+    |  |Fe_pin_Header|       ||green_led| |  |Active-buzzer|  |  |button-small||
+    +------------------------+------------+-----+-------------+----------------+
+    | AA Battery Holder x1 and AA Batteries x2  | Resistor 220Ω x1             |
+    |                                           |                              |
+    | |battery|                                 |  |res-220R-hori|             |
+    +-------------------------------------------+------------------------------+
 
 .. |Fe_pin_Header| image:: ../_static/imgs/Fe_pin_Header.png
 .. |green_led| image:: ../_static/imgs/green_led.png
@@ -46,15 +50,15 @@ Component list
 Circuit
 ================================================================
 
-============================================== ==============================================
-    Schematic diagram                           Hardware connection. If you need any support,
-    
-                                                please feel free to contact us via:
-    
-                                                support@freenove.com
-
-    |solder_Sc|                                  |solder_Fr|
-============================================== ==============================================
+ ===================  ===============================================
+  Schematic diagram    Hardware connection. If you need any support,
+  
+                       please feel free to contact us via:
+     
+                       support@freenove.com
+  
+  |solder_Sc|           |solder_Fr|
+ ===================  ===============================================
 
 .. |solder_Sc| image:: ../_static/imgs/solder_Sc.png
 .. |solder_Fr| image:: ../_static/imgs/solder_Fr.png
@@ -100,16 +104,17 @@ You should be familiar with the Flowing Water Light from our previous project. W
 
 Component List
 ================================================================
+ 
+.. table:: 
+    :width: 80%
+    :align: center
 
-====================== ====================== ====================== ======================
- Female Pin Header x5   Resistor 220Ω x8       LED x8                 74HC595 x1
-
-   |Fe_pin_Header|      |res-220R|              |red-led|               |74HC595|
-====================== ====================== ====================== ======================
-
-
-.. |Fe_pin_Header| image:: ../_static/imgs/Fe_pin_Header.png
-    :width: 60%
+    ====================== ====================== ====================== ======================
+     Female Pin Header x5   Resistor 220Ω x8       LED x8                 74HC595 x1
+    
+       |Fe_pin_Header|      |res-220R|              |red-led|               |74HC595|
+    ====================== ====================== ====================== ======================
+    
 .. |red-led| image:: ../_static/imgs/red-led.png
     :width: 60%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
@@ -162,7 +167,7 @@ Connect the board to Raspberry Pi with jumper wire in the following way.
 Code
 ================================================================
 
-This now will be the third time we have made the Flowing Water Light. In this project, we will solder a completely new circuit for Flowing Water Light. Additionally, the program is also different from the previous ones we have used. When this light flows, it will have a long “tail”.
+This now will be the third time we have made the Flowing Water Light. In this project, we will solder a completely new circuit for Flowing Water Light. Additionally, the program is also different from the previous ones we have used. When this light flows, it will have a long "tail".
 
 Python Code LightWater03 
 ----------------------------------------------------------------
@@ -170,6 +175,7 @@ Python Code LightWater03
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use cd command to enter 38.2.1_LightWater03 directory of Python code.
@@ -178,13 +184,13 @@ First, observe the project result, and then learn about the code in detail.
 
     $ cd ~/Freenove_Kit/Code/Python_GPIOZero_Code/38.2.1_LightWater03
 
-2.	Use Python command to execute Python code “LightWater03.py”. 
+2.	Use Python command to execute Python code "LightWater03.py". 
 
 .. code-block:: console
 
     $ python LightWater03.py
 
-After the program is executed, the LEDs will light up in the form of flowing water with a long “tail”.
+After the program is executed, the LEDs will light up in the form of flowing water with a long "tail".
 
 The following is the program code:
 
@@ -205,12 +211,12 @@ By recording the moving time point to control the speed of the movement of index
     :linenos: 
     :language: python
     :lines: 42-46
+    :dedent:
 
-Finally, in a “for” loop with i=64, modulate the output pulse width of the PWM square wave. The process, from the beginning of implementing the for loop to the end, is a PWM cycle. In the loop, there is another for loop with j=8 and in this loop, it compares the cycle number “i” to the value of the array to determine output high or low level. Then, the data will be sent to the 74HC595 IC Chip.
+Finally, in a "for" loop with i=64, modulate the output pulse width of the PWM square wave. The process, from the beginning of implementing the for loop to the end, is a PWM cycle. In the loop, there is another for loop with j=8 and in this loop, it compares the cycle number "i" to the value of the array to determine output high or low level. Then, the data will be sent to the 74HC595 IC Chip.
 
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/38.2.1_LightWater03/LightWater03.py
     :linenos: 
     :language: python
     :lines: 48-53
-
-
+    :dedent:

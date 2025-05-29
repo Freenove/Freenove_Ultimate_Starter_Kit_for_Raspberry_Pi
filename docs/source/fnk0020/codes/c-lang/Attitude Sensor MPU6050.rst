@@ -12,19 +12,24 @@ In this project, we will read Acceleration and Gyroscope Data of the MPU6050 Sen
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Jumper Wires x4                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |jumper-wire|                                  |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| MPU6050 x1                                                                                        |     
-|                                                                                                   |       
-|  |MPU6050|                                                                                        |       
-+---------------------------------------------------------------------------------------------------+
+.. table:: 
+  :align: center
+  :width: 80%
+
+  +-------------------------------------------+-----------------+
+  |1. Raspberry Pi (with 40 GPIO) x1          |                 |     
+  |                                           | Jumper Wires x4 |       
+  |2. GPIO Extension Board & Ribbon Cable x1  |                 |       
+  |                                           |  |jumper-wire|  |                                                            
+  |3. Breadboard x1                           |                 |                                                                 
+  +-------------------------------------------+-----------------+
+  | MPU6050 x1                                                  |     
+  |                                                             |       
+  |  |MPU6050|                                                  |       
+  +-------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
+  :width: 80%
 .. |MPU6050| image:: ../_static/imgs/MPU6050.png
 
 Component knowledge
@@ -95,17 +100,17 @@ Circuit
 
 Note that the power supply voltage for MPU6050 module is 5V in this circuit.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |MPU6050_Sc|                                                                                 |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |MPU6050_Fr|                                                                                 |
-+------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                 |
+|                                                                                     |
+|   |MPU6050_Sc|                                                                      |
++-------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via:  |
+|                                                                                     |
+|   support@freenove.com                                                              | 
+|                                                                                     |
+|   |MPU6050_Fr|                                                                      |
++-------------------------------------------------------------------------------------+
 
 .. |MPU6050_Sc| image:: ../_static/imgs/MPU6050_Sc.png
 .. |MPU6050_Fr| image:: ../_static/imgs/MPU6050_Fr.png
@@ -159,7 +164,8 @@ The following is the program code:
 
 Two library files "**MPU6050.h**" and "**I2Cdev.h**" are used in the code and will be compiled with others. Class MPU6050 is used to operate the MPU6050 Sensor. When used, first it initiates an object.
 
-.. code-block:: console
+.. code-block:: c
+    :linenos: 
 
     MPU6050 accelgyro;
 
@@ -186,24 +192,25 @@ Finally, the main functions, called setup function and loop function respectivel
 
 About class MPU6050:
 
-.. c:function:: Class MPU6050
+.. py:function:: Class MPU6050
 
     This is a class library used to operate the MPU6050, which can directly read and set the MPU6050. Here are its functions: 
     
     **MPU6050()/MPU6050(uint8_t address);**
     
-    Constructor. The parameter is I2C address, and the default I2C address is 0x68.
+      Constructor. The parameter is I2C address, and the default I2C address is 0x68.
     
     **void initialize();**
     
-    Initialization function, used to wake up MPU6050. Range of accelerometer is ±2g and range of gyroscope is ±250 degrees/sec.
+      Initialization function, used to wake up MPU6050. Range of accelerometer is ±2g and range of gyroscope is ±250 degrees/sec.
     
     **void getMotion6(int16_t* ax, int16_t* ay, int16_t* az, int16_t* gx, int16_t* gy, int16_t* gz);**
     
-    Get the original data of accelerometer and gyroscope.
+      Get the original data of accelerometer and gyroscope.
     
     **int16_t getTemperature();**
     
-    Get the original temperature data of MPU6050.
+      Get the original temperature data of MPU6050.
 
 For details about more relevant member functions, pleases refer to MPU6050.h or visit: https://github.com/jrowberg/i2cdevlib
+

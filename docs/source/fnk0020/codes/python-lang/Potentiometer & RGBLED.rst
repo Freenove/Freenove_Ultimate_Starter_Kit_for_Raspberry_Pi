@@ -13,26 +13,30 @@ In this project, 3 potentiometers are used to control the RGB LED and in princip
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |    220Ω x3                    |     
-|                                                 |                               |       
-|2. GPIO Extension Board & Ribbon Cable x1        |   |res-220R|                  |       
-|                                                 |                               |                                                            
-|3. Breadboard x1                                 |                               |                                                                 
-+-------------------------------------------------+-------------------------------+
-| Rotary potentiometer x3                         |   Resistor 10kΩ x2            |
-|                                                 |                               |
-| |Rotary-potentiometer|                          |  |Resistor-10kΩ|              |                           
-+-------------------------------------------------+-------------------------------+
-| ADC module x1 (Only one)                        |   RGB LED x1                  |
-|                                                 |                               |
-| |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |RGB-LED-real|              |                   
-|                                                 |                               |  
-+-------------------------------------------------+-------------------------------+
-|   Jumper Wire M/M x17                                                           |
-|                                                                                 | 
-|      |jumper-wire|                                                              |
-+---------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+
+    +-------------------------------------------------+----------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |    220Ω x3           |     
+    |                                                 |                      |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |   |res-220R|         |       
+    |                                                 |                      |                                                            
+    |3. Breadboard x1                                 |                      |                                                                 
+    +-------------------------------------------------+----------------------+
+    | Rotary potentiometer x3                         |   Resistor 10kΩ x2   |
+    |                                                 |                      |
+    | |Rotary-potentiometer|                          |  |Resistor-10kΩ|     |                           
+    +-------------------------------------------------+----------------------+
+    | ADC module x1 (Only one)                        |   RGB LED x1         |
+    |                                                 |                      |
+    | |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |RGB-LED-real|     |                   
+    |                                                 |                      |  
+    +-------------------------------------------------+----------------------+
+    |   Jumper Wire M/M x17                                                  |
+    |                                                                        | 
+    |      |jumper-wire|                                                     |
+    +------------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%

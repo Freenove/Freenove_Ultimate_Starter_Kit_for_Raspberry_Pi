@@ -13,21 +13,21 @@ In this project, we will attempt to get every key code on the Matrix Keypad to w
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | 4x4 Matrix Keypad x1                            |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |Keypad|                                       |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+                                                 |
-| Jumper wire                                     |                                                 |
-|                                                 |                                                 |
-|  |jumper-wire|                                  |                                                 |
-+-------------------------------------------------+                                                 |
-| Resistor 10kΩ x4                                |                                                 |
-|                                                 |                                                 |
-|  |Resistor-10kΩ|                                |                                                 |
-+-------------------------------------------------+-------------------------------------------------+
++-------------------------------------------------+-----------------------+
+|1. Raspberry Pi (with 40 GPIO) x1                |                       |     
+|                                                 | 4x4 Matrix Keypad x1  |       
+|2. GPIO Extension Board & Ribbon Cable x1        |                       |       
+|                                                 |  |Keypad|             |                                                            
+|3. Breadboard x1                                 |                       |                                                                 
++-------------------------------------------------+                       |
+| Jumper wire                                     |                       |
+|                                                 |                       |
+|  |jumper-wire|                                  |                       |
++-------------------------------------------------+                       |
+| Resistor 10kΩ x4                                |                       |
+|                                                 |                       |
+|  |Resistor-10kΩ|                                |                       |
++-------------------------------------------------+-----------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 50%
@@ -87,7 +87,7 @@ First observe the result after running the sketch, and then learn about the code
 
 2.	Click on "RUN" to run the code.
 
-After the program is executed, Display Window shows the following interface, where the character "A, B, C, D, \*, #" on the real Keypad is replaced by the character "+, -, \*, /, C, =” on the virtual Keypad.
+After the program is executed, Display Window shows the following interface, where the character "A, B, C, D, \*, #" on the real Keypad is replaced by the character "+, -, \*, /, C, =" on the virtual Keypad.
 
 .. image:: ../_static/imgs/calculator.png
     :align: center
@@ -146,35 +146,35 @@ Reference
     
     **public Keypad(char[] usrKeyMap, int[] row_Pins, int[] col_Pins)**
     
-    Constructor, the parameters are: key code of keyboard, row pins, column pins.
+        Constructor, the parameters are: key code of keyboard, row pins, column pins.
     
     **public char getKey()**
     
-    Get the key code of the pressed key. If no key is pressed, the return value is '\0'.
+        Get the key code of the pressed key. If no key is pressed, the return value is '\0'.
     
     **public void setDebounceTime(int ms)**
     
-    Set the debounce time. And the default time is 10ms.
+        Set the debounce time. And the default time is 10ms.
     
     **public void setHoldTime(int ms)**
 
-    Set the time when the key holds stable state after pressed.
+        Set the time when the key holds stable state after pressed.
     
     **public boolean isPressed(char keyChar)**
     
-    Judge wether the key with code "keyChar" is pressed.
+        Judge wether the key with code "keyChar" is pressed.
     
     **public char waitForKey()**
     
-    Wait for a key to be pressed, and return key code of the pressed key.
+        Wait for a key to be pressed, and return key code of the pressed key.
     
     **public int getState()**
     
-    Get state of the keys.
+        Get state of the keys.
     
     **boolean keyStateChanged()**
     
-    Judge whether there is a change of key state, then return True or False.
+        Judge whether there is a change of key state, then return True or False.
 
 .. py:function:: class Calculator
 
@@ -182,16 +182,16 @@ Reference
     
     **String contentStr = "";**
 
-    Member variable that saves the current processing results of the calculator, which will be directly displayed in the display area.
+        Member variable that saves the current processing results of the calculator, which will be directly displayed in the display area.
     
     **public Calculator(Keypad kp)**
     
-    Constructor. the parameter is for the Keypad class object.
+        Constructor. the parameter is for the Keypad class object.
     
     **public void process()**
     
-    Gets the key code of the key, and makes the corresponding judgment and processing. The Processing results are stored in the member variable “contentStr”.
+        Gets the key code of the key, and makes the corresponding judgment and processing. The Processing results are stored in the member variable "contentStr".
     
     **public double parse(String content)**
     
-    This is the core of the calculator. It is to parse a string of four fundamental operations and return its double-precision floating-point number equivalent.. For example, enter a string "1+2-3*4/5", then return value of 0.6.
+        This is the core of the calculator. It is to parse a string of four fundamental operations and return its double-precision floating-point number equivalent.. For example, enter a string "1+2-3*4/5", then return value of 0.6.

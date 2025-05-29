@@ -91,14 +91,14 @@ Component knowledge
 Potentiometer
 ----------------------------------------------------------------
 
-Potentiometer is a resistive element with three Terminal parts. Unlike the resistors that we have used thus far in our project which have a fixed resistance value, the resistance value of a potentiometer can be adjusted. A potentiometer is often made up by a resistive substance (a wire or carbon element) and movable contact brush. When the brush moves along the resistor element, there will be a change in the resistance of the potentiometer’s output side (3) (or change in the voltage of the circuit that is a part). The illustration below represents a linear sliding potentiometer and its electronic symbol on the right.
+Potentiometer is a resistive element with three Terminal parts. Unlike the resistors that we have used thus far in our project which have a fixed resistance value, the resistance value of a potentiometer can be adjusted. A potentiometer is often made up by a resistive substance (a wire or carbon element) and movable contact brush. When the brush moves along the resistor element, there will be a change in the resistance of the potentiometer's output side (3) (or change in the voltage of the circuit that is a part). The illustration below represents a linear sliding potentiometer and its electronic symbol on the right.
 
 .. image:: ../_static/imgs/07_00.png
     :align: center
 
 Between potentiometer pin 1 and pin 2 is the resistive element (a resistance wire or carbon) and pin 3 is connected to the brush that makes contact with the resistive element. In our illustration, when the brush moves from pin 1 to pin 2, the resistance value between pin 1 and pin 3 will increase linearly (until it reaches the highest value of the resistive element) and at the same time the resistance between pin 2 and pin 3 will decrease linearly and conversely down to zero. At the midpoint of the slider the measured resistance values between pin 1 and 3 and between pin 2 and 3 will be the same.
 
-In a circuit, both sides of resistive element are often connected to the positive and negative electrodes of power. When you slide the brush “pin 3”, you can get variable voltage within the range of the power supply.
+In a circuit, both sides of resistive element are often connected to the positive and negative electrodes of power. When you slide the brush "pin 3", you can get variable voltage within the range of the power supply.
 
 .. image:: ../_static/imgs/1-32-fritizing.png
         :width: 30%
@@ -274,7 +274,7 @@ Then open the following dialog box:
         :width: 100%
         :align: center
 
-Choose “3 Interfacing Options” then “I4 I2C” then “Yes” and then “Finish” in this order and restart your RPi. The I2C module will then be started.
+Choose "3 Interfacing Options" then "I4 I2C" then "Yes" and then "Finish" in this order and restart your RPi. The I2C module will then be started.
 
 Type a command to check whether the I2C module is started:
 
@@ -282,7 +282,7 @@ Type a command to check whether the I2C module is started:
 
     $ lsmod | grep i2c
 
-If the I2C module has been started, the following content will be shown. “bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
+If the I2C module has been started, the following content will be shown. "bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
 
 .. image:: ../_static/imgs/Enable-I2C-2.png
         :width: 100%
@@ -389,6 +389,7 @@ In this code, a custom class library "ADCDevice" is used. It contains the method
     An instantiated object is given a name and created in memory or on disk using the structure described within a class declaration.
 
 .. code-block:: c
+    :linenos: 
 
     ADCDevice *adc;  // Define an ADC Device class object   
     ......
@@ -405,12 +406,14 @@ Then use the member function detectIC(addr) in the class to detect the I2C modul
 When you have a class object pointed to a specific device, you can get the ADC value of the specific channel by calling the member function analogRead (chn) in this class
 
 .. code-block:: c
+    :linenos: 
 
     int adcValue = adc->analogRead(0);  //read analog value of A0 pin
 
 Then according to the formula, the voltage value is calculated and displayed on the Terminal.
 
 .. code-block:: c
+    :linenos: 
 
     float voltage = (float)adcValue / 255.0 * 3.3;  // Calculate voltage
     printf("ADC value : %d  ,\tVoltage : %.2fV\n",adcValue,voltage);

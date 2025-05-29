@@ -13,22 +13,26 @@ First, we need to learn how to make a Servo rotate.
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Servo x1                                        |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |Servo|                                        |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-|  Jumper Wires x3                                                                                  |
-|                                                                                                   |
-|  |jumper-wire|                                                                                    |                           
-+---------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+
+    +-------------------------------------------+------------+
+    |1. Raspberry Pi (with 40 GPIO) x1          |            |     
+    |                                           | Servo x1   |       
+    |2. GPIO Extension Board & Ribbon Cable x1  |            |       
+    |                                           |  |Servo|   |                                                            
+    |3. Breadboard x1                           |            |                                                                 
+    +-------------------------------------------+------------+
+    |  Jumper Wires x3                                       |
+    |                                                        |
+    |  |jumper-wire|                                         |                           
+    +--------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 70%
+    :width: 60%
 .. |Servo| image:: ../_static/imgs/Servo.png
-    :width: 70%
+    :width: 60%
 
 Component knowledge
 ================================================================
@@ -36,7 +40,7 @@ Component knowledge
 Servo
 ----------------------------------------------------------------
 
-Servo is a compact package which consists of a DC Motor, a set of reduction gears to provide torque, a sensor and control circuit board. Most Servos only have a 180-degree range of motion via their “horn”. Servos can output higher torque than a simple DC Motor alone and they are widely used to control motion in model cars, model airplanes, robots, etc. Servos have three wire leads which usually terminate to a male or female 3-pin plug. Two leads are for electric power: Positive (2-VCC, Red wire), Negative (3-GND, Brown wire), and the signal line (1-Signal, Orange wire) as represented in the Servo provided in your Kit.
+Servo is a compact package which consists of a DC Motor, a set of reduction gears to provide torque, a sensor and control circuit board. Most Servos only have a 180-degree range of motion via their "horn". Servos can output higher torque than a simple DC Motor alone and they are widely used to control motion in model cars, model airplanes, robots, etc. Servos have three wire leads which usually terminate to a male or female 3-pin plug. Two leads are for electric power: Positive (2-VCC, Red wire), Negative (3-GND, Brown wire), and the signal line (1-Signal, Orange wire) as represented in the Servo provided in your Kit.
 
 .. image:: ../_static/imgs/Servo-1.png
     :align: center
@@ -47,15 +51,19 @@ We will use a 50Hz PWM signal with a duty cycle in a certain range to drive the 
     
     the lasting time of high level corresponding to the servo angle is absolute instead of accumulating. For example, the high level time lasting for 0.5ms correspond to the 0 degree of the servo. If the high level time lasts for another 1ms, the servo rotates to 45 degrees.
 
-================  ================
- High level time  Servo angle
-================  ================
-0.5ms             0 degree
-1ms               45 degree
-1.5ms             90 degree
-2ms               135 degree
-2.5ms             180 degree
-================  ================
+.. table:: 
+    :align: center
+    :class: freenove-ow
+
+    ================  ================
+     High level time  Servo angle
+    ================  ================
+    0.5ms             0 degree
+    1ms               45 degree
+    1.5ms             90 degree
+    2ms               135 degree
+    2.5ms             180 degree
+    ================  ================
 
 When you change the Servo signal value, the Servo will rotate to the designated angle.
 
@@ -64,21 +72,21 @@ Circuit
 
 Use caution when supplying power to the Servo it should be 5V. Make sure you do not make any errors when connecting the Servo to the power supply.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Servo-Sc|                                                                                   |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |Servo-Fr|                                                                                   |
-|                                                                                                |
-|    **Video:** https://youtu.be/leptbJh32ZI                                                     |
-|                                                                                                |
-|    **Sorry latter chapters don't have videos yet.**                                            |
-+------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+|   Schematic diagram                                                                |
+|                                                                                    |
+|   |Servo-Sc|                                                                       |
++------------------------------------------------------------------------------------+
+|   Hardware connection. If you need any support,please feel free to contact us via: |
+|                                                                                    |
+|   support@freenove.com                                                             |
+|                                                                                    |
+|   |Servo-Fr|                                                                       |
+|                                                                                    |
+|    **Video:** https://youtu.be/leptbJh32ZI                                         |
+|                                                                                    |
+|    **Sorry latter chapters don't have videos yet.**                                |
++------------------------------------------------------------------------------------+
 
 .. raw:: html
 
@@ -124,18 +132,21 @@ The following is the program code:
 Import the AngularServo class that controls Servo from the gpiozero library.
 
 .. code-block:: python
+    :linenos:
 
     from gpiozero import AngularServo
 
 A 50 Hz pulse for a 20ms cycle is required to control the Servo. By default, the AngularServo class has set the control period to 20 milliseconds.
 
 .. code-block:: python
+    :linenos:
 
     servo =  AngularServo(myGPIO,initial_angle=0,min_angle=0, max_angle=180,min_pulse_width=minPW,max_pulse_width=maxPW)
 
 The 0-180 degree rotation of the servo corresponds to a PWM pulse width of 0.5-2.5ms at a period of 20ms and a duty cycle of 2.5%-12.5%. After setting the AngularServo class and passing in the corresponding angle parameters, the servo will turn to the corresponding position. However, in actual operation, as there is a deviation in the width of the servo pulse, we need to define minimum and maximum pulse width and error offset (this is essential in robotics).
 
 .. code-block:: python
+    :linenos:
 
     myCorrection=0.0 #define pulse offset of servo
     maxPW=(2.5+myCorrection)/1000     #define pulse duty cycle for minimum angle of servo
@@ -182,7 +193,7 @@ You can refer to the code sweep2.py for more details.
 
 After the program executes, the servo will rotate from 0 degrees to 180 degrees, then reverse the direction so it rotates from 180 degrees to 0 degrees, and repeat these actions in an infinite loop. At this time, the steering gear can hardly feel the vibration.
 
-This code is based on pigpio. In the latest Raspberry Pi OS, “pigpio” library has been installed. You only need to run the command to enable it.
+This code is based on pigpio. In the latest Raspberry Pi OS, "pigpio" library has been installed. You only need to run the command to enable it.
 
 .. code-block:: console
 
@@ -191,8 +202,8 @@ This code is based on pigpio. In the latest Raspberry Pi OS, “pigpio” librar
 .. image:: ../_static/imgs/sudo_pigpiod.png
     :align: center
 
-If the “pigpio” library has not yet been installed, please follow the steps to install it.
-Run the command to install “pigpio” library.
+If the "pigpio" library has not yet been installed, please follow the steps to install it.
+Run the command to install "pigpio" library.
 
 .. code-block:: console
 

@@ -7,22 +7,22 @@ In this chapter, we will introduce the 7-Segment Display.
 Project 4-Digit 7-Segment Display
 ****************************************************************
 
-We will use a 74HC595 IC Chip to control a 7-Segment Display and make it display sixteen decimal characters "0” to “F".
+We will use a 74HC595 IC Chip to control a 7-Segment Display and make it display sixteen decimal characters "0" to "F".
 
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x30                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 74HC595 x2                  | 4-Digit 7-Segment Display x1     | Resistor 220Ω x8                 |
-|                             |                                  |                                  |
-|  |74HC595|                  |  |4_7_Segment_Display|           |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
++-------------------------------------------------+----------------------------------+
+|1. Raspberry Pi (with 40 GPIO) x1                |                                  |     
+|                                                 |   Jumper Wires x30               |       
+|2. GPIO Extension Board & Ribbon Cable x1        |                                  |       
+|                                                 |     |jumper-wire|                |                                                            
+|3. Breadboard x1                                 |                                  |                                                                 
++-----------------------------+-------------------+--------------+-------------------+
+| 74HC595 x2                  | 4-Digit 7-Segment Display x1     | Resistor 220Ω x8  |
+|                             |                                  |                   |
+|  |74HC595|                  |  |4_7_Segment_Display|           |  |res-220R|       |
++-----------------------------+----------------------------------+-------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |74HC595| image:: ../_static/imgs/74HC595.png
