@@ -54,9 +54,11 @@ sphinxcontrib-qthelp==2.0.0
     # via sphinx
 sphinxcontrib-serializinghtml==2.0.0
     # via sphinx
+sphinxcontrib-googleanalytics==0.4
+	# via sphinx
 urllib3==1.26.9
     # via requests
-
+Pygments==2.18.0
+	# via Pygments
 myst_parser==4.0.0
-
-sphinxcontrib-googleanalytics==0.4
+	# via myst_parser
