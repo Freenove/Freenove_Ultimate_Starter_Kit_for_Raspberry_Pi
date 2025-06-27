@@ -86,7 +86,7 @@ This code uses the four step four pat mode to drive the Stepper Motor clockwise 
 .. hint:: 
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
-1.	Use cd command to enter 16.1.1_SteppingMotor directory of Python code.
+1.	Use cd command to enter 18.2.1_StopWatch directory of Python code.
 
 .. code-block:: console
 

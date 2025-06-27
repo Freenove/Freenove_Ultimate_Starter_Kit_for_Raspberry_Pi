@@ -336,6 +336,7 @@ GPIO Numbering Relationship
 In the main function ``main()``, initialize ``wiringPi`` first.
 
 .. code-block:: c
+    :linenos:
 
     wiringPiSetup(); //Initialize wiringPi.
 
