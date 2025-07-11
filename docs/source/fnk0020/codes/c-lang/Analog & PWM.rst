@@ -80,7 +80,6 @@ Schematic diagram   Hardware connection. If you need any support,
 
 |PWM-Schematic|     |PWM-fritizing|
 
-                    Youtube video: https://www.youtube.com/watch?v=Yox30YfYg8M
 ==================  ==================================================================
 
 .. raw:: html
@@ -90,6 +89,7 @@ Schematic diagram   Hardware connection. If you need any support,
 .. |PWM-fritizing| image:: ../_static/imgs/PWM-fritizing.png
 .. |PWM-Schematic| image:: ../_static/imgs/PWM-Schematic.png
 
+|
 
 Code
 ================================================================
@@ -130,6 +130,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/04.1.1_BreathingLED/BreathingLED.c
     :linenos: 
     :language: C
+    :dedent:
 
 First, create a software PWM pin.
 
@@ -144,6 +145,7 @@ There are two "for" loops in the next endless "while" loop. The first loop outpu
     :linenos: 
     :language: C
     :lines: 23-34
+    :dedent:
 
 You can also adjust the rate of the state change of LED by changing the parameter of the delay() function in the "for" loop.
 

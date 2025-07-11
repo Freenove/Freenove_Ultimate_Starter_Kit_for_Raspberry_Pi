@@ -42,33 +42,37 @@ Required Components
 
 Power requirements of various versions of Raspberry Pi are shown in following table:
 
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Product                 | Recommended PSU current capacity | Maximum total USB peripheral current draw          | Typical bare-board active current consumption  |
-+=========================+==================================+====================================================+================================================+
-| Raspberry Pi 1 Model A  | 700mA                            | 500mA                                              | 200mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Raspberry Pi 1 Model B  | 1.2A                             | 500mA                                              | 500mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Raspberry Pi 1 Model A+ | 700mA                            | 500mA                                              | 180mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Raspberry Pi 1 Model B+ | 1.8A                             | 1.2A                                               | 330mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Raspberry Pi 2 Model B  | 1.8A                             | 1.2A                                               | 350mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Raspberry Pi 3 Model B  | 2.5A                             | 1.2A                                               | 400mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Raspberry Pi 3 Model A+ | 2.5A                             | Limited by PSU, board, and connector ratings only. | 350mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Raspberry Pi 3 Model B+ | 2.5A                             | 1.2A                                               | 500mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Raspberry Pi 4 Model B  | 3.0A                             | 1.2A                                               | 600mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Raspberry Pi 5          | 5.0A                             | 1.6A (600mA if using a 3A power supply)            | 800mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Raspberry Pi 400        | 3.0A                             | 1.2A                                               | 800mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
-| Raspberry Pi Zero       | 1.2A                             | Limited by PSU, board, and connector ratings only  | 100mA                                          |
-+-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+.. table:: 
+    :align: center
+    :class: zebra
+
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Product                 | Recommended PSU current capacity | Maximum total USB peripheral current draw          | Typical bare-board active current consumption  |
+    +=========================+==================================+====================================================+================================================+
+    | Raspberry Pi 1 Model A  | 700mA                            | 500mA                                              | 200mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Raspberry Pi 1 Model B  | 1.2A                             | 500mA                                              | 500mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Raspberry Pi 1 Model A+ | 700mA                            | 500mA                                              | 180mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Raspberry Pi 1 Model B+ | 1.8A                             | 1.2A                                               | 330mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Raspberry Pi 2 Model B  | 1.8A                             | 1.2A                                               | 350mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Raspberry Pi 3 Model B  | 2.5A                             | 1.2A                                               | 400mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Raspberry Pi 3 Model A+ | 2.5A                             | Limited by PSU, board, and connector ratings only. | 350mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Raspberry Pi 3 Model B+ | 2.5A                             | 1.2A                                               | 500mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Raspberry Pi 4 Model B  | 3.0A                             | 1.2A                                               | 600mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Raspberry Pi 5          | 5.0A                             | 1.6A (600mA if using a 3A power supply)            | 800mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Raspberry Pi 400        | 3.0A                             | 1.2A                                               | 800mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
+    | Raspberry Pi Zero       | 1.2A                             | Limited by PSU, board, and connector ratings only  | 100mA                                          |
+    +-------------------------+----------------------------------+----------------------------------------------------+------------------------------------------------+
 
 .. seealso:: 
     
@@ -84,6 +88,7 @@ Optional Components
 Under normal circumstances, there are two ways to login to Raspberry Pi: 
 
 1) Using a stand-alone monitor. 
+   
 2) Using a remote desktop or laptop computer monitor "sharing" the PC monitor with your RPi.
 
 Required Accessories for Monitor
@@ -107,27 +112,31 @@ As to Pi Zero and Pi Zero W, you also need the following accessories:
 
 For different Raspberry Pi Modules, the optional items may vary slightly but they all aim to convert the interfaces to Raspberry Pi standards.
 
-+----------------------------------------------------------+------------------------+-------+----------------------+-------+---------------------+-----------+-------+-----+
-|                                                          | Pi Zero                | Pi A+ | Pi Zero W            | Pi 3A+| Pi B+/2B            | Pi 3B/3B+ | Pi 4B | Pi 5|
-+==========================================================+========================+=======+======================+=======+=====================+===========+=======+=====+
-| Monitor                                                  | Yes (All)                                                                                                     |
-+----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| Mouse                                                    | Yes (All)                                                                                                     |
-+----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| Keyboard                                                 | Yes (All)                                                                                                     |
-+----------------------------------------------------------+------------------------+-------+----------------------+-------+---------------------+-----------+-------+-----+
-| Micro-HDMI to HDMI Adapter & Cable                       | Yes                    | No    | Yes                  | No    | No                  | No        | No    | No  |
-+----------------------------------------------------------+------------------------+-------+----------------------+-------+---------------------+-----------+-------+-----+
-| Micro-HDMI to HDMI Adapter & Cable                       | No                                                                                              | Yes         |
-+----------------------------------------------------------+------------------------+-------+----------------------+-----------------------------------------+-------------+
-| Micro-USB to USB-A Adapter & Cable (Micro USB OTG Cable) | Yes                    | No    | Yes                  | No                                                    |
-+----------------------------------------------------------+------------------------+-------+----------------------+-------+---------------------+-----------+-------+-----+
-| USB HUB                                                  | Yes                    | Yes   | Yes                  | Yes   | No                  | No        | No    | No  |
-+----------------------------------------------------------+------------------------+-------+----------------------+-------+---------------------+-----------+-------+-----+
-| USB to Ethernet Interface                                | select one from two or         | optional                     |Internal Integration |Internal Integration     |
-+----------------------------------------------------------+                                +------------------------------+---------------------+                         |
-| USB Wi-Fi Receiver                                       | select two from two            | Internal Integration         | optional            |                         |
-+----------------------------------------------------------+--------------------------------+------------------------------+---------------------+-------------------------+
+.. table:: 
+    :align: center
+    :class: zebra
+
+    +----------------------------------------------------------+------------------------+-------+----------------------+-------+---------------------+-----------+-------+-----+
+    |                                                          | Pi Zero                | Pi A+ | Pi Zero W            | Pi 3A+| Pi B+/2B            | Pi 3B/3B+ | Pi 4B | Pi 5|
+    +==========================================================+========================+=======+======================+=======+=====================+===========+=======+=====+
+    | Monitor                                                  | Yes (All)                                                                                                     |
+    +----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+    | Mouse                                                    | Yes (All)                                                                                                     |
+    +----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+    | Keyboard                                                 | Yes (All)                                                                                                     |
+    +----------------------------------------------------------+------------------------+-------+----------------------+-------+---------------------+-----------+-------+-----+
+    | Micro-HDMI to HDMI Adapter & Cable                       | Yes                    | No    | Yes                  | No    | No                  | No        | No    | No  |
+    +----------------------------------------------------------+------------------------+-------+----------------------+-------+---------------------+-----------+-------+-----+
+    | Micro-HDMI to HDMI Adapter & Cable                       | No                                                                                              | Yes         |
+    +----------------------------------------------------------+------------------------+-------+----------------------+-----------------------------------------+-------------+
+    | Micro-USB to USB-A Adapter & Cable (Micro USB OTG Cable) | Yes                    | No    | Yes                  | No                                                    |
+    +----------------------------------------------------------+------------------------+-------+----------------------+-------+---------------------+-----------+-------+-----+
+    | USB HUB                                                  | Yes                    | Yes   | Yes                  | Yes   | No                  | No        | No    | No  |
+    +----------------------------------------------------------+------------------------+-------+----------------------+-------+---------------------+-----------+-------+-----+
+    | USB to Ethernet Interface                                | select one from two or         | optional                     |Internal Integration |Internal Integration     |
+    +----------------------------------------------------------+                                +------------------------------+---------------------+                         |
+    | USB Wi-Fi Receiver                                       | select two from two            | Internal Integration         | optional            |                         |
+    +----------------------------------------------------------+--------------------------------+------------------------------+---------------------+-------------------------+
 
 Required Accessories for Remote Desktop
 ================================================================
@@ -136,24 +145,28 @@ If you do not have an independent monitor, or if you want to use a remote deskto
 
 This requires the following accessories.
 
-+----------------------------------------------------------+---------+-----------+-------+--------+----------+----------------+
-|                                                          | Pi Zero | Pi Zero W | Pi A+ | Pi 3A+ | Pi B+/2B | Pi 3B/3B+/4B/5 |
-+==========================================================+=========+===========+=======+========+==========+================+
-| Micro-USB to USB-A Adapter & Cable (Micro USB OTG Cable) | Yes     | Yes       | No    | NO                                 |
-+----------------------------------------------------------+---------+-----------+-------+                                    |
-| USB to Ethernet interface                                | Yes     | Yes       | Yes   |                                    |
-+----------------------------------------------------------+---------+-----------+-------+------------------------------------+
+.. table:: 
+    :align: center
+    :class: zebra
+
+    +----------------------------------------------------------+---------+-----------+-------+--------+----------+----------------+
+    |                                                          | Pi Zero | Pi Zero W | Pi A+ | Pi 3A+ | Pi B+/2B | Pi 3B/3B+/4B/5 |
+    +==========================================================+=========+===========+=======+========+==========+================+
+    | Micro-USB to USB-A Adapter & Cable (Micro USB OTG Cable) | Yes     | Yes       | No    | NO                                 |
+    +----------------------------------------------------------+---------+-----------+-------+                                    |
+    | USB to Ethernet interface                                | Yes     | Yes       | Yes   |                                    |
+    +----------------------------------------------------------+---------+-----------+-------+------------------------------------+
 
 Raspberry Pi OS
 ****************************************************************
 
-**Without Screen - Use Raspberry Pi - under Windows PC:** https://youtu.be/7vA5utwzY0E
+**Without Screen - Use Raspberry Pi - under Windows PC**
 
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/7vA5utwzY0E" frameborder="0" allowfullscreen></iframe>
 
-**With Screen - Use Raspberry Pi - under Windows PC:** https://youtu.be/HEywFsFrj3I
+**With Screen - Use Raspberry Pi - under Windows PC**
 
 .. raw:: html
 
@@ -244,7 +257,7 @@ Getting Started with Raspberry Pi
 Monitor desktop
 ================================================================
 
-If you do not have a spare monitor, please skip to next section `Remote desktop & VNC`_. If you have a spare monitor, please follow the steps in this section. 
+If you do not have a spare monitor, please skip to next section :ref:`Remote desktop & VNC <fnk0066/codes/c-lang/installing_an_operating_system:remote desktop & vnc>`. If you have a spare monitor, please follow the steps in this section. 
 
 After the system is written successfully, take out Micro SD Card and put it into the SD card slot of RPi. Then connect your RPi to the monitor through the HDMI port, attach your mouse and keyboard through the USB ports, attach a network cable to the network port and finally, connect your power supply (making sure that it meets the specifications required by your RPi Module Version. Your RPi should start (power up). Later, after setup, you will need to enter your user name and password to login. The default user name: pi; password: raspberry. After login, you should see the following screen.
 
@@ -259,10 +272,10 @@ Raspberry Pi 5, 4B, 3B+/3B integrates a Wi-Fi adaptor. You can use it to connect
 Remote desktop & VNC
 ================================================================
 
-**If you have logged in Raspberry Pi via display, you can skip to** `VNC Viewer & VNC`_.
+**If you have logged in Raspberry Pi via display, you can skip to** :ref:`VNC Viewer & VNC <fnk0066/codes/c-lang/installing_an_operating_system:vnc viewer & vnc>`.
 
 If you don't have a spare display, mouse and keyboard for your RPi, you can use a remote desktop to share a display, keyboard, and mouse with your PC. Below is how to use: 
-`MAC OS remote desktop`_ and `Windows OS remote desktop`_.
+:ref:`MAC OS remote desktop <fnk0066/codes/c-lang/installing_an_operating_system:mac os remote desktop>` and :ref:`Windows OS remote desktop <fnk0066/codes/c-lang/installing_an_operating_system:windows os remote desktop>`.
 
 MAC OS Remote Desktop
 ----------------------------------------------------------------
@@ -276,8 +289,10 @@ Open the terminal and type following command. :red:`If this command doesn't work
 The password is **raspberry** by default, case sensitive. You may need to type **yes** during the process.
 
 .. image:: ../_static/imgs/install-system-16.png
+    :align: center
 
 .. image:: ../_static/imgs/install-system-17.png
+    :align: center
 
 You can also use the IP address to log in Pi. 
 
@@ -289,26 +304,30 @@ Open the terminal and type following command.
 
     $ ssh pi@192.168.1.95
 
-When you see :red:`pi@raspberrypi:`:blue:`~ $`, you have logged in Pi successfully. Then you can skip to next section.
+When you see :combo:`green font-bolder:pi@raspberrypi:`:combo:`blue font-bolder:~ $`, you have logged in Pi successfully. Then you can skip to next section.
 
 .. image:: ../_static/imgs/install-system-18.png
+    :align: center
 
-Then you can skip to `VNC Viewer & VNC`_.
+Then you can skip to :ref:`VNC Viewer & VNC <fnk0066/codes/c-lang/installing_an_operating_system:vnc viewer & vnc>`.
 
 Windows OS Remote Desktop
 ----------------------------------------------------------------
 
 **If you are using win10, you can use follow way to login Raspberry Pi without desktop.**
-Press `Win+R`. Enter `cmd`. Then use this command to check IP:
+
+Press **Win+R**. Enter **cmd**. Then use this command to check IP:
 
 .. code-block:: console
 
     $ ping -4 raspberrypi.local
 
 .. image:: ../_static/imgs/install-system-19.png
+    :align: center
 
-| Then 192.168.1.147 is my Raspberry Pi IP.
-| Or enter **router** client to **inquiry IP address** named **"raspberrypi"**. For example, I have inquired to **my RPi IP address, and it is "192.168.1.95".**
+Then 192.168.1.147 is my Raspberry Pi IP.
+
+Or enter **router** client to **inquiry IP address** named **"raspberrypi"**. For example, I have inquired to **my RPi IP address, and it is "192.168.1.95".**
 
 .. code-block:: console
     
@@ -321,6 +340,7 @@ Enter the following command:
     $ ssh pi@192.168.1.95
 
 .. image:: ../_static/imgs/install-system-20.png
+    :align: center
 
 VNC Viewer & VNC
 ----------------------------------------------------------------
@@ -328,42 +348,54 @@ VNC Viewer & VNC
 Enable VNC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Type the following command. And select Interface Options->P5 VNC -> Enter->Yes->OK. Here Raspberry Pi may need be restarted, and choose ok. Then open VNC interface. 
+Type the following command. And select Interface Options -> P5 VNC -> Enter -> Yes -> OK. Here Raspberry Pi may need be restarted, and choose ok. Then open VNC interface. 
 
 .. code-block:: console
     
     $ sudo raspi-config
 
 .. image:: ../_static/imgs/install-system-21.png
+    :align: center
 
 .. image:: ../_static/imgs/install-system-22.png
+    :align: center
 
 .. image:: ../_static/imgs/install-system-23.png
+    :align: center
 
 .. image:: ../_static/imgs/install-system-24.png
+    :align: center
 
-| Then download and install VNC Viewer according to your computer system by click following link:
-| https://www.realvnc.com/en/connect/download/viewer/
-| After installation is completed, open VNC Viewer. And click File -> New Connection. Then the interface is shown below. 
+Then download and install VNC Viewer according to your computer system by click following link:
+
+https://www.realvnc.com/en/connect/download/viewer/
+
+After installation is completed, open VNC Viewer. And click File -> New Connection. Then the interface is shown below. 
 
 .. image:: ../_static/imgs/install-system-25.png
+    :align: center
 
-| Enter ip address of your Raspberry Pi and fill in a name. Then click OK.
-| Then on the VNC Viewer panel, double-click new connection you just created, 
+Enter ip address of your Raspberry Pi and fill in a name. Then click OK.
+
+Then on the VNC Viewer panel, double-click new connection you just created, 
 
 .. image:: ../_static/imgs/install-system-26.png
+    :align: center
 
 and the following dialog box pops up.  
 
 .. image:: ../_static/imgs/install-system-27.png
+    :align: center
 
 Enter username: **pi** and Password: **raspberry**. And click OK.     
 
 .. image:: ../_static/imgs/install-system-28.png
+    :align: center
 
 Here, you have logged in to Raspberry Pi successfully by using VNC Viewer
 
 .. image:: ../_static/imgs/install-system-29.png
+    :align: center
 
 If there is black window, please `set resolution`_.
 
@@ -373,19 +405,24 @@ set resolution
 You can also set other resolutions. 
 
 .. image:: ../_static/imgs/install07.png
+    :align: center
 
 If you don't know what resolution to set properly, you can try 1920x1080.
 
 .. image:: ../_static/imgs/install-system-31.png
+    :align: center
 
 In addition, your VNC Viewer window may zoom your Raspberry Pi desktop. You can change it. On your VNC View control panel, click right key. And select Properties->Options label->Scaling. Then set proper scaling. 
 
 .. image:: ../_static/imgs/install-system-32.png
+    :align: center
 
 .. image:: ../_static/imgs/install-system-33.png
+    :align: center
 
 Here, you have logged in to Raspberry Pi successfully by using VNC Viewer and operated proper setting.
 
 Raspberry Pi 5/4B/3B+/3B integrates a Wi-Fi adaptor.If you did not connect Pi to WiFi. You can connect it to wirelessly control the robot.
 
 .. image:: ../_static/imgs/install08.png
+    :align: center

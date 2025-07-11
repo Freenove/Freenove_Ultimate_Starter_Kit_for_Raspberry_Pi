@@ -2,7 +2,6 @@
 Chapter Button and leds
 ################################################################
 
-
 Usually, there are three essential parts in a complete automatic control device: INPUT, OUTPUT, and CONTROL. In last section, the LED module was the output part and RPI was the control part. In practical applications, we not only make LEDs flash, but also make a device sense the surrounding environment, receive instructions and then take the appropriate action such as turn on LEDs, make a buzzer beep and so on.
 
 .. image:: ../_static/imgs/button-led-flow-chart.png
@@ -64,8 +63,10 @@ Component List
     :height: 180px
 .. |res-10k| image:: ../_static/imgs/res-10K-hori.png
 .. |button-small| image:: ../_static/imgs/button-small.jpg
+
 .. note:: 
-    Please Note: In the code "button" represents switch action.
+    
+    In the code "button" represents switch action.
 
 Component knowledge
 ================================================================
@@ -85,41 +86,45 @@ Circuit
 
 1. **Schematic diagram**
 
-    .. image:: ../_static/imgs/button-led-sch1.jpg
-        :height: 400
+.. image:: ../_static/imgs/button-led-sch1.jpg
+    :align: center
 
-    .. note:: 
-        R3 is used to limit current to protect GPIO 18, if you set it to output HIGH level by mistake.
+.. note:: 
+
+    R3 is used to limit current to protect GPIO 18, if you set it to output HIGH level by mistake.
 
 2. **Hardware connection** 
 
 .. image:: ../_static/imgs/button-led-hdc1.jpg
-    :width: 100%
+    :align: center
 
 .. note::
-    | There are two kinds of push button switch in this kit. 
-    | :red:`The smaller push button switches are contained in a plastic bag.` 
-.. note:: 
-
-    Youtube video: https://www.youtube.com/watch?v=btp5GbaV0xI
+    
+    There are two kinds of push button switch in this kit. 
+    
+    :red:`The smaller push button switches are contained in a plastic bag.`
 
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/btp5GbaV0xI" frameborder="0" allowfullscreen></iframe>
 
+|
+
 .. hint:: 
 
     If you need any support, please feel free to contact us via: support@freenove.com
 
-This is how it works. When button switch is released:
+**This is how it works.**
+
+**When button switch is released:**
 
 .. image:: ../_static/imgs/button-led-released.png
-    :width: 100%
+    :align: center
     
-This is how it works. When button switch is released:
+**When button switch is pressed:**
 
 .. image:: ../_static/imgs/button-led-pressed.png
-    :width: 100%
+    :align: center
 
 Code
 ================================================================
@@ -128,6 +133,7 @@ This project is designed for learning how to use Push Button Switch to control a
 
 C Code ButtonLED
 ----------------------------------------------------------------
+
 First, observe the project result, then learn about the code in detail.
 
 .. hint:: 
@@ -153,6 +159,7 @@ First, observe the project result, then learn about the code in detail.
     $ sudo ./ButtonLED
 
 Later, the terminal window continues to print out the characters "led off…". Press the button, then LED is turned on and then terminal window prints out the "led on…". 
+
 Release the button, then LED is turned off and then terminal window prints out the "led off…". You can press ``Ctrl+C`` to terminate the program.
 
 The following is the program code:
@@ -165,6 +172,7 @@ The following is the program code:
 In the circuit connection, LED and Button are connected with GPIO17 and GPIO18 respectively, which correspond to 0 and 1 respectively in wiringPI. So define ledPin and buttonPin as 0 and 1 respectively.
 
 .. code-block:: c
+    :linenos:
 
     #define ledPin    0     //define the ledPin
     #define buttonPin 1     //define the buttonPin
@@ -180,7 +188,7 @@ In the while loop of main function, use digitalRead(buttonPin) to determine the 
 Reference
 ---------------------------------
 
-.. c:function:: int digitalRead (int pin);
+.. py:function:: int digitalRead (int pin);
 
     This function returns the value read at the given pin. It will be "HIGH" or "LOW"(1 or 0) depending on the logic level at the pin.
 
@@ -213,7 +221,7 @@ C Code Tablelamp
 
 First, observe the project result, and then learn about the code in detail.
 
-If you have any concerns, please contact us via: support@freenove.com
+:red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use cd command to enter 02.2.1_Tablelamp directory of C code.
 

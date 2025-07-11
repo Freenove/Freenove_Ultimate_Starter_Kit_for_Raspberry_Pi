@@ -65,8 +65,6 @@ Circuit
 |   support@freenove.com                                                                         | 
 |                                                                                                |
 |   |RGB-LED-fritizing|                                                                          |
-|                                                                                                |
-|    **Video:** https://youtu.be/tbnX2AsX2y4                                                     |
 +------------------------------------------------------------------------------------------------+
 
 .. |RGB-LED-Scbematic| image:: ../_static/imgs/RGB-LED-Scbematic.png
@@ -77,7 +75,10 @@ Circuit
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/tbnX2AsX2y4" frameborder="0" allowfullscreen></iframe>
 
+|
+
 .. note:: 
+
     In this kit, the RGB led is Common anode. The voltage difference between LED will make it work. There is no visible GND. The GPIO ports can also receive current while in output mode.If circuit above doesn't work, the RGB LED may be common cathode. Please try following wiring.There is no need to modify code for random color.
 
 .. image:: ../_static/imgs/RGB-LED-fritizing2.png
@@ -95,6 +96,7 @@ C Code Colorful LED
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 05.1.1_ColorfulLED directory of C code.
@@ -106,7 +108,8 @@ First, observe the project result, and then learn about the code in detail.
 2.	Use following command to compile ``ColorfulLED.c`` and generate executable file ``ColorfulLED``.
 
 .. note:: 
-    in this project, the software PWM uses a multi-threading mechanism. So ``-lpthread`` option need to be add to the compiler.
+
+    In this project, the software PWM uses a multi-threading mechanism. So ``-lpthread`` option need to be add to the compiler.
 
 .. code-block:: console    
     
@@ -132,6 +135,7 @@ First, in subfunction of ledInit(), create the software PWM control pins used to
     :linenos: 
     :language: C
     :lines: 16-21
+    :dedent:
 
 Then create subfunction, and set the PWM of three pins.
 
@@ -139,6 +143,7 @@ Then create subfunction, and set the PWM of three pins.
     :linenos: 
     :language: C
     :lines: 23-28
+    :dedent:
 
 Finally, in the "while" loop of main function, get three random numbers and specify them as the PWM duty cycle, which will be assigned to the corresponding pins. So RGB LED can switch the color randomly all the time.
 
@@ -146,6 +151,7 @@ Finally, in the "while" loop of main function, get three random numbers and spec
     :linenos: 
     :language: C
     :lines: 39-46
+    :dedent:
 
 The related function of PWM Software can be described as follows:
 

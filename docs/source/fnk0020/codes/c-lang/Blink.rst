@@ -64,15 +64,13 @@ When programming GPIO pins there are 3 different ways to reference them: **GPIO 
 
 BCM GPIO Numbering
 ---------------------------------------------------------------
+
 The Raspberry Pi CPU uses Broadcom (BCM) processing chips BCM2835, BCM2836 or BCM2837. GPIO pin numbers are assigned by the processing chip manufacturer and are how the computer recognizes each pin. The pin numbers themselves do not make sense or have meaning as they are only a form of identification. Since their numeric values and physical locations have no specific order, there is no way to remember them so you will need to have a printed reference or a reference board that fits over the pins.
 
 Each pin's functional assignment is defined in the image below:
 
-    .. image:: ../_static/imgs/raspberrypi5-cc90.png
-        :width: 30%
-
-    .. image:: ../_static/imgs/raspberrypi-pinout-bcm.png
-        :width: 30%
+    .. image:: ../_static/imgs/Chapter01_00.png
+        :align: center
 
 .. seealso:: 
     
@@ -97,6 +95,7 @@ Different from the previous two types of GPIO serial numbers, RPi GPIO serial nu
     :align: center
 
 .. seealso:: 
+    
     For more details, please refer to `<https://projects.drogon.net/raspberry-pi/wiringpi/pins/>`_ 
 
 You can also use the following command to view their correlation.
@@ -116,11 +115,11 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
 
 .. caution:: 
 
-    CAUTION: Avoid any possible short circuits (especially connecting 5V or GND, 3.3V and GND)! 
+    Avoid any possible short circuits (especially connecting 5V or GND, 3.3V and GND)! 
 
 .. warning:: 
 
-    WARNING: A short circuit can cause high current in your circuit, create excessive component heat and cause permanent damage to your RPi!
+    A short circuit can cause high current in your circuit, create excessive component heat and cause permanent damage to your RPi!
 
 **Schematic diagram**
 
@@ -138,12 +137,10 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
      :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
 
 .. attention:: 
+   
     Do NOT rotate Raspberry Pi to change the way of this connection.
+    
     Please plug T extension fully into breadboard.
-
-.. note:: 
-
-    Youtube video: https://www.youtube.com/watch?v=zS75zSSBmic
 
 .. raw:: html
 
@@ -201,27 +198,32 @@ Resistor
 ----------------------------------------------------------------
 
 Resistors use Ohms (Ω) as the unit of measurement of their resistance (R). 1MΩ=1000kΩ, 1kΩ=1000Ω.
+
 A resistor is a passive electrical component that limits or regulates the flow of current in an electronic circuit.
+
 On the left, we see a physical representation of a resistor, and the right is the symbol used to represent the presence of a resistor in a circuit diagram or schematic.
 
 .. image:: ../_static/imgs/res-describe.png
     :align: center
 
 The bands of color on a resistor is a shorthand code used to identify its resistance value. For more details of resistor color codes, please refer to the card in the kit package.
+
 With a fixed voltage, there will be less current output with greater resistance added to the circuit. The relationship between Current, Voltage and Resistance can be expressed by this formula: I=V/R known as Ohm's Law where I = Current, V = Voltage and R = Resistance. Knowing the values of any two of these allows you to solve the value of the third.
 
 In the following diagram, the current through R1 is: 
 
-.. math:: I=U/R=5V/10kΩ=0.0005A=0.5mA.
+.. math:: \boldsymbol{I = \frac{U}{R} = \frac{5\,V}{10\,kΩ} = 0.0005\,A = 0.5\,mA}
 
 .. image:: ../_static/imgs/res-current.png
     :align: center
 
 .. warning:: 
-    WARNING: Never connect the two poles of a power supply with anything of low resistance value (i.e. a metal object or bare wire) this is a Short and results in high current that may damage the power supply and electronic components.
+
+    Never connect the two poles of a power supply with anything of low resistance value (i.e. a metal object or bare wire) this is a Short and results in high current that may damage the power supply and electronic components.
 
 .. note:: 
-    Note: Unlike LEDs and Diodes, Resistors have no poles and re non-polar (it does not matter which direction you insert them into a circuit, it will work the same)
+    
+    Unlike LEDs and Diodes, Resistors have no poles and re non-polar (it does not matter which direction you insert them into a circuit, it will work the same)
 
 Breadboard
 ----------------------------------------------------------------
@@ -254,9 +256,10 @@ C Code Blink
 ----------------------------------------------------------------
 First, enter this command into the Terminal one line at a time. Then observe the results it brings on your project, and learn about the code in detail. 
 
-If you want to execute it with editor, please refer to section Code Editor<> to configure.
+If you want to execute it with editor, please refer to section :ref:`Code Editor <fnk0066/codes/c-lang/blink:other code editors (optional)>` to configure.
 
 .. hint:: 
+
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 It is recommended that to execute the code via command line.
@@ -351,7 +354,7 @@ then LED turns OFF, which is followed by a delay. Repeat the loop, then LED will
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/01.1.1_Blink/Blink.c
     :linenos: 
     :language: C
-    :lines: 16-27
+    :lines: 18-27
     :dedent:
 
 Other Code Editors (Optional)
@@ -387,6 +390,9 @@ Use the following command to run the executable file "Hello".
 
 After the execution, "Hello, World!" is printed out in terminal.
 
+.. image:: ../_static/imgs/Chapter01_01.png
+    :align: center
+
 geany
 ------------------------
 
@@ -401,14 +407,14 @@ Or find and open Geany directly in the desktop main menu, and then click File
 .. image:: ../_static/imgs/01_03.png
     :align: center
 
-If you want to create a new code, click FileNewFileSave as (name.c or name.py). Then write the code.
+If you want to create a new code, click File -> New -> File -> Save as (name.c or name.py). Then write the code.
 
-Generate an executable file by clicking menu bar Build->Build.
+Generate an executable file by clicking menu bar Build -> Build.
 
 .. image:: ../_static/imgs/01_04.png
     :align: center
 
-Then execute the generated file by clicking menu bar Build->Execute.
+Then execute the generated file by clicking menu bar Build -> Execute.
 
 .. image:: ../_static/imgs/01_05.png
     :align: center
@@ -418,7 +424,7 @@ After the execution, a new terminal window will output the characters "Hello, Wo
 .. image:: ../_static/imgs/01_06.png
     :align: center
 
-You can click Build->Set Build Commands to set compiler commands. In later projects, we will use various compiler command options. :red:`If you choose to use Geany, you will need change the compiler command here`. As is shown below:
+You can click Build -> Set Build Commands to set compiler commands. In later projects, we will use various compiler command options. :red:`If you choose to use Geany, you will need change the compiler command here`. As is shown below:
 
 .. image:: ../_static/imgs/01_07.png
     :align: center
@@ -436,35 +442,17 @@ https://www.amazon.com/freenove
 
 **FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
 
-.. image:: ../_static/imgs/43_1.png
-    :width: 40%
-
-.. image:: ../_static/imgs/43_2.png
-    :width: 40%
-
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
-  
+
 **FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/50_1.png
-    :width: 40%
-
-.. image:: ../_static/imgs/50_2.png
-    :width: 40%
 
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
 
 **FNK0052**--:green:`Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi`
-
-.. image:: ../_static/imgs/52_1.png
-    :width: 50%
-
-.. image:: ../_static/imgs/52_2.png
-    :width: 40%
 
 .. raw:: html
 

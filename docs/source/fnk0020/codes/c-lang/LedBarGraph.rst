@@ -64,10 +64,6 @@ Hardware connection. If you need any support, please feel free to contact us via
 
         :red:`If LEDbar doesn't work, rotate LEDbar 180° to try. The label is random.`
 
-.. note:: 
-        
-        **Youtube video:** https://www.youtube.com/watch?v=RqR6KdMQ8qI
-
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/RqR6KdMQ8qI" frameborder="0" allowfullscreen></iframe>

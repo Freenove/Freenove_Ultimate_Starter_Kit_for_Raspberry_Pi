@@ -9,7 +9,7 @@ The A type and B type versions of the first generation products have been discon
 Below are the raspberry pi pictures and model pictures supported by this product. They have 40 pins.
 
 .. table:: 
-    :width: 70%
+    :width: 90%
     :align: center
     :widths: 50 50
 
