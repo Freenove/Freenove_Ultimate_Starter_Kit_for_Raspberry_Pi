@@ -17,6 +17,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: center
 
     +------------------------------------------------+--------------------+
     |1. Raspberry Pi (with 40 GPIO) x1               |   Resistor 220Ω x1 |     

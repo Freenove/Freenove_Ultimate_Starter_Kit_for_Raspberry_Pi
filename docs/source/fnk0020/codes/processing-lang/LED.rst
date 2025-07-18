@@ -15,14 +15,11 @@ Component List
 .. table::
     :align: center
     :width: 80%
+    :class: table-line
 
     +-----------------------------------------------------------+
-    |    Raspberry Pi                                           |     
+    |    Raspberry Pi x 1                                       |     
     |                                                           |       
-    |    (Recommended: Raspberry Pi 5 / 4B / 3B+ / 3B)          |       
-    |                                                           |                                                            
-    |    (Compatible: 3A+ / 2B / 1B+ / 1A+ / Zero W / Zero)     |                                                                 
-    |                                                           | 
     |     |raspberrypi5|                                        | 
     +-----------------------------------------------------------+
     | Breadboard x1                                             |
@@ -53,59 +50,12 @@ Component List
 .. |res-220R| image:: ../_static/imgs/res-220R.png
     :width: 30%
 
-
 In the components list, 3B GPIO, Extension Shield Raspberry and Breadboard are necessary for each project. Later, they will be reference by text only (no images as in above).
-
-GPIO
-================================================================
-GPIO: General Purpose Input/Output. Here we will introduce the specific function of the pins on the Raspberry Pi and how you can utilize them in all sorts of ways in your projects. Most RPi Module pins can be used as either an input or output, depending on your program and its functions.
-
-When programming GPIO pins there are 3 different ways to reference them: **GPIO Numbering**, **Physical Numbering** and **WiringPi GPIO Numbering**.
-
-BCM GPIO Numbering
----------------------------------------------------------------
-The Raspberry Pi CPU uses Broadcom (BCM) processing chips BCM2835, BCM2836 or BCM2837. GPIO pin numbers are assigned by the processing chip manufacturer and are how the computer recognizes each pin. The pin numbers themselves do not make sense or have meaning as they are only a form of identification. Since their numeric values and physical locations have no specific order, there is no way to remember them so you will need to have a printed reference or a reference board that fits over the pins.
-
-Each pin's functional assignment is defined in the image below:
-    .. image:: ../_static/imgs/raspberrypi5-cc90.png
-        :height: 500
-
-    .. image:: ../_static/imgs/raspberrypi-pinout-bcm.png
-        :height: 500
-
-.. seealso:: 
-    For more details about pin definition of GPIO, please refer to `<http://pinout.xyz/>`_
-
-PHYSICAL Numbering
----------------------------------------------------------------
-Another way to refer to the pins is by simply counting across and down from pin 1 at the top left (nearest to the SD card). This is 'Physical Numbering', as shown below:
-
-.. image:: ../_static/imgs/PHYSICAL-Numbering.png
-    :height: 200
-
-WiringPi GPIO Numbering
----------------------------------------------------------------
-Different from the previous two types of GPIO serial numbers, RPi GPIO serial number of the WiringPi are numbered according to the BCM chip use in RPi.
-
-.. image:: ../_static/imgs/WiringPi-GPIO-Numbering.png
-    :height: 500
-
-.. seealso:: 
-    For more details, please refer to `<https://projects.drogon.net/raspberry-pi/wiringpi/pins/>`_ 
-
-You can also use the following command to view their correlation.
-
-.. code-block:: console
-
-    $ gpio readall
-
-.. image:: ../_static/imgs/cmd-readall-console.png
-    :height: 500
 
 Circuit
 ================================================================
 
-First, disconnect your RPi from the GPIO Extension Shield. Then build the circuit according to the circuit and hardware diagrams. After the circuit is built and verified correct, connect the RPi to GPIO Extension Shield. 
+Build the circuit according to the circuit and hardware diagrams. After the circuit is built and verified correct, connect the RPi to GPIO Extension Shield. 
 
 .. caution:: 
 
@@ -119,13 +69,15 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
 
 .. image:: ../_static/imgs/blink-sch.png
     :height: 400
+    :align: center
 
 2. **Hardware connection** 
 
 .. image:: ../_static/imgs/blink-hdc.png
     :height: 400
+    :align: center
 
-Video: https://www.youtube.com/watch?v=N2diyg_Anc0
+|
 
 .. raw:: html
 
@@ -137,23 +89,18 @@ Video: https://www.youtube.com/watch?v=N2diyg_Anc0
      
      :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
 
-.. attention:: 
-
-    Do NOT rotate Raspberry Pi to change the way of this connection.
-    
-    Please plug T extension fully into breadboard.
-
 Because the numbering of the GPIO Extension Shield is the same as that of the RPi GPIO, future hardware connection diagrams will only show that part of breadboard and GPIO Extension Shield.
-
-The connection of Raspberry Pi T extension board is as below. **Don't reverse the ribbon**.
 
 .. image:: ../_static/imgs/blink-real.png
     :width: 100%
+    :align: center
 
 .. note:: 
+
     If you have a fan, you can connect it to 5V GND of breadboard via jumper wires.
 
 **How to distinguish resistors?**
+
 There are only three kind of resistors in this kit.
 
 1. The one with *1 red ring* is 10KΩ \
@@ -161,17 +108,18 @@ There are only three kind of resistors in this kit.
     .. image:: ../_static/imgs/res-10K-hori.png
         :height: 17
 
-2. The one with *1 red ring* is 10KΩ 
+2. The one with *1 red ring* is 220Ω
 
     .. image:: ../_static/imgs/res-220R-hori.png
         :height: 20
 
-#. The one with *1 red ring* is 10KΩ 
+3. The one with *1 red ring* is 1KΩ
 
     .. image:: ../_static/imgs/res-1K-hori.png
         :height: 20
 
 .. note:: 
+
     Future hardware connection diagrams will only show that part of breadboard and GPIO Extension Shield.
 
 Component knowledge
@@ -179,12 +127,14 @@ Component knowledge
 
 LED
 ----------------------------------------------------------------
+
 An LED is a type of diode. All diodes only work if current is flowing in the correct direction and have two Poles. An LED will only work (light up) if the longer pin (+) of LED is connected to the positive output from a power source and the shorter pin is connected to the negative (-) output, which is also referred to as Ground (GND). This type of component is known as "Polar" (think One-Way Street).
 
 All common 2 lead diodes are the same in this respect. Diodes work only if the voltage of its positive electrode is higher than its negative electrode and there is a narrow range of operating voltage for most all common diodes of 1.9 and 3.4V. If you use much more than 3.3V the LED will be damaged and burnt out.
 
 .. image:: ../_static/imgs/led-describe.png
     :width: 100%
+    :align: center
 
 .. note:: 
 
@@ -234,6 +184,7 @@ Here we have a small breadboard as an example of how the rows of holes (sockets)
 
 GPIO Extension Board
 ----------------------------------------------------------------
+
 GPIO board is a convenient way to connect the RPi I/O ports to the breadboard directly. The GPIO pin sequence on Extension Board is identical to the GPIO pin sequence of RPi. 
 
 .. image:: ../_static/imgs/raspberrypi-extension-describe.png
@@ -269,9 +220,7 @@ You can also open it as follows.
 
 Click Raspberry Pi file manager. Find the file under path: 
 
-.. code-block:: console
-
-    $ /home/pi/Freenove_Kit/Processing/Sketches/Sketch_01_1_1_Blink
+**/home/pi/Freenove_Kit/Processing/Sketches/Sketch_01_1_1_Blink**
 
 And then right-click it and select Processing.
 
@@ -399,31 +348,17 @@ https://www.amazon.com/freenove
 
 **FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
 
-.. image:: ../_static/imgs/43_1.png
-
-.. image:: ../_static/imgs/43_2.png
-
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
   
 **FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
 
-.. image:: ../_static/imgs/50_1.png
-
-.. image:: ../_static/imgs/50_2.png
-
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
 
 **FNK0052**--:green:`Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi`
-
-.. image:: ../_static/imgs/52_1.png
-    :width: 50%
-
-.. image:: ../_static/imgs/52_2.png
-    :width: 40%
 
 .. raw:: html
 

@@ -9,27 +9,32 @@ Project Doorbell
 
 We will make a doorbell with this functionality: when the Push Button Switch is pressed the buzzer sounds and when the button is released, the buzzer stops. This is a momentary switch function.
 
-+-----------------------------------------------------------+
-|    Raspberry Pi (with 40 GPIO) x1                         |     
-|                                                           |       
-|    GPIO Extension Board & Ribbon Cable x1                 |       
-|                                                           |                                                            
-|    Breadboard x1                                          |                                                                 
-+---------------------------+-------------------------------+
-| NPN transistorx1 (S8050)  |   Active buzzer x1            |
-|                           |                               |
-|   |NPN-transistor|        |  |Active-buzzer|              |                   
-|                           |                               |          
-+----------------------+----+------------+------------------+
-|Push Button Switch x1 | Resistor 1kΩ x1 | Resistor 10kΩ x2 |
-|                      |                 |                  |
-| |button-small|       | |Resistor-1kΩ|  | |Resistor-10kΩ|  |
-|                      |                 |                  |
-+----------------------+-----------------+------------------+
-|   Jumper Wire                                             |
-|                                                           | 
-|      |jumper-wire|                                        |
-+-----------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------------------------------+
+    | Raspberry Pi (with 40 GPIO) x1                            |     
+    |                                                           |
+    | GPIO Extension Board & Ribbon Cable x1                    |
+    |                                                           |
+    | Breadboard x1                                             |
+    +---------------------------+-------------------------------+
+    | NPN transistorx1 (S8050)  |   Active buzzer x1            |
+    |                           |                               |
+    |   |NPN-transistor|        |  |Active-buzzer|              |
+    |                           |                               |
+    +----------------------+----+------------+------------------+
+    |Push Button Switch x1 | Resistor 1kΩ x1 | Resistor 10kΩ x2 |
+    |                      |                 |                  |
+    | |button-small|       | |Resistor-1kΩ|  | |Resistor-10kΩ|  |
+    |                      |                 |                  |
+    +----------------------+-----------------+------------------+
+    |   Jumper Wire                                             |
+    |                                                           |
+    |      |jumper-wire|                                        |
+    +-----------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
@@ -124,12 +129,16 @@ When we use a NPN transistor to drive a buzzer, we often use the following metho
 
 When we use a PNP transistor to drive a buzzer, we often use the following method. If GPIO outputs low level, current will flow through R1. The transistor conducts current and the buzzer will make sounds. If GPIO outputs high level, no current flows through R1, the transistor will not conduct current and buzzer will remain silent (no sounds). Below are the circuit schematics for both a NPN and PNP transistor to power a buzzer.
 
-======================================  ================================================
-NPN transistor to drive buzzer            PNP transistor to drive buzzer
-
-|NPN-Drive|                               |PNP-Drive|
-
-======================================  ================================================
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    ======================================  ================================================
+       NPN transistor to drive buzzer           PNP transistor to drive buzzer
+       
+       |NPN-Drive|                              |PNP-Drive|
+    ======================================  ================================================
 
 .. |NPN-Drive| image:: ../_static/imgs/NPN-Drive.png
 .. |PNP-Drive| image:: ../_static/imgs/PNP-Drive.png
@@ -137,23 +146,29 @@ NPN transistor to drive buzzer            PNP transistor to drive buzzer
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|  Schematic diagram with RPi GPIO Extension Shield                                              |
-|                                                                                                |
-|   |Buzzer-Schematic|                                                                           |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |Buzzer-Fritizing|                                                                           |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------------------------------------------------------------+
+    |  Schematic diagram with RPi GPIO Extension Shield                                              |
+    |                                                                                                |
+    |   |Buzzer-Schematic|                                                                           |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         | 
+    |                                                                                                |
+    |   |Buzzer-Fritizing|                                                                           |
+    +------------------------------------------------------------------------------------------------+
 
 .. |Buzzer-Schematic| image:: ../_static/imgs/Buzzer-Schematic.png
 .. |Buzzer-Fritizing| image:: ../_static/imgs/Buzzer-Fritizing.png
 
 .. note:: 
-    in this circuit, the power supply for the buzzer is 5V, and pull-up resistor of the push button switch is connected to the 3.3V power feed. Actually, the buzzer can work when connected to the 3.3V power feed but this will produce a weak sound from the buzzer (not very loud).
+
+    In this circuit, the power supply for the buzzer is 5V, and pull-up resistor of the push button switch is connected to the 3.3V power feed. Actually, the buzzer can work when connected to the 3.3V power feed but this will produce a weak sound from the buzzer (not very loud).
 
 Sketch
 ================================================================

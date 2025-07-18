@@ -12,8 +12,8 @@ For clarification, this tutorial will also reference Raspberry Pi as RPi, RPI an
 
 In this tutorial, most chapters consist of Components List, **Component Knowledge, Circuit, and Code**. We provide C code for each project in this tutorial. After completing this tutorial, you can learn Java by reading Processing.pdf.
 
-This kit does not contain :ref:`Raspberry and its accessories <python_install_System>`. You can also use the components and modules in this kit to create projects of your own design.
- 
+This kit does not contain :ref:`Raspberry and its accessories <install_python_System>`. You can also use the components and modules in this kit to create projects of your own design.
+
 Additionally, if you encounter any issues or have questions about this tutorial or the contents of kit, you can always contact us for free technical support at:
 
 `support@freenove.com <support@freenove.com>`_

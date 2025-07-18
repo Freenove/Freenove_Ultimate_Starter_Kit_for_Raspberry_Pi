@@ -15,6 +15,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +------------------------------------------------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                                       |     
@@ -51,17 +52,22 @@ Component List
 Circuit with ADS7830
 ================================================================
 
-+------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                |
-|                                                                                    |
-|   |ADS7830-Schematic-2|                                                            |
-+------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                    |
-|   support@freenove.com                                                             |
-|                                                                                    |
-|   |ADS7830-fritizing-2|                                                            |
-+------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                |
+    |                                                                                    |
+    |   |ADS7830-Schematic-2|                                                            |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                    |
+    |   support@freenove.com                                                             |
+    |                                                                                    |
+    |   |ADS7830-fritizing-2|                                                            |
+    +------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-2| image:: ../_static/imgs/ADS7830-Schematic-2.png
 .. |ADS7830-fritizing-2| image:: ../_static/imgs/ADS7830-fritizing-2.png
@@ -69,15 +75,20 @@ Circuit with ADS7830
 Circuit with PCF8591
 ================================================================
 
-+------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                |
-|                                                                                    |
-|   |PCF8591-Schematic-2|                                                            |
-+------------------------------------------------------------------------------------+
-|   Hardware connection.                                                             |
-|                                                                                    |
-|   |PCF8591-fritizing-2|                                                            |
-+------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                |
+    |                                                                                    |
+    |   |PCF8591-Schematic-2|                                                            |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection.                                                             |
+    |                                                                                    |
+    |   |PCF8591-fritizing-2|                                                            |
+    +------------------------------------------------------------------------------------+
 
 .. |PCF8591-Schematic-2| image:: ../_static/imgs/PCF8591-Schematic-2.png
 .. |PCF8591-fritizing-2| image:: ../_static/imgs/PCF8591-fritizing-2.png
@@ -135,25 +146,26 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------------+-------------------+
-    |1. Raspberry Pi (with 40 GPIO) x1                |  220Ω x1          |     
-    |                                                 |                   |       
-    |2. GPIO Extension Board & Ribbon Cable x1        | |res-220R|        |       
-    |                                                 |                   |                                                            
-    |3. Breadboard x1                                 |                   |                                                                 
+    |1. Raspberry Pi (with 40 GPIO) x1                |  220Ω x1          |
+    |                                                 |                   |
+    |2. GPIO Extension Board & Ribbon Cable x1        | |res-220R|        |
+    |                                                 |                   |
+    |3. Breadboard x1                                 |                   |
     +-------------------------------------------------+-------------------+
     | Jumper Wire M/M                                 | Resistor 10kΩ x3  |
     |                                                 |                   |
-    | |jumper-wire|                                   ||Resistor-10kΩ|    |                           
+    | |jumper-wire|                                   ||Resistor-10kΩ|    |
     +-------------------------------------------------+-------------------+
     | ADC module x1 (Only one)                                            |
     |                                                                     |
-    | |ADC-module-1|   :xx-large:`or`  |ADC-module-2|                     |                   
+    | |ADC-module-1|   :xx-large:`or`  |ADC-module-2|                     |
     +-------------------------------------------------+-------------------+
     | Phtotresistor x1                                |LED x1             |
     |                                                 |                   |
-    |   |Phtotresistor|                               | |red-led|         |                    
+    |   |Phtotresistor|                               | |red-led|         |
     +-------------------------------------------------+-------------------+
 
 .. |res-220R| image:: ../_static/imgs/res-220R.png
@@ -166,19 +178,22 @@ Circuit with ADS7830
 
 The circuit used is similar to the Soft light project. The only difference is that the input signal of the AIN0 pin of ADC changes from a Potentiometer to a combination of a Photoresistor and a Resistor.
 
-+------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                |
-|                                                                                    |
-|   |ADS7830-Schematic-4|                                                            |
-+------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                    |
-|   support@freenove.com                                                             |
-|                                                                                    |
-|   |ADS7830-fritizing-5|                                                            |
-|                                                                                    |
-|    **Video:** https://youtu.be/r6p3zhXsyko                                         |
-+------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +----------------------------------------------------------------------------------+
+    | Schematic diagram                                                                |
+    |                                                                                  |
+    | |ADS7830-Schematic-4|                                                            |
+    +----------------------------------------------------------------------------------+
+    | Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                  |
+    | support@freenove.com                                                             |
+    |                                                                                  |
+    | |ADS7830-fritizing-5|                                                            |
+    +----------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-4| image:: ../_static/imgs/ADS7830-Schematic-4.png
 .. |ADS7830-fritizing-5| image:: ../_static/imgs/ADS7830-fritizing-5.png
@@ -188,15 +203,20 @@ Circuit with PCF8591
 
 The circuit used is similar to the Soft light project. The only difference is that the input signal of the AIN0 pin of ADC changes from a Potentiometer to a combination of a Photoresistor and a Resistor.
 
-+-----------------------------------+
-|   Schematic diagram               |
-|                                   |
-|   |PCF8591-Schematic-4|           |
-+-----------------------------------+
-|   Hardware connection.            |
-|                                   |
-|   |PCF8591-fritizing-4|           |
-+-----------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------+
+    | Schematic diagram      |
+    |                        |
+    | |PCF8591-Schematic-4|  |
+    +------------------------+
+    | Hardware connection.   |
+    |                        |
+    | |PCF8591-fritizing-4|  |
+    +------------------------+
 
 .. |PCF8591-Schematic-4| image:: ../_static/imgs/PCF8591-Schematic-4.png
 .. |PCF8591-fritizing-4| image:: ../_static/imgs/PCF8591-fritizing-4.png

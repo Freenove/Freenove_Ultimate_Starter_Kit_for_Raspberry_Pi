@@ -15,7 +15,9 @@ Component List
 
 .. table:: 
     :align: center
-    :width: 80%
+    :width: 70%
+    :widths: 3 2 
+    :class: table-line
 
     +------------------------------------------+-------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1         |                         |     
@@ -34,11 +36,10 @@ Component List
     +------------------------------------------+-------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 50%
+    :width: 80%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 5%
+    :width: 7%
 .. |Keypad| image:: ../_static/imgs/Keypad.png
-    :width: 200%
 
 Component knowledge
 ================================================================
@@ -61,17 +62,22 @@ The method of usage is similar to the Matrix LED, by using a row or column scann
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Keypad_Sc|                                                                                  |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |Keypad_Fr|                                                                                  | 
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |Keypad_Sc|                                                                                  |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |Keypad_Fr|                                                                                  | 
+    +------------------------------------------------------------------------------------------------+
 
 .. |Keypad_Sc| image:: ../_static/imgs/Keypad_Sc.png
 .. |Keypad_Fr| image:: ../_static/imgs/Keypad_Fr.png
@@ -143,7 +149,7 @@ Set the debounce time to 50ms, and this value can be set based on the actual cha
 
     keypad.setDebounceTime(50)
 
-In the "while" loop, use the function key= keypad.getKey () to read the keyboard constantly. If there is a key pressed, its key code will be stored in the variable "key", and then be displayed.
+In the "while" loop, use the function key= keypad. **getKey** () to read the keyboard constantly. If there is a key pressed, its key code will be stored in the variable "key", and then be displayed.
 
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/22.1.1_MatrixKeypad/MatrixKeypad.py
     :linenos: 

@@ -15,27 +15,28 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
-    +----------------------------------------------------+
-    |1. Raspberry Pi x1                                  |
-    |                                                    |
-    |2. GPIO Extension Board & Ribbon Cable x1           |
-    |                                                    |
-    |3. Breadboard x1                                    |
-    +-------------------------------+--------------------+
-    |Joystick  x1                   |Resistor 10kΩ x3    |
-    |                               |                    |
-    ||joystick|                     ||Resistor-10kΩ|     |
-    +-------------------------------+--------------------+
-    |ADC module x1                                       |
-    |                                                    |
-    ||ADC-module-1|   :xx-large:`or`  |ADC-module-2|     |
-    |                                                    |
-    +----------------------------------------------------+
-    |Jumper x18                                          |
-    |                                                    |
-    ||jumper-wire|                                       |
-    +----------------------------------------------------+
+    +-------------------------------------------------+
+    |1. Raspberry Pi x1                               |
+    |                                                 |
+    |2. GPIO Extension Board & Ribbon Cable x1        |
+    |                                                 |
+    |3. Breadboard x1                                 |
+    +-------------------------------+-----------------+
+    |Joystick  x1                   |Resistor 10kΩ x3 |
+    |                               |                 |
+    ||joystick|                     ||Resistor-10kΩ|  |
+    +-------------------------------+-----------------+
+    |ADC module x1                                    |
+    |                                                 |
+    ||ADC-module-1|   :xx-large:`or`  |ADC-module-2|  |
+    |                                                 |
+    +-------------------------------------------------+
+    |Jumper x18                                       |
+    |                                                 |
+    ||jumper-wire|                                    |
+    +-------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width:  70%
@@ -55,33 +56,36 @@ Joystick
 A Joystick is a kind of input sensor used with your fingers. You should be familiar with this concept already as they are widely used in gamepads and remote controls. It can receive input on two axes (Y and or X) at the same time (usually used to control direction on a two dimensional plane). And it also has a third direction capability by pressing down (Z axis/direction).
 
 .. image:: ../_static/imgs/joystick-2.png
-        :width: 70%
-        :align: center
+    :width: 70%
+    :align: center
 
 This is accomplished by incorporating two rotary potentiometers inside the Joystick Module at 90 degrees of each other, placed in such a manner as to detect shifts in direction in two directions simultaneously and with a Push Button Switch in the "vertical" axis, which can detect when a User presses on the Joystick.
 
 .. image:: ../_static/imgs/joystick-fritizing.png
-        :width: 70%
-        :align: center
+    :width: 70%
+    :align: center
 
 When the Joystick data is read, there are some differences between the axes: data of X and Y axes is analog, which needs to use the ADC. The data of the Z axis is digital, so you can directly use the GPIO to read this data or you have the option to use the ADC to read this.
 
 Circuit with ADS7830
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-6|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-7|                                                                        |
-|                                                                                                |
-|    **Video:** https://youtu.be/qjP3HpbPJTM                                                     |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                 |
+    |                                                                                     |
+    |   |ADS7830-Schematic-6|                                                             |
+    +-------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:  |
+    |                                                                                     |
+    |   support@freenove.com                                                              |
+    |                                                                                     |
+    |   |ADS7830-fritizing-7|                                                             |
+    +-------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-6| image:: ../_static/imgs/ADS7830-Schematic-6.png
 .. |ADS7830-fritizing-7| image:: ../_static/imgs/ADS7830-fritizing-7.png
@@ -94,17 +98,22 @@ Circuit with ADS7830
 Circuit with PCF8591
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic-6|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing-6|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                 |
+    |                                                                                     |
+    |   |PCF8591-Schematic-6|                                                             |
+    +-------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:  |
+    |                                                                                     |
+    |   support@freenove.com                                                              |
+    |                                                                                     |
+    |   |PCF8591-fritizing-6|                                                             |
+    +-------------------------------------------------------------------------------------+
 
 .. |PCF8591-Schematic-6| image:: ../_static/imgs/PCF8591-Schematic-6.png
 .. |PCF8591-fritizing-6| image:: ../_static/imgs/PCF8591-fritizing-6.png
@@ -117,7 +126,7 @@ In this project's code, we will read the ADC values of X and Y axes of the Joyst
 C Code Joystick
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
+If you did not :blue:`configure I2C`, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 
@@ -146,7 +155,7 @@ First, observe the project result, and then learn about the code in detail.
 After the program is executed, the terminal window will display the data of 3 axes X, Y and Z. Shifting (moving) the Joystick or pressing it down will make the data change.
 
 .. image:: ../_static/imgs/joystick-value.png
-        :width: 100%
+    :align: center
 
 The flowing is the code:
 

@@ -14,6 +14,7 @@ Component List
 
 .. table:: 
     :align: center
+    :class: table-line
     :width: 80%
 
     +------------------------------------------+-------------------+
@@ -47,27 +48,30 @@ After being powered up, it will initialize in 1 second. Its operating voltage is
 
 The SDA pin is a data pin, which is used to communicate with other devices. 
 
-The NC pin (Not Connected Pin) are a type of pin found on various integrated circuit packages. Those pins have no functional purpose to the outside circuit (but may have an unknown functionality during manufacture and test). Those pins should not be connected to any of the circuit connections.
+The NC pin (Not Connected Pin) are a type of pin found on various integrated circuit packages. Those pins have no functional purpose to the outside circuit (but may have an unknown functionality during manufacture and test). Those pins **should not be connected** to any of the circuit connections.
 
 Circuit
 ================================================================
 
-+-----------------------------------------------------------------------------------+
-|   Schematic diagram                                                               |
-|                                                                                   |
-|   |DHT11_Sc|                                                                      |
-+-----------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:|
-|                                                                                   |
-|   support@freenove.com                                                            |
-|                                                                                   |
-|   |DHT11_Fr|                                                                      | 
-+-----------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :class: table-line
+    :width: 80%
+
+    +-----------------------------------------------------------------------------------+
+    |   Schematic diagram                                                               |
+    |                                                                                   |
+    |   |DHT11_Sc|                                                                      |
+    +-----------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:|
+    |                                                                                   |
+    |   support@freenove.com                                                            |
+    |                                                                                   |
+    |   |DHT11_Fr|                                                                      | 
+    +-----------------------------------------------------------------------------------+
 
 .. |DHT11_Sc| image:: ../_static/imgs/DHT11_Sc.png
 .. |DHT11_Fr| image:: ../_static/imgs/DHT11_Fr.png
-
-video: https://www.youtube.com/watch?v=vTeuLWiXUTA
 
 .. raw:: html
 
@@ -114,6 +118,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/21.1.1_DHT11/DHT11.cpp
     :linenos: 
     :language: C
+    :dedent:
 
 In this project code, we use a custom library file "DHT.hpp". It is located in the same directory with the program files "DHT11.cpp" and "DHT.cpp", and methods for reading DHT sensor are provided in the library file. By using this library, we can easily read the DHT Sensor. First, we create a DHT class object in the code.
 
@@ -127,7 +132,7 @@ Then in the "while" loop, use chk = dht. **readDHT11** (DHT11_Pin) to read the D
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/21.1.1_DHT11/DHT11.cpp
     :linenos: 
     :language: C
-    :lines: 20-33
+    :lines: 20-34
     :dedent:
 
 Finally display the results:
@@ -142,3 +147,4 @@ Library file "DHT.hpp" contains a DHT class and this public member function int 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/21.1.1_DHT11/DHT.hpp
     :linenos: 
     :language: C
+    :dedent:

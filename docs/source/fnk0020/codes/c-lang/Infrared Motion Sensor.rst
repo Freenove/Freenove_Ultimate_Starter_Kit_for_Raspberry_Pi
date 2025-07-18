@@ -18,6 +18,7 @@ Component List
 
 .. table:: 
     :align: center
+    :class: table-line
     :width: 80%
 
     +-------------------------------------------+-------------------------------+
@@ -44,11 +45,16 @@ Component List
 Component Knowledge
 ================================================================
 
-==============  ======================  ==========================
+.. table::
+    :align: center
+    :class: table-line
+    :width: 70%
 
-|HC_SR5011|       |HC_SR501_bottom|       |HC_SR501_Schematic|
-
-==============  ======================  ==========================
+    ==============  ======================  ==========================
+    
+    |HC_SR5011|       |HC_SR501_bottom|       |HC_SR501_Schematic|
+    
+    ==============  ======================  ==========================
 
 .. |HC_SR5011| image:: ../_static/imgs/HC_SR501.png
 .. |HC_SR501_bottom| image:: ../_static/imgs/HC_SR501_bottom.png
@@ -71,58 +77,61 @@ We can regard this sensor as a simple inductive switch when in use.
 Circuit
 ================================================================
 
-+-------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                             |
-|                                                                                                 |
-|   |HC_SR501_Sc|                                                                                 |
-+-------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:              |
-|                                                                                                 |
-|   support@freenove.com                                                                          |
-|                                                                                                 |
-|   |HC_SR501_Fr|                                                                                 |
-|                                                                                                 |
-| :xx-large:`How to use this sensor?`                                                             |
-|                                                                                                 |
-|   |HC_SR501_T_B|                                                                                |
-|                                                                                                 |
-| Description:                                                                                    |
-|                                                                                                 |
-| 1. You can choose non-repeatable trigger modes or repeatable modes.                             |
-|                                                                                                 |
-|   L: non-repeatable trigger mode. The module output high level after sensing a body, then when  |
-|   the delay                                                                                     | 
-|                                                                                                 |   
-|   time is over, the module will output low level. During high level time, the sensor            |
-|   no longer actively                                                                            |
-|                                                                                                 |
-|   senses bodies.                                                                                |
-|                                                                                                 |    
-|   H: repeatable trigger mode. The distinction from the L                                        |
-|   mode is that it can sense a body until that body                                              |
-|                                                                                                 |
-|   leaves. After this, it starts to time and                                                     |
-|   output low level after delaying T time.                                                       |
-|                                                                                                 |
-| 2. R1 is used to adjust HIGH level lasting time when sensor detects human motion, 1.2s\-320s.   |
-|                                                                                                 |
-| 3. R2 is used to adjust the maxmum distance the sensor can detect, 3~5m.                        |
-|                                                                                                 |
-| :red:`Here we connect L and adjust R1 and R2 like below to do this project.`                    |
-|                                                                                                 |
-| :red:`Put you hand close and away from the sensor slowly. Obsever the LED in previous circuit.` |
-|                                                                                                 |
-| :red:`It need some time between two detections.`                                                |
-|                                                                                                 |
-| |HC_SR501_1|                                                                                    |
-+-------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :class: table-line
+    :width: 80%
+
+    +-------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                             |
+    |                                                                                                 |
+    |   |HC_SR501_Sc|                                                                                 |
+    +-------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:              |
+    |                                                                                                 |
+    |   support@freenove.com                                                                          |
+    |                                                                                                 |
+    |   |HC_SR501_Fr|                                                                                 |
+    |                                                                                                 |
+    | :xx-large:`How to use this sensor?`                                                             |
+    |                                                                                                 |
+    |   |HC_SR501_T_B|                                                                                |
+    |                                                                                                 |
+    | Description:                                                                                    |
+    |                                                                                                 |
+    | 1. You can choose non-repeatable trigger modes or repeatable modes.                             |
+    |                                                                                                 |
+    |   L: non-repeatable trigger mode. The module output high level after sensing a body, then when  |
+    |   the delay                                                                                     | 
+    |                                                                                                 |   
+    |   time is over, the module will output low level. During high level time, the sensor            |
+    |   no longer actively                                                                            |
+    |                                                                                                 |
+    |   senses bodies.                                                                                |
+    |                                                                                                 |    
+    |   H: repeatable trigger mode. The distinction from the L                                        |
+    |   mode is that it can sense a body until that body                                              |
+    |                                                                                                 |
+    |   leaves. After this, it starts to time and                                                     |
+    |   output low level after delaying T time.                                                       |
+    |                                                                                                 |
+    | 2. R1 is used to adjust HIGH level lasting time when sensor detects human motion, 1.2s\-320s.   |
+    |                                                                                                 |
+    | 3. R2 is used to adjust the maxmum distance the sensor can detect, 3~5m.                        |
+    |                                                                                                 |
+    | :red:`Here we connect L and adjust R1 and R2 like below to do this project.`                    |
+    |                                                                                                 |
+    | :red:`Put you hand close and away from the sensor slowly. Obsever the LED in previous circuit.` |
+    |                                                                                                 |
+    | :red:`It need some time between two detections.`                                                |
+    |                                                                                                 |
+    | |HC_SR501_1|                                                                                    |
+    +-------------------------------------------------------------------------------------------------+
 
 .. |HC_SR501_Sc| image:: ../_static/imgs/HC_SR501_Sc.png
 .. |HC_SR501_Fr| image:: ../_static/imgs/HC_SR501_Fr.png
 .. |HC_SR501_T_B| image:: ../_static/imgs/HC_SR501_T_B.png
 .. |HC_SR501_1| image:: ../_static/imgs/HC_SR501_1.png
-
-video: https://www.youtube.com/watch?v=0GerHlINURk
 
 .. raw:: html
 
@@ -139,6 +148,7 @@ C Code SenseLED
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 23.1.1_SenseLED directory of C code.
@@ -169,5 +179,6 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/23.1.1_SenseLED/SenseLED.c
     :linenos: 
     :language: C
+    :dedent:
 
 It can be seen that the code is based on the same principles of the "ButtonLED" code in addition to determining the level of the input signal.

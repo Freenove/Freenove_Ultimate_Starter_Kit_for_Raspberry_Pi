@@ -14,6 +14,7 @@ Component List
 
 .. table:: 
   :align: center
+  :class: table-line
   :width: 80%
 
   +-------------------------------------------+-----------------+
@@ -41,15 +42,15 @@ MPU6050
 MPU6050 Sensor Module is a complete 6-axis Motion Tracking Device. It combines a 3-axis Gyroscope, a 3-axis Accelerometer and a DMP (Digital Motion Processor) all in a small package. The settings of the Accelerometer and Gyroscope of MPU6050 can be changed. A precision wide range digital temperature sensor is also integrated to compensate data readings for changes in temperature, and temperature values can also be read. The MPU6050 Module follows the I2C communication protocol and the default address is 0x68.
 
 .. image:: ../_static/imgs/MPU6050_1.png
-    :width: 80%
+    :width: 50%
     :align: center
 
 The port description of the MPU6050 Module is as follows:
 
 .. list-table::
    :align: center
+   :class: table-line
    :header-rows: 1
-   :class: product-table
 
    * - Pin name
      - Pin number
@@ -100,22 +101,25 @@ Circuit
 
 Note that the power supply voltage for MPU6050 module is 5V in this circuit.
 
-+-------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                 |
-|                                                                                     |
-|   |MPU6050_Sc|                                                                      |
-+-------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:  |
-|                                                                                     |
-|   support@freenove.com                                                              | 
-|                                                                                     |
-|   |MPU6050_Fr|                                                                      |
-+-------------------------------------------------------------------------------------+
+.. table:: 
+  :align: center
+  :class: table-line
+  :width: 80%
+
+  +-------------------------------------------------------------------------------------+
+  |   Schematic diagram                                                                 |
+  |                                                                                     |
+  |   |MPU6050_Sc|                                                                      |
+  +-------------------------------------------------------------------------------------+
+  |   Hardware connection. If you need any support,please feel free to contact us via:  |
+  |                                                                                     |
+  |   support@freenove.com                                                              | 
+  |                                                                                     |
+  |   |MPU6050_Fr|                                                                      |
+  +-------------------------------------------------------------------------------------+
 
 .. |MPU6050_Sc| image:: ../_static/imgs/MPU6050_Sc.png
 .. |MPU6050_Fr| image:: ../_static/imgs/MPU6050_Fr.png
-
-video: https://www.youtube.com/watch?v=BBuDYBVjJLA
 
 .. raw:: html
 

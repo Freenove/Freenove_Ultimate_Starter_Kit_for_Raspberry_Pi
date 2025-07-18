@@ -18,6 +18,7 @@ Breadboard Power Module
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------------+--------------------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                |                                            |     
@@ -80,6 +81,7 @@ DC Motor is a device that converts electrical energy into mechanical energy. DC 
 
 .. image:: ../_static/imgs/DC-Motor.png
     :align: center
+    :width: 30%
 
 When a DC Motor is connected to a power supply, it will rotate in one direction. If you reverse the polarity of the power supply, the DC Motor will rotate in opposite direction. This is important to note.
 
@@ -93,6 +95,7 @@ L293D is an IC Chip (Integrated Circuit Chip) with a 4-channel motor drive. You 
 
 .. image:: ../_static/imgs/L293D.png
     :align: center
+    :width: 80%
 
 Port description of L293D module is as follows:
 
@@ -134,6 +137,7 @@ The following connection option uses one channel of the L239D, which can control
 .. image:: ../_static/imgs/L293D-1.png
     :align: center
 
+
 The following connection uses two channels of the L239D: one channel outputs the PWM wave, and the other channel connects to GND. Therefore, you can control the speed of the motor. When these two channel signals are exchanged, not only controls the speed of motor, but also can control the direction of the motor.
 
 .. image:: ../_static/imgs/L293D-2.png
@@ -144,21 +148,24 @@ In practical use the motor is usually connected to channel 1 and by outputting d
 Circuit with ADS7830
 ================================================================
 
-Use caution when connecting this circuit because the DC Motor is a high-power component. :red:`Do not use the power provided by the RPi to power the motor directly, as this may cause permanent damage to your RPi!`` The logic circuit can be powered by the RPi's power or an external power supply, which should share a common ground with RPi.
+Use caution when connecting this circuit because the DC Motor is a high-power component. :combo:`red font-bolder:Do not use the power provided by the RPi to power the motor directly, as this may cause permanent damage to your RPi!`` The logic circuit can be powered by the RPi's power or an external power supply, which should share a common ground with RPi.
 
-+-------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                 |
-|                                                                                     |
-|   |Motor-ADS7830-Sc|                                                                |
-+-------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:  |
-|                                                                                     |
-|   support@freenove.com                                                              |
-|                                                                                     |
-|   |Motor-ADS7830-Fr|                                                                |
-|                                                                                     |
-|    **Video:** https://youtu.be/d5lRMTDK-wg                                          |
-+-------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                 |
+    |                                                                                     |
+    |   |Motor-ADS7830-Sc|                                                                |
+    +-------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:  |
+    |                                                                                     |
+    |   support@freenove.com                                                              |
+    |                                                                                     |
+    |   |Motor-ADS7830-Fr|                                                                |
+    +-------------------------------------------------------------------------------------+
 
 .. |Motor-ADS7830-Sc| image:: ../_static/imgs/Motor-ADS7830-Sc.png
 .. |Motor-ADS7830-Fr| image:: ../_static/imgs/Motor-ADS7830-Fr.png
@@ -170,19 +177,24 @@ Use caution when connecting this circuit because the DC Motor is a high-power co
 Circuit with PCF8591
 ================================================================
 
-Use caution when connecting this circuit because the DC Motor is a high-power component. :red:`Do not use the power provided by the RPi to power the motor directly, as this may cause permanent damage to your RPi!`` The logic circuit can be powered by the RPi's power or an external power supply, which should share a common ground with RPi.
+Use caution when connecting this circuit because the DC Motor is a high-power component. :combo:`red font-bolder:`Do not use the power provided by the RPi to power the motor directly, as this may cause permanent damage to your RPi!` The logic circuit can be powered by the RPi's power or an external power supply, which should share a common ground with RPi.
 
-+------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                |
-|                                                                                    |
-|   |Motor-PCF8591-Sc|                                                               |
-+------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                    |
-|   support@freenove.com                                                             |
-|                                                                                    |
-|   |Motor-PCF8591-Fr|                                                               |
-+------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                |
+    |                                                                                    |
+    |   |Motor-PCF8591-Sc|                                                               |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                    |
+    |   support@freenove.com                                                             |
+    |                                                                                    |
+    |   |Motor-PCF8591-Fr|                                                               |
+    +------------------------------------------------------------------------------------+
 
 .. |Motor-PCF8591-Sc| image:: ../_static/imgs/Motor-PCF8591-Sc.png
 .. |Motor-PCF8591-Fr| image:: ../_static/imgs/Motor-PCF8591-Fr.png
@@ -195,7 +207,7 @@ In code for this project, first read the ADC value and then control the rotation
 Python Code Motor
 ----------------------------------------------------------------
 
-If you did not configure I2C and install Smbus, please refer to :ref:`Chapter 7 <ADC>`. If you did, please Continue.
+If you did not :blue:`configure I2C and install Smbus,` please refer to :ref:`Chapter 7 <ADC>`. If you did, please Continue.
 
 First, observe the project result, and then learn about the code in detail.
 
@@ -225,6 +237,7 @@ The following is the code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/13.1.1_Motor/Motor.py
     :linenos: 
     :language: python
+    :dedent:
 
 Now that we have familiarity with reading ADC values, let's learn the subfunction void motor (int ADC): first, compare the ADC value with 128 (value corresponding to midpoint). When the current ADC value is higher, motoRPin1 outputs high level and motoRPin2 outputs low level to control the DC Motor to run in the "Forward" Rotational Direction. When the current ADC value is lower, motoRPin1 outputs low level and motoRPin2 outputs high level to control the DC Motor to run in the "Reverse" Rotational Direction. When the ADC value is equal to 128, motoRPin1 and motoRPin2 output low level, the motor STOPS. Then determine the PWM duty cycle according to the difference (delta) between ADC value and 128. Because the absolute delta value stays within 0-128. We need to use the map() subfunction mapping the delta value to a range of 0-255.
 

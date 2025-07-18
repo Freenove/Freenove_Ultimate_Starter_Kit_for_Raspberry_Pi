@@ -2,7 +2,6 @@
 Chapter Potentiometer & LED
 ################################################################
 
-
 Earlier we learned how to use ADC and PWM. In this chapter, we learn to control the brightness of an LED by using a potentiometer.
 
 Project Soft Light
@@ -16,6 +15,7 @@ Component List
 .. table:: 
     :align: center
     :width: 85%
+    :class: table-line
 
     +---------------------------------------------------------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                                                |     
@@ -52,19 +52,24 @@ Component List
 Circuit with ADS7830
 ================================================================
 
-+-------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                 |
-|                                                                                     |
-|   |ADS7830-Schematic-2|                                                             |
-+-------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:  |
-|                                                                                     |
-|   support@freenove.com                                                              |
-|                                                                                     |
-|   |ADS7830-fritizing-2|                                                             |
-|                                                                                     |
-|    **Video:** https://youtu.be/YMEfe9IWU6I                                          |
-+-------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 85%
+    :class: table-line
+
+    +-------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                 |
+    |                                                                                     |
+    |   |ADS7830-Schematic-2|                                                             |
+    +-------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:  |
+    |                                                                                     |
+    |   support@freenove.com                                                              |
+    |                                                                                     |
+    |   |ADS7830-fritizing-2|                                                             |
+    |                                                                                     |
+    |    **Video:** https://youtu.be/YMEfe9IWU6I                                          |
+    +-------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-2| image:: ../_static/imgs/ADS7830-Schematic-2.png
 .. |ADS7830-fritizing-2| image:: ../_static/imgs/ADS7830-fritizing-2.png
@@ -76,15 +81,20 @@ Circuit with ADS7830
 Circuit with PCF8591
 ================================================================
 
-+---------------------------+
-|   Schematic diagram       |
-|                           |
-|   |PCF8591-Schematic-2|   |
-+---------------------------+
-|   Hardware connection.    |
-|                           |
-|   |PCF8591-fritizing-2|   |
-+---------------------------+
+.. table:: 
+    :align: center
+    :width: 85%
+    :class: table-line
+
+    +---------------------------+
+    |   Schematic diagram       |
+    |                           |
+    |   |PCF8591-Schematic-2|   |
+    +---------------------------+
+    |   Hardware connection.    |
+    |                           |
+    |   |PCF8591-fritizing-2|   |
+    +---------------------------+
 
 .. |PCF8591-Schematic-2| image:: ../_static/imgs/PCF8591-Schematic-2.png
 .. |PCF8591-fritizing-2| image:: ../_static/imgs/PCF8591-fritizing-2.png
@@ -130,5 +140,3 @@ In the code, read ADC value of potentiometers and map it to the duty cycle of th
 
     value = adc.analogRead(0)      # read the ADC value of channel 0
     led.value = value / 255.0      # Mapping to PWM duty cycle
-
-

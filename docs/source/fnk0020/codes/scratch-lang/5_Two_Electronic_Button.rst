@@ -11,17 +11,22 @@ Project 05.1_Squash0 and 5.2_Jump
 Components
 ================================================================
 
-+------------------------------------------------------+---------------------------+
-|    Raspberry Pi (with 40 GPIO) x1                    |   RGB LED x1              |
-|                                                      |                           |   
-|    GPIO Extension Board & Ribbon Cable x1            |       |button-small|      |
-|                                                      |                           |
-|    Breadboard x1                                     |                           |
-+------------------------------------------------------+---------------------------+
-|   Jumper Wire                                        |  Resistor 10kΩ x4         |
-|                                                      |                           |
-|   |jumper-wire|                                      |    |res-10k|              |        
-+------------------------------------------------------+---------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +--------------------------------------------+-----------------------+
+    |    Raspberry Pi (with 40 GPIO) x1          |   RGB LED x1          |
+    |                                            |                       |   
+    |    GPIO Extension Board & Ribbon Cable x1  |       |button-small|  |
+    |                                            |                       |
+    |    Breadboard x1                           |                       |
+    +--------------------------------------------+-----------------------+
+    |   Jumper Wire                              |  Resistor 10kΩ x4     |
+    |                                            |                       |
+    |   |jumper-wire|                            |    |res-10k|          |        
+    +--------------------------------------------+-----------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
@@ -32,17 +37,22 @@ Components
 Circuit 
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |scratch_t_button_Sc|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |scratch_t_button_Fr|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                 |
+    |                                                                                     |
+    |   |scratch_t_button_Sc|                                                             |
+    +-------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:  |
+    |                                                                                     |
+    |   support@freenove.com                                                              |
+    |                                                                                     |
+    |   |scratch_t_button_Fr|                                                             |
+    +-------------------------------------------------------------------------------------+
 
 .. |scratch_t_button_Sc| image:: ../_static/imgs/scratch_t_button_Sc.png
 .. |scratch_t_button_Fr| image:: ../_static/imgs/scratch_t_button_Fr.png
@@ -99,4 +109,3 @@ Click the green flag. Press the two button swtiches to make the sprite go throug
     :align: center
 
 A or B or C. One of them is true. The whold result would be true. It mean the sprite1 cannot tounch any of others.
-

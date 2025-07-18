@@ -4,7 +4,9 @@ What's Next?
 
 THANK YOU for participating in this learning experience! If you have completed all of the projects successfully you can consider yourself a Raspberry Pi Master.
 
-We have reached the end of this Tutorial. If you find errors, omissions or you have suggestions and/or questions about the Tutorial or component contents of this Kit, please feel free to contact us: support@freenove.com 
+We have reached the end of this Tutorial. If you find errors, omissions or you have suggestions and/or questions about the Tutorial or component contents of this Kit, please feel free to contact us: 
+
+support@freenove.com
 
 We will make every effort to make changes and correct errors as soon as feasibly possible and publish a revised version.
 

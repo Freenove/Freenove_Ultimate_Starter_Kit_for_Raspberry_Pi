@@ -24,15 +24,20 @@ You can install it on your bicycle, your bedroom door or any other place where y
 Component list
 ================================================================
 
-+------------------------+------------+-------------------+---------------------+
-|  Female Pin Header x2  | LED x1     |  Active buzzer x1 |  Push button x1     |
-|                        |            |                   |                     |
-|  |Fe_pin_Header|       ||green_led| |  |Active-buzzer|  |  |button-small|     |
-+------------------------+------------+-----+-------------+---------------------+
-| AA Battery Holder x1 and AA Batteries x2  | Resistor 220Ω x1                  |
-|                                           |                                   |
-| |battery|                                 |  |res-220R-hori|                  |
-+-------------------------------------------+-----------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------+------------+-------------------+---------------------+
+    |  Female Pin Header x2  | LED x1     |  Active buzzer x1 |  Push button x1     |
+    |                        |            |                   |                     |
+    |  |Fe_pin_Header|       ||green_led| |  |Active-buzzer|  |  |button-small|     |
+    +------------------------+------------+-----+-------------+---------------------+
+    | AA Battery Holder x1 and AA Batteries x2  | Resistor 220Ω x1                  |
+    |                                           |                                   |
+    | |battery|                                 |  |res-220R-hori|                  |
+    +-------------------------------------------+-----------------------------------+
 
 .. |Fe_pin_Header| image:: ../_static/imgs/Fe_pin_Header.png
 .. |green_led| image:: ../_static/imgs/green_led.png
@@ -48,6 +53,7 @@ Circuit
 
 .. table:: 
     :align: center
+    :class: table-line
 
     ============================================== ==============================================
         Schematic diagram                           Hardware connection. If you need any support,
@@ -76,12 +82,15 @@ Solder the Circuit
 
 Here is a diagram after soldering from both sides of the Perfboard:
 
-=================== ===================
-Front                Back
+.. table:: 
+    :align: center
+    :class: table-line
 
-|solder_front|       |solder_back|
+    =================== ===================
+    Front                Back
 
-=================== ===================
+    |solder_front|       |solder_back|
+    =================== ===================
 
 .. |solder_front| image:: ../_static/imgs/solder_front.png
 .. |solder_back| image:: ../_static/imgs/solder_back.png
@@ -106,6 +115,7 @@ Component List
 
 .. table:: 
     :align: center
+    :class: table-line
 
     ====================== ====================== ====================== ======================
      Female Pin Header x5   Resistor 220Ω x8       LED x8                 74HC595 x1
@@ -125,11 +135,15 @@ Circuit
 
 Solder the following circuit on the Perfboard.
 
-===================== =====================
-Schematic diagram      Hardware connection
+.. table:: 
+    :align: center
+    :class: table-line
 
-|solder_Sc_1|          |solder_Fr_1|
-===================== =====================
+    ===================== =====================
+    Schematic diagram      Hardware connection
+
+    |solder_Sc_1|          |solder_Fr_1|
+    ===================== =====================
 
 .. |solder_Sc_1| image:: ../_static/imgs/solder_Sc_1.png
 .. |solder_Fr_1| image:: ../_static/imgs/solder_Fr_1.png
@@ -144,12 +158,15 @@ Insert the components in the Perfboard, and solder the circuit on the back per e
 
 Here is a diagram after soldering from both sides of the Perfboard:
 
-=================== ===================
-Front                Back
+.. table:: 
+    :align: center
+    :class: table-line
 
-|solder_front_1|     |solder_back_1|
+    =================== ===================
+    Front                Back
 
-=================== ===================
+    |solder_front_1|     |solder_back_1|
+    =================== ===================
 
 .. |solder_front_1| image:: ../_static/imgs/solder_front_1.png
 .. |solder_back_1| image:: ../_static/imgs/solder_back_1.png
@@ -173,6 +190,7 @@ C Code LightWater03
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 35.2.1_LightWater03 directory of C code.
@@ -200,6 +218,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/35.2.1_LightWater03/LightWater03.c
     :linenos: 
     :language: C
+    :dedent:
 
 We can see that this program is different from the previous one that we had used. We define an array to modulate different PWM pulse widths for LEDs, in doing so different LEDs can emit varied brightness. Starting from the array index 0, take an array of 8 adjacent numbers as the LED duty cycle and output it one at a time. Increasing the starting index number in turn, then it will create a flowing effect.
 

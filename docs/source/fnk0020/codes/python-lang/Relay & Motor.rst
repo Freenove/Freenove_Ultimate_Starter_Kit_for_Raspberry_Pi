@@ -9,37 +9,42 @@ Project Relay & Motor
 
 In this project, we will use a Push Button Switch indirectly to control the DC Motor via a Relay.
 
-+----------------------------------------------+-------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1             |                                           |     
-|                                              |  Jumper Wires x11                         |       
-|2. GPIO Extension Board & Ribbon Cable x1     |                                           |       
-|                                              |    |jumper-wire|                          |                                                            
-|3. Breadboard x1                              |                                           |                                                                 
-+----------------------------------------------+-------------------------------------------+
-| Breadboard Power Module x1                   |9V Battery (you provide) & 9V Battery Cable|
-|                                              |                                           |
-|  |power-module|                              | |Battery_cable|                           |                           
-+-----------------------------+----------------+-------------+-----------------------------+
-| Resistor 10kΩ x2            | Resistor 1kΩ x1              | Resistor 220Ω x1            |
-|                             |                              |                             |
-|  |Resistor-10kΩ|            |  |Resistor-1kΩ|              |  |res-220R|                 |
-+-----------------------------+------------------------------+-----------------------------+
-| NPN-transistor x1           | Relay x1                     | Motor x1                    |
-|                             |                              |                             |
-|  |NPN-transistor|           |  |Relay|                     |  |DC_Motor_Module|          |
-+-----------------------------+------------------------------+-----------------------------+
-| Push button x1              | LED x1                       | Diode x1                    |
-|                             |                              |                             |
-|  |button-small|             |  |red-led|                   |  |Diode|                    |
-+-----------------------------+------------------------------+-----------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +----------------------------------------------+-------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1             |                                           |     
+    |                                              |  Jumper Wires x11                         |       
+    |2. GPIO Extension Board & Ribbon Cable x1     |                                           |       
+    |                                              |    |jumper-wire|                          |                                                            
+    |3. Breadboard x1                              |                                           |                                                                 
+    +----------------------------------------------+-------------------------------------------+
+    | Breadboard Power Module x1                   |9V Battery (you provide) & 9V Battery Cable|
+    |                                              |                                           |
+    |  |power-module|                              | |Battery_cable|                           |                           
+    +-----------------------------+----------------+-------------+-----------------------------+
+    | Resistor 10kΩ x2            | Resistor 1kΩ x1              | Resistor 220Ω x1            |
+    |                             |                              |                             |
+    |  |Resistor-10kΩ|            |  |Resistor-1kΩ|              |  |res-220R|                 |
+    +-----------------------------+------------------------------+-----------------------------+
+    | NPN-transistor x1           | Relay x1                     | Motor x1                    |
+    |                             |                              |                             |
+    |  |NPN-transistor|           |  |Relay|                     |  |DC_Motor_Module|          |
+    +-----------------------------+------------------------------+-----------------------------+
+    | Push button x1              | LED x1                       | Diode x1                    |
+    |                             |                              |                             |
+    |  |button-small|             |  |red-led|                   |  |Diode|                    |
+    +-----------------------------+------------------------------+-----------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 10%
+    :width: 8%
 .. |power-module| image:: ../_static/imgs/power-module.png
     :width: 60%
 .. |res-220R| image:: ../_static/imgs/res-220R.png
-    :width: 15%
+    :width: 10%
 .. |Resistor-1kΩ| image:: ../_static/imgs/Resistor-1kΩ.png
     :width: 15%
 .. |Battery_cable| image:: ../_static/imgs/Battery_cable.png
@@ -91,19 +96,22 @@ Circuit
 
 Use caution with the power supply voltage needed for the components in this circuit. The Relay requires a power supply voltage of 5V, and the DC Motor only requires 3.3V. Additionally, there is an LED present, which acts as an indicator (ON or OFF) for the status of the Relay's active status.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Relay-Sc|                                                                                   |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |Relay-Fr|                                                                                   |
-|                                                                                                |
-|    **Video:** https://youtu.be/CUpPpWq8YI8                                                     |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |Relay-Sc|                                                                                   |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |Relay-Fr|                                                                                   |
+    +------------------------------------------------------------------------------------------------+
 
 .. |Relay-Sc| image:: ../_static/imgs/Relay-Sc.png
 .. |Relay-Fr| image:: ../_static/imgs/Relay-Fr.png

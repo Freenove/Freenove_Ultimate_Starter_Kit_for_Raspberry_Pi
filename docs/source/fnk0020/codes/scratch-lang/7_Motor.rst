@@ -9,29 +9,34 @@ Component List
 
 Breadboard Power Module 
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x11                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-| Breadboard Power Module x1                      | 9V Battery (you provide) & 9V Battery Cable     |
-|                                                 |                                                 |
-|  |power-module|                                 |  |Battery_cable|                                |                           
-+-----------------------------+-------------------+--------------+----------------------------------+
-| Resistor 10kΩ x2            | Resistor 1kΩ x1                  | Resistor 220Ω x1                 |
-|                             |                                  |                                  |
-|  |Resistor-10kΩ|            |  |Resistor-1kΩ|                  |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
-| NPN-transistor x1           | Relay x1                         | Motor x1                         |
-|                             |                                  |                                  |
-|  |NPN-transistor|           |  |Relay|                         |  |DC_Motor_Module|               |
-+-----------------------------+----------------------------------+----------------------------------+
-| Push button x1              | LED x1                           | Diode x1                         |
-|                             |                                  |                                  |
-|  |button-small|             |  |red-led|                       |  |Diode|                         |
-+-----------------------------+----------------------------------+----------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-------------------------------------------------+-------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
+    |                                                 |   Jumper Wires x11                              |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
+    |                                                 |     |jumper-wire|                               |                                                            
+    |3. Breadboard x1                                 |                                                 |                                                                 
+    +-------------------------------------------------+-------------------------------------------------+
+    | Breadboard Power Module x1                      | 9V Battery (you provide) & 9V Battery Cable     |
+    |                                                 |                                                 |
+    |  |power-module|                                 |  |Battery_cable|                                |                           
+    +-----------------------------+-------------------+--------------+----------------------------------+
+    | Resistor 10kΩ x2            | Resistor 1kΩ x1                  | Resistor 220Ω x1                 |
+    |                             |                                  |                                  |
+    |  |Resistor-10kΩ|            |  |Resistor-1kΩ|                  |  |res-220R|                      |
+    +-----------------------------+----------------------------------+----------------------------------+
+    | NPN-transistor x1           | Relay x1                         | Motor x1                         |
+    |                             |                                  |                                  |
+    |  |NPN-transistor|           |  |Relay|                         |  |DC_Motor_Module|               |
+    +-----------------------------+----------------------------------+----------------------------------+
+    | Push button x1              | LED x1                           | Diode x1                         |
+    |                             |                                  |                                  |
+    |  |button-small|             |  |red-led|                       |  |Diode|                         |
+    +-----------------------------+----------------------------------+----------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
@@ -91,17 +96,22 @@ Circuit
 
 Use caution when connecting this circuit because the DC Motor is a high-power component. :red:`Do not use the power provided by the RPi to power the motor directly, as this may cause permanent damage to your RPi!`` The logic circuit can be powered by the RPi's power or an external power supply, which should share a common ground with RPi.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |scratch_motor_Sc|                                                                           |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |scratch_motor_Fr|                                                                           |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |scratch_motor_Sc|                                                                           |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |scratch_motor_Fr|                                                                           |
+    +------------------------------------------------------------------------------------------------+
 
 .. |scratch_motor_Sc| image:: ../_static/imgs/scratch_motor_Sc.png
 .. |scratch_motor_Fr| image:: ../_static/imgs/scratch_motor_Fr.png

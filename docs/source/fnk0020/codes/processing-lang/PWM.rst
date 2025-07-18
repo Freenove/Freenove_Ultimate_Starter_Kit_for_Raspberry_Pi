@@ -14,17 +14,22 @@ We describe this project as a Breathing Light. This means that an LED that is OF
 Component List
 ================================================================
 
-+------------------------------------------+--------------------+
-|1. Raspberry Pi (with 40 GPIO) x1         |                    |
-|                                          | Jumper M/M x2      |
-|2. GPIO Extension Board & Ribbon Cable x1 |                    |
-|                                          |  |processing03_00| |
-|3. Breadboard x1                          |                    |
-+------------------------------------------+--------------------+
-|  LED x1                                  | Resistor 220Ω x1   |
-|                                          |                    |
-|   |processing03_01|                      |  |processing03_02| |
-+------------------------------------------+--------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +------------------------------------------+--------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1         |                    |
+    |                                          | Jumper M/M x2      |
+    |2. GPIO Extension Board & Ribbon Cable x1 |                    |
+    |                                          |  |processing03_00| |
+    |3. Breadboard x1                          |                    |
+    +------------------------------------------+--------------------+
+    |  LED x1                                  | Resistor 220Ω x1   |
+    |                                          |                    |
+    |   |processing03_01|                      |  |processing03_02| |
+    +------------------------------------------+--------------------+
 
 .. |processing03_00| image:: ../_static/imgs/processing03_00.png
 .. |processing03_01| image:: ../_static/imgs/processing03_01.png
@@ -33,17 +38,22 @@ Component List
 Circuit
 ================================================================
     
-+---------------------------------------------------------------------------------+
-|Schematic diagram                                                                |
-|                                                                                 |
-||pr_PWM_Sc|                                                                      |
-+---------------------------------------------------------------------------------+
-|Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                 |
-|support@freenove.com                                                             | 
-|                                                                                 |
-||pr_PWM_Fr|                                                                      |
-+---------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +---------------------------------------------------------------------------------+
+    |Schematic diagram                                                                |
+    |                                                                                 |
+    ||pr_PWM_Sc|                                                                      |
+    +---------------------------------------------------------------------------------+
+    |Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                 |
+    |support@freenove.com                                                             | 
+    |                                                                                 |
+    ||pr_PWM_Fr|                                                                      |
+    +---------------------------------------------------------------------------------+
 
 .. |pr_PWM_Sc| image:: ../_static/imgs/processing03_03.png
 .. |pr_PWM_Fr| image:: ../_static/imgs/processing03_04.png
@@ -74,6 +84,7 @@ The following is program code:
 .. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_03_1_1_BreadthingLED/Sketch_03_1_1_BreadthingLED.pde
     :linenos: 
     :language: java
+    :dedent:
 
 First, use SOFTPWM class to create a PWM pin, which is used to control the brightness of LED. Then define a variable "t" and a variable "tStep" to control the PWM duty cycle and the rate at which "t" increases.
 
@@ -117,14 +128,14 @@ Reference
 
 .. py:function:: class SOFTPWM
 
-    public SOFTPWM(int iPin, int dc, int pwmRange):
+    **public SOFTPWM(int iPin, int dc, int pwmRange):**
     
     Constructor, used to create a PWM pin, set the pwmRange and initial duty cycle. The minimum of pwmRange is 0.1ms. So pwmRange=100 means that the PWM duty cycle is 0.1ms*100=10ms.
     
-    public void softPwmWrite(int value)
+    **public void softPwmWrite(int value)**
     
     Set PMW duty cycle.
     
-    public void softPwmStop()
+    **public void softPwmStop()**
     
     Stop outputting PWM.

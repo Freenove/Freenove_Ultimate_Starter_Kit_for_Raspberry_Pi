@@ -15,6 +15,7 @@ Component List
 .. table::
     :align: center
     :width: 80%
+    :class: table-line
 
     +--------------------------------------------------+----------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                 |                      |
@@ -66,6 +67,10 @@ Hardware connection. If you need any support, please feel free to contact us via
     :red:`If LEDbar doesn't work, rotate LEDbar 180° to try. The label is random.`
 
 In this circuit, the cathodes of the LEDs are connected to the GPIO, which is different from the previous circuit. The LEDs turn ON when the GPIO output is low level in the program. 
+
+.. hint::
+
+    :red:`If you have any concerns, please send an email to:` support@freenove.com
 
 Sketch
 ================================================================

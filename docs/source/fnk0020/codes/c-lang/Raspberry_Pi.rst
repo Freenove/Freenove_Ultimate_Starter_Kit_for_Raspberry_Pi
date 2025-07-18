@@ -11,6 +11,7 @@ Below are the raspberry pi pictures and model pictures supported by this product
 .. table:: 
     :width: 90%
     :align: center
+    :class: table-line
     :widths: 50 50
 
     ================================================================================    ================================================================================

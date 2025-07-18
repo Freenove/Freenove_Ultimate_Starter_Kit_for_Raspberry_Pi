@@ -21,6 +21,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------------------+
     |Raspberry Pi                                           |     
@@ -76,18 +77,21 @@ Push Button Switch
 ----------------------------------------------------------------
 This type of Push Button Switch has 4 pins (2 Pole Switch). Two pins on the left are connected, and both left and right sides are the same per the illustration:
 
-    .. image:: ../_static/imgs/button-small-img-sch.jpg
+.. image:: ../_static/imgs/button-small-img-sch.jpg
+    :align: center
 
 When the button on the switch is pressed, the circuit is completed (your project is Powered ON).
 
 Circuit
 ================================================================
+
 1. **Schematic diagram**
 
     .. image:: ../_static/imgs/button-led-sch1.jpg
         :height: 400
 
     .. note:: 
+
         R3 is used to limit current to protect GPIO 18, if you set it to output HIGH level by mistake.
 
 2. **Hardware connection** 
@@ -227,6 +231,8 @@ First, observe the project result, and then learn about the code in detail.
 .. code-block:: console
 
     $ python Tablelamp.py
+
+When the program is executed, pressing the Button Switch once turns the LED ON. Pressing the Button Switch again turns the LED OFF.
 
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/02.2.1_Tablelamp/Tablelamp.py
     :linenos: 

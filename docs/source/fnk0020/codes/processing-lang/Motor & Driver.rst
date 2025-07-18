@@ -12,6 +12,7 @@ In this project, we use L293D to drive the DC motor. We can click on the button 
 .. table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
     +-------------------------------------------+----------------------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1          |                                              |     
@@ -45,15 +46,20 @@ Use caution: when connecting this circuit, because the DC Motor is a high-power 
 
 The logic circuit can be powered by the RPi's power or an external power supply, which should share a common ground with RPi.
 
-+------------------------+
-| Schematic diagram      |
-|                        |
-| |pr_MD_Sc|             |
-+------------------------+
-| Hardware connection.   |
-|                        |
-| |pr_MD_Fr|             |
-+------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +------------------------+
+    | Schematic diagram      |
+    |                        |
+    | |pr_MD_Sc|             |
+    +------------------------+
+    | Hardware connection.   |
+    |                        |
+    | |pr_MD_Fr|             |
+    +------------------------+
 
 .. |pr_MD_Sc| image:: ../_static/imgs/processing09_00.png
 .. |pr_MD_Fr| image:: ../_static/imgs/processing09_01.png

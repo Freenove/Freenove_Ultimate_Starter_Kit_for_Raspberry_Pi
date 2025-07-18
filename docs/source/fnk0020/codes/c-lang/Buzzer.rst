@@ -10,8 +10,9 @@ Project Doorbell
 We will make a doorbell with this functionality: when the Push Button Switch is pressed the buzzer sounds and when the button is released, the buzzer stops. This is a momentary switch function.
 
 .. table:: 
-    :align:  center
-    :width:  80%
+    :align: center
+    :width: 80%
+    :class: table-line
 
     +-----------------------------------------------------------+
     |    Raspberry Pi (with 40 GPIO) x1                         |     
@@ -128,12 +129,16 @@ When we use a NPN transistor to drive a buzzer, we often use the following metho
 
 When we use a PNP transistor to drive a buzzer, we often use the following method. If GPIO outputs low level, current will flow through R1. The transistor conducts current and the buzzer will make sounds. If GPIO outputs high level, no current flows through R1, the transistor will not conduct current and buzzer will remain silent (no sounds). Below are the circuit schematics for both a NPN and PNP transistor to power a buzzer.
 
-======================================  ================================================
-NPN transistor to drive buzzer            PNP transistor to drive buzzer
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
 
-|NPN-Drive|                               |PNP-Drive|
-
-======================================  ================================================
+    ======================================  ================================================
+    NPN transistor to drive buzzer            PNP transistor to drive buzzer
+    
+    |NPN-Drive|                               |PNP-Drive|
+    ======================================  ================================================
 
 .. |NPN-Drive| image:: ../_static/imgs/NPN-Drive.png
 .. |PNP-Drive| image:: ../_static/imgs/PNP-Drive.png
@@ -141,17 +146,22 @@ NPN transistor to drive buzzer            PNP transistor to drive buzzer
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|  Schematic diagram with RPi GPIO Extension Shield                                              |
-|                                                                                                |
-|   |Buzzer-Schematic|                                                                           |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |Buzzer-Fritizing|                                                                           |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |  Schematic diagram with RPi GPIO Extension Shield                                              |
+    |                                                                                                |
+    |   |Buzzer-Schematic|                                                                           |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         | 
+    |                                                                                                |
+    |   |Buzzer-Fritizing|                                                                           |
+    +------------------------------------------------------------------------------------------------+
 
 .. |Buzzer-Schematic| image:: ../_static/imgs/Buzzer-Schematic.png
 .. |Buzzer-Fritizing| image:: ../_static/imgs/Buzzer-Fritizing.png

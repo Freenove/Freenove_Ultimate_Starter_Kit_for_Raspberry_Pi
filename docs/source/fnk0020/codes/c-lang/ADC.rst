@@ -14,25 +14,30 @@ In this project, we will use the ADC function of an ADC Module to read the volta
 Component List
 ================================================================
 
-+---------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                              |     
-|                                                               |       
-|2. GPIO Extension Board & Ribbon Cable x1                      |       
-|                                                               |                                                            
-|3. Breadboard x1                                               |                                                                 
-+-------------------------------+-------------------------------+
-| Rotary potentiometer x1       |   Resistor 10kΩ x2            |
-|                               |                               |
-| |Rotary-potentiometer|        |  |Resistor-10kΩ|              |                           
-+-------------------------------+-------------------------------+
-| ADC module x1                                                 |
-|                                                               |
-|   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |                   
-+---------------------------------------------------------------+
-|   Jumper Wire x16                                             |
-|                                                               | 
-|      |jumper-wire|                                            |
-+---------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +---------------------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                              |     
+    |                                                               |       
+    |2. GPIO Extension Board & Ribbon Cable x1                      |       
+    |                                                               |                                                            
+    |3. Breadboard x1                                               |                                                                 
+    +-------------------------------+-------------------------------+
+    | Rotary potentiometer x1       |   Resistor 10kΩ x2            |
+    |                               |                               |
+    | |Rotary-potentiometer|        |  |Resistor-10kΩ|              |                           
+    +-------------------------------+-------------------------------+
+    | ADC module x1                                                 |
+    |                                                               |
+    |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |                   
+    +---------------------------------------------------------------+
+    |   Jumper Wire x16                                             |
+    |                                                               | 
+    |      |jumper-wire|                                            |
+    +---------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%   
@@ -45,13 +50,18 @@ Component List
 
 This product contains :red:`only one ADC module` , there are two types, PCF8591 and ADS7830. For the projects described in this tutorial, they function the same. Please build corresponding circuits according to the ADC module found in your Kit.
 
-+---------------------------------------------------------------+----------------------------------------------------------------+
-|                      ADC module: PCF8591                      |                      ADC module: ADS7830                       |                                 
-+===============================+===============================+===============================+================================+
-|         Model diagram         |         Actual Picture        |         Model diagram         |         Actual Picture         |
-|                               |                               |                               |                                |
-||ADC-module-1|                 ||PCF8591|                      ||ADC-module-2|                 ||ADS7830|                       |                           
-+-------------------------------+-------------------------------+-------------------------------+--------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +---------------------------------------------------------------+----------------------------------------------------------------+
+    |                      ADC module: PCF8591                      |                      ADC module: ADS7830                       |                                 
+    +===============================+===============================+===============================+================================+
+    |         Model diagram         |         Actual Picture        |         Model diagram         |         Actual Picture         |
+    |                               |                               |                               |                                |
+    ||ADC-module-1|                 ||PCF8591|                      ||ADC-module-2|                 ||ADS7830|                       |                           
+    +-------------------------------+-------------------------------+-------------------------------+--------------------------------+
 
 .. |ADS7830| image:: ../_static/imgs/ADS7830.png
 .. |PCF8591| image:: ../_static/imgs/PCF8591.png
@@ -103,8 +113,8 @@ Between potentiometer pin 1 and pin 2 is the resistive element (a resistance wir
 In a circuit, both sides of resistive element are often connected to the positive and negative electrodes of power. When you slide the brush "pin 3", you can get variable voltage within the range of the power supply.
 
 .. image:: ../_static/imgs/1-32-fritizing.png
-        :width: 30%
-        :align: center
+    :width: 30%
+    :align: center
 
 Rotary potentiometer
 ----------------------------------------------------------------
@@ -112,8 +122,8 @@ Rotary potentiometer
 Rotary potentiometers and linear potentiometers have the same function; the only difference being the physical action being a rotational rather than a sliding movement.
 
 .. image:: ../_static/imgs/Rotary-potentiometer-turn.png
-        :width: 30%
-        :align: center
+    :width: 30%
+    :align: center
 
 PCF8591
 ----------------------------------------------------------------
@@ -122,7 +132,7 @@ The PCF8591 is a single-chip, single-supply low power 8-bit CMOS data acquisitio
 
 .. table:: 
     :align: center
-    :class: table-line
+    :class: zebra
 
     +--------+-----+-----------------------------------------------+-------------------+
     | SYMBOL | PIN |                    DESCRIPTION                |     TOP VIEW      |
@@ -173,7 +183,7 @@ The ADS7830 is a single-supply, low-power, 8-bit data acquisition device that fe
 
 .. table:: 
     :align: center
-    :class: table-line
+    :class: zebra
 
     +-----------+-----+---------------------------------------------------+-----------------------------------------------+
     | SYMBOL    | PIN |                    DESCRIPTION                    |                    TOP VIEW                   |
@@ -225,6 +235,7 @@ Circuit with ADS7830
 
 .. table:: 
     :align: center
+    :width: 80%
     :class: table-line
 
     +------------------------------------------------------------------------------------------------+
@@ -239,8 +250,6 @@ Circuit with ADS7830
     |   **This product contains only one ADC module.**                                               |
     |                                                                                                |
     |   |ADS7830-fritizing|                                                                          |
-    |                                                                                                |
-    |    **Video:** https://youtu.be/PSUCctu_DqA                                                     |
     +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic| image:: ../_static/imgs/ADS7830-Schematic.png
@@ -256,17 +265,22 @@ Circuit with ADS7830
 Circuit with PCF8591
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic|                                                                          |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection.                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing|                                                                          |
-|                                                                                                |
-| Please keep the **chip mark** consistent to make the chips under right direction and position. |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |PCF8591-Schematic|                                                                          |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection.                                                                         |
+    |                                                                                                |
+    |   |PCF8591-fritizing|                                                                          |
+    |                                                                                                |
+    | Please keep the **chip mark** consistent to make the chips under right direction and position. |
+    +------------------------------------------------------------------------------------------------+
 
 .. |PCF8591-Schematic| image:: ../_static/imgs/PCF8591-Schematic.png
 .. |PCF8591-fritizing| image:: ../_static/imgs/PCF8591-fritizing.png

@@ -12,26 +12,31 @@ This project uses two potentiometers to control the size and shape of an ellipse
 Component List
 ================================================================
 
-+---------------------------------------------------------------+
-|1. Raspberry Pi x1                                             |
-|                                                               |
-|2. GPIO Extension Board & Ribbon Cable x1                      |
-|                                                               |
-|3. Breadboard x1                                               |
-+-------------------------------+-------------------------------+
-| Rotary potentiometer x2       |   Resistor 10kΩ x2            |
-|                               |                               |
-| |Rotary-potentiometer|        |  |Resistor-10kΩ|              |
-+-------------------------------+-------------------------------+
-| ADC module x1                                                 |
-|                                                               |
-|   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |
-|                                                               |
-+---------------------------------------------------------------+
-|   Jumper M/M                                                  |
-|                                                               |
-|      |jumper-wire|                                            |
-+---------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +---------------------------------------------------------------+
+    |1. Raspberry Pi x1                                             |
+    |                                                               |
+    |2. GPIO Extension Board & Ribbon Cable x1                      |
+    |                                                               |
+    |3. Breadboard x1                                               |
+    +-------------------------------+-------------------------------+
+    | Rotary potentiometer x2       |   Resistor 10kΩ x2            |
+    |                               |                               |
+    | |Rotary-potentiometer|        |  |Resistor-10kΩ|              |
+    +-------------------------------+-------------------------------+
+    | ADC module x1                                                 |
+    |                                                               |
+    |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |
+    |                                                               |
+    +---------------------------------------------------------------+
+    |   Jumper M/M                                                  |
+    |                                                               |
+    |      |jumper-wire|                                            |
+    +---------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 40%
@@ -47,17 +52,22 @@ Circuit with PCF8591
 
 Note that the power supply voltage of ADC module in this circuit is 5V.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Graphics_PCF8591_Sc|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |Graphics_PCF8591_Fr|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |Graphics_PCF8591_Sc|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         | 
+    |                                                                                                |
+    |   |Graphics_PCF8591_Fr|                                                                        |
+    +------------------------------------------------------------------------------------------------+
 
 .. |Graphics_PCF8591_Sc| image:: ../_static/imgs/Graphics_PCF8591_Sc.png
 .. |Graphics_PCF8591_Fr| image:: ../_static/imgs/Graphics_PCF8591_Fr.png
@@ -67,17 +77,22 @@ Circuit with ADS7830
 
 Note that the power supply voltage of ADC module in this circuit is 5V.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Graphics_ADS7830_Sc|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |Graphics_ADS7830_Fr|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |Graphics_ADS7830_Sc|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         | 
+    |                                                                                                |
+    |   |Graphics_ADS7830_Fr|                                                                        |
+    +------------------------------------------------------------------------------------------------+
 
 .. |Graphics_ADS7830_Sc| image:: ../_static/imgs/Graphics_ADS7830_Sc.png
 .. |Graphics_ADS7830_Fr| image:: ../_static/imgs/Graphics_ADS7830_Fr.png

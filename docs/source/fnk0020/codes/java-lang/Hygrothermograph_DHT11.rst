@@ -12,17 +12,22 @@ Hygrothermograph is an important tool in our lives to give us data on the temper
 Component List
 ================================================================
 
-+-------------------------------------------------+------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                        |     
-|                                                 | Jumper Wires x4        |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                        |       
-|                                                 |  |jumper-wire|         |                                                            
-|3. Breadboard x1                                 |                        |                                                                 
-+-------------------------------------------------+------------------------+
-| DHT11 x1                                        | Resistor 10kΩ x1       |
-|                                                 |                        |
-|  |DHT11|                                        |  |Resistor-10kΩ|       |
-+-------------------------------------------------+------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-------------------------------------------------+------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                        |     
+    |                                                 | Jumper Wires x4        |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                        |       
+    |                                                 |  |jumper-wire|         |                                                            
+    |3. Breadboard x1                                 |                        |                                                                 
+    +-------------------------------------------------+------------------------+
+    | DHT11 x1                                        | Resistor 10kΩ x1       |
+    |                                                 |                        |
+    |  |DHT11|                                        |  |Resistor-10kΩ|       |
+    +-------------------------------------------------+------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
@@ -48,22 +53,25 @@ The NC pin (Not Connected Pin) are a type of pin found on various integrated cir
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |DHT11_Sc|                                                                                   |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |DHT11_Fr|                                                                                   | 
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +----------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                    |
+    |                                                                                        |
+    |   |DHT11_Sc|                                                                           |
+    +----------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:     |
+    |                                                                                        |
+    |   support@freenove.com                                                                 |
+    |                                                                                        |
+    |   |DHT11_Fr|                                                                           | 
+    +----------------------------------------------------------------------------------------+
 
 .. |DHT11_Sc| image:: ../_static/imgs/DHT11_Sc.png
 .. |DHT11_Fr| image:: ../_static/imgs/DHT11_Fr.png
-
-
 
 Sketch
 ================================================================

@@ -33,7 +33,7 @@ Component List
     :width: 40%
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |4_7_Segment_Display| image:: ../_static/imgs/4_7_Segment_Display.png
-    :width: 70%
+    :width: 50%
 .. |PNP| image:: ../_static/imgs/PNP.png
 .. |Resistor-1kΩ| image:: ../_static/imgs/Resistor-1kΩ.png
     :width: 25%

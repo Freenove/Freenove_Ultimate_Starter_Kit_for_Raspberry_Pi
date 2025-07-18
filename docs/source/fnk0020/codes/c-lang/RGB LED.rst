@@ -33,6 +33,7 @@ Component List
     :align: center
     :widths: 1 1
     :width: 80%
+    :class: table-line
 
     +----------------------------------------+------------------+
     |Raspberry Pi (with 40 GPIO) x1          |RGB LED x1        |
@@ -55,17 +56,22 @@ Component List
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |RGB-LED-Scbematic|                                                                          |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |RGB-LED-fritizing|                                                                          |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |RGB-LED-Scbematic|                                                                          |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         | 
+    |                                                                                                |
+    |   |RGB-LED-fritizing|                                                                          |
+    +------------------------------------------------------------------------------------------------+
 
 .. |RGB-LED-Scbematic| image:: ../_static/imgs/RGB-LED-Scbematic.png
     :width: 80%

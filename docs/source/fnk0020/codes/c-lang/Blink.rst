@@ -15,6 +15,7 @@ Component List
 .. table::
     :align: center
     :width: 80%
+    :class: table-line
 
     +-----------------------------------------------------------+
     |    Raspberry Pi                                           |     
@@ -69,8 +70,9 @@ The Raspberry Pi CPU uses Broadcom (BCM) processing chips BCM2835, BCM2836 or BC
 
 Each pin's functional assignment is defined in the image below:
 
-    .. image:: ../_static/imgs/Chapter01_00.png
-        :align: center
+.. image:: ../_static/imgs/raspberrypi5-cc90.png
+    :width: 70%
+    :align: center
 
 .. seealso:: 
     
@@ -134,42 +136,44 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
     :align: center
 
 .. tip:: 
-     :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
+
+    :red:`If you need any support, please contact us via:` support@freenove.com
 
 .. attention:: 
    
-    Do NOT rotate Raspberry Pi to change the way of this connection.
+    :red:`Do NOT rotate Raspberry Pi to change the way of this connection.`
     
-    Please plug T extension fully into breadboard.
+    :red:`Please plug T extension fully into breadboard.`
 
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/zS75zSSBmic" frameborder="0" allowfullscreen></iframe>
 
-The connection of Raspberry Pi T extension board is as below. **Don't reverse the ribbon**.
+The connection of :green:`Raspberry Pi` T extension board is as below. :red:`Don't reverse the ribbon`.
 
 .. image:: ../_static/imgs/blink-real.png
     :width: 70%
     :align: center
 
-.. note:: 
+.. note::
+
     If you have a fan, you can connect it to 5V GND of breadboard via jumper wires.
 
 **How to distinguish resistors?**
 
 There are only three kind of resistors in this kit.
 
-1. The one with *1 red ring* is 10KΩ \
+1. The one with *1 red ring* is 10KΩ
 
     .. image:: ../_static/imgs/res-10K-hori.png
         :height: 17
 
-2. The one with *1 red ring* is 10KΩ 
+2. The one with *2 red ring* is 220Ω 
 
     .. image:: ../_static/imgs/res-220R-hori.png
         :height: 20
 
-#. The one with *1 red ring* is 10KΩ 
+3. The one with *0 red ring* is 1KΩ
 
     .. image:: ../_static/imgs/res-1K-hori.png
         :height: 20

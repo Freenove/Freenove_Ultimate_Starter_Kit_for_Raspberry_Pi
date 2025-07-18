@@ -12,21 +12,26 @@ In this project, we will learn how to drive a Stepper Motor, and understand its 
 Component List
 ================================================================
 
-+--------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                 |                                                 |     
-|                                                  | Jumper Wires x12                                |       
-|2. GPIO Extension Board & Ribbon Cable x1         |                                                 |       
-|                                                  |  |jumper-wire|                                  |                                                            
-|3. Breadboard x1                                  |                                                 |                                                                 
-+--------------------------------------------------+-------------------------------------------------+
-| Stepper Motor x1                                 | ULN2003 Stepper Motor Driver x1                 |
-|                                                  |                                                 |
-|  |stepper_Motor|                                 |  |stepper_Motor_Driver|                         |                           
-+--------------------------------------------------+-------------------------------------------------+
-| 9V battery (prepared by yourself) & battery line | Breadboard Power module x1                      |
-|                                                  |                                                 |
-|  |Battery_cable|                                 |  |power-module|                                 |                           
-+--------------------------------------------------+-------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +--------------------------------------------------+------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                 |                                    |     
+    |                                                  | Jumper Wires x12                   |       
+    |2. GPIO Extension Board & Ribbon Cable x1         |                                    |       
+    |                                                  |  |jumper-wire|                     |                                                            
+    |3. Breadboard x1                                  |                                    |                                                                 
+    +--------------------------------------------------+------------------------------------+
+    | Stepper Motor x1                                 | ULN2003 Stepper Motor Driver x1    |
+    |                                                  |                                    |
+    |  |stepper_Motor|                                 |  |stepper_Motor_Driver|            |                           
+    +--------------------------------------------------+------------------------------------+
+    | 9V battery (prepared by yourself) & battery line | Breadboard Power module x1         |
+    |                                                  |                                    |
+    |  |Battery_cable|                                 |  |power-module|                    |                           
+    +--------------------------------------------------+------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |stepper_Motor_Driver| image:: ../_static/imgs/stepper_Motor_Driver.png
@@ -78,17 +83,22 @@ Circuit
 
 When building the circuit, note that rated voltage of the Stepper Motor is 5V, and we need to use the breadboard power supply independently, (Caution do not use the RPi power supply). Additionally, the breadboard power supply needs to share Ground with Rpi.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |stepper_Motor_Sc|                                                                           |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |stepper_Motor_Fr|                                                                           |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +---------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                   |
+    |                                                                                       |
+    |   |stepper_Motor_Sc|                                                                  |
+    +---------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:    |
+    |                                                                                       |
+    |   support@freenove.com                                                                |
+    |                                                                                       |
+    |   |stepper_Motor_Fr|                                                                  |
+    +---------------------------------------------------------------------------------------+
 
 .. |stepper_Motor_Sc| image:: ../_static/imgs/stepper_Motor_Sc.png
 .. |stepper_Motor_Fr| image:: ../_static/imgs/stepper_Motor_Fr.png

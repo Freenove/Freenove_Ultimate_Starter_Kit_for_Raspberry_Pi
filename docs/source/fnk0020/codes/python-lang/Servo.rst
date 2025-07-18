@@ -2,7 +2,6 @@
 Chapter Servo
 ################################################################
 
-
 Previously, we learned how to control the speed and rotational direction of a DC Motor. In this chapter, we will learn about Servos which are a rotary actuator type motor that can be controlled rotate to specific angles.
 
 Project Servo Sweep
@@ -16,6 +15,7 @@ Component List
 .. table::
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------+------------+
     |1. Raspberry Pi (with 40 GPIO) x1          |            |     
@@ -49,7 +49,7 @@ We will use a 50Hz PWM signal with a duty cycle in a certain range to drive the 
 
 .. note:: 
     
-    the lasting time of high level corresponding to the servo angle is absolute instead of accumulating. For example, the high level time lasting for 0.5ms correspond to the 0 degree of the servo. If the high level time lasts for another 1ms, the servo rotates to 45 degrees.
+    The lasting time of high level corresponding to the servo angle is absolute instead of accumulating. For example, the high level time lasting for 0.5ms correspond to the 0 degree of the servo. If the high level time lasts for another 1ms, the servo rotates to 45 degrees.
 
 .. table:: 
     :align: center
@@ -72,21 +72,22 @@ Circuit
 
 Use caution when supplying power to the Servo it should be 5V. Make sure you do not make any errors when connecting the Servo to the power supply.
 
-+------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                |
-|                                                                                    |
-|   |Servo-Sc|                                                                       |
-+------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                    |
-|   support@freenove.com                                                             |
-|                                                                                    |
-|   |Servo-Fr|                                                                       |
-|                                                                                    |
-|    **Video:** https://youtu.be/leptbJh32ZI                                         |
-|                                                                                    |
-|    **Sorry latter chapters don't have videos yet.**                                |
-+------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                |
+    |                                                                                    |
+    |   |Servo-Sc|                                                                       |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                    |
+    |   support@freenove.com                                                             |
+    |                                                                                    |
+    |   |Servo-Fr|                                                                       |
+    +------------------------------------------------------------------------------------+
 
 .. raw:: html
 
@@ -221,7 +222,7 @@ The following values, and the corresponding Factory and Pin classes are listed i
 .. list-table::
    :align: center
    :header-rows: 1
-   :class: product-table
+   :class: zebra
 
    * - Name
      - Factory class

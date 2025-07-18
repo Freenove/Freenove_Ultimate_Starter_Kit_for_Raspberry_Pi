@@ -19,6 +19,7 @@ Component List
 .. table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
     +--------------------------------------------+---------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1           |                                 |     
@@ -44,11 +45,16 @@ Component List
 Component Knowledge
 ================================================================
 
-==============  ======================  ==========================
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
 
-|HC_SR501|        |HC_SR501_bottom|       |HC_SR501_Schematic|
+    ==============  ======================  ==========================
 
-==============  ======================  ==========================
+    |HC_SR501|        |HC_SR501_bottom|       |HC_SR501_Schematic|
+
+    ==============  ======================  ==========================
 
 .. |HC_SR501_bottom| image:: ../_static/imgs/HC_SR501_bottom.png
 .. |HC_SR501_Schematic| image:: ../_static/imgs/HC_SR501_Schematic.png
@@ -70,17 +76,22 @@ We can regard this sensor as a simple inductive switch when in use.
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                |
-|                                                                                    |
-|   |HC_SR501_Sc|                                                                    |
-+------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                    |
-|   support@freenove.com                                                             |
-|                                                                                    |
-|   |HC_SR501_Fr|                                                                    |
-+------------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                |
+    |                                                                                    |
+    |   |HC_SR501_Sc|                                                                    |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                    |
+    |   support@freenove.com                                                             |
+    |                                                                                    |
+    |   |HC_SR501_Fr|                                                                    |
+    +------------------------------------------------------------------------------------+
 
 .. |HC_SR501_Sc| image:: ../_static/imgs/HC_SR501_Sc.png
 .. |HC_SR501_Fr| image:: ../_static/imgs/HC_SR501_Fr.png

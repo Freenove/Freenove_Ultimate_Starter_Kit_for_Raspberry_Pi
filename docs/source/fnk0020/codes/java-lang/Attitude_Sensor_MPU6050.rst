@@ -13,17 +13,22 @@ In this project, we will read Acceleration and Gyroscope Data of the MPU6050 Sen
 Component List
 ================================================================
 
-+-------------------------------------------------+----------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                      |     
-|                                                 | Jumper Wires x4      |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                      |       
-|                                                 |  |jumper-wire|       |                                                            
-|3. Breadboard x1                                 |                      |                                                                 
-+-------------------------------------------------+----------------------+
-| MPU6050                                                                |     
-|                                                                        |       
-|  |MPU6050|                                                             |       
-+------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-------------------------------------------------+----------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                      |     
+    |                                                 | Jumper Wires x4      |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                      |       
+    |                                                 |  |jumper-wire|       |                                                            
+    |3. Breadboard x1                                 |                      |                                                                 
+    +-------------------------------------------------+----------------------+
+    | MPU6050                                                                |     
+    |                                                                        |       
+    |  |MPU6050|                                                             |       
+    +------------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
@@ -47,7 +52,7 @@ The port description of the MPU6050 Module is as follows:
 .. list-table::
    :align: center
    :header-rows: 1
-   :class: product-table
+   :class: table-line
 
    * - Pin name
      - Pin number
@@ -93,17 +98,25 @@ For more detail, please refer to the MPU6050 datasheet.
 
 MPU6050 is widely used to assist with balancing vehicles, robots and aircraft, mobile phones and other products which require stability to control stability and attitude or which need to sense same.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |MPU6050_Sc|                                                                                 |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |MPU6050_Fr|                                                                                 |
-+------------------------------------------------------------------------------------------------+
+Circuit
+================================
+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +---------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                   |
+    |                                                                                       |
+    |   |MPU6050_Sc|                                                                        |
+    +---------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:    |
+    |                                                                                       |
+    |   support@freenove.com                                                                | 
+    |                                                                                       |
+    |   |MPU6050_Fr|                                                                        |
+    +---------------------------------------------------------------------------------------+
 
 .. |MPU6050_Sc| image:: ../_static/imgs/MPU6050_Sc.png
 .. |MPU6050_Fr| image:: ../_static/imgs/MPU6050_Fr.png
@@ -250,5 +263,4 @@ When terminating the execution of the code, shut down the MPU6050 device and dis
         if (mpu != null) {  
             mpu.close();  
         }  
-    }  
-
+    }

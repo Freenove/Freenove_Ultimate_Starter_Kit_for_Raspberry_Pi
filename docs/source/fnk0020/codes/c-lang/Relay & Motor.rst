@@ -11,6 +11,7 @@ Project Relay & Motor
 In this project, we will use a Push Button Switch indirectly to control the DC Motor via a Relay.
 
 .. table:: 
+    :class: table-line
     :align: center
     :width: 80%
 
@@ -89,7 +90,7 @@ An Inductor is a passive device that stores energy in its Magnetic Field and ret
 The circuit for a Relay is as follows: The coil of Relay can be equivalent to an Inductor, when a Transistor is present in this coil circuit it can disconnect the power to the relay, the current in the Relay's coil does not stop immediately, which affects the power supply adversely. To remedy this, diodes in parallel are placed on both ends of the Relay coil pins in opposite polar direction. Having the current pass through the diodes will avoid any adverse effect on the power supply.
 
 .. image:: ../_static/imgs/Inductor-1.png
-    :width: 80%
+    :width: 50%
     :align: center
 
 Circuit
@@ -97,19 +98,22 @@ Circuit
 
 Use caution with the power supply voltage needed for the components in this circuit. The Relay requires a power supply voltage of 5V, and the DC Motor only requires 3.3V. Additionally, there is an LED present, which acts as an indicator (ON or OFF) for the status of the Relay's active status.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Relay-Sc|                                                                                   |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |Relay-Fr|                                                                                   |
-|                                                                                                |
-|    **Video:** https://youtu.be/CUpPpWq8YI8                                                     |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :class: table-line
+    :align: center
+    :width: 80%
+    
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |Relay-Sc|                                                                                   |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |Relay-Fr|                                                                                   |
+    +------------------------------------------------------------------------------------------------+
 
 .. |Relay-Sc| image:: ../_static/imgs/Relay-Sc.png
 .. |Relay-Fr| image:: ../_static/imgs/Relay-Fr.png

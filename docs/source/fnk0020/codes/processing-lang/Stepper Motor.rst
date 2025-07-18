@@ -13,6 +13,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +--------------------------------------------------+-----------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                 |                                   |     
@@ -62,8 +63,8 @@ A common driving sequence is shown here:
 .. image:: ../_static/imgs/stepper_Motor_3.png
     :align: center
 
-In the sequence above, the Stepper Motor rotates by a certain angle at once, which is called a "step". By controlling the number of rotational steps, you can then control the Stepper Motor's rotation angle. By defining the time between two steps, you can control the Stepper Motor's rotation speed. When rotating clockwise, the order of coil powered on is: A  B  C  D  A …… . And the rotor will rotate in accordance with this order, step by step, called four-steps, four-part. If the coils is powered ON in the reverse order, D  C  B  A  D … , the rotor will rotate in counter-clockwise direction.
-There are other methods to control Stepper Motors, such as: connect A phase, then connect A B phase, the stator will be located in the center of A B, which is called a half-step. This method can improve the stability of the Stepper Motor and reduces noise. Tise sequence of powering the coils looks like this: A  AB  B  BC  C  CD  D  DA  A ……, the rotor will rotate in accordance to this sequence ar, a half-step at a time, called four-steps, eight-part. Conversely, if the coils are powered ON in the reverse order the Stepper Motor will rotate in the opposite direction.
+In the sequence above, the Stepper Motor rotates by a certain angle at once, which is called a "step". By controlling the number of rotational steps, you can then control the Stepper Motor's rotation angle. By defining the time between two steps, you can control the Stepper Motor's rotation speed. When rotating clockwise, the order of coil powered on is: A -> B -> C -> D -> A -> \... . And the rotor will rotate in accordance with this order, step by step, called four-steps, four-part. If the coils is powered ON in the reverse order, D -> C -> B -> A -> D -> \... , the rotor will rotate in counter-clockwise direction.
+There are other methods to control Stepper Motors, such as: connect A phase, then connect A B phase, the stator will be located in the center of A B, which is called a half-step. This method can improve the stability of the Stepper Motor and reduces noise. Tise sequence of powering the coils looks like this: A -> AB -> B -> BC -> C -> CD -> D -> DA -> A -> \..., the rotor will rotate in accordance to this sequence ar, a half-step at a time, called four-steps, eight-part. Conversely, if the coils are powered ON in the reverse order the Stepper Motor will rotate in the opposite direction.
 
 The stator in the Stepper Motor we have supplied has 32 magnetic poles. Therefore, to complete one full revolution requires 32 full steps. The rotor (or output shaft) of the Stepper Motor is connected to a speed reduction set of gears and the reduction ratio is 1:64. Therefore, the final output shaft (exiting the Stepper Motor's housing) requires 32 X 64 = 2048 steps to make one full revolution.
 
@@ -80,17 +81,22 @@ Circuit
 
 When building the circuit, note that rated voltage of the Stepper Motor is 5V, and we need to use the breadboard power supply independently, (Caution do not use the RPi power supply). Additionally, the breadboard power supply needs to share Ground with Rpi.
 
-+--------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                  |
-|                                                                                      |
-|   |stepper_Motor_Sc|                                                                 |
-+--------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:   |
-|                                                                                      |
-|   support@freenove.com                                                               |
-|                                                                                      |
-|   |stepper_Motor_Fr|                                                                 |
-+--------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +--------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                  |
+    |                                                                                      |
+    |   |stepper_Motor_Sc|                                                                 |
+    +--------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:   |
+    |                                                                                      |
+    |   support@freenove.com                                                               |
+    |                                                                                      |
+    |   |stepper_Motor_Fr|                                                                 |
+    +--------------------------------------------------------------------------------------+
 
 .. |stepper_Motor_Sc| image:: ../_static/imgs/stepper_Motor_Sc.png
 .. |stepper_Motor_Fr| image:: ../_static/imgs/stepper_Motor_Fr.png
@@ -129,7 +135,6 @@ This project contains several code files, as shown below:
     :align: center
 
 The following is program code:
-
 
 .. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_16_1_1_SteppingMotor/Sketch_16_1_1_SteppingMotor.pde
     :linenos: 
@@ -181,23 +186,23 @@ Reference
 .. py:function:: class SteppinMotor
 
     This is a custom class that defines some methods to drive the four-phase stepper motor.
-   
+
     **public SteppingMotor(int[] mPins)**
-   
+
         Constructor. The parameter represents the GPIO pin connected to the stepper motor.
-   
+
     **public void motorStart()**
-   
+
         Start a stepper motor thread, then the thread is in the state of waiting, waiting for a notification to wake it up.
-   
+
     **public void moveSteps(int idir, int ims, int isteps)**
-   
+
         Used to drive stepper motor to rotate, the parameter "idir" indicates the direction that can be set as CW/CCW. The parameter "ims" is the delay (with unit ms) between each two steps of stepper motor. The higher the value of "ims", the lower the speed of stepper motor. Parameter "isteps" specifies the number of rotating steps of the stepper motor. As for four-phase stepper motor, four steps make a cycle, if set isteps=1, which means to specify the stepping motor to rotate four steps.
-   
+
     **public void motorStop()**
-   
+
         Stop stepper motor.
-   
+
     **public void motorRestart()**
-   
+
         Restart to drive stepper motor.

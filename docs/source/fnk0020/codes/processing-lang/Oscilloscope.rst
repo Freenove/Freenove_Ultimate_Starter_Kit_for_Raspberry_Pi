@@ -15,6 +15,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +------------------------------------------------------+
     |1. Raspberry Pi x1                                    |
@@ -50,17 +51,22 @@ Circuit with PCF8591
 
 Note that the power supply voltage of ADC module in this circuit is 5V.
 
-+--------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                  |
-|                                                                                      |
-|   |oscilloscope_Sc|                                                                  |
-+--------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:   |
-|                                                                                      |
-|   support@freenove.com                                                               | 
-|                                                                                      |
-|   |oscilloscope_Fr|                                                                  |
-+--------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +--------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                  |
+    |                                                                                      |
+    |   |oscilloscope_Sc|                                                                  |
+    +--------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:   |
+    |                                                                                      |
+    |   support@freenove.com                                                               | 
+    |                                                                                      |
+    |   |oscilloscope_Fr|                                                                  |
+    +--------------------------------------------------------------------------------------+
 
 .. |oscilloscope_Sc| image:: ../_static/imgs/oscilloscope_Sc.png
 .. |oscilloscope_Fr| image:: ../_static/imgs/oscilloscope_Fr.png
@@ -70,17 +76,22 @@ Circuit with ADS7830
 
 Note that the power supply voltage of ADC module in this circuit is 5V.
 
-+--------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                  |
-|                                                                                      |
-|   |oscilloscope_Sc_1|                                                                |
-+--------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:   |
-|                                                                                      |
-|   support@freenove.com                                                               | 
-|                                                                                      |
-|   |oscilloscope_Fr_1|                                                                |
-+--------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +--------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                  |
+    |                                                                                      |
+    |   |oscilloscope_Sc_1|                                                                |
+    +--------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:   |
+    |                                                                                      |
+    |   support@freenove.com                                                               | 
+    |                                                                                      |
+    |   |oscilloscope_Fr_1|                                                                |
+    +--------------------------------------------------------------------------------------+
 
 .. |oscilloscope_Sc_1| image:: ../_static/imgs/oscilloscope_Sc_1.png
 .. |oscilloscope_Fr_1| image:: ../_static/imgs/oscilloscope_Fr_1.png

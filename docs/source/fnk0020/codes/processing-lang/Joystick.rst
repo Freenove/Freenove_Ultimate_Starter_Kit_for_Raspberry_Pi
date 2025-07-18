@@ -15,6 +15,7 @@ Component List
 .. table::
     :width: 80%
     :align: center
+    :class: table-line
 
     +----------------------------------------------------+
     |1. Raspberry Pi x1                                  |     
@@ -46,42 +47,27 @@ Component List
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 
-Component knowledge
-================================================================
-
-Joystick
-----------------------------------------------------------------
-
-A Joystick is a kind of input sensor used with your fingers. You should be familiar with this concept already as they are widely used in gamepads and remote controls. It can receive input on two axes (Y and or X) at the same time (usually used to control direction on a two dimensional plane). And it also has a third direction capability by pressing down (Z axis/direction).
-
-.. image:: ../_static/imgs/joystick-2.png
-        :width: 70%
-        :align: center
-
-This is accomplished by incorporating two rotary potentiometers inside the Joystick Module at 90 degrees of each other, placed in such a manner as to detect shifts in direction in two directions simultaneously and with a Push Button Switch in the "vertical" axis, which can detect when a User presses on the Joystick.
-
-.. image:: ../_static/imgs/joystick-fritizing.png
-        :width: 70%
-        :align: center
-
-When the Joystick data is read, there are some differences between the axes: data of X and Y axes is analog, which needs to use the ADC. The data of the Z axis is digital, so you can directly use the GPIO to read this data or you have the option to use the ADC to read this.
-
 Circuit with ADS7830
 ================================================================
 
-+----------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                    |
-|                                                                                        |
-|   |ADS7830-Schematic-6|                                                                |
-+----------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:     |
-|                                                                                        |
-|   support@freenove.com                                                                 |
-|                                                                                        |
-|   |ADS7830-fritizing-7|                                                                |
-|                                                                                        |
-|    **Thermistor has longer pins than the one shown in circuit.**                       |
-+----------------------------------------------------------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +----------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                    |
+    |                                                                                        |
+    |   |ADS7830-Schematic-6|                                                                |
+    +----------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:     |
+    |                                                                                        |
+    |   support@freenove.com                                                                 |
+    |                                                                                        |
+    |   |ADS7830-fritizing-7|                                                                |
+    |                                                                                        |
+    |    **Thermistor has longer pins than the one shown in circuit.**                       |
+    +----------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-6| image:: ../_static/imgs/ADS7830-Schematic-6.png
 .. |ADS7830-fritizing-7| image:: ../_static/imgs/ADS7830-fritizing-7.png
@@ -89,17 +75,22 @@ Circuit with ADS7830
 Circuit with PCF8591
 ================================================================
 
-+----------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                    |
-|                                                                                        |
-|   |PCF8591-Schematic-6|                                                                |
-+----------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:     |
-|                                                                                        |
-|   support@freenove.com                                                                 |
-|                                                                                        |
-|   |PCF8591-fritizing-6|                                                                |
-+----------------------------------------------------------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +----------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                    |
+    |                                                                                        |
+    |   |PCF8591-Schematic-6|                                                                |
+    +----------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:     |
+    |                                                                                        |
+    |   support@freenove.com                                                                 |
+    |                                                                                        |
+    |   |PCF8591-fritizing-6|                                                                |
+    +----------------------------------------------------------------------------------------+
 
 .. |PCF8591-Schematic-6| image:: ../_static/imgs/PCF8591-Schematic-6.png
 .. |PCF8591-fritizing-6| image:: ../_static/imgs/PCF8591-fritizing-6.png
@@ -136,6 +127,8 @@ This project contains several code files, as shown below:
     :align: center
 
 |
+
+The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_14_1_1_Joystick/Sketch_14_1_1_Joystick.pde
     :linenos: 

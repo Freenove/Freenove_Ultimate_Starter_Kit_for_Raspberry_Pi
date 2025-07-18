@@ -14,6 +14,7 @@ Component List
 
 .. table:: 
     :align: center
+    :widths: 1 1
     :width: 80%
 
     +--------------------------------------------------+---------------------------------+
@@ -80,23 +81,24 @@ A ULN2003 Stepper Motor Driver is used to convert weak signals into more powerfu
 Circuit
 ================================================================
 
-When building the circuit, note that rated voltage of the Stepper Motor is 5V, and we need to use the breadboard power supply independently, ( :red:`Caution do not use the RPi power supply` ). Additionally, the breadboard power supply needs to share Ground with Rpi.
+When building the circuit, note that rated voltage of the Stepper Motor is 5V, and we need to use the breadboard power supply independently, ( :combo:`red font-bolder:Caution do not use the RPi power supply` ). Additionally, the breadboard power supply needs to share Ground with Rpi.
 
-+--------------------------------------------------------------------------------+
-|Schematic diagram                                                               |
-|                                                                                |
-||stepper_Motor_Sc|                                                              |
-+--------------------------------------------------------------------------------+
-|Hardware connection. If you need any support,please feel free to contact us via:|
-|                                                                                |
-|support@freenove.com                                                            |
-|                                                                                |
-||stepper_Motor_Fr|                                                              |
-|                                                                                |
-| **Video:** https://youtu.be/leptbJh32ZI                                        |
-|                                                                                |
-| **Sorry latter chapters don't have videos yet.**                               |
-+--------------------------------------------------------------------------------+
+.. table:: 
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +--------------------------------------------------------------------------------+
+    |Schematic diagram                                                               |
+    |                                                                                |
+    ||stepper_Motor_Sc|                                                              |
+    +--------------------------------------------------------------------------------+
+    |Hardware connection. If you need any support,please feel free to contact us via:|
+    |                                                                                |
+    |support@freenove.com                                                            |
+    |                                                                                |
+    ||stepper_Motor_Fr|                                                              |
+    +--------------------------------------------------------------------------------+
 
 .. |stepper_Motor_Sc| image:: ../_static/imgs/stepper_Motor_Sc.png
 .. |stepper_Motor_Fr| image:: ../_static/imgs/stepper_Motor_Fr.png
@@ -105,6 +107,12 @@ When building the circuit, note that rated voltage of the Stepper Motor is 5V, a
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/g6R6ldqjQyw" frameborder="0" allowfullscreen></iframe>
+
+|
+
+.. admonition:: Attention
+
+    Sorry latter chapters don't have videos yet.
 
 Code
 ================================================================
@@ -153,7 +161,7 @@ In the code we define the four pins of the Stepper Motor and the order to supply
     :lines: 10-12
     :dedent:
 
-Subfunction moveOnePeriod ((int dir,int ms) will drive the Stepper Motor rotating four-step clockwise or anticlockwise, four-step as a cycle. Where parameter "dir" indicates the rotation direction, if "dir" is 1, the servo will rotate clockwise, otherwise it rotates to anticlockwise. Parameter "ms" indicates the time between each two steps. The "ms" of Stepper Motor used in this project is 3ms (the shortest time period), a value of less than 3ms will exceed the limits of the Stepper Motor with a result that it does not rotate.
+Subfunction **moveOnePeriod** ((int dir,int ms) will drive the Stepper Motor rotating four-step clockwise or anticlockwise, four-step as a cycle. Where parameter "dir" indicates the rotation direction, if "dir" is 1, the servo will rotate clockwise, otherwise it rotates to anticlockwise. Parameter "ms" indicates the time between each two steps. The "ms" of Stepper Motor used in this project is 3ms (the shortest time period), a value of less than 3ms will exceed the limits of the Stepper Motor with a result that it does not rotate.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/16.1.1_SteppingMotor/SteppingMotor.c
     :linenos: 
@@ -161,7 +169,7 @@ Subfunction moveOnePeriod ((int dir,int ms) will drive the Stepper Motor rotatin
     :lines: 14-29
     :dedent:
 
-Subfunction moveSteps (int dir, int ms, int steps) is used to specific cycle number of Stepper Motor.
+Subfunction **moveSteps** (int dir, int ms, int steps) is used to specific cycle number of Stepper Motor.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/16.1.1_SteppingMotor/SteppingMotor.c
     :linenos: 
@@ -169,7 +177,7 @@ Subfunction moveSteps (int dir, int ms, int steps) is used to specific cycle num
     :lines: 31-36
     :dedent:
 
-Subfunction motorStop () is used to stop the Stepper Motor.
+Subfunction **motorStop** () is used to stop the Stepper Motor.
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/16.1.1_SteppingMotor/SteppingMotor.c
     :linenos: 

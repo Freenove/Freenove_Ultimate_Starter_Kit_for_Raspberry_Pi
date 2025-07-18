@@ -12,26 +12,31 @@ A Thermistor is a type of Resistor whose resistance value is dependent on temper
 Component List
 ================================================================
 
-+-----------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                    |     
-|                                                     |       
-|2. GPIO Extension Board & Ribbon Cable x1            |       
-|                                                     |                                                            
-|3. Breadboard x1                                     |                                                                 
-+-------------------------------+---------------------+
-| Thermistor x1                 |   Resistor 10kΩ x2  |
-|                               |                     |
-| |Thermistor|                  |  |Resistor-10kΩ|    |                           
-+-------------------------------+---------------------+
-| ADC module x1                                       |
-|                                                     |
-|  |ADC-module-2|                                     |                   
-|                                                     |  
-+-----------------------------------------------------+
-|   Jumper Wire M/M x14                               |
-|                                                     | 
-|      |jumper-wire|                                  |
-+-----------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-----------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                    |     
+    |                                                     |       
+    |2. GPIO Extension Board & Ribbon Cable x1            |       
+    |                                                     |                                                            
+    |3. Breadboard x1                                     |                                                                 
+    +-------------------------------+---------------------+
+    | Thermistor x1                 |   Resistor 10kΩ x2  |
+    |                               |                     |
+    | |Thermistor|                  |  |Resistor-10kΩ|    |                           
+    +-------------------------------+---------------------+
+    | ADC module x1                                       |
+    |                                                     |
+    |  |ADC-module-2|                                     |                   
+    |                                                     |  
+    +-----------------------------------------------------+
+    |   Jumper Wire M/M x14                               |
+    |                                                     | 
+    |      |jumper-wire|                                  |
+    +-----------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
@@ -53,16 +58,21 @@ Thermistor is a temperature sensitive resistor. When it senses a change in tempe
 
 The relationship between resistance value and temperature of a thermistor is:
 
-.. container:: centered
+.. math::
 
-    :xx-large:`Rt=R*EXP [B*(1/T2-1/T1)]`
+   \boldsymbol{ R_t = R \cdot EXP \left[ B \left( \frac{1}{T_2} - \frac{1}{T_1} \right) \right] }
 
-- Where:
-    - Rt is the thermistor resistance under T2 temperature;
-    - R is in the nominal resistance of thermistor under T1 temperature;
-    - EXP[n] is nth power of e;
-    - B is for thermal index;
-    - T1, T2 is Kelvin temperature (absolute temperature). Kelvin temperature=273.15 + Celsius temperature.
+**Where:**
+  
+  * **Rt** is the thermistor resistance under T2 temperature;
+  
+  * **R** is in the nominal resistance of thermistor under T1 temperature;
+  
+  * **EXP[n]** is nth power of e;
+  
+  * **B** is for thermal index;
+  
+  * **T1, T2** is Kelvin temperature (absolute temperature). Kelvin temperature=273.15 + Celsius temperature.
 
 For the parameters of the Thermistor, we use: B=3950, R=10k, T1=25.
 
@@ -76,28 +86,33 @@ We can use the value measured by the ADC converter to obtain the resistance valu
 
 Therefore, the temperature formula can be derived as:
 
-.. container:: centered
-
-    :xx-large:`T2 = 1/(1/T1 + ln(Rt/R)/B)`
+.. math::
+    
+   \boldsymbol{ T_2 = \dfrac{1}{\left( \dfrac{1}{T_1} + \dfrac{\ln(R_t / R)}{B} \right)} }
 
 Circuit
 ================================================================
 
 The circuit of this project is similar to the one in last chapter. The only difference is that the Photoresistor is replaced by the Thermistor.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-5|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-6|                                                                        |
-|                                                                                                |
-|    **Thermistor has longer pins than the one shown in circuit.**                               |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |ADS7830-Schematic-5|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |ADS7830-fritizing-6|                                                                        |
+    |                                                                                                |
+    |    **Thermistor has longer pins than the one shown in circuit.**                               |
+    +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-5| image:: ../_static/imgs/ADS7830-Schematic-5.png
 .. |ADS7830-fritizing-6| image:: ../_static/imgs/ADS7830-fritizing-6.png

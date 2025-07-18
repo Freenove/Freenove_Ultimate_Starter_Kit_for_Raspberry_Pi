@@ -14,6 +14,7 @@ Component List
 
 .. table:: 
     :align: center
+    :class: table-line
     :width: 80%
 
     +-------------------------------------------------+--------------------------------+
@@ -69,8 +70,6 @@ Circuit
 |   support@freenove.com                                                                         |
 |                                                                                                |
 |   |7_Segment_Fr|                                                                               | 
-|                                                                                                |
-|   **Video:** https://youtu.be/KSE0LdyuOFM                                                      |
 +------------------------------------------------------------------------------------------------+
 
 .. |7_Segment_Sc| image:: ../_static/imgs/7_Segment_Sc.png

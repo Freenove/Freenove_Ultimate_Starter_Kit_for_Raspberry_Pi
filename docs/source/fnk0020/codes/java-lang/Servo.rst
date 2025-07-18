@@ -15,6 +15,7 @@ Component List
 .. table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
     +-------------------------------------------------+---------------+
     |1. Raspberry Pi (with 40 GPIO) x1                |               |     
@@ -69,17 +70,22 @@ Circuit
 
 Use caution when supplying power to the Servo it should be 5V. Make sure you do not make any errors when connecting the Servo to the power supply.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Servo-Sc|                                                                                   |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |Servo-Fr|                                                                                   |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |Servo-Sc|                                                                                   |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |Servo-Fr|                                                                                   |
+    +------------------------------------------------------------------------------------------------+
 
 .. |Servo-Sc| image:: ../_static/imgs/Servo-Sc.png
 .. |Servo-Fr| image:: ../_static/imgs/Servo-Fr.png

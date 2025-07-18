@@ -4,7 +4,6 @@
 Chapter ADC
 ################################################################
 
-
 We have learned how to control the brightness of an LED through PWM and that PWM is not a real analog signal. In this chapter, we will learn how to read analog values via an ADC Module and convert these analog values into digital.
 
 Project Read the Voltage of Potentiometer 
@@ -18,6 +17,7 @@ Component List
 .. table::
     :align: center
     :width: 80%
+    :class: table-line
 
     +---------------------------------------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                              |     
@@ -38,7 +38,7 @@ Component List
     |                                                               | 
     |      |jumper-wire|                                            |
     +---------------------------------------------------------------+
-
+     
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%   
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
@@ -48,18 +48,25 @@ Component List
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 
-This product contains :red:`only one ADC module`, there are two types, PCF8591 and ADS7830. For the projects described in this tutorial, they function the same. Please build corresponding circuits according to the ADC module found in your Kit.
+This product contains :combo:`red font-bolder:only one ADC module`, there are two types, PCF8591 and ADS7830. For the projects described in this tutorial, they function the same. Please build corresponding circuits according to the ADC module found in your Kit.
 
-+---------------------------------------------------------------+----------------------------------------------------------------+
-|                      ADC module: PCF8591                      |                      ADC module: ADS7830                       |                                 
-+===============================+===============================+===============================+================================+
-|         Model diagram         |         Actual Picture        |         Model diagram         |         Actual Picture         |
-|                               |                               |                               |                                |
-||ADC-module-1|                 ||PCF8591|                      ||ADC-module-2|                 ||ADS7830|                       |                           
-+-------------------------------+-------------------------------+-------------------------------+--------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line text-center
+
+    +---------------------------------------------------------------+----------------------------------------------------------------+
+    |                      ADC module: PCF8591                      |                      ADC module: ADS7830                       |                                 
+    +===============================+===============================+===============================+================================+
+    |         Model diagram         |         Actual Picture        |         Model diagram         |         Actual Picture         |
+    |                               |                               |                               |                                |
+    ||ADC-module-1|                 ||PCF8591|                      ||ADC-module-2|                 ||ADS7830|                       |                           
+    +-------------------------------+-------------------------------+-------------------------------+--------------------------------+
 
 .. |ADS7830| image:: ../_static/imgs/ADS7830.png
+    :width: 85%
 .. |PCF8591| image:: ../_static/imgs/PCF8591.png
+    :width: 85%
 
 Circuit knowledge
 ================================================================
@@ -72,8 +79,8 @@ ADC
 Any analog value can be mapped to one digital value using the resolution of the converter. So the more bits the ADC has, the denser the partition of analog will be and the greater the precision of the resulting conversion.
 
 .. image:: ../_static/imgs/ADC.png
-        :width: 50%
-        :align: center
+    :width: 50%
+    :align: center
 
 Subsection 1: the analog in range of 0V-3.3/256 V corresponds to digital 0;
 
@@ -104,8 +111,8 @@ Between potentiometer pin 1 and pin 2 is the resistive element (a resistance wir
 In a circuit, both sides of resistive element are often connected to the positive and negative electrodes of power. When you slide the brush "pin 3", you can get variable voltage within the range of the power supply.
 
 .. image:: ../_static/imgs/1-32-fritizing.png
-        :width: 30%
-        :align: center
+    :width: 20%
+    :align: center
 
 Rotary potentiometer
 ----------------------------------------------------------------
@@ -113,47 +120,52 @@ Rotary potentiometer
 Rotary potentiometers and linear potentiometers have the same function; the only difference being the physical action being a rotational rather than a sliding movement.
 
 .. image:: ../_static/imgs/Rotary-potentiometer-turn.png
-        :width: 30%
-        :align: center
+    :width: 20%
+    :align: center
 
 PCF8591
 ----------------------------------------------------------------
 
-+--------+-----+---------------------------------------------------+-----------------------------------------------+
-| SYMBOL | PIN |                    DESCRIPTION                    |                    TOP VIEW                   |
-+========+=====+===================================================+===============================================+
-|  AIN0  |  1  |                                                   |                                               |
-+--------+-----+                                                   |                                               |
-|  AIN1  |  2  |                                                   |                                               |
-+--------+-----+  Analog inputs (A/D converter)                    |                                               |
-|  AIN2  |  3  |                                                   |                                               |
-+--------+-----+                                                   |                                               |
-|  AIN3  |  4  |                                                   |                                               |
-+--------+-----+---------------------------------------------------+                                               |
-|   A0   |  5  |                                                   |                                               |
-+--------+-----+                                                   |                                               |
-|   A1   |  6  |       Hardware address                            |                                               |
-+--------+-----+                                                   |                                               |
-|   A2   |  7  |                                                   |                                               |
-+--------+-----+---------------------------------------------------+                                               |
-|  Vss   |  8  |    Negative supply voltage                        ||PCF8591-top|                                  |
-+--------+-----+---------------------------------------------------+                                               |
-|  SDA   |  9  |   I2C-bus data input/output                       |                                               |
-+--------+-----+---------------------------------------------------+                                               |
-|  SCL   |  10 |    I2C-bus clock input                            |                                               |
-+--------+-----+---------------------------------------------------+                                               |
-|  OSC   |  11 |   Oscillator input/output                         |                                               |
-+--------+-----+---------------------------------------------------+                                               |
-|  EXT   |  12 | external/internal switch for oscillator input     |                                               |
-+--------+-----+---------------------------------------------------+                                               |
-|  AGND  |  13 |   Analog ground                                   |                                               |
-+--------+-----+---------------------------------------------------+                                               |
-|  Vref  |  14 |    Voltage reference input                        |                                               |
-+--------+-----+---------------------------------------------------+                                               |
-|  AOUT  |  15 |  Analog output(D/A converter)                     |                                               |
-+--------+-----+---------------------------------------------------+                                               |
-|  Vdd   |  16 |    Positive supply voltage                        |                                               |
-+--------+-----+---------------------------------------------------+-----------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: zebra
+
+    +--------+-----+---------------------------------------------------+-----------------------------------------------+
+    | SYMBOL | PIN |                    DESCRIPTION                    |                    TOP VIEW                   |
+    +========+=====+===================================================+===============================================+
+    |  AIN0  |  1  |                                                   |                                               |
+    +--------+-----+                                                   |                                               |
+    |  AIN1  |  2  |                                                   |                                               |
+    +--------+-----+  Analog inputs (A/D converter)                    |                                               |
+    |  AIN2  |  3  |                                                   |                                               |
+    +--------+-----+                                                   |                                               |
+    |  AIN3  |  4  |                                                   |                                               |
+    +--------+-----+---------------------------------------------------+                                               |
+    |   A0   |  5  |                                                   |                                               |
+    +--------+-----+                                                   |                                               |
+    |   A1   |  6  |       Hardware address                            |                                               |
+    +--------+-----+                                                   |                                               |
+    |   A2   |  7  |                                                   |                                               |
+    +--------+-----+---------------------------------------------------+                                               |
+    |  Vss   |  8  |    Negative supply voltage                        ||PCF8591-top|                                  |
+    +--------+-----+---------------------------------------------------+                                               |
+    |  SDA   |  9  |   I2C-bus data input/output                       |                                               |
+    +--------+-----+---------------------------------------------------+                                               |
+    |  SCL   |  10 |    I2C-bus clock input                            |                                               |
+    +--------+-----+---------------------------------------------------+                                               |
+    |  OSC   |  11 |   Oscillator input/output                         |                                               |
+    +--------+-----+---------------------------------------------------+                                               |
+    |  EXT   |  12 | external/internal switch for oscillator input     |                                               |
+    +--------+-----+---------------------------------------------------+                                               |
+    |  AGND  |  13 |   Analog ground                                   |                                               |
+    +--------+-----+---------------------------------------------------+                                               |
+    |  Vref  |  14 |    Voltage reference input                        |                                               |
+    +--------+-----+---------------------------------------------------+                                               |
+    |  AOUT  |  15 |  Analog output(D/A converter)                     |                                               |
+    +--------+-----+---------------------------------------------------+                                               |
+    |  Vdd   |  16 |    Positive supply voltage                        |                                               |
+    +--------+-----+---------------------------------------------------+-----------------------------------------------+
 
 .. |PCF8591-top| image:: ../_static/imgs/PCF8591-top.png
 
@@ -165,43 +177,48 @@ ADS7830
 
 The ADS7830 is a single-supply, low-power, 8-bit data acquisition device that features a serial I2C interface and an 8-channel multiplexer. The following table is the pin definition diagram of ADS7830.
 
-+-----------+-----+---------------------------------------------------+-----------------------------------------------+
-| SYMBOL    | PIN |                    DESCRIPTION                    |                    TOP VIEW                   |
-+===========+=====+===================================================+===============================================+
-|  CH0      |  1  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH1      |  2  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH2      |  3  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH3      |  4  |                                                   |                                               |                                               
-+-----------+-----+       Analog input channels  (A/D converter)      |                                               |
-|  CH4      |  5  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH5      |  6  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH6      |  7  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH7      |  8  |                                                   ||ADS7830-top|                                  |
-+-----------+-----+---------------------------------------------------+                                               |
-|  GND      |  9  |   Ground                                          |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|           |     | Internal +2.5V Reference,External                 |                                               |
-|REF in/out |  10 |                                                   |                                               |
-|           |     | Reference Input                                   |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  COM      |  11 |   Common to Analog Input Channel                  |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  A0       |  12 |                                                   |                                               |
-+-----------+-----+   Hardware address                                |                                               |
-|  A1       |  13 |                                                   |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  SCL      |  14 |   Serial Clock                                    |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  SDA      |  15 |   Serial Sata                                     |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  +VDD     |  16 |   Power Supply, 3.3V Nominal                      |                                               |
-+-----------+-----+---------------------------------------------------+-----------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: zebra
+
+    +-----------+-----+---------------------------------------------------+-----------------------------------------------+
+    | SYMBOL    | PIN |                    DESCRIPTION                    |                    TOP VIEW                   |
+    +===========+=====+===================================================+===============================================+
+    |  CH0      |  1  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH1      |  2  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH2      |  3  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH3      |  4  |                                                   |                                               |                                               
+    +-----------+-----+       Analog input channels  (A/D converter)      |                                               |
+    |  CH4      |  5  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH5      |  6  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH6      |  7  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH7      |  8  |                                                   ||ADS7830-top|                                  |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  GND      |  9  |   Ground                                          |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |           |     | Internal +2.5V Reference,External                 |                                               |
+    |REF in/out |  10 |                                                   |                                               |
+    |           |     | Reference Input                                   |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  COM      |  11 |   Common to Analog Input Channel                  |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  A0       |  12 |                                                   |                                               |
+    +-----------+-----+   Hardware address                                |                                               |
+    |  A1       |  13 |                                                   |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  SCL      |  14 |   Serial Clock                                    |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  SDA      |  15 |   Serial Sata                                     |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  +VDD     |  16 |   Power Supply, 3.3V Nominal                      |                                               |
+    +-----------+-----+---------------------------------------------------+-----------------------------------------------+
 
 .. |ADS7830-top| image:: ../_static/imgs/ADS7830-top.png
     
@@ -213,21 +230,24 @@ I2C (Inter-Integrated Circuit) has a two-wire serial communication mode, which c
 Circuit with ADS7830 
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic|                                                                          |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   **This product contains only one ADC module.**                                               |
-|                                                                                                |
-|   |ADS7830-fritizing|                                                                          |
-|                                                                                                |
-|    **Video:** https://youtu.be/PSUCctu_DqA                                                     |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |ADS7830-Schematic|                                                                          |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   **This product contains only one ADC module.**                                               |
+    |                                                                                                |
+    |   |ADS7830-fritizing|                                                                          |
+    +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic| image:: ../_static/imgs/ADS7830-Schematic.png
         :width: 80%
@@ -240,17 +260,22 @@ Circuit with ADS7830
 Circuit with PCF8591
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic|                                                                          |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection.                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing|                                                                          |
-|                                                                                                |
-| Please keep the **chip mark** consistent to make the chips under right direction and position. |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |PCF8591-Schematic|                                                                          |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection.                                                                         |
+    |                                                                                                |
+    |   |PCF8591-fritizing|                                                                          |
+    |                                                                                                |
+    | Please keep the **chip mark** consistent to make the chips under right direction and position. |
+    +------------------------------------------------------------------------------------------------+
 
 .. |PCF8591-Schematic| image:: ../_static/imgs/PCF8591-Schematic.png
 .. |PCF8591-fritizing| image:: ../_static/imgs/PCF8591-fritizing.png
@@ -272,8 +297,8 @@ Type command in the Terminal:
 Then open the following dialog box:
 
 .. image:: ../_static/imgs/Enable-I2C.png
-        :width: 100%
-        :align: center
+    :width: 100%
+    :align: center
 
 Choose "3 Interfacing Options" then "I4 I2C" then "Yes" and then "Finish" in this order and restart your RPi. The I2C module will then be started.
 
@@ -286,8 +311,8 @@ Type a command to check whether the I2C module is started:
 If the I2C module has been started, the following content will be shown. "bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
 
 .. image:: ../_static/imgs/Enable-I2C-2.png
-        :width: 100%
-        :align: center
+    :width: 100%
+    :align: center
 
 Install I2C-Tools
 ----------------------------------------------------------------
@@ -307,16 +332,16 @@ I2C device address detection:
 When you are using the PCF8591 Module, the result should look like this:
 
 .. image:: ../_static/imgs/Enable-I2C-3.png
-        :width: 100%
-        :align: center
+    :width: 100%
+    :align: center
 
 Here, 48 (HEX) is the I2C address of ADC Module (PCF8591).
 
 When you are using ADS, the result should look like this:
 
 .. image:: ../_static/imgs/Enable-I2C-4.png
-        :width: 100%
-        :align: center
+    :width: 100%
+    :align: center
 
 Here, 4b (HEX) is the I2C address of ADC Module (ADS7830).
 
@@ -372,6 +397,7 @@ A successful installation, without error prompts, is shown below:
 Execute the following command. Observe the project result and then learn about the code in detail.
 
 .. hint:: 
+
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1. Use ``cd`` command to enter 07.1.1_ADC directory of Python code.
@@ -396,10 +422,12 @@ The following is the code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/07.1.1_ADC/ADC.py
     :linenos: 
     :language: python
+    :dedent:
 
 In this code, a custom Python module "ADCDevice" is used. It contains the method of utilizing the ADC Module in this project, through which the ADC Module can easily and quickly be used. In the code, you need to first create an ADCDevice object adc.
 
 .. code-block:: python
+    :linenos:
 
     adc = ADCDevice() # Define an ADCDevice class object
 
@@ -409,16 +437,19 @@ Then in setup(), use detecticIC(addr), the member function of ADCDevice, to dete
     :linenos: 
     :language: python
     :lines: 13-23
+    :dedent:
 
 When you have a class object of a specific device, you can get the ADC value of the specified channel by calling the member function of this class, analogRead(chn). In loop(), get the ADC value of potentiometer.
 
 .. code-block:: python
+    :linenos:
 
     value = adc.analogRead(0)   # read the ADC value of channel 0
     
 Then according to the formula, the voltage value is calculated and displayed on the terminal monitor.
 
 .. code-block:: python
+    :linenos:
 
     voltage = value / 255.0 * 3.3  # calculate the voltage value
     print ('ADC Value : %d, Voltage : %.2f'%(value,voltage))

@@ -17,6 +17,7 @@ Component List
 .. table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
     +------------------------------------------+------------------+
     |1. Raspberry Pi (with 40 GPIO) x1         |                  |     
@@ -40,17 +41,22 @@ Component List
 Circuit
 ================================================================
 
-+--------------------------------------------------------------------------------+
-|Schematic diagram                                                               |
-|                                                                                |
-||TTP223_Sc|                                                                     |
-+--------------------------------------------------------------------------------+
-|Hardware connection. If you need any support,please feel free to contact us via:|
-|                                                                                |
-|support@freenove.com                                                            | 
-|                                                                                |
-||TTP223_Fr|                                                                     |
-+--------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +--------------------------------------------------------------------------------+
+    |Schematic diagram                                                               |
+    |                                                                                |
+    ||TTP223_Sc|                                                                     |
+    +--------------------------------------------------------------------------------+
+    |Hardware connection. If you need any support,please feel free to contact us via:|
+    |                                                                                |
+    |support@freenove.com                                                            | 
+    |                                                                                |
+    ||TTP223_Fr|                                                                     |
+    +--------------------------------------------------------------------------------+
 
 .. |TTP223_Sc| image:: ../_static/imgs/python37_00.png
 .. |TTP223_Fr| image:: ../_static/imgs/python37_01.png
@@ -94,7 +100,7 @@ WebIOPi Service Framework
 
 .. note::
 
-    :red:`If you have a Raspberry Pi 4B, you may have some trouble. The reason for changing the file in the configuration process is that the newer generation models of the RPi CPUs are different form the older ones and you may not be able to access the GPIO Header at the end of this tutorial.` A solution to this is given in an online tutorial by from E-Tinkers blogger Henry Cheung. For more details, please refer to previouse section.
+    :combo:`red font-bolder:If you have a Raspberry Pi 4B, you may have some trouble. The reason for changing the file in the configuration process is that the newer generation models of the RPi CPUs are different form the older ones and you may not be able to access the GPIO Header at the end of this tutorial.` :red:`A solution to this is given in an online tutorial by from E-Tinkers blogger Henry Cheung. For more details, please refer to previouse section.`
 
 The following is the key part of this chapter. The installation steps refer to WebIOPi official. And you also can directly refer to the official installation steps. The latest version (in 2016-6-27) of WebIOPi is 0.7.1. So, you may encounter some issues in using it. We will explain these issues and provide the solution in the following installation steps.
 

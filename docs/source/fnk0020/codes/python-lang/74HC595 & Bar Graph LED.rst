@@ -15,6 +15,7 @@ Component List
 .. table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
     +-------------------------------------------------+-----------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                |                             |     
@@ -44,6 +45,7 @@ A 74HC595 chip is used to convert serial data into parallel data. A 74HC595 chip
 
 .. image:: ../_static/imgs/74HC595-1.png
     :align: center
+    :width: 50%
 
 The ports of the 74HC595 chip are described as follows:
 
@@ -90,21 +92,25 @@ The ports of the 74HC595 chip are described as follows:
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |74HC595-Sc|                                                                                 |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |74HC595-Fr|                                                                                 | 
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |74HC595-Sc|                                                                                 |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |74HC595-Fr|                                                                                 | 
+    +------------------------------------------------------------------------------------------------+
 
 .. |74HC595-Sc| image:: ../_static/imgs/74HC595-Sc.png
 .. |74HC595-Fr| image:: ../_static/imgs/74HC595-Fr.png
-
 
 Code
 ================================================================
@@ -139,6 +145,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/17.1.1_LightWater02/LightWater02.py
     :linenos: 
     :language: python
+    :dedent:
 
 Import the OutputDevice class that controls the 74HC595 chip from the gpiozero library.
 

@@ -17,25 +17,30 @@ In the project, we will control the LED state through a Push Button Switch. When
 Component List
 ================================================================
 
-+-----------------------------------------------------------+
-|  1. Raspberry Pi (with 40 GPIO) x1                        |     
-|                                                           |       
-|  2. GPIO Extension Board & Ribbon Cable x1                |       
-|                                                           |                                                            
-|  3. Breadboard x1                                         |                                                                 
-+---------------------------+-------------------------------+
-| LED x1                    | Resistor 220Ω x1              |
-|                           |                               |
-|  |red-led|                |  |res-220R|                   |                         
-+---------------------------+-------------------------------+
-| Push Button Switch x1     | Resistor 10KΩ x2              |
-|                           |                               |
-|  |button-small|           |  |res-10k|                    |                         
-+---------------------------+-------------------------------+
-| Jumper Wire                                               |
-|                                                           |
-|  |jumper-wire|                                            |
-+-----------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-----------------------------------------------------------+
+    |  1. Raspberry Pi (with 40 GPIO) x1                        |     
+    |                                                           |       
+    |  2. GPIO Extension Board & Ribbon Cable x1                |       
+    |                                                           |                                                            
+    |  3. Breadboard x1                                         |                                                                 
+    +---------------------------+-------------------------------+
+    | LED x1                    | Resistor 220Ω x1              |
+    |                           |                               |
+    |  |red-led|                |  |res-220R|                   |                         
+    +---------------------------+-------------------------------+
+    | Push Button Switch x1     | Resistor 10KΩ x2              |
+    |                           |                               |
+    |  |button-small|           |  |res-10k|                    |                         
+    +---------------------------+-------------------------------+
+    | Jumper Wire                                               |
+    |                                                           |
+    |  |jumper-wire|                                            |
+    +-----------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 60%
@@ -63,6 +68,7 @@ When the button on the switch is pressed, the circuit is completed (your project
 
 Circuit
 ================================================================
+
 1. **Schematic diagram**
 
     .. image:: ../_static/imgs/button-led-sch1.jpg
@@ -102,6 +108,7 @@ Electronic_Button_LED
 ----------------------------------------------------------------
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 Load the code to scratch3.
@@ -146,4 +153,3 @@ Operators are used in this code.
 
 .. image:: ../_static/imgs/scratch_operators.png
     :align: center
-

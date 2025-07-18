@@ -4,7 +4,6 @@
 0. Chapter Preparation
 ##############################################################################
 
-
 Why "Chapter 0"? Because in program code the first number is 0. We choose to follow this rule. In this chapter, we will do some necessary foundational preparation work: Start your Raspberry Pi and install some necessary libraries. 
 
 Linux Command
@@ -15,55 +14,67 @@ Raspberry Pi OS is based on the Linux Operation System. Now we will introduce yo
 First, open the Terminal. All commands are executed in Terminal. 
 
 .. image:: ../_static/p00-imgs/chapter00-01.png
+    :align: center
+    :width: 60%
 
 When you click the Terminal icon, following interface appears.
 
 .. image:: ../_static/p00-imgs/chapter00-02.png
+    :align: center
 
 **Note: The Linux is case sensitive.**
 
 First, type ``ls`` into the Terminal and press the "Enter" key. The result is shown below:
 
 .. image:: ../_static/p00-imgs/chapter00-03.png
+    :align: center
 
 The ``ls`` command lists information about the files (the current directory by default).
 
 Content between ``$`` and ``pi@raspberrypi:`` is the current working path. ``~`` represents the user directory, which refers to ``/home/pi`` here. 
 
 .. image:: ../_static/p00-imgs/chapter00-04.png
+    :align: center
 
 ``cd`` is used to change directory. / represents the root directory. 
 
 .. image:: ../_static/p00-imgs/chapter00-05.png
+    :align: center
 
 Later in this Tutorial, we will often change the working path. Typing commands under the wrong directory may cause errors and break the execution of further commands. 
 
 Many frequently used commands and instructions can be found in the following reference table.
-    
-+---------------+--------------------------------------------------------------------------------------------------+
-| Command       | instruction                                                                                      |
-+===============+==================================================================================================+
-| ls            | Lists information about the FILEs (the current directory by default) and entries alphabetically. |
-+---------------+--------------------------------------------------------------------------------------------------+
-| cd            | Changes directory                                                                                |
-+---------------+--------------------------------------------------------------------------------------------------+
-| sudo + cmd    | Executes cmd under root authority                                                                |
-+---------------+--------------------------------------------------------------------------------------------------+
-| ./            | Under current directory                                                                          |
-+---------------+--------------------------------------------------------------------------------------------------+
-| gcc           | GNU Compiler Collection                                                                          |
-+---------------+--------------------------------------------------------------------------------------------------+
-| git clone URL | Use git tool to clone the contents of specified repository, and URL in the repository address.   |
-+---------------+--------------------------------------------------------------------------------------------------+
+
+.. table::
+    :align: center
+    :class: zebra
+
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | Command       | instruction                                                                                      |
+    +===============+==================================================================================================+
+    | ls            | Lists information about the FILEs (the current directory by default) and entries alphabetically. |
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | cd            | Changes directory                                                                                |
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | sudo + cmd    | Executes cmd under root authority                                                                |
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | ./            | Under current directory                                                                          |
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | gcc           | GNU Compiler Collection                                                                          |
+    +---------------+--------------------------------------------------------------------------------------------------+
+    | git clone URL | Use git tool to clone the contents of specified repository, and URL in the repository address.   |
+    +---------------+--------------------------------------------------------------------------------------------------+
 
 There are many commands, which will come later. 
 
 .. seealso:: 
+    
     For more details about commands. You can refer to:
     http://www.linux-commands-examples.com
 
 Shortcut Key
 ================================================================
+
 Now, we will introduce several commonly used shortcuts that are very useful in Terminal.
 
 1. **Up and Down Arrow Keys:** Pressing "↑" (the Up key) will go backwards through the command history and pressing "↓" (the Down Key) will go forwards through the command history.
@@ -73,8 +84,10 @@ Now, we will introduce several commonly used shortcuts that are very useful in T
 As shown below, under the '~' directory, you enter the Documents directory with the "cd" command. After typing "cd D", pressing the Tab key (there is no response), pressing the Tab key again then all the files/folders that begin with "D" will be listed. Continue to type the letters "oc" and then pressing the Tab key, the "Documents" is typed automatically.
 
 .. image:: ../_static/p00-imgs/chapter00-06.png
+    :align: center
 
 .. image:: ../_static/p00-imgs/chapter00-07.png
+    :align: center
 
 Install GPIO Zero Python library
 ****************************************************************
@@ -82,6 +95,7 @@ Install GPIO Zero Python library
 GPIO Zero is a simple interface to GPIO devices with Raspberry Pi. GPIO Zero is installed by default in the Raspberry Pi OS desktop image, and the Raspberry Pi Desktop image for PC/Mac, both available from raspberrypi.org. Follow these guides to installing on Raspberry Pi OS Lite and other operating systems.
 
 GPIO Zero Python library Installation Steps
+================================================
 
 To install the GPIO Zero Python library, please open the Terminal and then follow the steps and commands below.  
 
@@ -213,7 +227,7 @@ If you want to set python2 as default python in other projects, just repeat the 
 Shortcut Key
 ----------------------------
 
-Now, we will introduce several shortcuts that are very :red:`useful` and :red:`commonly` used in terminal.
+Now, we will introduce several shortcuts that are very :combo:`red font-bolder:useful` and :combo:`red font-bolder:commonly` used in terminal.
 
 1. **up and down arrow keys.** History commands can be quickly brought back by using up and down arrow keys, which are very useful when you need to reuse certain commands.
 

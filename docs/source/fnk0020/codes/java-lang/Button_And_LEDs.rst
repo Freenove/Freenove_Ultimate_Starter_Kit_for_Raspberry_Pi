@@ -6,6 +6,7 @@ Usually, there are three essential parts in a complete automatic control device:
 
 .. image:: ../_static/imgs/button-led-flow-chart.png
     :width: 80%
+    :align: center
 
 Next, we will build a simple control system to control an LED through a push button switch.
 
@@ -20,6 +21,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------------------+
     |Raspberry Pi                                           |     
@@ -63,17 +65,21 @@ Component List
     :height: 180px
 .. |res-10k| image:: ../_static/imgs/res-10K-hori.png
 .. |button-small| image:: ../_static/imgs/button-small.jpg
+
 .. note:: 
-    Please Note: In the code "button" represents switch action.
+    
+    In the code "button" represents switch action.
 
 Component knowledge
 ================================================================
 
 Push Button Switch
 ----------------------------------------------------------------
+
 This type of Push Button Switch has 4 pins (2 Pole Switch). Two pins on the left are connected, and both left and right sides are the same per the illustration:
 
     .. image:: ../_static/imgs/button-small-img-sch.jpg
+        :align: center
 
 When the button on the switch is pressed, the circuit is completed (your project is Powered ON).
 
@@ -85,6 +91,7 @@ Circuit
         :height: 400
 
     .. note:: 
+
         R3 is used to limit current to protect GPIO 18, if you set it to output HIGH level by mistake.
 
 2. **Hardware connection** 
@@ -92,22 +99,9 @@ Circuit
 .. image:: ../_static/imgs/button-led-hdc1.jpg
     :width: 100%
 
-.. note::
-    | There are two kinds of push button switch in this kit. 
-    | :red:`The smaller push button switches are contained in a plastic bag.` 
-
 .. hint:: 
-    If you need any support, please feel free to contact us via: support@freenove.com
 
-1. This is how it works. When button switch is released:
-
-.. image:: ../_static/imgs/button-led-released.png
-    :width: 100%
-    
-4. This is how it works. When button switch is released:
-
-.. image:: ../_static/imgs/button-led-pressed.png
-    :width: 100%
+    :red:`If you need any support, please feel free to contact us via:` support@freenove.com
 
 Sketch
 ================================================================
@@ -162,6 +156,7 @@ The following is program code:
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_03_ButtonLED/ButtonLED.java
     :linenos: 
     :language: java
+    :dedent:
 
 Import the classes of Pi4J library for GPIO control and simple console output.
 

@@ -20,6 +20,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------------------+
     |Raspberry Pi                                           |     

@@ -16,26 +16,26 @@ Component List
 .. table:: 
     :align: center
 
-    +-------------------------------------------------+-------------------+
-    |1. Raspberry Pi (with 40 GPIO) x1                |    220Ω x3        |
-    |                                                 |                   |
-    |2. GPIO Extension Board & Ribbon Cable x1        |   |res-220R|      |
-    |                                                 |                   |
-    |3. Breadboard x1                                 |                   |
-    +-------------------------------------------------+-------------------+
-    | Rotary potentiometer x3                         |   Resistor 10kΩ x2|
-    |                                                 |                   |
-    | |Rotary-potentiometer|                          |  |Resistor-10kΩ|  |
-    +-------------------------------------------------+-------------------+
-    | ADC module x1 (Only one)                        |   RGB LED x1      |
-    |                                                 |                   |
-    | |ADC-module-1|   :xx-large:`or`  |ADC-module-2| |   |RGB-LED-real|  |
-    |                                                 |                   |
-    +-------------------------------------------------+-------------------+
-    |   Jumper Wire M/M x17                                               |
-    |                                                                     |
-    |      |jumper-wire|                                                  |
-    +---------------------------------------------------------------------+
+    +-------------------------------------------------+-----------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |Resistor 220Ω x2 |
+    |                                                 |                 |
+    |2. GPIO Extension Board & Ribbon Cable x1        ||res-220R|       |
+    |                                                 |                 |
+    |3. Breadboard x1                                 |                 |
+    +-------------------------------------------------+-----------------+
+    | Rotary potentiometer x3                         |Resistor 10kΩ x2 |
+    |                                                 |                 |
+    | |Rotary-potentiometer|                          ||Resistor-10kΩ|  |
+    +-------------------------------------------------+-----------------+
+    | ADC module x1 (Only one)                        |RGB LED x1       |
+    |                                                 |                 |
+    | |ADC-module-1|   :xx-large:`or`  |ADC-module-2| ||RGB-LED-real|   |
+    |                                                 |                 |
+    +-------------------------------------------------+-----------------+
+    |   Jumper Wire M/M x17                                             |
+    |                                                                   |
+    |      |jumper-wire|                                                |
+    +-------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
@@ -53,21 +53,26 @@ Component List
 Circuit with ADS7830
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-3|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-3|                                                                        |
-|                                                                                                |
-|   **If circuit above doesn't work, please try following wiring.**                              |
-|                                                                                                |
-|   |ADS7830-fritizing-4|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                |
+    |                                                                                    |
+    |   |ADS7830-Schematic-3|                                                            |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                    |
+    |   support@freenove.com                                                             |
+    |                                                                                    |
+    |   |ADS7830-fritizing-3|                                                            |
+    |                                                                                    |
+    |   **If circuit above doesn't work, please try following wiring.**                  |
+    |                                                                                    |
+    |   |ADS7830-fritizing-4|                                                            |
+    +------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-3| image:: ../_static/imgs/ADS7830-Schematic-3.png
 .. |ADS7830-fritizing-3| image:: ../_static/imgs/ADS7830-fritizing-3.png
@@ -76,21 +81,25 @@ Circuit with ADS7830
 Circuit with PCF8591
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic-3|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection.                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing-3|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                 |
+    |                                                                                     |
+    |   |PCF8591-Schematic-3|                                                             |
+    +-------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:  |
+    |                                                                                     |
+    |   support@freenove.com                                                              |
+    |                                                                                     |
+    |   |PCF8591-fritizing-3|                                                             |
+    +-------------------------------------------------------------------------------------+
 
 .. |PCF8591-Schematic-3| image:: ../_static/imgs/PCF8591-Schematic-3.png
 .. |PCF8591-fritizing-3| image:: ../_static/imgs/PCF8591-fritizing-3.png
-
-.. note:: 
-        **Youtube video:** https://youtu.be/CmLLNsBMN2U
 
 .. raw:: html
 
@@ -137,7 +146,8 @@ After the program is executed, rotate one of the potentiometers, then the color 
 The following is the program code:
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/09.1.1_ColorfulSoftlight/ColorfulSoftlight.cpp
-    :linenos: 
+    :linenos:
     :language: C
+    :dedent:
 
 In the code you can read the ADC values of the 3 potentiometers and map it into a PWM duty cycle to control the 3 LED elements to vary the color of their respective RGB LED.

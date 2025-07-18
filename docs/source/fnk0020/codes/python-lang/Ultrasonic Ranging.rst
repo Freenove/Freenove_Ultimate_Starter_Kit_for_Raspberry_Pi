@@ -16,6 +16,7 @@ Component List
 .. table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
     +------------------------------------------+------------------+
     |1. Raspberry Pi (with 40 GPIO) x1         |                  |     
@@ -30,10 +31,10 @@ Component List
     +------------------------------------------+------------------+
     
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 80%
+    :width: 60%
 .. |Ultrasonic_Module| image:: ../_static/imgs/Ultrasonic_Module.png
 .. |res-1K-hori| image:: ../_static/imgs/res-1K-hori.png
-    :width: 50%
+    :width: 40%
 
 Component Knowledge
 ================================================================
@@ -43,7 +44,7 @@ The Ultrasonic Ranging Module uses the principle that ultrasonic waves will be r
 .. image:: ../_static/imgs/Ultrasonic_knowledge.png
     :align: center
 
-.. container:: centered
+.. math::
     
     2S=V·t.
 
@@ -52,6 +53,7 @@ The Ultrasonic Ranging Module integrates a both an ultrasonic transmitter and a 
 .. list-table::
    :widths: 50 50
    :align: center
+   :class: table-line
 
    * - |Ultrasonic_Module|
      - |HC_SR04|
@@ -63,6 +65,7 @@ Pin description:
 .. list-table::
    :widths: 50 50
    :align: center
+   :class: zebra
 
    * - VCC
      - power supply pin
@@ -76,11 +79,12 @@ Pin description:
    * - GND
      - GND
 
-Technical specs:
+**Technical specs:**
 
 .. list-table::
    :widths: 50 50
    :align: center
+   :class: zebra
 
    * - Working voltage: 5V 
      - Working current: 12mA
@@ -98,23 +102,25 @@ Circuit
 
 Note that the voltage of ultrasonic module is 5V in this circuit.
 
-+-------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                 |
-|                                                                                     |
-|   |Ultrasonic_Sc|                                                                   |
-+-------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:  |
-|                                                                                     |
-|   support@freenove.com                                                              | 
-|                                                                                     |
-|   |Ultrasonic_Fr|                                                                   |
-+-------------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +-------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                 |
+    |                                                                                     |
+    |   |Ultrasonic_Sc|                                                                   |
+    +-------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:  |
+    |                                                                                     |
+    |   support@freenove.com                                                              | 
+    |                                                                                     |
+    |   |Ultrasonic_Fr|                                                                   |
+    +-------------------------------------------------------------------------------------+
 
 .. |Ultrasonic_Sc| image:: ../_static/imgs/Ultrasonic_Sc.png
 .. |Ultrasonic_Fr| image:: ../_static/imgs/Ultrasonic_Fr.png
-
-.. note:: 
-        **Youtube video:** https://youtu.be/6nffzlN-lUE
 
 .. raw:: html
 

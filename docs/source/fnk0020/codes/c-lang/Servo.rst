@@ -12,17 +12,22 @@ First, we need to learn how to make a Servo rotate.
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 | Servo x1                                        |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |  |Servo|                                        |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-------------------------------------------------+-------------------------------------------------+
-|  Jumper Wires x3                                                                                  |
-|                                                                                                   |
-|  |jumper-wire|                                                                                    |                           
-+---------------------------------------------------------------------------------------------------+
+.. table:: 
+    :class: table-line
+    :align: center
+    :width: 80%
+
+    +-------------------------------------------------+-------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
+    |                                                 | Servo x1                                        |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
+    |                                                 |  |Servo|                                        |                                                            
+    |3. Breadboard x1                                 |                                                 |                                                                 
+    +-------------------------------------------------+-------------------------------------------------+
+    |  Jumper Wires x3                                                                                  |
+    |                                                                                                   |
+    |  |jumper-wire|                                                                                    |                           
+    +---------------------------------------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
@@ -69,29 +74,29 @@ Circuit
 
 Use caution when supplying power to the Servo it should be 5V. Make sure you do not make any errors when connecting the Servo to the power supply.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Servo-Sc|                                                                                   |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |Servo-Fr|                                                                                   |
-|                                                                                                |
-|    **Video:** https://youtu.be/leptbJh32ZI                                                     |
-|                                                                                                |
-|    **Sorry latter chapters don't have videos yet.**                                            |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :class: table-line
+    :align: center
+    :width: 80%
 
-.. raw:: html
-
-   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/leptbJh32ZI" frameborder="0" allowfullscreen></iframe>
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |Servo-Sc|                                                                                   |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |Servo-Fr|                                                                                   |
+    +------------------------------------------------------------------------------------------------+
 
 .. |Servo-Sc| image:: ../_static/imgs/Servo-Sc.png
 .. |Servo-Fr| image:: ../_static/imgs/Servo-Fr.png
 
+.. raw:: html
+
+   <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/leptbJh32ZI" frameborder="0" allowfullscreen></iframe>
 
 Code
 ================================================================

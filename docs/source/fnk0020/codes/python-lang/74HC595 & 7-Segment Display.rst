@@ -15,6 +15,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------------+---------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                |                                 |     
@@ -46,31 +47,35 @@ A 7-Segment Display is a digital electronic display device. There is a figure "8
 
 .. image:: ../_static/imgs/7_Segment_Display_1.png
     :align: center
+    :width: 60%
 
 As we can see in the above circuit diagram, we can control the state of each LED separately. Also, by combining LEDs with different states of ON and OFF, we can display different characters (Numbers and Letters). For example, to display a "0": we need to turn ON LED segments A, B, C, D, E and F, and turn OFF LED segments G and DP.
 
 .. image:: ../_static/imgs/7_Segment_Display_2.png
     :align: center
-    :width: 80%
+    :width: 60%
 
 In this project, we will use a 7-Segment Display with a Common Anode. Therefore, when there is an input low level to an LED segment the LED will turn ON. Defining segment "A" as the lowest level and segment "DP" as the highest level, from high to low would look like this: "DP", "G", "F", "E", "D", "C", "B", "A". Character "0" corresponds to the code: 1100 0000b=0xc0.
 
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |7_Segment_Sc|                                                                               |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |7_Segment_Fr|                                                                               | 
-|                                                                                                |
-|   **Video:** https://youtu.be/KSE0LdyuOFM                                                      |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |7_Segment_Sc|                                                                               |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |7_Segment_Fr|                                                                               | 
+    +------------------------------------------------------------------------------------------------+
 
 .. |7_Segment_Sc| image:: ../_static/imgs/7_Segment_Sc.png
 .. |7_Segment_Fr| image:: ../_static/imgs/7_Segment_Fr.png
@@ -112,6 +117,7 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/18.1.1_SevenSegmentDisplay/SevenSegmentDisplay.py
     :linenos: 
     :language: python
+    :dedent:
 
 First, we need to create encoding for characters "0" to "F" in the array.
 

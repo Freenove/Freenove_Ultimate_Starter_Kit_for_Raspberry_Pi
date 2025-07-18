@@ -16,6 +16,7 @@ Component List
      :align: center
      :width: 80%
      :widths: 1 1
+     :class: table-line
 
      +--------------------------------------------------+---------------------------------------------------+
      |1. Raspberry Pi (with 40 GPIO) x1                 |                                                   |

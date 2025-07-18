@@ -16,6 +16,7 @@ Component List
 .. table::
     :align: center
     :width: 80%
+    :class: table-line
 
     +----------------------------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                   |     
@@ -88,27 +89,31 @@ Therefore, the temperature formula can be derived as:
     
    \boldsymbol{ T_2 = \dfrac{1}{\left( \dfrac{1}{T_1} + \dfrac{\ln(R_t / R)}{B} \right)} }
 
-
 Circuit with ADS7830
 ================================================================
 
 The circuit of this project is similar to the one in last chapter. The only difference is that the Photoresistor is replaced by the Thermistor.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic-5|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-6|                                                                        |
-|                                                                                                |
-|    **Thermistor has longer pins than the one shown in circuit.**                               |
-|                                                                                                |
-|    **Video:** https://youtu.be/-CvWcobXSFI                                                     |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |PCF8591-Schematic-5|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |ADS7830-fritizing-6|                                                                        |
+    |                                                                                                |
+    |    **Thermistor has longer pins than the one shown in circuit.**                               |
+    |                                                                                                |
+    |    **Video:** https://youtu.be/-CvWcobXSFI                                                     |
+    +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-5| image:: ../_static/imgs/ADS7830-Schematic-5.png
 .. |ADS7830-fritizing-6| image:: ../_static/imgs/ADS7830-fritizing-6.png
@@ -122,23 +127,25 @@ Circuit with PCF8591
 
 The circuit of this project is similar to the one in the last chapter. The only difference is that the Photoresistor is replaced by the Thermistor.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic-5|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing-5|                                                                        |
-|                                                                                                |
-|   **Thermistor has longer pins than the one shown in circuit.**                                |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |PCF8591-Schematic-5|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |PCF8591-fritizing-5|                                                                        |
+    +------------------------------------------------------------------------------------------------+
 
 .. |PCF8591-Schematic-5| image:: ../_static/imgs/PCF8591-Schematic-5.png
 .. |PCF8591-fritizing-5| image:: ../_static/imgs/PCF8591-fritizing-5.png
-
 
 Code
 ================================================================
@@ -153,6 +160,7 @@ If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+    
     :red:`If you have any concerns, please contact us via:`  support@freenove.com
 
 1.	Use cd command to enter 11.1.1_Thermometer directory of Python code.
@@ -177,5 +185,6 @@ The following is the code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/11.1.1_Thermometer/Thermometer.py
     :linenos: 
     :language: python
+    :dedent:
 
 In the code, the ADC value of ADC module A0 port is read, and then calculates the voltage and the resistance of Thermistor according to Ohms Law. Finally, it calculates the temperature sensed by the Thermistor, according to the formula. 

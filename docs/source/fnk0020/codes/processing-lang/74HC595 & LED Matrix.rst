@@ -15,6 +15,7 @@ Component List
 .. table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
     +-------------------------------------------------+----------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                |                                  |     
@@ -71,21 +72,26 @@ Circuit
 
 In circuit of this project, the power pin of the 74HC595 IC Chip is connected to 3.3V. It can also be connected to 5V to make LED Matrix brighter.
 
-+----------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                    |
-|                                                                                        |
-|   |LED_MAtrix_Sc|                                                                      |
-+----------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:     |
-|                                                                                        |
-|   support@freenove.com                                                                 |
-|                                                                                        |
-|   |LED_MAtrix_Fr|                                                                      | 
-+----------------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +---------------------------------------------------------------------------------------+
+    |  Schematic diagram                                                                    |
+    |                                                                                       |
+    |  |LED_MAtrix_Sc|                                                                      |
+    +---------------------------------------------------------------------------------------+
+    |  Hardware connection. If you need any support,please feel free to contact us via:     |
+    |                                                                                       |
+    |  support@freenove.com                                                                 |
+    |                                                                                       |
+    |  |LED_MAtrix_Fr|                                                                      | 
+    +---------------------------------------------------------------------------------------+
 
 .. |LED_MAtrix_Sc| image:: ../_static/imgs/LED_MAtrix_Sc.png
 .. |LED_MAtrix_Fr| image:: ../_static/imgs/LED_MAtrix_Fr.png
-    
+
 Sketch
 ================================================================
 

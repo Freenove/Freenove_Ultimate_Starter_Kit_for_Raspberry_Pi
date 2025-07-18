@@ -12,17 +12,23 @@ In this project, we use ultrasonic ranging module to measure distance, and print
 Component List
 ================================================================
 
-+-------------------------------------------+------------------+
-|1. Raspberry Pi (with 40 GPIO) x1          |                  |     
-|                                           | Jumper Wires x4  |       
-|2. GPIO Extension Board & Ribbon Cable x1  |                  |       
-|                                           |  |jumper-wire|   |                                                            
-|3. Breadboard x1                           |                  |                                                                 
-+-------------------------------------------+------------------+
-| Ultrasonic Module x1                      | Resistor 1kΩ x3  |     
-|                                           |                  |       
-|  |Ultrasonic_Module|                      |  |res-1K-hori|   |       
-+-------------------------------------------+------------------+
+.. table:: 
+    :align: center
+    :class: table-line
+    :widths: 50 50  
+    :width: 80%
+
+    +-------------------------------------------+------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1          |                  |     
+    |                                           | Jumper Wires x4  |       
+    |2. GPIO Extension Board & Ribbon Cable x1  |                  |       
+    |                                           |  |jumper-wire|   |                                                            
+    |3. Breadboard x1                           |                  |                                                                 
+    +-------------------------------------------+------------------+
+    | Ultrasonic Module x1                      | Resistor 1kΩ x3  |     
+    |                                           |                  |       
+    |  |Ultrasonic_Module|                      |  |res-1K-hori|   |       
+    +-------------------------------------------+------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 80%
@@ -46,6 +52,7 @@ The Ultrasonic Ranging Module integrates a both an ultrasonic transmitter and a 
 
 .. list-table::
    :widths: 50 50
+   :class: table-line
    :align: center
 
    * - |Ultrasonic_Module|
@@ -56,7 +63,8 @@ The Ultrasonic Ranging Module integrates a both an ultrasonic transmitter and a 
 Pin description:
 
 .. list-table::
-   :widths: 50 50
+   :widths: 30 50
+   :class: table-line
    :align: center
 
    * - VCC
@@ -71,10 +79,11 @@ Pin description:
    * - GND
      - GND
 
-Technical specs:
+**Technical specs:**
 
 .. list-table::
    :widths: 50 50
+   :class: table-line
    :align: center
 
    * - Working voltage: 5V 
@@ -93,22 +102,25 @@ Circuit
 
 Note that the voltage of ultrasonic module is 5V in this circuit.
 
-+------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                |
-|                                                                                    |
-|   |Ultrasonic_Sc|                                                                  |
-+------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                    |
-|   support@freenove.com                                                             | 
-|                                                                                    |
-|   |Ultrasonic_Fr|                                                                  |
-+------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :class: table-line
+    :width: 80%
+
+    +------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                |
+    |                                                                                    |
+    |   |Ultrasonic_Sc|                                                                  |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                    |
+    |   support@freenove.com                                                             | 
+    |                                                                                    |
+    |   |Ultrasonic_Fr|                                                                  |
+    +------------------------------------------------------------------------------------+
 
 .. |Ultrasonic_Sc| image:: ../_static/imgs/Ultrasonic_Sc.png
 .. |Ultrasonic_Fr| image:: ../_static/imgs/Ultrasonic_Fr.png
-
-video: https://www.youtube.com/watch?v=6nffzlN-lUE
 
 .. raw:: html
 
@@ -117,12 +129,13 @@ video: https://www.youtube.com/watch?v=6nffzlN-lUE
 Code
 ================================================================
 
-C Code SenseLED
+C Code UltrasonicRanging
 ----------------------------------------------------------------
 
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use ``cd`` command to enter 24.1.1_UltrasonicRanging directory of C code.

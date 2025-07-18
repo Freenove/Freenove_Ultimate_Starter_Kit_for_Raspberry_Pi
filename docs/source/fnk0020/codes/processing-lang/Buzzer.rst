@@ -12,6 +12,7 @@ We will make a doorbell with this functionality: when the Push Button Switch is 
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------------+
     |    Raspberry Pi (with 40 GPIO) x1               |     
@@ -41,23 +42,29 @@ We will make a doorbell with this functionality: when the Push Button Switch is 
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------+
-|  Schematic diagram with RPi GPIO Extension Shield                                  |
-|                                                                                    |
-|   |pr_Buzzer_Sc|                                                                   |
-+------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                    |
-|   support@freenove.com                                                             | 
-|                                                                                    |
-|   |pr_Buzzer_Fr|                                                                   |
-+------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------+
+    |  Schematic diagram with RPi GPIO Extension Shield                                  |
+    |                                                                                    |
+    |   |pr_Buzzer_Sc|                                                                   |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                    |
+    |   support@freenove.com                                                             | 
+    |                                                                                    |
+    |   |pr_Buzzer_Fr|                                                                   |
+    +------------------------------------------------------------------------------------+
 
 .. |pr_Buzzer_Sc| image:: ../_static/imgs/pr_Buzzer_Sc.png
 .. |pr_Buzzer_Fr| image:: ../_static/imgs/pr_Buzzer_Fr.png
 
-.. note:: 
-    in this circuit, the power supply for the buzzer is 5V, and pull-up resistor of the push button switch is connected to the 3.3V power feed. Actually, the buzzer can work when connected to the 3.3V power feed but this will produce a weak sound from the buzzer (not very loud).
+.. note::
+
+    In this circuit, the power supply for the buzzer is 5V, and pull-up resistor of the push button switch is connected to the 3.3V power feed. Actually, the buzzer can work when connected to the 3.3V power feed but this will produce a weak sound from the buzzer (not very loud).
 
 Sketch
 ================================================================
@@ -85,5 +92,6 @@ The following is program code:
 .. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_05_1_1_ActiveBuzzer/Sketch_05_1_1_ActiveBuzzer.pde
     :linenos: 
     :language: java
+    :dedent:
 
 Code in this project is logically the same as previous "MouseLED" project. And the difference is that this project needs to draw the buzzer pattern and arc graphics after the buzzer sounding.

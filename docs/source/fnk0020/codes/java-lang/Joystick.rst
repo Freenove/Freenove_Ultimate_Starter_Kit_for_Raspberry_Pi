@@ -12,26 +12,31 @@ In this project, we will read the output data of a joystick and display it to th
 Component List
 ================================================================
 
-+---------------------------------------------------------------+
-|1. Raspberry Pi x1                                             |
-|                                                               |
-|2. GPIO Extension Board & Ribbon Cable x1                      |
-|                                                               |
-|3. Breadboard x1                                               |
-+-------------------------------+-------------------------------+
-| Joystick  x1                  |   Resistor 10kΩ x3            |
-|                               |                               |
-| |joystick|                    |  |Resistor-10kΩ|              |
-+-------------------------------+-------------------------------+
-| ADC module x1                                                 |
-|                                                               |
-|  |ADC-module-2|                                               |
-|                                                               |
-+---------------------------------------------------------------+
-|   Jumper x18                                                  |
-|                                                               |
-|    |jumper-wire|                                              |
-+---------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +---------------------------------------------------------------+
+    |1. Raspberry Pi x1                                             |
+    |                                                               |
+    |2. GPIO Extension Board & Ribbon Cable x1                      |
+    |                                                               |
+    |3. Breadboard x1                                               |
+    +-------------------------------+-------------------------------+
+    | Joystick  x1                  |   Resistor 10kΩ x3            |
+    |                               |                               |
+    | |joystick|                    |  |Resistor-10kΩ|              |
+    +-------------------------------+-------------------------------+
+    | ADC module x1                                                 |
+    |                                                               |
+    |  |ADC-module-2|                                               |
+    |                                                               |
+    +---------------------------------------------------------------+
+    |   Jumper x18                                                  |
+    |                                                               |
+    |    |jumper-wire|                                              |
+    +---------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 40%
@@ -66,17 +71,22 @@ When the Joystick data is read, there are some differences between the axes: dat
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-6|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-7|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |ADS7830-Schematic-6|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |ADS7830-fritizing-7|                                                                        |
+    +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-6| image:: ../_static/imgs/ADS7830-Schematic-6.png
 .. |ADS7830-fritizing-7| image:: ../_static/imgs/ADS7830-fritizing-7.png
@@ -95,7 +105,7 @@ First, enter where the project is located:
     
     $ cd ~/Freenove_Kit/Pi4j/Sketches/Sketch_10_Joystick
 
-.. image:: ../_static/imgs/java_joystick.png
+.. image:: ../_static/imgs/Chapter10_00.png
     :align: center
 
 You can enter the command to run the code.
@@ -104,17 +114,17 @@ You can enter the command to run the code.
     
     $ jbang Joystick.java
 
-.. image:: ../_static/imgs/java_joystick_run.png
+.. image:: ../_static/imgs/Chapter10_01.png
     :align: center
 
 After running the code, the Raspberry Pi will obtain the ADC values of the X-axis and Y-axis of the joystick sensor, as well as the value of the Z-axis, and print them out in the terminal.
 
-.. image:: ../_static/imgs/java_joystick_mes.png
+.. image:: ../_static/imgs/Chapter10_02.png
     :align: center
 
 Press Ctrl+C to exit the program.
 
-.. image:: ../_static/imgs/java_joystick_exit.png
+.. image:: ../_static/imgs/Chapter10_03.png
     :align: center
     
 You can open the code with Geany to view and edit it.
@@ -125,7 +135,7 @@ You can open the code with Geany to view and edit it.
 
 Click the icon to run the code.
 
-.. image:: ../_static/imgs/java10_00.png
+.. image:: ../_static/imgs/Chapter10_04.png
     :align: center
 
 If the code fails to run, please check :ref:`Geany Configuration<Geany_Configuration>`.

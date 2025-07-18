@@ -29,7 +29,7 @@ Here is 1N4148, which is a kind of high-speed switching diodes and is characteri
 
 .. image:: ../_static/imgs/switch_diode.png
     :align: center
-    :width: 50%
+    :width: 25%
 
 For the switching diode, the changing time from conduction to cut off or from cut off to conduction is shorter than general diode and it is mainly used in electronic computer, pulse and switching circuits.
 

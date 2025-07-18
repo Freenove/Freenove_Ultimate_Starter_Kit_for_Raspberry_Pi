@@ -14,7 +14,9 @@ Component List
 
 .. table:: 
     :align: center
-    :width: 80%
+    :width: 75%
+    :widths: 2 3
+    :class: table-line
 
     +-------------------------------------------+--------------------+
     |1. Raspberry Pi (with 40 GPIO) x1          |                    |     
@@ -52,17 +54,22 @@ The NC pin (Not Connected Pin) are a type of pin found on various integrated cir
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                |
-|                                                                                    |
-|   |DHT11_Sc|                                                                       |
-+------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                    |
-|   support@freenove.com                                                             |
-|                                                                                    |
-|   |DHT11_Fr|                                                                       | 
-+------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                |
+    |                                                                                    |
+    |   |DHT11_Sc|                                                                       |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                    |
+    |   support@freenove.com                                                             |
+    |                                                                                    |
+    |   |DHT11_Fr|                                                                       | 
+    +------------------------------------------------------------------------------------+
 
 .. |DHT11_Sc| image:: ../_static/imgs/DHT11_Sc.png
 .. |DHT11_Fr| image:: ../_static/imgs/DHT11_Fr.png
@@ -161,8 +168,8 @@ Module "Freenove_DHT.py" contains a DHT class. The class function of the def rea
 
     This is a Python module for reading the temperature and humidity data of the DHT Sensor. Partial functions and variables are described as follows:
     
-    getHumidity(): store humidity data read from sensor
+    **getHumidity():** store humidity data read from sensor
     
-    getTemperature(): store temperature data read from sensor
+    **getTemperature():** store temperature data read from sensor
     
-    readDHT11(): read the temperature and humidity of sensor DHT11, and return values used to determine whether the data is normal.
+    **readDHT11():** read the temperature and humidity of sensor DHT11, and return values used to determine whether the data is normal.

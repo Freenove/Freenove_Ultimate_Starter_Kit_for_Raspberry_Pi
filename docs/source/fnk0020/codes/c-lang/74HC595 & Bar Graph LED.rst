@@ -14,7 +14,8 @@ Component List
 
 .. table:: 
     :align: center
-    :width: 70%
+    :class: table-line
+    :width: 80%
 
     +-------------------------------------------------+-------------------------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
@@ -81,8 +82,8 @@ The ports of the 74HC595 chip are described as follows:
     | MR       | 10           |                                                                  |
     |          |              | the content in shift register will be cleared.                   | 
     +----------+--------------+------------------------------------------------------------------+                                                  
-    |          | 9            | Serial Data Output: it can be connected to more 74HC595 chips    |                                   
-    |  Q7      |              |                                                                  |
+    |          |              | Serial Data Output: it can be connected to more 74HC595 chips    |                                   
+    | Q7'      | 9            |                                                                  |
     |          |              | in series.                                                       |
     +----------+--------------+------------------------------------------------------------------+ 
 
@@ -93,22 +94,25 @@ The ports of the 74HC595 chip are described as follows:
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |74HC595-Sc|                                                                                 |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |74HC595-Fr|                                                                                 | 
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :class: table-line
+    :width: 80%
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |74HC595-Sc|                                                                                 |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |74HC595-Fr|                                                                                 | 
+    +------------------------------------------------------------------------------------------------+
 
 .. |74HC595-Sc| image:: ../_static/imgs/74HC595-Sc.png
 .. |74HC595-Fr| image:: ../_static/imgs/74HC595-Fr.png
-
-video: https://www.youtube.com/watch?v=e_SZUGKH2KU
 
 .. raw:: html
 

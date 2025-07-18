@@ -5,17 +5,22 @@ Chapter Four button swithches games.
 Project 08.0_Pick_Apple and 08.1_Fish
 ****************************************************************
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |scratch_f_button_Sc|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |scratch_f_button_Fr|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                 |
+    |                                                                                     |
+    |   |scratch_f_button_Sc|                                                             |
+    +-------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:  |
+    |                                                                                     |
+    |   support@freenove.com                                                              |
+    |                                                                                     |
+    |   |scratch_f_button_Fr|                                                             |
+    +-------------------------------------------------------------------------------------+
 
 .. |scratch_f_button_Sc| image:: ../_static/imgs/scratch_f_button_Sc.png
 .. |scratch_f_button_Fr| image:: ../_static/imgs/scratch_f_button_Fr.png

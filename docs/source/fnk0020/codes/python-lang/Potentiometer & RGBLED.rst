@@ -2,7 +2,6 @@
 Chapter Potentiometer & RGBLED
 ################################################################
 
-
 In this chapter, we will use 3 potentiometers to control the brightness of 3 LEDs of RGBLED to create multiple colors.
 
 Project Colorful Light 
@@ -16,6 +15,7 @@ Component List
 .. table::
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------------+----------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                |    220Ω x3           |     
@@ -54,21 +54,24 @@ Component List
 Circuit with ADS7830
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-3|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-3|                                                                        |
-|                                                                                                |
-|   **If circuit above doesn't work, please try following wiring.**                              |
-|                                                                                                |
-|   |ADS7830-fritizing-4|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |ADS7830-Schematic-3|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |ADS7830-fritizing-3|                                                                        |
+    |                                                                                                |
+    |   **If circuit above doesn't work, please try following wiring.**                              |
+    +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-3| image:: ../_static/imgs/ADS7830-Schematic-3.png
 .. |ADS7830-fritizing-3| image:: ../_static/imgs/ADS7830-fritizing-3.png
@@ -77,21 +80,23 @@ Circuit with ADS7830
 Circuit with PCF8591
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic-3|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection.                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing-3|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
 
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |PCF8591-Schematic-3|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection.                                                                         |
+    |                                                                                                |
+    |   |PCF8591-fritizing-3|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    
 .. |PCF8591-Schematic-3| image:: ../_static/imgs/PCF8591-Schematic-3.png
 .. |PCF8591-fritizing-3| image:: ../_static/imgs/PCF8591-fritizing-3.png
-
-.. note:: 
-        **Youtube video:** https://youtu.be/CmLLNsBMN2U
 
 .. raw:: html
 
@@ -130,6 +135,6 @@ The following is the program code:
 .. literalinclude:: ../../../freenove_Kit/Code/Python_GPIOZero_Code/09.1.1_ColorfulSoftlight/ColorfulSoftlight.py
     :linenos: 
     :language: python
+    :dedent:
 
 In the code you can read the ADC values of the 3 potentiometers and map it into a PWM duty cycle to control the 3 LED elements to vary the color of their respective RGB LED.
-

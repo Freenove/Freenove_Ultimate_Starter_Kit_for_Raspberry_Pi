@@ -15,6 +15,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +--------------------------------------------------+---------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                 |                                 |     
@@ -81,23 +82,28 @@ A ULN2003 Stepper Motor Driver is used to convert weak signals into more powerfu
 Circuit
 ================================================================
 
-When building the circuit, note that rated voltage of the Stepper Motor is 5V, and we need to use the breadboard power supply independently, (Caution do not use the RPi power supply). Additionally, the breadboard power supply needs to share Ground with Rpi.
+When building the circuit, note that rated voltage of the Stepper Motor is 5V, and we need to use the breadboard power supply independently, (:combo:`red font-bolder:Caution do not use the RPi power supply`). Additionally, the breadboard power supply needs to share Ground with Rpi.
 
-+------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                |
-|                                                                                    |
-|   |stepper_Motor_Sc|                                                               |
-+------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                    |
-|   support@freenove.com                                                             |
-|                                                                                    |
-|   |stepper_Motor_Fr|                                                               |
-|                                                                                    |
-|    **Video:** https://youtu.be/leptbJh32ZI                                         |
-|                                                                                    |
-|    **Sorry latter chapters don't have videos yet.**                                |
-+------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                |
+    |                                                                                    |
+    |   |stepper_Motor_Sc|                                                               |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                    |
+    |   support@freenove.com                                                             |
+    |                                                                                    |
+    |   |stepper_Motor_Fr|                                                               |
+    |                                                                                    |
+    |    **Video:** https://youtu.be/leptbJh32ZI                                         |
+    |                                                                                    |
+    |    **Sorry latter chapters don't have videos yet.**                                |
+    +------------------------------------------------------------------------------------+
 
 .. |stepper_Motor_Sc| image:: ../_static/imgs/stepper_Motor_Sc.png
 .. |stepper_Motor_Fr| image:: ../_static/imgs/stepper_Motor_Fr.png

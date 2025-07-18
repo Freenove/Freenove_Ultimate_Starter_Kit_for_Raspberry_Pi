@@ -19,6 +19,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------+----------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1          |                                  |     
@@ -44,11 +45,16 @@ Component List
 Component Knowledge
 ================================================================
 
-==============  ======================  ==========================
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
 
-|HC_SR501|        |HC_SR501_bottom|       |HC_SR501_Schematic|
-
-==============  ======================  ==========================
+    ==============  ======================  ==========================
+    
+    |HC_SR501|        |HC_SR501_bottom|       |HC_SR501_Schematic|
+    
+    ==============  ======================  ==========================
 
 .. |HC_SR501_bottom| image:: ../_static/imgs/HC_SR501_bottom.png
 .. |HC_SR501_Schematic| image:: ../_static/imgs/HC_SR501_Schematic.png
@@ -73,6 +79,7 @@ Circuit
 .. table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
     +-------------------------------------------------------------------------------------------------+
     |   Schematic diagram                                                                             |
@@ -124,10 +131,6 @@ Circuit
 .. |HC_SR501_Fr| image:: ../_static/imgs/HC_SR501_Fr.png
 .. |HC_SR501_T_B| image:: ../_static/imgs/HC_SR501_T_B.png
 .. |HC_SR501_1| image:: ../_static/imgs/HC_SR501_1.png
-
-.. note:: 
-    
-    **Youtube video:** https://youtu.be/0GerHlINURk
 
 .. raw:: html
 

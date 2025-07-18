@@ -11,6 +11,7 @@ Below are the raspberry pi pictures and model pictures supported by this product
 .. table:: 
     :width: 100%
     :widths: 50 50
+    :class: table-line
 
     ================================================================================    ================================================================================
     Practicality picture of Raspberry Pi 5                                              Model diagram of Raspberry Pi 5

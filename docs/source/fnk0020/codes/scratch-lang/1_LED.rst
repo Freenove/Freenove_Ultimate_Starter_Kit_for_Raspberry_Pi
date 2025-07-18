@@ -15,6 +15,7 @@ Component List
 .. table::
     :align: center
     :width: 80%
+    :class: table-line
 
     +-----------------------------------------------------------+
     |    Raspberry Pi                                           |     
@@ -91,10 +92,12 @@ Circuit
 First, disconnect your RPi from the GPIO Extension Shield. Then build the circuit according to the circuit and hardware diagrams. After the circuit is built and verified correct, connect the RPi to GPIO Extension Shield. 
 
 .. caution:: 
-    CAUTION: Avoid any possible short circuits (especially connecting 5V or GND, 3.3V and GND)! 
+    
+    Avoid any possible short circuits (especially connecting 5V or GND, 3.3V and GND)! 
 
 .. warning:: 
-    WARNING: A short circuit can cause high current in your circuit, create excessive component heat and cause permanent damage to your RPi!
+    
+    A short circuit can cause high current in your circuit, create excessive component heat and cause permanent damage to your RPi!
 
 1. **Schematic diagram**
 
@@ -112,7 +115,9 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
      :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
 
 .. attention:: 
+    
     Do NOT rotate Raspberry Pi to change the way of this connection.
+    
     Please plug T extension fully into breadboard.
 
 The connection of Raspberry Pi T extension board is as below. **Don't reverse the ribbon**.
@@ -128,22 +133,23 @@ The connection of Raspberry Pi T extension board is as below. **Don't reverse th
 
 There are only three kind of resistors in this kit.
 
-1. The one with *1 red ring* is 10KΩ \
+1. The one with *1 red ring* is 10KΩ 
 
     .. image:: ../_static/imgs/res-10K-hori.png
         :height: 17
 
-2. The one with *1 red ring* is 10KΩ 
+2. The one with *1 red ring* is 220Ω 
 
     .. image:: ../_static/imgs/res-220R-hori.png
         :height: 20
 
-#. The one with *1 red ring* is 10KΩ 
+#. The one with *1 red ring* is 1KΩ 
 
     .. image:: ../_static/imgs/res-1K-hori.png
         :height: 20
 
-.. note:: 
+.. note::
+
     Future hardware connection diagrams will only show that part of breadboard and GPIO Extension Shield.
 
 Component knowledge
@@ -159,8 +165,9 @@ All common 2 lead diodes are the same in this respect. Diodes work only if the v
 .. image:: ../_static/imgs/led-describe.png
     :width: 100%
 
-.. note:: 
-    Note: LEDs cannot be directly connected to a power supply, which usually ends in a damaged component. A resistor with a specified resistance value must be connected in series to the LED you plan to use.
+.. note::
+
+    LEDs cannot be directly connected to a power supply, which usually ends in a damaged component. A resistor with a specified resistance value must be connected in series to the LED you plan to use.
 
 Resistor
 ----------------------------------------------------------------
@@ -183,10 +190,12 @@ In the following diagram, the current through R1 is:
     :align: center
 
 .. warning:: 
-    WARNING: Never connect the two poles of a power supply with anything of low resistance value (i.e. a metal object or bare wire) this is a Short and results in high current that may damage the power supply and electronic components.
+
+    Never connect the two poles of a power supply with anything of low resistance value (i.e. a metal object or bare wire) this is a Short and results in high current that may damage the power supply and electronic components.
 
 .. note:: 
-    Note: Unlike LEDs and Diodes, Resistors have no poles and re non-polar (it does not matter which direction you insert them into a circuit, it will work the same)
+
+    Unlike LEDs and Diodes, Resistors have no poles and re non-polar (it does not matter which direction you insert them into a circuit, it will work the same)
 
 Resistor
 ----------------------------------------------------------------
@@ -216,7 +225,8 @@ According to the circuit, when the GPIO17 of RPi output level is high, the LED t
 Blink
 ----------------------------------------------------------------
 
-.. hint:: 
+.. hint::
+
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 .. image:: ../_static/imgs/scratch_load.png
@@ -280,7 +290,8 @@ Sprite_LED
 The circuit is same as previous section.
 
 .. tip:: 
-     :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
+    
+    :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
 
 Load the code to scratch3.
 
@@ -307,31 +318,17 @@ https://www.amazon.com/freenove
 
 **FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
 
-.. image:: ../_static/imgs/43_1.png
-
-.. image:: ../_static/imgs/43_2.png
-
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
-  
+
 **FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
-
-.. image:: ../_static/imgs/50_1.png
-
-.. image:: ../_static/imgs/50_2.png
 
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
 
 **FNK0052**--:green:`Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi`
-
-.. image:: ../_static/imgs/52_1.png
-    :width: 50%
-
-.. image:: ../_static/imgs/52_2.png
-    :width: 40%
 
 .. raw:: html
 

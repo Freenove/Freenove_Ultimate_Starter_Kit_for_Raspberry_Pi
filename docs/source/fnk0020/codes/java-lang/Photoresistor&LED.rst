@@ -12,25 +12,30 @@ In this project, we will make a soft light. We will use an ADC Module to read AD
 Component List
 ================================================================
 
-+-----------------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                                      |     
-|                                                                       |       
-|2. GPIO Extension Board & Ribbon Cable x1                              |       
-|                                                                       |                                                            
-|3. Breadboard x1                                                       |                                                                 
-+-------------------------------------------------+---------------------+
-| Rotary potentiometer x1                         |   Resistor 10kΩ x2  |
-|                                                 |                     |
-| |Rotary-potentiometer|                          |  |Resistor-10kΩ|    |                           
-+-------------------------------------------------+---------------------+
-| ADC module x1                                   |   LED x1            |
-|                                                 |                     |
-| |ADC-module-2|                                  |   |red-led|         |                   
-+-------------------------------------------------+---------------------+
-|   Jumper Wire M/M x17                                                 |
-|                                                                       | 
-|      |jumper-wire|                                                    |
-+-----------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-----------------------------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                                      |     
+    |                                                                       |       
+    |2. GPIO Extension Board & Ribbon Cable x1                              |       
+    |                                                                       |                                                            
+    |3. Breadboard x1                                                       |                                                                 
+    +-------------------------------------------------+---------------------+
+    | Rotary potentiometer x1                         |   Resistor 10kΩ x2  |
+    |                                                 |                     |
+    | |Rotary-potentiometer|                          |  |Resistor-10kΩ|    |                           
+    +-------------------------------------------------+---------------------+
+    | ADC module x1                                   |   LED x1            |
+    |                                                 |                     |
+    | |ADC-module-2|                                  |   |red-led|         |                   
+    +-------------------------------------------------+---------------------+
+    | Jumper Wire M/M x15                                                   |
+    |                                                                       | 
+    |   |jumper-wire|                                                       |
+    +-----------------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 40%
@@ -46,17 +51,22 @@ Component List
 Circuit with ADS7830
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-2|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-2|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +----------------------------------------------------------------------------------------------+
+    | Schematic diagram                                                                            |
+    |                                                                                              |
+    | |ADS7830-Schematic-2|                                                                        |
+    +----------------------------------------------------------------------------------------------+
+    | Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                              |
+    | support@freenove.com                                                                         |
+    |                                                                                              |
+    | |ADS7830-fritizing-2|                                                                        |
+    +----------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-2| image:: ../_static/imgs/ADS7830-Schematic-2.png
 .. |ADS7830-fritizing-2| image:: ../_static/imgs/ADS7830-fritizing-2.png
@@ -120,6 +130,7 @@ The following is program code:
 .. literalinclude:: ../../../freenove_Kit/Pi4j/Sketches/Sketch_08_Nightlamp/Nightlamp.java
     :linenos: 
     :language: java
+    :dedent:
 
 The ADC value at the photosensor is obtained every 100 milliseconds, converted into a PWM duty cycle value for controlling the LED, and then a prompt message is printed on the terminal.
 

@@ -12,17 +12,22 @@ We will use 74HC595 to control Seven-segment display (SSD) and make it display d
 Component List
 ================================================================
 
-+-------------------------------------------------+----------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                  |     
-|                                                 |   Jumper Wires x18               |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                  |       
-|                                                 |     |jumper-wire|                |                                                            
-|3. Breadboard x1                                 |                                  |                                                                 
-+-----------------------------+-------------------+--------------+-------------------+
-| 74HC595 x1                  | Bar Graph LED x1                 | Resistor 220Ω x8  |
-|                             |                                  |                   |
-|  |74HC595|                  |  |7_Segment_Display|             |  |res-220R|       |
-+-----------------------------+----------------------------------+-------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +-------------------------------------------------+----------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                  |     
+    |                                                 |   Jumper Wires x18               |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                  |       
+    |                                                 |     |jumper-wire|                |                                                            
+    |3. Breadboard x1                                 |                                  |                                                                 
+    +-----------------------------+-------------------+--------------+-------------------+
+    | 74HC595 x1                  | Bar Graph LED x1                 | Resistor 220Ω x8  |
+    |                             |                                  |                   |
+    |  |74HC595|                  |  |7_Segment_Display|             |  |res-220R|       |
+    +-----------------------------+----------------------------------+-------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 80%
@@ -54,17 +59,22 @@ In this project, we will use a 7-Segment Display with a Common Anode. Therefore,
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |7_Segment_Sc|                                                                               |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |7_Segment_Fr|                                                                               | 
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |7_Segment_Sc|                                                                               |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |7_Segment_Fr|                                                                               | 
+    +------------------------------------------------------------------------------------------------+
 
 .. |7_Segment_Sc| image:: ../_static/imgs/7_Segment_Sc.png
 .. |7_Segment_Fr| image:: ../_static/imgs/7_Segment_Fr.png

@@ -29,17 +29,22 @@ Project Multicolored LED
 Component List
 ================================================================
     
-+-----------------------------------------+--------------------+
-|Raspberry Pi (with 40 GPIO) x1           |RGB LED             |
-|                                         |                    |   
-|GPIO Extension Board & Ribbon Cable x1   ||RGB-LED-real|      |
-|                                         |                    |
-|Breadboard x1                            |                    |
-+-----------------------------------------+--------------------+
-|Jumper Wire                              |Resistor 220Ω x3    |
-|                                         |                    |
-||jumper-wire|                            ||res-220R-hori|     |        
-+-----------------------------------------+--------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +-----------------------------------------+--------------------+
+    |Raspberry Pi (with 40 GPIO) x1           |RGB LED             |
+    |                                         |                    |   
+    |GPIO Extension Board & Ribbon Cable x1   ||RGB-LED-real|      |
+    |                                         |                    |
+    |Breadboard x1                            |                    |
+    +-----------------------------------------+--------------------+
+    |Jumper Wire                              |Resistor 220Ω x3    |
+    |                                         |                    |
+    ||jumper-wire|                            ||res-220R-hori|     |        
+    +-----------------------------------------+--------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 60%
@@ -50,19 +55,24 @@ Component List
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |RGB-LED-Scbematic|                                                                          |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         | 
-|                                                                                                |
-|   |RGB-LED-fritizing|                                                                          |
-|                                                                                                |
-|    **Video:** https://youtu.be/tbnX2AsX2y4                                                     |
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :width: 80%
+    :align: center
+    :class: table-line
+    
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |RGB-LED-Scbematic|                                                                          |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         | 
+    |                                                                                                |
+    |   |RGB-LED-fritizing|                                                                          |
+    |                                                                                                |
+    |    **Video:** https://youtu.be/tbnX2AsX2y4                                                     |
+    +------------------------------------------------------------------------------------------------+
 
 .. |RGB-LED-Scbematic| image:: ../_static/imgs/RGB-LED-Scbematic.png
     :width: 80%
@@ -71,6 +81,10 @@ Circuit
 .. note:: 
 
     In this kit, the RGB led is Common anode. The voltage difference between LED will make it work. There is no visible GND. The GPIO ports can also receive current while in output mode.If circuit above doesn't work, the RGB LED may be common cathode. Please try following wiring.There is no need to modify code for random color.
+
+**If circuit above doesn't work, the RGB LED may be common cathode. Please try following wiring.**
+
+There is no need to modify code for random color.
 
 .. image:: ../_static/imgs/RGB-LED-fritizing2.png
     :width: 100%

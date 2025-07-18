@@ -13,8 +13,9 @@ Component List
 ================================================================
 
 .. table:: 
-    :width: 80%
     :align: center
+    :class: table-line
+    :width: 80%
 
     +-------------------------------------------+-------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1          |                         |     
@@ -60,22 +61,25 @@ The method of usage is similar to the Matrix LED, by using a row or column scann
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Keypad_Sc|                                                                                  |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |Keypad_Fr|                                                                                  | 
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :class: table-line
+    :width: 80%
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |Keypad_Sc|                                                                                  |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |Keypad_Fr|                                                                                  | 
+    +------------------------------------------------------------------------------------------------+
 
 .. |Keypad_Sc| image:: ../_static/imgs/Keypad_Sc.png
 .. |Keypad_Fr| image:: ../_static/imgs/Keypad_Fr.png
-
-video: https://www.youtube.com/watch?v=RPluhXAYhKQ
 
 .. raw:: html
 
@@ -92,6 +96,7 @@ C Code MatrixKeypad
 First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
+
     :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1.	Use cd command to enter 22.1.1_MatrixKeypad directory of C code.
@@ -161,56 +166,48 @@ The Keypad Library used for the RPi is transplanted from the Arduino Keypad Libr
 .. c:function:: class Keypad
     
     .. code-block:: c
-        :linenos:
         
         Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols);
     
     Constructor, the parameters are: key code of keyboard, row pin, column pin, the number of rows, the number of columns.
 
     .. code-block:: c
-        :linenos:
 
         char getKey();
     
     Get the key code of the pressed key. If no key is pressed, the return value is NULL.
 
     .. code-block:: c
-        :linenos:
 
         void setDebounceTime(uint);
     
     Set the debounce time. And the default time is 10ms.
 
     .. code-block:: c
-        :linenos:
 
         void setHoldTime(uint);
     
     Set the time when the key holds stable state after pressed.
 
     .. code-block:: c
-        :linenos:
 
         bool isPressed(char keyChar);
     
     Judge whether the key with code "keyChar" is pressed.
 
     .. code-block:: c
-        :linenos:
 
         bool isPressed(char keyChar);
 
     Wait for a key to be pressed, and return key code of the pressed key.
 
     .. code-block:: c
-        :linenos:
         
         KeyState getState();
     
     Get state of the keys.
 
     .. code-block:: c
-        :linenos:
         
         bool keyStateChanged();
 

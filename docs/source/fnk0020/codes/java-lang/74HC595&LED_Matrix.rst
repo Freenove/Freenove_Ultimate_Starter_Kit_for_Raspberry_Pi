@@ -2,7 +2,6 @@
 Chapter 74HC595 & LED Matrix
 ##############################################################################
 
-
 Thus far we have learned how to use the 74HC595 IC Chip to control the Bar Graph LED and the 7-Segment Display. We will now use 74HC595 IC Chips to control an LED Matrix.
 
 Project LED Matrix
@@ -13,17 +12,22 @@ In this project, we will use two 74HC595 IC chips to control a monochrome (one c
 Component List
 ================================================================
 
-+-------------------------------------------------+----------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                  |     
-|                                                 |   Jumper Wires x36               |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                  |       
-|                                                 |     |jumper-wire|                |                                                            
-|3. Breadboard x1                                 |                                  |                                                                 
-+-----------------------------+-------------------+--------------+-------------------+
-| 74HC595 x2                  | 8x8 LEDMatrix x1                 | Resistor 220Ω x8  |
-|                             |                                  |                   |
-|  |74HC595|                  |  |LED_Matrix|                    |  |res-220R|       |
-+-----------------------------+----------------------------------+-------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-------------------------------------------------+----------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                  |     
+    |                                                 |   Jumper Wires x36               |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                  |       
+    |                                                 |     |jumper-wire|                |                                                            
+    |3. Breadboard x1                                 |                                  |                                                                 
+    +-----------------------------+-------------------+--------------+-------------------+
+    | 74HC595 x2                  | 8x8 LEDMatrix x1                 | Resistor 220Ω x8  |
+    |                             |                                  |                   |
+    |  |74HC595|                  |  |LED_Matrix|                    |  |res-220R|       |
+    +-----------------------------+----------------------------------+-------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
@@ -58,6 +62,30 @@ Here is how a Common Anode LED Matrix works. First, choose 16 ports on RPI board
 .. image:: ../_static/imgs/LED_Matrix_3.png
     :align: center
 
+.. table:: 
+    :align: center
+    :class: zebra
+
+    +--------+-----------+-------------+
+    | Column | Binary    | Hexadecimal |
+    +========+===========+=============+
+    | 1      | 0001 1100 | 0x1c        |
+    +--------+-----------+-------------+
+    | 2      | 0010 0010 | 0x22        |
+    +--------+-----------+-------------+
+    | 3      | 0101 0001 | 0x51        |
+    +--------+-----------+-------------+
+    | 4      | 0100 0101 | 0x45        |
+    +--------+-----------+-------------+
+    | 5      | 0100 0101 | 0x45        |
+    +--------+-----------+-------------+
+    | 6      | 0101 0001 | 0x51        |
+    +--------+-----------+-------------+
+    | 7      | 0010 0010 | 0x22        |
+    +--------+-----------+-------------+
+    | 8      | 0001 1100 | 0x1c        |
+    +--------+-----------+-------------+
+
 To begin, display the first column, then turn off the first column and display the second column. (and so on) .... turn off the seventh column and display the 8th column, and then start the process over from the first column again like the control of LED Bar Graph project. The whole process will be repeated rapidly in a loop. Due to the principle of optical afterglow effect and the vision persistence effect in human sight, we will see a picture of a smiling face directly rather than individual columns of LEDs turned ON one column at a time (although in fact this is the reality we cannot perceive). 
 
 Scanning rows is another option to display on an LED Matrix (dot matrix grid). Whether scanning by row or column, 16 GPIO is required. In order to save GPIO ports of control board, two 74HC595 IC Chips are used in the circuit. Every 74HC595 IC Chip has eight parallel output ports, so two of these have a combined total of 16 ports, which is just enough for our project. The control lines and data lines of the two 74HC595 IC Chips are not all connected to the RPi, but connect to the Q7 pin of first stage 74HC595 IC Chip and to the data pin of second IC Chip. The two 74HC595 IC Chips are connected in series, which is the same as using one "74HC595 IC Chip" with 16 parallel output ports.
@@ -67,22 +95,26 @@ Circuit
 
 In circuit of this project, the power pin of the 74HC595 IC Chip is connected to 3.3V. It can also be connected to 5V to make LED Matrix brighter.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |LED_MAtrix_Sc|                                                                              |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |LED_MAtrix_Fr|                                                                              | 
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +----------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                    |
+    |                                                                                        |
+    |   |LED_MAtrix_Sc|                                                                      |
+    +----------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:     |
+    |                                                                                        |
+    |   support@freenove.com                                                                 |
+    |                                                                                        |
+    |   |LED_MAtrix_Fr|                                                                      | 
+    +----------------------------------------------------------------------------------------+
 
 .. |LED_MAtrix_Sc| image:: ../_static/imgs/LED_MAtrix_Sc.png
 .. |LED_MAtrix_Fr| image:: ../_static/imgs/LED_MAtrix_Fr.png
     
-
 Sketch
 ================================================================
 

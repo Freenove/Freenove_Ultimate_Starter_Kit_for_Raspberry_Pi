@@ -15,26 +15,26 @@ Component List
 .. table:: 
     :align:  center
 
-    +---------------------------------------------------------------+
-    |1. Raspberry Pi (with 40 GPIO) x1                              |     
-    |                                                               |       
-    |2. GPIO Extension Board & Ribbon Cable x1                      |       
-    |                                                               |                                                            
-    |3. Breadboard x1                                               |                                                                 
-    +===============================+===============================+
-    | Thermistor x1                 |   Resistor 10kΩ x3            |
-    |                               |                               |
-    | |Thermistor|                  |  |Resistor-10kΩ|              |                           
-    +-------------------------------+-------------------------------+
-    | ADC module x1                                                 |
-    |                                                               |
-    |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|             |                   
-    |                                                               |  
-    +---------------------------------------------------------------+
-    |   Jumper Wire M/M x14                                         |
-    |                                                               | 
-    |      |jumper-wire|                                            |
-    +---------------------------------------------------------------+
+    +------------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                     |     
+    |                                                      |       
+    |2. GPIO Extension Board & Ribbon Cable x1             |       
+    |                                                      |                                                            
+    |3. Breadboard x1                                      |                                                                 
+    +===============================+======================+
+    | Thermistor x1                 |   Resistor 10kΩ x3   |
+    |                               |                      |
+    | |Thermistor|                  |  |Resistor-10kΩ|     |                           
+    +-------------------------------+----------------------+
+    | ADC module x1                                        |
+    |                                                      |
+    |   |ADC-module-1|   :xx-large:`or`  |ADC-module-2|    |                   
+    |                                                      |  
+    +------------------------------------------------------+
+    |   Jumper Wire M/M x14                                |
+    |                                                      | 
+    |      |jumper-wire|                                   |
+    +------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 60%
@@ -60,7 +60,7 @@ The relationship between resistance value and temperature of a thermistor is:
 
 .. math::
 
-   \boldsymbol{ R_t = R \cdot \exp \left[ B \left( \frac{1}{T_2} - \frac{1}{T_1} \right) \right] }
+   \boldsymbol{ R_t = R \cdot EXP \left[ B \left( \frac{1}{T_2} - \frac{1}{T_1} \right) \right] }
 
 - Where:
     - **Rt** is the thermistor resistance under T2 temperature;
@@ -90,21 +90,24 @@ Circuit with ADS7830
 
 The circuit of this project is similar to the one in last chapter. The only difference is that the Photoresistor is replaced by the Thermistor.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-5|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-6|                                                                        |
-|                                                                                                |
-|    **Thermistor has longer pins than the one shown in circuit.**                               |
-|                                                                                                |
-|    **Video:** https://youtu.be/-CvWcobXSFI                                                     |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +----------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                    |
+    |                                                                                        |
+    |   |ADS7830-Schematic-5|                                                                |
+    +----------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:     |
+    |                                                                                        |
+    |   support@freenove.com                                                                 |
+    |                                                                                        |
+    |   |ADS7830-fritizing-6|                                                                |
+    |                                                                                        |
+    |    **Thermistor has longer pins than the one shown in circuit.**                       |
+    +----------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-5| image:: ../_static/imgs/ADS7830-Schematic-5.png
 .. |ADS7830-fritizing-6| image:: ../_static/imgs/ADS7830-fritizing-6.png
@@ -118,19 +121,24 @@ Circuit with PCF8591
 
 The circuit of this project is similar to the one in the last chapter. The only difference is that the Photoresistor is replaced by the Thermistor.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic-5|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing-5|                                                                        |
-|                                                                                                |
-|   **Thermistor has longer pins than the one shown in circuit.**                                |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +--------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                  |
+    |                                                                                      |
+    |   |PCF8591-Schematic-5|                                                              |
+    +--------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:   |
+    |                                                                                      |
+    |   support@freenove.com                                                               |
+    |                                                                                      |
+    |   |PCF8591-fritizing-5|                                                              |
+    |                                                                                      |
+    |   **Thermistor has longer pins than the one shown in circuit.**                      |
+    +--------------------------------------------------------------------------------------+
 
 .. |PCF8591-Schematic-5| image:: ../_static/imgs/PCF8591-Schematic-5.png
 .. |PCF8591-fritizing-5| image:: ../_static/imgs/PCF8591-fritizing-5.png
@@ -144,7 +152,7 @@ In this project code, the ADC value still needs to be read, but the difference h
 C Code Thermometer
 ----------------------------------------------------------------
 
-If you did not configure I2C, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
+If you did not :blue:`configure I2C`, please refer to :ref:`Chapter 7 <ADC>`. If you did, please continue.
 
 First, observe the project result, and then learn about the code in detail.
 
@@ -173,13 +181,14 @@ First, observe the project result, and then learn about the code in detail.
 After the program is executed, the Terminal window will display the current ADC value, voltage value and temperature value. Try to "pinch" the thermistor (without touching the leads) with your index finger and thumb for a brief time, you should see that the temperature value increases.
 
 .. image:: ../_static/imgs/ADC-value-2.png
-        :width: 100%
-        :align: center
+    :width: 70%
+    :align: center
 
 The following is the code:
 
 .. literalinclude:: ../../../freenove_Kit/Code/C_Code/11.1.1_Thermometer/Thermometer.cpp
     :linenos: 
     :language: C
+    :dedent:
 
 In the code, the ADC value of ADC module A0 port is read, and then calculates the voltage and the resistance of Thermistor according to Ohms Law. Finally, it calculates the temperature sensed by the Thermistor, according to the formula. 

@@ -13,21 +13,26 @@ In this project, we will attempt to get every key code on the Matrix Keypad to w
 Component List
 ================================================================
 
-+--------------------------------------------+--------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1           |                          |     
-|                                            |                          |       
-|2. GPIO Extension Board & Ribbon Cable x1   |                          |       
-|                                            |                          |                                                            
-|3. Breadboard x1                            |   4x4 Matrix Keypad x1   |                                                                 
-+--------------------------------------------+                          |
-| Jumper wire                                |     |Keypad|             |
-|                                            |                          |
-|  |jumper-wire|                             |                          |
-+--------------------------------------------+                          |
-| Resistor 10kΩ x4                           |                          |
-|                                            |                          |
-|  |Resistor-10kΩ|                           |                          |
-+--------------------------------------------+--------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +--------------------------------------------+--------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1           |                          |     
+    |                                            |                          |       
+    |2. GPIO Extension Board & Ribbon Cable x1   |                          |       
+    |                                            |                          |                                                            
+    |3. Breadboard x1                            |   4x4 Matrix Keypad x1   |                                                                 
+    +--------------------------------------------+                          |
+    | Jumper wire                                |     |Keypad|             |
+    |                                            |                          |
+    |  |jumper-wire|                             |                          |
+    +--------------------------------------------+                          |
+    | Resistor 10kΩ x4                           |                          |
+    |                                            |                          |
+    |  |Resistor-10kΩ|                           |                          |
+    +--------------------------------------------+--------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 50%
@@ -58,17 +63,22 @@ The method of usage is similar to the Matrix LED, by using a row or column scann
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Keypad_Sc|                                                                                  |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |Keypad_Fr|                                                                                  | 
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |Keypad_Sc|                                                                                  |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |Keypad_Fr|                                                                                  | 
+    +------------------------------------------------------------------------------------------------+
 
 .. |Keypad_Sc| image:: ../_static/imgs/Keypad_Sc.png
 .. |Keypad_Fr| image:: ../_static/imgs/Keypad_Fr.png

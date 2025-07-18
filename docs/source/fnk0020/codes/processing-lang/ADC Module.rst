@@ -15,6 +15,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +---------------------------------------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                              |     
@@ -38,23 +39,28 @@ Component List
     +---------------------------------------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
-    :width: 70%   
+    :width: 50%   
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 15%
+    :width: 9%
 .. |Rotary-potentiometer| image:: ../_static/imgs/Rotary-potentiometer.png
-    :width: 35%
+    :width: 30%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
 .. |ADC-module-2| image:: ../_static/imgs/ADC-module-2.png
 
 This product contains only one ADC module, there are two types, PCF8591 and ADS7830. For the projects described in this tutorial, they function the same. Please build corresponding circuits according to the ADC module found in your Kit.
 
-+---------------------------------------------------------------+----------------------------------------------------------------+
-|                      ADC module: PCF8591                      |                      ADC module: ADS7830                       |                                 
-+-------------------------------+-------------------------------+-------------------------------+--------------------------------+
-|         Model diagram         |         Actual Picture        |         Model diagram         |         Actual Picture         |
-|                               |                               |                               |                                |
-||ADC-module-1|                 ||PCF8591|                      ||ADC-module-2|                 ||ADS7830|                       |                           
-+-------------------------------+-------------------------------+-------------------------------+--------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line text-center
+
+    +---------------------------------------------------------------+----------------------------------------------------------------+
+    |                      ADC module: PCF8591                      |                      ADC module: ADS7830                       |                                 
+    +-------------------------------+-------------------------------+-------------------------------+--------------------------------+
+    |         Model diagram         |         Actual Picture        |         Model diagram         |         Actual Picture         |
+    |                               |                               |                               |                                |
+    ||ADC-module-1|                 ||PCF8591|                      ||ADC-module-2|                 ||ADS7830|                       |                           
+    +-------------------------------+-------------------------------+-------------------------------+--------------------------------+
 
 .. |ADS7830| image:: ../_static/imgs/ADS7830.png
 .. |PCF8591| image:: ../_static/imgs/PCF8591.png
@@ -62,19 +68,24 @@ This product contains only one ADC module, there are two types, PCF8591 and ADS7
 Circuit with ADS7830 
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic|                                                                          |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   **This product contains only one ADC module.**                                               |
-|                                                                                                |
-|   |ADS7830-fritizing|                                                                          |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |ADS7830-Schematic|                                                                          |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   **This product contains only one ADC module.**                                               |
+    |                                                                                                |
+    |   |ADS7830-fritizing|                                                                          |
+    +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic| image:: ../_static/imgs/ADS7830-Schematic.png
         :width: 80%
@@ -83,28 +94,36 @@ Circuit with ADS7830
 Circuit with PCF8591
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic|                                                                          |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection.                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing|                                                                          |
-|                                                                                                |
-| Please keep the **chip mark** consistent to make the chips under right direction and position. |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |PCF8591-Schematic|                                                                          |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection.                                                                         |
+    |                                                                                                |
+    |   |PCF8591-fritizing|                                                                          |
+    |                                                                                                |
+    | Please keep the **chip mark** consistent to make the chips under right direction and position. |
+    +------------------------------------------------------------------------------------------------+
 
 .. |PCF8591-Schematic| image:: ../_static/imgs/PCF8591-Schematic.png
 .. |PCF8591-fritizing| image:: ../_static/imgs/PCF8591-fritizing.png
 
-Configure I2C and Install Smbus 
+Sketch
 ================================================================
 
-Enable I2C
+Configure I2C (required)
 ----------------------------------------------------------------
 
-The I2C interface in Raspberry Pi is disabled by default. You will need to open it manually and enable the I2C interface as follows:
+Enable I2C
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+There are some I2C chips in this kit like ADC module. The I2C interface of Raspberry Pi is closed by default. You need to open it manually as follows:
 
 Type command in the Terminal:
 
@@ -115,10 +134,10 @@ Type command in the Terminal:
 Then open the following dialog box:
 
 .. image:: ../_static/imgs/Enable-I2C.png
-        :width: 100%
-        :align: center
+    :width: 100%
+    :align: center
 
-Choose "3 Interfacing Options" then "I4 I2C" then "Yes" and then "Finish" in this order and restart your RPi. The I2C module will then be started.
+Choose "5 Interfacing Options" -> "P5 I2C" -> "Yes" -> "Finish" in order and restart your RPi later. Then the I2C module is started.
 
 Type a command to check whether the I2C module is started:
 
@@ -129,19 +148,18 @@ Type a command to check whether the I2C module is started:
 If the I2C module has been started, the following content will be shown. "bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
 
 .. image:: ../_static/imgs/Enable-I2C-2.png
-        :width: 100%
-        :align: center
+    :align: center
 
 Install I2C-Tools
-----------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Next, type the command to install I2C-Tools. It is available with the Raspberry Pi OS by default.
+Type the command to install I2C-Tools.
 
 .. code-block:: console
 
     $ sudo apt-get install i2c-tools
 
-I2C device address detection:
+Detect the address of I2C device with the following command:
 
 .. code-block:: console
 
@@ -150,18 +168,16 @@ I2C device address detection:
 When you are using the PCF8591 Module, the result should look like this:
 
 .. image:: ../_static/imgs/Enable-I2C-3.png
-        :width: 100%
-        :align: center
+    :width: 100%
+    :align: center
 
 Here, 48 (HEX) is the I2C address of ADC Module (PCF8591).
 
-
-
-When you are using ADS, the result should look like this:
+When you are using ADS, the result is as below:
 
 .. image:: ../_static/imgs/Enable-I2C-4.png
-        :width: 100%
-        :align: center
+    :width: 100%
+    :align: center
 
 Here, 4b (HEX) is the I2C address of ADC Module (ADS7830).
 
@@ -181,18 +197,19 @@ First, observe the result after running the sketch, and then learn about the cod
 After the program is executed, Display Window shows the voltage value of the potentiometer and the ADC value. Rotate the potentiometer to change the voltage output by potentiometer.
 
 .. image:: ../_static/imgs/pr_adc.png
-        :align: center
+    :align: center
 
 This project contains a lot of code files, and the core code is contained in the file Sketch_06_1_1_ADC. The other files only contain some custom classes.
 
 .. image:: ../_static/imgs/pr_adc_project.png
-        :align: center
+    :align: center
 
 The following is program code:
 
 .. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_06_1_1_ADC/Sketch_06_1_1_ADC.pde
     :linenos: 
     :language: java
+    :dedent:
 
 The code of this project mainly uses PCF8591 class member function analogRead() to read ADC.
 

@@ -8,7 +8,7 @@ To finish this chapter, you need to prepare the necessary soldering equipment, i
 
 .. note:: 
 
-    :red:`Please use extreme caution and attention to safety when you operate soldering tools used in these projects.`
+    :combo:`red font-bolder:Please use extreme caution and attention to safety when you operate soldering tools used in these projects.`
 
 Project Soldering a Buzzer
 ****************************************************************
@@ -27,6 +27,7 @@ Component list
 .. table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
     +------------------------+------------+-------------------+----------------+
     |  Female Pin Header x2  | LED x1     |  Active buzzer x1 |  Push button x1|
@@ -50,15 +51,20 @@ Component list
 Circuit
 ================================================================
 
- ===================  ===============================================
-  Schematic diagram    Hardware connection. If you need any support,
-  
-                       please feel free to contact us via:
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    ===================  ===============================================
+     Schematic diagram    Hardware connection. If you need any support,
      
-                       support@freenove.com
-  
-  |solder_Sc|           |solder_Fr|
- ===================  ===============================================
+                          please feel free to contact us via:
+        
+                          support@freenove.com
+     
+     |solder_Sc|           |solder_Fr|
+    ===================  ===============================================
 
 .. |solder_Sc| image:: ../_static/imgs/solder_Sc.png
 .. |solder_Fr| image:: ../_static/imgs/solder_Fr.png
@@ -77,12 +83,16 @@ Solder the Circuit
 
 Here is a diagram after soldering from both sides of the Perfboard:
 
-=================== ===================
-Front                Back
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
 
-|solder_front|       |solder_back|
-
-=================== ===================
+    =================== ===================
+    **Front**            **Back**
+    
+    |solder_front|       |solder_back|
+    =================== ===================
 
 .. |solder_front| image:: ../_static/imgs/solder_front.png
 .. |solder_back| image:: ../_static/imgs/solder_back.png
@@ -146,12 +156,17 @@ Insert the components in the Perfboard, and solder the circuit on the back per e
 
 Here is a diagram after soldering from both sides of the Perfboard:
 
-=================== ===================
-Front                Back
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+    
+    =================== ===================
+    Front                Back
 
-|solder_front_1|     |solder_back_1|
+    |solder_front_1|     |solder_back_1|
 
-=================== ===================
+    =================== ===================
 
 .. |solder_front_1| image:: ../_static/imgs/solder_front_1.png
 .. |solder_back_1| image:: ../_static/imgs/solder_back_1.png

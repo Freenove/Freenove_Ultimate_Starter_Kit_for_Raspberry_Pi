@@ -13,17 +13,22 @@ Now let us learn how to use the 74HC595 IC Chip to make a flowing water light us
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x17                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 74HC595 x1                  | Bar Graph LED x1                 | Resistor 220Ω x8                 |
-|                             |                                  |                                  |
-|  |74HC595|                  |  |LED-BAR|                       |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +-------------------------------------------------+-------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
+    |                                                 |   Jumper Wires x17                              |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
+    |                                                 |     |jumper-wire|                               |                                                            
+    |3. Breadboard x1                                 |                                                 |                                                                 
+    +-----------------------------+-------------------+--------------+----------------------------------+
+    | 74HC595 x1                  | Bar Graph LED x1                 | Resistor 220Ω x8                 |
+    |                             |                                  |                                  |
+    |  |74HC595|                  |  |LED-BAR|                       |  |res-220R|                      |
+    +-----------------------------+----------------------------------+----------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
@@ -46,7 +51,7 @@ The ports of the 74HC595 chip are described as follows:
 
 .. table::
     :align: center
-    :class: freenove-ow
+    :class: zebra
 
     +----------+--------------+---------------------------------------------------------------------------+
     | Pin name | Pin number   |                    Description                                            |   
@@ -87,21 +92,25 @@ The ports of the 74HC595 chip are described as follows:
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |74HC595-Sc|                                                                                 |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |74HC595-Fr|                                                                                 | 
-+------------------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |74HC595-Sc|                                                                                 |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |74HC595-Fr|                                                                                 | 
+    +------------------------------------------------------------------------------------------------+
 
 .. |74HC595-Sc| image:: ../_static/imgs/74HC595-Sc.png
 .. |74HC595-Fr| image:: ../_static/imgs/74HC595-Fr.png
-
 
 Sketch
 ================================================================

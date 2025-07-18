@@ -12,17 +12,22 @@ We will use a 74HC595 IC Chip to control a 7-Segment Display and make it display
 Component List
 ================================================================
 
-+-------------------------------------------------+----------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                  |     
-|                                                 |   Jumper Wires x30               |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                  |       
-|                                                 |     |jumper-wire|                |                                                            
-|3. Breadboard x1                                 |                                  |                                                                 
-+-----------------------------+-------------------+--------------+-------------------+
-| 74HC595 x2                  | 4-Digit 7-Segment Display x1     | Resistor 220Ω x8  |
-|                             |                                  |                   |
-|  |74HC595|                  |  |4_7_Segment_Display|           |  |res-220R|       |
-+-----------------------------+----------------------------------+-------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +-------------------------------------------------+----------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                  |     
+    |                                                 |   Jumper Wires x30               |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                  |       
+    |                                                 |     |jumper-wire|                |                                                            
+    |3. Breadboard x1                                 |                                  |                                                                 
+    +-----------------------------+-------------------+--------------+-------------------+
+    | 74HC595 x2                  | 4-Digit 7-Segment Display x1     | Resistor 220Ω x8  |
+    |                             |                                  |                   |
+    |  |74HC595|                  |  |4_7_Segment_Display|           |  |res-220R|       |
+    +-----------------------------+----------------------------------+-------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |74HC595| image:: ../_static/imgs/74HC595.png
@@ -56,17 +61,22 @@ Similarly, the second, third and fourth 7-Segment Displays will show visible con
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |java_4digit_Sc|                                                                             |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |java_4digit_Fr|                                                                             | 
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |java_4digit_Sc|                                                                             |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |java_4digit_Fr|                                                                             | 
+    +------------------------------------------------------------------------------------------------+
 
 .. |java_4digit_Sc| image:: ../_static/imgs/java_4digit_Sc.png
 .. |java_4digit_Fr| image:: ../_static/imgs/java_4digit_Fr.png
@@ -168,17 +178,22 @@ Project 4-Digit 7-Segment Display
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x30                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 74HC595 x2                  | 4-Digit 7-Segment Display x1     | Resistor 220Ω x8                 |
-|                             |                                  |                                  |
-|  |74HC595|                  |  |4_7_Segment_Display|           |  |res-220R|                      |
-+-----------------------------+----------------------------------+----------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +-------------------------------------------------+-------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
+    |                                                 |   Jumper Wires x30                              |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
+    |                                                 |     |jumper-wire|                               |                                                            
+    |3. Breadboard x1                                 |                                                 |                                                                 
+    +-----------------------------+-------------------+--------------+----------------------------------+
+    | 74HC595 x2                  | 4-Digit 7-Segment Display x1     | Resistor 220Ω x8                 |
+    |                             |                                  |                                  |
+    |  |74HC595|                  |  |4_7_Segment_Display|           |  |res-220R|                      |
+    +-----------------------------+----------------------------------+----------------------------------+
 
 Circuit
 ================================================================
@@ -218,6 +233,9 @@ Enter the command to run the code.
 When the code is running, you can see the digital tube displays numbers from 0000 to 9999, and the process repeats.
 
 Press Ctrl+C to exit the program.
+
+.. image:: ../_static/imgs/Chapter16_00.png
+    :align: center
 
 You can run the following command to open the code with Geany to view and edit it.
 

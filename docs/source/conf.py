@@ -7,13 +7,27 @@
 # add these directories to sys.path here.
 from datetime import datetime
 import os
+import subprocess
 import pathlib
 import sys
 
 sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
 
-os.system("rm -r freenove_Kit")
-os.system("git clone --depth 1 https://github.com/Freenove/Freenove_Ultimate_Starter_Kit_for_Raspberry_Pi freenove_Kit")
+repo_url = "https://github.com/Freenove/Freenove_Ultimate_Starter_Kit_for_Raspberry_Pi"
+repo_dir = "freenove_Kit"
+
+if os.path.isdir(repo_dir):
+    print(f"Directory '{repo_dir}' found. Pulling latest changes...")
+    try:
+        subprocess.run(["git", "-C", repo_dir, "pull"], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error pulling repository: {e}")
+else:
+    print(f"Directory '{repo_dir}' not found. Cloning repository...")
+    try:
+        subprocess.run(["git", "clone", "--depth", "1", repo_url, repo_dir], check=True)
+    except subprocess.CalledProcessError as e:
+        print(f"Error cloning repository: {e}")
 
 project = "fnk0020-docs"
 # <!!!BEGIN!!!>

@@ -38,17 +38,22 @@ Component List
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                |
-|                                                                                    |
-|   |snake_game_Sc|                                                                  |
-+------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                    |
-|   support@freenove.com                                                             | 
-|                                                                                    |
-|   |snake_game_Fr|                                                                  |
-+------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                |
+    |                                                                                    |
+    |   |snake_game_Sc|                                                                  |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                    |
+    |   support@freenove.com                                                             | 
+    |                                                                                    |
+    |   |snake_game_Fr|                                                                  |
+    +------------------------------------------------------------------------------------+
 
 .. |snake_game_Sc| image:: ../_static/imgs/snake_game_Sc.png
 .. |snake_game_Fr| image:: ../_static/imgs/snake_game_Fr.png

@@ -14,29 +14,34 @@ Component List
 
 Breadboard Power Module 
 
-+--------------------------------------------+----------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1           |                                              |     
-|                                            |   Jumper Wires x23                           |       
-|2. GPIO Extension Board & Ribbon Cable x1   |                                              |       
-|                                            |     |jumper-wire|                            |                                                            
-|3. Breadboard x1                            |                                              |                                                                 
-+--------------------------------------------+----------------------------------------------+
-| Breadboard Power Module x1                 | 9V Battery (you provide) & 9V Battery Cable  |
-|                                            |                                              |
-|  |power-module|                            |  |Battery_cable|                             |                           
-+--------------------------------------------+----------------------------------------------+
-| ADC module x1                              | L293D IC Chip                                |
-|                                            |                                              |
-|  |ADC-module-2|                            | |L2983_chip|                                 |
-+--------------------------------------------+----------------------------------------------+
-| DC Motor x1                                | Rotary Potentiometer x1                      |
-|                                            |                                              |
-|  |DC_Motor_Module|                         |  |Rotary-potentiometer|                      |
-+--------------------------------------------+----------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +--------------------------------------------+----------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1           |                                              |     
+    |                                            |   Jumper Wires x23                           |       
+    |2. GPIO Extension Board & Ribbon Cable x1   |                                              |       
+    |                                            |     |jumper-wire|                            |                                                            
+    |3. Breadboard x1                            |                                              |                                                                 
+    +--------------------------------------------+----------------------------------------------+
+    | Breadboard Power Module x1                 | 9V Battery (you provide) & 9V Battery Cable  |
+    |                                            |                                              |
+    |  |power-module|                            |  |Battery_cable|                             |                           
+    +--------------------------------------------+----------------------------------------------+
+    | ADC module x1                              | L293D IC Chip                                |
+    |                                            |                                              |
+    |  |ADC-module-2|                            | |L2983_chip|                                 |
+    +----------------------------------+---------+----------------+-----------------------------+
+    | DC Motor x1                      | Rotary Potentiometer x1  | 10kΩ x2                     |
+    |                                  |                          |                             |
+    |  |DC_Motor_Module|               |  |Rotary-potentiometer|  |  |Resistor-10kΩ|            |
+    +----------------------------------+--------------------------+-----------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 30%
+    :width: 15%
 .. |power-module| image:: ../_static/imgs/power-module.png
     :width: 60%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
@@ -140,17 +145,22 @@ Circuit
 
 Use caution when connecting this circuit because the DC Motor is a high-power component. :red:`Do not use the power provided by the RPi to power the motor directly, as this may cause permanent damage to your RPi!`` The logic circuit can be powered by the RPi's power or an external power supply, which should share a common ground with RPi.
 
-+------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                |
-|                                                                                    |
-|   |Motor-ADS7830-Sc|                                                               |
-+------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via: |
-|                                                                                    |
-|   support@freenove.com                                                             |
-|                                                                                    |
-|   |Motor-ADS7830-Fr|                                                               |
-+------------------------------------------------------------------------------------+
+.. table::
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                |
+    |                                                                                    |
+    |   |Motor-ADS7830-Sc|                                                               |
+    +------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via: |
+    |                                                                                    |
+    |   support@freenove.com                                                             |
+    |                                                                                    |
+    |   |Motor-ADS7830-Fr|                                                               |
+    +------------------------------------------------------------------------------------+
 
 .. |Motor-ADS7830-Sc| image:: ../_static/imgs/Motor-ADS7830-Sc.png
 .. |Motor-ADS7830-Fr| image:: ../_static/imgs/Motor-ADS7830-Fr.png

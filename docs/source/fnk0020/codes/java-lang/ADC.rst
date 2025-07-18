@@ -15,6 +15,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +-----------------------------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                    |     
@@ -22,7 +23,7 @@ Component List
     |2. GPIO Extension Board & Ribbon Cable x1            |       
     |                                                     |                                                            
     |3. Breadboard x1                                     |                                                                 
-    +===============================+=====================+
+    +-------------------------------+---------------------+
     | Rotary potentiometer x1       |   Resistor 10kΩ x2  |
     |                               |                     |
     | |Rotary-potentiometer|        |  |Resistor-10kΩ|    |                           
@@ -55,8 +56,8 @@ ADC
 Any analog value can be mapped to one digital value using the resolution of the converter. So the more bits the ADC has, the denser the partition of analog will be and the greater the precision of the resulting conversion.
 
 .. image:: ../_static/imgs/ADC.png
-        :width: 50%
-        :align: center
+    :width: 50%
+    :align: center
 
 Subsection 1: the analog in range of 0V-3.3/256 V corresponds to digital 0;
 
@@ -94,8 +95,8 @@ Between potentiometer pin 1 and pin 2 is the resistive element (a resistance wir
 In a circuit, both sides of resistive element are often connected to the positive and negative electrodes of power. When you slide the brush "pin 3", you can get variable voltage within the range of the power supply.
 
 .. image:: ../_static/imgs/1-32-fritizing.png
-        :width: 30%
-        :align: center
+    :width: 30%
+    :align: center
 
 Rotary potentiometer
 ----------------------------------------------------------------
@@ -103,49 +104,54 @@ Rotary potentiometer
 Rotary potentiometers and linear potentiometers have the same function; the only difference being the physical action being a rotational rather than a sliding movement.
 
 .. image:: ../_static/imgs/Rotary-potentiometer-turn.png
-        :width: 30%
-        :align: center
+    :width: 30%
+    :align: center
 
 ADS7830
 ----------------------------------------------------------------
 
 The ADS7830 is a single-supply, low-power, 8-bit data acquisition device that features a serial I2C interface and an 8-channel multiplexer. The following table is the pin definition diagram of ADS7830.
 
-+-----------+-----+---------------------------------------------------+-----------------------------------------------+
-| SYMBOL    | PIN |                    DESCRIPTION                    |                    TOP VIEW                   |
-+===========+=====+===================================================+===============================================+
-|  CH0      |  1  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH1      |  2  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH2      |  3  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH3      |  4  |                                                   |                                               |                                               
-+-----------+-----+       Analog input channels  (A/D converter)      |                                               |
-|  CH4      |  5  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH5      |  6  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH6      |  7  |                                                   |                                               |
-+-----------+-----+                                                   |                                               |
-|  CH7      |  8  |                                                   ||ADS7830-top|                                  |
-+-----------+-----+---------------------------------------------------+                                               |
-|  GND      |  9  |   Ground                                          |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|REF in/out |  10 | Internal +2.5V Reference,External Reference Input |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  COM      |  11 |   Common to Analog Input Channel                  |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  A0       |  12 |                                                   |                                               |
-+-----------+-----+   Hardware address                                |                                               |
-|  A1       |  13 |                                                   |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  SCL      |  14 |   Serial Clock                                    |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  SDA      |  15 |   Serial Sata                                     |                                               |
-+-----------+-----+---------------------------------------------------+                                               |
-|  +VDD     |  16 |   Power Supply, 3.3V Nominal                      |                                               |
-+-----------+-----+---------------------------------------------------+-----------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: zebra
+
+    +-----------+-----+---------------------------------------------------+-----------------------------------------------+
+    | SYMBOL    | PIN |                    DESCRIPTION                    |                    TOP VIEW                   |
+    +===========+=====+===================================================+===============================================+
+    |  CH0      |  1  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH1      |  2  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH2      |  3  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH3      |  4  |                                                   |                                               |                                               
+    +-----------+-----+       Analog input channels  (A/D converter)      |                                               |
+    |  CH4      |  5  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH5      |  6  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH6      |  7  |                                                   |                                               |
+    +-----------+-----+                                                   |                                               |
+    |  CH7      |  8  |                                                   ||ADS7830-top|                                  |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  GND      |  9  |   Ground                                          |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |REF in/out |  10 | Internal +2.5V Reference,External Reference Input |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  COM      |  11 |   Common to Analog Input Channel                  |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  A0       |  12 |                                                   |                                               |
+    +-----------+-----+   Hardware address                                |                                               |
+    |  A1       |  13 |                                                   |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  SCL      |  14 |   Serial Clock                                    |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  SDA      |  15 |   Serial Sata                                     |                                               |
+    +-----------+-----+---------------------------------------------------+                                               |
+    |  +VDD     |  16 |   Power Supply, 3.3V Nominal                      |                                               |
+    +-----------+-----+---------------------------------------------------+-----------------------------------------------+
 
 .. |ADS7830-top| image:: ../_static/imgs/ADS7830-top.png
 
@@ -157,19 +163,22 @@ I2C (Inter-Integrated Circuit) has a two-wire serial communication mode, which c
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic|                                                                          |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   **This product contains only one ADC module.**                                               |
-|                                                                                                |
-|   |ADS7830-fritizing|                                                                          |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |ADS7830-Schematic|                                                                          |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |ADS7830-fritizing|                                                                          |
+    +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic| image:: ../_static/imgs/ADS7830-Schematic.png
         :width: 80%
@@ -194,7 +203,7 @@ Then open the following dialog box:
 .. image:: ../_static/imgs/java07_00.png
     :align: center
 
-Choose "Interfacing Options" then "I4 I2C" then "Yes" and then "Finish" in this order and restart your RPi. The I2C module will then be started.
+Choose "Interfacing Options" then "I5 I2C" then "Yes" and then "Finish" in this order and restart your RPi. The I2C module will then be started.
 
 .. image:: ../_static/imgs/java07_01.png
     :align: center
@@ -205,9 +214,11 @@ Type a command to check whether the I2C module is started:
 
     $ lsmod | grep i2c
 
-If the I2C module has been started, the following content will be shown. "bcm2708" refers to the CPU model. Different models of Raspberry Pi display different contents depending on the CPU installed:
+If the I2C module has been started, the following content will be shown. 
 
-.. image:: ../_static/imgs/Enable-I2C-2.png
+Different models of Raspberry Pi display different contents depending on the CPU installed:
+
+.. image:: ../_static/imgs/Chapter07_00.png
     :align: center
 
 I2C device address detection:
@@ -371,25 +382,30 @@ Project Soft Light
 Component List
 ================================================================
 
-+-----------------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                                      |     
-|                                                                       |       
-|2. GPIO Extension Board & Ribbon Cable x1                              |       
-|                                                                       |                                                            
-|3. Breadboard x1                                                       |                                                                 
-+-------------------------+-----------------------+---------------------+
-| Rotary potentiometer x1 | Resistor 220Ω x1      |   Resistor 10kΩ x2  |
-|                         |                       |                     |
-| |Rotary-potentiometer|  |  |res-220R|           |  |Resistor-10kΩ|    |                           
-+-------------------------+-----------------------+---------------------+
-| ADC module x1 (Only one)                        |   LED x1            |
-|                                                 |                     |
-| |ADC-module-2|                                  |   |red-led|         |                   
-+-------------------------------------------------+---------------------+
-|   Jumper Wire M/M x17                                                 |
-|                                                                       | 
-|      |jumper-wire|                                                    |
-+-----------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-----------------------------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                                      |     
+    |                                                                       |       
+    |2. GPIO Extension Board & Ribbon Cable x1                              |       
+    |                                                                       |                                                            
+    |3. Breadboard x1                                                       |                                                                 
+    +-------------------------+-----------------------+---------------------+
+    | Rotary potentiometer x1 | Resistor 220Ω x1      |   Resistor 10kΩ x2  |
+    |                         |                       |                     |
+    | |Rotary-potentiometer|  |  |res-220R|           |  |Resistor-10kΩ|    |                           
+    +-------------------------+-----------------------+---------------------+
+    | ADC module x1 (Only one)                        |   LED x1            |
+    |                                                 |                     |
+    | |ADC-module-2|                                  |   |red-led|         |                   
+    +-------------------------------------------------+---------------------+
+    |   Jumper Wire M/M x17                                                 |
+    |                                                                       | 
+    |      |jumper-wire|                                                    |
+    +-----------------------------------------------------------------------+
 
 .. |res-220R| image:: ../_static/imgs/res-220R.png
     :width: 20%
@@ -399,17 +415,22 @@ Component List
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-2|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-2|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |ADS7830-Schematic-2|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |ADS7830-fritizing-2|                                                                        |
+    +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-2| image:: ../_static/imgs/ADS7830-Schematic-2.png
 .. |ADS7830-fritizing-2| image:: ../_static/imgs/ADS7830-fritizing-2.png
@@ -482,50 +503,60 @@ The ADC value of the potentiometer is obtained every 100 milliseconds and printe
 Project Colorful Light 
 ****************************************************************
 
-In this project, 3 potentiometers are used to control the RGB LED and in principle, it is the same as with the ‘Soft Light' project. Namely, read the voltage value of the potentiometer and then convert it to PWM used to control LED brightness. Difference is that the previous soft light project needed only one LED while this one required (3) RGB LEDs.
+In this project, 3 potentiometers are used to control the RGB LED and in principle, it is the same as with the 'Soft Light' project. Namely, read the voltage value of the potentiometer and then convert it to PWM used to control LED brightness. Difference is that the previous soft light project needed only one LED while this one required (3) RGB LEDs.
 
 Component List
 ================================================================
 
-+---------------------------------------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                                                |     
-|                                                                                 |       
-|2. GPIO Extension Board & Ribbon Cable x1                                        |       
-|                                                                                 |                                                            
-|3. Breadboard x1                                                                 |                                                                 
-+-------------------------+-----------------------+-------------------------------+
-| Rotary potentiometer x1 | Resistor 220Ω x1      |   Resistor 10kΩ x2            |
-|                         |                       |                               |
-| |Rotary-potentiometer|  |  |res-220R|           |  |Resistor-10kΩ|              |                           
-+-------------------------+-----------------------+-------------------------------+
-| ADC module x1 (Only one)                        |   RGB LED x1                  |
-|                                                 |                               |
-| |ADC-module-2|                                  |   |red-led|                   |                   
-|                                                 |                               |  
-+-------------------------------------------------+-------------------------------+
-|   Jumper Wire M/M x17                                                           |
-|                                                                                 | 
-|      |jumper-wire|                                                              |
-+---------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +---------------------------------------------------------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                                                |     
+    |                                                                                 |       
+    |2. GPIO Extension Board & Ribbon Cable x1                                        |       
+    |                                                                                 |                                                            
+    |3. Breadboard x1                                                                 |                                                                 
+    +-------------------------+-----------------------+-------------------------------+
+    | Rotary potentiometer x1 | Resistor 220Ω x1      |   Resistor 10kΩ x2            |
+    |                         |                       |                               |
+    | |Rotary-potentiometer|  |  |res-220R|           |  |Resistor-10kΩ|              |                           
+    +-------------------------+-----------------------+-------------------------------+
+    | ADC module x1 (Only one)                        |   RGB LED x1                  |
+    |                                                 |                               |
+    | |ADC-module-2|                                  |   |red-led|                   |                   
+    |                                                 |                               |  
+    +-------------------------------------------------+-------------------------------+
+    |   Jumper Wire M/M x17                                                           |
+    |                                                                                 | 
+    |      |jumper-wire|                                                              |
+    +---------------------------------------------------------------------------------+
 
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |ADS7830-Schematic-3|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-3|                                                                        |
-|                                                                                                |
-|   **If circuit above doesn't work, please try following wiring.**                              |
-|                                                                                                |
-|   |ADS7830-fritizing-4|                                                                        |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |ADS7830-Schematic-3|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |ADS7830-fritizing-3|                                                                        |
+    |                                                                                                |
+    |   **If circuit above doesn't work, please try following wiring.**                              |
+    |                                                                                                |
+    |   |ADS7830-fritizing-4|                                                                        |
+    +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-3| image:: ../_static/imgs/ADS7830-Schematic-3.png
 .. |ADS7830-fritizing-3| image:: ../_static/imgs/ADS7830-fritizing-3.png

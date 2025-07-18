@@ -18,6 +18,7 @@ Component List
     :align: center
     :width: 80%
     :widths: 1 1
+    :class: table-line
 
     +------------------------------------------+------------------+
     |1. Raspberry Pi (with 40 GPIO) x1         |                  |     
@@ -45,7 +46,7 @@ Analog & Digital
 An Analog Signal is a continuous signal in both time and value. On the contrary, a Digital Signal or discrete-time signal is a time series consisting of a sequence of quantities. Most signals in life are analog signals. A familiar example of an Analog Signal would be how the temperature throughout the day is continuously changing and could not suddenly change instantaneously from 0℃ to 10℃. However, Digital Signals can instantaneously change in value. This change is expressed in numbers as 1 and 0 (the basis of binary code). Their differences can more easily be seen when compared when graphed as below.
 
 .. image:: ../_static/imgs/analog-digital.png
-        :width: 100%
+    :width: 100%
 
 Note that the Analog signals are curved waves and the Digital signals are "Square Waves". 
 In practical applications, we often use binary as the digital signal, that is a series of 0's and 1's. Since a binary signal only has two values (0 or 1) it has great stability and reliability. Lastly, both analog and digital signals can be converted into the other.
@@ -57,7 +58,7 @@ PWM, Pulse-Width Modulation, is a very effective method for using digital signal
 PWM technology uses digital pins to send certain frequencies of square waves, that is, the output of high levels and low levels, which alternately last for a while. The total time for each set of high levels and low levels is generally fixed, which is called the period (Note: the reciprocal of the period is frequency). The time of high level outputs are generally called "pulse width", and the duty cycle is the percentage of the ratio of pulse duration, or pulse width (PW) to the total period (T) of the waveform. The longer the output of high levels last, the longer the duty cycle and the higher the corresponding voltage in the analog signal will be. The following figures show how the analog signal voltages vary between 0V-5V (high level is 5V) corresponding to the pulse width 0%-100%:
 
 .. image:: ../_static/imgs/duty-cycle.png
-        :width: 100%
+    :width: 100%
 
 The longer the PWM duty cycle is, the higher the output power will be. Now that we understand this relationship, we can use PWM to control the brightness of an LED or the speed of DC motor and so on.
 It is evident, from the above, that PWM is not actually analog but the effective value of voltage is equivalent to the corresponding analog value. Therefore, by using PWM, we can control the output power of to an LED and control other devices and modules to achieve multiple effects and actions.
@@ -71,16 +72,20 @@ In order to keep the results running consistently, we will use PWM.
 Circuit
 ================================================================
 
-==================  ==================================================================
-Schematic diagram   Hardware connection. If you need any support,
- 
-                    please feel free to contact us via: 
-                    
-                    support@freenove.com
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
 
-|PWM-Schematic|     |PWM-fritizing|
-
-==================  ==================================================================
+    ==================  ==================================================================
+    Schematic diagram   Hardware connection. If you need any support,
+     
+                        please feel free to contact us via: 
+                        
+                        support@freenove.com
+    
+    |PWM-Schematic|     |PWM-fritizing|
+    ==================  ==================================================================
 
 .. raw:: html
 

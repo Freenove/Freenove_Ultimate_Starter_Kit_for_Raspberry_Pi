@@ -15,6 +15,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------+-------------------+
     |1. Raspberry Pi (with 40 GPIO) x1          |                   |
@@ -67,10 +68,6 @@ Hardware connection. If you need any support, please feel free to contact us via
 
     :red:`If LEDbar doesn't work, rotate LEDbar 180° to try. The label is random.`
 
-.. note:: 
-
-    **Youtube video:** https://www.youtube.com/watch?v=11KikymlcA0
-
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/11KikymlcA0" frameborder="0" allowfullscreen></iframe>
@@ -89,7 +86,7 @@ First observe the project result, and then view the code.
 
 .. hint::
 
-    :red:`If you have any concerns, please contact us via:`  support@freenove.com
+    :red:`If you have any concerns, please contact us via:` support@freenove.com
 
 1. Use cd command to enter 03.1.1_LightWater directory of Python code.
 
@@ -147,4 +144,4 @@ For more information about the methods used by the LEDBoard class in the GPIO Ze
 
 For more information about the methods used by the LEDBarGraph class in the GPIO Zero library,please refer to: https://gpiozero.readthedocs.io/en/stable/api_boards.html#ledbargraph
 
-In this experiment you can use the LEDBoard and LEDBarGraph classes to control the LEDBarGraph 
+In this experiment you can use the LEDBoard and LEDBarGraph classes to control the LEDBarGraph

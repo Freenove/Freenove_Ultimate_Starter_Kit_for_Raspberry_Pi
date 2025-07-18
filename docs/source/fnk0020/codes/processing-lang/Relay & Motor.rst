@@ -12,6 +12,7 @@ In this project, we will use a Push Button Switch indirectly to control the DC M
 .. table:: 
     :width: 80%
     :align: center
+    :class: table-line
 
     +-------------------------------------------------+----------------------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                |                                              |     
@@ -93,17 +94,22 @@ Circuit
 
 Use caution with the power supply voltage needed for the components in this circuit. The Relay requires a power supply voltage of 5V, and the DC Motor only requires 3.3V. Additionally, there is an LED present, which acts as an indicator (ON or OFF) for the status of the Relay's active status.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |Relay-Sc|                                                                                   |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |Relay-Fr|                                                                                   |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :width: 80%
+    :align: center
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |Relay-Sc|                                                                                   |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |Relay-Fr|                                                                                   |
+    +------------------------------------------------------------------------------------------------+
 
 .. |Relay-Sc| image:: ../_static/imgs/Relay-Sc.png
 .. |Relay-Fr| image:: ../_static/imgs/Relay-Fr.png

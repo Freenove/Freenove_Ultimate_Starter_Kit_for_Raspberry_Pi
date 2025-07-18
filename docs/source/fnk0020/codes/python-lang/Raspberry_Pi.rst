@@ -10,11 +10,11 @@ Below are the raspberry pi pictures and model pictures supported by this product
 
 .. table:: 
     :width: 100%
+    :class: table-line
     :widths: 50 50
 
     ================================================================================    ================================================================================
     Practicality picture of Raspberry Pi 5                                              Model diagram of Raspberry Pi 5
-    ================================================================================    ================================================================================
     |raspberrypi5-real|                                                                 |raspberrypi5-frzz|
     Practicality picture of Raspberry Pi 4B                                              Model diagram of Raspberry Pi 4B
     |raspberrypi4b-real|                                                                 |raspberrypi4b-frzz|

@@ -17,6 +17,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +---------------------------------------------+---------------------+
     |1. Raspberry Pi (with 40 GPIO) x1            |                     |     
@@ -76,17 +77,22 @@ In order to keep the results running consistently, we will use PWM.
 Circuit
 ================================================================
 
-+--------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                  |
-|                                                                                      |
-|   |java_pwm_Sc|                                                                      |
-+--------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:   |
-|                                                                                      |
-|   support@freenove.com                                                               | 
-|                                                                                      |
-|   |java_pwm_Fr|                                                                      |
-+--------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +--------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                  |
+    |                                                                                      |
+    |   |java_pwm_Sc|                                                                      |
+    +--------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:   |
+    |                                                                                      |
+    |   support@freenove.com                                                               | 
+    |                                                                                      |
+    |   |java_pwm_Fr|                                                                      |
+    +--------------------------------------------------------------------------------------+
 
 .. |java_pwm_Sc| image:: ../_static/imgs/java_pwm_Sc.png
 .. |java_pwm_Fr| image:: ../_static/imgs/java_pwm_Fr.png
@@ -170,7 +176,7 @@ To implement software PWM, we have written a PWMController class to control the 
 .. code-block:: python
     :linenos:
 
-	class PWMController implements Runnable {  
+    class PWMController implements Runnable {  
         ......
     }
 
@@ -242,7 +248,7 @@ Define the pins that control PWM and create an integer Map variable pwmControlle
 
 The PWM configuration function only needs to fill in the GPIO number in the parameter. The code will automatically apply for a PWMController object and create a corresponding thread to run it. At the same time, the PWMController is stored in pwmControllers and then the thread is started.
 
-.. code-block:: c
+.. code-block:: python
     :linenos:
 
     public static void setPwmConfig(int pin) throws Exception {  
@@ -265,7 +271,7 @@ Add JVM shutdown hook to ensure PWM controller is stopped on JVM shutdown.
 
 The main program, which is used to test the effect of making the LED breathe.
 
-.. code-block:: c
+.. code-block:: python
     :linenos:
 
     public static void main(String[] args) throws Exception {  
@@ -275,13 +281,15 @@ The main program, which is used to test the effect of making the LED breathe.
 
 Configure PWM and associate it with pin.
 
-.. code-block:: c
+.. code-block:: python
+    :linenos:
 
     setPwmConfig(LED_PIN);  
 
 Obtain PWM controller corresponding to the pin.
 
-.. code-block:: c
+.. code-block:: python
+    :linenos:
 
     PWMController BreathingLed = pwmControllers.get(LED_PIN);  
 

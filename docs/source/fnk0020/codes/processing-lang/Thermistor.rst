@@ -2,14 +2,12 @@
 Chapter Thermistor
 ################################################################
 
-
-
 In this chapter, we will learn about Thermistors which are another kind of Resistor.
 
 Project Thermometer
 ****************************************************************
 
-A Thermistor is a type of Resistor whose resistance value is dependent on temperature and changes in temperature. Therefore, we can take advantage of this characteristic to make a Thermometer.
+In this project, we will use a thermistor to make a thermometer.
 
 Component List
 ================================================================
@@ -17,6 +15,7 @@ Component List
 .. table:: 
     :align: center
     :width: 80%
+    :class: table-line
 
     +-------------------------------------------------------+
     |1. Raspberry Pi (with 40 GPIO) x1                      |     
@@ -42,7 +41,7 @@ Component List
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
     :width: 70%
 .. |Resistor-10kΩ| image:: ../_static/imgs/Resistor-10kΩ.png
-    :width: 10%
+    :width: 7%
 .. |Thermistor| image:: ../_static/imgs/Thermistor.png
     :width: 20%
 .. |ADC-module-1| image:: ../_static/imgs/ADC-module-1.png
@@ -54,23 +53,18 @@ Component knowledge
 Thermistor
 ----------------------------------------------------------------
 
-Thermistor is a temperature sensitive resistor. When it senses a change in temperature, the resistance of the Thermistor will change. We can take advantage of this characteristic by using a Thermistor to detect temperature intensity. A Thermistor and its electronic symbol are shown below.
-
-.. image:: ../_static/imgs/11_00.png
-    :align: center
-
-The relationship between resistance value and temperature of a thermistor is:
+First Review the knowledge of thermistor. The relationship between resistance value and temperature of thermistor is:
 
 .. math::
 
-   \boldsymbol{ R_t = R \cdot \exp \left[ B \left( \frac{1}{T_2} - \frac{1}{T_1} \right) \right] }
+   \boldsymbol{ R_t = R \cdot ESP \left[ B \left( \frac{1}{T_2} - \frac{1}{T_1} \right) \right] }
 
-- Where:
-    - Rt is the thermistor resistance under T2 temperature;
-    - R is in the nominal resistance of thermistor under T1 temperature;
-    - EXP[n] is nth power of e;
-    - B is for thermal index;
-    - T1, T2 is Kelvin temperature (absolute temperature). Kelvin temperature=273.15 + Celsius temperature.
+**Where:**
+    - **Rt** is the thermistor resistance under T2 temperature;
+    - **R** is in the nominal resistance of thermistor under T1 temperature;
+    - **EXP[n]** is nth power of e;
+    - **B** is for thermal index;
+    - **T1, T2** is Kelvin temperature (absolute temperature). Kelvin temperature=273.15 + Celsius temperature.
 
 For the parameters of the Thermistor, we use: B=3950, R=10k, T1=25.
 The circuit connection method of the Thermistor is similar to photoresistor, as the following:
@@ -92,19 +86,24 @@ Circuit with ADS7830
 
 The circuit of this project is similar to the one in last chapter. The only difference is that the Photoresistor is replaced by the Thermistor.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic-5|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |ADS7830-fritizing-6|                                                                        |
-|                                                                                                |
-|    **Thermistor has longer pins than the one shown in circuit.**                               |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |PCF8591-Schematic-5|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |ADS7830-fritizing-6|                                                                        |
+    |                                                                                                |
+    |    **Thermistor has longer pins than the one shown in circuit.**                               |
+    +------------------------------------------------------------------------------------------------+
 
 .. |ADS7830-Schematic-5| image:: ../_static/imgs/ADS7830-Schematic-5.png
 .. |ADS7830-fritizing-6| image:: ../_static/imgs/ADS7830-fritizing-6.png
@@ -114,19 +113,24 @@ Circuit with PCF8591
 
 The circuit of this project is similar to the one in the last chapter. The only difference is that the Photoresistor is replaced by the Thermistor.
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |PCF8591-Schematic-5|                                                                        |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection. If you need any support,please feel free to contact us via:             |
-|                                                                                                |
-|   support@freenove.com                                                                         |
-|                                                                                                |
-|   |PCF8591-fritizing-5|                                                                        |
-|                                                                                                |
-|   **Thermistor has longer pins than the one shown in circuit.**                                |
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |PCF8591-Schematic-5|                                                                        |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection. If you need any support,please feel free to contact us via:             |
+    |                                                                                                |
+    |   support@freenove.com                                                                         |
+    |                                                                                                |
+    |   |PCF8591-fritizing-5|                                                                        |
+    |                                                                                                |
+    |   **Thermistor has longer pins than the one shown in circuit.**                                |
+    +------------------------------------------------------------------------------------------------+
 
 .. |PCF8591-Schematic-5| image:: ../_static/imgs/PCF8591-Schematic-5.png
 .. |PCF8591-fritizing-5| image:: ../_static/imgs/PCF8591-fritizing-5.png
@@ -144,6 +148,7 @@ Sketch Thermometer
 ----------------------------------------------------------------
 
 First, observe the result after running the sketch, and then learn about the code in detail.
+
 1.	Use Processing to open the file Sketch_08_1_1_Thermometer.
 
 .. code-block:: console
@@ -167,6 +172,7 @@ The following is program code:
 .. literalinclude:: ../../../freenove_Kit/Processing/Sketches/Sketch_08_1_1_Thermometer/Sketch_08_1_1_Thermometer.pde
     :linenos: 
     :language: java
+    :dedent:
 
 In this project code, first read ADC, and then calculate the current temperature according to the Ohm's law and temperature formula mentioned before, finally display them on Display Window.
 

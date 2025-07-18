@@ -15,6 +15,7 @@ Component List
 .. table::
     :align: center
     :width: 80%
+    :class: table-line
 
     +-----------------------------------------------------------+
     |    Raspberry Pi                                           |     
@@ -53,7 +54,6 @@ Component List
 .. |res-220R| image:: ../_static/imgs/res-220R.png
     :width: 30%
 
-
 In the components list, 3B GPIO, Extension Shield Raspberry and Breadboard are necessary for each project. Later, they will be reference by text only (no images as in above).
 
 GPIO
@@ -71,12 +71,11 @@ The Raspberry Pi CPU uses Broadcom (BCM) processing chips BCM2835, BCM2836 or BC
 Each pin's functional assignment is defined in the image below:
 
     .. image:: ../_static/imgs/raspberrypi5-cc90.png
-        :width: 30%
+        :width: 70%
+        :align: center
 
-    .. image:: ../_static/imgs/raspberrypi-pinout-bcm.png
-        :width: 30%
+.. seealso::
 
-.. seealso:: 
     For more details about pin definition of GPIO, please refer to `<http://pinout.xyz/>`_
 
 PHYSICAL Numbering
@@ -107,11 +106,11 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
 
 .. caution:: 
 
-    CAUTION: Avoid any possible short circuits (especially connecting 5V or GND, 3.3V and GND)! 
+    Avoid any possible short circuits (especially connecting 5V or GND, 3.3V and GND)! 
 
 .. warning:: 
 
-    WARNING: A short circuit can cause high current in your circuit, create excessive component heat and cause permanent damage to your RPi!
+    A short circuit can cause high current in your circuit, create excessive component heat and cause permanent damage to your RPi!
 
 1. **Schematic diagram**
 
@@ -124,17 +123,14 @@ First, disconnect your RPi from the GPIO Extension Shield. Then build the circui
     :height: 400
 
 .. tip:: 
-     :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
+
+    :red:`If you need any support, please contact us via:` :blue:`support@freenove.com`
 
 .. attention:: 
 
     Do NOT rotate Raspberry Pi to change the way of this connection.
     
     Please plug T extension fully into breadboard.
-
-.. note:: 
-    
-    Youtube video: https://www.youtube.com/watch?v=51Y_HjnUZLs
 
 The connection of Raspberry Pi T extension board is as below. **Don't reverse the ribbon**.
 
@@ -154,21 +150,21 @@ The connection of Raspberry Pi T extension board is as below. **Don't reverse th
 
 There are only three kind of resistors in this kit.
 
-1. The one with *1 red ring* is 10KΩ \
+1. The one with *1 red ring* is 10KΩ
 
     .. image:: ../_static/imgs/res-10K-hori.png
         :height: 17
 
-2. The one with *1 red ring* is 10KΩ 
+2. The one with *2 red ring* is 220Ω 
 
     .. image:: ../_static/imgs/res-220R-hori.png
         :height: 20
 
-#. The one with *1 red ring* is 10KΩ 
+3. The one with *0 red ring* is 1KΩ
 
     .. image:: ../_static/imgs/res-1K-hori.png
         :height: 20
-
+    
 .. note:: 
     
     Future hardware connection diagrams will only show that part of breadboard and GPIO Extension Shield.
@@ -189,7 +185,7 @@ All common 2 lead diodes are the same in this respect. Diodes work only if the v
 
 .. note:: 
     
-    Note: LEDs cannot be directly connected to a power supply, which usually ends in a damaged component. A resistor with a specified resistance value must be connected in series to the LED you plan to use.
+    LEDs cannot be directly connected to a power supply, which usually ends in a damaged component. A resistor with a specified resistance value must be connected in series to the LED you plan to use.
 
 Resistor
 ----------------------------------------------------------------
@@ -201,25 +197,28 @@ A resistor is a passive electrical component that limits or regulates the flow o
 On the left, we see a physical representation of a resistor, and the right is the symbol used to represent the presence of a resistor in a circuit diagram or schematic.
 
 .. image:: ../_static/imgs/res-describe.png
+    :align: center
 
 The bands of color on a resistor is a shorthand code used to identify its resistance value. For more details of resistor color codes, please refer to the card in the kit package.
 
 With a fixed voltage, there will be less current output with greater resistance added to the circuit. The relationship between Current, Voltage and Resistance can be expressed by this formula: I=V/R known as Ohm's Law where I = Current, V = Voltage and R = Resistance. Knowing the values of any two of these allows you to solve the value of the third.
 
-In the following diagram, the current through R1 is: 
+In the following diagram, the current through R1 is:
 
-.. math:: I=U/R=5V/10kΩ=0.0005A=0.5mA.
+.. math:: 
+    
+    I=U/R=5V/10kΩ=0.0005A=0.5mA
 
 .. image:: ../_static/imgs/res-current.png
     :align: center
 
 .. warning:: 
 
-    WARNING: Never connect the two poles of a power supply with anything of low resistance value (i.e. a metal object or bare wire) this is a Short and results in high current that may damage the power supply and electronic components.
+    Never connect the two poles of a power supply with anything of low resistance value (i.e. a metal object or bare wire) this is a Short and results in high current that may damage the power supply and electronic components.
 
 .. note:: 
     
-    Note: Unlike LEDs and Diodes, Resistors have no poles and re non-polar (it does not matter which direction you insert them into a circuit, it will work the same)
+    Unlike LEDs and Diodes, Resistors have no poles and re non-polar (it does not matter which direction you insert them into a circuit, it will work the same)
 
 Breadboard
 ----------------------------------------------------------------
@@ -255,7 +254,7 @@ First, observe the project result, and then learn about the code in detail.
 
 .. hint:: 
     
-    :red:`If you have any concerns, please contact us via:`  support@freenove.com
+    :red:`If you have any concerns, please contact us via:` support@freenove.com
     
 1.	Use cd command to enter 01.1.1_Blink directory of Python code.
 
@@ -412,7 +411,7 @@ Finally, you can specify pins as "header:number", e.g. "J8:11" meaning physical 
 .. list-table::
    :align: center
    :header-rows: 1
-   :class: product-table
+   :class: zebra
 
    * - WingOi
      - BCM(Extension)
@@ -595,35 +594,17 @@ https://www.amazon.com/freenove
 
 **FNK0043**--:green:`Freenove 4WD Smart Car Kit for Raspberry Pi`
 
-.. image:: ../_static/imgs/43_1.png
-    :width: 40%
-
-.. image:: ../_static/imgs/43_2.png
-    :width: 40%
-
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/4Zv0GZUQjZc" frameborder="0" allowfullscreen></iframe>
   
 **FNK0050**--:green:`Freenove Robot Dog Kit for Raspberry Pi`
 
-.. image:: ../_static/imgs/50_1.png
-    :width: 40%
-
-.. image:: ../_static/imgs/50_2.png
-    :width: 40%
-
 .. raw:: html
 
    <iframe style="display: block; margin: 0 auto;" height="421.875" width="750" src="https://www.youtube.com/embed/7BmIZ8_R9d4" frameborder="0" allowfullscreen></iframe>
 
 **FNK0052**--:green:`Freenove_Big_Hexapod_Robot_Kit_for_Raspberry_Pi`
-
-.. image:: ../_static/imgs/52_1.png
-    :width: 50%
-
-.. image:: ../_static/imgs/52_2.png
-    :width: 40%
 
 .. raw:: html
 

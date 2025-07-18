@@ -9,21 +9,26 @@ Now, let's try to control more-than-one digit displays by using a Four 7-Segment
 Component List
 ================================================================
 
-+-------------------------------------------------+-------------------------------------------------+
-|1. Raspberry Pi (with 40 GPIO) x1                |                                                 |     
-|                                                 |   Jumper Wires x18                              |       
-|2. GPIO Extension Board & Ribbon Cable x1        |                                                 |       
-|                                                 |     |jumper-wire|                               |                                                            
-|3. Breadboard x1                                 |                                                 |                                                                 
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 74HC595 x1                  | Resistor 1KΩ x4                  | Resistor 220Ω x8                 |
-|                             |                                  |                                  |
-|  |74HC595|                  |  |Resistor-1kΩ|                  |  |res-220R|                      |
-+-----------------------------+-------------------+--------------+----------------------------------+
-| 4-Digit 7-Segment Display x1                    | PNP transistor x4                               |       
-|                                                 |                                                 |                                                            
-|  |4_7_Segment_Display|                          |  |PNP|                                          | 
-+-------------------------------------------------+-------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +-------------------------------------------------+---------------------------------+
+    |1. Raspberry Pi (with 40 GPIO) x1                |                                 |     
+    |                                                 |   Jumper Wires x18              |       
+    |2. GPIO Extension Board & Ribbon Cable x1        |                                 |       
+    |                                                 |     |jumper-wire|               |                                                            
+    |3. Breadboard x1                                 |                                 |                                                                 
+    +-----------------------------+-------------------+--------------+------------------+
+    | 74HC595 x1                  | Resistor 1KΩ x4                  | Resistor 220Ω x8 |
+    |                             |                                  |                  |
+    |  |74HC595|                  |  |Resistor-1kΩ|                  |  |res-220R|      |
+    +-----------------------------+-------------------+--------------+------------------+
+    | 4-Digit 7-Segment Display x1                    | PNP transistor x4               |       
+    |                                                 |                                 |                                                            
+    |  |4_7_Segment_Display|                          |  |PNP|                          | 
+    +-------------------------------------------------+---------------------------------+
 
 .. |jumper-wire| image:: ../_static/imgs/jumper-wire.png
 .. |4_7_Segment_Display| image:: ../_static/imgs/4_7_Segment_Display.png
@@ -46,7 +51,7 @@ A 4 Digit 7-segment display integrates four 7-Segment Displays into one module, 
 
 .. image:: ../_static/imgs/4_7_Segment_Display_1.png
     :align: center
-    :width: 60%
+    :width: 50%
 
 The internal electronic circuit is shown below, and all 8 LED cathode pins of each 7-Segment Display are connected together.
 
@@ -60,15 +65,20 @@ Similarly, the second, third and fourth 7-Segment Displays will show visible con
 Circuit
 ================================================================
 
-+------------------------------------------------------------------------------------------------+
-|   Schematic diagram                                                                            |
-|                                                                                                |
-|   |4_7_Segment_Sc|                                                                             |
-+------------------------------------------------------------------------------------------------+
-|   Hardware connection                                                                          |
-|                                                                                                |
-|   |4_7_Segment_Fr|                                                                             | 
-+------------------------------------------------------------------------------------------------+
+.. table:: 
+    :align: center
+    :width: 80%
+    :class: table-line
+
+    +------------------------------------------------------------------------------------------------+
+    |   Schematic diagram                                                                            |
+    |                                                                                                |
+    |   |4_7_Segment_Sc|                                                                             |
+    +------------------------------------------------------------------------------------------------+
+    |   Hardware connection                                                                          |
+    |                                                                                                |
+    |   |4_7_Segment_Fr|                                                                             | 
+    +------------------------------------------------------------------------------------------------+
 
 .. |4_7_Segment_Sc| image:: ../_static/imgs/4_7_Segment_Sc.png
 .. |4_7_Segment_Fr| image:: ../_static/imgs/4_7_Segment_Fr.png
