@@ -145,7 +145,7 @@ First, observe the project result, then learn about the code in detail.
 
 .. code-block:: console
 
-    $ cd ~/Freenove_Kit/Code/C_Code/02.1.1ButtonLED
+    $ cd ~/Freenove_Kit/Code/C_Code/02.1.1_ButtonLED
 
 2. Use the following command to compile the code ``ButtonLED.c`` and generate executable file ``ButtonLED``.
 
