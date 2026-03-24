@@ -60,7 +60,7 @@ public class ADC {
         Context pi4j = Pi4J.newAutoContext();
         I2CProvider i2CProvider = pi4j.provider("linuxfs-i2c");
         try {
-            int ADC_CHIP_ADDR = 0x48;
+            int ADC_CHIP_ADDR = 0x4B;
             ADCDevice adcDevice = new ADCDevice(pi4j, i2CProvider, ADC_CHIP_ADDR);
             if (adcDevice.detectI2C()) {
                 int ADC_CHANNEL = 0;

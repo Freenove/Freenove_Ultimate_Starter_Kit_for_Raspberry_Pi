@@ -50,31 +50,31 @@ class ADCDevice {
 }
 
 public class Thermometer{
-	public static void myPrintln(String format, Object... args) {    
-		Console console = new Console();  
-		console.println(String.format("\u001B[32m" + format + "\u001B[0m", args));   
-	}
-	
-	public static void main(String[] args) throws Exception {  
+    public static void myPrintln(String format, Object... args) {    
+        Console console = new Console();  
+        console.println(String.format("\u001B[32m" + format + "\u001B[0m", args));   
+    }
+    
+    public static void main(String[] args) throws Exception {  
         Context pi4j = Pi4J.newAutoContext();  
         I2CProvider i2CProvider = pi4j.provider("linuxfs-i2c");  
         try {  
-            int ADC_CHIP_ADDR = 0x48;  
+            int ADC_CHIP_ADDR = 0x4B;  
             ADCDevice adcDevice = new ADCDevice(pi4j, i2CProvider, ADC_CHIP_ADDR);  
             if (adcDevice.detectI2C()) {  
                 int ADC_CHANNEL = 0;  
                 while (true) {  
                     int adcValue = adcDevice.analogRead(ADC_CHANNEL);  
                     if (adcValue != -1) {  
-						double voltage = (double)adcValue / 255.0 * 5.0;    // calculate voltage    
-						double Rt = 10 * voltage / (5.0 - voltage);        //calculate resistance value of thermistor
-						double tempK = 1/(1/(273.15 + 25) + Math.log(Rt/10)/3950.0); //calculate temperature (Kelvin)
-						double tempC = tempK -273.15;        //calculate temperature (Celsius)
-						myPrintln("ADC value:%d, Voltage:%.2fV, Temperature:%.2fC", adcValue, voltage, tempC);
+                        double voltage = (double)adcValue / 255.0 * 5.0;    // calculate voltage    
+                        double Rt = 10 * voltage / (5.0 - voltage);        //calculate resistance value of thermistor
+                        double tempK = 1/(1/(273.15 + 25) + Math.log(Rt/10)/3950.0); //calculate temperature (Kelvin)
+                        double tempC = tempK -273.15;        //calculate temperature (Celsius)
+                        myPrintln("ADC value:%d, Voltage:%.2fV, Temperature:%.2fC", adcValue, voltage, tempC);
                     } else {  
                         myPrintln("Failed to read data from ADC.");  
                     } 
-					Thread.sleep(100);  
+                    Thread.sleep(100);  
                 }  
             } else {  
                 myPrintln("ADS7830 device not detected at address 0x" + Integer.toHexString(ADC_CHIP_ADDR));  

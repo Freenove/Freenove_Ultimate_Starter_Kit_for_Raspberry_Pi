@@ -35,18 +35,18 @@ public class DHT11 {
             try {  
                 double temperature = dht11.readTemperature();  
                 double humidity = dht11.readHumidity(); 
-				if (humidity >= 0 && humidity <= 100) {  
-					System.out.println("Temperature: " + temperature + "°C");  
-					System.out.println("Humidity: " + humidity + "%");  
-				}
-				Thread.sleep(2000);
+                if (humidity >= 0 && humidity <= 100) {  
+                    System.out.println("Temperature: " + temperature + "°C");  
+                    System.out.println("Humidity: " + humidity + "%");  
+                }
+                Thread.sleep(2000);
             } catch (IOException e) {  
                 if (!"Input/output error".equals(e.getMessage())) {  
                     e.printStackTrace();  
                 } 
             } catch (InterruptedException e) {  
                 Thread.currentThread().interrupt();  
-				break;
+                break;
             }  
         }  
     }  

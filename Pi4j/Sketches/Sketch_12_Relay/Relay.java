@@ -16,40 +16,40 @@ public class Relay{
 
     private static final int PIN_BUTTON = 18;
     private static final int PIN_RELAY = 17; 
-	private static final AtomicBoolean relayState = new AtomicBoolean(false);  
+    private static final AtomicBoolean relayState = new AtomicBoolean(false);  
 
-	public static void myPrintln(String format, Object... args) {    
-		Console console = new Console();  
-		console.println(String.format("\u001B[32m" + format + "\u001B[0m", args));   
-	}
-	
-	private static void updateRelay(DigitalOutput relay, boolean state) {  
+    public static void myPrintln(String format, Object... args) {    
+        Console console = new Console();  
+        console.println(String.format("\u001B[32m" + format + "\u001B[0m", args));   
+    }
+    
+    private static void updateRelay(DigitalOutput relay, boolean state) {  
         if (state) {  
             relay.high();  
         } else {  
             relay.low();  
         }  
     }  
-	
+    
     public static void main(String[] args) throws Exception {
         final var console = new Console();
         var pi4j = Pi4J.newAutoContext();
-		
-		var relay = pi4j.dout().create(PIN_RELAY);  
+        
+        var relay = pi4j.dout().create(PIN_RELAY);  
         var button = pi4j.din().create(PIN_BUTTON);
-		
+        
         button.addListener(e -> {
             if (e.state() == DigitalState.LOW) {
-				relayState.set(!relayState.get());  
-				myPrintln("Button was pressed. Relay state: %s", relayState.get()); 
-				updateRelay(relay, relayState.get());  
+                relayState.set(!relayState.get());  
+                myPrintln("Button was pressed. Relay state: %s", relayState.get()); 
+                updateRelay(relay, relayState.get());  
             }
         });
         
-		try{
-			myPrintln("The button gpio is %d, the relay gpio is %d", PIN_BUTTON, PIN_RELAY); 
+        try{
+            myPrintln("The button gpio is %d, the relay gpio is %d", PIN_BUTTON, PIN_RELAY); 
             while (true) {
-				Thread.sleep(500);
+                Thread.sleep(500);
             }
         }
         finally{

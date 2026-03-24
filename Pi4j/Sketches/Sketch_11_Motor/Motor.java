@@ -19,55 +19,55 @@ import java.util.Map;
 
 class PWMController implements Runnable {  
     private DigitalOutput pwm;  
-	private int pwmFrequency;
-	private double pwmDutyCycle;
+    private int pwmFrequency;
+    private double pwmDutyCycle;
     private boolean running = true;  
-	private long period;  
-	private long highTime;  
-	private long lowTime;  
-	
+    private long period;  
+    private long highTime;  
+    private long lowTime;  
+    
     public PWMController(DigitalOutput pwm) {  
         this.pwm = pwm;  
-		this.pwmFrequency = 1000;
-		this.pwmDutyCycle = 0.5;
-		this.period = (int) (1000000 / pwmFrequency);  
-		this.highTime = (int) (period * pwmDutyCycle);  
-		this.lowTime = (int) (period - highTime);  
+        this.pwmFrequency = 1000;
+        this.pwmDutyCycle = 0.5;
+        this.period = (int) (1000000 / pwmFrequency);  
+        this.highTime = (int) (period * pwmDutyCycle);  
+        this.lowTime = (int) (period - highTime);  
     }  
   
     @Override  
     public void run() {  
         while (running) {    
             if(highTime!=0){
-				pwm.high();  
-				delayUs(highTime); 
-			}			
-			if(lowTime!=0){
-				pwm.low();  
-				delayUs(lowTime);  
-			}
+                pwm.high();  
+                delayUs(highTime); 
+            }           
+            if(lowTime!=0){
+                pwm.low();  
+                delayUs(lowTime);  
+            }
         }  
     }  
   
-	public void setPwmFrequency(int frequency) {  
+    public void setPwmFrequency(int frequency) {  
         if(frequency!=0){
-			this.pwmFrequency = frequency;
-			this.period = (int) (1000000 / pwmFrequency);  
-			this.highTime = (int) (period * pwmDutyCycle);  
-			this.lowTime = (int) (period - highTime); 
-		}
-		else{
-			this.pwmFrequency = 0;
-			this.period = (int) (1000);  
-			this.highTime = (int) (0);  
-			this.lowTime = (int) (period - highTime); 
-		}
+            this.pwmFrequency = frequency;
+            this.period = (int) (1000000 / pwmFrequency);  
+            this.highTime = (int) (period * pwmDutyCycle);  
+            this.lowTime = (int) (period - highTime); 
+        }
+        else{
+            this.pwmFrequency = 0;
+            this.period = (int) (1000);  
+            this.highTime = (int) (0);  
+            this.lowTime = (int) (period - highTime); 
+        }
     }  
-	
-	public void setPwmDutyCycle(double dutyCycle) {  
+    
+    public void setPwmDutyCycle(double dutyCycle) {  
         this.pwmDutyCycle = dutyCycle;
-		this.highTime = (int) (period * pwmDutyCycle);  
-		this.lowTime = (int) (period - highTime); 
+        this.highTime = (int) (period * pwmDutyCycle);  
+        this.lowTime = (int) (period - highTime); 
     } 
 
     private void delayUs(long us) {  
@@ -118,15 +118,15 @@ class ADCDevice {
 }
 
 public class Motor{
-	private static int MOTOR_PIN_1 = 27;
-	private static int MOTOR_PIN_2 = 17;
-	private static int ADC_CHIP_ADDR = 0x48; 
-	private static int ADC_CHANNEL = 0;
-	
+    private static int MOTOR_PIN_1 = 27;
+    private static int MOTOR_PIN_2 = 17;
+    private static int ADC_CHIP_ADDR = 0x4B; 
+    private static int ADC_CHANNEL = 0;
+    
     private static final Context pi4j = Pi4J.newAutoContext();  
     private static final Map<Integer, PWMController> pwmControllers = new HashMap<>();  
-	
-	public static void setPwmConfig(int pin) throws Exception {  
+    
+    public static void setPwmConfig(int pin) throws Exception {  
         DigitalOutput pwm = pi4j.dout().create(pin);  
         PWMController pwmController = new PWMController(pwm);  
         Thread pwmThread = new Thread(pwmController, "PWM Controller " + pin);  
@@ -141,48 +141,48 @@ public class Motor{
             }  
         }));  
     } 
-	
-	public static void myPrintln(String format, Object... args) {    
-		Console console = new Console();  
-		console.println(String.format("\u001B[32m" + format + "\u001B[0m", args));   
-	}
-	
-	public static void motor(int ADC){
-		int value = ADC -128;
-		PWMController motorPin1 = pwmControllers.get(MOTOR_PIN_1); 
-		PWMController motorPin2 = pwmControllers.get(MOTOR_PIN_2); 
-		
-		if(value>0){
-			motorPin1.setPwmDutyCycle((double)value/128.0);
-			motorPin2.setPwmDutyCycle(0);
-			myPrintln("turn Forward...");
-		}
-		else if (value<0){
-			motorPin1.setPwmDutyCycle(0);
-			motorPin2.setPwmDutyCycle((double)(-value)/128.0);
-			myPrintln("turn Back...");
-		}
-		else {
-			motorPin1.setPwmDutyCycle(0);
-			motorPin2.setPwmDutyCycle(0);
-			myPrintln("Motor Stop...");
-		}
-		myPrintln("The PWM duty cycle is %d%%\n", Math.abs(value)*100/127);//print the PMW duty cycle
-	}
+    
+    public static void myPrintln(String format, Object... args) {    
+        Console console = new Console();  
+        console.println(String.format("\u001B[32m" + format + "\u001B[0m", args));   
+    }
+    
+    public static void motor(int ADC){
+        int value = ADC -128;
+        PWMController motorPin1 = pwmControllers.get(MOTOR_PIN_1); 
+        PWMController motorPin2 = pwmControllers.get(MOTOR_PIN_2); 
+        
+        if(value>0){
+            motorPin1.setPwmDutyCycle((double)value/128.0);
+            motorPin2.setPwmDutyCycle(0);
+            myPrintln("turn Forward...");
+        }
+        else if (value<0){
+            motorPin1.setPwmDutyCycle(0);
+            motorPin2.setPwmDutyCycle((double)(-value)/128.0);
+            myPrintln("turn Back...");
+        }
+        else {
+            motorPin1.setPwmDutyCycle(0);
+            motorPin2.setPwmDutyCycle(0);
+            myPrintln("Motor Stop...");
+        }
+        myPrintln("The PWM duty cycle is %d%%\n", Math.abs(value)*100/127);//print the PMW duty cycle
+    }
 
-	public static void main(String[] args) throws Exception {  
+    public static void main(String[] args) throws Exception {  
         Context pi4j = Pi4J.newAutoContext();  
         I2CProvider i2CProvider = pi4j.provider("linuxfs-i2c");
-		setPwmConfig(MOTOR_PIN_1); 
-		setPwmConfig(MOTOR_PIN_2); 		
-		
+        setPwmConfig(MOTOR_PIN_1); 
+        setPwmConfig(MOTOR_PIN_2);      
+        
         try {  
             ADCDevice adc = new ADCDevice(pi4j, i2CProvider, ADC_CHIP_ADDR);  
             if (adc.detectI2C()) {  
                 while (true) {  
                     int adcValue = adc.analogRead(ADC_CHANNEL);  
-					myPrintln("ADC value : %d", adcValue); 
-					motor(adcValue);
+                    myPrintln("ADC value : %d", adcValue); 
+                    motor(adcValue);
                     Thread.sleep(100);  
                 }  
             } else {  

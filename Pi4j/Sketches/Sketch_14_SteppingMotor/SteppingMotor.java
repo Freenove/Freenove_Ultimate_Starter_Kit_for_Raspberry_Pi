@@ -79,10 +79,10 @@ public class SteppingMotor {
             motorControl = new StepMotor();  
             Runtime.getRuntime().addShutdownHook(new Thread(motorControl::motorStop));  
             while (true) {  
-				myPrintln("Stepper motor is turning...");
+                myPrintln("Stepper motor is turning...");
                 motorControl.moveSteps(StepMotor.Direction.CW, 3, 512);  
                 Thread.sleep(500);  
-				myPrintln("stepper motor is reversing...");
+                myPrintln("stepper motor is reversing...");
                 motorControl.moveSteps(StepMotor.Direction.CCW, 3, 512);  
                 Thread.sleep(500);  
             }  
@@ -92,13 +92,13 @@ public class SteppingMotor {
         } catch (Exception e) { 
             myPrintln("Error: %s", e.getMessage());  
         } finally {  
-			if (motorControl != null) {  
-				try {  
-					motorControl.close();  
-				} catch (Exception ex) {  
-					ex.printStackTrace();  
-				}  
-			}  
-		}  
+            if (motorControl != null) {  
+                try {  
+                    motorControl.close();  
+                } catch (Exception ex) {  
+                    ex.printStackTrace();  
+                }  
+            }  
+        }  
     }  
 }

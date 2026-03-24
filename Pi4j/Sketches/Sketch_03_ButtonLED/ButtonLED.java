@@ -18,24 +18,24 @@ public class ButtonLED{
     public static void main(String[] args) throws Exception {
         final var console = new Console();
         var pi4j = Pi4J.newAutoContext();
-		
-		var led = pi4j.dout().create(PIN_LED);  
+        
+        var led = pi4j.dout().create(PIN_LED);  
         var button = pi4j.din().create(PIN_BUTTON);
-		
+        
         button.addListener(e -> {
             if (e.state() == DigitalState.LOW) {
                 console.println("Button was pressed. Blue LED on.");
-				led.high();
+                led.high();
             }
-			else if(e.state() == DigitalState.HIGH){
-				console.println("Button was released. Blue LED off.");
-				led.low();
-			}
+            else if(e.state() == DigitalState.HIGH){
+                console.println("Button was released. Blue LED off.");
+                led.low();
+            }
         });
         
-		try{
+        try{
             while (true) {
-				Thread.sleep(500);
+                Thread.sleep(500);
             }
         }
         finally{

@@ -51,35 +51,35 @@ class ADCDevice {
 }
 
 public class Joystick{
-	public static void myPrintln(String format, Object... args) {    
-		Console console = new Console();  
-		console.println(String.format("\u001B[32m" + format + "\u001B[0m", args));   
-	}
-	
-	public static void main(String[] args) throws Exception {  
+    public static void myPrintln(String format, Object... args) {    
+        Console console = new Console();  
+        console.println(String.format("\u001B[32m" + format + "\u001B[0m", args));   
+    }
+    
+    public static void main(String[] args) throws Exception {  
         Context pi4j = Pi4J.newAutoContext();  
         I2CProvider i2CProvider = pi4j.provider("linuxfs-i2c"); 
-		
-		final int[] val={0, 0, 1};
-		var button = pi4j.din().create(18);
-		button.addListener(e -> {
+        
+        final int[] val={0, 0, 1};
+        var button = pi4j.din().create(18);
+        button.addListener(e -> {
             if (e.state() == DigitalState.LOW) {
                 val[2] = 0;
             }
-			else if(e.state() == DigitalState.HIGH){
-				val[2] = 1;
-			}
+            else if(e.state() == DigitalState.HIGH){
+                val[2] = 1;
+            }
         });
-		
+        
         try {  
-            int ADC_CHIP_ADDR = 0x48;  
+            int ADC_CHIP_ADDR = 0x4B;  
             ADCDevice adc = new ADCDevice(pi4j, i2CProvider, ADC_CHIP_ADDR);  
   
             if (adc.detectI2C()) {  
                  
                 while (true) {  
-					val[0] = adc.analogRead(1);
-					val[1] = adc.analogRead(0);
+                    val[0] = adc.analogRead(1);
+                    val[1] = adc.analogRead(0);
                     if (val[0] != -1 && val[1] != -1) {  
                         myPrintln("val_X:%d, val_Y:%d, val_Z:%d", val[0], val[1], val[2]);
                     } else {  

@@ -67,42 +67,42 @@ public class StopWatch {
     private static final int DATA_PIN = 22;  
     private static final int LATCH_PIN = 27;  
     private static final int CLOCK_PIN = 17;  
-	private static final int[] values = {0xc0, 0xf9, 0xa4, 0xb0, 0x99, 0x92, 0x82, 0xf8, 0x80, 0x90, 0x88, 0x83, 0xc6, 0xa1, 0x86, 0x8e};  
-	private static final int[] bits   = {0x01, 0x02, 0x04, 0x08};
-	
-	public static void display(HC595 segment, int dec, int times){
-		int thousand_bit = (int)dec%10000/1000;
-		int hundred_bit  = (int)dec%1000/100;
-		int ten_bit      = (int)dec%100/10;
-		int units_bit    = (int)dec%10;
-		
-		try {  
-			for(int i=0; i<times; i++){
-				segment.shiftOut(HC595.Order.MSBFIRST, bits[0] & 0xff);  
-				segment.shiftOut(HC595.Order.MSBFIRST, values[thousand_bit] & 0xff);  
-				segment.updateLatch(); 
-				Thread.sleep(1); 
+    private static final int[] values = {0xc0, 0xf9, 0xa4, 0xb0, 0x99, 0x92, 0x82, 0xf8, 0x80, 0x90, 0x88, 0x83, 0xc6, 0xa1, 0x86, 0x8e};  
+    private static final int[] bits   = {0x01, 0x02, 0x04, 0x08};
+    
+    public static void display(HC595 segment, int dec, int times){
+        int thousand_bit = (int)dec%10000/1000;
+        int hundred_bit  = (int)dec%1000/100;
+        int ten_bit      = (int)dec%100/10;
+        int units_bit    = (int)dec%10;
+        
+        try {  
+            for(int i=0; i<times; i++){
+                segment.shiftOut(HC595.Order.MSBFIRST, bits[0] & 0xff);  
+                segment.shiftOut(HC595.Order.MSBFIRST, values[thousand_bit] & 0xff);  
+                segment.updateLatch(); 
+                Thread.sleep(1); 
 
-				segment.shiftOut(HC595.Order.MSBFIRST, bits[1] & 0xff);  
-				segment.shiftOut(HC595.Order.MSBFIRST, values[hundred_bit] & 0xff);  
-				segment.updateLatch(); 
-				Thread.sleep(1); 
+                segment.shiftOut(HC595.Order.MSBFIRST, bits[1] & 0xff);  
+                segment.shiftOut(HC595.Order.MSBFIRST, values[hundred_bit] & 0xff);  
+                segment.updateLatch(); 
+                Thread.sleep(1); 
 
-				segment.shiftOut(HC595.Order.MSBFIRST, bits[2] & 0xff);  
-				segment.shiftOut(HC595.Order.MSBFIRST, values[ten_bit] & 0xff);  
-				segment.updateLatch(); 
-				Thread.sleep(1); 
+                segment.shiftOut(HC595.Order.MSBFIRST, bits[2] & 0xff);  
+                segment.shiftOut(HC595.Order.MSBFIRST, values[ten_bit] & 0xff);  
+                segment.updateLatch(); 
+                Thread.sleep(1); 
 
-				segment.shiftOut(HC595.Order.MSBFIRST, bits[3] & 0xff);  
-				segment.shiftOut(HC595.Order.MSBFIRST, values[units_bit] & 0xff);  
-				segment.updateLatch(); 
-				Thread.sleep(1); 
-			}
-		} catch (InterruptedException e) {  
-			Thread.currentThread().interrupt(); 
-		}  
-	}
-	
+                segment.shiftOut(HC595.Order.MSBFIRST, bits[3] & 0xff);  
+                segment.shiftOut(HC595.Order.MSBFIRST, values[units_bit] & 0xff);  
+                segment.updateLatch(); 
+                Thread.sleep(1); 
+            }
+        } catch (InterruptedException e) {  
+            Thread.currentThread().interrupt(); 
+        }  
+    }
+    
     public static void main(String[] args) throws Exception {  
         var pi4j = Pi4J.newAutoContext();  
         HC595 segment = new HC595(pi4j, DATA_PIN, LATCH_PIN, CLOCK_PIN);  
@@ -110,7 +110,7 @@ public class StopWatch {
         try {  
             while (true) {  
                 for (int i=0; i<9999; i++) {  
-					display(segment, i, 100);
+                    display(segment, i, 100);
                 }  
             }  
         } finally {  
