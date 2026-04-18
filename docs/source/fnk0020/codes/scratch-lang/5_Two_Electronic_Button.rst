@@ -17,7 +17,7 @@ Components
     :class: table-line
 
     +--------------------------------------------+-----------------------+
-    |    Raspberry Pi (with 40 GPIO) x1          |   RGB LED x1          |
+    |    Raspberry Pi (with 40 GPIO) x1          |  Push Button x2       |
     |                                            |                       |   
     |    GPIO Extension Board & Ribbon Cable x1  |       |button-small|  |
     |                                            |                       |
